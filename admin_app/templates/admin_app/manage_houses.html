@@ -1,0 +1,79 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+    {% trans " | Ethiopian Sheger Market place" %}
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'admin_app/css/manage_houses.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Category</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Price</th>
+      <th>Bedrooms</th>
+      <th>Bathrooms</th>
+      <th>Area (sqm)</th>
+      <th>Featured</th>
+      <th>Likes</th>
+      <th>Shares</th>
+      <th>Images</th>
+      <th>Created By</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for house in houses %}
+    <tr>
+      <td>{{ house.id }}</td>
+      <td>{{ house.title }}</td>
+      <td>{{ house.get_category_display }}</td>
+      <td>{{ house.city }}</td>
+      <td>{{ house.state }}</td>
+      <td>{{ house.price }}</td>
+      <td>{{ house.bedrooms }}</td>
+      <td>{{ house.bathrooms }}</td>
+      <td>{{ house.area }}</td>
+      <td>{% if house.is_featured %}Yes{% else %}No{% endif %}</td>
+      <td>
+  <span id="like-count-{{ house.id }}">{{ house.like_count }}</span>
+  <button class="like-btn" data-url="{% url 'houses:like_house' house.id %}">Like</button>
+</td>
+<td>
+  <span id="share-count-{{ house.id }}">{{ house.share_count }}</span>
+  <button class="share-btn" data-url="{% url 'houses:share_house' house.id %}">Share</button>
+</td>
+
+      <td>{{ house.images.count }}</td>
+      <td>{{ house.created_by.username }}</td>
+      <td>{{ house.created_at }}</td>
+      <td>
+        <a href="{% url 'houses:house_detail' house.id %}" target="_blank">View</a> |
+        <a href="{% url 'houses:house_update' house.id %}" target="_blank">Edit</a> |
+        <a href="{% url 'houses:house_delete' house.id %}" onclick="return confirm('Are you sure?')">Delete</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td>No houses available.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'admin_app/js/manage_houses.js' %}"></script>
+{% endblock %}

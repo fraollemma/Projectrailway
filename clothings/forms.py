@@ -18,7 +18,7 @@ class MultipleFileField(forms.FileField):
         else:
             result = single_file_clean(data, initial)
         return result
-
+    
 class ClothingItemForm(forms.ModelForm):
     class Meta:
         model = ClothingItem
@@ -28,11 +28,6 @@ class ClothingItemForm(forms.ModelForm):
             'description',
             'price',
             'discount_price',
-            'size',
-            'age_group',
-            'color',
-            'material',
-            'brand',
             'stock_quantity',
             'is_featured'
         ]
@@ -52,10 +47,6 @@ class ClothingItemForm(forms.ModelForm):
             'stock_quantity': forms.NumberInput(attrs={
                 'min': 0
             }),
-            'color': forms.TextInput(attrs={
-                'type': 'color',
-                'style': 'width: 80px; height: 40px; padding: 2px;'
-            })
         }
 
 class ClothingCreateForm(forms.ModelForm):
@@ -67,8 +58,8 @@ class ClothingCreateForm(forms.ModelForm):
     class Meta(ClothingItemForm.Meta):
         pass
 
-    #####
     def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
         self.fields['category'].queryset = ClothingCategory.objects.all()
         self.fields['category'].empty_label = "Select a category"
@@ -78,17 +69,22 @@ class ClothingCreateForm(forms.ModelForm):
         })
         self.fields['category'].empty_label = "Select a category"
         self.fields['category'].help_text = "Choose the most appropriate category for your item"
-    ####
-
+        
     def save(self, commit=True):
-        instance = super().save(commit=commit)
-        if commit and self.cleaned_data.get('images'):
-            for i, img in enumerate(self.cleaned_data['images']):
-                ClothingImage.objects.create(
-                    clothing=instance,
-                    image=img,
-                    is_main=(i == 0)
-                )
+        instance = super().save(commit=False)
+        if self.user:
+            instance.created_by = self.user
+        if commit:
+            instance.save()
+            self.save_m2m()
+
+        if self.cleaned_data.get('images'):
+                for i, img in enumerate(self.cleaned_data['images']):
+                    ClothingImage.objects.create(
+                        clothing=instance,
+                        image=img,
+                        is_main=(i == 0)
+                    )
         return instance
 
     def clean(self):

@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-11 01:55+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: am\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\clothings\templates\clothings\clothing_create.html:14
+#: .\clothings\templates\clothings\clothing_list.html:15
+msgid "Add New Clothing Item"
+msgstr "አዲስ የልብስ ነገር ያክሉ"
+
+#: .\clothings\templates\clothings\clothing_create.html:15
+msgid "Fill out the form below to list your clothing item"
+msgstr "የልብስዎን ነገር ለማስተዋወቅ ቅጹን ይሙሉ"
+
+#: .\clothings\templates\clothings\clothing_create.html:23
+msgid "Basic Information"
+msgstr "መሠረታዊ መረጃ"
+
+#: .\clothings\templates\clothings\clothing_create.html:64
+#: .\clothings\templates\clothings\clothing_create.html:72
+msgid "ETB"
+msgstr "ብር"
+
+#: .\clothings\templates\clothings\clothing_create.html:80
+msgid "In Stock"
+msgstr "በአቅም ውስጥ"
+
+#: .\clothings\templates\clothings\clothing_create.html:88
+msgid "Item Details"
+msgstr "የነገሩ ዝርዝሮች"
+
+#: .\clothings\templates\clothings\clothing_create.html:94
+msgid "View Size Chart"
+msgstr "የመጠን ሰንጠረዥ ይመልከቱ"
+
+#: .\clothings\templates\clothings\clothing_create.html:115
+msgid "characters"
+msgstr "ቁምፊዎች"
+
+#: .\clothings\templates\clothings\clothing_create.html:122
+msgid "Images"
+msgstr "ምስሎች"
+
+#: .\clothings\templates\clothings\clothing_create.html:127
+msgid "Drag & drop images here or click to browse"
+msgstr "ምስሎችን እዚህ ይጎትቱ ወይም ለመመልከት ይጫኑ"
+
+#: .\clothings\templates\clothings\clothing_create.html:136
+msgid "First image will be used as the main display image"
+msgstr "የመጀመሪያው ምስል አስዋቂ ምስል ይሆናል"
+
+#: .\clothings\templates\clothings\clothing_create.html:137
+msgid "Recommended size: 800x1000 pixels"
+msgstr "የሚመከር መጠን፡ 800x1000 ፒክስል"
+
+#: .\clothings\templates\clothings\clothing_create.html:144
+msgid "Features"
+msgstr "ባህሪያት"
+
+#: .\clothings\templates\clothings\clothing_create.html:158
+msgid "Save Item"
+msgstr "ነገሩን ያቅርቡ"
+
+#: .\clothings\templates\clothings\clothing_create.html:161
+msgid "Preview"
+msgstr "ቅድመ እይታ"
+
+#: .\clothings\templates\clothings\clothing_create.html:164
+msgid "Cancel"
+msgstr "ይቅር"
+
+#: .\clothings\templates\clothings\clothing_create.html:174
+msgid "Clothing Size Chart"
+msgstr "የልብስ መጠን ሰንጠረዥ"
+
+#: .\clothings\templates\clothings\clothing_create.html:183
+msgid "Size"
+msgstr "መጠን"
+
+#: .\clothings\templates\clothings\clothing_create.html:184
+msgid "Chest (in)"
+msgstr "የደረት መጠን (በኢንች)"
+
+#: .\clothings\templates\clothings\clothing_create.html:185
+msgid "Waist (in)"
+msgstr "የወገብ መጠን (በኢንች)"
+
+#: .\clothings\templates\clothings\clothing_create.html:186
+msgid "Hip (in)"
+msgstr "የወገብ መጠን (በኢንች)"
+
+#: .\clothings\templates\clothings\clothing_create.html:191
+msgid "XS"
+msgstr "በጣም ትንሽ"
+
+#: .\clothings\templates\clothings\clothing_create.html:197
+msgid "S"
+msgstr "ትንሽ"
+
+#: .\clothings\templates\clothings\clothing_detail.html:52
+msgid "Add to Cart"
+msgstr "ወደ ጋሪ ያክሉ"
+
+#: .\clothings\templates\clothings\clothing_detail.html:56
+msgid "Details"
+msgstr "ዝርዝሮች"
+
+#: .\clothings\templates\clothings\clothing_detail.html:59
+msgid "Material:"
+msgstr "ንጥረ ነገር፡"
+
+#: .\clothings\templates\clothings\clothing_detail.html:60
+msgid "Color:"
+msgstr "ቀለም፡"
+
+#: .\clothings\templates\clothings\clothing_detail.html:61
+msgid "Size:"
+msgstr "መጠን፡"
+
+#: .\clothings\templates\clothings\clothing_detail.html:62
+msgid "Age Group:"
+msgstr "የዕድሜ ቡድን፡"
+
+#: .\clothings\templates\clothings\clothing_detail.html:69
+msgid "You May Also Like"
+msgstr "ምናልባት ይወዳሉ"
+
+#: .\clothings\templates\clothings\clothing_list.html:70
+msgid "View Details"
+msgstr "ዝርዝሮችን ይመልከቱ"
+
+#: .\clothings\templates\clothings\clothing_list.html:78
+msgid "No clothing items found."
+msgstr "ምንም የልብስ ነገሮች አልተገኙም።"
+
+#: .\clothings\templates\clothings\clothing_list.html:79
+msgid "Try again later or add new items."
+msgstr "በኋላ ደግመው ይሞክሩ ወይም አዲስ ነገሮች ያክሉ።"

@@ -1,32 +1,79 @@
 {% extends 'base/base.html' %}
-{% load static %}
 {% load i18n %}
+{% load static %}
+
+{% block title %}
+  {{ seller.username }} | {% trans "Seller Profile" %}
+{% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'users/css/seller_profile.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/profile.css' %}">
 {% endblock %}
 
 {% block content %}
-<div class="seller-profile-container">
-    <div class="seller-profile-card">
-        <img class="seller-profile-picture"
-             src="{{ seller.profile.profile_picture.url }}"
-             alt="{{ seller.username }}'s profile picture">
-        <h2 class="seller-username">{{ seller.username }}</h2>
-        <p class="seller-phone"><strong>Phone:</strong> {{ seller.phone_number }}</p>
-        {% if seller.profile.username %}
-            <p class="seller-name"><strong>Name:</strong> {{ seller.profile.username }}</p>
-        {% endif %}
-        {% if seller.profile.bio %}
-            <p class="seller-bio"><strong>Bio:</strong> {{ seller.profile.bio }}</p>
-        {% endif %}
-        {% if seller.profile.location %}
-            <p class="seller-location"><strong>Location:</strong> {{ seller.profile.location }}</p>
-        {% endif %}
-    </div>
-</div>
-{% endblock %}
+<div class="profile-container">
+    <h2>{% trans "Seller Profile" %}</h2>
 
-{% block js %}
-<script src="{% static 'users/js/seller_profile.js' %}"></script>
+    <div class="profile-header">
+        {% if seller.profile.profile_picture %}
+            <img src="{{ seller.profile.profile_picture.url }}" 
+                 alt="{{ seller.username }} {% trans 'profile picture' %}" 
+                 class="profile-picture">
+        {% else %}
+            <div class="profile-picture default-avatar">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        {% endif %}
+        <h3>{{ seller.profile.username|default:seller.username }}</h3>
+    </div>
+
+    <div class="profile-details">
+        <p><strong>{% trans "Username:" %}</strong> {{ seller.username }}</p>
+        <p><strong>{% trans "Phone Number:" %}</strong> {{ seller.phone_number }}</p>
+        <p><strong>{% trans "Location:" %}</strong> {{ seller.profile.location|default:"-" }}</p>
+        <p><strong>{% trans "Bio:" %}</strong> {{ seller.profile.bio|default:"-" }}</p>
+    </div>
+
+    <!-- ✅ Social Media Links -->
+    <div class="profile-socials">
+        <ul>
+            {% if seller.profile.telegram %}
+                <li><a href="https://t.me/{{ seller.profile.telegram }}" target="_blank">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a></li>
+            {% endif %}
+            {% if seller.profile.facebook %}
+                <li><a href="https://facebook.com/{{ seller.profile.facebook }}" target="_blank">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a></li>
+            {% endif %}
+            {% if seller.profile.instagram %}
+                <li><a href="https://instagram.com/{{ seller.profile.instagram }}" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a></li>
+            {% endif %}
+            {% if seller.profile.linkedin %}
+                <li><a href="https://linkedin.com/in/{{ seller.profile.linkedin }}" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a></li>
+            {% endif %}
+            {% if seller.profile.imo %}
+                <li><a href="https://imo.im/{{ seller.profile.imo }}" target="_blank">
+                    <i class="fas fa-comment"></i> Imo
+                </a></li>
+            {% endif %}
+            {% if seller.profile.tiktok %}
+                <li><a href="https://tiktok.com/@{{ seller.profile.tiktok }}" target="_blank">
+                    <i class="fab fa-tiktok"></i> TikTok
+                </a></li>
+            {% endif %}
+            {% if seller.profile.email %}
+                <li><a href="mailto:{{ seller.profile.email }}">
+                    <i class="fas fa-envelope"></i> Email
+                </a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+</div>
 {% endblock %}

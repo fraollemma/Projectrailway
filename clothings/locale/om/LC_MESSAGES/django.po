@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-11 01:56+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Oromo <om@li.org>\n"
+"Language: om\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\clothings\templates\clothings\clothing_create.html:14
+#: .\clothings\templates\clothings\clothing_list.html:15
+msgid "Add New Clothing Item"
+msgstr "Ulfaa Haaraa Dabaluu"
+
+#: .\clothings\templates\clothings\clothing_create.html:15
+msgid "Fill out the form below to list your clothing item"
+msgstr "Furmaata gadiitti guutii ulfaa kee galmeessi"
+
+#: .\clothings\templates\clothings\clothing_create.html:23
+msgid "Basic Information"
+msgstr "Odeeffannoo Ijoo"
+
+#: .\clothings\templates\clothings\clothing_create.html:64
+#: .\clothings\templates\clothings\clothing_create.html:72
+msgid "ETB"
+msgstr "ETB"
+
+#: .\clothings\templates\clothings\clothing_create.html:80
+msgid "In Stock"
+msgstr "Gabatee Keessa"
+
+#: .\clothings\templates\clothings\clothing_create.html:88
+msgid "Item Details"
+msgstr "Faayila Ulfaa"
+
+#: .\clothings\templates\clothings\clothing_create.html:94
+msgid "View Size Chart"
+msgstr "Gabatee Guddinaa Ilaali"
+
+#: .\clothings\templates\clothings\clothing_create.html:115
+msgid "characters"
+msgstr "Herregaa"
+
+#: .\clothings\templates\clothings\clothing_create.html:122
+msgid "Images"
+msgstr "Suuraalee"
+
+#: .\clothings\templates\clothings\clothing_create.html:127
+msgid "Drag & drop images here or click to browse"
+msgstr "Suuraalee asitti harkisi ykn cuqaasi barbaadi"
+
+#: .\clothings\templates\clothings\clothing_create.html:136
+msgid "First image will be used as the main display image"
+msgstr "Suuraan jalqabaa suuraa agarsiisaa ijoo ta'a"
+
+#: .\clothings\templates\clothings\clothing_create.html:137
+msgid "Recommended size: 800x1000 pixels"
+msgstr "Guddina filatamaa: 800x1000 pikselii"
+
+#: .\clothings\templates\clothings\clothing_create.html:144
+msgid "Features"
+msgstr "Amaloota"
+
+#: .\clothings\templates\clothings\clothing_create.html:158
+msgid "Save Item"
+msgstr "Ulfaa Olkaa'i"
+
+#: .\clothings\templates\clothings\clothing_create.html:161
+msgid "Preview"
+msgstr "Dursi Ilaali"
+
+#: .\clothings\templates\clothings\clothing_create.html:164
+msgid "Cancel"
+msgstr "Haquu"
+
+#: .\clothings\templates\clothings\clothing_create.html:174
+msgid "Clothing Size Chart"
+msgstr "Gabatee Guddina Ulfaa"
+
+#: .\clothings\templates\clothings\clothing_create.html:183
+msgid "Size"
+msgstr "Guddina"
+
+#: .\clothings\templates\clothings\clothing_create.html:184
+msgid "Chest (in)"
+msgstr "Kaleessa (in)"
+
+#: .\clothings\templates\clothings\clothing_create.html:185
+msgid "Waist (in)"
+msgstr "Hudduu (in)"
+
+#: .\clothings\templates\clothings\clothing_create.html:186
+msgid "Hip (in)"
+msgstr "Morma (in)"
+
+#: .\clothings\templates\clothings\clothing_create.html:191
+msgid "XS"
+msgstr "XS"
+
+#: .\clothings\templates\clothings\clothing_create.html:197
+msgid "S"
+msgstr "S"
+
+#: .\clothings\templates\clothings\clothing_detail.html:52
+msgid "Add to Cart"
+msgstr "Gabatee Keessa Galchi"
+
+#: .\clothings\templates\clothings\clothing_detail.html:56
+msgid "Details"
+msgstr "Faayila"
+
+#: .\clothings\templates\clothings\clothing_detail.html:59
+msgid "Material:"
+msgstr "Qabeenya:"
+
+#: .\clothings\templates\clothings\clothing_detail.html:60
+msgid "Color:"
+msgstr "Halluu:"
+
+#: .\clothings\templates\clothings\clothing_detail.html:61
+msgid "Size:"
+msgstr "Guddina:"
+
+#: .\clothings\templates\clothings\clothing_detail.html:62
+msgid "Age Group:"
+msgstr "Gosa Umurii:"
+
+#: .\clothings\templates\clothings\clothing_detail.html:69
+msgid "You May Also Like"
+msgstr "Kan Siif Toluu Mala"
+
+#: .\clothings\templates\clothings\clothing_list.html:70
+msgid "View Details"
+msgstr "Faayila Ilaali"
+
+#: .\clothings\templates\clothings\clothing_list.html:78
+msgid "No clothing items found."
+msgstr "Ulfaan hin argamne."
+
+#: .\clothings\templates\clothings\clothing_list.html:79
+msgid "Try again later or add new items."
+msgstr "Booda irra deebi'i yookaan ulfaa haaraa dabaluu."

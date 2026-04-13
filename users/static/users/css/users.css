@@ -52,3 +52,7 @@
     margin: 5px 0;
     font-size: 0.9em;
 }
+.user-card.staff {
+    border: 2px dashed #ffc107;
+    background: #fffbea;
+}

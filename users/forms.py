@@ -48,13 +48,32 @@ class ProfileCreateForm(forms.ModelForm):
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['profile_picture', 'bio', 'location']
+        fields = [
+            'profile_picture',
+            'bio',
+            'location',
+            'telegram',
+            'facebook',
+            'instagram',
+            'linkedin',
+            'imo',
+            'tiktok',
+            'email',
+        ]
         widgets = {
             'profile_picture': forms.FileInput(attrs={
                 'accept': 'image/*',
                 'class': 'form-control-file'
             }),
             'bio': forms.Textarea(attrs={'rows': 3}),
+            'location': forms.TextInput(attrs={'placeholder': 'Your location'}),
+            'telegram': forms.TextInput(attrs={'placeholder': 'Telegram username'}),
+            'facebook': forms.TextInput(attrs={'placeholder': 'Facebook username'}),
+            'instagram': forms.TextInput(attrs={'placeholder': 'Instagram username'}),
+            'linkedin': forms.TextInput(attrs={'placeholder': 'LinkedIn username'}),
+            'imo': forms.TextInput(attrs={'placeholder': 'Imo username'}),
+            'tiktok': forms.TextInput(attrs={'placeholder': 'TikTok username'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'your@email.com'}),
         }
     
     def __init__(self, *args, **kwargs):

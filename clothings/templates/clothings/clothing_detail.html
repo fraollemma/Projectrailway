@@ -1,20 +1,67 @@
 {% extends "base/base.html" %}
 {% load static %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Clothing Details | Ethiopian Sheger Market place" %}
+{% endblock %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'clothings/css/clothing_detail.css' %}">
 {% endblock %}
 
 {% block content %}
-<div class="clothing-detail">
-    <div class="gallery">
-        <!-- Main image and thumbnails would go here -->
+<div class="product-detail-container">
+    <div class="product-gallery">
+        <img id="mainClothingImage" src="{{ clothing.images.first.image.url }}" alt="{{ clothing.name }}" class="main-image">
+        <span class="carted-badge {% if clothing.is_carted %}carted{% endif %}">
+            <i class="fas fa-shopping-cart"></i>
+        </span>
+
+        <div class="thumbnail-gallery">
+            {% for image in clothing.images.all %}
+            <img src="{{ image.image.url }}" alt="{{ clothing.name }}" class="thumbnail" onclick="updateMainImage(this)">
+            {% endfor %}
+        </div>
+<!-- Try these one by one -->
+<a href="{% url 'conversation:new' app_label='clothings' model_name='clothingitem' object_id=clothing.id %}">
+    contact seller
+</a>
+
+
+
+
+        <div class="interaction-buttons">
+            <button type="button" class="interaction-button like-button {% if has_liked %}liked{% endif %}" data-item-id="{{ clothing.id }}">
+                <i class="fas fa-thumbs-up"></i> <span class="interaction-count">{{ clothing.like_count }}</span>
+            </button>
+            <button type="button" class="interaction-button share-button" data-item-id="{{ clothing.id }}">
+                <i class="fas fa-share-alt"></i> <span class="interaction-count">{{ clothing.share_count }}</span>
+            </button>
+        </div>
     </div>
-    
-    <div class="clothing-info">
+fraol
+    {% if clothing.created_by %}
+<div class="seller-section">
+    <a href="{% url 'users:seller_profile' clothing.created_by.id %}" class="seller-link">
+        {% if clothing.created_by.profile.profile_picture %}
+        <img src="{{ clothing.created_by.profile.profile_picture.url }}" 
+             alt="{{ clothing.created_by.username }} profile picture" 
+             class="seller-avatar" width="60" height="60" loading="lazy">
+        {% endif %}
+    </a>
+    <div class="seller-info">
+        <h2 id="seller-heading" class="seller-name">
+            {{ clothing.created_by.username|default:clothing.created_by.phone_number }}
+        </h2>
+        <span class="seller-label">{% trans "Seller" %}</span>
+    </div>
+</div>
+{% endif %}
+fraol
+
+    <div class="product-info">
         <h1>{{ clothing.name }}</h1>
-        <p class="brand">{{ clothing.brand }}</p>
-        
         <div class="price-section">
             {% if clothing.is_on_sale %}
             <span class="original-price">${{ clothing.price }}</span>
@@ -23,42 +70,13 @@
             <span class="current-price">${{ clothing.price }}</span>
             {% endif %}
         </div>
+        <p>{{ clothing.description }}</p>
         
-        <div class="size-selector">
-            <!-- Size selection would go here -->
-        </div>
-        
-        <div class="actions">
-            <button class="add-to-cart">Add to Cart</button>
-            <button class="wishlist">Save for Later</button>
-        </div>
-        
-        <div class="details">
-            <h3>Details</h3>
-            <p>{{ clothing.description }}</p>
-            <ul>
-                <li><strong>Material:</strong> {{ clothing.material }}</li>
-                <li><strong>Color:</strong> {{ clothing.color }}</li>
-                <li><strong>Size:</strong> {{ clothing.get_size_display }}</li>
-                <li><strong>Age Group:</strong> {{ clothing.get_age_group_display }}</li>
-            </ul>
-        </div>
+        <a href="{% url 'cart:add_to_cart' app_label model_name clothing.id %}">{% trans "Add to Cart" %}</a>
     </div>
 </div>
+{% endblock %}
 
-<div class="related-items">
-    <h2>You May Also Like</h2>
-    <div class="related-grid">
-        {% for item in related_items %}
-        <div class="related-card">
-            <a href="{% url 'clothings:clothing_detail' item.slug %}">
-                <img src="{{ item.images.first.image.url }}" alt="{{ item.name }}">
-                <h3>{{ item.brand }}</h3>
-                <p>{{ item.name }}</p>
-                <span class="price">${{ item.current_price }}</span>
-            </a>
-        </div>
-        {% endfor %}
-    </div>
-</div>
+{% block js %}
+<script src="{% static 'clothings/js/clothing_detail.js' %}"></script>
 {% endblock %}

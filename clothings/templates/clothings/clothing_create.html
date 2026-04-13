@@ -1,32 +1,35 @@
 <!-- clothings/clothing_create.html -->
 {% extends 'base/base.html' %}
+{% load i18n %}
 {% load static %}
 {% load crispy_forms_tags %}
+
+{% block title %}
+    {% trans "Create Clothing | Ethiopian Sheger Market place" %}
+{% endblock %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'clothings/css/clothing_create.css' %}">
 {% endblock %}
 
 {% block content %}
-<div class="clothing-create-container">
+<div class="product-create-container">
     <div class="form-header">
-        <h1><i class="fas fa-tshirt"></i> Add New Clothing Item</h1>
-        <p class="subtitle">Fill out the form below to list your clothing item</p>
+        <h1><i class="fas fa-tshirt"></i> {% trans "Add New Clothing Item" %}</h1>
+        <p class="subtitle">{% trans "Fill out the form below to list your clothing item" %}</p>
     </div>
 
-    <form method="post" enctype="multipart/form-data" id="clothingForm" class="clothing-form">
+    <form method="post" enctype="multipart/form-data" id="clothingForm" class="product-form">
         {% csrf_token %}
         
-        <!-- Main Form Section -->
         <div class="form-section">
-            <h2 class="section-title">Basic Information</h2>
-            
+            <h2 class="section-title">{% trans "Basic Information" %}</h2>
+
             <div class="form-grid">
                 <div class="form-group">
                     {{ form.name|as_crispy_field }}
                 </div>
                 
-    <!--------------------------- -->
                 <div class="mb-3">
             <label for="{{ form.category.id_for_label }}" class="form-label">
                 {{ form.category.label }}
@@ -50,17 +53,11 @@
     {% for error in form.category.errors %}
         <div class="invalid-feedback d-block">{{ error }}</div>
     {% endfor %}
-    <!--------------------------- -->
         </div>
-                
-                <div class="form-group">
-                    {{ form.brand|as_crispy_field }}
-                </div>
-                
                 <div class="form-group">
                     {{ form.price|as_crispy_field }}
                     <div class="price-preview">
-                        <span id="priceDisplay">0.00</span> ETB
+                        <span id="priceDisplay">0.00</span> {% trans "ETB" %}
                     </div>
                 </div>
                 
@@ -68,7 +65,7 @@
                     {{ form.discount_price|as_crispy_field }}
                     <div class="discount-info">
                         <span id="discountPercentage">0%</span> off
-                        <span id="discountAmount">(0.00 ETB)</span>
+                        <span id="discountAmount">(0.00 {% trans "ETB" %})</span>
                     </div>
                 </div>
                 
@@ -76,71 +73,45 @@
                     {{ form.stock_quantity|as_crispy_field }}
                     <div class="stock-indicator">
                         <div class="stock-bar" id="stockBar"></div>
-                        <span id="stockStatus">In Stock</span>
+                        <span id="stockStatus">{% trans "In Stock" %}</span>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Details Section -->
         <div class="form-section">
-            <h2 class="section-title">Item Details</h2>
-            
-            <div class="form-grid">
-                <div class="form-group">
-                    {{ form.size|as_crispy_field }}
-                    <div class="size-chart-link">
-                        <a href="#" id="sizeChartBtn">View Size Chart</a>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    {{ form.age_group|as_crispy_field }}
-                </div>
-                
-                <div class="form-group color-picker-group">
-                    {{ form.color|as_crispy_field }}
-                    <div class="color-preview" id="colorPreview"></div>
-                </div>
-                
-                <div class="form-group">
-                    {{ form.material|as_crispy_field }}
-                </div>
-            </div>
+            <h2 class="section-title">{% trans "Item Details" %}</h2>
             
             <div class="form-group full-width">
                 {{ form.description|as_crispy_field }}
                 <div class="char-counter">
-                    <span id="charCount">0</span>/1000 characters
+                    <span id="charCount">0</span>/1000 {% trans "characters" %}
                 </div>
             </div>
         </div>
         
-        <!-- Images Section -->
         <div class="form-section">
-            <h2 class="section-title">Images</h2>
+            <h2 class="section-title">{% trans "Images" %}</h2>
             
             <div class="image-upload-container">
                 <div class="image-dropzone" id="imageDropzone">
                     <i class="fas fa-cloud-upload-alt"></i>
-                    <p>Drag & drop images here or click to browse</p>
+                    <p>{% trans "Drag & drop images here or click to browse" %}</p>
                     <input type="file" name="images" id="imageInput" multiple accept="image/*">
                 </div>
                 
                 <div class="image-preview-container" id="imagePreviewContainer">
-                    <!-- Images will be previewed here -->
                 </div>
                 
                 <div class="image-notes">
-                    <p><i class="fas fa-info-circle"></i> First image will be used as the main display image</p>
-                    <p><i class="fas fa-info-circle"></i> Recommended size: 800x1000 pixels</p>
+                    <p><i class="fas fa-info-circle"></i> {% trans "First image will be used as the main display image" %}</p>
+                    <p><i class="fas fa-info-circle"></i> {% trans "Recommended size: 800x1000 pixels" %}</p>
                 </div>
             </div>
         </div>
         
-        <!-- Features Section -->
         <div class="form-section">
-            <h2 class="section-title">Features</h2>
+            <h2 class="section-title">{% trans "Features" %}</h2>
             
             <div class="feature-toggle">
                 {{ form.is_featured|as_crispy_field }}
@@ -151,54 +122,50 @@
             </div>
         </div>
         
-        <!-- Form Actions -->
         <div class="form-actions">
             <button type="submit" class="btn-submit">
-                <i class="fas fa-save"></i> Save Item
+                <i class="fas fa-save"></i> {% trans "Save Item" %}
             </button>
             <button type="button" class="btn-preview" id="previewBtn">
-                <i class="fas fa-eye"></i> Preview
+                <i class="fas fa-eye"></i> {% trans "Preview" %}
             </button>
             <a href="{% url 'clothings:clothing_list' %}" class="btn-cancel">
-                <i class="fas fa-times"></i> Cancel
+                <i class="fas fa-times"></i> {% trans "Cancel" %}
             </a>
         </div>
     </form>
 </div>
 
-<!-- Size Chart Modal -->
 <div class="modal" id="sizeChartModal">
     <div class="modal-content">
         <div class="modal-header">
-            <h3>Clothing Size Chart</h3>
+            <h3>{% trans "Clothing Size Chart" %}</h3>
             <button class="close-modal">&times;</button>
         </div>
         <div class="modal-body">
-            <!-- Size chart content would go here -->
             <div class="size-chart">
                 <table>
                     <thead>
                         <tr>
-                            <th>Size</th>
-                            <th>Chest (in)</th>
-                            <th>Waist (in)</th>
-                            <th>Hip (in)</th>
+                            <th>{% trans "Size" %}</th>
+                            <th>{% trans "Chest (in)" %}</th>
+                            <th>{% trans "Waist (in)" %}</th>
+                            <th>{% trans "Hip (in)" %}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>XS</td>
+                            <td>{% trans "XS" %}</td>
                             <td>32-34</td>
                             <td>24-26</td>
                             <td>34-36</td>
                         </tr>
                         <tr>
-                            <td>S</td>
+                            <td>{% trans "S" %}</td>
                             <td>35-37</td>
                             <td>27-29</td>
                             <td>37-39</td>
                         </tr>
-                        <!-- More sizes... -->
                     </tbody>
                 </table>
             </div>
@@ -206,10 +173,9 @@
     </div>
 </div>
 
-<!-- Preview Modal -->
 <div class="modal" id="previewModal">
     <div class="modal-content preview-content">
-        <!-- Preview content will be dynamically inserted here -->
+        
     </div>
 </div>
 {% endblock %}

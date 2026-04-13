@@ -1,252 +1,85 @@
-document.getElementById('navToggle').addEventListener('click', function() {
-    this.classList.toggle('active');
-    
-    // Add ripple effect
-    const ripple = document.createElement('span');
-    ripple.className = 'ripple-effect';
-    this.appendChild(ripple);
-    
-    // Remove ripple after animation
-    setTimeout(() => {
-        ripple.remove();
-    }, 600);
+document.addEventListener('DOMContentLoaded', function() {
+    initClock();
+    initCurrentYear();
+    initUnreadCount();
+    initFormSubmissions();
+    initButtonEffects();
+    initLanguagePopup();
+    initMobileNavigation(); 
+    initSearch();
+    initCategoryNavDropdowns(); 
 });
 
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Navigation toggle for all screen sizes
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    const navOverlay = document.createElement('div');
-    navOverlay.className = 'nav-overlay';
-    document.body.appendChild(navOverlay);
-    
-    // Toggle navigation menu
-    function toggleNav() {
-        const isActive = navMenu.classList.contains('active');
-        
-        navToggle.classList.toggle('active', !isActive);
-        navMenu.classList.toggle('active', !isActive);
-        navOverlay.classList.toggle('active', !isActive);
-        
-        // Update ARIA attributes
-        navToggle.setAttribute('aria-expanded', !isActive);
-        navMenu.setAttribute('aria-hidden', isActive);
-        
-        // Toggle body overflow
-        document.body.style.overflow = !isActive ? 'hidden' : '';
-    }
-    
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleNav();
-        });
-        
-        // Close menu when clicking on a link
-        const navLinks = navMenu.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                toggleNav();
-            });
-        });
-        
-        // Close menu when clicking outside
-        navOverlay.addEventListener('click', toggleNav);
-        
-        // Close menu when pressing Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-                toggleNav();
-            }
-        });
-    }
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                // Close mobile menu if open
-                if (navMenu && navMenu.classList.contains('active')) {
-                    toggleNav();
-                }
-                
-                // Scroll to target
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                
-                // Update URL without jumping
-                if (history.pushState) {
-                    history.pushState(null, null, targetId);
-                } else {
-                    location.hash = targetId;
-                }
-            }
-        });
-    });
-    
-    // Update unread message count
-    
-    // Update date and time
-    function updateDateTime() {
-        const dateTimeElements = document.querySelectorAll('.date-and-time');
-        if (dateTimeElements.length > 0) {
+function initClock() {
+    function updateClock() {
+        const clockElements = document.querySelectorAll('.live-clock');
+        if (clockElements.length > 0) {
             const now = new Date();
             const options = { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric',
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
                 hour: '2-digit',
-                minute: '2-digit'
+                minute: '2-digit',
+                hour12: false
             };
-            const formattedDateTime = now.toLocaleDateString(undefined, options);
             
-            dateTimeElements.forEach(el => {
+            const formattedDateTime = now.toLocaleString('en-US', options)
+                .replace(/(\d+)\/(\d+)\/(\d+),?/, '$3-$1-$2');
+            
+            clockElements.forEach(el => {
                 el.textContent = formattedDateTime;
             });
         }
     }
-    
-    // Initialize date time and update every minute
-    updateDateTime();
-    setInterval(updateDateTime, 60000);
-    
-    // Enhanced user dropdown functionality
-    const userDropdowns = document.querySelectorAll('.user-dropdown');
-    userDropdowns.forEach(dropdown => {
-        const button = dropdown.querySelector('.my-btn-user');
-        const menu = dropdown.querySelector('.dropdown-menu');
-        
-        if (button && menu) {
-            // Toggle dropdown
-            button.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const isVisible = menu.style.opacity === '1';
-                
-                // Close all other dropdowns first
-                document.querySelectorAll('.dropdown-menu').forEach(m => {
-                    if (m !== menu) {
-                        m.style.opacity = '0';
-                        m.style.visibility = 'hidden';
-                        m.style.transform = 'translateY(10px)';
-                    }
-                });
-                
-                if (isVisible) {
-                    menu.style.opacity = '0';
-                    menu.style.visibility = 'hidden';
-                    menu.style.transform = 'translateY(10px)';
-                } else {
-                    menu.style.opacity = '1';
-                    menu.style.visibility = 'visible';
-                    menu.style.transform = 'translateY(0)';
-                }
-            });
-            
-            // Close when clicking outside
-            document.addEventListener('click', function() {
-                menu.style.opacity = '0';
-                menu.style.visibility = 'hidden';
-                menu.style.transform = 'translateY(10px)';
-            });
-            
-            // Close when pressing Escape
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && menu.style.opacity === '1') {
-                    menu.style.opacity = '0';
-                    menu.style.visibility = 'hidden';
-                    menu.style.transform = 'translateY(10px)';
-                }
-            });
-        }
-    });
-    
-    // Update current year in footer
+
+    updateClock();
+    setInterval(updateClock, 60000);
+}
+
+function initCurrentYear() {
     const currentYear = document.getElementById('current-year');
     if (currentYear) {
         currentYear.textContent = new Date().getFullYear();
     }
+}
 
-    // Floating message container functionality
-    function initFloatingMessage() {
-        const messageContainer = document.querySelector('.message-container');
-        if (!messageContainer) return;
-        
-        // Create toggle button
-        const toggleBtn = document.createElement('button');
-        toggleBtn.className = 'message-toggle';
-        toggleBtn.innerHTML = '<i class="fas fa-comment-alt"></i>';
-        toggleBtn.setAttribute('aria-label', 'Toggle feedback form');
-        document.body.appendChild(toggleBtn);
-        
-        // Make container floating
-        messageContainer.classList.add('floating');
-        messageContainer.style.display = 'none';
-        
-        // Toggle visibility
-        toggleBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const isVisible = messageContainer.style.display === 'block';
-            messageContainer.style.display = isVisible ? 'none' : 'block';
-            this.setAttribute('aria-expanded', !isVisible);
-        });
-        
-        // Close when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!messageContainer.contains(e.target) && e.target !== toggleBtn) {
-                messageContainer.style.display = 'none';
-                toggleBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
-        
-        // Close when pressing Escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && messageContainer.style.display === 'block') {
-                messageContainer.style.display = 'none';
-                toggleBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
-        
-        // Form group focus handling for message container
-        const formGroups = messageContainer.querySelectorAll('.compact-form-group');
-        formGroups.forEach(group => {
-            const input = group.querySelector('.compact-form-control');
-            
-            input.addEventListener('focus', () => {
-                group.classList.add('focused');
-            });
-            
-            input.addEventListener('blur', () => {
-                if (!input.value) {
-                    group.classList.remove('focused');
+function initUnreadCount() {
+    function fetchUnreadCount() {
+        if (!window.UNREAD_COUNT_API_URL) return;
+
+        fetch(window.UNREAD_COUNT_API_URL, {
+            credentials: 'include'
+        })
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(data => {
+                const unreadBadge = document.getElementById('navbarUnread');
+                if (unreadBadge) {
+                    if (data.total_unread > 0) {
+                        unreadBadge.textContent = data.total_unread > 9 ? '9+' : data.total_unread;
+                        unreadBadge.style.display = 'flex';
+                        unreadBadge.classList.add('pulse');
+                    } else {
+                        unreadBadge.style.display = 'none';
+                        unreadBadge.classList.remove('pulse');
+                    }
                 }
+            })
+            .catch(error => {
+                console.error('Error fetching unread count:', error);
             });
-            
-            // Initialize state
-            if (input.value) {
-                group.classList.add('focused', 'has-value');
-            }
-        });
     }
 
-    // Initialize floating message container
-    initFloatingMessage();
-    
-    // Enhanced form handling
+    fetchUnreadCount();
+    setInterval(fetchUnreadCount, 30000);
+}
+
+function initFormSubmissions() {
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
-        // Add loading state to submit buttons
         form.addEventListener('submit', function(e) {
             const submitBtn = this.querySelector('button[type="submit"]');
             if (submitBtn) {
@@ -258,86 +91,356 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="spinner">
                         <i class="fas fa-spinner fa-spin"></i>
                     </span>
-                    <span class="text">Processing...</span>
+                    <span class="text">...</span>
                 `;
-                
-                // Revert if form submission fails
-                setTimeout(() => {
-                    if (!form.checkValidity()) {
-                        submitBtn.disabled = false;
-                        submitBtn.classList.remove('loading');
-                        submitBtn.innerHTML = originalText;
-                    }
-                }, 1000);
-            }
-        });
-        
-        // Add focus styles to form inputs
-        const inputs = form.querySelectorAll('input, textarea, select');
-        inputs.forEach(input => {
-            const formGroup = input.closest('.form-group');
-            if (!formGroup) return;
-            
-            input.addEventListener('focus', () => {
-                formGroup.classList.add('focused');
-            });
-            
-            input.addEventListener('blur', () => {
-                if (!input.value) {
-                    formGroup.classList.remove('focused');
+                if (form.dataset.ajax === "true") {
+                    e.preventDefault();
+                    handleAjaxForm(form, submitBtn, originalText);
                 }
-            });
-            
-            // Initialize focused state if input has value
-            if (input.value) {
-                formGroup.classList.add('focused');
             }
         });
     });
+}
+
+function handleAjaxForm(form, submitBtn, originalText) {
+    const formData = new FormData(form);
     
-    // Add hover effects to buttons
+    fetch(form.action, {
+        method: form.method,
+        body: formData,
+        credentials: 'include'
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+    })
+    .then(data => {
+        if (data.redirect) {
+            window.location.href = data.redirect;
+        } else if (data.success) {
+            showToast('Success!', data.message || 'Operation completed successfully', 'success');
+            form.reset();
+        }
+    })
+    .catch(error => {
+        showToast('Error', error.message || 'Something went wrong', 'error');
+    })
+    .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+        submitBtn.innerHTML = originalText;
+    });
+}
+
+function initButtonEffects() {
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(button => {
         button.addEventListener('mousedown', () => {
-            button.style.transform = 'translateY(1px)';
+            button.style.transform = 'translateY(1px) scale(0.98)';
         });
         
         button.addEventListener('mouseup', () => {
-            button.style.transform = 'translateY(0)';
+            button.style.transform = 'translateY(0) scale(1)';
         });
         
         button.addEventListener('mouseleave', () => {
-            button.style.transform = 'translateY(0)';
+            button.style.transform = 'translateY(0) scale(1)';
         });
     });
-});
+}
 
+function initLanguagePopup() {
+    const overlay = document.getElementById("language-overlay");
 
-
-
-
-
-
-
-// base/static/base/js/base.js
-document.addEventListener('DOMContentLoaded', function() {
-    const unreadBadge = document.getElementById('navbarUnread');
-    
-    function fetchUnreadCount() {
-        fetch(UNREAD_COUNT_API_URL)
-        .then(response => response.json())
-            .then(data => {
-                if (data.total_unread > 0) {
-                    unreadBadge.textContent = data.total_unread;
-                    unreadBadge.style.display = 'inline-block';
-                } else {
-                    unreadBadge.style.display = 'none';
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching unread count:', error);
-            });
+    if (!localStorage.getItem("languageSelected")) {
+        setTimeout(() => {
+            overlay.classList.add("active");
+        }, 1000);
     }
-    fetchUnreadCount();
-    setInterval(fetchUnreadCount, 30000);
-});
+}
+
+function submitLanguage(selectElement) {
+    localStorage.setItem("languageSelected", "true");
+    document.getElementById("language-overlay").classList.remove("active");
+    selectElement.form.submit();
+}
+
+function skipPopup() {
+    localStorage.setItem("languageSelected", "true");
+    document.getElementById("language-overlay").classList.remove("active");
+}
+
+function initMobileNavigation() {
+    const navToggle = document.getElementById('navToggle');
+    const categoryNav = document.getElementById('categoryNav');
+    let navOverlay = document.querySelector('.nav-overlay');
+    
+    if (!navOverlay) {
+        navOverlay = document.createElement('div');
+        navOverlay.className = 'nav-overlay';
+        document.body.appendChild(navOverlay);
+    }
+    
+    function toggleCategoryNav() {
+        categoryNav.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+        
+        const isExpanded = categoryNav.classList.contains('active');
+        navToggle.setAttribute('aria-expanded', isExpanded);
+        
+        if (isExpanded) {
+            navToggle.querySelector('.nav-toggle-icon').innerHTML = '<i class="fas fa-times"></i>';
+        } else {
+            navToggle.querySelector('.nav-toggle-icon').innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    }
+    
+    if (navToggle) {
+        navToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleCategoryNav();
+        });
+    }
+    
+    const navCloseBtn = document.getElementById('navCloseBtn');
+    if (navCloseBtn) {
+        navCloseBtn.addEventListener('click', function() {
+            categoryNav.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+            
+            if (navToggle) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                const icon = navToggle.querySelector('.nav-toggle-icon');
+                if (icon) icon.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+    }
+    
+    navOverlay.addEventListener('click', function() {
+        categoryNav.classList.remove('active');
+        this.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+        if (navToggle) {
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.querySelector('.nav-toggle-icon').innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && categoryNav.classList.contains('active')) {
+            categoryNav.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+            if (navToggle) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.querySelector('.nav-toggle-icon').innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        }
+    });
+    
+    const categoryLinks = document.querySelectorAll('.category-nav-link:not(.dropdown-toggle)');
+    categoryLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            categoryNav.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+            if (navToggle) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.querySelector('.nav-toggle-icon').innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+    });
+}
+
+function initCategoryNavDropdowns() {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const parentItem = this.closest('.category-nav-item');
+            const dropdown = this.nextElementSibling;
+            
+            document.querySelectorAll('.category-nav-dropdown.active').forEach(openDropdown => {
+                if (openDropdown !== dropdown) {
+                    openDropdown.classList.remove('active');
+                    openDropdown.closest('.category-nav-item').classList.remove('active');
+                    openDropdown.previousElementSibling.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            parentItem.classList.toggle('active');
+            dropdown.classList.toggle('active');
+            
+            const isExpanded = dropdown.classList.contains('active');
+            this.setAttribute('aria-expanded', isExpanded);
+        });
+    });
+    
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.category-nav-item.has-dropdown')) {
+            document.querySelectorAll('.category-nav-dropdown.active').forEach(dropdown => {
+                dropdown.classList.remove('active');
+                dropdown.closest('.category-nav-item').classList.remove('active');
+                dropdown.previousElementSibling.setAttribute('aria-expanded', 'false');
+            });
+        }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.category-nav-dropdown.active').forEach(dropdown => {
+                dropdown.classList.remove('active');
+                dropdown.closest('.category-nav-item').classList.remove('active');
+                dropdown.previousElementSibling.setAttribute('aria-expanded', 'false');
+            });
+        }
+    });
+    
+    const navLinks = document.querySelectorAll('.category-nav-link:not(.dropdown-toggle)');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const categoryNav = document.getElementById('categoryNav');
+            const navOverlay = document.querySelector('.nav-overlay');
+            
+            if (categoryNav && navOverlay) {
+                categoryNav.classList.remove('active');
+                navOverlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+                
+                document.querySelectorAll('.category-nav-dropdown.active').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                    dropdown.closest('.category-nav-item').classList.remove('active');
+                });
+                
+                const navToggle = document.getElementById('navToggle');
+                if (navToggle) {
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    const icon = navToggle.querySelector('.nav-toggle-icon');
+                    if (icon) icon.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            }
+        });
+    });
+}
+
+function showToast(title, message, type = 'info') {
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `
+        <div class="toast-header">
+            <strong>${title}</strong>
+            <button class="toast-close">&times;</button>
+        </div>
+        <div class="toast-body">${message}</div>
+    `;
+    
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 10);
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    }, 5000);
+    
+    toast.querySelector('.toast-close').addEventListener('click', () => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    });
+}
+
+function addPulseAnimation() {
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .pulse {
+            animation: pulse 1s infinite;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+addPulseAnimation();
+
+function initSearch() {
+    const searchToggle = document.getElementById('searchToggle');
+    const searchInput = document.querySelector('.search-input');
+    const searchForm = document.querySelector('.search-bar form');
+    const searchField = document.getElementById('search-input');
+    
+    if (searchToggle && searchInput) {
+        searchToggle.addEventListener('click', function() {
+            searchInput.classList.toggle('active');
+            document.body.classList.toggle('search-active');
+            
+            const isExpanded = searchInput.classList.contains('active');
+            searchToggle.setAttribute('aria-expanded', isExpanded);
+            
+            if (isExpanded) {
+                searchField.focus();
+            }
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (searchInput.classList.contains('active') && 
+                !searchInput.contains(e.target) && 
+                !searchToggle.contains(e.target)) {
+                closeSearch();
+            }
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && searchInput.classList.contains('active')) {
+                closeSearch();
+            }
+        });
+        
+        searchForm.addEventListener('submit', function(e) {
+            if (window.innerWidth > 768) {
+                closeSearch();
+            }
+        });
+    }
+    
+    function closeSearch() {
+        searchInput.classList.remove('active');
+        document.body.classList.remove('search-active');
+        searchToggle.setAttribute('aria-expanded', 'false');
+    }
+    
+    if (searchField) {
+        let timeout;
+        searchField.addEventListener('input', function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                const query = searchField.value.trim();
+                if (query.length > 2) {
+                    fetchSearchSuggestions(query);
+                }
+            }, 300);
+        });
+    }
+}
+
+function fetchSearchSuggestions(query) {
+    console.log('Fetching suggestions for:', query);
+}
+
+function showSearchSuggestions(suggestions) {
+    console.log('Showing suggestions:', suggestions);
+}

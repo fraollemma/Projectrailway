@@ -2,6 +2,10 @@
 {% load static %}
 {% load i18n %}
 
+{% block title %}
+    {% trans "About Us | Ethiopian Sheger Market place" %}
+{% endblock %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'base/css/about_us.css' %}">
 {% endblock %}
@@ -10,7 +14,12 @@
 
 <div class="about-us-container">
     <h1>{% trans "About Us" %}</h1>
-    <p>{% trans "We are a company dedicated to providing the best services to our customers." %}</p>
+    <p>{% trans "We are a company dedicated to providing the best services to our customers." %}
+    </p>
+    <!-- a sample for E-commerce website About Us -->
+    <p>{% trans "Our mission is to connect buyers and sellers in a seamless online marketplace." %}</p>
+    <p>{% trans "We strive to offer a wide range of products at competitive prices, backed by excellent customer service." %}</p>
+    
 </div>
 
 {% endblock %}

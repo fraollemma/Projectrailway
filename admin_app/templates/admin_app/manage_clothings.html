@@ -1,0 +1,54 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Manage Clothings{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+  <h1>Manage Clothings</h1>
+  <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse:collapse;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Discount Price</th>
+        <th>Stock</th>
+        <th>Featured</th>
+        <th>Likes</th>
+        <th>Shares</th>
+        <th>Seller</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for clothing in clothings %}
+      <tr>
+        <td>{{ clothing.id }}</td>
+        <td>{{ clothing.name }}</td>
+        <td>{{ clothing.category.name }}</td>
+        <td>${{ clothing.price }}</td>
+        <td>
+          {% if clothing.discount_price %}
+            ${{ clothing.discount_price }}
+          {% else %}
+            —
+          {% endif %}
+        </td>
+        <td>{{ clothing.stock_quantity }}</td>
+        <td>{{ clothing.is_featured }}</td>
+        <td>{{ clothing.like_count }}</td>
+        <td>{{ clothing.share_count }}</td>
+        <td>{{ clothing.created_by.username }}</td>
+        <td>{{ clothing.created_at }}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="11">No clothing items available.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

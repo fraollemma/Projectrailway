@@ -1,0 +1,128 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+    {% trans " Electronics Products | Ethiopian Sheger Market place" %}
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'electronics/css/product_list.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="product-container">
+
+    <div class="list-header">
+            <a href="{% url 'electronics:product_create' %}"  class="add-product-btn">
+                <i class="fas fa-plus"></i> {% trans "Add New Electronics" %}
+            </a>
+    </div> 
+    
+<main class="product-listings">
+        <div class="product-grid">
+ 
+            {% for product in products %}
+            <div class="product-card" data-category="{{ product.category.slug }}" data-price="{{ product.price }}">
+
+                <div class="card-image">
+            <img src="{{ product.images.first.image.url }}" alt="{{ product.images.first.alt_text|default:product.name }}" loading="lazy">
+            <span class="carted-badge {% if product.is_carted %}carted{% endif %}">
+                <i class="fas fa-shopping-cart"></i>
+            </span>
+    
+            <div class="interaction-buttons">
+
+                <button type="button" 
+                        class="interaction-button like-button {% if product.has_liked %}liked{% endif %}"
+                        aria-label="Like this product"
+                        data-item-id="{{ product.id }}"
+                        data-action="like">
+                    <i class="fas fa-thumbs-up" aria-hidden="true"></i> 
+                    <span class="interaction-count">{{ product.like_count }}</span>
+                </button>
+
+                <button type="button" 
+                        class="interaction-button share-button"
+                        aria-label="Share this product"
+                        data-item-id="{{ product.id }}"
+                        data-action="share"> 
+                    <i class="fas fa-share-alt" aria-hidden="true"></i> 
+                    <span class="interaction-count">{{ product.share_count }}</span>
+                </button>
+            </div>
+         </div>
+                
+                <div class="card-content">
+                    <div class="product-meta">
+                        <span class="product-condition"><i class="fas fa-certificate"></i> {{ product.get_condition_display }}</span>
+                        <div class="clothing-meta">
+                        {{ product.created_at|timesince }} ago
+                    </div>
+                    </div>
+
+                    <h3>{{ product.name }}</h3>
+
+                    <div class="product-specs">
+                        <span><i class="fas fa-microchip"></i> {{ product.category.name }}</span>
+                        <span><i class="fas fa-bolt"></i> {{ product.power_rating|default:"N/A" }}</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="price">${{ product.price|floatformat:"0" }}</span>
+                    </div>
+                    <a href="{% url 'electronics:product_detail' product.pk %}" class="view-details">
+                        <div class="fraol">
+                        {% trans "View Details" %} <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </a>
+                    <div class="card-actions">
+    <a href="{% url 'electronics:product_update' product.pk %}" class="edit-btn" title="Edit">
+        <i class="fas fa-edit"></i>
+    </a>
+    <a href="{% url 'electronics:product_delete' product.pk %}" class="delete-btn" title="Delete">
+        <i class="fas fa-trash"></i>
+    </a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="no-results">
+                <i class="fas fa-laptop"></i>
+                <h3>{% trans "No electronics found" %}</h3>
+                <p>{% trans "Try again later or add new items" %}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if is_paginated %}
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="page-link">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            {% endif %}
+            
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <span class="current-page">{{ num }}</span>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+            {% endif %}
+            {% endfor %}
+            
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="page-link">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+            {% endif %}
+        </div>
+        {% endif %}
+</main>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'electronics/js/product_list.js' %}"></script>
+{% endblock %}

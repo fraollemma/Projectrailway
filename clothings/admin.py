@@ -1,3 +1,4 @@
+# project/clothings/admin.py
 from django.contrib import admin
 from .models import ClothingItem, ClothingImage, ClothingCategory
 from django.utils.html import format_html
@@ -15,7 +16,7 @@ class ClothingImageInline(admin.TabularInline):
 
 class ClothingItemAdmin(admin.ModelAdmin):
     list_display = ['name', 'category', 'price', 'stock_quantity', 'is_featured', 'created_at']
-    list_filter = ['category', 'is_featured', 'created_at']
+    list_filter = ['category']
     search_fields = ['name', 'description', 'brand']
     list_editable = ['price', 'stock_quantity', 'is_featured']
     prepopulated_fields = {'slug': ('name',)}

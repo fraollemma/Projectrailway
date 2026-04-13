@@ -3,209 +3,44 @@
 {% load static %}
 {% load i18n %}
 
+{% block title %}
+    {% trans " Vehicle Form | Ethiopian Sheger Market place" %}
+{% endblock %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'vehicles/css/vehicle_form.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock %}
 
 {% block content %}
-<div class="form-wrapper">
-    <div class="form-header">
-        <h1><i class="fas fa-car"></i> {% trans "Add New Vehicle" %}</h1>
-        <p class="form-subtitle">{% trans "Fill in all required fields to list your vehicle" %}</p>
-    </div>
-    
-    <form method="post" enctype="multipart/form-data" class="vehicle-form" id="vehicleForm">
+<div class="vehicle-form-container">
+    <h2 class="form-title">Add or Edit Vehicle</h2>
+
+    <form method="POST" enctype="multipart/form-data" id="vehicleForm">
         {% csrf_token %}
         
-        <div class="form-sections">
-            <!-- Basic Information Section -->
-            <div class="form-section">
-                <div class="section-header">
-                    <h2><i class="fas fa-info-circle"></i> {% trans "Basic Information" %}</h2>
-                    <div class="section-actions">
-                        <button type="button" class="section-toggle" data-section="basic">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
+        <div class="form-grid">
+            {% for field in form.visible_fields %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.help_text %}
+                        <small class="help">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% for error in field.errors %}
+                        <div class="error">{{ error }}</div>
+                    {% endfor %}
                 </div>
-                
-                <div class="section-content" id="basicSection">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            {{ form.category.label_tag }}
-                            <div class="select-wrapper">
-                                {{ form.category }}
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                            {% if form.category.errors %}
-                            <div class="error-message">{{ form.category.errors }}</div>
-                            {% endif %}
-                        </div>
-                        
-                        <div class="form-group">
-                            {{ form.vehicle_type.label_tag }}
-                            <div class="select-wrapper">
-                                {{ form.vehicle_type }}
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            {{ form.make.label_tag }}
-                            {{ form.make }}
-                            {% if form.make.errors %}
-                            <div class="error-message">{{ form.make.errors }}</div>
-                            {% endif %}
-                        </div>
-                        
-                        <div class="form-group">
-                            {{ form.model.label_tag }}
-                            {{ form.model }}
-                        </div>
-                        
-                        <div class="form-group">
-                            {{ form.year.label_tag }}
-                            {{ form.year }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Specifications Section -->
-            <div class="form-section">
-                <div class="section-header">
-                    <h2><i class="fas fa-cogs"></i> {% trans "Specifications" %}</h2>
-                    <div class="section-actions">
-                        <button type="button" class="section-toggle" data-section="specs">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="section-content" id="specsSection">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            {{ form.price.label_tag }}
-                            <div class="input-group">
-                                <span class="input-group-text">$</span>
-                                {{ form.price }}
-                            </div>
-                            <div class="input-hint">{% trans "Enter the full price" %}</div>
-                        </div>
-                        
-                        <div class="form-group">
-                            {{ form.mileage.label_tag }}
-                            <div class="input-group">
-                                {{ form.mileage }}
-                                <span class="input-group-text">km</span>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            {{ form.fuel_type.label_tag }}
-                            <div class="select-wrapper">
-                                {{ form.fuel_type }}
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group" id="engineSizeGroup">
-                            {{ form.engine_size.label_tag }}
-                            {{ form.engine_size }}
-                            <div class="input-hint">{% trans "e.g. 2.0L, 250cc" %}</div>
-                        </div>
-                        
-                        <div class="form-group">
-                            {{ form.color.label_tag }}
-                            <div class="color-input">
-                                {{ form.color }}
-                                <span class="color-preview" id="colorPreview"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Description Section -->
-            <div class="form-section">
-                <div class="section-header">
-                    <h2><i class="fas fa-align-left"></i> {% trans "Description" %}</h2>
-                    <div class="section-actions">
-                        <button type="button" class="section-toggle" data-section="desc">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="section-content" id="descSection">
-                    <div class="form-group">
-                        {{ form.description.label_tag }}
-                        {{ form.description }}
-                        <div class="char-counter"><span id="charCount">0</span>/2000 {% trans "characters" %}</div>
-                    </div>
-                    
-                    <div class="form-group featured-checkbox">
-                        <label>
-                            {{ form.is_featured }}
-                            <span class="checkbox-custom"></span>
-                            <span class="checkbox-label">{% trans "Feature this listing" %}</span>
-                        </label>
-                        <div class="featured-hint">
-                            <i class="fas fa-info-circle"></i>
-                            {% trans "Featured listings appear at the top of search results" %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Images Section -->
-            <div class="form-section">
-                <div class="section-header">
-                    <h2><i class="fas fa-camera"></i> {% trans "Images" %}</h2>
-                    <div class="section-actions">
-                        <button type="button" class="section-toggle" data-section="images">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="section-content" id="imagesSection">
-                    <div class="form-group">
-                        <div class="upload-instructions">
-                            <p>{% trans "Upload high-quality photos (max 10)" %}</p>
-                            <p class="small">{% trans "First image will be used as the main photo" %}</p>
-                        </div>
-                        
-                        <label class="image-upload-area" id="uploadArea">
-                            <div class="upload-content">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <h3>{% trans "Drag & drop photos here" %}</h3>
-                                <p>{% trans "or click to browse files" %}</p>
-                                <span class="file-types">JPEG, PNG (Max 5MB each)</span>
-                            </div>
-                            {{ form.images }}
-                        </label>
-                        
-                        <div class="image-preview-grid" id="imagePreview">
-                            <div class="preview-placeholder">
-                                <i class="fas fa-car"></i>
-                                <p>{% trans "No images selected" %}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
-        
-        <div class="form-footer">
-            <button type="submit" class="submit-btn">
-                <i class="fas fa-plus-circle"></i> {% trans "Add Vehicle" %}
-            </button>
-            <a href="{% url 'vehicles:vehicle_list' %}" class="cancel-btn">
-                {% trans "Cancel" %}
-            </a>
+
+        <!-- Image preview -->
+        <div class="image-preview-section">
+            <label>Main Image Preview:</label>
+            <img id="imagePreview" src="#" alt="Preview" style="display:none;" />
         </div>
+
+        <button type="submit" class="submit-btn">Submit Vehicle</button>
     </form>
 </div>
 {% endblock %}

@@ -1,0 +1,42 @@
+<!-- electronics/templates/electronics/product_form.html -->
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+    {% trans " Product Form | Ethiopian Sheger Market place" %}
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'electronics/css/product_form.css' %}">
+{% endblock %}
+
+{% block content %}
+<h2>{{ form_title }}</h2>
+
+{% if form.errors %}
+  <div class="form-errors">
+    <ul>
+      {% for field in form %}
+        {% for error in field.errors %}
+          <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+        {% endfor %}
+      {% endfor %}
+      {% for error in form.non_field_errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <button type="submit">{% trans "Save" %}</button>
+</form>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'electronics/js/product_form.js' %}"></script>
+{% endblock %}

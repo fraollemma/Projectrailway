@@ -1,0 +1,162 @@
+/* ===== Base Variables ===== */
+:root {
+  --primary: #4361ee;
+  --primary-light: #4895ef;
+  --danger: #f72585;
+  --danger-dark: #d90429;
+  --dark: #1b263b;
+  --gray-dark: #495057;
+  --gray: #adb5bd;
+  --gray-light: #e9ecef;
+  --light: #f8f9fa;
+  --border-radius: 12px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ===== Delete Container ===== */
+.delete-product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.delete-product-box {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.delete-product-box:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Header ===== */
+.delete-product-header {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--danger), var(--danger-dark));
+  color: white;
+  text-align: center;
+}
+
+.delete-product-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+/* ===== Body ===== */
+.delete-product-body {
+  padding: 2rem;
+  text-align: center;
+}
+
+.delete-product-body p {
+  color: var(--gray-dark);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.delete-product-body strong {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+/* ===== Actions ===== */
+.delete-product-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cancel-button,
+.confirm-delete-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cancel-button {
+  background-color: var(--gray-light);
+  color: var(--dark);
+}
+
+.cancel-button:hover {
+  background-color: #d1d7e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.confirm-delete-button {
+  background: linear-gradient(135deg, var(--danger), var(--danger-dark));
+  color: white;
+}
+
+.confirm-delete-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(247, 37, 133, 0.3);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 576px) {
+  .delete-product-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-button,
+  .confirm-delete-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

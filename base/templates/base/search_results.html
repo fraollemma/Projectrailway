@@ -1,0 +1,115 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{% if query %}
+    {% trans "Search Results for" %} "{{ query }}" - {% trans "Sheger.city" %}
+{% else %}
+    {% trans "Search Products" %} - {% trans "Sheger.city" %}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<section class="search-results-section">
+    <div class="container">
+        <div class="search-header">
+            <h1>{% trans "Search Results" %}</h1>
+            
+            {% if query %}
+                <p class="search-query">{% trans "Showing results for" %} <strong>"{{ query }}"</strong></p>
+            {% endif %}
+            
+            <div class="search-stats">
+                {% if results_count > 0 %}
+                    <p>{% trans "Found" %} {{ results_count }} {% trans "results" %}</p>
+                    {% if houses_count or vehicles_count or electronics_count or clothing_count or poultry_count %}
+                    <div class="category-breakdown">
+                        {% if houses_count %}<span>🏠 {{ houses_count }} {% trans "Houses" %}</span>{% endif %}
+                        {% if vehicles_count %}<span>🚗 {{ vehicles_count }} {% trans "Cars" %}</span>{% endif %}
+                        {% if electronics_count %}<span>💻 {{ electronics_count }} {% trans "Electronics" %}</span>{% endif %}
+                        {% if clothing_count %}<span>👕 {{ clothing_count }} {% trans "Clothing" %}</span>{% endif %}
+                        {% if poultry_count %}<span>🐔 {{ poultry_count }} {% trans "Poultry" %}</span>{% endif %}
+                    </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+
+        {% if no_query %}
+        <div class="no-results">
+            <div class="no-results-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <h2>{% trans "What are you looking for?" %}</h2>
+            <p>{% trans "Enter a search term to find products across all categories" %}</p>
+        </div>
+        {% elif results_count == 0 %}
+        <div class="no-results">
+            <div class="no-results-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <h2>{% trans "No results found" %}</h2>
+            <p>{% trans "Try different keywords or browse our categories" %}</p>
+            <div class="suggested-categories">
+                <a href="{% url 'vehicles:vehicle_list' %}" class="category-suggestion">
+                    <i class="fas fa-car"></i>
+                    <span>{% trans "Cars" %}</span>
+                </a>
+                <a href="{% url 'houses:house_list' %}" class="category-suggestion">
+                    <i class="fas fa-home"></i>
+                    <span>{% trans "Houses" %}</span>
+                </a>
+                <a href="{% url 'electronics:product_list' %}" class="category-suggestion">
+                    <i class="fas fa-laptop"></i>
+                    <span>{% trans "Electronics" %}</span>
+                </a>
+                <a href="{% url 'clothings:clothing_list' %}" class="category-suggestion">
+                    <i class="fas fa-tshirt"></i>
+                    <span>{% trans "Clothing" %}</span>
+                </a>
+                <a href="{% url 'poultryitems:item_list' %}" class="category-suggestion">
+                    <i class="fas fa-feather-alt"></i>
+                    <span>{% trans "Poultry" %}</span>
+                </a>
+            </div>
+        </div>
+        {% else %}
+        <div class="search-results-grid">
+            {% for result in results %}
+            <div class="search-result-card {{ result.type }}-card">
+                <a href="{{ result.url }}" class="result-link">
+                    <div class="result-image">
+                        {% if result.type == 'house' and result.object.images.all %}
+                            <img src="{{ result.object.images.first.image.url }}" alt="{{ result.title }}">
+                        {% elif result.type == 'vehicle' and result.object.images.all %}
+                            <img src="{{ result.object.images.first.image.url }}" alt="{{ result.title }}">
+                        {% elif result.type == 'electronics' and result.object.images.all %}
+                            <img src="{{ result.object.images.first.image.url }}" alt="{{ result.title }}">
+                        {% elif result.type == 'clothing' and result.object.images.all %}
+                            <img src="{{ result.object.images.first.image.url }}" alt="{{ result.title }}">
+                        {% elif result.type == 'poultry' and result.object.main_image %}
+                            <img src="{{ result.object.main_image.url }}" alt="{{ result.title }}">
+                        {% else %}
+                            <img src="{% static 'base/images/default-product.jpg' %}" alt="{{ result.title }}">
+                        {% endif %}
+                        <span class="result-type-badge">{{ result.type }}</span>
+                    </div>
+                    
+                    <div class="result-content">
+                        <h3 class="result-title">{{ result.title }}</h3>
+                        <p class="result-description">{{ result.description|truncatewords:20 }}</p>
+                        <div class="result-price">${{ result.price }}</div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'base/css/search_results.css' %}">
+{% endblock %}

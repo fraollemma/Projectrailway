@@ -91,7 +91,7 @@ def profile_update(request):
         form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
         if form.is_valid():
             form.save()
-            return redirect('users:dashboard')
+            return redirect('users:profile')
     else:
         form = ProfileUpdateForm(instance=request.user.profile)
     return render(request, 'users/profile_update.html', {'form': form})

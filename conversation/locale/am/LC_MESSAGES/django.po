@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-18 23:38+0300\n"
+"POT-Creation-Date: 2025-08-11 01:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,23 +25,27 @@ msgstr "ውይይት ስለ"
 msgid "Send"
 msgstr "ላክ"
 
-#: .\conversation\templates\conversation\inbox.html:13
+#: .\conversation\templates\conversation\inbox.html:14
 msgid "Your Conversations"
 msgstr "የእርስዎ ውይይቶች"
 
-#: .\conversation\templates\conversation\inbox.html:28
+#: .\conversation\templates\conversation\inbox.html:29
 msgid "No Image"
 msgstr "ምስል የለም"
 
-#: .\conversation\templates\conversation\inbox.html:48
+#: .\conversation\templates\conversation\inbox.html:55
+msgid "typing"
+msgstr ""
+
+#: .\conversation\templates\conversation\inbox.html:65
 msgid "No messages yet"
 msgstr "መልእክቶች አልተላኩም"
 
-#: .\conversation\templates\conversation\inbox.html:58
+#: .\conversation\templates\conversation\inbox.html:75
 msgid "No conversations yet"
 msgstr "ምንም ውይይቶች አልተጀመሩም"
 
-#: .\conversation\templates\conversation\inbox.html:59
+#: .\conversation\templates\conversation\inbox.html:76
 msgid "Browse Items"
 msgstr "እቃዎችን ያስሱ"
 

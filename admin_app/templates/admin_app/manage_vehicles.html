@@ -1,0 +1,50 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Manage Vehicles{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+  <h1>Manage Vehicles</h1>
+  <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse:collapse;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Category</th>
+        <th>Type</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Price</th>
+        <th>Mileage</th>
+        <th>Fuel</th>
+        <th>Color</th>
+        <th>Created By</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for vehicle in vehicles %}
+      <tr>
+        <td>{{ vehicle.id }}</td>
+        <td>{{ vehicle.get_category_display }}</td>
+        <td>{{ vehicle.get_vehicle_type_display }}</td>
+        <td>{{ vehicle.make }}</td>
+        <td>{{ vehicle.model }}</td>
+        <td>{{ vehicle.year }}</td>
+        <td>{{ vehicle.price }}</td>
+        <td>{{ vehicle.mileage }}</td>
+        <td>{{ vehicle.get_fuel_type_display }}</td>
+        <td>{{ vehicle.color }}</td>
+        <td>{{ vehicle.created_by.username }}</td>
+        <td>{{ vehicle.created_at }}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="12">No vehicles available.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

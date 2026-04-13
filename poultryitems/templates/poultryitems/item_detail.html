@@ -1,156 +1,100 @@
-<!-- item detail -->
 {% extends 'base/base.html' %}
 {% load static %}
 {% load i18n %}
 
+{% block title %}
+    {% trans " Poultry Item Details | Ethiopian Sheger Market place" %}
+{% endblock %}
+
 {% block css %}
-<link rel="stylesheet" href="{% static 'poultryitems/css/item_detail.css' %}" preload>
+<link rel="stylesheet" href="{% static 'poultryitems/css/item_detail.css' %}">
 {% endblock %}
 
 {% block content %}
 <main class="item-detail" itemscope itemtype="http://schema.org/Product">
-    <!-- Seller Information -->
-    <section class="seller-card" aria-labelledby="seller-heading">
-        <div class="seller-profile">
-            <a href="{% url 'users:seller_profile' item.created_by.id %}" class="seller-link" aria-label="View seller profile">
-                {% if item.created_by.profile.profile_picture %}
-                    <img src="{{ item.created_by.profile.profile_picture.url }}" 
-                         alt="Seller profile picture" 
-                         class="seller-avatar"
-                         width="60" 
-                         height="60"
-                         loading="lazy">
-                {% else %}
-                    <div class="seller-avatar default-avatar" aria-hidden="true">
-                        <i class="fas fa-user-circle" role="presentation"></i>
-                    </div>
-                {% endif %}
-                <div class="seller-info">
-                    <h2 id="seller-heading" class="seller-name">{{ item.created_by.profile.user_name|default:item.created_by.phone_number }}</h2>
-                    <span class="seller-label">{% trans "Seller" %}</span>
-                </div>
-            </a>
-        </div>
-        
-        {% if request.user.is_authenticated and request.user != item.created_by %}
-        <div class="seller-actions">
-            <a href="{% url 'conversation:new' item.id %}" class="button contact-button" aria-label="Contact seller">
-                <i class="fas fa-envelope" aria-hidden="true"></i> 
-                <span>{% trans "Contact" %}</span>
-            </a>
-        </div>
-        {% endif %}
-    </section>
+  <div class="item-container">
+    
+    <!-- Left: Main Image + Thumbnails -->
+    <div class="image-section">
+      <img src="{{ item.main_image.url }}" alt="{{ item.name }}" class="main-image" itemprop="image">
 
-    <!-- Product Main Content -->
-    <article class="product-content">
+      <div class="thumbnail-row">
+        {% for image in item.sub_images.all %}
+          <img src="{{ image.image.url }}" alt="Thumbnail {{ forloop.counter }}" class="thumbnail">
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Right: Details -->
+    <div class="details-section">
+      <div class="title-row">
         <h1 class="product-title" itemprop="name">{{ item.name }}</h1>
-        
-        <figure class="product-gallery">
-            <img src="{{ item.main_image.url }}" 
-                 alt="{{ item.name }}" 
-                 class="product-image" 
-                 itemprop="image"
-                 width="800"
-                 height="600"
-                 loading="eager"
-                 data-lightbox="product-image">
-            
-            <figcaption class="visually-hidden">Main product image</figcaption>
-            
-            <div class="product-interactions">
-                <button type="button" 
-                        class="interaction-button like-button"
-                        aria-label="Like this item"
-                        data-item-id="{{ item.id }}"
-                        data-action="like">
-                    <i class="fas fa-thumbs-up" aria-hidden="true"></i> 
-                    <span class="interaction-count" id="like-count" aria-live="polite">{{ item.like_count }}</span>
-                </button>
-                
-                <button type="button" 
-                        class="interaction-button share-button"
-                        aria-label="Share this item"
-                        data-item-id="{{ item.id }}"
-                        data-action="share">
-                    <i class="fas fa-share-alt" aria-hidden="true"></i> 
-                    <span class="interaction-count" id="share-count" aria-live="polite">{{ item.share_count }}</span>
-                </button>
 
-                <button type="button" 
-                        class="interaction-button cart-button"
-                        aria-label="Add to cart"
-                        data-add-url="{% url 'poultryitems:add_to_cart' item.id %}"
-                        id="add-to-cart-btn">
-                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                    <span>{% trans "Add to Cart" %}</span>
-                </button>
-            </div>
-            
-            <div class="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                <meta itemprop="priceCurrency" content="ETB">
-                <span itemprop="price" content="{{ item.price }}">ETB {{ item.price }}</span>
-            </div>
-        </figure>
-        
-        <div class="product-meta">
-            <p class="meta-item">
-                <i class="far fa-clock" aria-hidden="true"></i> 
-                <time datetime="{{ item.created_at|date:'c' }}" itemprop="datePosted">{{ item.created_at|date:"M d, Y" }}</time>
-            </p>
-            <p class="meta-item">
-                <i class="fas fa-map-marker-alt" aria-hidden="true"></i> 
-                <span itemprop="availableAtOrFrom">{{ item.location }}</span>
-            </p>
-        </div>
-        
-        <section class="product-description" itemprop="description">
-            <h2 class="section-title">{% trans "Description" %}</h2>
-            <div class="description-content">{{ item.description|linebreaks }}</div>
-        </section>
-        
-        {% if item.sub_images.all %}
-        <section class="product-gallery-section" aria-labelledby="gallery-heading">
-            <h2 id="gallery-heading" class="section-title">
-                <i class="far fa-images" aria-hidden="true"></i> 
-                {% trans "Gallery" %}
-            </h2>
-            <div class="gallery-grid">
-                {% for image in item.sub_images.all %}
-                <figure class="gallery-item">
-                    <a href="{{ image.image.url }}" 
-                       data-lightbox="product-gallery" 
-                       data-title="{{ item.name }}"
-                       aria-label="View image {{ forloop.counter }} in larger size">
-                        <img src="{{ image.image.url }}" 
-                             alt="Product image {{ forloop.counter }}" 
-                             class="gallery-thumbnail"
-                             width="200"
-                             height="150"
-                             loading="lazy">
-                    </a>
-                </figure>
-                {% endfor %}
-            </div>
-        </section>
+        {% if request.user.is_authenticated and request.user.is_superuser %}
+          <div class="admin-actions">
+            <a href="{% url 'poultryitems:item_edit' item.id %}" class="btn small">Edit</a>
+            <form action="{% url 'poultryitems:item_delete' item.id %}" method="post" class="inline-form">
+              {% csrf_token %}
+              <button type="submit" class="btn small danger">Delete</button>
+            </form>
+          </div>
         {% endif %}
-    </article>
+      </div>
 
-    {% if request.user.is_authenticated and request.user.is_superuser %}
-    <section class="product-actions" aria-label="Product management actions">
-        <a href="{% url 'poultryitems:item_edit' item.id %}" class="button edit-button" aria-label="Edit this item">
-            <i class="fas fa-edit" aria-hidden="true"></i> 
-            {% trans "Edit" %}
-        </a>
-        <form action="{% url 'items:item_delete' item.id %}" method="post" class="delete-form">
-            {% csrf_token %}
-            <button type="submit" class="button delete-button" aria-label="Delete this item">
-                <i class="fas fa-trash" aria-hidden="true"></i> 
-                {% trans "Delete" %}
-            </button>
-        </form>
-    </section>
-    {% endif %}
+      <p class="meta"><span>{{ item.location }}</span> • <time datetime="{{ item.created_at|date:'c' }}">{{ item.created_at|date:"F d, Y" }}</time></p>
+
+      <div class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <meta itemprop="priceCurrency" content="USD">
+        <span itemprop="price">${{ item.price }}</span>
+      </div>
+
+      <section class="description" itemprop="description">
+        <h2>Description</h2>
+        <p>{{ item.description|linebreaks }}</p>
+      </section>
+
+      <!-- Buttons -->
+      <div class="actions">
+        <button type="button" class="like-btn" data-item-id="{{ item.id }}" data-action="like">
+          <i class="fas fa-thumbs-up"></i> <span class="interaction-count">{{ item.like_count }}</span>
+        </button>
+
+        <button type="button" class="share-btn" data-item-id="{{ item.id }}" data-action="share">
+          <i class="fas fa-share-alt"></i> <span class="interaction-count">{{ item.share_count }}</span>
+        </button>
+
+        <a href="{% url 'cart:add_to_cart' 'poultryitems' 'item' item.id %}" class="btn add-cart">Add to Cart</a>
+      </div>
+
+      <!-- Seller Info -->
+      {% if item.created_by %}
+      <section class="seller-info">
+        {% if item.created_by.profile.profile_picture %}
+          <img src="{{ item.created_by.profile.profile_picture.url }}" alt="Seller photo" class="seller-avatar">
+        {% endif %}
+        <div>
+          <h3 class="seller-name">{{ item.created_by.get_full_name|default:item.created_by.username }}</h3>
+          <p class="seller-email">{{ item.created_by.email }}</p>
+        </div>
+      </section>
+
+      <div class="seller-socials">
+        {% if item.created_by.profile.telegram %}
+          <a href="https://t.me/{{ item.created_by.profile.telegram }}" target="_blank"><i class="fab fa-telegram"></i></a>
+        {% endif %}
+        {% if item.created_by.profile.facebook %}
+          <a href="https://facebook.com/{{ item.created_by.profile.facebook }}" target="_blank"><i class="fab fa-facebook"></i></a>
+        {% endif %}
+        {% if item.created_by.profile.instagram %}
+          <a href="https://instagram.com/{{ item.created_by.profile.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
+        {% endif %}
+        {% if item.created_by.profile.linkedin %}
+          <a href="https://linkedin.com/in/{{ item.created_by.profile.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
 </main>
 {% endblock %}
 

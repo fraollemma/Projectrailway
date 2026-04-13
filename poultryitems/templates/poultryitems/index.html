@@ -1,99 +1,134 @@
-<!-- poultryitems/templates/poultryitems/index.html -->
 {% extends 'base/base.html' %}
 {% load static %}
 {% load i18n %}
 
+{% block title %}
+    {% trans " Poultry | Ethiopian Sheger Market place" %}
+{% endblock %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'poultryitems/css/index.css' %}">
 {% endblock %}
-
+  
 {% block content %}
+
 <!-- Hero Section with Video Background -->
 <section class="hero">
-    <video autoplay muted loop class="hero-video">
+    <video autoplay muted loop class="hero__video">
         <source src="{% static 'poultryitems/videos/chicken-farm.mp4' %}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1>Premium Poultry Products & Farming Solutions</h1>
-        <p>High-quality poultry products and expert farming training to help you succeed in the poultry business</p>
-        <a href="#services" class="cta-button">Explore Our Services</a>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+        <h1 class="hero__title">Premium Poultry Products & Farming Solutions</h1>
+        <p class="hero__description">High-quality poultry products and expert farming training to help you succeed in the poultry business</p>
+        <a href="#services" class="button button--primary">Explore Our Services</a>
     </div>
 </section>
 
 <!-- Services Section -->
 <section class="services" id="services">
     <h2 class="section-title">Our Services</h2>
-    <div class="services-grid">
-        <div class="service-card">
-            <div class="service-image">
+    <div class="services__grid">
+        <article class="service-card">
+            <div class="service-card__image">
                 <img src="{% static 'poultryitems/images/eggs.jpg' %}" alt="Fresh Eggs">
             </div>
-            <div class="service-content">
-                <h3>Fresh Eggs Supply</h3>
-                <p>We provide farm-fresh eggs daily from our free-range chickens, ensuring quality and nutrition.</p>
-                <a href="#" class="cta-button">View More</a>
+            <div class="service-card__content">
+                <h3 class="service-card__title">Fresh Eggs Supply</h3>
+                <p class="service-card__description">We provide farm-fresh eggs daily from our free-range chickens, ensuring quality and nutrition.</p>
+                <a href="{% url 'poultryitems:egg_sellers' %}" class="button button--secondary">View More</a>
             </div>
-        </div>
+        </article>
         
-        <div class="service-card">
-            <div class="service-image">
+        <article class="service-card">
+            <div class="service-card__image">
                 <img src="{% static 'poultryitems/images/chicken-meat.jpg' %}" alt="Poultry Meat">
             </div>
-            <div class="service-content">
-                <h3>Poultry Items</h3>
-                <p>Healthy, antibiotic-free chicken meat processed under the highest hygiene standards.</p>
-                <a href="{% url 'poultryitems:item_list' %}"  class="cta-button">View More</a>
+            <div class="service-card__content">
+                <h3 class="service-card__title">Poultry Items</h3>
+                <p class="service-card__description">Healthy, antibiotic-free chicken meat processed under the highest hygiene standards.</p>
+                <a href="{% url 'poultryitems:item_list' %}" class="button button--secondary">View More</a>
             </div>
-        </div>
+        </article>
         
-        <div class="service-card">
-            <div class="service-image">
+        <article class="service-card">
+            <div class="service-card__image">
                 <img src="{% static 'poultryitems/images/hatchery.jpg' %}" alt="Day-old Chicks">
             </div>
-            <div class="service-content">
-                <h3>Poultry Chichens</h3>
-                <p>High-quality, vaccinated day-old chicks from top breeds for your poultry farming needs.</p>
-                <a href="#" class="cta-button">View More</a>
+            <div class="service-card__content">
+                <h3 class="service-card__title">Poultry Chickens</h3>
+                <p class="service-card__description">High-quality, vaccinated day-old chicks from top breeds for your poultry farming needs.</p>
+                <a href="{% url 'poultryitems:chicken_sellers_list' %}" class="button button--secondary">View More</a>
             </div>
-        </div>
+        </article>
     </div>
 </section>
 
 <!-- Training Section -->
-<section class="training">
-    <div class="training-container">
-        <div class="training-content">
-            <h2>Poultry Farming Training</h2>
-            <p>Join our comprehensive poultry farming training program designed for both beginners and experienced farmers. Learn modern techniques, best practices, and business strategies to maximize your poultry farming success.</p>
-            <p>Our hands-on training covers everything from housing and feeding to disease control and marketing.</p>
-            <a href="#" class="cta-button">Enroll Now</a>
+<section class="training-section">
+    <div class="training-section__header">
+        <h2 class="training-section__title">Our Expert Services</h2>
+        <p class="training-section__subtitle">Empowering your poultry farming success with knowledge and expertise</p>
+    </div>
+    
+    <div class="training-cards">
+        <div class="training-card">
+            <div class="training-card__image-container">
+                <img src="{% static 'poultryitems/images/training.jpg' %}" alt="Poultry Training" class="training-card__image">
+                <div class="training-card__overlay"></div>
+            </div>
+            <div class="training-card__content">
+                <h3 class="training-card__title">Poultry Farming Training</h3>
+                <ul class="training-card__features">
+                    <li class="training-card__feature">Modern farming techniques</li>
+                    <li class="training-card__feature">Best practices & strategies</li>
+                    <li class="training-card__feature">Hands-on learning experience</li>
+                    <li class="training-card__feature">Disease control & prevention</li>
+                    <li class="training-card__feature">Marketing & business development</li>
+                </ul>
+                <p class="training-card__description">Comprehensive program for beginners and experienced farmers to maximize poultry farming success.</p>
+                <a href="{% url 'poultryitems:poultry_trainings' %}" class="button button--primary training-card__button">Enroll Now</a>
+            </div>
         </div>
-        <div class="training-image">
-            <img src="{% static 'poultryitems/images/training.jpg' %}" alt="Poultry Training">
+        
+        <div class="training-card">
+            <div class="training-card__image-container">
+                <img src="{% static 'poultryitems/images/training.jpg' %}" alt="Poultry Consultancy" class="training-card__image">
+                <div class="training-card__overlay"></div>
+            </div>
+            <div class="training-card__content">
+                <h3 class="training-card__title">Poultry Farming Consultancy</h3>
+                <ul class="training-card__features">
+                    <li class="training-card__feature">Expert guidance & support</li>
+                    <li class="training-card__feature">Farm setup assistance</li>
+                    <li class="training-card__feature">Operational optimization</li>
+                    <li class="training-card__feature">Productivity improvement</li>
+                    <li class="training-card__feature">Bird health & welfare</li>
+                </ul>
+                <p class="training-card__description">Professional consultancy services for all aspects of poultry farming management and operations.</p>
+                <a href="{% url 'poultryitems:veterinary_consultancy' %}" class="button button--primary training-card__button">Get Started</a>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Products Section -->
- <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-
 <section class="products">
     <h2 class="section-title">Featured Products</h2>
-    <div class="products-grid">
+    <div class="products__grid">
         {% for product in featured_products %}
-        <div class="product-card">
-            <div class="product-image">
+        <article class="product-card">
+            <div class="product-card__image">
                 <img src="{{ product.main_image.url }}" alt="{{ product.name }}">
             </div>
-            <div class="product-info">
-                <h3>{{ product.name }}</h3>
-                <div class="price">${{ product.price }}</div>
-                <p>{{ product.description }}</p>
-                <a href="#" class="buy-button">Order Now</a>
+            <div class="product-card__info">
+                <h3 class="product-card__title">{{ product.name }}</h3>
+                <div class="product-card__price">${{ product.price }}</div>
+                <p class="product-card__description">{{ product.description }}</p>
+                <a href="#" class="button button--secondary">Order Now</a>
             </div>
-        </div>
+        </article>
         {% endfor %}
     </div>
 </section>
@@ -115,7 +150,7 @@
             threshold: 0.1
         });
         
-        document.querySelectorAll('.service-card, .training-content, .training-image, .product-card').forEach(el => {
+        document.querySelectorAll('.service-card, .training__content, .training__image, .product-card').forEach(el => {
             observer.observe(el);
         });
     });

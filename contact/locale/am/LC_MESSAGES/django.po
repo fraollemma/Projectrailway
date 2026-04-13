@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-22 03:52+0300\n"
+"POT-Creation-Date: 2025-08-11 01:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,120 +17,123 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\forms.py:12 .\forms.py:29 .\templates\contact\contact_us.html:17
+#: .\contact\forms.py:12 .\contact\forms.py:29
+#: .\contact\templates\contact\contact_us.html:17
 msgid "Your Name"
 msgstr ""
 
-#: .\forms.py:16 .\forms.py:30 .\templates\contact\contact_us.html:21
+#: .\contact\forms.py:16 .\contact\forms.py:30
+#: .\contact\templates\contact\contact_us.html:21
 msgid "Your Email"
 msgstr ""
 
-#: .\forms.py:20 .\forms.py:31 .\models.py:7
-#: .\templates\contact\contact_us.html:25
-#: .\templates\contact\received_messages.html:20
+#: .\contact\forms.py:20 .\contact\forms.py:31 .\contact\models.py:7
+#: .\contact\templates\contact\contact_us.html:25
+#: .\contact\templates\contact\received_messages.html:20
 msgid "Subject"
 msgstr ""
 
-#: .\forms.py:24 .\forms.py:32 .\templates\contact\contact_us.html:29
+#: .\contact\forms.py:24 .\contact\forms.py:32
+#: .\contact\templates\contact\contact_us.html:29
 msgid "Your Message"
 msgstr ""
 
-#: .\models.py:5 .\templates\contact\received_messages.html:18
+#: .\contact\models.py:5 .\contact\templates\contact\received_messages.html:18
 msgid "Name"
 msgstr ""
 
-#: .\models.py:6 .\templates\contact\received_messages.html:19
+#: .\contact\models.py:6 .\contact\templates\contact\received_messages.html:19
 msgid "Email"
 msgstr ""
 
-#: .\models.py:8
+#: .\contact\models.py:8
 msgid "Message"
 msgstr ""
 
-#: .\models.py:9
+#: .\contact\models.py:9
 msgid "Created at"
 msgstr ""
 
-#: .\models.py:10
+#: .\contact\models.py:10
 msgid "Is read"
 msgstr ""
 
-#: .\models.py:13
+#: .\contact\models.py:13
 msgid "Contact Message"
 msgstr ""
 
-#: .\models.py:14
+#: .\contact\models.py:14
 msgid "Contact Messages"
 msgstr ""
 
-#: .\templates\contact\confirm_delete.html:6
+#: .\contact\templates\contact\confirm_delete.html:6
 msgid "Confirm Deletion"
 msgstr ""
 
-#: .\templates\contact\confirm_delete.html:7
+#: .\contact\templates\contact\confirm_delete.html:7
 msgid "Are you sure you want to delete this message?"
 msgstr ""
 
-#: .\templates\contact\confirm_delete.html:10
-#: .\templates\contact\view_message.html:17
+#: .\contact\templates\contact\confirm_delete.html:10
+#: .\contact\templates\contact\view_message.html:17
 msgid "From:"
 msgstr ""
 
-#: .\templates\contact\confirm_delete.html:11
+#: .\contact\templates\contact\confirm_delete.html:11
 msgid "Subject:"
 msgstr ""
 
-#: .\templates\contact\confirm_delete.html:12
+#: .\contact\templates\contact\confirm_delete.html:12
 msgid "Message:"
 msgstr ""
 
-#: .\templates\contact\confirm_delete.html:17
+#: .\contact\templates\contact\confirm_delete.html:17
 msgid "Yes, delete"
 msgstr ""
 
-#: .\templates\contact\confirm_delete.html:18
+#: .\contact\templates\contact\confirm_delete.html:18
 msgid "Cancel"
 msgstr ""
 
-#: .\templates\contact\contact_us.html:11
+#: .\contact\templates\contact\contact_us.html:11
 msgid "Get in Touch"
 msgstr ""
 
-#: .\templates\contact\contact_us.html:12
+#: .\contact\templates\contact\contact_us.html:12
 msgid ""
 "We would love to hear from you. Please fill out the form below and we will "
 "get back to you as soon as possible."
 msgstr ""
 
-#: .\templates\contact\contact_us.html:32
+#: .\contact\templates\contact\contact_us.html:32
 msgid "Send Message"
 msgstr ""
 
-#: .\templates\contact\received_messages.html:11
+#: .\contact\templates\contact\received_messages.html:11
 msgid "Received Messages"
 msgstr ""
 
-#: .\templates\contact\received_messages.html:21
+#: .\contact\templates\contact\received_messages.html:21
 msgid "Received"
 msgstr ""
 
-#: .\templates\contact\received_messages.html:22
+#: .\contact\templates\contact\received_messages.html:22
 msgid "Actions"
 msgstr ""
 
-#: .\templates\contact\received_messages.html:34
+#: .\contact\templates\contact\received_messages.html:34
 msgid "View"
 msgstr ""
 
-#: .\templates\contact\received_messages.html:37
+#: .\contact\templates\contact\received_messages.html:37
 msgid "Delete"
 msgstr ""
 
-#: .\templates\contact\received_messages.html:50
+#: .\contact\templates\contact\received_messages.html:50
 msgid "previous"
 msgstr ""
 
-#: .\templates\contact\received_messages.html:53
+#: .\contact\templates\contact\received_messages.html:53
 #, python-format
 msgid ""
 "\n"
@@ -138,38 +141,38 @@ msgid ""
 "            "
 msgstr ""
 
-#: .\templates\contact\received_messages.html:58
+#: .\contact\templates\contact\received_messages.html:58
 msgid "next"
 msgstr ""
 
-#: .\templates\contact\received_messages.html:64
+#: .\contact\templates\contact\received_messages.html:64
 msgid "No messages received yet."
 msgstr ""
 
-#: .\templates\contact\view_message.html:11
+#: .\contact\templates\contact\view_message.html:11
 msgid "Message Details"
 msgstr ""
 
-#: .\templates\contact\view_message.html:18
+#: .\contact\templates\contact\view_message.html:18
 msgid "Received:"
 msgstr ""
 
-#: .\templates\contact\view_message.html:28
+#: .\contact\templates\contact\view_message.html:28
 msgid "Back to Messages"
 msgstr ""
 
-#: .\templates\contact\view_message.html:31
+#: .\contact\templates\contact\view_message.html:31
 msgid "Delete Message"
 msgstr ""
 
-#: .\templates\contact\view_message.html:34
+#: .\contact\templates\contact\view_message.html:34
 msgid "Reply"
 msgstr ""
 
-#: .\views.py:17
+#: .\contact\views.py:17
 msgid "Thank you for your message! We will get back to you soon."
 msgstr ""
 
-#: .\views.py:50
+#: .\contact\views.py:50
 msgid "Message has been deleted successfully."
 msgstr ""

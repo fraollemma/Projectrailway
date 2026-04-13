@@ -53,17 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     stockInput.addEventListener('input', updateStockIndicator);
     
-    // Color Preview
-    const colorInput = document.getElementById('id_color');
-    const colorPreview = document.getElementById('colorPreview');
-    
-    colorInput.addEventListener('input', function() {
-        colorPreview.style.backgroundColor = this.value || '#ffffff';
-    });
-    
-    // Initialize color preview
-    colorPreview.style.backgroundColor = colorInput.value || '#ffffff';
-    
     // Description Character Counter
     const descriptionInput = document.getElementById('id_description');
     const charCount = document.getElementById('charCount');
@@ -162,8 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const closePreviewModal = previewModal.querySelector('.close-modal');
     
     previewBtn.addEventListener('click', function() {
-        // Here you would collect form data and generate a preview
-        // For now, we'll just show a placeholder
         const previewContent = `
             <div class="modal-header">
                 <h3>Item Preview</h3>
@@ -178,7 +165,6 @@ document.addEventListener('DOMContentLoaded', function() {
         previewModal.querySelector('.modal-content').innerHTML = previewContent;
         previewModal.style.display = 'block';
         
-        // Reattach close event for the new close button
         previewModal.querySelector('.close-modal').addEventListener('click', function() {
             previewModal.style.display = 'none';
         });
@@ -196,8 +182,6 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(e) {
         let isValid = true;
         
-        // Add your custom validation logic here
-        // For example:
         const price = parseFloat(priceInput.value);
         const discount = parseFloat(discountInput.value);
         

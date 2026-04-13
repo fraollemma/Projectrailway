@@ -15,11 +15,9 @@ class ConversationConsumer(AsyncWebsocketConsumer):
         self.room_group_name = f'chat_{self.conversation_id}'
         
         try:
-            # Convert all synchronous ORM calls to async
-            conversation = await sync_to_async(Conversation.objects.select_related('item').get)(pk=self.conversation_id)
+            conversation = await sync_to_async(Conversation.objects.get)(pk=self.conversation_id)
             user = self.scope["user"]
             
-            # Async membership check
             is_member = await sync_to_async(conversation.members.filter(id=user.id).exists)()
             if not is_member:
                 await self.close(code=4001)
@@ -52,30 +50,28 @@ class ConversationConsumer(AsyncWebsocketConsumer):
             
             if not message_content or not sender_username:
                 raise ValueError("Missing required fields")
-
-            # Async ORM operations
-            conversation = await sync_to_async(Conversation.objects.select_related('item').get)(pk=self.conversation_id)
+            conversation = await sync_to_async(Conversation.objects.get)(pk=self.conversation_id)
             sender = await sync_to_async(User.objects.get)(username=sender_username)
             
-            # Update conversation
             await sync_to_async(setattr)(conversation, 'modified_at', timezone.now())
             await sync_to_async(conversation.save)()
             
-            # Create message
             message = await sync_to_async(ConversationMessage.objects.create)(
                 conversation=conversation,
                 content=message_content,
                 created_by=sender
             )
-
-            # Process members and unread counts
             members = await sync_to_async(list)(conversation.members.all())
             for member in members:
                 if member.id != sender.id:
                     cache_key = f"unread_{member.id}_{conversation.id}"
                     try:
-                        await sync_to_async(cache.incr)(cache_key)
-                        current_count = await sync_to_async(cache.get)(cache_key, 0)
+                        existing_count = await sync_to_async(cache.get)(cache_key)
+                        if existing_count is None:
+                            current_count = 1
+                            await sync_to_async(cache.set)(cache_key, current_count, timeout=300)
+                        else:
+                            current_count = await sync_to_async(cache.incr)(cache_key)
                         
                         await self.channel_layer.group_send(
                             f"user_{member.id}",
@@ -87,8 +83,6 @@ class ConversationConsumer(AsyncWebsocketConsumer):
                         )
                     except Exception as e:
                         print(f"Unread count error: {e}")
-
-            # Broadcast message to conversation group
             await self.channel_layer.group_send(
                 self.room_group_name,
                 {

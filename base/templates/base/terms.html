@@ -2,6 +2,10 @@
 {% load static %}
 {% load i18n %}
 
+{% block title %}
+    {% trans "Terms | Ethiopian Sheger Market place" %}
+{% endblock %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'base/css/terms.css' %}">
 {% endblock %}
@@ -11,6 +15,8 @@
 <div class="terms">
     <h1>{% trans "Terms" %}</h1>
     <p>{% trans "We are a company dedicated to providing the best services to our customers." %}</p>
+    <h2>{% trans "User Agreement" %}</h2>
+    <p>{% trans "By using our website, you agree to the following terms and conditions." %}</p>
 </div>
 
 {% endblock %}

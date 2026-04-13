@@ -2,107 +2,90 @@
 {% load static %}
 {% load i18n %}
 
+{% block title %}
+    {% trans " Vehicle List | Ethiopian Sheger Market place" %}
+{% endblock %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'vehicles/css/vehicle_list.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock %}
 
 {% block content %}
+<div class="product-container">
 
-<section class="hero-slider">
-        <div class="slider-container">
-            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                <div class="container">
-                    <div class="slide-content">
-                        <h1>Find Your Dream Home Today</h1>
-                        <p>Thousands of properties waiting for you</p>
-                        <a href="#" class="btn btn-primary">Browse Listings</a>
-                    </div>
-                </div>
-            </div>
-            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1494972308805-463bc619d34e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80');">
-                <div class="container">
-                    <div class="slide-content">
-                        <h1>Latest Car Models</h1>
-                        <p>New arrivals with amazing deals</p>
-                        <a href="#" class="btn btn-primary">View Inventory</a>
-                    </div>
-                </div>
-            </div>
-            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1526&q=80');">
-                <div class="container">
-                    <div class="slide-content">
-                        <h1>Summer Tech Sale</h1>
-                        <p>Up to 40% off on electronics</p>
-                        <a href="#" class="btn btn-primary">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-controls">
-                <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
-                <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
-            </div>
-            <div class="slider-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-    </section>
-
-<div class="vehicle-container">
-    <!-- Main Vehicle List -->
-    <main class="vehicle-listings">
-        <div class="list-header">
-            <h2>{% trans "Available Vehicles" %}</h2>
-            <div class="sort-options">
-                <select id="sortBy">
-                    <option value="newest">{% trans "Newest First" %}</option>
-                    <option value="price_asc">{% trans "Price: Low to High" %}</option>
-                    <option value="price_desc">{% trans "Price: High to Low" %}</option>
-                    <option value="mileage_asc">{% trans "Mileage: Low to High" %}</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="vehicle-grid">
+    <div class="list-header">
+            <a href="{% url 'vehicles:vehicle_add' %}"  class="add-product-btn">
+                <i class="fas fa-plus"></i> Add New Vehicle
+            </a>
+    </div> 
+    
+<main class="product-listings">
+        <div class="product-grid">
+ 
             {% for vehicle in vehicles %}
-            <div class="vehicle-card" data-category="{{ vehicle.category.slug }}" data-price="{{ vehicle.price }}">
+            <div class="product-card" data-category="{{ vehicle.category.slug }}" data-price="{{ vehicle.price }}">
+
                 <div class="card-image">
-                    <img src="{{ vehicle.images.first.image.url }}" alt="{{ vehicle.make }} {{ vehicle.model }}" loading="lazy">
-                    <span class="featured-badge {% if vehicle.is_featured %}featured{% endif %}">
-                        <i class="fas fa-star"></i> {% trans "Featured" %}
-                    </span>
-                </div>
+            <img src="{{ vehicle.images.first.image.url }}" alt="{{ vehicle.make }} {{ vehicle.model }}" loading="lazy">
+            <span class="carted-badge {% if vehicle.is_carted %}carted{% endif %}">
+                <i class="fas fa-shopping-cart"></i>
+            </span>
+    
+            <div class="interaction-buttons">
+                <button type="button"
+        class="interaction-button like-button {% if vehicle.has_liked %}liked{% endif %}"
+        aria-label="Like this item"
+        data-item-id="{{ vehicle.id }}"
+        data-action="like">
+    <i class="fas fa-thumbs-up"></i>
+    <span class="interaction-count">{{ vehicle.like_count }}</span>
+</button>
+                <button type="button" 
+                        class="interaction-button share-button"
+                        aria-label="Share this vehicle"
+                        data-item-id="{{ vehicle.id }}"
+                        data-action="share"> 
+                    <i class="fas fa-share-alt" aria-hidden="true"></i> 
+                    <span class="interaction-count">{{ vehicle.share_count }}</span>
+                </button>
+            </div>
+         </div>
+                
                 <div class="card-content">
-                    <div class="vehicle-meta">
-                        <span class="vehicle-year">{{ vehicle.year }}</span>
-                        <span class="vehicle-mileage"><i class="fas fa-tachometer-alt"></i> {{ vehicle.mileage|floatformat:"0" }} km</span>
+                    <div class="product-meta">
+
+                        <span class="product-year">{{ vehicle.year }}</span>
+                        <span class="product-mileage"><i class="fas fa-tachometer-alt"></i> {{ vehicle.mileage|floatformat:"0" }} km</span>
                     </div>
+
                     <h3>{{ vehicle.make }} {{ vehicle.model }}</h3>
-                    <div class="vehicle-specs">
+
+                    <div class="product-specs">
                         <span><i class="fas fa-gas-pump"></i> {{ vehicle.get_fuel_type_display }}</span>
                         <span><i class="fas fa-cog"></i> {{ vehicle.engine_size|default:"N/A" }}</span>
                     </div>
-                    <div class="vehicle-price">
+                    <div class="product-price">
                         <span class="price">${{ vehicle.price|floatformat:"0" }}</span>
-                        <span class="price-label">{% trans "or" %} ${{ vehicle.monthly_payment|default:"0"|floatformat:"0" }}/mo</span>
                     </div>
                     <a href="{% url 'vehicles:vehicle_detail' vehicle.slug %}" class="view-details">
+                        <div class="fraol">
                         {% trans "View Details" %} <i class="fas fa-chevron-right"></i>
+                        </div>
                     </a>
+                    <div class="card-actions">
+    <a href="{% url 'vehicles:vehicle_edit' vehicle.slug %}" class="edit-btn" title="Edit">
+        <i class="fas fa-edit"></i>
+    </a>
+    <a href="{% url 'vehicles:vehicle_delete' vehicle.slug %}" class="delete-btn" title="Delete">
+        <i class="fas fa-trash"></i>
+    </a>
+                    </div>
                 </div>
-            </div>
-            {% empty %}
-            <div class="no-results">
-                <i class="fas fa-car-crash"></i>
-                <h3>{% trans "No vehicles found" %}</h3>
-                <p>{% trans "Try adjusting your filters" %}</p>
             </div>
             {% endfor %}
         </div>
 
-        <!-- Pagination -->
         {% if is_paginated %}
         <div class="pagination">
             {% if page_obj.has_previous %}
@@ -126,8 +109,9 @@
             {% endif %}
         </div>
         {% endif %}
-    </main>
+</main>
 </div>
+
 {% endblock %}
 
 {% block js %}

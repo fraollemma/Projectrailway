@@ -1,9 +1,15 @@
 # conversation/models.py
 from django.db import models
 from django.conf import settings
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 
 class Conversation(models.Model):
-    item = models.ForeignKey('poultryitems.Item', related_name='conversations', on_delete=models.CASCADE)
+    # Replace the ForeignKey with GenericForeignKey
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    item = GenericForeignKey('content_type', 'object_id')
+    
     members = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='conversations')
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
@@ -20,3 +26,4 @@ class ConversationMessage(models.Model):
 
     class Meta:
         ordering = ('created_at',)
+    

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-18 23:37+0300\n"
+"POT-Creation-Date: 2025-08-11 01:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,9 +33,22 @@ msgstr "Maqaa fayyadamaa:"
 
 #: .\users\templates\users\login.html:24
 #: .\users\templates\users\profile.html:21
+#: .\users\templates\users\profile_update.html:24
 #: .\users\templates\users\register.html:23
 msgid "Phone Number:"
 msgstr "Lakkoofsa bilbilaa:"
+
+#: .\users\templates\users\login.html:32
+#, fuzzy
+#| msgid "Already have an account?"
+msgid "Don't have an account?"
+msgstr "Akaakuu dura qabaataa?"
+
+#: .\users\templates\users\login.html:32
+#, fuzzy
+#| msgid "Register"
+msgid "Register here"
+msgstr "Galmaa'i"
 
 #: .\users\templates\users\logout.html:10
 msgid "You have been logged out"
@@ -68,22 +81,32 @@ msgid "Edit Profile"
 msgstr "Piroofaayilii kee haaromsi"
 
 #: .\users\templates\users\profile_update.html:11
-msgid "Update Your Profile"
+#, fuzzy
+#| msgid "Update Your Profile"
+msgid "Update Profile"
 msgstr "Piroofaayilii kee haaromsi"
 
 #: .\users\templates\users\profile_update.html:15
 msgid "Please correct the errors below."
 msgstr "Dogoggora armaan gadi sirreessi."
 
-#: .\users\templates\users\profile_update.html:24
-msgid "Registered Phone Number:"
-msgstr "Lakkoofsi bilbilaa galmaa'e:"
-
-#: .\users\templates\users\profile_update.html:28
-msgid "Contact support to change your phone number"
+#: .\users\templates\users\profile_update.html:26
+#, fuzzy
+#| msgid "Contact support to change your phone number"
+msgid "Contact support to change phone number"
 msgstr "Lakkoofsa bilbilaa jijjiiruuf deeggarsa qunnamu"
 
-#: .\users\templates\users\profile_update.html:59
+#: .\users\templates\users\profile_update.html:35
+#, fuzzy
+#| msgid "Save Changes"
+msgid "Change"
+msgstr "Waraqaa jijjiirraa olkaa’i"
+
+#: .\users\templates\users\profile_update.html:45
+msgid "Upload Photo"
+msgstr ""
+
+#: .\users\templates\users\profile_update.html:72
 msgid "Save Changes"
 msgstr "Waraqaa jijjiirraa olkaa’i"
 
@@ -102,3 +125,14 @@ msgstr "Akaakuu dura qabaataa?"
 #: .\users\templates\users\register.html:33
 msgid "Login here"
 msgstr "Asitti seeni"
+
+#: .\users\templates\users\users.html:11
+msgid "Users"
+msgstr ""
+
+#: .\users\templates\users\users.html:31
+msgid "No users found."
+msgstr ""
+
+#~ msgid "Registered Phone Number:"
+#~ msgstr "Lakkoofsi bilbilaa galmaa'e:"

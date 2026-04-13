@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import ContactMessage
 from .forms import ContactForm
+from django.shortcuts import render, redirect, get_object_or_404
 
 class ContactUsView(CreateView):
     model = ContactMessage
@@ -15,7 +16,7 @@ class ContactUsView(CreateView):
     def form_valid(self, form):
         response = super().form_valid(form)
         messages.success(self.request, _('Thank you for your message! We will get back to you soon.'))
-        return response
+        return redirect('base:index')
 
 class ReceivedMessagesView(LoginRequiredMixin, ListView):
     model = ContactMessage

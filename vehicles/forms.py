@@ -1,4 +1,4 @@
-# vehicles/forms.py
+# project/vehicles/forms.py
 from django import forms
 from .models import Vehicle, VehicleImage
 from django.core.validators import MinValueValidator
@@ -36,13 +36,18 @@ class VehicleForm(forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
         self.fields['price'].validators.append(MinValueValidator(0))
         self.fields['mileage'].validators.append(MinValueValidator(0))
 
     def save(self, commit=True):
-        vehicle = super().save(commit=commit)
-        if commit and self.cleaned_data.get('images'):
-            for img in self.cleaned_data['images']:
-                VehicleImage.objects.create(vehicle=vehicle, image=img)
+        vehicle = super().save(commit=False)
+        if self.user:
+            vehicle.created_by = self.user
+        if commit:
+            vehicle.save()
+            if self.cleaned_data.get('images'):
+                for img in self.cleaned_data['images']:
+                    VehicleImage.objects.create(vehicle=vehicle, image=img)
         return vehicle

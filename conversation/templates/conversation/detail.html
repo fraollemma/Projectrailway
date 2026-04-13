@@ -2,6 +2,10 @@
 {% load static %}
 {% load i18n %}
 
+{% block title %}
+    {% trans " My Conversation Detail | Ethiopian Sheger Market place" %}
+{% endblock %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'conversation/css/detail.css' %}">
 {% endblock %}
@@ -13,7 +17,7 @@
      data-user-id="{{ request.user.id }}">
   <div class="conversation-header">
     <h1>{% trans "Conversation about" %}
-      <a href="{% url 'items:item_detail' conversation.item.id %}">
+      <a href="{{ conversation.item.get_absolute_url }}">
         {{ conversation.item.name }}
       </a>
     </h1>

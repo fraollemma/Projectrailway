@@ -2,6 +2,10 @@
 {% load static %}
 {% load i18n %}
 
+{% block title %}
+  {% trans " Update Profile | Ethiopian Sheger Market place" %}
+{% endblock %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'users/css/profile_update.css' %}">
 {% endblock %}
@@ -67,6 +71,49 @@
             {{ form.location }}
             {{ form.location.errors }}
         </div>
+
+        <div class="form-row">
+    <label for="id_telegram">{{ form.telegram.label }}</label>
+    {{ form.telegram }}
+    {{ form.telegram.errors }}
+</div>
+
+<div class="form-row">
+    <label for="id_facebook">{{ form.facebook.label }}</label>
+    {{ form.facebook }}
+    {{ form.facebook.errors }}
+</div>
+
+<div class="form-row">
+    <label for="id_instagram">{{ form.instagram.label }}</label>
+    {{ form.instagram }}
+    {{ form.instagram.errors }}
+</div>
+
+<div class="form-row">
+    <label for="id_linkedin">{{ form.linkedin.label }}</label>
+    {{ form.linkedin }}
+    {{ form.linkedin.errors }}
+</div>
+
+<div class="form-row">
+    <label for="id_imo">{{ form.imo.label }}</label>
+    {{ form.imo }}
+    {{ form.imo.errors }}
+</div>
+
+<div class="form-row">
+    <label for="id_tiktok">{{ form.tiktok.label }}</label>
+    {{ form.tiktok }}
+    {{ form.tiktok.errors }}
+</div>
+
+<div class="form-row">
+    <label for="id_email">{{ form.email.label }}</label>
+    {{ form.email }}
+    {{ form.email.errors }}
+</div>
+
 
         <button type="submit" class="save-btn">
             {% trans "Save Changes" %}

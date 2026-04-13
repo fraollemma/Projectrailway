@@ -1,41 +1,136 @@
 {% extends "base/base.html" %}
 {% load static %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Clothing List | Ethiopian Sheger Market place" %}
+{% endblock %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'clothings/css/clothing_list.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock %}
 
 {% block content %}
-<div class="clothing-container">
-    <aside class="filters-sidebar">
-        <h3>Filters clothing list</h3>
-    </aside>
+<div class="product-container">
+
+    <div class="list-header">
+            <a href="{% url 'clothings:clothing_create' %}"  class="add-product-btn">
+                <i class="fas fa-plus"></i> {% trans "Add New Clothing Item" %}
+            </a>
+    </div> 
     
-    <main class="clothing-grid">
-        {% for item in clothes %}
-        <div class="clothing-card">
-            <a href="{% url 'clothings:clothing_detail' item.slug %}">
-                <div class="image-container">
-                    <img src="{{ item.images.first.image.url }}" alt="{{ item.name }}">
-                    {% if item.is_on_sale %}
-                    <span class="sale-badge">Sale</span>
-                    {% endif %}
-                </div>
-                <div class="clothing-info">
-                    <h3>{{ item.brand }}</h3>
-                    <p>{{ item.name }}</p>
-                    <div class="price">
+<main class="product-listings">
+        <div class="product-grid">
+ 
+            {% for item in clothes %}
+            <div class="product-card" data-category="{{ item.category.slug }}" data-price="{{ item.current_price }}">
+
+                <div class="card-image">
+            <img src="{{ item.images.first.image.url }}" alt="{{ item.name }}" loading="lazy">
+            <span class="carted-badge {% if item.is_carted %}carted{% endif %}">
+                <i class="fas fa-shopping-cart"></i>
+            </span>
+    
+            <div class="interaction-buttons">
+
+                <button type="button" 
+                        class="interaction-button like-button {% if item.has_liked %}liked{% endif %}"
+                        aria-label="Like this item"
+                        data-item-id="{{ item.id }}"
+                        data-action="like">
+                    <i class="fas fa-thumbs-up" aria-hidden="true"></i> 
+                    <span class="interaction-count">{{ item.like_count }}</span>
+                </button>
+
+                <button type="button" 
+                        class="interaction-button share-button"
+                        aria-label="Share this item"
+                        data-item-id="{{ item.id }}"
+                        data-action="share"> 
+                    <i class="fas fa-share-alt" aria-hidden="true"></i> 
+                    <span class="interaction-count">{{ item.share_count }}</span>
+                </button>
+            </div>
+         </div>
+                
+                <div class="card-content">
+                    <div class="product-meta">
+                        <span class="product-brand">{{ item.category.name|default:"Poultry" }}</span>
+                        {{ item.created_at|timesince }} ago
+                    </div>
+
+                    <div class="product-specs">
+
+                        <h3>{{ item.name }}</h3>
+                        <span><i class="fas fa-tag"></i> {{ item.category.name }}</span>
+                        
+                    </div>
+                    
+                    <div class="product-meta">
+                    <p>{{ item.description|truncatewords:15 }}</p>
+                    </div>
+
+                    <div class="product-price">
                         {% if item.is_on_sale %}
-                        <span class="original-price">${{ item.price }}</span>
-                        <span class="sale-price">${{ item.discount_price }}</span>
+                            <span class="original-price">${{ item.price|floatformat:"0" }}</span>
+                            <span class="price">${{ item.discount_price|floatformat:"0" }}</span>
                         {% else %}
-                        <span>${{ item.price }}</span>
+                            <span class="price">${{ item.price|floatformat:"0" }}</span>
                         {% endif %}
                     </div>
+                    <a href="{% url 'clothings:clothing_detail' item.slug %}" class="view-details">
+                        <div class="fraol">
+                        {% trans "View Details" %} <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </a>
+                    <div class="card-actions">
+    <a href="{% url 'clothings:clothing_update' item.slug %}" class="edit-btn" title="Edit">
+        <i class="fas fa-edit"></i>
+    </a>
+    <a href="{% url 'clothings:clothing_delete' item.slug %}" class="delete-btn" title="Delete">
+        <i class="fas fa-trash"></i>
+    </a>
+                    </div>
                 </div>
-            </a>
+            </div>
+            {% empty %}
+            <div class="no-results">
+                <i class="fas fa-tshirt"></i>
+                <h3>{% trans "No clothing items found." %}</h3>
+                <p>{% trans "Try again later or add new items." %}</p>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </main>
+
+        {% if is_paginated %}
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="page-link">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            {% endif %}
+            
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <span class="current-page">{{ num }}</span>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+            {% endif %}
+            {% endfor %}
+            
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="page-link">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+            {% endif %}
+        </div>
+        {% endif %}
+</main>
 </div>
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'clothings/js/clothing_list.js' %}"></script>
 {% endblock %}

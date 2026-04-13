@@ -1,268 +1,382 @@
-# Amharic translations for EthioPoultry
-# Copyright (C) 2024 EthioPoultry
-# This file is distributed under the same license as the EthioPoultry package.
-# Fraol <fraol@ethiopoultry.com>, 2024.
+# Amharic translations for PACKAGE package.
+# Copyright (C) 2025 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Na <fraollemma0506@gmail.com>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: EthioPoultry 1.0\n"
+"Project-Id-Version: Sheger Marketplace 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-22 03:43+0300\n"
-"PO-Revision-Date: 2024-05-19 15:00+0300\n"
-"Last-Translator: Fraol <fraol@ethiopoultry.com>\n"
-"Language-Team: Amharic <am@ethiopoultry.com>\n"
+"POT-Creation-Date: 2025-08-11 01:34+0300\n"
+"PO-Revision-Date: 2025-08-11 01:34+0300\n"
+"Last-Translator: Na <fraollemma0506@gmail.com>\n"
+"Language-Team: Amharic <am@sheger.xyz>\n"
 "Language: am\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\templates\base\about_us.html:12 .\templates\base\base.html:39
-#: .\templates\base\base.html:103
+#: .\base\templates\base\about_us.html:12 .\base\templates\base\base.html:245
 msgid "About Us"
 msgstr "ስለ እኛ"
 
-#: .\templates\base\about_us.html:13
+#: .\base\templates\base\about_us.html:13 .\base\templates\base\terms.html:13
 msgid ""
 "We are a company dedicated to providing the best services to our customers."
-msgstr "እኛ �ደንበኞቻችን ከፍተኛ አገልግሎት ለመስጠት የተሰራጨ ኩባንያ ነን።"
+msgstr "እኛ ለደንበኞቻችን ከፍተኛ አገልግሎት ለመስጠት የተሰማርን ኩባንያ ነን።"
 
-#: .\templates\base\base.html:8
+#: .\base\templates\base\about_us.html:16
 msgid ""
-"Ethiopian poultry marketplace - Buy and sell poultry products in Ethiopia"
-msgstr "የኢትዮጵያ የዶሮ ምርት ገበያ - የዶሮ ምርቶችን በኢትዮጵያ ይግዙ እና ይሽዱ"
+"Our mission is to connect buyers and sellers in a seamless online "
+"marketplace."
+msgstr "ተገዢዎችን እና ሻጮችን በሚመች የመስመር ላይ ገበያ ውስጥ ማገናኘት የእኛ ተልዕኮ ነው።"
 
-#: .\templates\base\base.html:9
-msgid "EthioPoultry - Ethiopian Poultry Marketplace"
-msgstr "ኢትዮፖልትሪ - የኢትዮጵያ የዶሮ ምርት ገበያ"
+#: .\base\templates\base\about_us.html:17
+msgid ""
+"We strive to offer a wide range of products at competitive prices, backed by "
+"excellent customer service."
+msgstr "በተወዳዳሪ ዋጋዎች እና በተሻለ የደንበኛ አገልግሎት የተደገፈ ሰፊ የምርት �ርቃቃ እናቀርባለን።"
 
-#: .\templates\base\base.html:16
-msgid "Skip to main content"
-msgstr "ወደ ዋናው ይዘት ይሂዱ"
+#: .\base\templates\base\admin_links.html:12
+msgid "Admin Links"
+msgstr "የአስተዳዳሪ አገናኞች"
 
-#: .\templates\base\base.html:21 .\templates\base\base.html:28
-#: .\templates\base\base.html:100
-msgid "Home"
-msgstr "መነሻ"
+#: .\base\templates\base\admin_links.html:15
+msgid "View Messages"
+msgstr "መልዕክቶችን ይመልከቱ"
 
-#: .\templates\base\base.html:22
-msgid "EthioPoultry"
-msgstr "ኢትዮፖልትሪ"
+#: .\base\templates\base\admin_links.html:16
+msgid "View Contact Us Messages"
+msgstr "ያግኙን መልዕክቶችን ይመልከቱ"
 
-#: .\templates\base\base.html:26
-msgid "Main navigation"
-msgstr "ዋና አሰሳ"
+#: .\base\templates\base\admin_links.html:29
+msgid "You are not logged in."
+msgstr "አልገቡም።"
 
-#: .\templates\base\base.html:29 .\templates\base\base.html:101
-msgid "Marketplace"
-msgstr "ገበያ"
+#: .\base\templates\base\admin_links.html:31
+msgid "Login"
+msgstr "ግባ"
 
-#: .\templates\base\base.html:30 .\templates\base\base.html:102
-msgid "Sell Products"
-msgstr "ምርቶች ይሽዱ"
+#: .\base\templates\base\base.html:9
+msgid "Ethiopian marketplace - Buy and sell products in Ethiopia"
+msgstr "የኢትዮጵያ ገበያ - በኢትዮጵያ ውስጥ ምርቶችን ይግዙ እና ይሽጡ"
 
-#: .\templates\base\base.html:33
-msgid "Messages"
-msgstr "መልዕክቶች"
+#: .\base\templates\base\base.html:10
+msgid "Sheger.xyz | Ethiopian Market place"
+msgstr "Sheger.xyz | የኢትዮጵያ ገበያ"
 
-#: .\templates\base\base.html:38 .\templates\base\base.html:110
+#: .\base\templates\base\base.html:26
+msgid "Please select your language"
+msgstr "እባክዎ ቋንቋዎን ይምረጡ"
+
+#: .\base\templates\base\base.html:40
+msgid "Skip"
+msgstr "ዝለል"
+
+#: .\base\templates\base\base.html:55
+msgid "All Items"
+msgstr "ሁሉም እቃዎች"
+
+#: .\base\templates\base\base.html:57
 msgid "Contact Us"
 msgstr "ያግኙን"
 
-#: .\templates\base\base.html:44
-msgid "Select language"
-msgstr "ቋንቋ ይምረጡ"
+#: .\base\templates\base\base.html:70
+msgid "Sheger"
+msgstr "ሸገር"
 
-#: .\templates\base\base.html:63
-msgid "User menu"
-msgstr "የተጠቃሚ ምናሌ"
+#: .\base\templates\base\base.html:70
+msgid "city"
+msgstr "ከተማ"
 
-#: .\templates\base\base.html:65
-msgid "Profile picture"
-msgstr "የመገለጫ ስዕል"
+#: .\base\templates\base\base.html:76
+msgid "Search products"
+msgstr "ምርቶችን ፈልግ"
 
-#: .\templates\base\base.html:72
-msgid "My Profile"
-msgstr "የኔ መገለጫ"
+#: .\base\templates\base\base.html:83
+msgid "All Categories"
+msgstr "ሁሉም ምድቦች"
 
-#: .\templates\base\base.html:73
-msgid "Settings"
-msgstr "ቅንብሮች"
+#: .\base\templates\base\base.html:84 .\base\templates\base\base.html:254
+#: .\base\templates\base\index.html:76 .\base\templates\base\index.html:125
+msgid "Cars"
+msgstr "መኪናዎች"
 
-#: .\templates\base\base.html:75
-msgid "Logout"
-msgstr "ውጣ"
+#: .\base\templates\base\base.html:85 .\base\templates\base\base.html:255
+#: .\base\templates\base\index.html:83 .\base\templates\base\index.html:126
+msgid "Houses"
+msgstr "ቤቶች"
 
-#: .\templates\base\base.html:80
-msgid "Login"
-msgstr "ይግቡ"
+#: .\base\templates\base\base.html:86 .\base\templates\base\base.html:256
+#: .\base\templates\base\index.html:49 .\base\templates\base\index.html:90
+#: .\base\templates\base\index.html:127
+msgid "Electronics"
+msgstr "ኤሌክትሮኒክስ"
 
-#: .\templates\base\base.html:81
+#: .\base\templates\base\base.html:87 .\base\templates\base\base.html:257
+#: .\base\templates\base\index.html:97 .\base\templates\base\index.html:128
+msgid "Clothing"
+msgstr "ልብሶች"
+
+#: .\base\templates\base\base.html:88 .\base\templates\base\base.html:258
+#: .\base\templates\base\index.html:111
+msgid "Kids Toys"
+msgstr "የልጆች መጫወቻዎች"
+
+#: .\base\templates\base\base.html:114
 msgid "Register"
 msgstr "ይመዝገቡ"
 
-#: .\templates\base\base.html:85
-msgid "Toggle navigation"
-msgstr "አሰሳ ቀያይር"
+#: .\base\templates\base\base.html:130
+msgid " Cars for Sale"
+msgstr "ለመሸጥ የቀረቡ መኪናዎች"
 
-#: .\templates\base\base.html:98
+#: .\base\templates\base\base.html:135
+msgid " Houses for Sale"
+msgstr "ለመሸጥ የቀረቡ ቤቶች"
+
+#: .\base\templates\base\base.html:140 .\base\templates\base\base.html:200
+msgid " Electronics"
+msgstr "ኤሌክትሮኒክስ"
+
+#: .\base\templates\base\base.html:145 .\base\templates\base\base.html:205
+msgid " Clothing"
+msgstr "ልብሶች"
+
+#: .\base\templates\base\base.html:150
+msgid " Poultry Items"
+msgstr "የዶሮ እርባታ ዕቃዎች"
+
+#: .\base\templates\base\base.html:155
+msgid " Message"
+msgstr "መልዕክት"
+
+#: .\base\templates\base\base.html:160
+msgid " About us"
+msgstr "ስለ እኛ"
+
+#: .\base\templates\base\base.html:165
+msgid " Admin Links"
+msgstr "የአስተዳዳሪ አገናኞች"
+
+#: .\base\templates\base\base.html:170
+msgid " User list"
+msgstr "የተጠቃሚዎች ዝርዝር"
+
+#: .\base\templates\base\base.html:175
+msgid " Cart"
+msgstr "ጋሪ"
+
+#: .\base\templates\base\base.html:186
+msgid " Home"
+msgstr "መነሻ"
+
+#: .\base\templates\base\base.html:190
+msgid " Cars"
+msgstr "መኪናዎች"
+
+#: .\base\templates\base\base.html:195
+msgid " Houses"
+msgstr "ቤቶች"
+
+#: .\base\templates\base\base.html:210
+msgid " Poultry"
+msgstr "ዶሮ እርባታ"
+
+#: .\base\templates\base\base.html:229
+msgid "Market"
+msgstr "ገበያ"
+
+#: .\base\templates\base\base.html:229
+msgid "Hub"
+msgstr "ማዕከል"
+
+#: .\base\templates\base\base.html:232
+msgid ""
+"Sheger.xyz is your one-stop online marketplace for cars, houses, "
+"electronics, clothing and kids toys. We connect buyers and sellers across "
+"the globe."
+msgstr "Sheger.xyz ለመኪናዎች፣ ቤቶች፣ ኤሌክትሮኒክስ፣ ልብሶች እና የልጆች መጫወቻዎች የሚያገለግል የመስመር ላይ ገበያ ነው። እኛ ተገዢዎችን እና ሻጮችን በመላው አለም እናገናኘዋለን።"
+
+#: .\base\templates\base\base.html:242
 msgid "Quick Links"
 msgstr "ፈጣን አገናኞች"
 
-#: .\templates\base\base.html:108
-msgid "Help & Support"
-msgstr "እርዳታ እና ድጋፍ"
+#: .\base\templates\base\base.html:244
+msgid "Home"
+msgstr "መነሻ"
 
-#: .\templates\base\base.html:111
+#: .\base\templates\base\base.html:246
+msgid "Products"
+msgstr "ምርቶች"
+
+#: .\base\templates\base\base.html:247
+msgid "Blog"
+msgstr "ብሎግ"
+
+#: .\base\templates\base\base.html:252
+msgid "Categories"
+msgstr "ምድቦች"
+
+#: .\base\templates\base\base.html:262 .\base\templates\base\base.html:267
+msgid "Customer Service"
+msgstr "የደንበኛ አገልግሎት"
+
+#: .\base\templates\base\base.html:264
+msgid "My Account"
+msgstr "መለያዬ"
+
+#: .\base\templates\base\base.html:265
+msgid "Order Tracking"
+msgstr "የትእዛዝ መከታተያ"
+
+#: .\base\templates\base\base.html:266
+msgid "Wishlist"
+msgstr "የምኞት ዝርዝር"
+
+#: .\base\templates\base\base.html:268
+msgid "Returns & Exchanges"
+msgstr "መመለሻዎች እና ልውውጦች"
+
+#: .\base\templates\base\base.html:269
 msgid "FAQs"
 msgstr "ተደጋጋሚ ጥያቄዎች"
 
-#: .\templates\base\base.html:112
-msgid "Privacy Policy"
-msgstr "የግላዊነት ፖሊሲ"
+#: .\base\templates\base\base.html:273
+msgid "Contact Info"
+msgstr "የእውቂያ መረጃ"
 
-#: .\templates\base\base.html:113
-msgid "Terms of Service"
-msgstr "የአገልግሎት ውሎች"
+#: .\base\templates\base\base.html:275
+msgid "Ethiopia / Sheger City , Gelan"
+msgstr "ኢትዮጵያ / ሸገር ከተማ, ገላን"
 
-#: .\templates\base\base.html:118
-msgid "Connect With Us"
-msgstr "ከእኛ ጋር ይገናኙ"
+#: .\base\templates\base\base.html:284
+msgid "Sheger.xyz All Rights Reserved."
+msgstr "Sheger.xyz ሁሉም መብቶች የተጠበቁ ናቸው።"
 
-#: .\templates\base\base.html:127
-msgid "Feedback"
-msgstr "ግብረመልስ"
+#: .\base\templates\base\index.html:18
+msgid "Find Your Dream Home Today"
+msgstr "የህልምዎን ቤት ዛሬ ያግኙ"
 
-#: .\templates\base\base.html:132
-msgid "Phone Number"
-msgstr "ስልክ ቁጥር"
+#: .\base\templates\base\index.html:19
+msgid "Thousands of properties waiting for you"
+msgstr "ሺህ የሚቆጠሩ ንብረቶች እርስዎን ይጠብቃሉ"
 
-#: .\templates\base\base.html:136
-msgid "Your Message"
-msgstr "መልዕክትዎ"
+#: .\base\templates\base\index.html:20
+msgid "House"
+msgstr "ቤት"
 
-#: .\templates\base\base.html:138
-msgid "Send"
-msgstr "ላክ"
+#: .\base\templates\base\index.html:28
+msgid "Ethiopian Poultry Farm"
+msgstr "የኢትዮጵያ ዶሮ እርባታ እርባታ"
 
-#: .\templates\base\base.html:147
-msgid "All rights reserved."
-msgstr "ሁሉም መብቶች የተጠበቁ ናቸው።"
+#: .\base\templates\base\index.html:29
+msgid "Eggs, Chickens, poultry Equipment and tools for sell"
+msgstr "እንቁላል፣ ዶሮዎች፣ የዶሮ እርባታ መሣሪያዎች እና መሳሪያዎች ለመሸጥ"
 
-#: .\templates\base\base.html:148
-msgid "Designed by"
-msgstr "በዲዛይን የተሰራ"
+#: .\base\templates\base\index.html:30
+msgid "poultry"
+msgstr "ዶሮ እርባታ"
 
-#: .\templates\base\index.html:33
-msgid "Empowering Ethiopia's Poultry Farmers with Fairness & Growth"
-msgstr "የኢትዮጵያን የዶሮ እርባታ አርሶ አደሮች በአግባቡና በእድገት ማበረታታት"
+#: .\base\templates\base\index.html:38
+msgid "Latest Car Models"
+msgstr "የቅርብ ጊዜ የመኪና ሞዴሎች"
 
-#: .\templates\base\index.html:35
-msgid "Connecting Ethiopian poultry farmers with buyers nationwide"
-msgstr "የኢትዮጵያ የዶሮ እርሻ አርሶ አደሮችን ከገዢዎች ጋር በሀገር አቀፍ ሁኔታ እንዲገናኙ እናገናኛለን"
+#: .\base\templates\base\index.html:39
+msgid "New arrivals with amazing deals"
+msgstr "አስደናቂ ቅናሾች ያሉት አዳዲስ የደረሱ ምርቶች"
 
-#: .\templates\base\index.html:36
-msgid "Browse Marketplace"
-msgstr "ገበያን ይመልከቱ"
+#: .\base\templates\base\index.html:40
+msgid "car"
+msgstr "መኪና"
 
-#: .\templates\base\index.html:43
-msgid "Companies We Work With"
-msgstr "የምንሰራባቸው ኩባንያዎች"
+#: .\base\templates\base\index.html:47
+msgid "Summer Tech Sale"
+msgstr "የበጋ ቴክ ሽያጭ"
 
-#: .\templates\base\index.html:62
-msgid "Our Impact So Far"
-msgstr "እስካሁን ያለን ተጽዕኖ"
+#: .\base\templates\base\index.html:48
+#, python-format
+msgid "Up to 40%% off on electronics"
+msgstr "በኤሌክትሮኒክስ ላይ እስከ 40%% ቅናሽ"
 
-#: .\templates\base\index.html:67
-msgid "Total Users"
-msgstr "ጠቅላላ ተጠቃሚዎች"
+#: .\base\templates\base\index.html:70
+msgid "Shop by Category"
+msgstr "በምድብ ይግዙ"
 
-#: .\templates\base\index.html:72
-msgid "Active Users"
-msgstr "ንቁ ተጠቃሚዎች"
+#: .\base\templates\base\index.html:77
+msgid "5,000+ listings"
+msgstr "5,000+ ዝርዝሮች"
 
-#: .\templates\base\index.html:77
-msgid "Items for Sale"
-msgstr "ለመሸጥ የቀረቡ እቃዎች"
+#: .\base\templates\base\index.html:84
+msgid "2,500+ properties"
+msgstr "2,500+ ንብረቶች"
 
-#: .\templates\base\index.html:83
-msgid "Conversations Started"
-msgstr "የተጀመሩ ውይይቶች"
+#: .\base\templates\base\index.html:91
+msgid "10,000+ products"
+msgstr "10,000+ ምርቶች"
 
-#: .\templates\base\index.html:88
-msgid ""
-"Join a growing community of Ethiopian poultry farmers, buyers, and experts. "
-"List your products, connect with partners, and start meaningful "
-"conversations today!"
-msgstr ""
-"የኢትዮጵያን የዶሮ እርባታ አርሶ አደሮች፣ ገዢዎች እና ባለሙያዎች ያሉበት እየደረሰ ያለ ማህበረሰብ ይቀላቀሉ። "
-"ምርቶችዎን ይዝገቡ፣ ከአጋሮች ጋር ተገናኝተው ትርጉም ያለው ውይይት ይጀምሩ!"
+#: .\base\templates\base\index.html:98
+msgid "15,000+ items"
+msgstr "15,000+ እቃዎች"
 
-#: .\templates\base\index.html:92
-msgid "Why We Built This Platform?"
-msgstr "ይህን መድረክ ለምን እንደገነባነው?"
+#: .\base\templates\base\index.html:104 .\base\templates\base\index.html:129
+msgid "Books"
+msgstr "መጻሕፍት"
 
-#: .\templates\base\index.html:93
-msgid "Stop Price Shocks, Grow with Confidence"
-msgstr "የዋጋ መዛባትን አቁሙ፣ በራስ መተማመን ይድረስ"
+#: .\base\templates\base\index.html:105
+msgid "8,000+ titles"
+msgstr "8,000+ ርዕሶች"
 
-#: .\templates\base\index.html:94
-msgid ""
-"Did you know? 40%% of small poultry farmers lose profits due to "
-"unpredictable price swings. We're changing that."
-msgstr ""
-"ያውቃሉ? 40%% የሚሆኑ አነስተኛ የዶሮ እርባታ አርሶ አደሮች �ማያሻማ የዋጋ ለውጦች ምክንያት ትርፋቸውን ያጣሉ። እኛ "
-"ይህን እየቀየርን ነው።"
+#: .\base\templates\base\index.html:112
+msgid "3,000+ products"
+msgstr "3,000+ ምርቶች"
 
-#: .\templates\base\index.html:95
-msgid "→ Real-time pricing + expert tips = steadier income for YOU."
-msgstr "→ በቅጽበት የዋጋ መረጃ + የባለሙያ ምክሮች = የበለጠ የተረጋጋ ገቢ ለእርስዎ።"
+#: .\base\templates\base\index.html:122
+msgid "Featured Products"
+msgstr "የተለዩ ምርቶች"
 
-#: .\templates\base\index.html:98
-msgid "Connect Directly—No More Middlemen!"
-msgstr "በቀጥታ ይገናኙ - መካከለኛዎች አያስፈልጉም!"
+#: .\base\templates\base\index.html:124
+msgid "All"
+msgstr "ሁሉም"
 
-#: .\templates\base\index.html:99
-msgid ""
-"Over 70%% of farmers struggle to find fair buyers. We link you directly to "
-"trusted traders, suppliers, and experts—cutting costs, boosting profits."
-msgstr ""
-"ከ70%% በላይ የሚሆኑ አርሶ አደሮች ፍትሃዊ ገዢዎችን ለማግኘት ይቸገራሉ። እኛ እርስዎን በቀጥታ ከታመኑ ነጋዴዎች፣ "
-"አቅራቢዎች እና ባለሙያዎች ጋር እናገናኝዎታለን - ወጪዎችን በመቀነስ ትርፍ እናሳድጋለን።"
+#: .\base\templates\base\index.html:130
+msgid "Toys"
+msgstr "መጫወቻዎች"
 
-#: .\templates\base\index.html:102
-msgid "Transparent Markets = Stronger Farmers"
-msgstr "ግልጽ የሆኑ ገበያዎች = የበለጠ ጠንካራ አርሶ አደሮች"
+#: .\base\templates\base\index.html:136
+msgid "View All Products"
+msgstr "ሁሉንም ምርቶች ይመልከቱ"
 
-#: .\templates\base\index.html:103
-msgid ""
-"Rumors of 'shortages' hurt small farms. Truth: Ethiopia produces 300M+ eggs/"
-"year—enough for all! We expose manipulation and highlight REAL data."
-msgstr ""
-"'ጉድለት' የሚሉ ጠብመንገዶች አነስተኛ እርባታዎችን ይጎዳሉ። እውነታ፡ ኢትዮጵያ በየዓመቱ ከ300 ሚሊዮን በላይ እንቁላል "
-"ትመርታለች - ለሁሉም በቂ! እኛ ማጭበርበርን እንገልፃለን እና እውነተኛ ዳታን እናብራራለን።"
+#: .\base\templates\base\index.html:145
+msgid "Summer Mega Sale!"
+msgstr "የበጋ ሜጋ ሽያጭ!"
 
-#: .\templates\base\messages.html:12
+#: .\base\templates\base\index.html:146
+#, python-format
+msgid "Up to 50%% off on selected items. Limited time offer."
+msgstr "በተመረጡ እቃዎች ላይ እስከ 50%% ቅናሽ። የተወሰነ ጊዜ ብቻ።"
+
+#: .\base\templates\base\index.html:147
+msgid "Shop Now"
+msgstr "አሁን ይግዙ"
+
+#: .\base\templates\base\messages.html:12
 msgid "Messages Received"
 msgstr "የተቀበሉ መልዕክቶች"
 
-#: .\templates\base\messages.html:29
+#: .\base\templates\base\messages.html:29
 msgid "No messages yet."
 msgstr "እስካሁን ምንም መልዕክት የለም።"
 
-#~ msgid "POULTRY"
-#~ msgstr "የዶሮ እርባታ"
+#: .\base\templates\base\terms.html:12
+msgid "Terms"
+msgstr "ውሎች"
 
-#~ msgid "Add Item"
-#~ msgstr "እቃ ያክሉ"
+#: .\base\templates\base\terms.html:14
+msgid "User Agreement"
+msgstr "የተጠቃሚ ስምምነት"
 
-#~ msgid "Conversations"
-#~ msgstr "ውይይቶች"
-
-#~ msgid "Unread messages:"
-#~ msgstr "ያልተነበቡ መልዕክቶች፦"
-
-#~ msgid "Sell"
-#~ msgstr "ሽያጭ"
-
-#~ msgid "Edit Profile"
-#~ msgstr "መገለጫ አርትዕ"
+#: .\base\templates\base\terms.html:15
+msgid "By using our website, you agree to the following terms and conditions."
+msgstr "ድረ-ገጻችንን በመጠቀም የሚከተሉትን ውሎች እና ሁኔታዎች እንደምትቀበሉ እያረጋገጡ ነው።"

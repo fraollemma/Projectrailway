@@ -2,6 +2,11 @@
 {% load i18n %}
 {% load static %}
 {% load contact_extras %}
+
+{% block title %}
+    {% trans "Contact Us | Ethiopian Sheger Market place" %}
+{% endblock %}
+
 {% block css %}
   <link rel="stylesheet" href="{% static 'contact/css/contact_us.css' %}">
 {% endblock %}

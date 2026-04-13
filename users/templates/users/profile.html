@@ -1,7 +1,10 @@
 {% extends 'base/base.html' %}
-
 {% load i18n %}
 {% load static %}
+
+{% block title %}
+  {% trans " My Profile | Ethiopian Sheger Market place" %}
+{% endblock %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'users/css/profile.css' %}">
@@ -23,9 +26,34 @@
         <p><strong>{% trans "Bio:" %}</strong> {{ user.profile.bio|default:"-" }}</p>
     </div>
 
-    <div class="profile-actions">
-        <a href="{% url 'users:profile_update' %}" class="btn btn-primary">{% trans "Edit Profile" %}</a>
-    </div>
+    <div class="profile-socials">
+    <h4>{% trans "Social Media" %}</h4>
+    <ul>
+        {% if user.profile.telegram %}
+            <li><a href="https://t.me/{{ user.profile.telegram }}" target="_blank">Telegram</a></li>
+        {% endif %}
+        {% if user.profile.facebook %}
+            <li><a href="https://facebook.com/{{ user.profile.facebook }}" target="_blank">Facebook</a></li>
+        {% endif %}
+        {% if user.profile.instagram %}
+            <li><a href="https://instagram.com/{{ user.profile.instagram }}" target="_blank">Instagram</a></li>
+        {% endif %}
+        {% if user.profile.linkedin %}
+            <li><a href="https://linkedin.com/in/{{ user.profile.linkedin }}" target="_blank">LinkedIn</a></li>
+        {% endif %}
+        {% if user.profile.imo %}
+            <li><a href="https://imo.im/{{ user.profile.imo }}" target="_blank">Imo</a></li>
+        {% endif %}
+        {% if user.profile.tiktok %}
+            <li><a href="https://tiktok.com/@{{ user.profile.tiktok }}" target="_blank">TikTok</a></li>
+        {% endif %}
+        {% if user.profile.email %}
+            <li><a href="mailto:{{ user.profile.email }}">{{ user.profile.email }}</a></li>
+        {% endif %}
+    </ul>
+</div>
+
+
 </div>
 {% endblock %}
 

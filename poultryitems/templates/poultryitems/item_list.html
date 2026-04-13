@@ -1,100 +1,125 @@
-{% extends 'base/base.html' %}
+{% extends "base/base.html" %}
 {% load static %}
 {% load i18n %}
 
+{% block title %}
+    {% trans "Poultry Items List | Ethiopian Sheger Market place" %}
+{% endblock %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'poultryitems/css/item_list.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock %}
 
 {% block content %}
-<div class="container_item_list">
-    <div class="header-container_item_list">
-        <h1>{% trans "Poultry Marketplace" %}</h1>
-        {% if user.is_authenticated %}
-            <a href="{% url 'poultryitems:item_create' %}" class="sell-button_item_list">
+<div class="poultry-container">
+
+    <a href="{% url 'poultryitems:index' %}" class="back-to-home">
+            <i class="fas fa-arrow-left"></i> {% trans "Back" %}
+        </a>
+        
+    <div class="list-header">
+            <a href="{% url 'poultryitems:item_create' %}"  class="add-poultry-btn">
                 <i class="fas fa-plus"></i> {% trans "Sell Item" %}
             </a>
-        {% endif %}
-    </div>
+    </div> 
+    
+<main class="poultry-listings">
+        <div class="poultry-grid">
+ 
+            {% for item in object_list %}
+            <div class="poultry-card" data-category="{{ item.category.slug }}" data-price="{{ item.price }}">
 
-    {% if object_list %}
-    <div class="items-grid_item_list">
-        {% for item in object_list %}
-        <div class="item-column_item_list">
-            <div class="item-card_item_list">
-                <a href="{% url 'poultryitems:item_detail' pk=item.pk %}">
-                    <img src="{{ item.main_image.url }}" class="item-image_item_list" alt="{{ item.name }}" loading="lazy">
-                    <div class="price-badge_item_list">
-                        {% trans "ETB" %} {{ item.price }}</div>
-                </a>
+                <div class="card-image">
+            <img src="{{ item.main_image.url }}" alt="{{ item.name }}" loading="lazy">
+            <span class="carted-badge {% if item.is_carted %}carted{% endif %}">
+                <i class="fas fa-shopping-cart"></i>
+            </span>
+    
+            <!-- In both item_list.html and item_detail.html -->
+<div class="interaction-buttons">
+    <button type="button"
+            class="interaction-button like-button {% if item.has_liked %}liked{% endif %}"
+            aria-label="Like this item"
+            data-item-id="{{ item.id }}"
+            data-action="like">
+        <i class="fas fa-thumbs-up"></i>
+        <span class="interaction-count">{{ item.like_count }}</span>
+    </button>
+
+    <button type="button" 
+            class="interaction-button share-button"
+            aria-label="Share this item"
+            data-item-id="{{ item.id }}"
+            data-action="share"> 
+        <i class="fas fa-share-alt" aria-hidden="true"></i> 
+        <span class="interaction-count">{{ item.share_count }}</span>
+    </button>
+</div>
+         </div>
                 
-                <div class="interaction-buttons_item_list">
-                    <button class="like-btn_item_list" onclick="likeItem({{ item.id }})">
-                        <i class="fas fa-thumbs-up"></i>
-                        <span class="like-count_item_list">{{ item.like_count }}</span>
-                    </button>
+                <div class="card-content">
+                    <div class="poultry-meta">
+                        <span class="poultry-category">{{ item.category.name|default:"Poultry" }}</span>
+                        <span class="poultry-time"><i class="fas fa-clock"></i> {{ item.created_at|timesince }} ago</span>
+                    </div>
 
-                    <button class="share-btn_item_list" onclick="shareItem({{ item.id }})">
-                        <i class="fas fa-share-alt"></i>
-                        <span class="share-count_item_list">{{ item.share_count }}</span>
-                    </button>
-                </div>
+                    <h3>{{ item.name }}</h3>
+                    <div class="poultry-price">
+                        <span class="price">ETB {{ item.price|floatformat:"0" }}</span>
+                    </div>
+                    <a href="{% url 'poultryitems:item_detail' item.pk %}" class="view-details">
+                        <div class="fraol">
+                        {% trans "View Details" %} <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </a>
+                    <div class="card-actions">
+    <a href="{% url 'poultryitems:item_edit' item.pk %}" class="edit-btn" title="Edit">
+        <i class="fas fa-edit"></i>
+    </a>
+    <form action="{% url 'poultryitems:item_delete' item.pk %}" method="POST" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit" class="delete-btn" title="Delete">
+        <i class="fas fa-trash"></i>
+    </button>
+</form>
 
-                <div class="card-content_item_list">
-                    <h3 class="item-title_item_list">{{ item.name }}</h3>
-                    <p class="item-description_item_list">{{ item.description|truncatechars:100 }}</p>
-                </div>
-                <div class="card-footer_item_list">
-                    <small>{% trans "Posted" %} {{ item.created_at|timesince }} ago</small>
+                    </div>
                 </div>
             </div>
-        </div>
-        {% endfor %}
-    </div>
-    {% else %}
-    <div class="empty-state_item_list">
-        <div class="info-message_item_list">
-            <h4>{% trans "No poultry items available yet" %}</h4>
-            {% if user.is_authenticated %}
-                <a href="{% url 'poultryitems:item_create' %}" class="sell-button_item_list">
-                    {% trans "Be the first to sell" %}
-                </a>
-            {% else %}
+            {% empty %}
+            <div class="no-results">
+                <i class="fas fa-egg"></i>
+                <h3>{% trans "No poultry items available yet" %}</h3>
                 <p>{% trans "Please login to add items" %}</p>
-            {% endif %}
+            </div>
+            {% endfor %}
         </div>
-    </div>
-    {% endif %}
 
-    {% if is_paginated %}
-    <nav class="pagination-container_item_list">
-        <ul class="pagination-list_item_list">
+        {% if is_paginated %}
+        <div class="pagination">
             {% if page_obj.has_previous %}
-                <li class="page-item_item_list"></li>
-                    <a class="page-link_item_list" href="?page=1">&laquo; {% trans "First" %}</a>
-                </li>
-                <li class="page-item_item_list">
-                    <a class="page-link_item_list" href="?page={{ page_obj.previous_page_number }}">{% trans "Previous" %}</a>
-                </li>
+            <a href="?page={{ page_obj.previous_page_number }}" class="page-link">
+                <i class="fas fa-chevron-left"></i>
+            </a>
             {% endif %}
             
-            <li class="page-item_item_list disabled_item_list">
-                <span class="page-link_item_list">
-                    {% trans "Page" %} {{ page_obj.number }} {% trans "of" %} {{ page_obj.paginator.num_pages }}
-                </span>
-            </li>
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <span class="current-page">{{ num }}</span>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+            {% endif %}
+            {% endfor %}
             
             {% if page_obj.has_next %}
-                <li class="page-item_item_list">
-                    <a class="page-link_item_list" href="?page={{ page_obj.next_page_number }}">Next</a>
-                </li>
-                <li class="page-item_item_list">
-                    <a class="page-link_item_list" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
-                </li>
+            <a href="?page={{ page_obj.next_page_number }}" class="page-link">
+                <i class="fas fa-chevron-right"></i>
+            </a>
             {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+        </div>
+        {% endif %}
+</main>
 </div>
 
 {% endblock %}

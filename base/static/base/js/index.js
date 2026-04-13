@@ -1,252 +1,284 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Hero Slider
-    const slider = document.querySelector('.slider-container');
+    // ===== SLIDER FUNCTIONALITY =====
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.prev-slide');
     const nextBtn = document.querySelector('.next-slide');
     let currentSlide = 0;
-    const slideCount = slides.length;
+    let slideInterval;
 
-    // Initialize slider
-    function showSlide(index) {
+    function showSlide(n) {
         slides.forEach(slide => slide.classList.remove('active'));
         dots.forEach(dot => dot.classList.remove('active'));
         
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
-        currentSlide = index;
+        if (n >= slides.length) currentSlide = 0;
+        else if (n < 0) currentSlide = slides.length - 1;
+        else currentSlide = n;
+        
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
     }
 
-    // Next slide
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % slideCount;
-        showSlide(currentSlide);
+        showSlide(currentSlide + 1);
     }
 
-    // Previous slide
     function prevSlide() {
-        currentSlide = (currentSlide - 1 + slideCount) % slideCount;
-        showSlide(currentSlide);
+        showSlide(currentSlide - 1);
     }
 
-    // Auto slide
-    let slideInterval = setInterval(nextSlide, 5000);
-
-    // Pause on hover
-    slider.addEventListener('mouseenter', () => {
-        clearInterval(slideInterval);
-    });
-
-    slider.addEventListener('mouseleave', () => {
+    function startSlideShow() {
         slideInterval = setInterval(nextSlide, 5000);
-    });
+    }
 
-    // Dot navigation
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            clearInterval(slideInterval);
-            showSlide(index);
-            slideInterval = setInterval(nextSlide, 5000);
+    function stopSlideShow() {
+        clearInterval(slideInterval);
+    }
+
+    if (nextBtn && prevBtn) {
+        nextBtn.addEventListener('click', () => {
+            stopSlideShow();
+            nextSlide();
+            startSlideShow();
         });
-    });
 
-    // Button navigation
-    nextBtn.addEventListener('click', () => {
-        clearInterval(slideInterval);
-        nextSlide();
-        slideInterval = setInterval(nextSlide, 5000);
-    });
-
-    prevBtn.addEventListener('click', () => {
-        clearInterval(slideInterval);
-        prevSlide();
-        slideInterval = setInterval(nextSlide, 5000);
-    });
-
-    // Initialize first slide
-    showSlide(0);
-
-    // Mobile menu toggle (would need HTML element)
-    const mobileMenuBtn = document.createElement('button');
-    mobileMenuBtn.className = 'mobile-menu-btn';
-    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-    document.querySelector('.header-content').appendChild(mobileMenuBtn);
-
-    mobileMenuBtn.addEventListener('click', function() {
-        document.querySelector('.main-nav').classList.toggle('active');
-    });
-
-    // Product tabs
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const productsContainer = document.querySelector('.products-container');
-
-    // Sample product data
-    const products = {
-        all: [
-            {id: 1, category: 'cars', title: '2022 Tesla Model 3', price: 42990, oldPrice: 45990, image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 5, reviews: 42, badge: 'Popular'},
-            
-            {id: 2, category: 'houses', title: 'Modern 3-Bedroom House', price: 450000, oldPrice: 475000, image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 4, reviews: 18, badge: 'New'},
-            {id: 3, category: 'electronics', title: 'iPhone 14 Pro Max', price: 1099, oldPrice: 1199, image: 'https://images.unsplash.com/photo-1664478546384-d57ffe74a78c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 5, reviews: 156, badge: 'Sale'},
-            {id: 4, category: 'clothing', title: 'Men\'s Casual Shirt', price: 29, oldPrice: 45, image: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80', rating: 4, reviews: 89, badge: null},
-            {id: 5, category: 'books', title: 'The Psychology of Money', price: 12, oldPrice: 18, image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 5, reviews: 203, badge: 'Bestseller'},
-            {id: 6, category: 'toys', title: 'LEGO Star Wars Set', price: 59, oldPrice: 79, image: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 4, reviews: 67, badge: 'Hot'},
-        ],
-        cars: [
-            {id: 1, category: 'cars', title: '2022 Tesla Model 3', price: 42990, oldPrice: 45990, image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 5, reviews: 42, badge: 'Popular'},
-            {id: 7, category: 'cars', title: '2021 Toyota RAV4', price: 28900, oldPrice: 31500, image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 4, reviews: 28, badge: null},
-        ],
-        houses: [
-            {id: 2, category: 'houses', title: 'Modern 3-Bedroom House', price: 450000, oldPrice: 475000, image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 4, reviews: 18, badge: 'New'},
-            {id: 8, category: 'houses', title: 'Luxury Penthouse Apartment', price: 1200000, oldPrice: 1250000, image: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 5, reviews: 9, badge: 'Luxury'},
-        ],
-        electronics: [
-            {id: 3, category: 'electronics', title: 'iPhone 14 Pro Max', price: 1099, oldPrice: 1199, image: 'https://images.unsplash.com/photo-1664478546384-d57ffe74a78c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 5, reviews: 156, badge: 'Sale'},
-            {id: 9, category: 'electronics', title: 'Sony 4K Smart TV', price: 899, oldPrice: 999, image: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 4, reviews: 87, badge: null},
-        ],
-        clothing: [
-            {id: 4, category: 'clothing', title: 'Men\'s Casual Shirt', price: 29, oldPrice: 45, image: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80', rating: 4, reviews: 89, badge: null},
-            {id: 10, category: 'clothing', title: 'Women\'s Summer Dress', price: 39, oldPrice: 59, image: 'https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80', rating: 5, reviews: 124, badge: 'Popular'},
-        ],
-        books: [
-            {id: 5, category: 'books', title: 'The Psychology of Money', price: 12, oldPrice: 18, image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 5, reviews: 203, badge: 'Bestseller'},
-            {id: 11, category: 'books', title: 'Atomic Habits', price: 11, oldPrice: 15, image: 'https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80', rating: 5, reviews: 187, badge: null},
-        ],
-        toys: [
-            {id: 6, category: 'toys', title: 'LEGO Star Wars Set', price: 59, oldPrice: 79, image: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 4, reviews: 67, badge: 'Hot'},
-            {id: 12, category: 'toys', title: 'Remote Control Car', price: 35, oldPrice: 49, image: 'https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', rating: 3, reviews: 42, badge: null},
-        ]
-    };
-
-    // Render products
-    function renderProducts(category) {
-        const productsToShow = category === 'all' ? products.all : products[category];
-        productsContainer.innerHTML = '';
-        
-        productsToShow.forEach(product => {
-            const productCard = document.createElement('div');
-            productCard.className = 'product-card';
-            
-            const badge = product.badge ? `<span class="product-badge">${product.badge}</span>` : '';
-            const stars = Array(product.rating).fill('<i class="fas fa-star"></i>').join('');
-            
-            productCard.innerHTML = `
-                ${badge}
-                <div class="product-img">
-                    <img src="${product.image}" alt="${product.title}">
-                    <button class="product-wishlist"><i class="far fa-heart"></i></button>
-                </div>
-                <div class="product-content">
-                    <p class="product-category">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</p>
-                    <h3 class="product-title">${product.title}</h3>
-                    <div class="product-price">
-                        <span class="current-price">$${product.price.toLocaleString()}</span>
-                        ${product.oldPrice ? `<span class="old-price">$${product.oldPrice.toLocaleString()}</span>` : ''}
-                    </div>
-                    <div class="product-rating">
-                        ${stars}
-                        <span>(${product.reviews})</span>
-                    </div>
-                    <div class="product-meta">
-                        <span><i class="fas fa-shopping-cart"></i> Add to Cart</span>
-                        <span><i class="fas fa-eye"></i> Quick View</span>
-                    </div>
-                </div>
-            `;
-            
-            productsContainer.appendChild(productCard);
+        prevBtn.addEventListener('click', () => {
+            stopSlideShow();
+            prevSlide();
+            startSlideShow();
         });
-        
-        // Add wishlist functionality
-        document.querySelectorAll('.product-wishlist').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                this.innerHTML = this.classList.contains('active') ? 
-                    '<i class="far fa-heart"></i>' : '<i class="fas fa-heart"></i>';
-                this.classList.toggle('active');
-                
-                // Update wishlist count
-                const wishlistCount = document.querySelector('.wishlist-btn .count');
-                let count = parseInt(wishlistCount.textContent);
-                wishlistCount.textContent = this.classList.contains('active') ? count + 1 : count - 1;
+    }
+
+    if (dots.length > 0) {
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopSlideShow();
+                showSlide(index);
+                startSlideShow();
             });
         });
     }
 
-    // Tab functionality
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            tabBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            renderProducts(this.dataset.category);
-        });
-    });
+    const sliderContainer = document.querySelector('.slider-container');
+    if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', stopSlideShow);
+        sliderContainer.addEventListener('mouseleave', startSlideShow);
+    }
 
-    // Initialize with all products
-    renderProducts('all');
+    startSlideShow();
 
-    // Mega menu toggle for mobile
-    const megaMenuToggles = document.querySelectorAll('.mega-menu > .nav-link');
+    // ===== CATEGORY CARDS ANIMATION =====
+    const categoryCards = document.querySelectorAll('.category-card');
     
-    megaMenuToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-            if (window.innerWidth <= 576) {
-                e.preventDefault();
-                const megaMenu = this.parentElement;
-                megaMenu.classList.toggle('active');
+    function checkScroll() {
+        categoryCards.forEach(card => {
+            const cardPosition = card.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (cardPosition < screenPosition) {
+                card.style.opacity = 1;
+                card.style.transform = 'translateY(0)';
             }
         });
-    });
 
-    // Cart count update (sample functionality)
-    document.querySelectorAll('.product-meta span:first-child').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const cartCount = document.querySelector('.cart-btn .count');
-            let count = parseInt(cartCount.textContent);
-            cartCount.textContent = count + 1;
+        // Also check for product cards animation
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            const cardPosition = card.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
             
-            // Add animation
-            cartCount.classList.add('animate');
-            setTimeout(() => {
-                cartCount.classList.remove('animate');
-            }, 300);
-        });
-    });
-
-    // Newsletter form submission
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input').value;
-            if (email) {
-                alert(`Thank you for subscribing with ${email}!`);
-                this.querySelector('input').value = '';
+            if (cardPosition < screenPosition) {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
             }
         });
     }
+    
+    if (categoryCards.length > 0) {
+        categoryCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+    }
+    
+    window.addEventListener('load', checkScroll);
+    window.addEventListener('scroll', checkScroll);
+    
+    checkScroll();
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
+    // ===== PRODUCT CARDS HOVER EFFECTS =====
+    const productCards = document.querySelectorAll('.product-card');
+    
+    productCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)';
+            card.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
         });
     });
 
-    // Sticky header on scroll
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('.header');
-        if (window.scrollY > 100) {
-            header.classList.add('sticky');
-        } else {
-            header.classList.remove('sticky');
-        }
+    // ===== LOAD MORE FUNCTIONALITY =====
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const moreProducts = document.getElementById('more-products');
+    
+    if (loadMoreBtn && moreProducts) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Show the hidden products with smooth animation
+            moreProducts.style.display = 'grid';
+            
+            // Trigger reflow for animation
+            void moreProducts.offsetWidth;
+            
+            // Add animation class
+            moreProducts.style.animation = 'fadeIn 0.6s ease-in forwards';
+            
+            // Hide the load more button with smooth transition
+            loadMoreBtn.style.opacity = '0';
+            loadMoreBtn.style.transform = 'translateY(20px)';
+            loadMoreBtn.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            
+            setTimeout(() => {
+                loadMoreBtn.style.display = 'none';
+                
+                // Animate in the new product cards
+                const newProductCards = moreProducts.querySelectorAll('.product-card');
+                newProductCards.forEach((card, index) => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+                
+                // Optional: Scroll to the newly loaded products
+                moreProducts.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }, 300);
+        });
+
+        // Add hover effects to load more button
+        loadMoreBtn.addEventListener('mouseenter', () => {
+            loadMoreBtn.style.transform = 'translateY(-2px)';
+        });
+        
+        loadMoreBtn.addEventListener('mouseleave', () => {
+            loadMoreBtn.style.transform = 'translateY(0)';
+        });
+    }
+
+    // ===== INTERSECTION OBSERVER FOR LAZY ANIMATIONS =====
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('product-card')) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all product cards for animation
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
     });
+
+    // ===== LIKE AND SHARE BUTTON FUNCTIONALITY =====
+    document.querySelectorAll('.interaction-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const itemId = this.getAttribute('data-item-id');
+            const action = this.getAttribute('data-action');
+            
+            // Add temporary visual feedback
+            this.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Here you would typically make an AJAX call to your backend
+            console.log(`${action} clicked for item ${itemId}`);
+        });
+    });
+
+    // ===== RESPONSIVE BEHAVIOR =====
+    function handleResize() {
+        // Adjust animations based on screen size
+        if (window.innerWidth < 768) {
+            // Mobile-specific adjustments
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            });
+        }
+    }
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    // ===== TOUCH DEVICE SUPPORT =====
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    if (sliderContainer) {
+        sliderContainer.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        sliderContainer.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+    }
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            // Swipe left - next slide
+            stopSlideShow();
+            nextSlide();
+            startSlideShow();
+        }
+        
+        if (touchEndX > touchStartX + 50) {
+            // Swipe right - previous slide
+            stopSlideShow();
+            prevSlide();
+            startSlideShow();
+        }
+    }
 });
+
+// ===== UTILITY FUNCTIONS =====
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Export functions for potential reuse
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { debounce };
+}

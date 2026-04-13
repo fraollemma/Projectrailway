@@ -1,7 +1,8 @@
-# vehicles/models.py
+# project/vehicles/models.py
 from django.db import models
 from django.conf import settings
 from django.utils.text import slugify
+from django.urls import reverse
 
 class VehicleCategory(models.Model):
     name = models.CharField(max_length=50)
@@ -15,7 +16,7 @@ class VehicleCategory(models.Model):
 
     def __str__(self):
         return self.name
-
+    
 class Vehicle(models.Model):
     VEHICLE_TYPES = (
         ('car', 'Car'),
@@ -56,10 +57,43 @@ class Vehicle(models.Model):
     engine_size = models.CharField(max_length=20, blank=True)
     color = models.CharField(max_length=30)
     description = models.TextField()
-    is_featured = models.BooleanField(default=False)
-    date_added = models.DateTimeField(auto_now_add=True)
+    is_featured = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(unique=True)
-    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    created_by = models.ForeignKey(settings.
+    AUTH_USER_MODEL, on_delete=models.CASCADE)
+    like_count = models.PositiveIntegerField(default=0)
+    share_count = models.PositiveIntegerField(default=0)
+    liked_by = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name='liked_vehicles',
+        blank=True
+    )
+    
+    def increment_likes(self):
+        self.like_count += 1
+        self.save()
+        return self.like_count
+    
+    def toggle_like(self, user):
+        if user in self.liked_by.all():
+            self.liked_by.remove(user)
+        else:
+            self.liked_by.add(user)
+        self.like_count = self.liked_by.count()
+        self.save()
+        return self.like_count
+    
+    def has_liked(self, user):
+        """Return True if the user has liked this vehicle."""
+        if user.is_authenticated:
+            return self.liked_by.filter(pk=user.pk).exists()
+        return False
+    
+    def increment_shares(self):
+        self.share_count += 1
+        self.save()
+        return self.share_count
     
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -74,6 +108,8 @@ class Vehicle(models.Model):
     
     def __str__(self):
         return f"{self.year} {self.make} {self.model}"
+    def get_absolute_url(self):
+        return reverse("vehicles:vehicle_detail", args=[self.slug])
 
 class VehicleImage(models.Model):
     vehicle = models.ForeignKey(Vehicle, related_name='images', on_delete=models.CASCADE)

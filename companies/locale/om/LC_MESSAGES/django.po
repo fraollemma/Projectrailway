@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-22 03:51+0300\n"
+"POT-Creation-Date: 2025-08-11 01:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Oromo <om@li.org>\n"
@@ -16,465 +16,491 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\templates\companies\alema.html:13 .\templates\companies\alema.html:16
+#: .\companies\templates\companies\alema.html:13
+#: .\companies\templates\companies\alema.html:16
 msgid "Alemma Animal Feed"
 msgstr "Alemma Qorichaa Bineensotaa"
 
-#: .\templates\companies\alema.html:14
+#: .\companies\templates\companies\alema.html:14
 msgid "Alemma Animal Feed Ethiopia"
 msgstr "Alemma Qorichaa Bineensotaa Itoophiyaa"
 
-#: .\templates\companies\alema.html:15
+#: .\companies\templates\companies\alema.html:15
 msgid ""
 "Alemma Animal Feed is a leading animal feed manufacturer in Ethiopia, "
 "dedicated to providing high-quality feed products for livestock and poultry."
-msgstr "Alemma Qorichaa Bineensotaa kan Itoophiyaa keessatti qorichaa bineensotaa gurguruu keessatti guddaadha, qorichaa gaarii lukkuu fi bineensotaa kennuuf kaffalame."
+msgstr ""
+"Alemma Qorichaa Bineensotaa kan Itoophiyaa keessatti qorichaa bineensotaa "
+"gurguruu keessatti guddaadha, qorichaa gaarii lukkuu fi bineensotaa kennuuf "
+"kaffalame."
 
-#: .\templates\companies\alema.html:16
+#: .\companies\templates\companies\alema.html:16
 msgid "For more information, you can visit their official website: "
 msgstr "Odeeffannoo dabalataaf, website isaanii kan ofiisaa daawwadhu: "
 
-#: .\templates\companies\alema.html:17
+#: .\companies\templates\companies\alema.html:17
 msgid ""
 "Alemma Animal Feed is committed to improving the productivity and health of "
 "livestock in Ethiopia through the provision of nutritious and scientifically "
 "formulated animal feed."
-msgstr "Alemma Qorichaa Bineensotaa soorata bineensotaa qindaa'e fi saayinsii irratti hundaa'e kennuun bineensota Itoophiyaa soorataafi fayyaa isaanii fooyyessuuf kaffalame."
+msgstr ""
+"Alemma Qorichaa Bineensotaa soorata bineensotaa qindaa'e fi saayinsii "
+"irratti hundaa'e kennuun bineensota Itoophiyaa soorataafi fayyaa isaanii "
+"fooyyessuuf kaffalame."
 
-#: .\templates\companies\ethiochicken.html:16
+#: .\companies\templates\companies\ethiochicken.html:16
 msgid "EthioChicken Feed Manufacturers"
 msgstr "EthioChicken Qorichaa Lukkuu Gurguraa"
 
-#: .\templates\companies\ethiochicken.html:17
+#: .\companies\templates\companies\ethiochicken.html:17
 msgid "Empowering Ethiopian farmers through poultry excellence"
 msgstr "Horsiistota Itoophiyaa lukkuu irratti qooda qabuun cimsuu"
 
-#: .\templates\companies\ethiochicken.html:19
+#: .\companies\templates\companies\ethiochicken.html:19
 msgid "Visit Our Website"
 msgstr "Website Keenya Daawwadhu"
 
-#: .\templates\companies\ethiochicken.html:27
+#: .\companies\templates\companies\ethiochicken.html:27
 msgid "Price Update"
 msgstr "Gatii Haaraa"
 
-#: .\templates\companies\ethiochicken.html:32
+#: .\companies\templates\companies\ethiochicken.html:32
 msgid "Chickens Type and Price Updates"
 msgstr "Gosa Lukkuu fi Gatii Haaraa"
 
-#: .\templates\companies\ethiochicken.html:33
+#: .\companies\templates\companies\ethiochicken.html:33
 msgid ""
 "This section provides an overview of the different types of chickens "
 "available and their respective prices."
 msgstr "Kutaanni kun gosa lukkuu adda addaa fi gatii isaanii irratti argama."
 
-#: .\templates\companies\ethiochicken.html:38
+#: .\companies\templates\companies\ethiochicken.html:38
 msgid "Chicken Type"
 msgstr "Gosa Lukkuu"
 
-#: .\templates\companies\ethiochicken.html:39
-#: .\templates\companies\ethiochicken.html:92
+#: .\companies\templates\companies\ethiochicken.html:39
+#: .\companies\templates\companies\ethiochicken.html:92
 msgid "Description"
 msgstr "Ibsa"
 
-#: .\templates\companies\ethiochicken.html:40
-#: .\templates\companies\ethiochicken.html:93
+#: .\companies\templates\companies\ethiochicken.html:40
+#: .\companies\templates\companies\ethiochicken.html:93
 msgid "Price"
 msgstr "Gatii"
 
-#: .\templates\companies\ethiochicken.html:45
+#: .\companies\templates\companies\ethiochicken.html:45
 msgid "Day Old Chickens"
 msgstr "Lukkuu Guyyaa Tokkoof"
 
-#: .\templates\companies\ethiochicken.html:46
+#: .\companies\templates\companies\ethiochicken.html:46
 msgid "Newly born chicks"
 msgstr "Lukkuu dhalate haaraa"
 
-#: .\templates\companies\ethiochicken.html:47
-#: .\templates\companies\ethiochicken.html:105
+#: .\companies\templates\companies\ethiochicken.html:47
+#: .\companies\templates\companies\ethiochicken.html:105
 msgid "ETB 20.00"
 msgstr "ETB 20.00"
 
-#: .\templates\companies\ethiochicken.html:50
+#: .\companies\templates\companies\ethiochicken.html:50
 msgid "Bovance Brown"
 msgstr "Bovance Brown"
 
-#: .\templates\companies\ethiochicken.html:51
+#: .\companies\templates\companies\ethiochicken.html:51
 msgid "Egg laying chickens"
 msgstr "Lukkuu ukkaamsa"
 
-#: .\templates\companies\ethiochicken.html:52
-#: .\templates\companies\ethiochicken.html:110
+#: .\companies\templates\companies\ethiochicken.html:52
+#: .\companies\templates\companies\ethiochicken.html:110
 msgid "ETB 25.00"
 msgstr "ETB 25.00"
 
-#: .\templates\companies\ethiochicken.html:55
+#: .\companies\templates\companies\ethiochicken.html:55
 msgid "Sasso"
 msgstr "Sasso"
 
-#: .\templates\companies\ethiochicken.html:56
+#: .\companies\templates\companies\ethiochicken.html:56
 msgid "Dual purpose chickens"
 msgstr "Lukkuu kaayyoo lama qabu"
 
-#: .\templates\companies\ethiochicken.html:57
-#: .\templates\companies\ethiochicken.html:115
+#: .\companies\templates\companies\ethiochicken.html:57
+#: .\companies\templates\companies\ethiochicken.html:115
 msgid "ETB 30.00"
 msgstr "ETB 30.00"
 
-#: .\templates\companies\ethiochicken.html:60
+#: .\companies\templates\companies\ethiochicken.html:60
 msgid "Broilers"
 msgstr "Broilers"
 
-#: .\templates\companies\ethiochicken.html:61
+#: .\companies\templates\companies\ethiochicken.html:61
 msgid "Meat production chickens"
 msgstr "Lukkuu foon uumuu"
 
-#: .\templates\companies\ethiochicken.html:62
-#: .\templates\companies\ethiochicken.html:120
+#: .\companies\templates\companies\ethiochicken.html:62
+#: .\companies\templates\companies\ethiochicken.html:120
 msgid "ETB 35.00"
 msgstr "ETB 35.00"
 
-#: .\templates\companies\ethiochicken.html:65
+#: .\companies\templates\companies\ethiochicken.html:65
 msgid "Layer"
 msgstr "Layer"
 
-#: .\templates\companies\ethiochicken.html:66
+#: .\companies\templates\companies\ethiochicken.html:66
 msgid "Chickens for egg production"
 msgstr "Lukkuu ukkaamsa uumuu"
 
-#: .\templates\companies\ethiochicken.html:67
+#: .\companies\templates\companies\ethiochicken.html:67
 msgid "ETB 40.00"
 msgstr "ETB 40.00"
 
-#: .\templates\companies\ethiochicken.html:70
+#: .\companies\templates\companies\ethiochicken.html:70
 msgid "Broiler/Cobb"
 msgstr "Broiler/Cobb"
 
-#: .\templates\companies\ethiochicken.html:71
+#: .\companies\templates\companies\ethiochicken.html:71
 msgid "Chickens for meat production"
 msgstr "Lukkuu foon uumuu"
 
-#: .\templates\companies\ethiochicken.html:72
+#: .\companies\templates\companies\ethiochicken.html:72
 msgid "ETB 45.00"
 msgstr "ETB 45.00"
 
-#: .\templates\companies\ethiochicken.html:75
+#: .\companies\templates\companies\ethiochicken.html:75
 msgid "Red Ranger"
 msgstr "Red Ranger"
 
-#: .\templates\companies\ethiochicken.html:76
+#: .\companies\templates\companies\ethiochicken.html:76
 msgid "Free-range chickens"
 msgstr "Lukkuu daangaa malee"
 
-#: .\templates\companies\ethiochicken.html:77
+#: .\companies\templates\companies\ethiochicken.html:77
 msgid "ETB 50.00"
 msgstr "ETB 50.00"
 
-#: .\templates\companies\ethiochicken.html:85
+#: .\companies\templates\companies\ethiochicken.html:85
 msgid "Feeds Type and Price Updates"
 msgstr "Gosa Qorichaa fi Gatii Haaraa"
 
-#: .\templates\companies\ethiochicken.html:86
+#: .\companies\templates\companies\ethiochicken.html:86
 msgid ""
 "This section provides an overview of the different types of feeds available "
 "and their respective prices."
 msgstr "Kutaanni kun gosa qorichaa adda addaa fi gatii isaanii irratti argama."
 
-#: .\templates\companies\ethiochicken.html:91
+#: .\companies\templates\companies\ethiochicken.html:91
 msgid "Feed Type"
 msgstr "Gosa Qorichaa"
 
-#: .\templates\companies\ethiochicken.html:98
+#: .\companies\templates\companies\ethiochicken.html:98
 msgid "Starter Feed"
 msgstr "Qorichaa Jalqabaa"
 
-#: .\templates\companies\ethiochicken.html:99
+#: .\companies\templates\companies\ethiochicken.html:99
 msgid "For day-old chicks"
 msgstr "Lukkuu guyyaa tokkoof"
 
-#: .\templates\companies\ethiochicken.html:100
+#: .\companies\templates\companies\ethiochicken.html:100
 msgid "ETB 15.00"
 msgstr "ETB 15.00"
 
-#: .\templates\companies\ethiochicken.html:103
+#: .\companies\templates\companies\ethiochicken.html:103
 msgid "Grower Feed"
 msgstr "Qorichaa Guddinaa"
 
-#: .\templates\companies\ethiochicken.html:104
+#: .\companies\templates\companies\ethiochicken.html:104
 msgid "For growing chickens"
 msgstr "Lukkuu guddinaa"
 
-#: .\templates\companies\ethiochicken.html:108
+#: .\companies\templates\companies\ethiochicken.html:108
 msgid "Layer Feed"
 msgstr "Qorichaa Layer"
 
-#: .\templates\companies\ethiochicken.html:109
+#: .\companies\templates\companies\ethiochicken.html:109
 msgid "For egg-laying hens"
 msgstr "Lukkuu ukkaamsa"
 
-#: .\templates\companies\ethiochicken.html:113
+#: .\companies\templates\companies\ethiochicken.html:113
 msgid "Broiler Feed"
 msgstr "Qorichaa Broiler"
 
-#: .\templates\companies\ethiochicken.html:114
+#: .\companies\templates\companies\ethiochicken.html:114
 msgid "For meat production"
 msgstr "Foon uumuu"
 
-#: .\templates\companies\ethiochicken.html:118
+#: .\companies\templates\companies\ethiochicken.html:118
 msgid "Finisher Feed"
 msgstr "Qorichaa Xumuraa"
 
-#: .\templates\companies\ethiochicken.html:119
+#: .\companies\templates\companies\ethiochicken.html:119
 msgid "For finishing broilers"
 msgstr "Broilers xumuruuf"
 
-#: .\templates\companies\ethiochicken.html:130
+#: .\companies\templates\companies\ethiochicken.html:130
 msgid "About EthioChicken"
 msgstr "Waa'ee EthioChicken"
 
-#: .\templates\companies\ethiochicken.html:133
+#: .\companies\templates\companies\ethiochicken.html:133
 msgid ""
 "Ethiochicken is a leading poultry company in Ethiopia, dedicated to "
 "improving the livelihoods of smallholder farmers through the provision of "
 "high-quality poultry products and services."
-msgstr "Ethiochicken kan Itoophiyaa keessatti lukkuu irratti hojjetu guddaadha, qooda lukkuu gaarii kennuun qabeenya horsiistota xixiqqoo fooyyessuuf kaffalame."
+msgstr ""
+"Ethiochicken kan Itoophiyaa keessatti lukkuu irratti hojjetu guddaadha, "
+"qooda lukkuu gaarii kennuun qabeenya horsiistota xixiqqoo fooyyessuuf "
+"kaffalame."
 
-#: .\templates\companies\ethiochicken.html:138
+#: .\companies\templates\companies\ethiochicken.html:138
 msgid "Our Mission"
 msgstr "Kaayyoo Keenya"
 
-#: .\templates\companies\ethiochicken.html:139
+#: .\companies\templates\companies\ethiochicken.html:139
 msgid ""
 "To enhance food security and create sustainable livelihoods in rural "
 "communities through poultry farming."
-msgstr "Nyaataa eeguu fi jireenya gabbinaa godinaa keessatti lukkuu qonnaa irratti hundaa'uun uumuu."
+msgstr ""
+"Nyaataa eeguu fi jireenya gabbinaa godinaa keessatti lukkuu qonnaa irratti "
+"hundaa'uun uumuu."
 
-#: .\templates\companies\ethiochicken.html:143
+#: .\companies\templates\companies\ethiochicken.html:143
 msgid "Our Vision"
 msgstr "Ijaarsa Keenya"
 
-#: .\templates\companies\ethiochicken.html:144
+#: .\companies\templates\companies\ethiochicken.html:144
 msgid ""
 "To be the catalyst for poultry-led transformation in Ethiopian agriculture."
-msgstr "Itoophiyaa qonnaa keessatti jijjiirama lukkuu irratti hundaa'uun guddisuu."
+msgstr ""
+"Itoophiyaa qonnaa keessatti jijjiirama lukkuu irratti hundaa'uun guddisuu."
 
-#: .\templates\companies\ethiochicken.html:153
+#: .\companies\templates\companies\ethiochicken.html:153
 msgid "Our Value to Farmers"
 msgstr "Horsiistotaaf Qooda Keenya"
 
-#: .\templates\companies\ethiochicken.html:158
+#: .\companies\templates\companies\ethiochicken.html:158
 msgid "Quality Breeds"
 msgstr "Gosa Gaarii"
 
-#: .\templates\companies\ethiochicken.html:159
+#: .\companies\templates\companies\ethiochicken.html:159
 msgid "Providing high-quality poultry breeds adapted to local conditions."
 msgstr "Gosa lukkuu gaarii naannoo irratti mirkaneessifame kennuu."
 
-#: .\templates\companies\ethiochicken.html:163
+#: .\companies\templates\companies\ethiochicken.html:163
 msgid "Premium Feed"
 msgstr "Qorichaa Gaarii"
 
-#: .\templates\companies\ethiochicken.html:164
+#: .\companies\templates\companies\ethiochicken.html:164
 msgid "Nutritionally balanced feed formulations for optimal growth."
 msgstr "Qorichaa guddina gaarii kan ta'e soorata qindaa'e kennuu."
 
-#: .\templates\companies\ethiochicken.html:168
+#: .\companies\templates\companies\ethiochicken.html:168
 msgid "Farmer Training"
 msgstr "Horsiistota Barsiisuu"
 
-#: .\templates\companies\ethiochicken.html:169
+#: .\companies\templates\companies\ethiochicken.html:169
 msgid "Comprehensive training programs for successful poultry farming."
 msgstr "Programmii barsiisaa lukkuu qonnaa milkaa'inaa qabu barsiisuu."
 
-#: .\templates\companies\ethiochicken.html:173
+#: .\companies\templates\companies\ethiochicken.html:173
 msgid "Veterinary Support"
 msgstr "Gargaarsa Fayyaa Bineensotaa"
 
-#: .\templates\companies\ethiochicken.html:174
+#: .\companies\templates\companies\ethiochicken.html:174
 msgid "Access to veterinary services and disease prevention."
 msgstr "Tajaajila fayyaa bineensotaa fi dhukkuba ittisuu argachuu."
 
-#: .\templates\companies\ethiochicken.html:182
+#: .\companies\templates\companies\ethiochicken.html:182
 msgid "Contact Us"
 msgstr "Nu Qunnamaa"
 
-#: .\templates\companies\ethiochicken.html:188
-#: .\templates\companies\nvi.html:149
+#: .\companies\templates\companies\ethiochicken.html:188
+#: .\companies\templates\companies\nvi.html:149
 msgid "Email"
 msgstr "Imeelii"
 
-#: .\templates\companies\ethiochicken.html:191
+#: .\companies\templates\companies\ethiochicken.html:191
 msgid "Copy"
 msgstr "Dubbisi"
 
-#: .\templates\companies\ethiochicken.html:196
+#: .\companies\templates\companies\ethiochicken.html:196
 msgid "Phone"
 msgstr "Bilbila"
 
-#: .\templates\companies\ethiochicken.html:201
+#: .\companies\templates\companies\ethiochicken.html:201
 msgid "Call"
 msgstr "Bilbilaa"
 
-#: .\templates\companies\ethiochicken.html:206
-#: .\templates\companies\nvi.html:144
+#: .\companies\templates\companies\ethiochicken.html:206
+#: .\companies\templates\companies\nvi.html:144
 msgid "Address"
 msgstr "Teessoo"
 
-#: .\templates\companies\ethiochicken.html:207
+#: .\companies\templates\companies\ethiochicken.html:207
 msgid "Ethio China Street, Kadco Group"
 msgstr "Manaa Ethio China, Garee Kadco"
 
-#: .\templates\companies\ethiochicken.html:208
+#: .\companies\templates\companies\ethiochicken.html:208
 msgid "Building #2, 6th floor,"
 msgstr "Mana #2, Sadarkaa 6ffaa,"
 
-#: .\templates\companies\ethiochicken.html:209
+#: .\companies\templates\companies\ethiochicken.html:209
 msgid "Addis Ababa, Ethiopia"
 msgstr "Finfinnee, Itoophiyaa"
 
-#: .\templates\companies\ethiochicken.html:211
+#: .\companies\templates\companies\ethiochicken.html:211
 msgid "View Map"
 msgstr "Kaartaa Ilaaluu"
 
-#: .\templates\companies\ethiochicken.html:221
+#: .\companies\templates\companies\ethiochicken.html:221
 msgid "Farmer Success Stories"
 msgstr "Seenaa Milkaa'inaa Horsiistotaa"
 
-#: .\templates\companies\ethiochicken.html:227
+#: .\companies\templates\companies\ethiochicken.html:227
 msgid ""
 "'EthioChicken changed my life. With their training and quality chicks, my "
 "poultry business has grown threefold in just one year.'"
-msgstr "'EthioChicken jireenya koo jijjiirame. Barumsa isaanii fi lukkuu gaarii waliin, hojii lukkuu koo waggaa tokko keessatti sadiif guddifte.'"
+msgstr ""
+"'EthioChicken jireenya koo jijjiirame. Barumsa isaanii fi lukkuu gaarii "
+"waliin, hojii lukkuu koo waggaa tokko keessatti sadiif guddifte.'"
 
-#: .\templates\companies\ethiochicken.html:228
+#: .\companies\templates\companies\ethiochicken.html:228
 msgid "- Ato Kebede, Smallholder Farmer"
 msgstr "- Ato Kebede, Horsiista Xixiqqoo"
 
-#: .\templates\companies\index.html:11
+#: .\companies\templates\companies\index.html:11
 msgid "companies list"
 msgstr "gahee kampaanii"
 
-#: .\templates\companies\nvi.html:16
+#: .\companies\templates\companies\nvi.html:16
 msgid "National Veterinary Institute"
 msgstr "Inistitiyuutii Fayyaa Bineensotaa Mootummaa"
 
-#: .\templates\companies\nvi.html:17
+#: .\companies\templates\companies\nvi.html:17
 msgid "Advancing Animal Health in Ethiopia "
 msgstr "Fayyaa Bineensotaa Itoophiyaa Keessatti Guddifachuu"
 
-#: .\templates\companies\nvi.html:22
+#: .\companies\templates\companies\nvi.html:22
 msgid "About Us"
 msgstr "Waa'ee Keenya"
 
-#: .\templates\companies\nvi.html:25
+#: .\companies\templates\companies\nvi.html:25
 msgid "Vision"
 msgstr "Ijaarsa"
 
-#: .\templates\companies\nvi.html:26
+#: .\companies\templates\companies\nvi.html:26
 msgid ""
 "By 2029 G.C the institute will fulfill the national demand for veterinary "
 "vaccines and drugs and become a competitive institute in Africa."
-msgstr "Waggaa 2029 G.C keessatti institiyuutichi fedhii biyyaa vakasiinii fi dhangala'aa fayyaa bineensotaa guutuu fi institiyuutii Afrikaa keessatti kan dorgomuu ta'u."
+msgstr ""
+"Waggaa 2029 G.C keessatti institiyuutichi fedhii biyyaa vakasiinii fi "
+"dhangala'aa fayyaa bineensotaa guutuu fi institiyuutii Afrikaa keessatti kan "
+"dorgomuu ta'u."
 
-#: .\templates\companies\nvi.html:30
+#: .\companies\templates\companies\nvi.html:30
 msgid "Mission"
 msgstr "Kaayyoo"
 
-#: .\templates\companies\nvi.html:31
+#: .\companies\templates\companies\nvi.html:31
 msgid ""
 "Producing and supplying quality veterinary vaccines, drugs, and biologicals "
 "at affordable prices for the domestic market to support the livestock "
 "sector, generating foreign currency through exports, and sustaining "
 "profitability."
-msgstr "Vakasiinii, dhangala'aa fi biologikaalee fayyaa bineensotaa gaarii gatii gahaa gurguruu, qabeenya bineensotaa deeggarsu, baga alaa uumuu fi faayidaa ittisuuf."
+msgstr ""
+"Vakasiinii, dhangala'aa fi biologikaalee fayyaa bineensotaa gaarii gatii "
+"gahaa gurguruu, qabeenya bineensotaa deeggarsu, baga alaa uumuu fi faayidaa "
+"ittisuuf."
 
-#: .\templates\companies\nvi.html:38
+#: .\companies\templates\companies\nvi.html:38
 msgid "Quick Links"
 msgstr "Mooraa Dhiyeessaa"
 
-#: .\templates\companies\nvi.html:40
+#: .\companies\templates\companies\nvi.html:40
 msgid "Feedback"
 msgstr "Yaada Deebii"
 
-#: .\templates\companies\nvi.html:41
+#: .\companies\templates\companies\nvi.html:41
 msgid " All News"
 msgstr " Oduu Hundaa"
 
-#: .\templates\companies\nvi.html:42
+#: .\companies\templates\companies\nvi.html:42
 msgid "Downloads"
 msgstr "Bu'aa Dhaabbataa"
 
-#: .\templates\companies\nvi.html:43
+#: .\companies\templates\companies\nvi.html:43
 msgid " Vacancy"
 msgstr " Hojii Dhiyaate"
 
-#: .\templates\companies\nvi.html:44
+#: .\companies\templates\companies\nvi.html:44
 msgid "Partners"
 msgstr "Waliif Hojjettoota"
 
-#: .\templates\companies\nvi.html:49
+#: .\companies\templates\companies\nvi.html:49
 msgid " Our Vaccines"
 msgstr " Vakasiinii Keenya"
 
-#: .\templates\companies\nvi.html:59
+#: .\companies\templates\companies\nvi.html:59
 msgid "LIVE NEWCASTLE DISEASE VACCINE"
 msgstr "VAKASIINII DHUKKUBA NEWCASTLE JIRAA"
 
-#: .\templates\companies\nvi.html:60 .\templates\companies\nvi.html:73
-#: .\templates\companies\nvi.html:86 .\templates\companies\nvi.html:99
-#: .\templates\companies\nvi.html:112 .\templates\companies\nvi.html:125
+#: .\companies\templates\companies\nvi.html:60
+#: .\companies\templates\companies\nvi.html:73
+#: .\companies\templates\companies\nvi.html:86
+#: .\companies\templates\companies\nvi.html:99
+#: .\companies\templates\companies\nvi.html:112
+#: .\companies\templates\companies\nvi.html:125
 msgid "View Details"
 msgstr "Ibsa Ilaaluu"
 
-#: .\templates\companies\nvi.html:72
+#: .\companies\templates\companies\nvi.html:72
 msgid "INACTIVATED NEWCASTLE OIL EMULSION VACCINE"
 msgstr "VAKASIINII DHUKKUBA NEWCASTLE HIN HOJJENNEF"
 
-#: .\templates\companies\nvi.html:85
+#: .\companies\templates\companies\nvi.html:85
 msgid "NEWCASTLE DISEASE THERMOSTABLE VACCINE"
 msgstr "VAKASIINII DHUKKUBA NEWCASTLE QOOFAA"
 
-#: .\templates\companies\nvi.html:98
+#: .\companies\templates\companies\nvi.html:98
 msgid "FOWL POX VACCINE"
 msgstr "VAKASIINII DHUKKUBA FOWL POX"
 
-#: .\templates\companies\nvi.html:111
+#: .\companies\templates\companies\nvi.html:111
 msgid "INFECTIOUS BURSAL DISEASE /GUMBORO/ VACCINE"
 msgstr "VAKASIINII DHUKKUBA INFECTIOUS BURSAL /GUMBORO/"
 
-#: .\templates\companies\nvi.html:124
+#: .\companies\templates\companies\nvi.html:124
 msgid "Marek’s Disease Vaccine (HVT)"
 msgstr "Vakasiinii Dhukkuba Marek (HVT)"
 
-#: .\templates\companies\nvi.html:134
+#: .\companies\templates\companies\nvi.html:134
 msgid " Contact Us"
 msgstr " Nu Qunnamaa"
 
-#: .\templates\companies\nvi.html:137
+#: .\companies\templates\companies\nvi.html:137
 msgid " Phone"
 msgstr " Bilbila"
 
-#: .\templates\companies\nvi.html:138
+#: .\companies\templates\companies\nvi.html:138
 msgid "Tel: 251-114-33-84-11/16"
 msgstr "Bilbila: 251-114-33-84-11/16"
 
-#: .\templates\companies\nvi.html:139
+#: .\companies\templates\companies\nvi.html:139
 msgid "Mobile: 251-903-04-88-88"
 msgstr "Mobilii: 251-903-04-88-88"
 
-#: .\templates\companies\nvi.html:140
+#: .\companies\templates\companies\nvi.html:140
 msgid "Fax: 251-114-33-93-00"
 msgstr "Faaksii: 251-114-33-93-00"
 
-#: .\templates\companies\nvi.html:145
+#: .\companies\templates\companies\nvi.html:145
 msgid "P.O. Box 19, Bishoftu, Ethiopia"
 msgstr "P.O. Box 19, Bishooftuu, Itoophiyaa"
 
-#: .\templates\companies\nvi.html:156
+#: .\companies\templates\companies\nvi.html:156
 msgid "Visit Official Website"
 msgstr "Website Mootummaa Daawwadhu"
 
-#: .\templates\companies\nvi.html:163
+#: .\companies\templates\companies\nvi.html:163
 msgid ""
 "NVI is committed to improving animal health and productivity in Ethiopia "
 "through the development and distribution of high-quality veterinary products."
-msgstr "NVI qindeessaa fi gurguraa qorichaa fayyaa bineensotaa gaarii irratti hundaa'uun fayyaa fi sochii bineensota Itoophiyaa fooyyessuuf kaffalame."
+msgstr ""
+"NVI qindeessaa fi gurguraa qorichaa fayyaa bineensotaa gaarii irratti "
+"hundaa'uun fayyaa fi sochii bineensota Itoophiyaa fooyyessuuf kaffalame."
