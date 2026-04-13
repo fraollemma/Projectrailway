@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DAPHNE_TIMEOUT = 50
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL')
+        default=os.environ.get("DATABASE_URL")
     )
 }
 
