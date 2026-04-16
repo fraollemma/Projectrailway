@@ -7,8 +7,8 @@ from django.utils.translation import gettext_lazy as _
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', 'unsafe-secret-key')
-DEBUG = os.getenv('DEBUG', 'False') == 'False'
-ALLOWED_HOSTS = ['*','localhost', '127.0.0.1',"fraollemma.online",
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',"fraollemma.online",
     "www.fraollemma.online",
     "web-production-82afc.up.railway.app"]
 
@@ -24,10 +24,12 @@ LANGUAGE_COOKIE_SAMESITE = 'Lax'
 
 REDIS_URL = os.getenv('REDIS_URL')
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://127.0.0.1:8000', 'https://*.railway.app']
+CSRF_TRUSTED_ORIGINS = ["https://fraollemma.online",
+    "https://www.fraollemma.online",
+    "https://*.railway.app", 'https://*.railway.app']
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-SECURE_PROXY_SSL_HEADER = None
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
