@@ -47,13 +47,14 @@ else:
 
 INSTALLED_APPS = [
     'cloudinary_storage',  # Must be before django.contrib.staticfiles
+    'daphne',
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'daphne',
+    
     
     'channels',
     'rest_framework',
@@ -119,7 +120,6 @@ LOGOUT_REDIRECT_URL = 'home'
 # Static files (CSS, JS, images)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [BASE_DIR / "static"]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files (user uploads) – use Cloudinary in production, local in development
