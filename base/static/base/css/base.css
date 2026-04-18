@@ -188,7 +188,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    
     padding: var(--spacing-sm) 0;
 }
 
@@ -204,9 +204,12 @@ img {
 }
 
 .logo-text {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #ffffff;
+    display:flex;
+    flex-direction:column;
+    line-height:1;
 }
 .logo-text span {
     display: block;
@@ -1160,4 +1163,19 @@ li {
     .nav-item {
         flex: 1 0 auto;
     }
+}
+.logo-link{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+.site-logo{
+    height:42px;
+    width:auto;
+    object-fit:contain;
+}
+.logo-text .hub{
+    font-size:0.8rem;
+    font-weight:500;
+    color:var(--secondary-color);
 }
