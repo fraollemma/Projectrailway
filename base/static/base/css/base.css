@@ -997,6 +997,82 @@ li {
         font-size: 0.9rem;
     }
 }
+@media (max-width: 384px) {
+    .top-links {
+        gap: 2px;
+    }
+    
+    .top-links a {
+        font-size: 0.5rem;
+    }
+    
+    .nav-link i {
+        font-size: 0.5rem;
+    }
+    
+    .nav-link {
+        display: flex;
+        align-items: center;
+        padding: 2px 0;
+        font-weight: 300;
+        font-size: 0.5rem;
+        transition: var(--transition);
+        gap: 0;
+    }
+    
+    .header-content {
+        gap: 0;
+    }
+    
+    .container {
+        margin: 0;
+    }
+    
+    .header-content {
+        padding-bottom: 10px;
+        padding-top: 5px;
+    }
+    
+    .top-bar-content {
+        padding-top: 7px;
+        padding-bottom: 4px;
+    }
+    
+    .logo-icon {
+        font-size: 1.35rem;
+        margin-right: 2px;
+    }
+    
+    .logo-text {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .logo-text span {
+        color: white;
+        font-size: 0.5rem;
+    }
+    
+    .footer-title {
+        font-size: 1rem;
+        margin-bottom: 1px;
+        padding-bottom: 5px;
+    }
+    
+    .footer-links li {
+        margin-bottom: 1px;
+    }
+    
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+    
+    .footer-contact li {
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 480px) {
     .search-input.active {
         width: 280px;
