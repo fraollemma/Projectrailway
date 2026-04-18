@@ -1177,6 +1177,5 @@ li {
 .logo-text .hub{
     font-size:0.8rem;
     font-weight:500;
-    color:var(--secondary-color);
-    border: 1px solid black;
+    color:#FFA02E;
 }
