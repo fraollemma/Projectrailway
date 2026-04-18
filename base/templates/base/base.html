@@ -76,11 +76,7 @@
                     {% if user.is_authenticated %}
                     <a href="{% url 'users:profile' %}" class="user-btn">
 
-                        {% if user.profile.profile_picture %}
-                            <img src="{{ user.profile.profile_picture.url }}" class="base_current-avatar">
-                        {% else %}
-                            <img src="{% static 'base/images/default_profile_image.jpeg' %}" class="base_current-avatar">
-                        {% endif %}
+                        <img src="{% static 'base/images/default_profile_image.jpeg' %}" class="base_current-avatar">
                     </a>
                     {% else %}
                     <a href="{% url 'users:register' %}" class="login-btn">{% trans "Register" %}</a>
