@@ -75,7 +75,6 @@
                         {% else %}
                             <i class="fas fa-user-circle" aria-hidden="true"></i><img src="{% static 'images/profile_image.jpeg' %}" alt="Default profile picture" class="base_current-avatar">
                         {% endif %}
-                        <span class="username">{{ user.username|default:user.phone_number }}</span>
                     </a>
                     {% else %}
                     <a href="{% url 'users:register' %}" class="login-btn">{% trans "Register" %}</a>
