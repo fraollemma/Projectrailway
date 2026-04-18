@@ -71,9 +71,9 @@
                     
                     <a href="{% url 'users:profile' %}" class="user-btn">
                         {% if user.profile.profile_picture %}
-                            <img src="{{ user.profile.profile_picture.url|default:static('images/default-avatar.png') }}" alt="Profile picture" class="base_current-avatar">
+                            <img src="{{ user.profile.profile_picture.url }}" alt="Profile picture" class="base_current-avatar">
                         {% else %}
-                            <i class="fas fa-user-circle" aria-hidden="true"></i>
+                            <i class="fas fa-user-circle" aria-hidden="true"><img src="{% static 'images/profile_image.jpeg' %}" alt="Default profile picture" class="base_current-avatar"></i>
                         {% endif %}
                         <span class="username">{{ user.username|default:user.phone_number }}</span>
                     </a>
