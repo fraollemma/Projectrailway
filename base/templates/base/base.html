@@ -73,7 +73,7 @@
                         {% if user.profile.profile_picture %}
                             <img src="{{ user.profile.profile_picture.url }}" class="base_current-avatar">
                         {% else %}
-                            <i class="fas fa-user-circle" aria-hidden="true"></i><img src="{% static 'images/profile_image.jpeg' %}" alt="Default profile picture" class="base_current-avatar">
+                            <i class="fas fa-user-circle" aria-hidden="true"></i><img src="{% static 'base/images/profile_image.jpeg' %}" alt="Default profile picture" class="base_current-avatar">
                         {% endif %}
                     </a>
                     {% else %}
