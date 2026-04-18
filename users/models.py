@@ -83,6 +83,10 @@ class Profile(models.Model):
         blank=True,
         null=True
     )
+    def get_profile_image_url(self):
+        if self.profile_picture and hasattr(self.profile_picture, 'url'):
+            return self.profile_picture.url
+        return '/static/base/images/default_profile_image.jpeg'
     
     bio = models.TextField(max_length=500, blank=True)
     location = models.CharField(max_length=100, blank=True)
