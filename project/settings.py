@@ -44,19 +44,24 @@ else:
     CSRF_COOKIE_SECURE = False
 
 INSTALLED_APPS = [
-    'cloudinary_storage',
     'daphne',
-    'django.contrib.staticfiles',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    
+    'django.contrib.staticfiles',
     
     'channels',
     'rest_framework',
     'corsheaders',
+    
+    'cloudinary',
+    'cloudinary_storage',
+    
+    "crispy_forms",
+    "crispy_bootstrap5",
     
     'base',
     'poultryitems',
@@ -70,9 +75,7 @@ INSTALLED_APPS = [
     'electronics.apps.ElectronicsConfig',
     'houses.apps.HousesConfig',
     'cart',
-    'cloudinary',
-    'crispy_forms',
-    'crispy_bootstrap5',
+    
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5" 
