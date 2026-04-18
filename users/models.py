@@ -80,7 +80,7 @@ class Profile(models.Model):
     )
     profile_picture = models.ImageField(
         upload_to='profile_pics/',
-        default='profile_pics/default.jpg',
+        default='profile_pics/profile_image.jpeg',
         blank=True
     )
     
