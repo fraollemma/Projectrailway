@@ -6,11 +6,17 @@ from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY', 'unsafe-secret-key')
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
-ALLOWED_HOSTS = ['localhost', '127.0.0.1',"fraollemma.online",
-    "www.fraollemma.online",
-    "web-production-82afc.up.railway.app"]
+# Environment variables
+SECRET_KEY = os.environ.get('SECRET_KEY', 'unsafe-secret-key')
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'fraollemma.online',
+    'www.fraollemma.online',
+    '.railway.app',  # Allows all Railway subdomains
+]
 
 LANGUAGES = [
     ('en', _('English')),
@@ -22,23 +28,32 @@ LANGUAGE_COOKIE_NAME = 'django_language'
 LANGUAGE_COOKIE_HTTPONLY = False
 LANGUAGE_COOKIE_SAMESITE = 'Lax'
 
-REDIS_URL = os.getenv('REDIS_URL')
+REDIS_URL = os.environ.get('REDIS_URL')
 
-CSRF_TRUSTED_ORIGINS = ["https://fraollemma.online",
+CSRF_TRUSTED_ORIGINS = [
+    "https://fraollemma.online",
     "https://www.fraollemma.online",
-    "https://*.railway.app", 'https://*.railway.app']
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    "https://*.railway.app",
+]
+
+# Security settings – only enable HTTPS in production
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+else:
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
 
 INSTALLED_APPS = [
+    'cloudinary_storage',  # Must be before django.contrib.staticfiles
+    'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'daphne',
-    'django.contrib.staticfiles',
     
     'channels',
     'rest_framework',
@@ -56,10 +71,9 @@ INSTALLED_APPS = [
     'electronics.apps.ElectronicsConfig',
     'houses.apps.HousesConfig',
     'cart',
-
+    'cloudinary',
     'crispy_forms',
     'crispy_bootstrap5',
-    #"django_browser_reload",
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5" 
@@ -70,7 +84,6 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    #"django_browser_reload.middleware.BrowserReloadMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -83,17 +96,16 @@ ROOT_URLCONF = 'project.urls'
 ASGI_APPLICATION = 'project.asgi.application'
 WSGI_APPLICATION = 'project.wsgi.application'
 DAPHNE_TIMEOUT = 50
+
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get("DATABASE_URL")
-    )
+    'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
 }
 
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [REDIS_URL],
+            "hosts": [REDIS_URL] if REDIS_URL else [('localhost', 6379)],
         },
     },
 }
@@ -104,20 +116,33 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'home'
 
+# Static files (CSS, JS, images)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [ BASE_DIR / "static",]  
+STATICFILES_DIRS = [BASE_DIR / "static"]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# Media files (user uploads) – use Cloudinary in production, local in development
+if DEBUG:
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+else:
+    # Production: use Cloudinary
+    CLOUDINARY_STORAGE = {
+        'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+        'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+        'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+    }
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    MEDIA_URL = '/media/'  # Cloudinary will redirect this
 
 LANGUAGE_CODE = 'en'
 TIME_ZONE = 'Africa/Addis_Ababa'
 USE_I18N = True
 USE_TZ = True
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True  # Restrict in production if needed
 
 TEMPLATES = [
     {
@@ -137,7 +162,7 @@ TEMPLATES = [
     },
 ]
 
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-WHITENOISE_AUTOREFRESH = True
+# WhiteNoise – only relevant if DEBUG=False
+WHITENOISE_AUTOREFRESH = DEBUG
