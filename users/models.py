@@ -80,8 +80,8 @@ class Profile(models.Model):
     )
     profile_picture = models.ImageField(
         upload_to='profile_pics/',
-        default='profile_pics/profile_image.jpeg',
-        blank=True
+        blank=True,
+        null=True
     )
     
     bio = models.TextField(max_length=500, blank=True)
