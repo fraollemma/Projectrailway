@@ -21,7 +21,11 @@ LANGUAGE_COOKIE_SAMESITE = 'Lax'
 
 REDIS_URL = 'redis://localhost:6379'
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://127.0.0.1:8000', 'http://render-x1cx.onrender.com']
+CSRF_TRUSTED_ORIGINS = [
+    "https://fraollemma.online",
+    "https://www.fraollemma.online",
+    "https://*.railway.app",
+]
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE = False
 SECURE_PROXY_SSL_HEADER = None
