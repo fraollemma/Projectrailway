@@ -6,7 +6,6 @@ from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Environment variables
 SECRET_KEY = os.environ.get('SECRET_KEY', 'unsafe-secret-key')
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
@@ -15,7 +14,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'fraollemma.online',
     'www.fraollemma.online',
-    '.railway.app',  # Allows all Railway subdomains
+    '.railway.app',
 ]
 
 LANGUAGES = [
@@ -36,7 +35,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.railway.app",
 ]
 
-# Security settings – only enable HTTPS in production
 if not DEBUG:
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
@@ -46,7 +44,7 @@ else:
     CSRF_COOKIE_SECURE = False
 
 INSTALLED_APPS = [
-    'cloudinary_storage',  # Must be before django.contrib.staticfiles
+    'cloudinary_storage',
     'daphne',
     'django.contrib.staticfiles',
     'django.contrib.admin',
@@ -117,32 +115,29 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'home'
 
-# Static files (CSS, JS, images)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Media files (user uploads) – use Cloudinary in production, local in development
 if DEBUG:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 else:
-    # Production: use Cloudinary
     CLOUDINARY_STORAGE = {
         'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
         'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
         'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
     }
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-    MEDIA_URL = '/media/'  # Cloudinary will redirect this
+    MEDIA_URL = '/media/'
 
 LANGUAGE_CODE = 'en'
 TIME_ZONE = 'Africa/Addis_Ababa'
 USE_I18N = True
 USE_TZ = True
 
-CORS_ALLOW_ALL_ORIGINS = True  # Restrict in production if needed
+CORS_ALLOW_ALL_ORIGINS = True
 
 TEMPLATES = [
     {
@@ -164,5 +159,4 @@ TEMPLATES = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# WhiteNoise – only relevant if DEBUG=False
 WHITENOISE_AUTOREFRESH = DEBUG
