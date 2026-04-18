@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Admin Links | Ethiopian Sheger Market place" %}
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'base/css/admin-links.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% if request.user.is_superuser %}
+    <h1>{% trans "Admin Links" %}</h1>
+    <p>welcome superuser</p>
+    <ul>
+        <li> messages <a href="{% url 'base:message_list' %}">{% trans "View Messages" %}</a></li>
+        <li> contact us messages <a href="{% url 'contact:received_messages' %}">{% trans "View Contact Us Messages" %}</a></li>
+    </ul>
+    
+{% elif request.user.is_authenticated %}
+    <div class="user-info">
+        <p>Thank you {{ request.user.username }} . But you are not a supperuser !!!</p>
+        <h1>message</h1>
+        
+    </div>
+
+{% else %}
+    <div class="user-info">
+        <p>{% trans "You are not logged in." %}</p>
+    </div>
+    <a href="{% url 'users:login' %}" class="login-btn">{% trans "Login" %}</a>
+{% endif %}
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'base/js/admin-links.js' %}" defer></script>
+{% endblock %}

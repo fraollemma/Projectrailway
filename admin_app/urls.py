@@ -12,4 +12,5 @@ urlpatterns = [
     path('poultryitems/', views.manage_poultry, name='manage_poultry'),
     path('users/', views.manage_users, name='manage_users'),
     path('conversations/', views.manage_conversations, name='manage_conversations'),
+    path('admin_links/', views.admin_links, name='admin_links'),
 ]
