@@ -71,14 +71,15 @@
                     <span class="logo-text">{% trans "Ethio" %}<span class="hub">{% trans "Agriculture" %}</span></span>
                 </a>
                 </div>
-                <div class="header-actions">              
+                <div class="header-actions"> 
+
                     {% if user.is_authenticated %}
-                    
                     <a href="{% url 'users:profile' %}" class="user-btn">
-                        {% if user.profile.profile_picture %}
+
+                        {% if user.profile and user.profile.profile_picture %}
                             <img src="{{ user.profile.profile_picture.url }}" class="base_current-avatar">
                         {% else %}
-                            <img src="{% static 'base/images/profile_image.jpeg' %}" class="base_current-avatar">
+                            <img src="{% static 'base/images/default_profile_image.jpeg' %}" class="base_current-avatar">
                         {% endif %}
                     </a>
                     {% else %}
