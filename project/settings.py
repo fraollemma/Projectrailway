@@ -81,10 +81,7 @@ ASGI_APPLICATION = 'project.asgi.application'
 WSGI_APPLICATION = 'project.wsgi.application'
 DAPHNE_TIMEOUT = 50
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
 }
 
 CHANNEL_LAYERS = {
