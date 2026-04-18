@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 
-{% block content %}
+{% block title %}
     {% trans "Admin Links | Ethiopian Sheger Market place" %}
 {% endblock %}
 
@@ -19,11 +19,10 @@
         <li> messages <a href="{% url 'base:message_list' %}">{% trans "View Messages" %}</a></li>
         <li> contact us messages <a href="{% url 'contact:received_messages' %}">{% trans "View Contact Us Messages" %}</a></li>
     </ul>
-{% endif %}
-
-{% if request.user.is_authenticated %}
+    
+{% elif request.user.is_authenticated %}
     <div class="user-info">
-        <p>Thank you {{ request.user.username }} . But you are not a supper user !!!</p>
+        <p>Thank you {{ request.user.username }} . But you are not a supperuser !!!</p>
         <h1>message</h1>
         
     </div>
