@@ -9,7 +9,7 @@
     <meta name="keywords" content="{% trans 'Ethiopia, marketplace, buy, sell, products, Sheger' %}">
     <meta name="author" content="FraolLemma">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="icon" href="{% static 'base/images/Chickenlogo (1).png' %}" alt="MarketHub logo">
+    <link rel="icon" href="{% static 'base/images/logo.png' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,11 +61,11 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="/" aria-label="Home">
-                        <span class="logo-icon"><i class="fas fa-store" aria-hidden="true"></i></span>
-                        <span class="logo-text">{% trans "Ethio" %}<span class="hub">{% trans "Agriculture" %}</span></span>
-                    </a>
-                </div>
+    <a href="/" aria-label="Home" class="logo-link">
+        <img src="{% static 'base/images/logo.png' %}" alt="Ethio Agriculture Logo" class="site-logo">
+        <span class="logo-text">{% trans "Ethio" %}<span class="hub">{% trans "Agriculture" %}</span></span>
+    </a>
+</div>
                 <div class="header-actions">              
                     {% if user.is_authenticated %}
                     
@@ -73,7 +73,7 @@
                         {% if user.profile.profile_picture %}
                             <img src="{{ user.profile.profile_picture.url }}" alt="Profile picture" class="base_current-avatar">
                         {% else %}
-                            <i class="fas fa-user-circle" aria-hidden="true"><img src="{% static 'images/profile_image.jpeg' %}" alt="Default profile picture" class="base_current-avatar"></i>
+                            <i class="fas fa-user-circle" aria-hidden="true"></i><img src="{% static 'images/profile_image.jpeg' %}" alt="Default profile picture" class="base_current-avatar">
                         {% endif %}
                         <span class="username">{{ user.username|default:user.phone_number }}</span>
                     </a>
