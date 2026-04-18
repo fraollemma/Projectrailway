@@ -1951,3 +1951,38 @@ Media Files: For production, you should use Cloudinary for media storage since R
 Scaling: The free tier has limitations. Consider upgrading if you expect significant traffic.
 
 Would you like me to elaborate on any specific part of this deployment process?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+postgresql://postgres:zjZosoHJkNujXTmksFvjqKwHnTAnhoBt@monorail.proxy.rlwy.net:42376/railway
+
+
+
+
