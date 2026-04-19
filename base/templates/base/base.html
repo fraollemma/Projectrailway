@@ -81,10 +81,7 @@
                     </button>
                     <!-- Search input (hidden by default) -->
                     <div class="search-input" id="searchInput">
-                        <form action="{% url 'base:search' %}" method="get" class="search-form">
-                            <input type="text" name="q" id="search-field" placeholder="{% trans 'Search products...' %}" aria-label="{% trans 'Search' %}">
-                            <button type="submit" aria-label="{% trans 'Submit search' %}"><i class="fas fa-search"></i></button>
-                        </form>
+                        
                     </div>
 
                     {% if user.is_authenticated %}
