@@ -10,6 +10,7 @@ from django.http import JsonResponse
 from conversation.models import Conversation, ConversationMessage 
 from django.contrib.auth import get_user_model
 from .models import CustomUser
+from django.contrib.admin.views.decorators import staff_member_required
 
 @login_required
 def unread_count_api(request):
