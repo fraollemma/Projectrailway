@@ -56,3 +56,29 @@
     border: 2px dashed #ffc107;
     background: #fffbea;
 }
+.admin-actions{
+    margin-top:15px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.admin-actions a{
+    padding:6px 12px;
+    border-radius:6px;
+    font-size:13px;
+    text-decoration:none;
+    color:white;
+}
+
+.btn-ban{
+    background:#ff9800;
+}
+
+.btn-delete{
+    background:#f44336;
+}
+
+.btn-promote{
+    background:#4caf50;
+}

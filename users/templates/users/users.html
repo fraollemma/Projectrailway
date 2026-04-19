@@ -29,6 +29,28 @@
                 {% if user.profile.location %}
                 <p class="user-location">{{ user.profile.location }}</p>
                 {% endif %}
+
+                {% if request.user.is_superuser %}
+                <div class="admin-actions">
+
+                    <a href="{% url 'users:ban_user' user.id %}" class="btn-ban">
+                        {% trans "Ban User" %}
+                    </a>
+
+                    <a href="{% url 'users:delete_user' user.id %}" class="btn-delete">
+                        {% trans "Delete User" %}
+                    </a>
+
+                    {% if not user.is_superuser %}
+                    <a href="{% url 'users:promote_user' user.id %}" class="btn-promote">
+                        {% trans "Promote to Superuser" %}
+                    </a>
+                    {% endif %}
+
+                </div>
+                {% endif %}
+
+
             </div>
         </div>
         {% empty %}
