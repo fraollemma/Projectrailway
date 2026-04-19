@@ -72,3 +72,7 @@ def manage_users(request):
 @admin_required
 def manage_conversations(request):
     return render(request, "admin_app/manage_conversations.html", {"conversations": Conversation.objects.all()})
+
+@admin_required
+def admin_links(request):
+    return render(request, 'admin_app/admin_links.html')

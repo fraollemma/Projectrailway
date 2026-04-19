@@ -125,8 +125,6 @@ def message_list(request):
 def about_us(request):
     return render(request, 'base/about_us.html')
 
-def admin_links(request):
-    return render(request, 'base/admin_links.html')
 
 def terms(request):
     return render(request, 'base/terms.html')
