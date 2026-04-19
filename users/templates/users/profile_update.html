@@ -35,16 +35,17 @@
             {% if form.instance.profile_picture %}
                 <div class="avatar-preview">
                     <img src="{{ form.instance.get_profile_image_url }}" id="profile-picture-preview">
-                    <label class="change-photo-btn">
-                        {% trans "Change" %}
+
+                    <label class="upload-photo-btn">
+                        {% trans "Upload / Change Photo" %}
                         {{ form.profile_picture }}
                     </label>
                 </div>
             {% else %}
                 <div class="avatar-preview">
                     <img src="https://res.cloudinary.com/your-cloud-name/image/upload/v1612469403/kvtec0mqxawgxmhsaamd.jpg" 
-                         alt="Default Profile" 
-                         id="profile-picture-preview">
+                        alt="Default Profile" 
+                        id="profile-picture-preview">
                     <label class="upload-photo-btn">
                         {% trans "Upload Photo" %}
                         {{ form.profile_picture }}
