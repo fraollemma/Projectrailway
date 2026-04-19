@@ -45,6 +45,10 @@
                     <a href="{% url 'users:promote_user' user.id %}" class="btn-promote">
                         {% trans "Promote to Superuser" %}
                     </a>
+
+                    <a href="{% url 'users:unpromote_user' user.id %}" class="btn btn-warning">
+                        Remove Admin
+                    </a>
                     {% endif %}
 
                 </div>

@@ -21,4 +21,5 @@ urlpatterns = [
     path('ban-user/<int:user_id>/', views.ban_user, name='ban_user'),
     path('delete-user/<int:user_id>/', views.delete_user, name='delete_user'),
     path('promote-user/<int:user_id>/', views.promote_user, name='promote_user'),
+    path('unpromote-user/<int:user_id>/', views.unpromote_user, name='unpromote_user'),
 ] 

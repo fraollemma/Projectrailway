@@ -139,3 +139,11 @@ def promote_user(request, user_id):
     user.is_staff = True
     user.save()
     return redirect('users:user_list')
+
+@staff_member_required
+def unpromote_user(request, user_id):
+    user = get_object_or_404(CustomUser, id=user_id)
+    user.is_superuser = False
+    user.is_staff = False
+    user.save()
+    return redirect('users:user_list')
