@@ -35,7 +35,6 @@
             {% if form.instance.profile_picture %}
                 <div class="avatar-preview">
                     <img src="{{ form.instance.get_profile_image_url }}" id="profile-picture-preview">
-
                     <label class="upload-photo-btn">
                         {% trans "Upload / Change Photo" %}
                         {{ form.profile_picture }}
@@ -54,6 +53,18 @@
             {% endif %}
             {{ form.profile_picture.errors }}
         </div>
+
+        edit
+
+        <div class="avatar-preview">
+    <img src="{{ form.instance.get_profile_image_url }}" id="profile-picture-preview">
+
+    <label class="change-photo-btn">
+        {% trans "Change Photo" %}
+        {{ form.profile_picture }}
+    </label>
+</div>
+edit
 
         <div class="form-row">
             <label for="id_username">{{ form.username.label }}</label>
