@@ -1,10 +1,9 @@
-<!--add_egg_seller-->
 {% extends 'base/base.html' %}
 {% load static %}
 {% load i18n %}
 
 {% block title %}
-    {% trans " Add New Egg Seller | Ethiopian Sheger Market place" %}
+{% trans "Add New Egg Seller | Ethiopian Sheger Market place" %}
 {% endblock %}
 
 {% block css %}
@@ -12,225 +11,151 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <h1 class="page-title text-center">
-                    <i class="fas fa-plus-circle me-2"></i>Add New Egg Seller
-                </h1>
 
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                            {{ message }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    {% endfor %}
-                {% endif %}
+<div class="page-wrapper">
 
-                <div class="form-container">
-                    <form method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        
-                        <div class="row">
-                            <!-- Farm Information -->
-                            <div class="col-md-6">
-                                <h4 class="mb-4"><i class="fas fa-tractor me-2"></i>Farm Information</h4>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.farm_name.id_for_label }}" class="form-label required-field">Farm Name</label>
-                                    {{ form.farm_name }}
-                                    {% if form.farm_name.errors %}
-                                        <div class="text-danger">{{ form.farm_name.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.owner_name.id_for_label }}" class="form-label">Owner Name</label>
-                                    {{ form.owner_name }}
-                                    {% if form.owner_name.errors %}
-                                        <div class="text-danger">{{ form.owner_name.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.description.id_for_label }}" class="form-label required-field">Description</label>
-                                    {{ form.description }}
-                                    {% if form.description.errors %}
-                                        <div class="text-danger">{{ form.description.errors }}</div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            
-                            <!-- Location Information -->
-                            <div class="col-md-6">
-                                <h4 class="mb-4"><i class="fas fa-map-marker-alt me-2"></i>Location</h4>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.city.id_for_label }}" class="form-label required-field">City</label>
-                                    {{ form.city }}
-                                    {% if form.city.errors %}
-                                        <div class="text-danger">{{ form.city.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.state.id_for_label }}" class="form-label">State/Province</label>
-                                    {{ form.state }}
-                                    {% if form.state.errors %}
-                                        <div class="text-danger">{{ form.state.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.country.id_for_label }}" class="form-label">Country</label>
-                                    {{ form.country }}
-                                    {% if form.country.errors %}
-                                        <div class="text-danger">{{ form.country.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.address.id_for_label }}" class="form-label">Address</label>
-                                    {{ form.address }}
-                                    {% if form.address.errors %}
-                                        <div class="text-danger">{{ form.address.errors }}</div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <hr>
-                        
-                        <div class="row">
-                            <!-- Egg Details -->
-                            <div class="col-md-6">
-                                <h4 class="mb-4"><i class="fas fa-egg me-2"></i>Egg Details</h4>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.egg_type.id_for_label }}" class="form-label required-field">Egg Type</label>
-                                    {{ form.egg_type }}
-                                    {% if form.egg_type.errors %}
-                                        <div class="text-danger">{{ form.egg_type.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.certification.id_for_label }}" class="form-label">Certification</label>
-                                    {{ form.certification }}
-                                    {% if form.certification.errors %}
-                                        <div class="text-danger">{{ form.certification.errors }}</div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            
-                            <!-- Pricing & Availability -->
-                            <div class="col-md-6">
-                                <h4 class="mb-4"><i class="fas fa-tags me-2"></i>Pricing & Availability</h4>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.quantity_available.id_for_label }}" class="form-label required-field">Quantity Available</label>
-                                    {{ form.quantity_available }}
-                                    {% if form.quantity_available.errors %}
-                                        <div class="text-danger">{{ form.quantity_available.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.price_per_dozen.id_for_label }}" class="form-label required-field">Price per Dozen ($)</label>
-                                    {{ form.price_per_dozen }}
-                                    {% if form.price_per_dozen.errors %}
-                                        <div class="text-danger">{{ form.price_per_dozen.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.min_order_quantity.id_for_label }}" class="form-label">Minimum Order Quantity (dozens)</label>
-                                    {{ form.min_order_quantity }}
-                                    {% if form.min_order_quantity.errors %}
-                                        <div class="text-danger">{{ form.min_order_quantity.errors }}</div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <hr>
-                        
-                        <div class="row">
-                            <!-- Contact Information -->
-                            <div class="col-md-6">
-                                <h4 class="mb-4"><i class="fas fa-phone me-2"></i>Contact Information</h4>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.phone.id_for_label }}" class="form-label required-field">Phone</label>
-                                    {{ form.phone }}
-                                    {% if form.phone.errors %}
-                                        <div class="text-danger">{{ form.phone.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
-                                    {{ form.email }}
-                                    {% if form.email.errors %}
-                                        <div class="text-danger">{{ form.email.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.website.id_for_label }}" class="form-label">Website</label>
-                                    {{ form.website }}
-                                    {% if form.website.errors %}
-                                        <div class="text-danger">{{ form.website.errors }}</div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            
-                            <!-- Social Media -->
-                            <div class="col-md-6">
-                                <h4 class="mb-4"><i class="fas fa-share-alt me-2"></i>Social Media</h4>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.facebook.id_for_label }}" class="form-label">Facebook</label>
-                                    {{ form.facebook }}
-                                    {% if form.facebook.errors %}
-                                        <div class="text-danger">{{ form.facebook.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.telegram.id_for_label }}" class="form-label">Telegram</label>
-                                    {{ form.telegram }}
-                                    {% if form.telegram.errors %}
-                                        <div class="text-danger">{{ form.telegram.errors }}</div>
-                                    {% endif %}
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="{{ form.instagram.id_for_label }}" class="form-label">Instagram</label>
-                                    {{ form.instagram }}
-                                    {% if form.instagram.errors %}
-                                        <div class="text-danger">{{ form.instagram.errors }}</div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-                            <a href="{% url 'poultryitems:egg_sellers' %}" class="btn btn-secondary me-md-2">
-                                <i class="fas fa-arrow-left me-1"></i> Back to Sellers
-                            </a>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-save me-1"></i> Add Egg Seller
-                            </button>
-                        </div>
-                    </form>
-                </div>
+    <h1 class="page-title">
+        <i class="fas fa-plus-circle"></i> Add New Egg Seller
+    </h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {{ message.tags }}">
+                {{ message }}
             </div>
-        </div>
-    </div>
-{% endblock %}
+        {% endfor %}
+    {% endif %}
 
-{% block js %}
-<script src="{% static 'poultryitems/js/add_egg_sellers.js' %}"></script>
+    <div class="form-container">
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-grid">
+
+                <div class="form-section">
+                    <h3>Farm Information</h3>
+
+                    <label>Farm Name</label>
+                    {{ form.farm_name }}
+                    {{ form.farm_name.errors }}
+
+                    <label>Owner Name</label>
+                    {{ form.owner_name }}
+                    {{ form.owner_name.errors }}
+
+                    <label>Description</label>
+                    {{ form.description }}
+                    {{ form.description.errors }}
+
+                </div>
+
+
+                <div class="form-section">
+                    <h3>Location</h3>
+
+                    <label>City</label>
+                    {{ form.city }}
+                    {{ form.city.errors }}
+
+                    <label>State / Province</label>
+                    {{ form.state }}
+                    {{ form.state.errors }}
+
+                    <label>Country</label>
+                    {{ form.country }}
+                    {{ form.country.errors }}
+
+                    <label>Address</label>
+                    {{ form.address }}
+                    {{ form.address.errors }}
+
+                </div>
+
+
+                <div class="form-section">
+                    <h3>Egg Details</h3>
+
+                    <label>Egg Type</label>
+                    {{ form.egg_type }}
+                    {{ form.egg_type.errors }}
+
+                    <label>Certification</label>
+                    {{ form.certification }}
+                    {{ form.certification.errors }}
+
+                </div>
+
+
+                <div class="form-section">
+                    <h3>Pricing & Availability</h3>
+
+                    <label>Quantity Available</label>
+                    {{ form.quantity_available }}
+                    {{ form.quantity_available.errors }}
+
+                    <label>Price per Dozen ($)</label>
+                    {{ form.price_per_dozen }}
+                    {{ form.price_per_dozen.errors }}
+
+                    <label>Minimum Order Quantity</label>
+                    {{ form.min_order_quantity }}
+                    {{ form.min_order_quantity.errors }}
+
+                </div>
+
+
+                <div class="form-section">
+                    <h3>Contact Information</h3>
+
+                    <label>Phone</label>
+                    {{ form.phone }}
+                    {{ form.phone.errors }}
+
+                    <label>Email</label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
+
+                    <label>Website</label>
+                    {{ form.website }}
+                    {{ form.website.errors }}
+
+                </div>
+
+
+                <div class="form-section">
+                    <h3>Social Media</h3>
+
+                    <label>Facebook</label>
+                    {{ form.facebook }}
+                    {{ form.facebook.errors }}
+
+                    <label>Telegram</label>
+                    {{ form.telegram }}
+                    {{ form.telegram.errors }}
+
+                    <label>Instagram</label>
+                    {{ form.instagram }}
+                    {{ form.instagram.errors }}
+
+                </div>
+
+            </div>
+
+            <div class="form-buttons">
+                <a href="{% url 'poultryitems:egg_sellers' %}" class="btn secondary">
+                    Back to Sellers
+                </a>
+
+                <button type="submit" class="btn primary">
+                    Add Egg Seller
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
 {% endblock %}

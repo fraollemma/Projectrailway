@@ -1,12 +1,9 @@
-// poultryitems/static/poultryitems/js/add_egg_sellers.js
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Form elements
+    
     const form = document.querySelector('.add-egg-form');
     const submitButton = form.querySelector('button[type="submit"]');
     const clearButton = form.querySelector('.clear-form');
     
-    // Price per dozen input
     const priceInput = document.getElementById('id_price_per_dozen');
     if (priceInput) {
         priceInput.classList.add('price-input');
@@ -16,21 +13,17 @@ document.addEventListener('DOMContentLoaded', function() {
         priceContainer.appendChild(priceInput);
     }
     
-    // Form validation
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
         if (validateForm()) {
-            // Show loading state
             submitButton.classList.add('loading');
             submitButton.disabled = true;
             
-            // Submit form
             this.submit();
         }
     });
     
-    // Clear form button
     if (clearButton) {
         clearButton.addEventListener('click', function() {
             if (confirm('Are you sure you want to clear all form data?')) {
@@ -39,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Real-time validation
     const requiredFields = form.querySelectorAll('[required]');
     requiredFields.forEach(field => {
         field.addEventListener('blur', function() {
@@ -52,8 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Quantity validation (must be at least min order quantity)
     const quantityInput = document.getElementById('id_min_order_quantity');
     if (quantityInput) {
         quantityInput.addEventListener('blur', function() {
@@ -66,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Price validation (must be positive)
     if (priceInput) {
         priceInput.addEventListener('blur', function() {
             const value = parseFloat(this.value);
@@ -78,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Auto-format phone number
     const phoneInput = document.getElementById('id_phone');
     if (phoneInput) {
         phoneInput.addEventListener('input', function(e) {
@@ -86,18 +74,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Form validation functions
     function validateForm() {
         let isValid = true;
         
-        // Validate all required fields
         requiredFields.forEach(field => {
             if (!validateField(field)) {
                 isValid = false;
             }
         });
         
-        // Custom validation for specific fields
         if (quantityInput && parseInt(quantityInput.value) < 1) {
             showError(quantityInput, 'Minimum order quantity must be at least 1');
             isValid = false;
@@ -149,19 +134,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function formatPhoneNumber(input) {
-        // Remove all non-digit characters
         let phoneNumber = input.value.replace(/\D/g, '');
         
-        // Format based on length
         if (phoneNumber.length > 0) {
             phoneNumber = phoneNumber.match(new RegExp('.{1,4}', 'g')).join(' ');
         }
         
-        // Update input value
         input.value = phoneNumber;
     }
     
-    // Auto-calculate total price based on quantity
     const quantityAvailableInput = document.getElementById('id_quantity_available');
     const totalValueSpan = document.createElement('span');
     
@@ -188,11 +169,9 @@ document.addEventListener('DOMContentLoaded', function() {
         quantityAvailableInput.addEventListener('input', updateTotalValue);
         priceInput.addEventListener('input', updateTotalValue);
         
-        // Initial calculation
         updateTotalValue();
     }
     
-    // Enhance form with character counters for textareas
     const textareas = form.querySelectorAll('textarea');
     textareas.forEach(textarea => {
         const maxLength = textarea.getAttribute('maxlength');
@@ -218,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             textarea.addEventListener('input', updateCounter);
-            updateCounter(); // Initial update
+            updateCounter();
         }
     });
 });
