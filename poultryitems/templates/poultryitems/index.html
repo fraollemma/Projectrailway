@@ -12,18 +12,40 @@
   
 {% block content %}
 
-<!-- Hero Section with Video Background -->
 <section class="hero">
-    <video autoplay muted loop class="hero__video">
+
+    <!-- Background Image (fallback for mobile) -->
+    <img 
+        src="{% static 'poultryitems/images/hero_section_image.jpg' %}" 
+        alt="Poultry farming" 
+        class="hero__image"
+        loading="lazy"
+    >
+
+    <!-- Video Background (hidden on mobile for performance) -->
+    <video autoplay muted loop playsinline class="hero__video">
         <source src="{% static 'poultryitems/videos/chicken-farm.mp4' %}" type="video/mp4">
-        Your browser does not support the video tag.
     </video>
+
+    <!-- Overlay -->
     <div class="hero__overlay"></div>
+
+    <!-- Hero Content -->
     <div class="hero__content">
-        <h1 class="hero__title">Premium Poultry Products & Farming Solutions</h1>
-        <p class="hero__description">High-quality poultry products and expert farming training to help you succeed in the poultry business</p>
-        <a href="#services" class="button button--primary">Explore Our Services</a>
+        <h1 class="hero__title">
+            Premium Poultry Products & Farming Solutions
+        </h1>
+
+        <p class="hero__description">
+            High-quality poultry products and expert farming training to help
+            you succeed in the poultry business.
+        </p>
+
+        <a href="#services" class="button button--primary">
+            Explore Our Services
+        </a>
     </div>
+
 </section>
 
 <!-- Services Section -->
