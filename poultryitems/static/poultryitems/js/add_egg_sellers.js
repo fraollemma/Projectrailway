@@ -1,203 +1,205 @@
-document.addEventListener('DOMContentLoaded', function() {
-    
-    const form = document.querySelector('.add-egg-form');
-    const submitButton = form.querySelector('button[type="submit"]');
-    const clearButton = form.querySelector('.clear-form');
-    
-    const priceInput = document.getElementById('id_price_per_dozen');
-    if (priceInput) {
-        priceInput.classList.add('price-input');
-        const priceContainer = document.createElement('div');
-        priceContainer.className = 'price-input-container';
-        priceInput.parentNode.insertBefore(priceContainer, priceInput);
-        priceContainer.appendChild(priceInput);
-    }
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        if (validateForm()) {
-            submitButton.classList.add('loading');
-            submitButton.disabled = true;
-            
-            this.submit();
-        }
-    });
-    
-    if (clearButton) {
-        clearButton.addEventListener('click', function() {
-            if (confirm('Are you sure you want to clear all form data?')) {
-                form.reset();
-            }
-        });
-    }
-    
-    const requiredFields = form.querySelectorAll('[required]');
-    requiredFields.forEach(field => {
-        field.addEventListener('blur', function() {
-            validateField(this);
-        });
-        
-        field.addEventListener('input', function() {
-            if (this.classList.contains('is-invalid')) {
-                validateField(this);
-            }
-        });
-    });
-    const quantityInput = document.getElementById('id_min_order_quantity');
-    if (quantityInput) {
-        quantityInput.addEventListener('blur', function() {
-            const value = parseInt(this.value);
-            if (value < 1) {
-                showError(this, 'Minimum order quantity must be at least 1');
-            } else {
-                clearError(this);
-            }
-        });
-    }
-    
-    if (priceInput) {
-        priceInput.addEventListener('blur', function() {
-            const value = parseFloat(this.value);
-            if (value <= 0) {
-                showError(this, 'Price must be greater than 0');
-            } else {
-                clearError(this);
-            }
-        });
-    }
-    
-    const phoneInput = document.getElementById('id_phone');
-    if (phoneInput) {
-        phoneInput.addEventListener('input', function(e) {
-            formatPhoneNumber(this);
-        });
-    }
-    
-    function validateForm() {
-        let isValid = true;
-        
-        requiredFields.forEach(field => {
-            if (!validateField(field)) {
-                isValid = false;
-            }
-        });
-        
-        if (quantityInput && parseInt(quantityInput.value) < 1) {
-            showError(quantityInput, 'Minimum order quantity must be at least 1');
-            isValid = false;
-        }
-        
-        if (priceInput && parseFloat(priceInput.value) <= 0) {
-            showError(priceInput, 'Price must be greater than 0');
-            isValid = false;
-        }
-        
-        return isValid;
-    }
-    
-    function validateField(field) {
-        if (field.hasAttribute('required') && !field.value.trim()) {
-            showError(field, 'This field is required');
-            return false;
-        }
-        
-        if (field.type === 'email' && field.value) {
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(field.value)) {
-                showError(field, 'Please enter a valid email address');
-                return false;
-            }
-        }
-        
-        clearError(field);
-        return true;
-    }
-    
-    function showError(field, message) {
-        clearError(field);
-        field.classList.add('is-invalid');
-        
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'invalid-feedback';
-        errorDiv.textContent = message;
-        
-        field.parentNode.appendChild(errorDiv);
-    }
-    
-    function clearError(field) {
-        field.classList.remove('is-invalid');
-        const errorDiv = field.parentNode.querySelector('.invalid-feedback');
-        if (errorDiv) {
-            errorDiv.remove();
-        }
-    }
-    
-    function formatPhoneNumber(input) {
-        let phoneNumber = input.value.replace(/\D/g, '');
-        
-        if (phoneNumber.length > 0) {
-            phoneNumber = phoneNumber.match(new RegExp('.{1,4}', 'g')).join(' ');
-        }
-        
-        input.value = phoneNumber;
-    }
-    
-    const quantityAvailableInput = document.getElementById('id_quantity_available');
-    const totalValueSpan = document.createElement('span');
-    
-    if (quantityAvailableInput && priceInput) {
-        totalValueSpan.className = 'total-value';
-        totalValueSpan.style.marginLeft = '10px';
-        totalValueSpan.style.fontWeight = '600';
-        totalValueSpan.style.color = '#28a745';
-        
-        quantityAvailableInput.parentNode.appendChild(totalValueSpan);
-        
-        const updateTotalValue = () => {
-            const quantity = parseInt(quantityAvailableInput.value) || 0;
-            const price = parseFloat(priceInput.value) || 0;
-            const totalValue = quantity * price;
-            
-            if (quantity > 0 && price > 0) {
-                totalValueSpan.textContent = `Total value: $${totalValue.toFixed(2)}`;
-            } else {
-                totalValueSpan.textContent = '';
-            }
-        };
-        
-        quantityAvailableInput.addEventListener('input', updateTotalValue);
-        priceInput.addEventListener('input', updateTotalValue);
-        
-        updateTotalValue();
-    }
-    
-    const textareas = form.querySelectorAll('textarea');
-    textareas.forEach(textarea => {
-        const maxLength = textarea.getAttribute('maxlength');
-        if (maxLength) {
-            const counter = document.createElement('div');
-            counter.className = 'char-counter';
-            counter.style.fontSize = '0.8rem';
-            counter.style.color = '#6c757d';
-            counter.style.textAlign = 'right';
-            counter.style.marginTop = '5px';
-            
-            textarea.parentNode.appendChild(counter);
-            
-            const updateCounter = () => {
-                const remaining = maxLength - textarea.value.length;
-                counter.textContent = `${remaining} characters remaining`;
-                
-                if (remaining < 10) {
-                    counter.style.color = '#dc3545';
-                } else {
-                    counter.style.color = '#6c757d';
-                }
-            };
-            
-            textarea.addEventListener('input', updateCounter);
-            updateCounter();
-        }
-    });
+document.addEventListener("DOMContentLoaded", () => {
+
+const form = document.querySelector(".add-egg-form");
+if(!form) return;
+
+const submitBtn = form.querySelector('button[type="submit"]');
+const clearBtn = form.querySelector(".clear-form");
+
+const priceInput = document.getElementById("id_price_per_dozen");
+const quantityInput = document.getElementById("id_min_order_quantity");
+const quantityAvailableInput = document.getElementById("id_quantity_available");
+const phoneInput = document.getElementById("id_phone");
+
+/* =====================================================
+VALIDATION
+===================================================== */
+
+function validateField(field){
+
+clearError(field);
+
+if(field.required && !field.value.trim()){
+showError(field,"This field is required");
+return false;
+}
+
+if(field.type === "email" && field.value){
+
+const pattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if(!pattern.test(field.value)){
+showError(field,"Enter a valid email");
+return false;
+}
+
+}
+
+return true;
+
+}
+
+function showError(field,message){
+
+field.classList.add("is-invalid");
+field.setAttribute("aria-invalid","true");
+
+const error=document.createElement("div");
+error.className="invalid-feedback";
+error.textContent=message;
+
+field.parentNode.appendChild(error);
+
+}
+
+function clearError(field){
+
+field.classList.remove("is-invalid");
+field.removeAttribute("aria-invalid");
+
+const err=field.parentNode.querySelector(".invalid-feedback");
+if(err) err.remove();
+
+}
+
+/* =====================================================
+FORM SUBMIT
+===================================================== */
+
+form.addEventListener("submit", e=>{
+
+const fields=form.querySelectorAll("[required]");
+
+let valid=true;
+
+fields.forEach(f=>{
+if(!validateField(f)) valid=false;
+});
+
+if(quantityInput && quantityInput.value < 1){
+showError(quantityInput,"Minimum order must be at least 1");
+valid=false;
+}
+
+if(priceInput && priceInput.value <= 0){
+showError(priceInput,"Price must be greater than 0");
+valid=false;
+}
+
+if(!valid){
+e.preventDefault();
+return;
+}
+
+submitBtn.disabled=true;
+submitBtn.classList.add("loading");
+
+});
+
+/* =====================================================
+REALTIME VALIDATION
+===================================================== */
+
+form.addEventListener("blur",e=>{
+if(e.target.matches("[required]")){
+validateField(e.target);
+}
+},true);
+
+/* =====================================================
+CLEAR FORM
+===================================================== */
+
+if(clearBtn){
+
+clearBtn.addEventListener("click",()=>{
+
+if(confirm("Clear all form data?")){
+form.reset();
+document.querySelectorAll(".invalid-feedback").forEach(el=>el.remove());
+document.querySelectorAll(".is-invalid").forEach(el=>el.classList.remove("is-invalid"));
+}
+
+});
+
+}
+
+/* =====================================================
+PHONE FORMAT
+===================================================== */
+
+if(phoneInput){
+
+phoneInput.addEventListener("input",()=>{
+
+let digits=phoneInput.value.replace(/\D/g,"");
+
+if(digits.length>0){
+digits=digits.match(/.{1,4}/g).join(" ");
+}
+
+phoneInput.value=digits;
+
+});
+
+}
+
+/* =====================================================
+TOTAL VALUE CALCULATOR
+===================================================== */
+
+if(priceInput && quantityAvailableInput){
+
+const totalSpan=document.createElement("span");
+totalSpan.className="total-value";
+
+quantityAvailableInput.parentNode.appendChild(totalSpan);
+
+function updateTotal(){
+
+const quantity=parseFloat(quantityAvailableInput.value)||0;
+const price=parseFloat(priceInput.value)||0;
+
+const total=quantity*price;
+
+totalSpan.textContent=
+quantity && price
+? `Total value: $${total.toFixed(2)}`
+: "";
+
+}
+
+priceInput.addEventListener("input",updateTotal);
+quantityAvailableInput.addEventListener("input",updateTotal);
+
+updateTotal();
+
+}
+
+/* =====================================================
+TEXTAREA COUNTER
+===================================================== */
+
+form.querySelectorAll("textarea[maxlength]").forEach(textarea=>{
+
+const max=textarea.getAttribute("maxlength");
+
+const counter=document.createElement("div");
+counter.className="char-counter";
+
+textarea.parentNode.appendChild(counter);
+
+function update(){
+
+const remaining=max-textarea.value.length;
+
+counter.textContent=`${remaining} characters remaining`;
+
+}
+
+textarea.addEventListener("input",update);
+update();
+
+});
+
 });
