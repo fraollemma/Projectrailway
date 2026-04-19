@@ -41,14 +41,15 @@
                         {% trans "Delete User" %}
                     </a>
 
+                    <a href="{% url 'users:unpromote_user' user.id %}" class="btn-promote">
+                         {% trans "Remove Admin" %}
+                    </a>
+                    
                     {% if not user.is_superuser %}
                     <a href="{% url 'users:promote_user' user.id %}" class="btn-promote">
                         {% trans "Promote to Superuser" %}
                     </a>
 
-                    <a href="{% url 'users:unpromote_user' user.id %}" class="btn-promote">
-                         {% trans "Remove Admin" %}
-                    </a>
                     {% endif %}
 
                 </div>
