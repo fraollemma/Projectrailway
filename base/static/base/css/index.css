@@ -1604,3 +1604,50 @@ body {
         margin-top: 0.25rem;
     }
 }
+/* Sponsor Carousel */
+
+.sponsor-carousel{
+    padding:60px 0;
+    background:#fafafa;
+    text-align:center;
+}
+
+.sponsor-slider{
+    overflow:hidden;
+    position:relative;
+}
+
+.sponsor-track{
+    display:flex;
+    gap:60px;
+    animation: scrollSponsors 25s linear infinite;
+}
+
+.sponsor-logo{
+    min-width:150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.sponsor-logo img{
+    max-height:70px;
+    opacity:0.7;
+    transition:0.3s;
+}
+
+.sponsor-logo img:hover{
+    opacity:1;
+    transform:scale(1.05);
+}
+
+/* animation */
+
+@keyframes scrollSponsors{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-50%);
+    }
+}

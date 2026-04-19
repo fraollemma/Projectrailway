@@ -51,7 +51,6 @@
         <h2 class="section-title">{% trans "Shop by Category" %}</h2>
         <div class="category-container">
 
-            <!--dairy-->
             <a href="{% url 'clothings:clothing_list' %}" class="category-card">
                 <div class="category-icon">
                     <i class="fas fa-tshirt"></i>
@@ -60,7 +59,6 @@
                 <p>{{ clothing_count }}+ {% trans "posted" %}</p>
             </a>
 
-            <!--poultry-->
             <a href="{% url 'poultryitems:item_list' %}" class="category-card">
                 <div class="category-icon">
                     <i class="fas fa-feather-alt"></i>
@@ -72,7 +70,6 @@
     </div>
 </section>
 
-<!-- Featured Products Section -->
 <section class="featured-products">
     <div class="container">
         <h2 class="section-title">{% trans "Featured Products" %}</h2>
@@ -81,7 +78,7 @@
                 <div class="product-grid">
                     {% for product in all_featured|slice:":8" %}
                     <div class="product-card {% if product.product_type == 'house' %}house-card{% elif product.product_type == 'vehicle' %}vehicle-card{% elif product.product_type == 'electronics' %}electronics-card{% elif product.product_type == 'clothing' %}clothing-card{% elif product.product_type == 'poultry' %}poultry-card{% endif %}">
-                        <!-- Product Image Section -->
+                      
                         <div class="card-image">
                             {% if product.product_type == 'house' %}
                                 {% if product.images.all %}
@@ -140,7 +137,6 @@
                             </div>
                         </div>
 
-                        <!-- Product Content Section -->
                         <div class="card-content">
                             <div class="product-meta">
                                 {% if product.product_type == 'house' %}
@@ -211,8 +207,52 @@
                     <p class="no-products">{% trans "No featured products available." %}</p>
                     {% endfor %}
                 </div>
-                
-                <!-- Load More Section -->
+                <section class="sponsor-carousel">
+                    <div class="container">
+                        <h2 class="section-title">{% trans "Our Sponsors" %}</h2>
+
+                        <div class="sponsor-slider">
+                            <div class="sponsor-track">
+
+                                <div class="sponsor-logo">
+                                    <img src="{% static 'base/images/sponsors/sponsor1.png' %}" alt="Sponsor 1">
+                                </div>
+
+                                <div class="sponsor-logo">
+                                    <img src="{% static 'base/images/sponsors/sponsor2.png' %}" alt="Sponsor 2">
+                                </div>
+
+                                <div class="sponsor-logo">
+                                    <img src="{% static 'base/images/sponsors/sponsor3.png' %}" alt="Sponsor 3">
+                                </div>
+
+                                <div class="sponsor-logo">
+                                    <img src="{% static 'base/images/sponsors/sponsor4.png' %}" alt="Sponsor 4">
+                                </div>
+
+                                <div class="sponsor-logo">
+                                    <img src="{% static 'base/images/sponsors/sponsor5.png' %}" alt="Sponsor 5">
+                                </div>
+
+                                <!-- duplicate logos for infinite scroll -->
+
+                                <div class="sponsor-logo">
+                                    <img src="{% static 'base/images/sponsors/sponsor1.png' %}" alt="Sponsor 1">
+                                </div>
+
+                                <div class="sponsor-logo">
+                                    <img src="{% static 'base/images/sponsors/sponsor2.png' %}" alt="Sponsor 2">
+                                </div>
+
+                                <div class="sponsor-logo">
+                                    <img src="{% static 'base/images/sponsors/sponsor3.png' %}" alt="Sponsor 3">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {% if all_featured|length > 8 %}
                 <div class="load-more-container">
                     <button id="load-more-btn" class="btn-primary load-more-btn">
@@ -222,7 +262,7 @@
                     <div id="more-products" class="more-products-grid" style="display: none;">
                         {% for product in all_featured|slice:"8:" %}
                         <div class="product-card">
-                            <!-- Product Image Section -->
+                            
                             <div class="card-image">
                                 {% if product.product_type == 'house' %}
                                     {% if product.images.all %}
@@ -281,7 +321,6 @@
                                 </div>
                             </div>
 
-                            <!-- Product Content Section -->
                             <div class="card-content">
                                 <div class="product-meta">
                                     {% if product.product_type == 'house' %}

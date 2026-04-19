@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'your-development-secret-key'
 DEBUG = True
-ALLOWED_HOSTS = ['*','localhost', '127.0.0.1','render-x1cx.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 LANGUAGES = [
     ('en', _('English')),
