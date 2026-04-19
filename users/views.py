@@ -122,14 +122,14 @@ def ban_user(request, user_id):
     user = get_object_or_404(CustomUser, id=user_id)
     user.is_active = False
     user.save()
-    return redirect('users:users')
+    return redirect('users:user_list')
 
 
 @staff_member_required
 def delete_user(request, user_id):
     user = get_object_or_404(CustomUser, id=user_id)
     user.delete()
-    return redirect('users:users')
+    return redirect('users:user_list')
 
 
 @staff_member_required
@@ -138,4 +138,4 @@ def promote_user(request, user_id):
     user.is_superuser = True
     user.is_staff = True
     user.save()
-    return redirect('users:users')
+    return redirect('users:user_list')
