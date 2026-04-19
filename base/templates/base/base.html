@@ -1,9 +1,8 @@
-<!-- base.html -->
 {% load static %}
 {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{% trans 'Ethiopian marketplace - Buy and sell products in Ethiopia' %}">
@@ -19,73 +18,63 @@
     <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
     {% block css %}{% endblock %}
 </head>
+ 
 <body>
-    <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-link">{% trans "Skip to main content" %}</a>
-
-    <!-- Language overlay (fixed) -->
-    <div id="language-overlay" class="language-overlay hidden">
-        <div id="language-popup" class="language-popup">
-            <div class="popup-content">
-                <p>{% trans "Please select your language" %}:</p>
-                <form action="{% url 'set_language' %}" method="post" id="languageForm">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{ request.get_full_path|default:'/' }}">
-                    <select name="language" id="languageSelect" aria-label="{% trans 'Language selection' %}">
-                        {% get_current_language as LANGUAGE_CODE %}
-                        {% get_available_languages as LANGUAGES %}
-                        {% for lang_code, lang_name in LANGUAGES %}
-                            <option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
-                                {{ lang_name }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </form>
-                <button class="popup-skip" id="popupSkipBtn">{% trans "Skip" %}</button>
-            </div>
-        </div>
+<div id="language-overlay" class="language-overlay hidden">
+  <div id="language-popup" class="language-popup">
+    <div class="popup-content">
+      <p>{% trans "Please select your language" %}:</p>
+        <form action="{% url 'set_language' %}" method="post" id="languageForm">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ request.get_full_path|default:'/' }}">
+            <select name="language" id="languageSelect">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% for lang_code, lang_name in LANGUAGES %}
+                    <option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
+                        {{ lang_name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </form>
+      <button onclick="skipPopup()" class="popup-skip">{% trans "Skip" %}</button>
     </div>
+  </div>
+</div>
 
-    <!-- Top bar -->
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-content">
                 <div class="top-links">
-                    <a><i class="fas fa-clock"></i> <span class="live-clock">{{ now|date:"Y-m-d H:i" }}</span></a>
-                    <a href="{% url 'contact:contact_us' %}" class="glowing-link"><i class="fas fa-headset" aria-hidden="true"></i> {% trans "Contact US" %}</a>
+                     <a>
+                    <i class="fas fa-clock"></i> <span class="live-clock">{{ now|date:"Y-m-d H:i" }}</span>
+                <a>
+                    <a href="{% url 'contact:contact_us' %}" class="glowing-link" ><i class="fas fa-headset" aria-hidden="true"></i> {% trans "Contact US" %}</a>
                     <a href="#"><i class="fas fa-truck" aria-hidden="true"></i> +251 925 259 294</a>
+                    
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Header -->
     <header class="header 
-        {% if not user.is_authenticated %}header-guest
-        {% elif user.is_authenticated and user.is_superuser %}header-admin
-        {% elif user.is_authenticated and user.is_staff %}header-staff
-        {% else %}header-user
-        {% endif %}">
+                          {% if not user.is_authenticated %}header-guest
+                          {% elif user.is_authenticated and user.is_superuser %}header-admin
+                          {% elif user.is_authenticated and user.is_staff %}header-staff
+                          {% else %}header-user
+                          {% endif %}">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="/" aria-label="Home" class="logo-link">
-                        <img src="{% static 'base/images/logo.png' %}" alt="Ethio Agriculture Logo" class="site-logo">
-                        <span class="logo-text">{% trans "Ethio" %}<span class="hub">{% trans "Agriculture" %}</span></span>
-                    </a>
+                <a href="/" aria-label="Home" class="logo-link">
+                    <img src="{% static 'base/images/logo.png' %}" alt="Ethio Agriculture Logo" class="site-logo">
+                    <span class="logo-text">{% trans "Ethio" %}<span class="hub">{% trans "Agriculture" %}</span></span>
+                </a>
                 </div>
-                <div class="header-actions">
-                    <!-- Search toggle button -->
-                    <button class="search-toggle" id="searchToggle" aria-label="{% trans 'Search' %}" aria-expanded="false">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    <!-- Search input (hidden by default) -->
-                    <div class="search-input" id="searchInput">
-                        
-                    </div>
-
+                <div class="header-actions"> 
+ 
                     {% if user.is_authenticated %}
-                        <img src="{{ user.profile.get_profile_image_url }}" class="base_current-avatar" alt="{% trans 'Profile avatar' %}">
+                        <img src="{{ user.profile.get_profile_image_url }}" class="base_current-avatar">
                     {% else %}
                         <a href="{% url 'users:register' %}" class="login-btn">{% trans "Register" %}</a>
                     {% endif %}
@@ -98,162 +87,276 @@
         </div>
     </header>
 
-    <!-- Sidebar navigation -->
-    <nav class="category-nav" id="categoryNav" aria-label="{% trans 'Category navigation' %}">
-        <div class="category-nav-header">
-            <h3 class="category-nav-title">{% trans "Browse Categories" %}</h3>
-            <button class="nav-close-btn" id="navCloseBtn" aria-label="Close navigation"><i class="fas fa-times"></i></button>
-        </div>
-        <ul class="category-nav-list">
-            <!-- Dairy Section -->
-            <li class="category-nav-item has-dropdown">
-                <a href="#" class="category-nav-link dropdown-toggle" aria-expanded="false" aria-controls="clothingMenu">
-                    <i class="fas fa-cow"></i>
-                    <span class="link-text">{% trans "Dairy Section" %}</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </a>
-                <ul id="clothingMenu" class="category-nav-dropdown">
-                    <li><a href="{% url 'clothings:clothing_list' %}" class="category-nav-link"><i class="fas fa-list"></i><span class="link-text">{% trans "All Dairy products" %}</span></a></li>
-                    <li><a href="{% url 'clothings:clothing_create' %}" class="category-nav-link"><i class="fas fa-plus"></i><span class="link-text">{% trans "Add Dairy Products" %}</span></a></li>
-                </ul>
-            </li>
-            <!-- Poultry Section -->
-            <li class="category-nav-item has-dropdown">
-                <a href="#" class="category-nav-link dropdown-toggle" aria-expanded="false" aria-controls="poultryMenu">
-                    <i class="fas fa-feather-alt"></i>
-                    <span class="link-text">{% trans "Poultry Section" %}</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </a>
-                <ul id="poultryMenu" class="category-nav-dropdown">
-                    <li><a href="{% url 'poultryitems:item_list' %}" class="category-nav-link"><i class="fas fa-list"></i><span class="link-text">{% trans "Poultry Items" %}</span></a></li>
-                    <li><a href="{% url 'poultryitems:egg_sellers' %}" class="category-nav-link"><i class="fas fa-list"></i><span class="link-text">{% trans "Poultry Eggs" %}</span></a></li>
-                    <li><a href="{% url 'poultryitems:chicken_sellers_list' %}" class="category-nav-link"><i class="fas fa-list"></i><span class="link-text">{% trans "Poultry Chickens" %}</span></a></li>
-                </ul>
-            </li>
-            <!-- User Section -->
-            <li class="category-nav-item has-dropdown">
-                <a href="#" class="category-nav-link dropdown-toggle" aria-expanded="false" aria-controls="guestMenu">
-                    <i class="fas fa-user-circle"></i>
-                    <span class="link-text">{% trans "User" %}</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </a>
-                <ul id="guestMenu" class="category-nav-dropdown">
-                    <li><a href="{% url 'users:login' %}" class="category-nav-link"><i class="fas fa-sign-in-alt"></i><span class="link-text">{% trans "Login" %}</span></a></li>
-                    <li><a href="{% url 'users:register' %}" class="category-nav-link"><i class="fas fa-user-plus"></i><span class="link-text">{% trans "Register" %}</span></a></li>
-                    <li><a href="{% url 'users:profile' %}" class="category-nav-link"><i class="fas fa-user-cog"></i><span class="link-text">{% trans "My Profile" %}</span></a></li>
-                    <li><a href="{% url 'users:profile_update' %}" class="category-nav-link"><i class="fas fa-user-cog"></i><span class="link-text">{% trans "Edit Profile" %}</span></a></li>
-                    <li><a href="{% url 'users:logout' %}" class="category-nav-link"><i class="fas fa-sign-out-alt"></i><span class="link-text">{% trans "Logout" %}</span></a></li>
-                </ul>
-            </li>
-            <!-- Messages & Cart -->
-            <li class="category-nav-item has-dropdown">
-                <a href="#" class="category-nav-link dropdown-toggle" aria-expanded="false" aria-controls="userMenu">
-                    <i class="fa fa-envelope"></i>
-                    <span class="link-text">{% trans "User store" %}</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </a>
-                <ul id="userMenu" class="category-nav-dropdown">
-                    <li><a href="{% url 'conversation:inbox' %}" class="category-nav-link"><i class="far fa-envelope"></i><span class="link-text">{% trans "Messages" %}</span><span class="count" id="navbarUnreadMsg">0</span></a></li>
-                    <li><a href="{% url 'cart:cart_detail' %}" class="category-nav-link"><i class="fas fa-shopping-cart"></i><span class="link-text">{% trans "Cart" %}</span><span class="count" id="navbarCartCount">{{ cart_item_count|default:0 }}</span></a></li>
-                </ul>
-            </li>
-            {% if request.user.is_staff %}
-            <li class="category-nav-item has-dropdown">
-                <a href="#" class="category-nav-link dropdown-toggle" aria-expanded="false" aria-controls="adminMenu">
-                    <i class="fas fa-lock"></i>
-                    <span class="link-text">{% trans "For Admin" %}</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </a>
-                <ul id="adminMenu" class="category-nav-dropdown">
-                    <li><a href="{% url 'admin_app:admin_links' %}" class="category-nav-link"><i class="fas fa-user-shield"></i><span class="link-text">{% trans "Admin Links" %}</span></a></li>
-                    <li><a href="{% url 'base:message_list' %}" class="category-nav-link"><i class="fas fa-inbox"></i><span class="link-text">{% trans "Messages" %}</span></a></li>
-                    <li><a href="{% url 'users:user_list' %}" class="category-nav-link"><i class="fas fa-users"></i><span class="link-text">{% trans "User List" %}</span></a></li>
-                </ul>
-            </li>
-            {% endif %}
-            <!-- Language Switcher -->
-            <li class="category-nav-item has-dropdown">
-                <a href="#" class="category-nav-link dropdown-toggle" aria-expanded="false" aria-controls="languageMenu">
-                    <i class="fas fa-globe"></i>
-                    <span class="link-text">{% trans "Language" %}</span>
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-                </a>
-                <ul id="languageMenu" class="category-nav-dropdown">
-                    <li>
-                        <form action="{% url 'set_language' %}" method="post" class="language-form">
-                            {% csrf_token %}<input name="next" type="hidden" value="{{ request.get_full_path }}">
-                            <input type="hidden" name="language" value="en">
-                            <button type="submit" class="category-nav-link language-submit"><i class="fas fa-flag-usa"></i><span class="link-text">English</span></button>
-                        </form>
-                    </li>
-                    <li>
-                        <form action="{% url 'set_language' %}" method="post" class="language-form">
-                            {% csrf_token %}<input name="next" type="hidden" value="{{ request.get_full_path }}">
-                            <input type="hidden" name="language" value="am">
-                            <button type="submit" class="category-nav-link language-submit"><i class="fas fa-flag"></i><span class="link-text">አማርኛ</span></button>
-                        </form>
-                    </li>
-                    <li>
-                        <form action="{% url 'set_language' %}" method="post" class="language-form">
-                            {% csrf_token %}<input name="next" type="hidden" value="{{ request.get_full_path }}">
-                            <input type="hidden" name="language" value="om">
-                            <button type="submit" class="category-nav-link language-submit"><i class="fas fa-flag"></i><span class="link-text">Oromiffa</span></button>
-                        </form>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="{% url 'contact:contact_us' %}" class="category-nav-link"><i class="fas fa-headset"></i><span class="link-text">{% trans "Contact Us" %}</span></a></li>
-            <li><a href="{% url 'base:about_us' %}" class="category-nav-link"><i class="fas fa-info-circle"></i><span class="link-text">{% trans "About Us" %}</span></a></li>
-        </ul>
-    </nav>
-    <div class="nav-overlay" id="navOverlay"></div>
-
-    <!-- Main navigation (top bar) -->
-    <nav class="main-nav" id="navMenu" aria-label="{% trans 'Main navigation' %}">
-        <div class="container">
-            <ul class="nav-list">
-                <li class="nav-item mega-menu"><a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-                <li class="nav-item mega-menu"><a href="{% url 'clothings:clothing_list' %}" class="nav-link"><i class="fas fa-cow"></i> {% trans "Dairy" %}</a></li>
-                <li class="nav-item mega-menu"><a href="{% url 'poultryitems:index' %}" class="nav-link"><i class="fas fa-feather-alt"></i> {% trans "Poultry" %}</a></li>
+<nav class="category-nav" id="categoryNav">
+    <div class="category-nav-header">
+        <h3 class="category-nav-title">{% trans "Browse Categories" %}</h3>
+        <button class="nav-close-btn" id="navCloseBtn" aria-label="Close navigation">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>  
+    
+    <ul class="category-nav-list">
+        
+         <li class="category-nav-item has-dropdown">
+            <a href="#" class="category-nav-link dropdown-toggle" aria-expanded="false" aria-controls="clothingMenu">
+                <i class="fas fa-cow"></i>
+                <span class="link-text">{% trans "Dairy Section" %}</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <ul id="clothingMenu" class="category-nav-dropdown">
+                <li class="category-nav-item">
+                    <a href="{% url 'clothings:clothing_list' %}" class="category-nav-link">
+                        <i class="fas fa-list"></i>
+                        <span class="link-text">{% trans "All Dairy products" %}</span>
+                    </a>
+                </li>
+                <li class="category-nav-item">
+                    <a href="{% url 'clothings:clothing_create' %}" class="category-nav-link">
+                        <i class="fas fa-plus"></i>
+                        <span class="link-text">{% trans "Add Dairy Products" %}</span>
+                    </a>
+                </li>
             </ul>
-        </div>
-    </nav>
+        </li>
+         <li class="category-nav-item has-dropdown">
+            <a href="#" class="category-nav-link dropdown-toggle" aria-expanded="false" aria-controls="poultryMenu">
+                <i class="fas fa-feather-alt"></i>
+                <span class="link-text">{% trans "Poultry Section" %}</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <ul id="poultryMenu" class="category-nav-dropdown">
+                <li class="category-nav-item">
+                    <a href="{% url 'poultryitems:item_list' %}" class="category-nav-link">
+                        <i class="fas fa-list"></i>
+                        <span class="link-text">{% trans "Poultry Items" %}</span>
+                    </a>
+                </li>
+                <li class="category-nav-item">
+                    <a href="{% url 'poultryitems:egg_sellers' %}" class="category-nav-link">
+                        <i class="fas fa-list"></i>
+                        <span class="link-text">{% trans "Poultry Eggs" %}</span>
+                    </a>
+                </li>
+                <li class="category-nav-item">
+                    <a href="{% url 'poultryitems:chicken_sellers_list' %}" class="category-nav-link">
+                        <i class="fas fa-list"></i>
+                        <span class="link-text">{% trans "Poultry Chickens" %}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+         <li class="category-nav-item has-dropdown">
+            <a href="#" class="category-nav-link dropdown-toggle" aria-expanded="false" aria-controls="guestMenu">
+                <i class="fas fa-user-circle"></i>
+                <span class="link-text">{% trans "User" %}</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <ul id="guestMenu" class="category-nav-dropdown">
+                <li class="category-nav-item">
+                    <a href="{% url 'users:login' %}" class="category-nav-link">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span class="link-text">{% trans "Login" %}</span>
+                    </a>
+                </li>
+                <li class="category-nav-item">
+                    <a href="{% url 'users:register' %}" class="category-nav-link">
+                        <i class="fas fa-user-plus"></i>
+                        <span class="link-text">{% trans "Register" %}</span>
+                    </a>
+                </li>
 
-    <!-- Messages -->
+                <li class="category-nav-item">
+                    <a href="{% url 'users:profile' %}" class="category-nav-link">
+                        <i class="fas fa-user-cog"></i>
+                        <span class="link-text">{% trans "My Profile" %}</span>
+                    </a>
+                </li>
+
+                <li class="category-nav-item">
+                    <a href="{% url 'users:profile_update' %}" class="category-nav-link">
+                        <i class="fas fa-user-cog"></i>
+                        <span class="link-text">{% trans "Edit Profile" %}</span>
+                    </a>
+                </li>
+                <li class="category-nav-item">
+                    <a href="{% url 'users:logout' %}" class="category-nav-link">
+                        <i class="fas fa-user-cog"></i>
+                        <span class="link-text">{% trans "logout" %}</span>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+        <li class="category-nav-item has-dropdown">
+            <a href="#" class="category-nav-link dropdown-toggle" aria-expanded="false" aria-controls="userMenu">
+                <i class="fa fa-envelope"></i>
+                <span class="link-text">{% trans "User store" %}</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <ul id="userMenu" class="category-nav-dropdown">
+                
+                <li class="category-nav-item">
+                    <a href="{% url 'conversation:inbox' %}" class="category-nav-link">
+                        <i class="far fa-envelope"></i>
+                        <span class="link-text">{% trans "Messages" %}</span>
+                        <span class="count" id="navbarUnread">
+                            {% if request.user.is_authenticated %}
+                                {{ request.user.get_unread_message_count }}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </span>
+                    </a>
+                </li>
+
+                <li class="category-nav-item">
+                    <a href="{% url 'cart:cart_detail' %}" class="category-nav-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="link-text">{% trans "Cart" %}</span>
+                        <span class="count" id="navbarUnread">
+                        {{ cart_item_count|default:0 }}</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </li>
+
+        {% if request.user.is_staff %}
+        
+        <li class="category-nav-item has-dropdown">
+            <a href="#" class="category-nav-link dropdown-toggle" aria-expanded="false" aria-controls="adminMenu">
+                <i class="fas fa-lock"></i>
+                <span class="link-text">{% trans "For Admin" %}</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <ul id="adminMenu" class="category-nav-dropdown">
+                <li class="category-nav-item">
+                    <a href="{% url 'admin_app:admin_links' %}" class="category-nav-link">
+                        <i class="fas fa-user-shield"></i>
+                        <span class="link-text">{% trans "Admin Links" %}</span>
+                    </a>
+                </li>
+                <li class="category-nav-item">
+                    <a href="{% url 'base:message_list' %}" class="category-nav-link">
+                        <i class="fas fa-inbox"></i>
+                        <span class="link-text">{% trans "Messages" %}</span>
+                    </a>
+                </li>
+                <li class="category-nav-item">
+                    <a href="{% url 'users:user_list' %}" class="category-nav-link">
+                        <i class="fas fa-users"></i>
+                        <span class="link-text">{% trans "User List" %}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        {% endif %}
+
+        <li class="category-nav-item has-dropdown">
+            <a href="#" class="category-nav-link dropdown-toggle" aria-expanded="false" aria-controls="languageMenu">
+                <i class="fas fa-globe"></i>
+                <span class="link-text">{% trans "Language" %}</span>
+                <i class="fas fa-chevron-down dropdown-arrow"></i>
+            </a>
+            <ul id="languageMenu" class="category-nav-dropdown">
+                <li class="category-nav-item">
+                    <form action="{% url 'set_language' %}" method="post" class="language-form">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ request.get_full_path }}">
+                        <input type="hidden" name="language" value="en">
+                        <button type="submit" class="category-nav-link language-submit">
+                            <i class="fas fa-flag-usa"></i>
+                            <span class="link-text">English</span>
+                        </button>
+                    </form>
+                </li>
+                <li class="category-nav-item">
+                    <form action="{% url 'set_language' %}" method="post" class="language-form">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ request.get_full_path }}">
+                        <input type="hidden" name="language" value="am">
+                        <button type="submit" class="category-nav-link language-submit">
+                            <i class="fas fa-flag"></i>
+                            <span class="link-text">አማርኛ</span>
+                        </button>
+                    </form>
+                </li>
+                <li class="category-nav-item">
+                    <form action="{% url 'set_language' %}" method="post" class="language-form">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ request.get_full_path }}">
+                        <input type="hidden" name="language" value="om">
+                        <button type="submit" class="category-nav-link language-submit">
+                            <i class="fas fa-flag"></i>
+                            <span class="link-text">Oromiffa</span>
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </li>
+        <li class="category-nav-item {% if request.resolver_match.app_name == 'contact' %}active{% endif %}">
+            <a href="{% url 'contact:contact_us' %}" class="category-nav-link">
+                <i class="fas fa-headset"></i>
+                <span class="link-text">{% trans "Contact Us" %}</span>
+            </a>
+        </li>
+        <li class="category-nav-item {% if request.resolver_match.url_name == 'about_us' %}active{% endif %}">
+            <a href="{% url 'base:about_us' %}" class="category-nav-link">
+                <i class="fas fa-info-circle"></i>
+                <span class="link-text">{% trans "About Us" %}</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<nav class="main-nav" id="navMenu">
+    <div class="container">
+    <ul class="nav-list">
+        <li class="nav-item mega-menu {% if request.resolver_match.app_name == 'base' %}active{% endif %}">
+            <a href="/" class="nav-link active"><i class="fas fa-home"></i>.</a></li>
+
+        
+<li class="nav-item mega-menu {% if request.resolver_match.app_name == 'clothings' %}active{% endif %}">
+    <a href="{% url 'clothings:clothing_list' %}" class="nav-link">
+        <i class="fas fa-cow"></i>{% trans " Dairy" %}
+    </a>
+</li>
+<li class="nav-item mega-menu {% if request.resolver_match.app_name == 'poultryitems' %}active{% endif %}">
+    <a href="{% url 'poultryitems:index' %}" class="nav-link">
+        <i class="fas fa-feather-alt"></i>{% trans " Poultry" %}
+    </a>
+</li>
+    </ul>
+    </div>
+</nav>
+
     {% if messages %}
-        <div class="messages-container container">
             {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
             {% endfor %}
-        </div>
     {% endif %}
 
-    <!-- Main content -->
-    <main id="main-content">
-        {% block content %}{% endblock %}
-    </main>
-
-    <!-- Back to top button -->
-    <button id="backToTop" class="back-to-top" aria-label="{% trans 'Back to top' %}"><i class="fas fa-arrow-up"></i></button>
-
-    <!-- Footer -->
+    {% block content %}{% endblock %}
+ 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <a href="/" class="logo-link">
-                            <img src="{% static 'base/images/logo.png' %}" alt="Ethio Agriculture Logo" class="site-logo">
-                            <span class="logo-text">{% trans "Ethio" %}<span>{% trans "Agriculture" %}</span></span>
-                        </a>
-                    </div>
+    <a href="/" class="logo-link">
+        <img src="{% static 'base/images/logo.png' %}" alt="Ethio Agriculture Logo" class="site-logo">
+        <span class="logo-text">{% trans "Ethio" %}<span>{% trans "Agriculture" %}</span></span>
+    </a>
+</div>
                     <p class="footer-about">{% trans "Ethio-Agriculture is your one-stop online marketplace for Dairy products and Poultry Item. We connect buyers and sellers across the globe." %}</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/fraollemma0506" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://t.me/fraollemma0506" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-                        <a href="https://www.instagram.com/fraollemma0506" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/fraollemma0506" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.youtube.com/c/fraollemma0506" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/fraollemma0506" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://t.me/fraollemma0506" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.instagram.com/fraollemma0506" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/fraollemma0506" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/c/fraollemma0506" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -268,7 +371,7 @@
                     <ul class="footer-links">
                         <li><a href="{% url 'base:index' %}">{% trans "Home" %}</a></li>
                         <li><a href="{% url 'base:about_us' %}">{% trans "About Us" %}</a></li>
-                        <li><a href="{% url 'contact:contact_us' %}">{% trans "Contact Us" %}</a></li>
+                        <li class="glowing-link" ><a href="{% url 'contact:contact_us' %}">{% trans "Contact Us" %}</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -282,15 +385,17 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="copyright">&copy; <span id="current-year"></span> {% trans "Ethio-Agriculture All Rights Reserved." %}</div>
+                <div class="copyright">
+                    &copy; <span id="current-year"></span> {% trans "Ethio-Agriculture All Rights Reserved." %}
+                </div>
             </div>
         </div>
     </footer>
-
-    <script>
-        window.UNREAD_COUNT_API_URL = "{% url 'conversation:unread_count_api' %}";
-    </script>
-    <script src="{% static 'base/js/base.js' %}" defer></script>
+    
+<script>
+    window.UNREAD_COUNT_API_URL = "{% url 'conversation:unread_count_api' %}";
+</script>
+<script src="{% static 'base/js/base.js' %}" defer></script>
     {% block js %}{% endblock %}
 </body>
 </html>
