@@ -47,7 +47,7 @@
                     </a>
 
                     <a href="{% url 'users:unpromote_user' user.id %}" class="btn btn-warning">
-                        Remove Admin
+                         {% trans "Remove Admin" %}
                     </a>
                     {% endif %}
 
