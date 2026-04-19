@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block title %}
-  {% trans " Update Profile | Ethiopian Sheger Market place" %}
+{% trans "Update Profile | Ethiopian Sheger Market place" %}
 {% endblock %}
 
 {% block css %}
@@ -12,6 +12,7 @@
 
 {% block content %}
 <div class="simple-profile_update">
+
     <h2>{% trans "Update Profile" %}</h2>
 
     {% if form.errors %}
@@ -24,113 +25,96 @@
         {% csrf_token %}
         {{ form.non_field_errors }}
 
+        <!-- Phone number -->
         <div class="form-row">
-            <label>{% trans "Phone Number:" %}</label>
-            <div class="readonly-field">{{ user.phone_number }}</div>
+            <label>{% trans "Phone Number" %}</label>
+            <div class="readonly-field">{{ request.user.phone_number }}</div>
             <small>{% trans "Contact support to change phone number" %}</small>
         </div>
 
+        <!-- Profile photo -->
         <div class="form-row">
-            <label>{{ form.profile_picture.label }}</label>
-            {% if form.instance.profile_picture %}
-                <div class="avatar-preview">
-                    <img src="{{ form.instance.get_profile_image_url }}" id="profile-picture-preview">
-                    <label class="upload-photo-btn">
-                        {% trans "Upload / Change Photo" %}
-                        {{ form.profile_picture }}
-                    </label>
-                </div>
-            {% else %}
-                <div class="avatar-preview">
-                    <img src="https://res.cloudinary.com/your-cloud-name/image/upload/v1612469403/kvtec0mqxawgxmhsaamd.jpg" 
-                        alt="Default Profile" 
-                        id="profile-picture-preview">
-                    <label class="upload-photo-btn">
-                        {% trans "Upload Photo" %}
-                        {{ form.profile_picture }}
-                    </label>
-                </div>
-            {% endif %}
+            <label>{% trans "Profile Photo" %}</label>
+
+            <div class="avatar-preview">
+
+                <img src="{{ form.instance.get_profile_image_url }}"
+                     id="profile-picture-preview"
+                     alt="Profile picture">
+
+                <label class="change-photo-btn">
+                    {% trans "Change Photo" %}
+                    {{ form.profile_picture }}
+                </label>
+
+            </div>
+
             {{ form.profile_picture.errors }}
         </div>
 
-        edit
-
-        <div class="avatar-preview">
-    <img src="{{ form.instance.get_profile_image_url }}" id="profile-picture-preview">
-
-    <label class="change-photo-btn">
-        {% trans "Change Photo" %}
-        {{ form.profile_picture }}
-    </label>
-</div>
-edit
-
+        <!-- Bio -->
         <div class="form-row">
-            <label for="id_username">{{ form.username.label }}</label>
-            {{ form.username }}
-            {{ form.username.errors }}
-        </div>
-
-        <div class="form-row">
-            <label for="id_bio">{{ form.bio.label }}</label>
+            <label>{{ form.bio.label }}</label>
             {{ form.bio }}
             {{ form.bio.errors }}
         </div>
 
+        <!-- Location -->
         <div class="form-row">
-            <label for="id_location">{{ form.location.label }}</label>
+            <label>{{ form.location.label }}</label>
             {{ form.location }}
             {{ form.location.errors }}
         </div>
 
+        <!-- Social links -->
         <div class="form-row">
-    <label for="id_telegram">{{ form.telegram.label }}</label>
-    {{ form.telegram }}
-    {{ form.telegram.errors }}
-</div>
+            <label>{{ form.telegram.label }}</label>
+            {{ form.telegram }}
+            {{ form.telegram.errors }}
+        </div>
 
-<div class="form-row">
-    <label for="id_facebook">{{ form.facebook.label }}</label>
-    {{ form.facebook }}
-    {{ form.facebook.errors }}
-</div>
+        <div class="form-row">
+            <label>{{ form.facebook.label }}</label>
+            {{ form.facebook }}
+            {{ form.facebook.errors }}
+        </div>
 
-<div class="form-row">
-    <label for="id_instagram">{{ form.instagram.label }}</label>
-    {{ form.instagram }}
-    {{ form.instagram.errors }}
-</div>
+        <div class="form-row">
+            <label>{{ form.instagram.label }}</label>
+            {{ form.instagram }}
+            {{ form.instagram.errors }}
+        </div>
 
-<div class="form-row">
-    <label for="id_linkedin">{{ form.linkedin.label }}</label>
-    {{ form.linkedin }}
-    {{ form.linkedin.errors }}
-</div>
+        <div class="form-row">
+            <label>{{ form.linkedin.label }}</label>
+            {{ form.linkedin }}
+            {{ form.linkedin.errors }}
+        </div>
 
-<div class="form-row">
-    <label for="id_imo">{{ form.imo.label }}</label>
-    {{ form.imo }}
-    {{ form.imo.errors }}
-</div>
+        <div class="form-row">
+            <label>{{ form.imo.label }}</label>
+            {{ form.imo }}
+            {{ form.imo.errors }}
+        </div>
 
-<div class="form-row">
-    <label for="id_tiktok">{{ form.tiktok.label }}</label>
-    {{ form.tiktok }}
-    {{ form.tiktok.errors }}
-</div>
+        <div class="form-row">
+            <label>{{ form.tiktok.label }}</label>
+            {{ form.tiktok }}
+            {{ form.tiktok.errors }}
+        </div>
 
-<div class="form-row">
-    <label for="id_email">{{ form.email.label }}</label>
-    {{ form.email }}
-    {{ form.email.errors }}
-</div>
-
+        <div class="form-row">
+            <label>{{ form.email.label }}</label>
+            {{ form.email }}
+            {{ form.email.errors }}
+        </div>
 
         <button type="submit" class="save-btn">
             {% trans "Save Changes" %}
         </button>
+
     </form>
+
 </div>
 {% endblock %}
 
