@@ -152,25 +152,28 @@ function initButtonEffects() {
 
 function initLanguagePopup() {
     const overlay = document.getElementById("language-overlay");
+    if (!overlay) return;
 
+    // Show popup only if user has never selected a language
     if (!localStorage.getItem("languageSelected")) {
         setTimeout(() => {
-            overlay.classList.add("active");
+            // Double-check in case language was selected via side menu during the delay
+            if (!localStorage.getItem("languageSelected")) {
+                overlay.classList.remove("hidden");   // Show by removing hidden class
+            }
         }, 1000);
     }
 }
-
 function submitLanguage(selectElement) {
     localStorage.setItem("languageSelected", "true");
     const overlay = document.getElementById("language-overlay");
-    if (overlay) overlay.classList.remove("active");
+    if (overlay) overlay.classList.add("hidden");    // Hide by adding hidden class
     selectElement.form.submit();
 }
-
 function skipPopup() {
     localStorage.setItem("languageSelected", "true");
     const overlay = document.getElementById("language-overlay");
-    if (overlay) overlay.classList.remove("active");
+    if (overlay) overlay.classList.add("hidden");    // Hide by adding hidden class
 }
 function initLanguageAutoSubmit() {
     const languageSelects = document.querySelectorAll('#languageSelect, .language-select');
@@ -182,10 +185,11 @@ function initLanguageAutoSubmit() {
     function autoSubmitHandler(e) {
         localStorage.setItem("languageSelected", "true");
         const overlay = document.getElementById("language-overlay");
-        if (overlay) overlay.classList.remove("active");
+        if (overlay) overlay.classList.add("hidden");   // Hide popup
         this.form.submit();
     }
 }
+
 function initMobileNavigation() {
     const navToggle = document.getElementById('navToggle');
     const categoryNav = document.getElementById('categoryNav');
