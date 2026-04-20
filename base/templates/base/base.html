@@ -46,11 +46,17 @@
         <div class="container">
             <div class="top-bar-content">
                 <div class="top-links">
-                     <a>
-                    <i class="fas fa-clock"></i> <span class="live-clock">{{ now|date:"Y-m-d H:i" }}</span>
-                <a>
-                    <a href="{% url 'contact:contact_us' %}" class="glowing-link" ><i class="fas fa-headset" aria-hidden="true"></i> {% trans "Contact US" %}</a>
-                    <a href="#"><i class="fas fa-truck" aria-hidden="true"></i> +251 925 259 294</a>
+                    <a>
+                        <i class="fas fa-clock"></i> 
+                        <span class="live-clock">{{ now|date:"Y-m-d H:i" }}
+                        </span>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-truck" aria-hidden="true"></i> 
+                        +251 925 259 294
+                    </a>
+                    <span class="owner-message">{% trans "Welcome to Ethio-Agriculture, your one-stop online marketplace for Dairy products and Poultry Item. We connect buyers and sellers across the globe." %}
+                    </span>
                     
                 </div>
             </div>
@@ -314,22 +320,21 @@
     <ul class="nav-list">
         <li class="nav-item mega-menu {% if request.resolver_match.app_name == 'base' %}active{% endif %}">
             <a href="/" class="nav-link active"><i class="fas fa-home"></i>.</a></li>
-
-        
-<li class="nav-item mega-menu {% if request.resolver_match.app_name == 'clothings' %}active{% endif %}">
-    <a href="{% url 'clothings:clothing_list' %}" class="nav-link">
-        <i class="fas fa-cow"></i>{% trans " Dairy" %}
-    </a>
-</li>
-<li class="nav-item mega-menu {% if request.resolver_match.app_name == 'poultryitems' %}active{% endif %}">
-    <a href="{% url 'poultryitems:index' %}" class="nav-link">
-        <i class="fas fa-feather-alt"></i>{% trans " Poultry" %}
-    </a>
-</li>
+        <li class="nav-item mega-menu {% if request.resolver_match.app_name == 'clothings' %}active{% endif %}">
+            <a href="{% url 'clothings:clothing_list' %}" class="nav-link">
+                <i class="fas fa-cow"></i>{% trans " Dairy" %}
+            </a>
+        </li>
+        <li class="nav-item mega-menu {% if request.resolver_match.app_name == 'poultryitems' %}active{% endif %}">
+            <a href="{% url 'poultryitems:index' %}" class="nav-link">
+                <i class="fas fa-feather-alt"></i>{% trans " Poultry" %}
+            </a>
+        </li>
     </ul>
     </div>
 </nav>
 
+<div class="alert-messages">
     {% if messages %}
             {% for message in messages %}
                 <div class="alert alert-{{ message.tags }}">
@@ -337,6 +342,7 @@
                 </div>
             {% endfor %}
     {% endif %}
+</div>
 
     {% block content %}{% endblock %}
  
@@ -345,11 +351,11 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-    <a href="/" class="logo-link">
-        <img src="{% static 'base/images/logo.png' %}" alt="Ethio Agriculture Logo" class="site-logo">
-        <span class="logo-text">{% trans "Ethio" %}<span>{% trans "Agriculture" %}</span></span>
-    </a>
-</div>
+                        <a href="/" class="logo-link">
+                            <img src="{% static 'base/images/logo.png' %}" alt="Ethio Agriculture Logo" class="site-logo">
+                            <span class="logo-text">{% trans "Ethio" %}<span>{% trans "Agriculture" %}</span></span>
+                        </a>
+                    </div>
                     <p class="footer-about">{% trans "Ethio-Agriculture is your one-stop online marketplace for Dairy products and Poultry Item. We connect buyers and sellers across the globe." %}</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/fraollemma0506" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
