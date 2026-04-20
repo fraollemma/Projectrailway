@@ -1,4 +1,3 @@
-```javascript
 document.addEventListener('DOMContentLoaded', function() {
     initClock();
     initCurrentYear();
@@ -301,4 +300,3 @@ style.innerHTML='@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)
 document.head.appendChild(style);
 
 })();
-```
