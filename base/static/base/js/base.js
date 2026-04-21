@@ -11,32 +11,20 @@ document.addEventListener('DOMContentLoaded', function() {
     initCategoryNavDropdowns(); 
 });
 
-function initClock() {
-    function updateClock() {
-        const clockElements = document.querySelectorAll('.live-clock');
-        if (clockElements.length > 0) {
-            const now = new Date();
-            const options = { 
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit',
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false
-            };
-            
-            const formattedDateTime = now.toLocaleString('en-US', options)
-                .replace(/(\d+)\/(\d+)\/(\d+),?/, '$3-$1-$2');
-            
-            clockElements.forEach(el => {
-                el.textContent = formattedDateTime;
-            });
-        }
-    }
+function updateClock(){
 
-    updateClock();
-    setInterval(updateClock, 60000);
+    const now = new Date()
+
+    const date = now.toLocaleDateString()
+    const time = now.toLocaleTimeString()
+
+    document.getElementById("liveClock").textContent =
+        date + " " + time
 }
+
+setInterval(updateClock,1000)
+
+updateClock()
 
 function initCurrentYear() {
     const currentYear = document.getElementById('current-year');
@@ -154,12 +142,12 @@ function initLanguagePopup() {
     const overlay = document.getElementById("language-overlay");
     if (!overlay) return;
 
-    // Show popup only if user has never selected a language
+    
     if (!localStorage.getItem("languageSelected")) {
         setTimeout(() => {
-            // Double-check in case language was selected via side menu during the delay
+           
             if (!localStorage.getItem("languageSelected")) {
-                overlay.classList.remove("hidden");   // Show by removing hidden class
+                overlay.classList.remove("hidden");   
             }
         }, 1000);
     }
@@ -167,13 +155,13 @@ function initLanguagePopup() {
 function submitLanguage(selectElement) {
     localStorage.setItem("languageSelected", "true");
     const overlay = document.getElementById("language-overlay");
-    if (overlay) overlay.classList.add("hidden");    // Hide by adding hidden class
+    if (overlay) overlay.classList.add("hidden");   
     selectElement.form.submit();
 }
 function skipPopup() {
     localStorage.setItem("languageSelected", "true");
     const overlay = document.getElementById("language-overlay");
-    if (overlay) overlay.classList.add("hidden");    // Hide by adding hidden class
+    if (overlay) overlay.classList.add("hidden");    
 }
 function initLanguageAutoSubmit() {
     const languageSelects = document.querySelectorAll('#languageSelect, .language-select');
@@ -185,7 +173,7 @@ function initLanguageAutoSubmit() {
     function autoSubmitHandler(e) {
         localStorage.setItem("languageSelected", "true");
         const overlay = document.getElementById("language-overlay");
-        if (overlay) overlay.classList.add("hidden");   // Hide popup
+        if (overlay) overlay.classList.add("hidden");   
         this.form.submit();
     }
 }

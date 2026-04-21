@@ -42,26 +42,32 @@
   </div>
 </div>
 
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-content">
-                <div class="top-links">
-                    <a>
-                        <i class="fas fa-clock"></i> 
-                        <span class="live-clock">{{ now|date:"Y-m-d H:i" }}
-                        </span>
-                    </a>
-                    <a href="#">
-                        <i class="fas fa-truck" aria-hidden="true"></i> 
-                        +251 925 259 294
-                    </a>
-                    <span class="owner-message">{% trans "Welcome to Ethio-Agriculture, your one-stop online marketplace for Dairy products and Poultry Item. We connect buyers and sellers across the globe." %}
-                    </span>
-                    
-                </div>
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-content">
+
+            <!-- Live Time -->
+            <div class="top-time">
+                <i class="fas fa-clock"></i>
+                <span id="liveClock"></span>
             </div>
+
+            <!-- Scrolling Announcement -->
+            <div class="top-announcement">
+                <marquee behavior="scroll" direction="left">
+                    📢 Welcome to Ethio-Agriculture – Buy and sell Dairy and Poultry products easily across Ethiopia.
+                </marquee>
+            </div>
+
+            <!-- Phone -->
+            <div class="top-phone">
+                <i class="fas fa-phone"></i>
+                <span>+251 925 259 294</span>
+            </div>
+
         </div>
     </div>
+</div>
 
     <header class="header 
                           {% if not user.is_authenticated %}header-guest
