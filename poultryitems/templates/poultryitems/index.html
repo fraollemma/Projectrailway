@@ -14,7 +14,6 @@
 
 <section class="hero">
 
-    <!-- Background Image (fallback for mobile) -->
     <img 
         src="{% static 'poultryitems/images/hero_section_image.jpg' %}" 
         alt="Poultry farming" 
@@ -22,15 +21,12 @@
         loading="lazy"
     >
 
-    <!-- Video Background (hidden on mobile for performance) -->
     <video autoplay muted loop playsinline class="hero__video">
         <source src="{% static 'poultryitems/videos/chicken-farm.mp4' %}" type="video/mp4">
     </video>
 
-    <!-- Overlay -->
     <div class="hero__overlay"></div>
 
-    <!-- Hero Content -->
     <div class="hero__content">
         <h1 class="hero__title">
             Premium Poultry Products & Farming Solutions
@@ -48,10 +44,21 @@
 
 </section>
 
-<!-- Services Section -->
 <section class="services" id="services">
     <h2 class="section-title">Our Services</h2>
     <div class="services__grid">
+        
+        <article class="service-card">
+            <div class="service-card__image">
+                <img src="{% static 'poultryitems/images/chicken-meat.jpg' %}" alt="Poultry Meat">
+            </div>
+            <div class="service-card__content">
+                <h3 class="service-card__title">Poultry Items</h3>
+                <p class="service-card__description">Healthy, antibiotic-free chicken meat processed under the highest hygiene standards.</p>
+                <a href="{% url 'poultryitems:item_list' %}" class="button button--secondary">View More</a>
+            </div>
+        </article>
+
         <article class="service-card">
             <div class="service-card__image">
                 <img src="{% static 'poultryitems/images/eggs.jpg' %}" alt="Fresh Eggs">
@@ -65,17 +72,6 @@
         
         <article class="service-card">
             <div class="service-card__image">
-                <img src="{% static 'poultryitems/images/chicken-meat.jpg' %}" alt="Poultry Meat">
-            </div>
-            <div class="service-card__content">
-                <h3 class="service-card__title">Poultry Items</h3>
-                <p class="service-card__description">Healthy, antibiotic-free chicken meat processed under the highest hygiene standards.</p>
-                <a href="{% url 'poultryitems:item_list' %}" class="button button--secondary">View More</a>
-            </div>
-        </article>
-        
-        <article class="service-card">
-            <div class="service-card__image">
                 <img src="{% static 'poultryitems/images/hatchery.jpg' %}" alt="Day-old Chicks">
             </div>
             <div class="service-card__content">
@@ -84,10 +80,10 @@
                 <a href="{% url 'poultryitems:chicken_sellers_list' %}" class="button button--secondary">View More</a>
             </div>
         </article>
+
     </div>
 </section>
 
-<!-- Training Section -->
 <section class="training-section">
     <div class="training-section__header">
         <h2 class="training-section__title">Our Expert Services</h2>
@@ -135,7 +131,6 @@
     </div>
 </section>
 
-<!-- Products Section -->
 <section class="products">
     <h2 class="section-title">Featured Products</h2>
     <div class="products__grid">
@@ -160,7 +155,6 @@
 {% block js %}
 <script src="{% static 'poultryitems/js/index.js' %}"></script>
 <script>
-    // Simple animation for elements when they come into view
     document.addEventListener('DOMContentLoaded', function() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
