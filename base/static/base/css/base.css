@@ -254,11 +254,6 @@ img {
     background:#f5f5f5;
 }
 
-.action-item .dropdown-menu{
-    display:flex;
-    opacity:1;
-    transform:translateY(0);
-}
 .login-btn, .user-btn {
     padding: var(--spacing-xs) var(--spacing-sm);
     border: 1px solid var(--primary-color);
