@@ -11,21 +11,22 @@ document.addEventListener('DOMContentLoaded', function() {
     initCategoryNavDropdowns(); 
 });
 
-function updateClock(){
-
-    const now = new Date()
-
-    const date = now.toLocaleDateString()
-    const time = now.toLocaleTimeString()
-
-    document.getElementById("liveClock").textContent =
-        date + " " + time
+function initClock() {
+    updateClock();
+    setInterval(updateClock, 1000);
 }
 
-setInterval(updateClock,1000)
+function updateClock() {
+    const clock = document.getElementById("liveClock");
+    if (!clock) return;
 
-updateClock()
+    const now = new Date();
 
+    const date = now.toLocaleDateString();
+    const time = now.toLocaleTimeString();
+
+    clock.textContent = date + " " + time;
+}
 function initCurrentYear() {
     const currentYear = document.getElementById('current-year');
     if (currentYear) {
