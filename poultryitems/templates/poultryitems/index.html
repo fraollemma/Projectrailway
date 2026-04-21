@@ -14,13 +14,6 @@
 
 <section class="hero">
 
-    <img 
-        src="{% static 'poultryitems/images/hero_section_image.jpg' %}" 
-        alt="Poultry farming" 
-        class="hero__image"
-        loading="lazy"
-    >
-
     <video autoplay muted loop playsinline class="hero__video">
         <source src="{% static 'poultryitems/videos/chicken-farm.mp4' %}" type="video/mp4">
     </video>
@@ -28,18 +21,31 @@
     <div class="hero__overlay"></div>
 
     <div class="hero__content">
+
         <h1 class="hero__title">
-            Premium Poultry Products & Farming Solutions
+            {% trans "Premium Poultry Marketplace" %}
         </h1>
 
         <p class="hero__description">
-            High-quality poultry products and expert farming training to help
-            you succeed in the poultry business.
+            {% trans "Buy chickens, eggs, and poultry products from trusted Ethiopian farmers." %}
         </p>
 
-        <a href="#services" class="button button--primary">
-            Explore Our Services
-        </a>
+        <div class="hero__buttons">
+
+            <a href="{% url 'poultryitems:item_list' %}" class="button button--primary">
+                {% trans "Browse Poultry" %}
+            </a>
+
+            <a href="#services" class="button button--secondary">
+                {% trans "Explore Services" %}
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero__scroll">
+        <span></span>
     </div>
 
 </section>

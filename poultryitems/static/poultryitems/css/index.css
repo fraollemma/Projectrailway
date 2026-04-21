@@ -392,3 +392,78 @@ body {
     }
 
 } 
+.hero__buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+.hero__scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero__scroll span {
+    width: 22px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: block;
+    position: relative;
+}
+
+.hero__scroll span::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 4px;
+    height: 8px;
+    background: white;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    animation: scrollMove 2s infinite;
+}
+
+@keyframes scrollMove {
+    0% { opacity:0; transform:translate(-50%,0); }
+    50% { opacity:1; }
+    100% { opacity:0; transform:translate(-50%,12px); }
+}
+.service-card img,
+.product-card img,
+.training-card__image {
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover img,
+.product-card:hover img,
+.training-card:hover img {
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+.service-card,
+.training-card,
+.product-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}

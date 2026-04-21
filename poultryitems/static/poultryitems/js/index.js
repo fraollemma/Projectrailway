@@ -1,12 +1,40 @@
-// has no index.js file// Poultry page initializations
-document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target); // stop observing after animation
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            const target = document.querySelector(this.getAttribute("href"));
+
+            if(target){
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
             }
         });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.service-card, .training-card, .product-card').forEach(el => observer.observe(el));
+    });
+
+
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll(
+        ".service-card, .training-card, .product-card"
+    );
+
+    const revealObserver = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+                entry.target.classList.add("reveal");
+            }
+
+        });
+
+    },{
+        threshold:0.15
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
 });
