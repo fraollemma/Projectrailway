@@ -268,7 +268,7 @@ function initMobileNavigation() {
 }
 function initDropdowns() {
 
-    const dropdowns = document.querySelectorAll(".dropdown");
+    const dropdowns = document.querySelectorAll(".dropdown:not(.category-nav *)");
 
     dropdowns.forEach(dropdown => {
 
