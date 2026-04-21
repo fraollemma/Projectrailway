@@ -83,17 +83,66 @@
                     <span class="logo-text">{% trans "Ethio" %}<span class="hub">{% trans "Agriculture" %}</span></span>
                 </a>
                 </div>
-                <div class="header-actions"> 
- 
+                <div class="header-actions">
+
+                    <!-- Language Switch -->
+                    <div class="action-item language-switch">
+                        <button class="action-btn">
+                            <i class="fas fa-globe"></i>
+                        </button>
+
+                        <div class="dropdown-menu">
+                            <a href="/en/">English</a>
+                            <a href="/am/">አማርኛ</a>
+                        </div>
+                    </div>
+
+                    <!-- Notifications -->
                     {% if user.is_authenticated %}
-                        <img src="{{ user.profile.get_profile_image_url }}" class="base_current-avatar">
-                    {% else %}
-                        <a href="{% url 'users:register' %}" class="login-btn">{% trans "Register" %}</a>
+                    <div class="action-item notifications">
+                        <button class="action-btn">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+
+                        <div class="dropdown-menu">
+                            <p class="dropdown-title">Notifications</p>
+                            <a href="#">New product approved</a>
+                            <a href="#">New order received</a>
+                            <a href="#">System update</a>
+                        </div>
+                    </div>
                     {% endif %}
 
+                    <!-- User Menu -->
+                    <div class="action-item user-menu">
+
+                        {% if user.is_authenticated %}
+                            <button class="action-btn user-btn">
+                                <img src="{{ user.profile.get_profile_image_url }}" class="base_current-avatar">
+                            </button>
+
+                            <div class="dropdown-menu">
+                                <a href="#">Profile</a>
+                                <a href="#">My Products</a>
+                                <a href="#">Dashboard</a>
+                                <a href="#">Settings</a>
+                                <a href="{% url 'users:logout' %}">Logout</a>
+                            </div>
+
+                        {% else %}
+                            <a href="{% url 'users:register' %}" class="login-btn">
+                                {% trans "Register" %}
+                            </a>
+                        {% endif %}
+
+                    </div>
+
+                    <!-- Mobile Menu -->
                     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-                        <span class="nav-toggle-icon"><i class="fas fa-bars"></i></span>
+                        <i class="fas fa-bars"></i>
                     </button>
+
                 </div>
             </div>
         </div>
