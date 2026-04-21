@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Like button functionality
     document.querySelectorAll('[data-action="like"]').forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
@@ -8,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Share button functionality
     document.querySelectorAll('[data-action="share"]').forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
@@ -58,7 +56,6 @@ async function toggleLike(itemId, button) {
 
 async function handleShare(itemId, button) {
     try {
-        // First try the Web Share API
         if (navigator.share) {
             await navigator.share({
                 title: 'Check out this poultry item!',
@@ -66,12 +63,9 @@ async function handleShare(itemId, button) {
                 url: window.location.href,
             });
         } else {
-            // Fallback for browsers without Web Share API
             copyToClipboard(window.location.href);
             alert('Link copied to clipboard!');
         }
-
-        // Record the share
         const response = await fetch(`/en/items/${itemId}/share/`, {
             method: 'POST',
             headers: {
@@ -86,8 +80,6 @@ async function handleShare(itemId, button) {
             if (data.status === 'success') {
                 const countElement = button.querySelector('.interaction-count');
                 countElement.textContent = data.share_count;
-                
-                // Visual feedback
                 button.style.backgroundColor = '#e8f5e9';
                 setTimeout(() => {
                     button.style.backgroundColor = '';
