@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initLanguageAutoSubmit();
     initLanguagePopup();
     initMobileNavigation(); 
-    initSearch();
-    initCategoryNavDropdowns(); 
+    initCategoryNavDropdowns();
+    initDropdowns(); 
 });
 
 function initClock() {
@@ -262,7 +262,33 @@ function initMobileNavigation() {
         });
     });
 }
+function initDropdowns() {
 
+    const dropdowns = document.querySelectorAll(".dropdown");
+
+    dropdowns.forEach(dropdown => {
+
+        const toggle = dropdown.querySelector(".dropdown-toggle");
+
+        toggle.addEventListener("click", function(e) {
+
+            e.stopPropagation();
+
+            dropdowns.forEach(d => {
+                if (d !== dropdown) d.classList.remove("open");
+            });
+
+            dropdown.classList.toggle("open");
+
+        });
+
+    });
+
+    document.addEventListener("click", function() {
+        dropdowns.forEach(d => d.classList.remove("open"));
+    });
+
+}
 function initCategoryNavDropdowns() {
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
     
@@ -385,71 +411,3 @@ function addPulseAnimation() {
 }
 
 addPulseAnimation();
-
-function initSearch() {
-    const searchToggle = document.getElementById('searchToggle');
-    const searchInput = document.querySelector('.search-input');
-    const searchForm = document.querySelector('.search-bar form');
-    const searchField = document.getElementById('search-input');
-    
-    if (searchToggle && searchInput) {
-        searchToggle.addEventListener('click', function() {
-            searchInput.classList.toggle('active');
-            document.body.classList.toggle('search-active');
-            
-            const isExpanded = searchInput.classList.contains('active');
-            searchToggle.setAttribute('aria-expanded', isExpanded);
-            
-            if (isExpanded) {
-                searchField.focus();
-            }
-        });
-        
-        document.addEventListener('click', function(e) {
-            if (searchInput.classList.contains('active') && 
-                !searchInput.contains(e.target) && 
-                !searchToggle.contains(e.target)) {
-                closeSearch();
-            }
-        });
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && searchInput.classList.contains('active')) {
-                closeSearch();
-            }
-        });
-        
-        searchForm.addEventListener('submit', function(e) {
-            if (window.innerWidth > 768) {
-                closeSearch();
-            }
-        });
-    }
-    
-    function closeSearch() {
-        searchInput.classList.remove('active');
-        document.body.classList.remove('search-active');
-        searchToggle.setAttribute('aria-expanded', 'false');
-    }
-    
-    if (searchField) {
-        let timeout;
-        searchField.addEventListener('input', function() {
-            clearTimeout(timeout);
-            timeout = setTimeout(function() {
-                const query = searchField.value.trim();
-                if (query.length > 2) {
-                    fetchSearchSuggestions(query);
-                }
-            }, 300);
-        });
-    }
-}
-
-function fetchSearchSuggestions(query) {
-    console.log('Fetching suggestions for:', query);
-}
-
-function showSearchSuggestions(suggestions) {
-    console.log('Showing suggestions:', suggestions);
-}

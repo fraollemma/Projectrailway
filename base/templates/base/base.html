@@ -86,8 +86,8 @@
                 <div class="header-actions">
 
                     <!-- Language Switch -->
-                    <div class="action-item language-switch">
-                        <button class="action-btn">
+                    <div class="action-item language-switch dropdown">
+                        <button class="action-btn dropdown-toggle">
                             <i class="fas fa-globe"></i>
                         </button>
 
@@ -99,8 +99,8 @@
 
                     <!-- Notifications -->
                     {% if user.is_authenticated %}
-                    <div class="action-item notifications">
-                        <button class="action-btn">
+                    <div class="action-item notifications dropdown">
+                        <button class="action-btn dropdown-toggle">
                             <i class="fas fa-bell"></i>
                             <span class="notification-badge">3</span>
                         </button>
@@ -115,7 +115,7 @@
                     {% endif %}
 
                     <!-- User Menu -->
-                    <div class="action-item user-menu">
+                    <div class="action-item user-menu dropdown-menu">
 
                         {% if user.is_authenticated %}
                             <button class="action-btn user-btn">
