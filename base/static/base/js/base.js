@@ -143,12 +143,12 @@ function initLanguagePopup() {
     const overlay = document.getElementById("language-overlay");
     if (!overlay) return;
 
-    
-    if (!localStorage.getItem("languageSelected")) {
+    if (localStorage.getItem("languageSelected")) {
+        overlay.classList.add("hidden");
+    } else {
         setTimeout(() => {
-           
             if (!localStorage.getItem("languageSelected")) {
-                overlay.classList.remove("hidden");   
+                overlay.classList.remove("hidden");
             }
         }, 1000);
     }
@@ -195,6 +195,10 @@ function initMobileNavigation() {
         navOverlay.classList.toggle('active');
         document.body.classList.toggle('no-scroll');
         
+        const icon = navToggle.querySelector('i');
+        if (icon) {
+            icon.className = isExpanded ? 'fas fa-times' : 'fas fa-bars';
+        }
         const isExpanded = categoryNav.classList.contains('active');
         navToggle.setAttribute('aria-expanded', isExpanded);
         

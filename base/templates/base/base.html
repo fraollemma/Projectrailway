@@ -20,7 +20,7 @@
 </head>
  
 <body>
-<div id="language-overlay" class="language-overlay">
+<div id="language-overlay" class="language-overlay hidden">
   <div id="language-popup" class="language-popup">
     <div class="popup-content">
       <p>{% trans "Please select your language" %}:</p>
@@ -115,10 +115,10 @@
                     {% endif %}
 
                     <!-- User Menu -->
-                    <div class="action-item user-menu dropdown-menu">
+                    <div class="action-item user-menu dropdown">
 
                         {% if user.is_authenticated %}
-                            <button class="action-btn user-btn">
+                            <button class="action-btn user-btn dropdown-toggle">
                                 <img src="{{ user.profile.get_profile_image_url }}" class="base_current-avatar">
                             </button>
 
@@ -274,7 +274,7 @@
                     <a href="{% url 'cart:cart_detail' %}" class="category-nav-link">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="link-text">{% trans "Cart" %}</span>
-                        <span class="count" id="navbarUnread">
+                        <span class="count" id="navbarcartUnread">
                         {{ cart_item_count|default:0 }}</span>
                     </a>
                 </li>
