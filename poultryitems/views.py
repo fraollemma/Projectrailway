@@ -146,8 +146,6 @@ class ItemCreateView(LoginRequiredMixin, CreateView):
         
         item = form.save()
         
-        for img in self.request.FILES.getlist('sub_images'):
-            SubImage.objects.create(item=item, image=img)
         messages.success(self.request, self.success_message)
         return redirect('poultryitems:item_detail', pk=item.pk)
 
