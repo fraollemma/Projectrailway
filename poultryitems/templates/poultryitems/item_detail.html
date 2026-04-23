@@ -16,8 +16,7 @@
     
     <!-- Left: Main Image + Thumbnails -->
     <div class="image-section">
-      <img src="{{ item.main_image.url }}" alt="{{ item.name }}" class="main-image" itemprop="image">
-
+      <img id="mainImage" src="{{ item.main_image.url }}" alt="{{ item.name }}" class="main-image" itemprop="image">
       <div class="thumbnail-row">
         {% for image in item.sub_images.all %}
           <img src="{{ image.image.url }}" alt="Thumbnail {{ forloop.counter }}" class="thumbnail">
