@@ -19,6 +19,8 @@ if (mainInput && mainPreview) {
             };
 
             reader.readAsDataURL(file);
+        } else {
+            mainPreview.style.display = 'none';
         }
     });
 }

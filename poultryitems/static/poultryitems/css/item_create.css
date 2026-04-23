@@ -348,3 +348,13 @@ body {
     border-radius: 8px;
     border: 1px solid var(--border-color);
 }
+.main-preview-container {
+    margin-top: 10px;
+}
+
+.main-preview-image {
+    max-width: 200px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    display: none;
+}

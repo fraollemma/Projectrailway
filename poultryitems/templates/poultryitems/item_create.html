@@ -54,20 +54,35 @@
                 </div>
 
                 <div class="form-section">
-                    <h3 class="section-title">
-                        <span class="section-icon">📝</span>
-                        {% trans "Description" %}
-                    </h3>
-<div class="form-group full-width image-upload-group">
-    <label for="id_main_image" class="upload-label">
-        <div class="upload-content">
-            <span class="upload-icon">🖼️</span>
-            <span class="upload-text">{% trans "Upload Main Image" %}</span>
-            <span class="file-info">{% trans "PNG, JPG up to 5MB" %}</span>
-        </div>
-        {{ form.main_image }}
-    </label>
+    <h3 class="section-title">
+        <span class="section-icon">🖼️</span>
+        {% trans "Main Image" %}
+    </h3>
 
+    <div class="form-group full-width image-upload-group">
+        <label for="id_main_image" class="upload-label">
+            <div class="upload-content">
+                <span class="upload-icon">🖼️</span>
+                <span class="upload-text">Upload Main Image</span>
+                <span class="file-info">PNG, JPG up to 5MB</span>
+            </div>
+            {{ form.main_image }}
+        </label>
+
+        <!-- ✅ Preview -->
+        <div class="main-preview-container">
+            <img id="mainImagePreview" class="main-preview-image" />
+        </div>
+
+        {% if form.main_image.errors %}
+            <ul class="errorlist">
+                {% for error in form.main_image.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
     <!-- Preview -->
     <div class="main-preview-container">
         <img id="mainImagePreview" class="main-preview-image" style="display:none;" />
@@ -85,10 +100,15 @@
 
                 <div class="form-section">
                     <h3 class="section-title">
-                        <span class="section-icon">🖼️</span>
-                        {% trans "Images" %}
-                    </h3>
-                    <div class="form-group full-width image-upload-group">
+    <span class="section-icon">📝</span>
+    {% trans "Description" %}
+</h3>
+
+<div class="form-group full-width">
+    {{ form.description.label_tag }}
+    {{ form.description }}
+    <div class="char-counter">0 characters</div>
+</div>
                         <label for="id_sub_images" class="upload-label">
                             <div class="upload-content">
                                 <span class="upload-icon">
