@@ -2,7 +2,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // Image upload and preview
     const fileInput = document.querySelector('#id_sub_images');
     const previewContainer = document.getElementById('imagePreview');
-    
+    const mainInput = document.querySelector('#id_main_image');
+    const mainPreview = document.getElementById('mainImagePreview');
+
+
+if (mainInput && mainPreview) {
+    mainInput.addEventListener('change', function () {
+        const file = this.files[0];
+
+        if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                mainPreview.src = e.target.result;
+                mainPreview.style.display = 'block';
+            };
+
+            reader.readAsDataURL(file);
+        }
+    });
+}
     if (fileInput && previewContainer) {
         fileInput.addEventListener('change', function() {
             previewContainer.innerHTML = '';

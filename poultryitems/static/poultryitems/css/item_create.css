@@ -222,6 +222,13 @@ body {
     color: var(--light-text);
 }
 
+#id_main_image {
+    position: absolute;
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+}
+
 #id_sub_images {
     position: absolute;
     opacity: 0;
@@ -334,4 +341,10 @@ body {
     height: 75px;
     min-height: 15px;
 }
+}
+#mainImagePreview {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
 }
