@@ -60,6 +60,8 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'crispy_bootstrap5',
+    'cloudinary', 
+    'cloudinary_storage',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5" 
@@ -126,6 +128,14 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'doixo5oiw',
+    'API_KEY': '334318349795623',
+    'API_SECRET': 'uF3V8cdoExU5JyI1L_Nl3mYh2uw',
+}
 
 LANGUAGE_CODE = 'en'
 TIME_ZONE = 'Africa/Addis_Ababa'
