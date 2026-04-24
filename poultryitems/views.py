@@ -300,7 +300,6 @@ def is_staff(user):
     return user.is_staff
 
 @login_required
-@user_passes_test(is_staff)
 def add_egg_seller(request):
     
     if hasattr(request.user, 'egg_seller'):
@@ -321,7 +320,6 @@ def add_egg_seller(request):
     return render(request, 'poultryitems/add_egg_seller.html', {'form': form})
 
 @login_required
-@user_passes_test(is_staff)
 def edit_egg_seller(request, pk):
     seller = get_object_or_404(EggSeller, pk=pk)
     if request.method == 'POST':
@@ -468,7 +466,6 @@ def delete_seller_ajax(request, seller_id):
     return JsonResponse({'success': False, 'error': 'Invalid request'})
 
 @login_required
-@user_passes_test(is_staff)
 @require_POST
 def delete_egg_seller_ajax(request, pk):
     try:
