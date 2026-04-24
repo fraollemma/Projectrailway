@@ -85,17 +85,33 @@
                 </div>
                 <div class="header-actions">
 
-                    <!-- Language Switch -->
-                    <div class="action-item language-switch dropdown">
-                        <button class="action-btn dropdown-toggle">
-                            <i class="fas fa-globe"></i>
-                        </button>
+<!-- Language Switch -->
+<div class="action-item language-switch dropdown">
+    <button class="action-btn dropdown-toggle">
+        <i class="fas fa-globe"></i>
+        {% get_current_language as LANGUAGE_CODE %}
+        <span class="lang-code">{{ LANGUAGE_CODE|upper }}</span>
+    </button>
 
-                        <div class="dropdown-menu">
-                            <a href="/en/">English</a>
-                            <a href="/am/">አማርኛ</a>
-                        </div>
-                    </div>
+    <div class="dropdown-menu">
+
+        {% get_available_languages as LANGUAGES %}
+        {% get_current_language as CURRENT_LANGUAGE %}
+
+        {% for lang_code, lang_name in LANGUAGES %}
+            <form action="{% url 'set_language' %}" method="post" style="margin:0;">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.get_full_path }}">
+                <input type="hidden" name="language" value="{{ lang_code }}">
+                
+                <button type="submit" class="dropdown-item {% if lang_code == CURRENT_LANGUAGE %}active-lang{% endif %}">
+                    {{ lang_name }}
+                </button>
+            </form>
+        {% endfor %}
+
+    </div>
+</div>
 
                     <!-- Notifications -->
                     {% if user.is_authenticated %}

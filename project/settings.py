@@ -114,7 +114,7 @@ else:
             "BACKEND": "channels.layers.InMemoryChannelLayer"
         }
     }
-
+ 
 AUTH_USER_MODEL = 'users.CustomUser'
 AUTHENTICATION_BACKENDS = ['users.backends.UsernamePhoneBackend']
 LOGIN_URL = 'login'
