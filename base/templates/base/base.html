@@ -118,12 +118,16 @@
                     <div class="action-item notifications dropdown">
                         <button class="action-btn dropdown-toggle">
                             <i class="fas fa-bell"></i>
-                            <span class="notification-badge">3</span>
+                            <span class="notification-badge">{{ total_notifications }}</span>
                         </button>
 
                         <div class="dropdown-menu">
-                            <a href="{% url 'conversation:inbox' %}">Messages</a>
-                            <a href="{% url 'cart:cart_detail' %}">cart</a>
+                            <a href="{% url 'conversation:inbox' %}">Messages
+                                ({{ unread_messages_count }})
+                            </a>
+                            <a href="{% url 'cart:cart_detail' %}">cart
+                                ({{ cart_items_count }})
+                            </a>
                         </div>
                     </div>
                     {% endif %}
