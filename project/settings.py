@@ -139,6 +139,9 @@ cloudinary.config(
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+if not os.getenv('CLOUDINARY_CLOUD_NAME'):
+    raise Exception("CLOUDINARY_CLOUD_NAME environment variable not set!")
+
 LANGUAGE_CODE = 'en'
 TIME_ZONE = 'Africa/Addis_Ababa'
 USE_I18N = True
