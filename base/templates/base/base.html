@@ -122,10 +122,8 @@
                         </button>
 
                         <div class="dropdown-menu">
-                            <p class="dropdown-title">Notifications</p>
-                            <a href="#">New product approved</a>
-                            <a href="#">New order received</a>
-                            <a href="#">System update</a>
+                            <a href="{% url 'conversation:inbox' %}">Messages</a>
+                            <a href="{% url 'cart:cart_detail' %}">cart</a>
                         </div>
                     </div>
                     {% endif %}
