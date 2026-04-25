@@ -89,13 +89,6 @@
                     {% endif %} 
                 {% endif %}
 
-                {% if request.user.is_authenticated and request.user != item.created_by %}
-                    <a href="{% url 'conversation:new' item._meta.app_label item._meta.model_name item.id %}" 
-                    class="contact-seller-btn">
-                        <i class="fas fa-comments"></i> Contact Seller
-                    </a>
-                {% endif %}
-
                 </div>
             </div>
             {% empty %}
