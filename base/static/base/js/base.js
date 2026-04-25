@@ -93,8 +93,17 @@ function initNotifications() {
     document.querySelectorAll('.notifications .dropdown-toggle')
     .forEach(btn => {
         btn.addEventListener('click', () => {
-            document.querySelectorAll('.pulse')
-            .forEach(el => el.classList.remove('pulse'));
+
+            const elements = document.querySelectorAll(
+                '.notifications .notification-badge, #navbarUnread, #navbarcartUnread'
+            );
+
+            elements.forEach(el => {
+                if (el) {
+                    el.classList.remove('pulse');
+                }
+            });
+
         });
     });
 }
