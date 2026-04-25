@@ -274,17 +274,18 @@ function initDropdowns() {
 
         const toggle = dropdown.querySelector(".dropdown-toggle");
 
-        if (toggle) { 
-            toggle.addEventListener("click", function(e) {
-                e.stopPropagation();
+        toggle.addEventListener("click", function(e) {
 
-                dropdowns.forEach(d => {
-                    if (d !== dropdown) d.classList.remove("open");
-                });
+            e.stopPropagation();
 
-                dropdown.classList.toggle("open");
+            dropdowns.forEach(d => {
+                if (d !== dropdown) d.classList.remove("open");
             });
-        }
+
+            dropdown.classList.toggle("open");
+
+        });
+
     });
 
     document.addEventListener("click", function() {
@@ -414,27 +415,3 @@ function addPulseAnimation() {
 }
 
 addPulseAnimation();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
