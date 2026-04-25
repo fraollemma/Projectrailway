@@ -1,4 +1,3 @@
-# conversation/views.py
 from django.contrib.contenttypes.models import ContentType
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
@@ -57,10 +56,9 @@ def new_conversation(request, app_label, model_name, object_id):
     model_class = content_type.model_class()
     item = get_object_or_404(model_class, id=object_id)
     
-    # Get the item owner - handle different field names
     if hasattr(item, 'created_by'):
         item_owner = item.created_by
-    elif hasattr(item, 'seller'):  # For electronics products
+    elif hasattr(item, 'seller'): 
         item_owner = item.seller
     else:
         messages.error(request, "Could not determine item owner.")
@@ -76,7 +74,6 @@ def new_conversation(request, app_label, model_name, object_id):
             'poultryitems': 'poultryitems:item_detail',
         }
         if app_label in redirect_map:
-            # Handle different URL patterns (slug vs id)
             if hasattr(item, 'slug'):
                 return redirect(redirect_map[app_label], slug=item.slug)
             else:
@@ -100,7 +97,7 @@ def new_conversation(request, app_label, model_name, object_id):
                 content_type=content_type,
                 object_id=item.id
             )
-            conversation.members.add(request.user, item_owner)  # Use item_owner instead of item.created_by
+            conversation.members.add(request.user, item_owner)
             
             conversation_message = form.save(commit=False)
             conversation_message.conversation = conversation
