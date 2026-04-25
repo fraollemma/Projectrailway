@@ -139,10 +139,10 @@
                             </button>
 
                             <div class="dropdown-menu">
-                                <a href="#">Profile</a>
-                                <a href="#">My Products</a>
-                                <a href="#">Dashboard</a>
-                                <a href="#">Settings</a>
+                                <a href="{% url 'users:profile' %}">My Profile</a>
+                                <a href="{% url 'users:profile_update' %}">Edit Profile</a>
+                        <!--   <a href="#">My Products</a>
+                                <a href="#">Settings</a>  -->
                                 <a href="{% url 'users:logout' %}">Logout</a>
                             </div>
 
