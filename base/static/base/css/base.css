@@ -177,16 +177,23 @@ img {
     border-radius:50%;
     object-fit:cover;
 }
-
-.notification-badge{
-    position:absolute;
-    top:-4px;
-    right:-4px;
-    background:red;
-    color:white;
-    font-size:11px;
-    padding:2px 6px;
-    border-radius:10px;
+.notification-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #fff;
+    font-size: 10px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    box-shadow: 0 0 0 2px #fff;
+    transition: all 0.3s ease;
 }
 .dropdown {
     position: relative;
@@ -211,8 +218,9 @@ img {
     display:none;
     flex-direction:column;
     opacity:0;
-    transform:translateY(10px);
+    transform: translateY(15px) scale(0.95);
     transition:0.2s ease;
+    pointer-events: none;
 }
 .dropdown-menu a {
     padding: 10px 16px;
@@ -226,9 +234,9 @@ img {
 }
 
 .dropdown.open .dropdown-menu {
-    display: flex;
+    pointer-events: auto;
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
 .notification-badge {

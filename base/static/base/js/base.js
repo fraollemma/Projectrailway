@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     initClock();
     initCurrentYear();
-    initUnreadCount();
+    initNotifications();
     initFormSubmissions();
     initButtonEffects();
     initLanguageAutoSubmit();
@@ -34,37 +34,69 @@ function initCurrentYear() {
     }
 }
 
-function initUnreadCount() {
-    function fetchUnreadCount() {
+function initNotifications() {
+
+    function updateNotifications() {
         if (!window.UNREAD_COUNT_API_URL) return;
 
         fetch(window.UNREAD_COUNT_API_URL, {
             credentials: 'include'
         })
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.json();
-            })
-            .then(data => {
-                const unreadBadge = document.getElementById('navbarUnread');
-                if (unreadBadge) {
-                    if (data.total_unread > 0) {
-                        unreadBadge.textContent = data.total_unread > 9 ? '9+' : data.total_unread;
-                        unreadBadge.style.display = 'flex';
-                        unreadBadge.classList.add('pulse');
-                    } else {
-                        unreadBadge.style.display = 'none';
-                        unreadBadge.classList.remove('pulse');
-                    }
+        .then(res => res.json())
+        .then(data => {
+
+            // ===== MESSAGE COUNT =====
+            const msg = document.getElementById('navbarUnread');
+            if (msg) {
+                if (data.unread_messages > 0) {
+                    msg.textContent = data.unread_messages > 9 ? '9+' : data.unread_messages;
+                    msg.style.display = 'flex';
+                    msg.classList.add('pulse');
+                } else {
+                    msg.style.display = 'none';
                 }
-            })
-            .catch(error => {
-                console.error('Error fetching unread count:', error);
-            });
+            }
+
+            // ===== CART COUNT =====
+            const cart = document.getElementById('navbarcartUnread');
+            if (cart) {
+                if (data.cart_items > 0) {
+                    cart.textContent = data.cart_items > 9 ? '9+' : data.cart_items;
+                    cart.style.display = 'flex';
+                    cart.classList.add('pulse');
+                } else {
+                    cart.style.display = 'none';
+                }
+            }
+
+            // ===== TOTAL BADGE =====
+            const totalBadge = document.querySelector('.notifications .notification-badge');
+            if (totalBadge) {
+                const total = data.unread_messages + data.cart_items;
+
+                if (total > 0) {
+                    totalBadge.textContent = total > 9 ? '9+' : total;
+                    totalBadge.style.display = 'flex';
+                    totalBadge.classList.add('pulse');
+                } else {
+                    totalBadge.style.display = 'none';
+                }
+            }
+
+        })
+        .catch(err => console.error("Notification error:", err));
     }
 
-    fetchUnreadCount();
-    setInterval(fetchUnreadCount, 30000);
+    updateNotifications();
+    setInterval(updateNotifications, 10000); // every 10 sec
+
+    document.querySelectorAll('.notifications .dropdown-toggle')
+    .forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.pulse')
+            .forEach(el => el.classList.remove('pulse'));
+        });
+    });
 }
 
 function initFormSubmissions() {
