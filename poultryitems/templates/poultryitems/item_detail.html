@@ -64,14 +64,20 @@
 
         <a href="{% url 'cart:add_to_cart' 'poultryitems' 'item' item.id %}" class="btn add-cart">Add to Cart</a>
 
+        {% if request.user.is_authenticated %}
+            {% if request.user != item.created_by %}
+                <a href="{% url 'conversation:new' app_label model_name item.id %}" 
+                  class="contact-seller-btn">
+                    <i class="fas fa-comments"></i> Contact Seller
+                </a>
+            {% endif %}
+        {% else %}
+            <a href="{% url 'login' %}?next={% url 'conversation:new' app_label model_name item.id %}" 
+              class="contact-seller-btn">
+                <i class="fas fa-comments"></i> Login to Contact Seller
+            </a>
+        {% endif %}
         
-                {% if request.user.is_authenticated and request.user != item.created_by %}
-                    <a href="{% url 'conversation:new' item._meta.app_label item._meta.model_name item.id %}" 
-                    class="contact-seller-btn">
-                        <i class="fas fa-comments"></i> Contact Seller
-                    </a>
-                {% endif %}
-
       </div>
 
       <!-- Seller Info -->
