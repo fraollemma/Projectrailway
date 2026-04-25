@@ -1,4 +1,3 @@
-# poultryitems/models.py
 from django.db import models
 from django.conf import settings
 from django.utils.text import slugify
@@ -122,10 +121,7 @@ class SubImage(models.Model):
     def __str__(self):
         return f"Image for {self.item.name}"
 
-# consultancy model
-
 class Consultant(models.Model):
-    # Consultant Types/Specialties (you can add more)
     class Specialty(models.TextChoices):
         DISEASE = 'disease', _('Disease Management')
         NUTRITION = 'nutrition', _('Nutrition & Feed')
@@ -139,7 +135,6 @@ class Consultant(models.Model):
         ALL_WEEK = 'all_week', _('All Week')
         EMERGENCY = 'emergency', _('24/7 Emergency')
 
-    # Main Fields
     name = models.CharField(max_length=200)
     experience = models.PositiveIntegerField(help_text=_("Years of experience"))
     specialty = models.CharField(max_length=20, choices=Specialty.choices)
@@ -151,14 +146,12 @@ class Consultant(models.Model):
     rating_count = models.PositiveIntegerField(default=0)
     description = models.TextField()
     availability = models.CharField(max_length=20, choices=Availability.choices)
-    # Contact/Social Information (optional)
     email = models.EmailField(blank=True)
     phone = models.CharField(max_length=20, blank=True)
     facebook = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
-    whatsapp = models.CharField(max_length=20, blank=True) # For click-to-chat
+    whatsapp = models.CharField(max_length=20, blank=True)
 
-    # Professional details
     is_available = models.BooleanField(default=True)
     consultation_fee = models.DecimalField(max_digits=6, decimal_places=2, default=0.00)
 
@@ -169,7 +162,6 @@ class Consultant(models.Model):
         ordering = ['-rating']
 
 class ConsultationService(models.Model):
-    # Types of services offered
     class ServiceType(models.TextChoices):
         VIDEO_CALL = 'video', _('Video Call')
         PHONE_CALL = 'phone', _('Phone Consultation')
@@ -226,12 +218,10 @@ class EggSeller(models.Model):
         ANIMAL_WELFARE = 'animal_welfare', _('Animal Welfare Approved')
         LOCAL = 'local', _('Local Farm Certified')
 
-    # Basic Information
     farm_name = models.CharField(max_length=200)
     owner_name = models.CharField(max_length=200, blank=True)
     description = models.TextField()
     
-    # Location
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100, blank=True)
     country = models.CharField(max_length=100, default='USA')
@@ -239,30 +229,25 @@ class EggSeller(models.Model):
     latitude = models.FloatField(null=True, blank=True)
     longitude = models.FloatField(null=True, blank=True)
     
-    # Egg Details
     egg_type = models.CharField(max_length=20, choices=EggType.choices, default=EggType.CONVENTIONAL)
     certification = models.CharField(max_length=20, choices=Certification.choices, default=Certification.NONE)
     quantity_available = models.PositiveIntegerField(help_text=_("Number of eggs currently available"))
     price_per_dozen = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(0)])
     min_order_quantity = models.PositiveIntegerField(default=1, help_text=_("Minimum dozen required for order"))
     
-    # Contact Information
     phone = models.CharField(max_length=20)
     email = models.EmailField(blank=True)
     website = models.URLField(blank=True)
     
-    # Social Media
     facebook = models.URLField(blank=True)
     telegram = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
     
-    # Business Details
     is_verified = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     rating = models.FloatField(default=0.0, validators=[MinValueValidator(0.0), MaxValueValidator(5.0)])
     review_count = models.PositiveIntegerField(default=0)
     
-    # Timestamps
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

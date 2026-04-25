@@ -73,18 +73,19 @@
                         {% trans "View Details" %} <i class="fas fa-chevron-right"></i>
                         </div>
                     </a>
+                    {% if request.user.is_authenticated and (request.user.is_superuser or request.user == item.created_by) %}
                     <div class="card-actions">
-    <a href="{% url 'poultryitems:item_edit' item.pk %}" class="edit-btn" title="Edit">
-        <i class="fas fa-edit"></i>
-    </a>
-    <form action="{% url 'poultryitems:item_delete' item.pk %}" method="POST" style="display:inline;">
-    {% csrf_token %}
-    <button type="submit" class="delete-btn" title="Delete">
-        <i class="fas fa-trash"></i>
-    </button>
-</form>
-
+                        <a href="{% url 'poultryitems:item_edit' item.pk %}" class="edit-btn" title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <form action="{% url 'poultryitems:item_delete' item.pk %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-btn" title="Delete">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
                     </div>
+                    {% endif %}
                 </div>
             </div>
             {% empty %}

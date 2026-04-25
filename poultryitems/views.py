@@ -1,4 +1,3 @@
-# poultryitems/views.py
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Item, SubImage
@@ -222,7 +221,6 @@ def book_consultation(request):
         }, status=500)
     
 
-# eggs for sell
 def egg_sellers(request):
     sellers = EggSeller.objects.filter(is_active=True).select_related('user__profile')
     form = EggSellerFilterForm(request.GET or None)
@@ -326,8 +324,7 @@ def edit_egg_seller(request, pk):
         form = EggSellerForm(request.POST, instance=seller)
         if form.is_valid():
             egg_seller = form.save(commit=False)
-            # For safety, ensure the user remains the same (though it shouldn't change)
-            egg_seller.user = seller.user  # Keep the original user
+            egg_seller.user = seller.user
             egg_seller.save()
             messages.success(request, _('Egg seller updated successfully!'))
             return redirect('poultryitems:egg_sellers')
@@ -340,12 +337,9 @@ def edit_egg_seller(request, pk):
 def egg_seller_orders(request):
     seller = get_object_or_404(EggSeller, user=request.user)
     orders = EggOrder.objects.filter(seller=seller).order_by('-order_date')
-
-    # Optional: sanitize problematic decimal fields
     valid_orders = []
     for order in orders:
         try:
-            # Force conversion to Decimal to catch errors
             if order.total_price is not None:
                 Decimal(order.total_price)
             if order.quantity is not None:
