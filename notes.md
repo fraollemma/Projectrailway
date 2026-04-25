@@ -2163,5 +2163,3 @@ WHITENOISE_AUTOREFRESH = DEBUG
 
 
 set DATABASE_URL=postgresql://postgres:zjZosoHJkNujXTmksFvjqKwHnTAnhoBt@monorail.proxy.rlwy.net:42376/railway
-
-python manage.py shell
