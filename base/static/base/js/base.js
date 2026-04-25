@@ -274,18 +274,17 @@ function initDropdowns() {
 
         const toggle = dropdown.querySelector(".dropdown-toggle");
 
-        toggle.addEventListener("click", function(e) {
+        if (toggle) { 
+            toggle.addEventListener("click", function(e) {
+                e.stopPropagation();
 
-            e.stopPropagation();
+                dropdowns.forEach(d => {
+                    if (d !== dropdown) d.classList.remove("open");
+                });
 
-            dropdowns.forEach(d => {
-                if (d !== dropdown) d.classList.remove("open");
+                dropdown.classList.toggle("open");
             });
-
-            dropdown.classList.toggle("open");
-
-        });
-
+        }
     });
 
     document.addEventListener("click", function() {
@@ -415,3 +414,27 @@ function addPulseAnimation() {
 }
 
 addPulseAnimation();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
