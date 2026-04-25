@@ -1,6 +1,8 @@
 # project/settings.py
 import os
 import sys
+import cloudinary
+
 import dj_database_url
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
@@ -127,14 +129,13 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'doixo5oiw',
-    'API_KEY': '334318349795623',
-    'API_SECRET': 'uF3V8cdoExU5JyI1L_Nl3mYh2uw',
+    'CLOUD_NAME': os.getenv('CLOUD_NAME'),
+    'API_KEY': os.getenv('API_KEY'),
+    'API_SECRET': os.getenv('API_SECRET'),
 }
 
 LANGUAGE_CODE = 'en'
