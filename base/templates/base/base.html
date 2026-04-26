@@ -148,6 +148,7 @@
             {% endif %}
 
             <!-- USER Action -->
+            {% if user.is_authenticated %}
             <div class="action-item dropdown">
                 <button class="action-btn user-btn dropdown-toggle">
                     <img src="{{ user.profile.profile_picture.url }}" class="profile-picture">
