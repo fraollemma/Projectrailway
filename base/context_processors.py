@@ -1,4 +1,3 @@
-# base/context_processors.py
 from django.core.cache import cache
 from conversation.models import Conversation
 
