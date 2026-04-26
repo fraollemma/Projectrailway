@@ -221,7 +221,7 @@ class EggSeller(models.Model):
     farm_name = models.CharField(max_length=200)
     owner_name = models.CharField(max_length=200, blank=True)
     description = models.TextField()
-    
+     
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100, blank=True)
     country = models.CharField(max_length=100, default='Ethiopia')

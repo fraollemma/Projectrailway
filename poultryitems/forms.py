@@ -138,7 +138,7 @@ class EggSellerFilterForm(forms.Form):
     certified_only = forms.BooleanField(required=False, label=_('Certified Only'))
 
 # chicken for sell
-
+ 
 class ChickenSellerForm(forms.ModelForm):
     class Meta:
         model = ChickenSeller

@@ -27,7 +27,14 @@ class UserRegisterForm(forms.ModelForm):
 class ProfileCreateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['profile_picture', 'bio', 'location']
+        fields = [
+            'profile_picture',
+            'bio',
+            'farm_name',
+            'city',
+            'website',
+            'location',
+        ]
         widgets = {
             'bio': forms.Textarea(attrs={
                 'rows': 3,
@@ -35,6 +42,15 @@ class ProfileCreateForm(forms.ModelForm):
             }),
             'location': forms.TextInput(attrs={
                 'placeholder': 'Your location'
+            }),
+            'farm_name': forms.TextInput(attrs={
+                'placeholder': 'Farm name'
+            }),
+            'city': forms.TextInput(attrs={
+                'placeholder': 'City'
+            }),
+            'website': forms.URLInput(attrs={
+                'placeholder': 'Website URL'
             }),
         }
     
@@ -51,6 +67,9 @@ class ProfileUpdateForm(forms.ModelForm):
         fields = [
             'profile_picture',
             'bio',
+            'farm_name',
+            'city',
+            'website',
             'location',
             'telegram',
             'facebook',

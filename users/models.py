@@ -85,6 +85,9 @@ class Profile(models.Model):
     )
     
     bio = models.TextField(max_length=500, blank=True)
+    farm_name = models.CharField(max_length=150, blank=True)
+    city = models.CharField(max_length=100, blank=True, default='Addis Ababa')
+    website = models.URLField(blank=True, null=True)
     location = models.CharField(max_length=100, blank=True)
     telegram = models.CharField(max_length=100, blank=True, null=True)
     facebook = models.CharField(max_length=100, blank=True, null=True)

@@ -299,7 +299,7 @@ def is_staff(user):
 
 @login_required
 def add_egg_seller(request):
-    
+     
     if hasattr(request.user, 'egg_seller'):
         messages.error(request, _('You already have an egg seller profile!'))
         return redirect('poultryitems:egg_sellers')
