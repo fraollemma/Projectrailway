@@ -59,12 +59,16 @@ function initUnreadCount() {
                 }
 
                 const notifBadge = document.getElementById("notificationBadge");
+                const messageCount = document.getElementById("messageCount");
+                const cartCount = document.getElementById("cartCount");
+                const totalNotification = document.getElementById("totalNotification");
 
+                // Calculate total notifications (messages + cart)
+                const total = (data.total_unread || 0) + (data.cart_count || 0);
+
+                // Update main notification badge
                 if (notifBadge) {
-                    const total = data.total_unread || 0;
-
                     notifBadge.textContent = total;
-
                     if (total > 0) {
                         notifBadge.style.display = 'flex';
                         notifBadge.classList.add('pulse');
@@ -72,6 +76,21 @@ function initUnreadCount() {
                         notifBadge.style.display = 'none';
                         notifBadge.classList.remove('pulse');
                     }
+                }
+
+                // Update individual message count
+                if (messageCount) {
+                    messageCount.textContent = data.total_unread || 0;
+                }
+
+                // Update individual cart count
+                if (cartCount) {
+                    cartCount.textContent = data.cart_count || 0;
+                }
+
+                // Update total notification display
+                if (totalNotification) {
+                    totalNotification.textContent = total;
                 }
             })
             .catch(error => {

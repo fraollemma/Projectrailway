@@ -107,33 +107,45 @@
                     {% endfor %}
                 </div> 
             </div>
-
+            
+            <!-- NOTIFICATION -->
             {% if user.is_authenticated %}
-            <!-- NOTIFICATION --->
             <div class="action-item dropdown">
-                <button class="action-btn dropdown-toggle">
+                <button class="action-btn dropdown-toggle" id="notificationBtn">
                     <i class="fas fa-bell"></i>
-                    <span id="notificationBadge" class="notification-badge">
-                        {{ total_notifications|default:0 }}
+                    <span class="notification-badge" id="notificationBadge">
+                        {% if total_notifications > 0 %}{{ total_notifications }}{% else %}0{% endif %}
                     </span>
                 </button>
-                <div class="dropdown-menu">
-                    <a href="{% url 'conversation:inbox' %}">Messages
-                        <span class="notification-count">
-                            {% if request.user.is_authenticated %}
-                                {{ request.user.get_unread_message_count }}
-                            {% else %}
-                                0
-                            {% endif %}
+                <div class="dropdown-menu notification-menu">
+                    <div class="notification-header">
+                        <span>{% trans "Notifications" %}</span>
+                        <span class="notification-total">({{ total_notifications|default:0 }})</span>
+                    </div>
+                    <div class="notification-items">
+                        <a href="{% url 'conversation:inbox' %}" class="notification-item">
+                            <i class="fas fa-envelope"></i>
+                            <span class="notification-label">{% trans "Messages" %}</span>
+                            <span class="notification-count" id="messageCount">
+                                {{ request.user.get_unread_message_count|default:0 }}
+                            </span>
+                        </a>
+                        <a href="{% url 'cart:cart_detail' %}" class="notification-item">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="notification-label">{% trans "Cart" %}</span>
+                            <span class="notification-count" id="cartCount">
+                                {{ cart_item_count|default:0 }}
+                            </span>
+                        </a>
+                    </div>
+                    <div class="notification-footer">
+                        <span class="total-notification">
+                            {% trans "Total" %}: <strong id="totalNotification">{{ total_notifications|default:0 }}</strong>
                         </span>
-                    </a>
-                    <a href="{% url 'cart:cart_detail' %}">Cart
-                        <span class="notification-count">
-                            {{ cart_item_count|default:0 }}
-                        </span>
-                    </a>
+                    </div>
                 </div>
             </div>
+            {% endif %}
 
             <!-- USER Action -->
             <div class="action-item dropdown">
