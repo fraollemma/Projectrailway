@@ -276,35 +276,43 @@ function initMobileNavigation() {
         });
     });
 }
-function initDropdowns() {
 
-    const dropdowns = document.querySelectorAll(".dropdown:not(.category-nav *)");
+function initDropdowns() {
+    const dropdowns = document.querySelectorAll(".header-actions .dropdown");
 
     dropdowns.forEach(dropdown => {
-
         const toggle = dropdown.querySelector(".dropdown-toggle");
 
-        toggle.addEventListener("click", function(e) {
+        if (!toggle) return;
 
+        toggle.addEventListener("click", function (e) {
             e.stopPropagation();
 
+            // close others
             dropdowns.forEach(d => {
-                if (d !== dropdown) d.classList.remove("open");
+                if (d !== dropdown) {
+                    d.classList.remove("open");
+                    const btn = d.querySelector(".dropdown-toggle");
+                    if (btn) btn.setAttribute("aria-expanded", "false");
+                }
             });
 
-            dropdown.classList.toggle("open");
-
-            toggle.setAttribute("aria-expanded", dropdown.classList.contains("open"));
-
+            // toggle current
+            const isOpen = dropdown.classList.toggle("open");
+            toggle.setAttribute("aria-expanded", isOpen);
         });
-
     });
 
-    document.addEventListener("click", function() {
-        dropdowns.forEach(d => d.classList.remove("open"));
+    // click outside closes all
+    document.addEventListener("click", function () {
+        dropdowns.forEach(d => {
+            d.classList.remove("open");
+            const btn = d.querySelector(".dropdown-toggle");
+            if (btn) btn.setAttribute("aria-expanded", "false");
+        });
     });
-
 }
+
 function initCategoryNavDropdowns() {
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
     

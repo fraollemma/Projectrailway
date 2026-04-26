@@ -115,7 +115,7 @@
                     <!-- Notifications -->
                     {% if user.is_authenticated %}
                     <div class="action-item notifications dropdown">
-                        <button class="action-btn dropdown-toggle">
+                        <button class="action-btn dropdown-toggle notification-toggle" aria-expanded="false">
                             <i class="fas fa-bell"></i>
                             <span class="notification-badge" id="notificationBadge">
                                 {{ total_notifications|default:0 }}

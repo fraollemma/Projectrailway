@@ -234,8 +234,10 @@ img {
 }
 
 .dropdown.open .dropdown-menu {
-    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
     opacity: 1;
+    pointer-events: auto;
     transform: translateY(0) scale(1);
 }
 
