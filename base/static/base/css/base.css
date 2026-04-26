@@ -1084,10 +1084,6 @@ li {
         display: block;
     }
     
-    
-    body.search-active {
-        overflow: hidden;
-    }
 
     .logo-text {
         font-size: 1rem;
