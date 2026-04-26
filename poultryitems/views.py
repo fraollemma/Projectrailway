@@ -223,31 +223,8 @@ def edit_egg_seller(request, pk):
     })
 
 
-@require_POST
-@login_required
-def place_egg_order(request):
-    data = json.loads(request.body)
-    seller = get_object_or_404(EggSeller, id=data.get('seller_id'))
-
-    form = EggOrderForm({
-        'customer_name': data.get('customer_name'),
-        'customer_email': data.get('customer_email'),
-        'customer_phone': data.get('customer_phone'),
-        'customer_address': data.get('customer_address'),
-        'quantity': data.get('quantity'),
-        'preferred_delivery_date': data.get('preferred_date'),
-    })
-
-    if form.is_valid():
-        order = form.save(commit=False)
-        order.seller = seller
-        order.total_price = Decimal(order.quantity) * seller.price_per_dozen
-        order.save()
-
-        return JsonResponse({'success': True, 'order_id': order.id})
-
-    return JsonResponse({'success': False, 'errors': form.errors}, status=400)
-
+def egg_seller_orders(request):
+    return render(request, 'poultryitems/egg_seller_orders.html')
 
 @login_required
 @require_POST
