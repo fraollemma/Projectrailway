@@ -38,7 +38,9 @@
 
             <div class="avatar-preview">
 
-                <img src="{{ form.instance.get_profile_image_url }}" class="profile-picture-preview" id="profilePicturePreview">
+                <img src="{{ form.instance.get_profile_image_url }}"
+                     id="profile-picture-preview"
+                     alt="Profile picture">
 
                 <label class="change-photo-btn">
                     {% trans "Change Photo" %}
