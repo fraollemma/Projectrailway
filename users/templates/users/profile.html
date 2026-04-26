@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-  {% trans " My Profile | Ethiopian Sheger Market place" %}
+{% trans "My Profile | Ethiopian Sheger Marketplace" %}
 {% endblock %}
 
 {% block css %}
@@ -12,47 +12,87 @@
 
 {% block content %}
 <div class="profile-container">
+
     <h2>{% trans "My Profile" %}</h2>
 
+    <!-- PROFILE HEADER -->
     <div class="profile-header">
-        <img src="{{ user.profile.profile_picture.url }}" alt="{% trans 'Profile Picture' %}" class="profile-picture">
-        <h3>{{ user.profile.username|default:user.username }}</h3>
+
+        {% if user.profile.profile_picture %}
+            <img src="{{ user.profile.profile_picture.url }}"
+                 alt="{% trans 'Profile Picture' %}"
+                 class="profile-picture">
+        {% else %}
+            <img src="{% static 'base/images/default.jpg' %}"
+                 alt="{% trans 'Profile Picture' %}"
+                 class="profile-picture">
+        {% endif %}
+
+        <h3>{{ user.profile.farm_name|default:user.username }}</h3>
+
     </div>
 
+    <!-- BASIC DETAILS -->
     <div class="profile-details">
+
         <p><strong>{% trans "Username:" %}</strong> {{ user.username }}</p>
         <p><strong>{% trans "Phone Number:" %}</strong> {{ user.phone_number }}</p>
+
+        <p><strong>{% trans "Farm Name:" %}</strong> {{ user.profile.farm_name|default:"-" }}</p>
+        <p><strong>{% trans "City:" %}</strong> {{ user.profile.city|default:"-" }}</p>
+        <p>
+            <strong>{% trans "Website:" %}</strong>
+            {% if user.profile.website %}
+                <a href="{{ user.profile.website }}" target="_blank">
+                    {{ user.profile.website }}
+                </a>
+            {% else %}
+                -
+            {% endif %}
+        </p>
+
         <p><strong>{% trans "Location:" %}</strong> {{ user.profile.location|default:"-" }}</p>
         <p><strong>{% trans "Bio:" %}</strong> {{ user.profile.bio|default:"-" }}</p>
+
     </div>
 
+    <!-- SOCIAL LINKS -->
     <div class="profile-socials">
-    <h4>{% trans "Social Media" %}</h4>
-    <ul>
-        {% if user.profile.telegram %}
-            <li><a href="https://t.me/{{ user.profile.telegram }}" target="_blank">Telegram</a></li>
-        {% endif %}
-        {% if user.profile.facebook %}
-            <li><a href="https://facebook.com/{{ user.profile.facebook }}" target="_blank">Facebook</a></li>
-        {% endif %}
-        {% if user.profile.instagram %}
-            <li><a href="https://instagram.com/{{ user.profile.instagram }}" target="_blank">Instagram</a></li>
-        {% endif %}
-        {% if user.profile.linkedin %}
-            <li><a href="https://linkedin.com/in/{{ user.profile.linkedin }}" target="_blank">LinkedIn</a></li>
-        {% endif %}
-        {% if user.profile.imo %}
-            <li><a href="https://imo.im/{{ user.profile.imo }}" target="_blank">Imo</a></li>
-        {% endif %}
-        {% if user.profile.tiktok %}
-            <li><a href="https://tiktok.com/@{{ user.profile.tiktok }}" target="_blank">TikTok</a></li>
-        {% endif %}
-        {% if user.profile.email %}
-            <li><a href="mailto:{{ user.profile.email }}">{{ user.profile.email }}</a></li>
-        {% endif %}
-    </ul>
-</div>
 
+        <h4>{% trans "Social Media" %}</h4>
+
+        <ul>
+
+            {% if user.profile.telegram %}
+                <li><a href="https://t.me/{{ user.profile.telegram }}" target="_blank">Telegram</a></li>
+            {% endif %}
+
+            {% if user.profile.facebook %}
+                <li><a href="https://facebook.com/{{ user.profile.facebook }}" target="_blank">Facebook</a></li>
+            {% endif %}
+
+            {% if user.profile.instagram %}
+                <li><a href="https://instagram.com/{{ user.profile.instagram }}" target="_blank">Instagram</a></li>
+            {% endif %}
+
+            {% if user.profile.linkedin %}
+                <li><a href="https://linkedin.com/in/{{ user.profile.linkedin }}" target="_blank">LinkedIn</a></li>
+            {% endif %}
+
+            {% if user.profile.imo %}
+                <li><a href="https://imo.im/{{ user.profile.imo }}" target="_blank">Imo</a></li>
+            {% endif %}
+
+            {% if user.profile.tiktok %}
+                <li><a href="https://tiktok.com/@{{ user.profile.tiktok }}" target="_blank">TikTok</a></li>
+            {% endif %}
+
+            {% if user.profile.email %}
+                <li><a href="mailto:{{ user.profile.email }}">{{ user.profile.email }}</a></li>
+            {% endif %}
+
+        </ul>
+    </div>
 
 </div>
 {% endblock %}
