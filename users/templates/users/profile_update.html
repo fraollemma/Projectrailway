@@ -38,15 +38,7 @@
 
             <div class="avatar-preview">
 
-                {% if form.instance.profile_picture %}
-                    <img src="{{ form.instance.profile_picture.url }}?v={{ form.instance.profile_picture.name }}"
-                        id="profile-picture-preview"
-                        alt="Profile picture">
-                {% else %}
-                    <img src="{% static 'base/images/default_profile_image.jpeg' %}"
-                        id="profile-picture-preview"
-                        alt="Profile picture">
-                {% endif %}
+                <img src="{{ form.instance.get_profile_image_url }}" class="profile-picture-preview" id="profilePicturePreview">
 
                 <label class="change-photo-btn">
                     {% trans "Change Photo" %}

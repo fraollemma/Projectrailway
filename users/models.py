@@ -82,7 +82,7 @@ class Profile(models.Model):
     profile_picture = models.ImageField(
         upload_to='profile_pics/',
         blank=True,
-        null=True
+        null=True 
     )
 
     farm_name = models.CharField(max_length=200, blank=True)
@@ -91,9 +91,10 @@ class Profile(models.Model):
     website = models.URLField(blank=True)
 
     def get_profile_image_url(self):
-        if self.profile_picture and default_storage.exists(self.profile_picture.name):
+        if self.profile_picture and hasattr(self.profile_picture, 'url'):
             return self.profile_picture.url
         return '/static/base/images/default_profile_image.jpeg'
+    
     
     bio = models.TextField(max_length=500, blank=True)
     location = models.CharField(max_length=100, blank=True)
