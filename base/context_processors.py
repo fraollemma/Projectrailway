@@ -1,17 +1,17 @@
 from django.core.cache import cache
 from conversation.models import Conversation
 
+
 def notification_counts(request):
-    total_unread = 0
+    total = 0
 
     if request.user.is_authenticated:
+        from conversation.models import Conversation
+
         conversations = Conversation.objects.filter(members=request.user)
 
         for convo in conversations:
-            cache_key = f"unread_{request.user.id}_{convo.id}"
-            count = cache.get(cache_key) or 0
-            total_unread += count
+            key = f"unread_{request.user.id}_{convo.id}"
+            total += cache.get(key) or 0
 
-    return {
-        "total_notifications": total_unread
-    }
+    return {"total_notifications": total}

@@ -59,8 +59,9 @@ function initUnreadCount() {
                 }
 
                 const notifBadge = document.getElementById("notificationBadge");
+
                 if (notifBadge) {
-                    const total = (data.total_unread || 0) + (data.cart_count || 0);
+                    const total = data.total_unread || 0;
 
                     notifBadge.textContent = total;
 

@@ -113,7 +113,9 @@
             <div class="action-item dropdown">
                 <button class="action-btn dropdown-toggle">
                     <i class="fas fa-bell"></i>
-                    <span class="notification-badge">{{ total_notifications|default:0 }}</span>
+                    <span id="notificationBadge" class="notification-badge">
+                        {{ total_notifications|default:0 }}
+                    </span>
                 </button>
                 <div class="dropdown-menu">
                     <a href="{% url 'conversation:inbox' %}">Messages
