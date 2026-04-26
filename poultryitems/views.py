@@ -222,9 +222,18 @@ def edit_egg_seller(request, pk):
         'seller': seller
     })
 
-
 def egg_seller_orders(request):
     return render(request, 'poultryitems/egg_seller_orders.html')
+
+@login_required
+def place_egg_order(request):
+    if request.method == 'POST':
+        seller_id = request.POST.get('seller_id')
+        customer_address = request.POST.get('customer_address')
+        quantity = request.POST.get('quantity')
+        messages.success(request, "Order placed successfully!")
+        return redirect('poultryitems:egg_sellers')
+    return redirect('poultryitems:egg_sellers')
 
 @login_required
 @require_POST
