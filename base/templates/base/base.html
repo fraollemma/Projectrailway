@@ -69,103 +69,90 @@
     </div>
 </div>
 
-    <header class="header 
-                          {% if not user.is_authenticated %}header-guest
-                          {% elif user.is_authenticated and user.is_superuser %}header-admin
-                          {% elif user.is_authenticated and user.is_staff %}header-staff
-                          {% else %}header-user
-                          {% endif %}">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                <a href="/" aria-label="Home" class="logo-link">
-                    <img src="{% static 'base/images/logo.png' %}" alt="Ethio Agriculture Logo" class="site-logo">
-                    <span class="logo-text">{% trans "Ethio" %}<span class="hub">{% trans "Agriculture" %}</span></span>
-                </a>
+<header class="header 
+{% if not user.is_authenticated %}header-guest
+{% elif user.is_superuser %}header-admin
+{% elif user.is_staff %}header-staff
+{% else %}header-user
+{% endif %}">
+
+<div class="container">
+    <div class="header-content">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <a href="/" class="logo-link">
+                <img src="{% static 'base/images/logo.png' %}" class="site-logo">
+                <div class="logo-text">
+                    <strong>Ethio</strong>
+                    <span class="hub">Agriculture</span>
                 </div>
-                <div class="header-actions">
+            </a>
+        </div>
 
-<!-- Language Switch -->
-<div class="action-item language-switch dropdown">
-    <button class="action-btn dropdown-toggle language-toggle" aria-expanded="false">
-        <i class="fas fa-globe"></i>
-        <span class="lang-code">{{ LANGUAGE_CODE|upper }}</span>
-    </button>
+        <!-- RIGHT SIDE -->
+        <div class="header-actions">
 
-    <div class="dropdown-menu">
+            <!-- SEARCH -->
+            <div class="header-search">
+                <input type="text" placeholder="Search products...">
+                <i class="fas fa-search"></i>
+            </div>
 
-        {% get_available_languages as LANGUAGES %}
-        {% get_current_language as CURRENT_LANGUAGE %}
-
-        {% for lang_code, lang_name in LANGUAGES %}
-            <form action="{% url 'set_language' %}" method="post" style="margin:0;">
-                {% csrf_token %}
-                <input name="next" type="hidden" value="{{ request.get_full_path }}">
-                <input type="hidden" name="language" value="{{ lang_code }}">
-                
-                <button type="submit" class="dropdown-item {% if lang_code == CURRENT_LANGUAGE %}active-lang{% endif %}">
-                    {{ lang_name }}
+            <!-- LANGUAGE -->
+            <div class="action-item dropdown">
+                <button class="action-btn dropdown-toggle">
+                    <i class="fas fa-globe"></i>
+                    <span>{{ LANGUAGE_CODE|upper }}</span>
                 </button>
-            </form>
-        {% endfor %}
-
-    </div>
-</div>
-
-                    <!-- Notifications -->
-                    {% if user.is_authenticated %}
-                    <div class="action-item notifications dropdown">
-                        <button class="action-btn dropdown-toggle notification-toggle" aria-expanded="false">
-                            <i class="fas fa-bell"></i>
-                            <span class="notification-badge" id="notificationBadge">
-                                {{ total_notifications|default:0 }}
-                            </span>
-                        </button>
-
-                        <div class="dropdown-menu">
-                            <a href="{% url 'conversation:inbox' %}">Messages
-                                <span id="navbarUnread">{{ unread_messages_count }}</span>
-                            </a>
-                            <a href="{% url 'cart:cart_detail' %}">cart
-                                Cart <span id="navbarCart">{{ cart_item_count }}</span>
-                            </a>
-                        </div>
-                    </div>
-                    {% endif %}
-
-                    <!-- User Menu -->
-                    <div class="action-item user-menu dropdown">
-
-                        {% if user.is_authenticated %}
-                            <button class="action-btn user-btn dropdown-toggle" aria-expanded="false" >
-                                <img src="{{ user.profile.profile_picture.url }}" alt="{% trans 'Profile Picture' %}" class="profile-picture">
-                            </button>
-
-                            <div class="dropdown-menu">
-                                <a href="{% url 'users:profile' %}">My Profile</a>
-                                <a href="{% url 'users:profile_update' %}">Edit Profile</a>
-                        <!--   <a href="#">My Products</a>
-                                <a href="#">Settings</a>  -->
-                                <a href="{% url 'users:logout' %}">Logout</a>
-                            </div>
-
-                        {% else %}
-                            <a href="{% url 'users:register' %}" class="login-btn">
-                                {% trans "Register" %}
-                            </a>
-                        {% endif %}
-
-                    </div>
-
-                    <!-- Mobile Menu -->
-                    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-                        <i class="fas fa-bars"></i>
-                    </button>
-
+                <div class="dropdown-menu">
+                    {% for lang_code, lang_name in LANGUAGES %}
+                    <form method="post" action="{% url 'set_language' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="language" value="{{ lang_code }}">
+                        <button class="dropdown-item">{{ lang_name }}</button>
+                    </form>
+                    {% endfor %}
                 </div>
             </div>
+
+            {% if user.is_authenticated %}
+            <!-- NOTIFICATION -->
+            <div class="action-item dropdown">
+                <button class="action-btn dropdown-toggle">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">{{ total_notifications|default:0 }}</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="{% url 'conversation:inbox' %}">Messages</a>
+                    <a href="{% url 'cart:cart_detail' %}">Cart</a>
+                </div>
+            </div>
+
+            <!-- USER -->
+            <div class="action-item dropdown">
+                <button class="action-btn user-btn dropdown-toggle">
+                    <img src="{{ user.profile.profile_picture.url }}" class="profile-picture">
+                </button>
+                <div class="dropdown-menu">
+                    <a href="{% url 'users:profile' %}">Profile</a>
+                    <a href="{% url 'users:profile_update' %}">Edit</a>
+                    <a href="{% url 'users:logout' %}">Logout</a>
+                </div>
+            </div>
+            {% else %}
+                <a href="{% url 'users:register' %}" class="login-btn">Register</a>
+            {% endif %}
+
+            <!-- MOBILE MENU -->
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+
         </div>
-    </header>
+    </div>
+</div>
+</header>
 
 <nav class="category-nav" id="categoryNav">
     <div class="category-nav-header">
