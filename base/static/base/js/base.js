@@ -316,6 +316,8 @@ function initCategoryNavDropdowns() {
             const parentItem = this.closest('.category-nav-item');
             const dropdown = this.nextElementSibling;
             
+            if (!parentItem || !dropdown) return;
+            
             document.querySelectorAll('.category-nav-dropdown.active').forEach(openDropdown => {
                 if (openDropdown !== dropdown) {
                     openDropdown.classList.remove('active');
