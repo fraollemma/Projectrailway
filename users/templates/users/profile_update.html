@@ -39,7 +39,7 @@
             <div class="avatar-preview">
 
                 {% if form.instance.profile_picture %}
-                    <img src="{{ form.instance.profile_picture.url }}"
+                    <img src="{{ form.instance.profile_picture.url }}?v={{ form.instance.profile_picture.name }}"
                         id="profile-picture-preview"
                         alt="Profile picture">
                 {% else %}
