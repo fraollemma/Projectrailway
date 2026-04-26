@@ -139,7 +139,6 @@
                         {% if user.is_authenticated %}
                             <button class="action-btn user-btn dropdown-toggle" aria-expanded="false" >
                                 <img src="{{ user.profile.profile_picture.url }}" alt="{% trans 'Profile Picture' %}" class="profile-picture">
-                                <img src="{{ user.profile.get_profile_image_url }}" class="base_current-avatar">
                             </button>
 
                             <div class="dropdown-menu">
