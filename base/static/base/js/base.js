@@ -57,12 +57,22 @@ function initUnreadCount() {
                         unreadBadge.classList.remove('pulse');
                     }
                 }
+
+                const notifBadge = document.getElementById("notificationBadge");
+                if (notifBadge) {
+                    notifBadge.textContent = data.total_unread;
+                }
+
+                const cartBadge = document.getElementById("navbarCart");
+                if (cartBadge && data.cart_count !== undefined) {
+                    cartBadge.textContent = data.cart_count;
+                }
             })
             .catch(error => {
                 console.error('Error fetching unread count:', error);
             });
     }
-
+     
     fetchUnreadCount();
     setInterval(fetchUnreadCount, 30000);
 }
@@ -283,6 +293,8 @@ function initDropdowns() {
             });
 
             dropdown.classList.toggle("open");
+
+            toggle.setAttribute("aria-expanded", dropdown.classList.contains("open"));
 
         });
 

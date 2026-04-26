@@ -219,7 +219,7 @@ img {
     flex-direction:column;
     opacity:0;
     transform: translateY(15px) scale(0.95);
-    transition:0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
     pointer-events: none;
 }
 .dropdown-menu a {

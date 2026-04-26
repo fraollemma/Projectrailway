@@ -87,9 +87,8 @@
 
 <!-- Language Switch -->
 <div class="action-item language-switch dropdown">
-    <button class="action-btn dropdown-toggle">
+    <button class="action-btn dropdown-toggle language-toggle" aria-expanded="false">
         <i class="fas fa-globe"></i>
-        {% get_current_language as LANGUAGE_CODE %}
         <span class="lang-code">{{ LANGUAGE_CODE|upper }}</span>
     </button>
 
@@ -118,15 +117,17 @@
                     <div class="action-item notifications dropdown">
                         <button class="action-btn dropdown-toggle">
                             <i class="fas fa-bell"></i>
-                            <span class="notification-badge">{{ total_notifications }}</span>
+                            <span class="notification-badge" id="notificationBadge">
+                                {{ total_notifications|default:0 }}
+                            </span>
                         </button>
 
                         <div class="dropdown-menu">
                             <a href="{% url 'conversation:inbox' %}">Messages
-                                ({{ unread_messages_count }})
+                                 Messages <span id="navbarUnread">{{ unread_messages_count }}</span>
                             </a>
                             <a href="{% url 'cart:cart_detail' %}">cart
-                                ({{ cart_items_count }})
+                                Cart <span id="navbarCart">{{ cart_items_count }}</span>
                             </a>
                         </div>
                     </div>
@@ -136,7 +137,7 @@
                     <div class="action-item user-menu dropdown">
 
                         {% if user.is_authenticated %}
-                            <button class="action-btn user-btn dropdown-toggle">
+                            <button class="action-btn user-btn dropdown-toggle" aria-expanded="false" >
                                 <img src="{{ user.profile.get_profile_image_url }}" class="base_current-avatar">
                             </button>
 
