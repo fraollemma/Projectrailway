@@ -13,7 +13,15 @@
 {% block content %}
 <main class="item-detail" itemscope itemtype="http://schema.org/Product">
   <div class="item-container">
-    
+    1
+    <a href="javascript:history.back()" class="back-to-home">
+        <i class="fas fa-arrow-left"></i> {% trans "Back" %}
+    </a>
+2
+    <a href="{{ request.GET.next|default:request.META.HTTP_REFERER|default:'/' }}" class="back-to-home">
+        <i class="fas fa-arrow-left"></i> {% trans "Back" %}
+    </a>
+
     <!-- Left: Main Image + Thumbnails -->
     <div class="image-section">
       <img id="mainImage" src="{{ item.main_image.url }}" alt="{{ item.name }}" class="main-image" itemprop="image">

@@ -234,3 +234,16 @@
     border: 2px solid #007bff;
     opacity: 1;
 }
+.back-to-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-to-home:hover {
+    color: #007bff;
+}
