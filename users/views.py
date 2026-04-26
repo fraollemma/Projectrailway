@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
+from gunicorn.config import User
 from .forms import UserRegisterForm, ProfileUpdateForm, ProfileCreateForm  # Add ProfileCreateForm
 from django.conf import settings
 from .models import Profile
