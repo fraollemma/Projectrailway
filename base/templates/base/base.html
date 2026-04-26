@@ -105,7 +105,7 @@
                         <button class="dropdown-item">{{ lang_name }}</button>
                     </form>
                     {% endfor %}
-                </div>
+                </div> 
             </div>
 
             {% if user.is_authenticated %}
@@ -116,8 +116,20 @@
                     <span class="notification-badge">{{ total_notifications|default:0 }}</span>
                 </button>
                 <div class="dropdown-menu">
-                    <a href="{% url 'conversation:inbox' %}">Messages</a>
-                    <a href="{% url 'cart:cart_detail' %}">Cart</a>
+                    <a href="{% url 'conversation:inbox' %}">Messages
+                        <span class="notification-count">
+                            {% if request.user.is_authenticated %}
+                                {{ request.user.get_unread_message_count }}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </span>
+                    </a>
+                    <a href="{% url 'cart:cart_detail' %}">Cart
+                        <span class="notification-count">
+                            {{ cart_item_count|default:0 }}
+                        </span>
+                    </a>
                 </div>
             </div>
 
