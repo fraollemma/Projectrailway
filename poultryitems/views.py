@@ -296,3 +296,10 @@ def poultry_trainees(request):
     return render(request, 'poultryitems/poultry_trainees.html', {
         'trainees': trainees
     })
+
+def chicken_seller_detail(request, seller_id):
+    seller = get_object_or_404(ChickenSeller, id=seller_id)
+    return render(request, 'poultryitems/chicken_seller_detail.html', {'seller': seller})
+edit_seller = login_required(lambda request, seller_id: render(request, 'poultryitems/edit_seller.html', {}))
+delete_seller = login_required(lambda request, seller_id: redirect('poultryitems:chicken_sellers_list'))
+delete_seller_ajax = login_required(lambda request, seller_id: JsonResponse({'success': True}))

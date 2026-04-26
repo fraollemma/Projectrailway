@@ -24,7 +24,7 @@ urlpatterns = [
     path('<int:pk>/delete/', item_delete, name='item_delete'),
     path('<int:pk>/like/', views.like_item, name='item_like'),
     path('<int:pk>/share/', views.share_item, name='item_share'),
-    # egg sellers
+    # egg sellers 
     path('egg-sellers/delete-ajax/<int:pk>/', views.delete_egg_seller_ajax, name='delete_egg_seller_ajax'),
     path('egg-sellers/add/', views.add_egg_seller, name='add_egg_seller'),
     path('egg-sellers/edit/<int:pk>/', views.edit_egg_seller, name='edit_egg_seller'),
