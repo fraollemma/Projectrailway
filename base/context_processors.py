@@ -1,3 +1,4 @@
+# base/context_processors.py
 from django.core.cache import cache
 from conversation.models import Conversation
 
@@ -6,8 +7,6 @@ def notification_counts(request):
     total = 0
 
     if request.user.is_authenticated:
-        from conversation.models import Conversation
-
         conversations = Conversation.objects.filter(members=request.user)
 
         for convo in conversations:

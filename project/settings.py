@@ -172,7 +172,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'cart.context_processors.cart_item_count',
-                'base.context_processors.category_counts',
+                'base.context_processors.notification_counts',
             ],
         },
     },
