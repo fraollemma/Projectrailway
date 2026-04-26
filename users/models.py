@@ -90,7 +90,7 @@ class Profile(models.Model):
     website = models.URLField(blank=True)
 
     def get_profile_image_url(self):
-        if self.profile_picture and hasattr(self.profile_picture, 'url'):
+        if self.profile_picture:
             return self.profile_picture.url
         return '/static/base/images/default_profile_image.jpeg'
     
