@@ -93,6 +93,14 @@ class ItemDetailView(DetailView):
     template_name = 'poultryitems/item_detail.html'
     context_object_name = 'item'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        item = self.object
+        # Add app_label and model_name for conversation URL
+        context['app_label'] = item._meta.app_label
+        context['model_name'] = item._meta.model_name
+        return context
+
 
 class ItemCreateView(LoginRequiredMixin, CreateView):
     model = Item
