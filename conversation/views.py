@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from asgiref.sync import sync_to_async
 from django.views.decorators.cache import never_cache
 from django.contrib import messages
-from cart.context_processors import cart_items_count
+from cart.context_processors import cart_item_count
 
 @login_required
 @never_cache 
