@@ -3,7 +3,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
-from gunicorn.config import User
 from .forms import UserRegisterForm, ProfileUpdateForm, ProfileCreateForm  # Add ProfileCreateForm
 from django.conf import settings
 from .models import Profile
@@ -11,6 +10,8 @@ from django.http import JsonResponse
 from conversation.models import Conversation, ConversationMessage 
 from django.contrib.auth import get_user_model
 from .models import CustomUser
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 @login_required
 def unread_count_api(request):
