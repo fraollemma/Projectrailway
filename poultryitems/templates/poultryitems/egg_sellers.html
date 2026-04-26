@@ -132,19 +132,6 @@
         <form id="orderForm" action="{% url 'poultryitems:place_egg_order' %}" method="post">
             {% csrf_token %}
             <input type="hidden" id="modalSellerId" name="seller_id">
-
-            <div class="form-group">
-                <label for="customerName">{% trans "Your Name:" %}</label>
-                <input type="text" id="customerName" name="customer_name" required>
-            </div>
-            <div class="form-group">
-                <label for="customerEmail">{% trans "Email:" %}</label>
-                <input type="email" id="customerEmail" name="customer_email" required>
-            </div>
-            <div class="form-group">
-                <label for="customerPhone">{% trans "Phone:" %}</label>
-                <input type="tel" id="customerPhone" name="customer_phone" required>
-            </div>
             <div class="form-group">
                 <label for="customerAddress">{% trans "Delivery Address:" %}</label>
                 <textarea id="customerAddress" name="customer_address" rows="3" required></textarea>
