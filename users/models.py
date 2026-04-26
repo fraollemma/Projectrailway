@@ -83,6 +83,12 @@ class Profile(models.Model):
         blank=True,
         null=True
     )
+
+    farm_name = models.CharField(max_length=200, blank=True)
+    city = models.CharField(max_length=100, blank=True)
+    address = models.TextField(blank=True)
+    website = models.URLField(blank=True)
+
     def get_profile_image_url(self):
         if self.profile_picture and hasattr(self.profile_picture, 'url'):
             return self.profile_picture.url

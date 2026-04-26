@@ -13,7 +13,7 @@ class Category(models.Model):
     icon = models.CharField(max_length=50, blank=True)
     
     def __str__(self):
-        return self.name
+        return self.name 
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -224,7 +224,7 @@ class EggSeller(models.Model):
     
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100, blank=True)
-    country = models.CharField(max_length=100, default='USA')
+    country = models.CharField(max_length=100, default='Ethiopia')
     address = models.TextField(blank=True)
     latitude = models.FloatField(null=True, blank=True)
     longitude = models.FloatField(null=True, blank=True)

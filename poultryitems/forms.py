@@ -10,8 +10,8 @@ from .models import TrainingEnrollment
 
 class MultipleFileInput(forms.ClearableFileInput):
     allow_multiple_selected = True
-
-class MultipleFileField(forms.FileField):
+ 
+class MultipleFileField(forms.FileField): 
     def __init__(self, *args, **kwargs):
         kwargs.setdefault("widget", MultipleFileInput())
         super().__init__(*args, **kwargs)
@@ -98,15 +98,13 @@ class EggSellerForm(forms.ModelForm):
     class Meta:
         model = EggSeller
         fields = [
-            'farm_name', 'owner_name', 'description', 'city', 'state', 'country',
-            'address', 'egg_type', 'certification', 'quantity_available',
-            'price_per_dozen', 'min_order_quantity', 'phone', 'email', 'website',
-            'facebook', 'telegram', 'instagram'
+            'quantity_available',
+            'price_per_dozen',
+            'min_order_quantity',
+            'description',
+            'egg_type',
+            'certification',
         ]
-        widgets = {
-            'description': forms.Textarea(attrs={'rows': 4, 'placeholder': _('Describe your farm and eggs...')}),
-            'address': forms.Textarea(attrs={'rows': 3, 'placeholder': _('Full address for deliveries...')}),
-        }
 
 class EggOrderForm(forms.ModelForm):
     class Meta:

@@ -2163,3 +2163,85 @@ WHITENOISE_AUTOREFRESH = DEBUG
 
 
 set DATABASE_URL=postgresql://postgres:zjZosoHJkNujXTmksFvjqKwHnTAnhoBt@monorail.proxy.rlwy.net:42376/railway
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        Add New Egg Seller
+Farm Information  (get from user models)
+    Farm Name
+    Owner Name
+Location (get from user models)
+    City
+    Address
+Contact Information (get from user models)
+    Phone
+    Email
+    Website
+Social Media (get from user models)
+    Facebook
+    Telegram
+    Instagram
+
+Pricing & Availability
+    Quantity Available
+    Price per Dozen ($)
+    Minimum Order Quantity
+    Description
+
+
+
+🏡 1. Farm Information
+
+These describe the seller’s business:
+
+farm_name → Farm name
+owner_name → Owner name (optional)
+description → Description of farm & eggs
+📍 2. Location Information
+city → City
+state → State (optional)
+country → Country (default = USA unless changed)
+address → Full address (optional but recommended)
+🥚 3. Egg Details
+egg_type → Dropdown:
+Organic
+Free Range
+Cage Free
+Conventional
+Pasture Raised
+certification → Dropdown:
+None
+USDA Organic
+Non-GMO
+Animal Welfare
+Local Certified
+quantity_available → Number of eggs available
+price_per_dozen → Price
+min_order_quantity → Minimum order (in dozens)
+📞 4. Contact Information
+phone → Required
+email → Optional
+website → Optional
+🌐 5. Social Media
+facebook
+telegram
+instagram
+
+(All optional)

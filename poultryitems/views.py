@@ -118,7 +118,7 @@ class ItemDetailView(DetailView):
     context_object_name = 'item'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        item = self.object
+        item = self.object 
         context['app_label'] = item._meta.app_label
         context['model_name'] = item._meta.model_name
         context['related_items'] = Item.objects.filter(category=item.category).exclude(id=item.id)[:4]
@@ -303,18 +303,36 @@ def add_egg_seller(request):
     if hasattr(request.user, 'egg_seller'):
         messages.error(request, _('You already have an egg seller profile!'))
         return redirect('poultryitems:egg_sellers')
-    
+
     if request.method == 'POST':
         form = EggSellerForm(request.POST)
         if form.is_valid():
             egg_seller = form.save(commit=False)
+
             egg_seller.user = request.user
+
+            profile = request.user.profile
+
+            egg_seller.farm_name = profile.farm_name
+            egg_seller.owner_name = request.user.get_full_name()
+            egg_seller.city = profile.city
+            egg_seller.address = profile.address
+
+            egg_seller.phone = request.user.phone_number
+            egg_seller.email = profile.email
+            egg_seller.website = profile.website
+
+            egg_seller.facebook = profile.facebook
+            egg_seller.telegram = profile.telegram
+            egg_seller.instagram = profile.instagram
+
             egg_seller.save()
+
             messages.success(request, _('Egg seller added successfully!'))
             return redirect('poultryitems:egg_sellers')
     else:
         form = EggSellerForm()
-    
+
     return render(request, 'poultryitems/add_egg_seller.html', {'form': form})
 
 @login_required
