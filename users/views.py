@@ -10,7 +10,6 @@ from django.http import JsonResponse
 from conversation.models import Conversation, ConversationMessage 
 from django.contrib.auth import get_user_model
 from .models import CustomUser
-from django.contrib.admin.views.decorators import staff_member_required
 
 @login_required
 def unread_count_api(request):
@@ -116,34 +115,3 @@ def user_list(request):
     """View for listing all users"""
     users = CustomUser.objects.all().select_related('profile')
     return render(request, 'users/users.html', {'users': users})
-
-@staff_member_required
-def ban_user(request, user_id):
-    user = get_object_or_404(CustomUser, id=user_id)
-    user.is_active = False
-    user.save()
-    return redirect('users:user_list')
-
-
-@staff_member_required
-def delete_user(request, user_id):
-    user = get_object_or_404(CustomUser, id=user_id)
-    user.delete()
-    return redirect('users:user_list')
-
-
-@staff_member_required
-def promote_user(request, user_id):
-    user = get_object_or_404(CustomUser, id=user_id)
-    user.is_superuser = True
-    user.is_staff = True
-    user.save()
-    return redirect('users:user_list')
-
-@staff_member_required
-def unpromote_user(request, user_id):
-    user = get_object_or_404(CustomUser, id=user_id)
-    user.is_superuser = False
-    user.is_staff = False
-    user.save()
-    return redirect('users:user_list')

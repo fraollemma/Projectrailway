@@ -80,4 +80,4 @@ class ProfileUpdateForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['profile_picture'].validators = [
             FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])
-        ] 
+        ]
