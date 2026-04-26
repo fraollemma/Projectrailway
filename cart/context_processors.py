@@ -1,4 +1,3 @@
-# cart/context_processors.py
 from .models import Cart
 
 def cart_item_count(request):
@@ -9,14 +8,13 @@ def cart_item_count(request):
             if cart:
                 count = cart.items.count()
         else:
-            # Ensure session exists before accessing session_key
+            
             if not request.session.session_key:
-                request.session.create()  # Create session if it doesn't exist
+                request.session.create() 
             cart = Cart.objects.filter(session_key=request.session.session_key).first()
             if cart:
                 count = cart.items.count()
     except Exception:
-        # If anything goes wrong, return 0 to avoid breaking the template
         count = 0
     
     return {'cart_item_count': count}
