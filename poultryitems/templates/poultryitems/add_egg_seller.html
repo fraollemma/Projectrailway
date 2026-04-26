@@ -15,7 +15,7 @@
 <div class="page-wrapper">
 
     <h1 class="page-title">
-        <i class="fas fa-plus-circle"></i> Add New Egg Seller
+        <i class="fas fa-plus-circle"></i> {% trans "Add New Egg Seller" %}
     </h1>
 
     {% if messages %}
@@ -28,127 +28,103 @@
 
     <div class="form-container">
 
-        <form method="post" enctype="multipart/form-data">
+        <form method="post">
             {% csrf_token %}
 
             <div class="form-grid">
 
+                <!-- ================= FARM INFO ================= -->
                 <div class="form-section">
-                    <h3>Farm Information</h3>
+                    <h3>{% trans "Farm Information" %}</h3>
 
-                    <label>Farm Name</label>
+                    <label>{% trans "Farm Name" %}</label>
                     {{ form.farm_name }}
-                    {{ form.farm_name.errors }}
 
-                    <label>Owner Name</label>
-                    {{ form.owner_name }}
-                    {{ form.owner_name.errors }}
+                    <label>{% trans "Owner Name" %}</label>
+                    <input type="text" value="{{ request.user.username }}" readonly class="readonly-field">
 
-                    <label>Description</label>
+                    <label>{% trans "Description" %}</label>
                     {{ form.description }}
-                    {{ form.description.errors }}
-
                 </div>
 
 
+                <!-- ================= LOCATION ================= -->
                 <div class="form-section">
-                    <h3>Location</h3>
+                    <h3>{% trans "Location" %}</h3>
 
-                    <label>City</label>
+                    <label>{% trans "City" %}</label>
                     {{ form.city }}
-                    {{ form.city.errors }}
 
-                    <label>State / Province</label>
-                    {{ form.state }}
-                    {{ form.state.errors }}
-
-                    <label>Country</label>
-                    {{ form.country }}
-                    {{ form.country.errors }}
-
-                    <label>Address</label>
+                    <label>{% trans "Address" %}</label>
                     {{ form.address }}
-                    {{ form.address.errors }}
-
                 </div>
 
 
+                <!-- ================= EGG DETAILS ================= -->
                 <div class="form-section">
-                    <h3>Egg Details</h3>
+                    <h3>{% trans "Egg Details" %}</h3>
 
-                    <label>Egg Type</label>
+                    <label>{% trans "Egg Type" %}</label>
                     {{ form.egg_type }}
-                    {{ form.egg_type.errors }}
 
-                    <label>Certification</label>
+                    <label>{% trans "Certification" %}</label>
                     {{ form.certification }}
-                    {{ form.certification.errors }}
-
                 </div>
 
 
+                <!-- ================= PRICING ================= -->
                 <div class="form-section">
-                    <h3>Pricing & Availability</h3>
+                    <h3>{% trans "Pricing & Availability" %}</h3>
 
-                    <label>Quantity Available</label>
+                    <label>{% trans "Quantity Available" %}</label>
                     {{ form.quantity_available }}
-                    {{ form.quantity_available.errors }}
 
-                    <label>Price per Dozen ($)</label>
+                    <label>{% trans "Price per Dozen ($)" %}</label>
                     {{ form.price_per_dozen }}
-                    {{ form.price_per_dozen.errors }}
 
-                    <label>Minimum Order Quantity</label>
+                    <label>{% trans "Minimum Order Quantity" %}</label>
                     {{ form.min_order_quantity }}
-                    {{ form.min_order_quantity.errors }}
-
                 </div>
 
 
+                <!-- ================= CONTACT ================= -->
                 <div class="form-section">
-                    <h3>Contact Information</h3>
+                    <h3>{% trans "Contact Information" %}</h3>
 
-                    <label>Phone</label>
-                    {{ form.phone }}
-                    {{ form.phone.errors }}
+                    <label>{% trans "Phone" %}</label>
+                    <input type="text" value="{{ request.user.phone_number }}" readonly class="readonly-field">
 
-                    <label>Email</label>
-                    {{ form.email }}
-                    {{ form.email.errors }}
+                    <label>{% trans "Email" %}</label>
+                    <input type="email" value="{{ request.user.profile.email }}" readonly class="readonly-field">
 
-                    <label>Website</label>
+                    <label>{% trans "Website" %}</label>
                     {{ form.website }}
-                    {{ form.website.errors }}
-
                 </div>
 
 
+                <!-- ================= SOCIAL ================= -->
                 <div class="form-section">
-                    <h3>Social Media</h3>
+                    <h3>{% trans "Social Media" %}</h3>
 
-                    <label>Facebook</label>
-                    {{ form.facebook }}
-                    {{ form.facebook.errors }}
+                    <label>{% trans "Facebook" %}</label>
+                    <input type="text" value="{{ request.user.profile.facebook }}" readonly class="readonly-field">
 
-                    <label>Telegram</label>
-                    {{ form.telegram }}
-                    {{ form.telegram.errors }}
+                    <label>{% trans "Telegram" %}</label>
+                    <input type="text" value="{{ request.user.profile.telegram }}" readonly class="readonly-field">
 
-                    <label>Instagram</label>
-                    {{ form.instagram }}
-                    {{ form.instagram.errors }}
-
+                    <label>{% trans "Instagram" %}</label>
+                    <input type="text" value="{{ request.user.profile.instagram }}" readonly class="readonly-field">
                 </div>
 
             </div>
 
             <div class="form-buttons">
                 <a href="{% url 'poultryitems:egg_sellers' %}" class="btn secondary">
-                    Back to Sellers
+                    {% trans "Back to Sellers" %}
                 </a>
 
                 <button type="submit" class="btn primary">
-                    Add Egg Seller
+                    {% trans "Add Egg Seller" %}
                 </button>
             </div>
 
