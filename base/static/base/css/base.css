@@ -1084,15 +1084,9 @@ li {
         display: block;
     }
     
-    .search-toggle {
-        display: block;
-    }
     
     body.search-active {
         overflow: hidden;
-    }
-    .header-search {
-        display: none;
     }
 
     .logo-text {
