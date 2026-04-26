@@ -31,6 +31,12 @@
             <div class="readonly-field">{{ request.user.phone_number }}</div>
             <small>{% trans "Contact support to change phone number" %}</small>
         </div>
+        <!-- farm name -->
+        <div class="form-row">
+            <label>{{ form.farm_name.label }}</label>
+            {{ form.farm_name }}
+            {{ form.farm_name.errors }}
+        </div>
 
         <!-- Profile photo -->
         <div class="form-row">
@@ -59,6 +65,13 @@
             {{ form.bio.errors }}
         </div>
 
+        <!-- City -->
+        <div class="form-row">
+            <label>{{ form.city.label }}</label>
+            {{ form.city }}
+            {{ form.city.errors }}
+        </div>
+
         <!-- Location -->
         <div class="form-row">
             <label>{{ form.location.label }}</label>
@@ -66,6 +79,19 @@
             {{ form.location.errors }}
         </div>
 
+                <div class="form-row">
+            <label>{{ form.email.label }}</label>
+            {{ form.email }}
+            {{ form.email.errors }}
+        </div>
+
+        <!-- Website -->
+        <div class="form-row">
+            <label>{{ form.website.label }}</label>
+            {{ form.website }}
+            {{ form.website.errors }}
+        </div>
+        
         <!-- Social links -->
         <div class="form-row">
             <label>{{ form.telegram.label }}</label>
@@ -101,12 +127,6 @@
             <label>{{ form.tiktok.label }}</label>
             {{ form.tiktok }}
             {{ form.tiktok.errors }}
-        </div>
-
-        <div class="form-row">
-            <label>{{ form.email.label }}</label>
-            {{ form.email }}
-            {{ form.email.errors }}
         </div>
 
         <button type="submit" class="save-btn">
