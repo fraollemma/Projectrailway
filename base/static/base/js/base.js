@@ -60,12 +60,17 @@ function initUnreadCount() {
 
                 const notifBadge = document.getElementById("notificationBadge");
                 if (notifBadge) {
-                    notifBadge.textContent = data.total_unread;
-                }
+                    const total = (data.total_unread || 0) + (data.cart_count || 0);
 
-                const cartBadge = document.getElementById("navbarCart");
-                if (cartBadge && data.cart_count !== undefined) {
-                    cartBadge.textContent = data.cart_count;
+                    notifBadge.textContent = total;
+
+                    if (total > 0) {
+                        notifBadge.style.display = 'flex';
+                        notifBadge.classList.add('pulse');
+                    } else {
+                        notifBadge.style.display = 'none';
+                        notifBadge.classList.remove('pulse');
+                    }
                 }
             })
             .catch(error => {

@@ -8,6 +8,7 @@ from django.http import JsonResponse
 from asgiref.sync import sync_to_async
 from django.views.decorators.cache import never_cache
 from django.contrib import messages
+from cart.context_processors import cart_items_count
 
 @login_required
 @never_cache 
@@ -20,8 +21,23 @@ def unread_count_api(request):
         ).exclude(created_by=request.user).count()
         for conv in conversations
     }
+    
+    # Get cart count
+    cart_count = 0
+    try:
+        from cart.models import Cart
+        cart = Cart.objects.filter(user=request.user).first()
+        if cart:
+            cart_count = cart.items.count()
+    except Exception:
+        pass
+    
+    total_unread = sum(unread_counts.values())
+    
     return JsonResponse({
-        'total_unread': sum(unread_counts.values()),
+        'total_unread': total_unread,
+        'cart_count': cart_count,
+        'total_notifications': total_unread + cart_count,
         'by_conversation': unread_counts 
     })
 
