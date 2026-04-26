@@ -15,7 +15,7 @@
     <h2>{% trans "My Profile" %}</h2>
 
     <div class="profile-header">
-        <img src="{{ user.profile.get_profile_image_url }}" class="profile-picture">
+        <img src="{{ user.profile.profile_picture.url }}" class="profile-picture">
         <h3>{{ user.profile.username|default:user.username }}</h3>
     </div>
 
