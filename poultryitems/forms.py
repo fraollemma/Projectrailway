@@ -5,7 +5,6 @@ from django.utils.translation import gettext_lazy as _
 from .models import ConsultationBooking, Consultant, ConsultationService
 from .models import EggSeller, EggOrder
 from .models import ChickenSeller
-from django import forms
 from .models import TrainingEnrollment
 
 class MultipleFileInput(forms.ClearableFileInput):
@@ -102,9 +101,16 @@ class EggSellerForm(forms.ModelForm):
             'price_per_dozen',
             'min_order_quantity',
             'description',
-            'egg_type',
-            'certification',
         ]
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 4}),
+        }
+        labels = {
+            'quantity_available': _('Available Eggs'),
+            'price_per_dozen': _('Price per Dozen'),
+            'min_order_quantity': _('Minimum Order (Dozen)'),
+            'description': _('Description'),
+        }
 
 class EggOrderForm(forms.ModelForm):
     class Meta:
@@ -127,60 +133,39 @@ class EggOrderForm(forms.ModelForm):
         }
 
 class EggSellerFilterForm(forms.Form):
-    egg_type = forms.ChoiceField(
-        choices=[('', _('All Types'))] + list(EggSeller.EggType.choices),
-        required=False,
-        label=_('Egg Type')
-    )
+    
     city = forms.CharField(required=False, label=_('City'))
     min_price = forms.DecimalField(required=False, label=_('Min Price'), max_digits=6, decimal_places=2)
     max_price = forms.DecimalField(required=False, label=_('Max Price'), max_digits=6, decimal_places=2)
-    certified_only = forms.BooleanField(required=False, label=_('Certified Only'))
-
 # chicken for sell
- 
 class ChickenSellerForm(forms.ModelForm):
     class Meta:
         model = ChickenSeller
         fields = [
-            'farm_name', 'location', 'available_quantity', 
-            'min_price', 'max_price', 'breeds', 'description',
-            'delivery_available', 'vaccinated', 'contact_number',
-            'email', 'facebook_url', 'telegram_handle', 
-            'whatsapp_number', 'instagram_handle', 'youtube_channel'
+            'available_quantity',
+            'min_price',
+            'max_price',
+            'description',
         ]
         widgets = {
             'description': forms.Textarea(attrs={'rows': 4}),
         }
         labels = {
-            'farm_name': _('Farm Name'),
-            'location': _('Location'),
             'available_quantity': _('Available Chickens'),
             'min_price': _('Minimum Price'),
             'max_price': _('Maximum Price'),
-            'breeds': _('Breeds (comma separated)'),
             'description': _('Description'),
-            'delivery_available': _('Delivery Available'),
-            'vaccinated': _('Vaccinated'),
-            'contact_number': _('Contact Number'),
-            'email': _('Email'),
-            'facebook_url': _('Facebook URL'),
-            'telegram_handle': _('Telegram Handle'),
-            'whatsapp_number': _('WhatsApp Number'),
-            'instagram_handle': _('Instagram Handle'),
-            'youtube_channel': _('YouTube Channel'),
         }
-    
+
     def clean(self):
         cleaned_data = super().clean()
         min_price = cleaned_data.get('min_price')
         max_price = cleaned_data.get('max_price')
-        
+
         if min_price and max_price and min_price > max_price:
             raise forms.ValidationError(_("Minimum price cannot be greater than maximum price."))
-        
-        return cleaned_data
 
+        return cleaned_data 
 
 class TrainingEnrollmentForm(forms.ModelForm):
     class Meta:

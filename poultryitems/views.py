@@ -296,7 +296,7 @@ def place_egg_order(request):
 
 def is_staff(user):
     return user.is_staff
-
+ 
 @login_required
 def add_egg_seller(request):
      
@@ -312,20 +312,6 @@ def add_egg_seller(request):
             egg_seller.user = request.user
 
             profile = request.user.profile
-
-            egg_seller.farm_name = profile.farm_name
-            egg_seller.owner_name = request.user.get_full_name()
-            egg_seller.city = profile.city
-            egg_seller.address = profile.address
-
-            egg_seller.phone = request.user.phone_number
-            egg_seller.email = profile.email
-            egg_seller.website = profile.website
-
-            egg_seller.facebook = profile.facebook
-            egg_seller.telegram = profile.telegram
-            egg_seller.instagram = profile.instagram
-
             egg_seller.save()
 
             messages.success(request, _('Egg seller added successfully!'))

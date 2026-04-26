@@ -28,7 +28,7 @@
 
     <div class="form-container">
 
-        <form method="post">
+        <form method="post" class="egg-form">
             {% csrf_token %}
 
             <div class="form-grid">
@@ -38,13 +38,14 @@
                     <h3>{% trans "Farm Information" %}</h3>
 
                     <label>{% trans "Farm Name" %}</label>
-                    {{ form.farm_name }}
+                    <input type="text" value="{{ request.user.profile.farm_name }}" readonly class="readonly-field">
 
                     <label>{% trans "Owner Name" %}</label>
                     <input type="text" value="{{ request.user.username }}" readonly class="readonly-field">
 
                     <label>{% trans "Description" %}</label>
                     {{ form.description }}
+                    {{ form.description.errors }}
                 </div>
 
 
@@ -53,10 +54,10 @@
                     <h3>{% trans "Location" %}</h3>
 
                     <label>{% trans "City" %}</label>
-                    {{ form.city }}
+                    <input type="text" value="{{ request.user.profile.city }}" readonly class="readonly-field">
 
                     <label>{% trans "Address" %}</label>
-                    {{ form.address }}
+                    <input type="text" value="{{ request.user.profile.location }}" readonly class="readonly-field">
                 </div>
 
 
@@ -66,9 +67,11 @@
 
                     <label>{% trans "Egg Type" %}</label>
                     {{ form.egg_type }}
+                    {{ form.egg_type.errors }}
 
                     <label>{% trans "Certification" %}</label>
                     {{ form.certification }}
+                    {{ form.certification.errors }}
                 </div>
 
 
@@ -78,12 +81,15 @@
 
                     <label>{% trans "Quantity Available" %}</label>
                     {{ form.quantity_available }}
+                    {{ form.quantity_available.errors }}
 
                     <label>{% trans "Price per Dozen ($)" %}</label>
                     {{ form.price_per_dozen }}
+                    {{ form.price_per_dozen.errors }}
 
                     <label>{% trans "Minimum Order Quantity" %}</label>
                     {{ form.min_order_quantity }}
+                    {{ form.min_order_quantity.errors }}
                 </div>
 
 
@@ -95,10 +101,10 @@
                     <input type="text" value="{{ request.user.phone_number }}" readonly class="readonly-field">
 
                     <label>{% trans "Email" %}</label>
-                    <input type="email" value="{{ request.user.profile.email }}" readonly class="readonly-field">
+                    <input type="email" value="{{ request.user.profile.email|default:'' }}" readonly class="readonly-field">
 
                     <label>{% trans "Website" %}</label>
-                    {{ form.website }}
+                    <input type="text" value="{{ request.user.profile.website|default:'' }}" readonly class="readonly-field">
                 </div>
 
 
@@ -107,13 +113,13 @@
                     <h3>{% trans "Social Media" %}</h3>
 
                     <label>{% trans "Facebook" %}</label>
-                    <input type="text" value="{{ request.user.profile.facebook }}" readonly class="readonly-field">
+                    <input type="text" value="{{ request.user.profile.facebook|default:'' }}" readonly class="readonly-field">
 
                     <label>{% trans "Telegram" %}</label>
-                    <input type="text" value="{{ request.user.profile.telegram }}" readonly class="readonly-field">
+                    <input type="text" value="{{ request.user.profile.telegram|default:'' }}" readonly class="readonly-field">
 
                     <label>{% trans "Instagram" %}</label>
-                    <input type="text" value="{{ request.user.profile.instagram }}" readonly class="readonly-field">
+                    <input type="text" value="{{ request.user.profile.instagram|default:'' }}" readonly class="readonly-field">
                 </div>
 
             </div>

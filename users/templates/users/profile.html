@@ -54,6 +54,10 @@
         <p><strong>{% trans "Location:" %}</strong> {{ user.profile.location|default:"-" }}</p>
         <p><strong>{% trans "Bio:" %}</strong> {{ user.profile.bio|default:"-" }}</p>
 
+        {% if user.profile.email %}
+                <li><a href="mailto:{{ user.profile.email }}">{{ user.profile.email }}</a></li>
+            {% endif %}
+            
     </div>
 
     <!-- SOCIAL LINKS -->
@@ -85,10 +89,6 @@
 
             {% if user.profile.tiktok %}
                 <li><a href="https://tiktok.com/@{{ user.profile.tiktok }}" target="_blank">TikTok</a></li>
-            {% endif %}
-
-            {% if user.profile.email %}
-                <li><a href="mailto:{{ user.profile.email }}">{{ user.profile.email }}</a></li>
             {% endif %}
 
         </ul>

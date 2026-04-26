@@ -56,6 +56,10 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return f"{self.username} ({self.phone_number})"
 
+    def get_full_name(self):
+        """Returns the user's full name."""
+        return self.username
+
     def get_unread_message_count(self):
         """
         Returns the number of unread messages for this user

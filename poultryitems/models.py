@@ -204,44 +204,11 @@ class EggSeller(models.Model):
         on_delete=models.CASCADE,
         related_name='egg_seller'
     )
-    class EggType(models.TextChoices):
-        ORGANIC = 'organic', _('Organic')
-        FREE_RANGE = 'free_range', _('Free Range')
-        CAGE_FREE = 'cage_free', _('Cage Free')
-        CONVENTIONAL = 'conventional', _('Conventional')
-        PASTURE_RAISED = 'pasture_raised', _('Pasture Raised')
-
-    class Certification(models.TextChoices):
-        NONE = 'none', _('None')
-        USDA_ORGANIC = 'usda_organic', _('USDA Organic')
-        NON_GMO = 'non_gmo', _('Non-GMO Project Verified')
-        ANIMAL_WELFARE = 'animal_welfare', _('Animal Welfare Approved')
-        LOCAL = 'local', _('Local Farm Certified')
-
-    farm_name = models.CharField(max_length=200)
-    owner_name = models.CharField(max_length=200, blank=True)
     description = models.TextField()
-     
-    city = models.CharField(max_length=100)
-    state = models.CharField(max_length=100, blank=True)
-    country = models.CharField(max_length=100, default='Ethiopia')
-    address = models.TextField(blank=True)
-    latitude = models.FloatField(null=True, blank=True)
-    longitude = models.FloatField(null=True, blank=True)
-    
-    egg_type = models.CharField(max_length=20, choices=EggType.choices, default=EggType.CONVENTIONAL)
-    certification = models.CharField(max_length=20, choices=Certification.choices, default=Certification.NONE)
+
     quantity_available = models.PositiveIntegerField(help_text=_("Number of eggs currently available"))
     price_per_dozen = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(0)])
     min_order_quantity = models.PositiveIntegerField(default=1, help_text=_("Minimum dozen required for order"))
-    
-    phone = models.CharField(max_length=20)
-    email = models.EmailField(blank=True)
-    website = models.URLField(blank=True)
-    
-    facebook = models.URLField(blank=True)
-    telegram = models.URLField(blank=True)
-    instagram = models.URLField(blank=True)
     
     is_verified = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -250,6 +217,43 @@ class EggSeller(models.Model):
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    # 🔥 PROPERTIES → Access Profile Data Easily
+    @property
+    def farm_name(self):
+        return self.user.profile.farm_name
+
+    @property
+    def phone(self):
+        return self.user.phone_number
+
+    @property
+    def email(self):
+        return self.user.profile.email
+
+    @property
+    def city(self):
+        return self.user.profile.city
+
+    @property
+    def profile_picture(self):
+        return self.user.profile.profile_picture
+
+    @property
+    def website(self):
+        return self.user.profile.website
+
+    @property
+    def facebook(self):
+        return self.user.profile.facebook
+
+    @property
+    def telegram(self):
+        return self.user.profile.telegram
+
+    @property
+    def instagram(self):
+        return self.user.profile.instagram
 
     def __str__(self):
         return f"{self.farm_name} - {self.city}"
@@ -291,38 +295,17 @@ class EggOrder(models.Model):
         super().save(*args, **kwargs)
 
 class ChickenSeller(models.Model):
-    BREED_CHOICES = [
-        ('rhode_island_red', _('Rhode Island Red')),
-        ('plymouth_rock', _('Plymouth Rock')),
-        ('leghorn', _('Leghorn')),
-        ('sussex', _('Sussex')),
-        ('orpington', _('Orpington')),
-        ('other', _('Other')),
-    ]
-    
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='chicken_seller')
-    farm_name = models.CharField(max_length=200, verbose_name=_("Farm Name"))
-    location = models.CharField(max_length=100, verbose_name=_("Location"))
     available_quantity = models.PositiveIntegerField(verbose_name=_("Available Chickens"))
     min_price = models.DecimalField(max_digits=6, decimal_places=2, verbose_name=_("Minimum Price"))
     max_price = models.DecimalField(max_digits=6, decimal_places=2, verbose_name=_("Maximum Price"))
-    breeds = models.CharField(max_length=300, verbose_name=_("Breeds"))
     description = models.TextField(verbose_name=_("Description"))
-    delivery_available = models.BooleanField(default=False, verbose_name=_("Delivery Available"))
-    vaccinated = models.BooleanField(default=False, verbose_name=_("Vaccinated"))
-    contact_number = models.CharField(max_length=20, verbose_name=_("Contact Number"))
-    email = models.EmailField(verbose_name=_("Email"))
-    facebook_url = models.URLField(blank=True, null=True, verbose_name=_("Facebook URL"))
-    telegram_handle = models.CharField(max_length=100, blank=True, null=True, verbose_name=_("Telegram Handle"))
-    whatsapp_number = models.CharField(max_length=20, blank=True, null=True, verbose_name=_("WhatsApp Number"))
-    instagram_handle = models.CharField(max_length=100, blank=True, null=True, verbose_name=_("Instagram Handle"))
-    youtube_channel = models.URLField(blank=True, null=True, verbose_name=_("YouTube Channel"))
     is_active = models.BooleanField(default=True, verbose_name=_("Active"))
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return self.farm_name
+        return f"{self.user.username} Chicken Seller"
     
     def price_range(self):
         return f"${self.min_price}-{self.max_price} {_('each')}"
