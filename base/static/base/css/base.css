@@ -1331,3 +1331,38 @@ li {
     width: auto;
   }
 }
+@media (max-width: 320px) {
+  .header-content {
+    /* 1. Use a slightly smaller padding to gain horizontal space */
+    padding: 8px 0;
+    
+    /* 2. Ensure items don't overlap if they grow */
+    flex-wrap: nowrap;
+    gap: 4px;
+    
+    /* 3. Vertically center everything perfectly */
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    /* 4. Ensure the logo doesn't shrink too much but also doesn't push actions off-screen */
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .logo-link img {
+    /* 5. Scale logo naturally if it's an image */
+    max-width: 100%;
+    height: auto;
+  }
+
+  .header-actions {
+    /* 6. Tighten the gap between icons to save space */
+    gap: 8px; 
+    flex-shrink: 0; /* Keep actions from shrinking */
+  }
+
+  /* 7. Optional: Hide less critical items on extremely small screens */
+  /* .header-actions .some-optional-item { display: none; } */
+}
