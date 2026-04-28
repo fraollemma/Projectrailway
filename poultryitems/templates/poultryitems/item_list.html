@@ -1,6 +1,7 @@
 {% extends "base/base.html" %}
 {% load static %}
 {% load i18n %}
+{% load poultry_extras %}
 
 {% block title %}
     {% trans "Poultry Items List | Ethiopian Sheger Market place" %}
@@ -94,13 +95,9 @@
                     <!-- Content Section -->
                     <div class="card-content">
                         <div class="card-meta">
-                            <span class="category-tag">
-                                <i class="fas fa-tag"></i>
-                                {{ item.category.name|default:"Poultry" }}
-                            </span>
                             <span class="time-posted">
                                 <i class="fas fa-clock"></i>
-                                {{ item.created_at|timesince }}
+                                {{ item.created_at|short_timesince }}
                             </span>
                         </div>
                         
