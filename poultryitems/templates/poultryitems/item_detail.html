@@ -8,96 +8,178 @@
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'poultryitems/css/item_detail.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock %}
 
 {% block content %}
-<main class="item-detail" itemscope itemtype="http://schema.org/Product">
-  <div class="item-container">
-    <a href="javascript:history.back()" class="back-to-home">
-        <i class="fas fa-arrow-left"></i> {% trans "Back" %}
+<main class="item-detail-page">
+  <div class="container">
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-btn">
+      <i class="fas fa-arrow-left"></i> {% trans "Back to Listings" %}
     </a>
 
-    <!-- Left: Main Image + Thumbnails -->
-    <div class="image-section">
-      {% if item.main_image %}
-        <img id="mainImage" src="{{ item.main_image.url }}" alt="{{ item.name }}" class="main-image" itemprop="image">
-      {% else %}
-        <img id="mainImage" src="{% static 'poultryitems/images/product-chicken.jpg' %}" alt="{{ item.name }}" class="main-image" itemprop="image">
-      {% endif %}
-      {% if item.sub_images.exists %}
-      <div class="thumbnail-row">
-        {% for image in item.sub_images.all %}
-          {% if image.image %}
-            <img src="{{ image.image.url }}" alt="Thumbnail {{ forloop.counter }}" class="thumbnail">
+    <div class="item-container">
+      <!-- Image Gallery Section -->
+      <div class="image-gallery">
+        <div class="main-image-container">
+          {% if item.main_image %}
+            <img id="mainImage" src="{{ item.main_image.url }}" alt="{{ item.name }}" class="main-image">
+          {% else %}
+            <img id="mainImage" src="{% static 'poultryitems/images/product-chicken.jpg' %}" alt="{{ item.name }}" class="main-image">
           {% endif %}
-        {% endfor %}
+          <div class="image-overlay">
+            <button class="zoom-btn" id="zoomBtn">
+              <i class="fas fa-search-plus"></i>
+            </button>
+          </div>
+        </div>
+
+        {% if item.sub_images.exists %}
+        <div class="thumbnail-grid">
+          {% for image in item.sub_images.all %}
+            {% if image.image %}
+              <img src="{{ image.image.url }}" alt="Thumbnail {{ forloop.counter }}" class="thumbnail" data-src="{{ image.image.url }}">
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
       </div>
-      {% endif %}
-      <!-- Add this for debugging only -->
-<div style="display:none;">
-  Public ID: {{ item.main_image.public_id }}
-  Generated URL: {{ item.main_image.url }}
-</div>
+
+      <!-- Product Details Section -->
+      <div class="product-details">
+        <div class="product-header">
+          <h1 class="product-title">{{ item.name }}</h1>
+          {% if request.user.is_authenticated and request.user.is_superuser %}
+            <div class="admin-actions">
+              <a href="{% url 'poultryitems:item_edit' item.id %}" class="btn btn-secondary btn-sm">
+                <i class="fas fa-edit"></i> Edit
+              </a>
+              <form action="{% url 'poultryitems:item_delete' item.id %}" method="post" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">
+                  <i class="fas fa-trash"></i> Delete
+                </button>
+              </form>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="product-meta">
+          <span class="category-badge">{{ item.category.name|default:"Poultry" }}</span>
+          <span class="date-info">
+            <i class="fas fa-calendar"></i> {{ item.created_at|date:"M d, Y" }}
+          </span>
+        </div>
+
+        <div class="product-price">
+          <span class="price">${{ item.price }}</span>
+          <span class="price-label">ETB</span>
+        </div>
+
+        <div class="product-description">
+          <h3>Description</h3>
+          <p>{{ item.description|linebreaks }}</p>
+        </div>
+
+        <div class="product-stats">
+          <div class="stat-item">
+            <i class="fas fa-heart"></i>
+            <span>{{ item.like_count }} Likes</span>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-share"></i>
+            <span>{{ item.share_count }} Shares</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <button class="btn btn-like" data-item-id="{{ item.id }}" data-action="like">
+            <i class="fas fa-thumbs-up"></i>
+            <span class="count">{{ item.like_count }}</span>
+          </button>
+
+          <button class="btn btn-share" data-item-id="{{ item.id }}" data-action="share">
+            <i class="fas fa-share-alt"></i>
+            <span class="count">{{ item.share_count }}</span>
+          </button>
+
+          <a href="{% url 'cart:add_to_cart' 'poultryitems' 'item' item.id %}" class="btn btn-primary btn-cart">
+            <i class="fas fa-shopping-cart"></i> Add to Cart
+          </a>
+
+          {% if request.user.is_authenticated %}
+            {% if request.user != item.created_by %}
+              <a href="{% url 'conversation:new' app_label model_name item.id %}" class="btn btn-success btn-contact">
+                <i class="fas fa-comments"></i> Contact Seller
+              </a>
+            {% endif %}
+          {% else %}
+            <a href="{% url 'login' %}?next={% url 'conversation:new' app_label model_name item.id %}" class="btn btn-success btn-contact">
+              <i class="fas fa-comments"></i> Login to Contact
+            </a>
+          {% endif %}
+        </div>
+
+        <!-- Seller Information -->
+        {% if item.created_by %}
+        <div class="seller-card">
+          <h3>Seller Information</h3>
+          <div class="seller-info">
+            {% if item.created_by.profile.profile_picture %}
+              <img src="{{ item.created_by.profile.profile_picture.url }}" alt="Seller" class="seller-avatar">
+            {% else %}
+              <div class="seller-avatar-placeholder">
+                <i class="fas fa-user"></i>
+              </div>
+            {% endif %}
+            <div class="seller-details">
+              <h4>{{ item.created_by.get_full_name|default:item.created_by.username }}</h4>
+              <p class="seller-email">{{ item.created_by.email }}</p>
+            </div>
+          </div>
+
+          <div class="seller-social">
+            {% if item.created_by.profile.telegram %}
+              <a href="https://t.me/{{ item.created_by.profile.telegram }}" target="_blank" class="social-link">
+                <i class="fab fa-telegram"></i>
+              </a>
+            {% endif %}
+            {% if item.created_by.profile.facebook %}
+              <a href="https://facebook.com/{{ item.created_by.profile.facebook }}" target="_blank" class="social-link">
+                <i class="fab fa-facebook"></i>
+              </a>
+            {% endif %}
+            {% if item.created_by.profile.instagram %}
+              <a href="https://instagram.com/{{ item.created_by.profile.instagram }}" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+              </a>
+            {% endif %}
+            {% if item.created_by.profile.linkedin %}
+              <a href="https://linkedin.com/in/{{ item.created_by.profile.linkedin }}" target="_blank" class="social-link">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
       </div>
     </div>
+  </div>
 
-    <!-- Right: Details -->
-    <div class="details-section">
-      <div class="title-row">
-        <h1 class="product-title" itemprop="name">{{ item.name }}</h1>
+  <!-- Image Modal for Zoom -->
+  <div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+</main>
 
-        {% if request.user.is_authenticated and request.user.is_superuser %}
-          <div class="admin-actions">
-            <a href="{% url 'poultryitems:item_edit' item.id %}" class="btn small">Edit</a>
-            <form action="{% url 'poultryitems:item_delete' item.id %}" method="post" class="inline-form">
-              {% csrf_token %}
-              <button type="submit" class="btn small danger">Delete</button>
-            </form>
-          </div>
-        {% endif %}
-      </div>
+{% endblock %}
 
-      <p class="meta"><span>{{ item.location }}</span> • <time datetime="{{ item.created_at|date:'c' }}">{{ item.created_at|date:"F d, Y" }}</time></p>
-
-      <div class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-        <meta itemprop="priceCurrency" content="USD">
-        <span itemprop="price">${{ item.price }}</span>
-      </div>
-
-      <section class="description" itemprop="description">
-        <h2>Description</h2>
-        <p>{{ item.description|linebreaks }}</p>
-      </section>
-
-      <!-- Buttons -->
-      <div class="actions">
-        <button type="button" class="like-btn" data-item-id="{{ item.id }}" data-action="like">
-          <i class="fas fa-thumbs-up"></i> <span class="interaction-count">{{ item.like_count }}</span>
-        </button>
-
-        <button type="button" class="share-btn" data-item-id="{{ item.id }}" data-action="share">
-          <i class="fas fa-share-alt"></i> <span class="interaction-count">{{ item.share_count }}</span>
-        </button>
-
-        <a href="{% url 'cart:add_to_cart' 'poultryitems' 'item' item.id %}" class="btn add-cart">Add to Cart</a>
-
-        {% if request.user.is_authenticated %}
-            {% if request.user != item.created_by %}
-                <a href="{% url 'conversation:new' app_label model_name item.id %}" 
-                  class="contact-seller-btn">
-                    <i class="fas fa-comments"></i> Contact Seller
-                </a>
-            {% endif %}
-        {% else %}
-            <a href="{% url 'login' %}?next={% url 'conversation:new' app_label model_name item.id %}" 
-              class="contact-seller-btn">
-                <i class="fas fa-comments"></i> Login to Contact Seller
-            </a>
-        {% endif %}
-        
-      </div>
-
-      <!-- Seller Info -->
+{% block js %}
+<script src="{% static 'poultryitems/js/item_detail.js' %}"></script>
+{% endblock %}
       {% if item.created_by %}
       <section class="seller-info">
         {% if item.created_by.profile.profile_picture %}
