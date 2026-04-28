@@ -2166,3 +2166,6 @@ set DATABASE_URL=postgresql://postgres:zjZosoHJkNujXTmksFvjqKwHnTAnhoBt@monorail
 set CLOUDINARY_CLOUD_NAME=doixo5oiw
 set CLOUDINARY_API_KEY=334318349795623
 set CLOUDINARY_API_SECRET=uF3V8cdoExU5JyI1L_Nl3mYh2uw
+
+python manage.py makemigrations
+python manage.py migrate

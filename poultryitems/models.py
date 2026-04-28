@@ -5,6 +5,7 @@ import uuid
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.translation import gettext_lazy as _
+from cloudinary.models import CloudinaryField
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -51,10 +52,11 @@ class Item(models.Model):
         related_name='items', 
         on_delete=models.CASCADE
     )
-    main_image = models.ImageField(
-        upload_to='upload_main_image/',
-        default='products/default.jpg',
-        blank=True
+    main_image = CloudinaryField(
+        'image',
+        folder='products/main_images/',
+        blank=True,
+        default='products/default.jpg'
     )
     like_count = models.PositiveIntegerField(default=0)
     share_count = models.PositiveIntegerField(default=0)
@@ -111,10 +113,11 @@ class SubImage(models.Model):
         related_name='sub_images', 
         on_delete=models.CASCADE
     )
-    image = models.ImageField(
-        upload_to='upload_sub_images/',
-        default='products/default.jpg',
-        blank=True
+    image = CloudinaryField(
+        'image',
+        folder='products/sub_images/',
+        blank=True,
+        default='products/default.jpg'
     )
     alt_text = models.CharField(max_length=100, blank=True)
     
