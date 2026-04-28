@@ -41,63 +41,59 @@ function initUnreadCount() {
         fetch(window.UNREAD_COUNT_API_URL, {
             credentials: 'include'
         })
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.json();
-            })
-            .then(data => {
-                const unreadBadge = document.getElementById('navbarUnread');
-                if (unreadBadge) {
-                    if (data.total_unread > 0) {
-                        unreadBadge.textContent = data.total_unread > 9 ? '9+' : data.total_unread;
-                        unreadBadge.style.display = 'flex';
-                        unreadBadge.classList.add('pulse');
-                    } else {
-                        unreadBadge.style.display = 'none';
-                        unreadBadge.classList.remove('pulse');
-                    }
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
+        })
+        .then(data => {
+
+            // ===== HEADER (TOP DROPDOWN) =====
+            const notifBadge = document.getElementById("notificationBadge");
+            const messageCount = document.getElementById("messageCount");
+            const eggOrderCount = document.getElementById("eggOrderCount");
+            const cartCount = document.getElementById("cartCount");
+            const totalNotification = document.getElementById("totalNotification");
+
+            // ===== SIDEBAR (USER MENU) =====
+            const navbarMessages = document.getElementById("navbarMessages");
+            const navbarEggOrders = document.getElementById("navbarEggOrders");
+            const navbarCart = document.getElementById("navbarCart");
+
+            // ===== SAFE VALUES =====
+            const messages = data.total_unread || 0;
+            const orders = data.egg_order_count || 0;
+            const cart = data.cart_count || 0;
+
+            const total = messages + orders + cart;
+
+            // ===== UPDATE HEADER =====
+            if (messageCount) messageCount.textContent = messages;
+            if (eggOrderCount) eggOrderCount.textContent = orders;
+            if (cartCount) cartCount.textContent = cart;
+            if (totalNotification) totalNotification.textContent = total;
+
+            if (notifBadge) {
+                notifBadge.textContent = total;
+                if (total > 0) {
+                    notifBadge.style.display = 'flex';
+                    notifBadge.classList.add('pulse');
+                } else {
+                    notifBadge.style.display = 'none';
+                    notifBadge.classList.remove('pulse');
                 }
+            }
 
-                const notifBadge = document.getElementById("notificationBadge");
-                const messageCount = document.getElementById("messageCount");
-                const cartCount = document.getElementById("cartCount");
-                const totalNotification = document.getElementById("totalNotification");
+            // ===== UPDATE SIDEBAR =====
+            if (navbarMessages) navbarMessages.textContent = messages;
+            if (navbarEggOrders) navbarEggOrders.textContent = orders;
+            if (navbarCart) navbarCart.textContent = cart;
 
-                // Calculate total notifications (messages + cart)
-                const total = (data.total_unread || 0) + (data.cart_count || 0);
-
-                // Update main notification badge
-                if (notifBadge) {
-                    notifBadge.textContent = total;
-                    if (total > 0) {
-                        notifBadge.style.display = 'flex';
-                        notifBadge.classList.add('pulse');
-                    } else {
-                        notifBadge.style.display = 'none';
-                        notifBadge.classList.remove('pulse');
-                    }
-                }
-
-                // Update individual message count
-                if (messageCount) {
-                    messageCount.textContent = data.total_unread || 0;
-                }
-
-                // Update individual cart count
-                if (cartCount) {
-                    cartCount.textContent = data.cart_count || 0;
-                }
-
-                // Update total notification display
-                if (totalNotification) {
-                    totalNotification.textContent = total;
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching unread count:', error);
-            });
+        })
+        .catch(error => {
+            console.error('Error fetching unread count:', error);
+        });
     }
-     
+
     fetchUnreadCount();
     setInterval(fetchUnreadCount, 30000);
 }
@@ -231,10 +227,11 @@ function initMobileNavigation() {
         document.body.classList.toggle('no-scroll');
         
         const icon = navToggle.querySelector('i');
+        const isExpanded = categoryNav.classList.contains('active');
         if (icon) {
             icon.className = isExpanded ? 'fas fa-times' : 'fas fa-bars';
         }
-        const isExpanded = categoryNav.classList.contains('active');
+        
         navToggle.setAttribute('aria-expanded', isExpanded);
         
         if (isExpanded) {
@@ -313,7 +310,6 @@ function initDropdowns() {
         toggle.addEventListener("click", function (e) {
             e.stopPropagation();
 
-            // close others
             dropdowns.forEach(d => {
                 if (d !== dropdown) {
                     d.classList.remove("open");
@@ -322,13 +318,11 @@ function initDropdowns() {
                 }
             });
 
-            // toggle current
             const isOpen = dropdown.classList.toggle("open");
             toggle.setAttribute("aria-expanded", isOpen);
         });
     });
 
-    // click outside closes all
     document.addEventListener("click", function () {
         dropdowns.forEach(d => {
             d.classList.remove("open");

@@ -44,7 +44,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
                 message="Phone number must be in format: '+999999999'"
             )
         ]
-    )
+    ) 
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     

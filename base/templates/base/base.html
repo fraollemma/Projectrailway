@@ -105,7 +105,7 @@
                         <button class="dropdown-item">{{ lang_name }}</button>
                     </form>
                     {% endfor %}
-                </div> 
+                </div>
             </div>
             
             <!-- NOTIFICATION -->
@@ -180,7 +180,7 @@
     </div>
 </div>
 </header>
-
+             <!-- NavBar -->
 <nav class="category-nav" id="categoryNav">
     <div class="category-nav-header">
         <h3 class="category-nav-title">{% trans "Browse Categories" %}</h3>
@@ -315,7 +315,7 @@
                         class="category-nav-link">
                         <i class="fas fa-list"></i>
                         <span class="link-text">{% trans "My Orders" %}</span>
-                        <span class="count" id="navbarUnread">
+                        <span class="count" id="navbarEggOrders">
                             {{ egg_order_count|default:0 }}
                         </span>
                     </a>
@@ -324,7 +324,7 @@
                     <a href="{% url 'conversation:inbox' %}" class="category-nav-link">
                         <i class="far fa-envelope"></i>
                         <span class="link-text">{% trans "Messages" %}</span>
-                        <span class="count" id="navbarUnread">
+                        <span class="count" id="navbarMessages">
                             {% if request.user.is_authenticated %}
                                 {{ request.user.get_unread_message_count }}
                             {% else %}
@@ -338,7 +338,7 @@
                     <a href="{% url 'cart:cart_detail' %}" class="category-nav-link">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="link-text">{% trans "Cart" %}</span>
-                        <span class="count" id="navbarcartUnread">
+                        <span class="count" id="navbarCart">
                         {{ cart_item_count|default:0 }}</span>
                     </a>
                 </li>
