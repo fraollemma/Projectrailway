@@ -298,10 +298,10 @@ body {
 
 /* ========== Seller Card ========== */
 .seller-card {
-  background: #f8fafc;
+  background: #dfdfdf;
   border-radius: 15px;
   padding: 1.5rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #ced9e7;
 }
 
 .seller-card h3 {
