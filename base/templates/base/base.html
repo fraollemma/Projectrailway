@@ -114,9 +114,10 @@
                 <button class="action-btn dropdown-toggle" id="notificationBtn">
                     <i class="fas fa-bell"></i>
                     <span class="notification-badge" id="notificationBadge">
-                        {% if total_notifications > 0 %}{{ total_notifications }}{% else %}0{% endif %}
+                        {{ total_notifications|default:0 }}
                     </span>
                 </button>
+                
                 <div class="dropdown-menu notification-menu">
                     <div class="notification-header">
                         <span>{% trans "Notifications" %}</span>
@@ -315,11 +316,7 @@
                         <i class="fas fa-list"></i>
                         <span class="link-text">{% trans "My Orders" %}</span>
                         <span class="count" id="navbarUnread">
-                            {% if request.user.is_authenticated %}
-                                {{ egg_order_count }}
-                            {% else %}
-                                0
-                            {% endif %}
+                            {{ egg_order_count|default:0 }}
                         </span>
                     </a>
                 </li>
