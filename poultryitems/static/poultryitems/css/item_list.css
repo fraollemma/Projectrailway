@@ -1005,3 +1005,191 @@ h3.item-title {
 .view-btn:hover i {
   transform: translateX(4px);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 375px) {
+  /* Container adjustment */
+  .poultry-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Card becomes a horizontal row */
+  article.poultry-card {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 140px;
+    align-items: stretch;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* Fixed thumbnail for list view */
+  .card-image {
+    width: 110px !important;
+    min-width: 110px;
+    height: auto !important;
+  }
+
+  .card-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Content area next to image */
+  .card-content {
+    padding: 12px !important;
+    gap: 2px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+
+  h3.item-title {
+    font-size: 0.95rem !important;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 4px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-meta {
+    font-size: 0.75rem !important;
+    color: #64748b;
+    margin-bottom: 4px;
+  }
+
+  .item-price {
+    font-size: 1.05rem !important;
+    font-weight: 700;
+    color: #f83030;
+    margin: 0;
+  }
+
+  .card-footer {
+    margin-top: 6px !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .view-btn {
+    width: fit-content !important;
+    padding: 4px 10px !important;
+    font-size: 0.75rem !important;
+    border-radius: 6px;
+    height: auto;
+  }
+}
