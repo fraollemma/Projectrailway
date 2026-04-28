@@ -24,6 +24,11 @@
         {% for image in item.sub_images.all %}
           <img src="{{ image.image.url }}" alt="Thumbnail {{ forloop.counter }}" class="thumbnail">
         {% endfor %}
+        <!-- Add this for debugging only -->
+<div style="display:none;">
+  Public ID: {{ item.main_image.public_id }}
+  Generated URL: {{ item.main_image.url }}
+</div>
       </div>
     </div>
 
