@@ -303,6 +303,20 @@
             <ul id="userMenu" class="category-nav-dropdown">
                 
                 <li class="category-nav-item">
+                    <a href="{% url 'poultryitems:egg_seller_orders' %}"
+                        class="category-nav-link">
+                        <i class="fas fa-list"></i>
+                        <span class="link-text">{% trans "My Orders" %}</span>
+                        <span class="count" id="navbarUnread">
+                            {% if request.user.is_authenticated %}
+                                {{ request.user.get_egg_order_count }}
+                            {% else %}
+                                0
+                            {% endif %}
+                        </span>
+                    </a>
+                </li>
+                <li class="category-nav-item">
                     <a href="{% url 'conversation:inbox' %}" class="category-nav-link">
                         <i class="far fa-envelope"></i>
                         <span class="link-text">{% trans "Messages" %}</span>

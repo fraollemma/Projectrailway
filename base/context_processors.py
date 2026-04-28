@@ -1,12 +1,14 @@
 from django.core.cache import cache
 from conversation.models import Conversation
 from cart.models import Cart
+from poultryitems.models import EggOrder, EggSeller
 
 
 def notification_counts(request):
     total = 0
     unread_messages = 0
     cart_count = 0
+    egg_orders_count = 0
 
     if request.user.is_authenticated:
         # Get unread message count
@@ -23,10 +25,16 @@ def notification_counts(request):
         if cart:
             cart_count = cart.items.count()
 
-        total = unread_messages + cart_count
+        try:
+            egg_seller = EggSeller.objects.get(user=request.user)
+            egg_order_count = EggOrder.objects.filter(seller=egg_seller).count()
+        except EggSeller.DoesNotExist:
+            egg_order_count = 0
+        total = unread_messages + cart_count + egg_order_count
 
     return {
         "total_notifications": total,
         "unread_messages": unread_messages,
-        "cart_item_count": cart_count
+        "cart_item_count": cart_count,
+        "egg_order_count": egg_order_count
     }
