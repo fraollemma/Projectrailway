@@ -1,138 +1,132 @@
-/* ---------- Page Container ---------- */
+/* ===== PAGE ===== */
 .orders-page {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    background: #e6e6e6;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f7fb;
 }
 
-/* ---------- Title ---------- */
-.orders-page h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: #222;
+/* ===== HEADER ===== */
+.header {
     text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-/* ---------- Table Wrapper ---------- */
+.header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-to-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.back-to-home:hover {
+    background: #f0f0f0;
+}
+
+/* ===== TABLE WRAPPER ===== */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+/* ===== TABLE ===== */
 .orders-table {
     width: 100%;
     border-collapse: collapse;
-    background: #fffbfb;
-    border-radius: 10px;
+    background: white;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-/* ---------- Table Header ---------- */
-.orders-table thead {
-    background: #007bff;
-    color: white;
-    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
 .orders-table th {
-    padding: 12px 15px;
-    font-size: 0.95rem;
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+    text-align: left;
     cursor: pointer;
-    user-select: none;
 }
 
-/* ---------- Table Rows ---------- */
 .orders-table td {
-    padding: 12px 15px;
+    padding: 12px;
     border-bottom: 1px solid #eee;
-    font-size: 0.9rem;
 }
 
 .orders-table tr:hover {
-    background: #f9f9f9;
+    background: #f9fafb;
 }
 
-/* ---------- Empty Row ---------- */
-.orders-table td[colspan] {
+/* ===== STATUS BADGES ===== */
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.status-pending { background: #f59e0b; }
+.status-confirmed { background: #3b82f6; }
+.status-processing { background: #8b5cf6; }
+.status-shipped { background: #06b6d4; }
+.status-delivered { background: #10b981; }
+.status-cancelled { background: #ef4444; }
+
+/* ===== EMPTY STATE ===== */
+.empty-state {
     text-align: center;
-    padding: 1.5rem;
-    color: #888;
+    padding: 3rem;
+    color: #777;
 }
 
-/* ---------- Responsive Design ---------- */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
-    .orders-table,
-    .orders-table thead,
-    .orders-table tbody,
-    .orders-table th,
-    .orders-table td,
-    .orders-table tr {
-        display: block;
-        width: 100%;
+    .orders-table thead {
+        display: none;
     }
 
-    .orders-table thead {
-        display: none; /* Hide header */
+    .orders-table, 
+    .orders-table tbody, 
+    .orders-table tr, 
+    .orders-table td {
+        display: block;
+        width: 100%;
     }
 
     .orders-table tr {
         margin-bottom: 1rem;
         background: white;
-        border-radius: 8px;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.603);
-        overflow: hidden;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
     .orders-table td {
-        border: none;
         display: flex;
         justify-content: space-between;
-        padding: 10px 15px;
-        font-size: 0.9rem;
+        border: none;
+        padding: 8px 0;
     }
 
     .orders-table td::before {
         content: attr(data-label);
         font-weight: 600;
-        color: #444;
+        color: #555;
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.back-to-home {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 10px;
-    background-color: #f8f9fa;
-    color: #333;
-    text-decoration: none;
-    border-radius: 10px;
-    border: 1px solid #cfcfcf;
-    transition: all 0.3s ease;
-}
-
-.back-to-home:hover {
-    background-color: #f8bc6d;
-    text-decoration: none;
-    border: 1px solid #87dfeb;
-    color: #007bff;
 }

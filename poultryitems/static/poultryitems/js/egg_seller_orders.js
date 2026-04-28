@@ -1,57 +1,70 @@
 document.addEventListener("DOMContentLoaded", () => {
     const table = document.querySelector(".orders-table");
-    const headers = table.querySelectorAll("th");
-    const rows = table.querySelectorAll("tbody tr");
 
-    // ---------- Sorting ----------
+    if (!table) return;
+
+    const headers = table.querySelectorAll("th");
+    const tbody = table.querySelector("tbody");
+    let rows = Array.from(tbody.querySelectorAll("tr"));
+
+    // ===== SORT =====
     headers.forEach((header, index) => {
         header.addEventListener("click", () => {
-            const rowsArray = Array.from(rows);
-            const isAscending = header.classList.contains("asc");
 
-            rowsArray.sort((a, b) => {
-                const aText = a.children[index].innerText.trim();
-                const bText = b.children[index].innerText.trim();
+            const isAsc = header.classList.contains("asc");
 
-                if (!isNaN(aText) && !isNaN(bText)) {
-                    return isAscending
-                        ? bText - aText
-                        : aText - bText;
+            rows.sort((a, b) => {
+                let aText = a.children[index].innerText.trim();
+                let bText = b.children[index].innerText.trim();
+
+                let aNum = parseFloat(aText);
+                let bNum = parseFloat(bText);
+
+                if (!isNaN(aNum) && !isNaN(bNum)) {
+                    return isAsc ? bNum - aNum : aNum - bNum;
                 }
-                return isAscending
+
+                return isAsc
                     ? bText.localeCompare(aText)
                     : aText.localeCompare(bText);
             });
 
-            // Reorder rows
-            rowsArray.forEach(row => table.querySelector("tbody").appendChild(row));
+            rows.forEach(r => tbody.appendChild(r));
 
             headers.forEach(h => h.classList.remove("asc", "desc"));
-            header.classList.toggle(isAscending ? "desc" : "asc");
+            header.classList.add(isAsc ? "desc" : "asc");
         });
     });
 
-    // ---------- Mobile Data Labels ----------
-    if (window.innerWidth <= 768) {
-        const headLabels = Array.from(headers).map(h => h.innerText);
-        rows.forEach(row => {
-            row.querySelectorAll("td").forEach((td, i) => {
-                td.setAttribute("data-label", headLabels[i]);
-            });
+    // ===== MOBILE LABELS =====
+    const labels = Array.from(headers).map(h => h.innerText);
+
+    rows.forEach(row => {
+        row.querySelectorAll("td").forEach((td, i) => {
+            td.setAttribute("data-label", labels[i]);
         });
-    }
+    });
 
-    // ---------- Search (optional) ----------
-    const searchBox = document.createElement("input");
-    searchBox.type = "text";
-    searchBox.placeholder = "Search orders...";
-    searchBox.className = "order-search";
-    document.querySelector(".orders-page").insertBefore(searchBox, table);
+    // ===== SEARCH =====
+    const search = document.createElement("input");
+    search.className = "order-search";
+    search.placeholder = "Search orders...";
+    search.style = `
+        width:100%;
+        padding:10px;
+        margin:10px 0;
+        border:1px solid #ddd;
+        border-radius:8px;
+    `;
 
-    searchBox.addEventListener("keyup", () => {
-        const query = searchBox.value.toLowerCase();
+    document.querySelector(".table-wrapper").prepend(search);
+
+    search.addEventListener("input", () => {
+        const q = search.value.toLowerCase();
+
         rows.forEach(row => {
-            row.style.display = row.innerText.toLowerCase().includes(query) ? "" : "none";
+            row.style.display =
+                row.innerText.toLowerCase().includes(q) ? "" : "none";
         });
     });
 });
