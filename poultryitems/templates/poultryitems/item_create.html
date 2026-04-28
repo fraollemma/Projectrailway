@@ -83,6 +83,10 @@
         {% endif %}
     </div>
 </div>
+    <!-- Preview -->
+    <div class="main-preview-container">
+        <img id="mainImagePreview" class="main-preview-image" style="display:none;" />
+    </div>
 
     {% if form.main_image.errors %}
         <ul class="errorlist">
@@ -91,6 +95,8 @@
             {% endfor %}
         </ul>
     {% endif %}
+</div>
+                </div>
 
                 <div class="form-section">
                     <h3 class="section-title">
@@ -123,8 +129,6 @@
                             {% endfor %}
                         </ul>
                         {% endif %}
-                    </div>
-                    </div> 
                     </div>
                 </div>
             </div>
