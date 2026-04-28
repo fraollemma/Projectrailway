@@ -64,7 +64,7 @@
                         
                         <!-- Quick Actions -->
                         <div class="quick-actions">
-                            <button class="action-btn like-btn {% if item.has_liked %}liked{% endif %}"
+                            <button class="action-btns like-btn {% if item.has_liked %}liked{% endif %}"
                                     data-item-id="{{ item.id }}"
                                     data-action="like"
                                     title="{% trans 'Like' %}">
@@ -72,7 +72,7 @@
                                 <span class="count">{{ item.like_count }}</span>
                             </button>
                             
-                            <button class="action-btn share-btn"
+                            <button class="action-btns share-btn"
                                     data-item-id="{{ item.id }}"
                                     data-action="share"
                                     title="{% trans 'Share' %}">
