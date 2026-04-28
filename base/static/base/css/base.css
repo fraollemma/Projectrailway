@@ -1143,10 +1143,6 @@ li {
         font-size: 0.9rem;
     }
 }
-
-/* ========================================
-   MAX WIDTH 385px - Small Mobile Screens
-   ======================================== */
 @media (max-width: 385px) {
     /* Base container adjustments */
     .container {
