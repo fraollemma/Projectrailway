@@ -80,13 +80,13 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.875rem 1.5rem;
+    padding: 0.75rem 1rem;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;
     border: none;
     border-radius: var(--radius-lg);
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 650;
     text-decoration: none;
     cursor: pointer;
     transition: var(--transition);
@@ -228,14 +228,11 @@
     gap: 0.5rem;
     z-index: 10;
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(0);
+    opacity: 1;
     transition: var(--transition);
 }
 
-.poultry-card:hover .quick-actions {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 .action-btn {
     display: flex;
