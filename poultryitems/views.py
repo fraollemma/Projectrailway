@@ -179,8 +179,9 @@ def egg_sellers(request):
 
     if form.is_valid():
         if form.cleaned_data.get('city'):
-            sellers = sellers.filter(city__icontains=form.cleaned_data['city'])
-
+            sellers = sellers.filter(
+                user__profile__city__icontains=form.cleaned_data['city']
+            )
         if form.cleaned_data.get('min_price'):
             sellers = sellers.filter(price_per_dozen__gte=form.cleaned_data['min_price'])
 
