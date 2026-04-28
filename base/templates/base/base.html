@@ -211,18 +211,21 @@
                 <i class="fas fa-chevron-down dropdown-arrow"></i>
             </a>
             <ul id="poultryMenu" class="category-nav-dropdown">
-                <li class="category-nav-item">
-                    <a href="{% url 'poultryitems:item_list' %}" class="category-nav-link">
-                        <i class="fas fa-list"></i>
-                        <span class="link-text">{% trans "Poultry section" %}</span>
-                    </a>
-                </li>
+                
                 <li class="category-nav-item">
                     <a href="{% url 'poultryitems:index' %}" class="category-nav-link">
+                        <i class="fas fa-list"></i>
+                        <span class="link-text">{% trans "Poultry Section" %}</span>
+                    </a>
+                </li>
+                
+                <li class="category-nav-item">
+                    <a href="{% url 'poultryitems:item_list' %}" class="category-nav-link">
                         <i class="fas fa-list"></i>
                         <span class="link-text">{% trans "Poultry Items" %}</span>
                     </a>
                 </li>
+                
                 <li class="category-nav-item">
                     <a href="{% url 'poultryitems:egg_sellers' %}" class="category-nav-link">
                         <i class="fas fa-list"></i>

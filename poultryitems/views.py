@@ -83,7 +83,7 @@ def index(request):
 class ItemListView(ListView):
     model = Item
     template_name = 'poultryitems/item_list.html'
-    context_object_name = 'items'
+    context_object_name = 'item'
     paginate_by = 12
     ordering = ['-created_at']
 
