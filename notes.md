@@ -2169,3 +2169,14 @@ set CLOUDINARY_API_SECRET=uF3V8cdoExU5JyI1L_Nl3mYh2uw
 
 python manage.py makemigrations
 python manage.py migrate
+
+python manage.py shell 
+
+
+
+
+from poultryitems.models import Item
+item = Item.objects.first()
+print(type(item.main_image))
+print(item.main_image.url)
+print(item.main_image.public_id) 

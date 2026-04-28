@@ -55,8 +55,7 @@ class Item(models.Model):
     main_image = CloudinaryField(
         'image',
         folder='products/main_images/',
-        blank=True,
-        default='products/default.jpg'
+        blank=True
     )
     like_count = models.PositiveIntegerField(default=0)
     share_count = models.PositiveIntegerField(default=0)
@@ -116,8 +115,7 @@ class SubImage(models.Model):
     image = CloudinaryField(
         'image',
         folder='products/sub_images/',
-        blank=True,
-        default='products/default.jpg'
+        blank=True
     )
     alt_text = models.CharField(max_length=100, blank=True)
     
