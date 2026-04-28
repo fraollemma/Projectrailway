@@ -23,11 +23,7 @@ def notification_counts(request):
         if cart:
             cart_count = cart.items.count()
 
-        try:
-            egg_seller = EggSeller.objects.get(user=request.user)
-            egg_order_count = EggOrder.objects.filter(seller=egg_seller).count()
-        except EggSeller.DoesNotExist:
-            egg_order_count = 0
+        egg_order_count = EggOrder.objects.filter(user=request.user).count()
         total = unread_messages + cart_count + egg_order_count
 
     return {
