@@ -8,10 +8,9 @@ def notification_counts(request):
     total = 0
     unread_messages = 0
     cart_count = 0
-    egg_orders_count = 0
+    egg_order_count = 0
 
     if request.user.is_authenticated:
-        # Get unread message count
         conversations = Conversation.objects.filter(members=request.user)
 
         for convo in conversations:
@@ -20,7 +19,6 @@ def notification_counts(request):
 
         unread_messages = total
 
-        # Get cart count
         cart = Cart.objects.filter(user=request.user).first()
         if cart:
             cart_count = cart.items.count()

@@ -309,7 +309,7 @@
                         <span class="link-text">{% trans "My Orders" %}</span>
                         <span class="count" id="navbarUnread">
                             {% if request.user.is_authenticated %}
-                                {{ request.user.get_egg_order_count }}
+                                {{ egg_order_count }}
                             {% else %}
                                 0
                             {% endif %}
