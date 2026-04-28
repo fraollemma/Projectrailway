@@ -102,19 +102,6 @@
                                 <span class="summary-value">ETB {{ cart.total_price }}</span>
                             </div>
                             
-                            <div class="summary-row">
-                                <span class="summary-label">
-                                    <i class="fas fa-truck"></i> {% trans "Shipping" %}
-                                </span>
-                                <span class="summary-value free">{% trans "Free" %}</span>
-                            </div>
-                            
-                            <div class="summary-row discount-row">
-                                <span class="summary-label">
-                                    <i class="fas fa-tag"></i> {% trans "Discount" %}
-                                </span>
-                                <span class="summary-value">-ETB 0</span>
-                            </div>
                         </div>
                         
                         <div class="summary-total">
@@ -123,10 +110,6 @@
                         </div>
                         
                         <div class="summary-actions">
-                            <a href="/" class="checkout-button">
-                                <i class="fas fa-lock"></i>
-                                {% trans "Proceed to Checkout" %}
-                            </a>
                             
                             <a href="{% url 'base:index' %}" class="continue-shopping-btn">
                                 <i class="fas fa-arrow-left"></i>
@@ -134,10 +117,6 @@
                             </a>
                         </div>
                         
-                        <div class="secure-badge">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>{% trans "Secure Checkout" %}</span>
-                        </div>
                     </div>
                 </div>
             </div>
