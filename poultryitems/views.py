@@ -12,7 +12,7 @@ from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 import json
 from decimal import Decimal
-
+from django.db.models import Count
 # models
 from .models import (
     Item, SubImage,
@@ -185,17 +185,11 @@ def egg_sellers(request):
         if form.cleaned_data.get('max_price'):
             sellers = sellers.filter(price_per_dozen__lte=form.cleaned_data['max_price'])
 
-    # Add order count to each seller
-    sellers_with_count = []
-    for seller in sellers:
-        egg_order_count = seller.orders.count()
-        sellers_with_count.append({
-            'seller': seller,
-            'egg_order_count': egg_order_count
-        })
+    # Add order count annotation to each seller
+    sellers = sellers.annotate(egg_order_count=Count('orders'))
 
     return render(request, 'poultryitems/egg_sellers.html', {
-        'sellers': sellers_with_count,
+        'sellers': sellers,
         'filter_form': form
     })
 
