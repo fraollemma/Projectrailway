@@ -61,7 +61,6 @@
                 <p><strong>{% trans "Location:" %}</strong> {{ seller.city }}</p>
                 <p><strong>{% trans "Available:" %}</strong> {{ seller.quantity_available|floatformat:0 }} {% trans "eggs" %}</p>
                 <p><strong>{% trans "Price:" %}</strong> ${{ seller.price_per_dozen }} / {% trans "birr" %}</p>
-                {% endif %}
                 <p class="description">{{ seller.description }}</p>
 
                 <!-- Contact -->
