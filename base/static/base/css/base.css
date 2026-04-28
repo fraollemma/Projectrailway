@@ -1235,3 +1235,99 @@ li {
         justify-content:space-between;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 375px) {
+  header.header.header-admin {
+    background-color: #ffffff !important;
+    min-height: 64px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  header.header.header-admin .container {
+    padding: 0 16px;
+    width: 100%;
+  }
+
+  header.header.header-admin .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  header.header.header-admin .header-actions {
+    gap: 12px; /* Reduced gap for mobile */
+  }
+
+  header.header.header-admin .logo img {
+    max-height: 40px;
+    width: auto;
+  }
+}
