@@ -61,9 +61,6 @@
                 <p><strong>{% trans "Location:" %}</strong> {{ seller.city }}</p>
                 <p><strong>{% trans "Available:" %}</strong> {{ seller.quantity_available|floatformat:0 }} {% trans "eggs" %}</p>
                 <p><strong>{% trans "Price:" %}</strong> ${{ seller.price_per_dozen }} / {% trans "birr" %}</p>
-                <p><strong>{% trans "Type:" %}</strong> {{ seller.get_egg_type_display }}</p>
-                {% if seller.certification != 'none' %}
-                <p><strong>{% trans "Certification:" %}</strong> {{ seller.get_certification_display }}</p>
                 {% endif %}
                 <p class="description">{{ seller.description }}</p>
 

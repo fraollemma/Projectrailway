@@ -254,12 +254,12 @@
     color: white;
 }
 
-.action-btn.liked {
+.action-btns.liked {
     background: var(--danger-color);
     color: white;
 }
 
-.action-btn .count {
+.action-btns.count {
     font-weight: 600;
 }
 

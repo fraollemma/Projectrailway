@@ -280,7 +280,6 @@ img {
     border-radius: 50%;
 }
 
-/* Notification Menu Styles */
 .notification-menu {
     min-width: 250px;
     padding: 0;
@@ -1177,7 +1176,7 @@ li {
 .logo-link{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:5px;
 }
 .site-logo{
     height:42px;
@@ -1189,7 +1188,6 @@ li {
     font-weight:500;
     color:#FFEF91;
 }
-/* Top Bar */
 
 .top-bar{
     background: var(--dark-color);
@@ -1222,8 +1220,6 @@ li {
 .top-announcement marquee{
     color:#facc15;
 }
-
-/* Mobile */
 
 @media (max-width:768px){
 
@@ -1271,9 +1267,7 @@ li {
   }
 }
 
-/* Media query for small displays like mobile phones at 320px width */
 @media (max-width: 320px) {
-  /* 1. Compact Header Container */
   header.header.header-admin {
     height: 44px !important;
     min-height: 44px !important;
@@ -1284,14 +1278,12 @@ li {
     z-index: 1000;
   }
 
-  /* 2. Gain horizontal space by reducing padding */
   header.header.header-admin .container {
     padding-left: 8px !important;
     padding-right: 8px !important;
     width: 100%;
   }
 
-  /* 3. Extreme shrink for Logo Text and Image */
   header.header.header-admin .logo {
     font-size: 11px !important;
     letter-spacing: -0.02em !important;
@@ -1306,7 +1298,6 @@ li {
     width: auto !important;
   }
 
-  /* 4. Micro Utility Icons (Cart, Account, Search) */
   header.header.header-admin .header-content {
     gap: 8px !important;
   }
@@ -1322,7 +1313,6 @@ li {
     font-size: 10px !important;
   }
 
-  /* 5. Compact Navigation Toggle */
   header.header.header-admin .nav-toggle {
     padding: 4px !important;
     margin: 0 !important;
@@ -1332,25 +1322,8 @@ li {
   header.header.header-admin .nav-toggle svg {
     font-size: 12px !important;
   }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 320px) {
-  /* 1. Ensure the parent button is the positioning anchor */
   button#notificationBtn {
     position: relative !important;
     display: inline-flex !important;
@@ -1358,14 +1331,13 @@ li {
     justify-content: center;
   }
 
-  /* 2. Scale down and reposition the badge */
   span#notificationBadge {
     position: absolute !important;
-    top: -2px !important;      /* Adjusted for smaller icon */
-    right: -4px !important;    /* Tighter fit */
+    top: -2px !important;
+    right: -4px !important;   
     
-    font-size: 8px !important;  /* Micro text */
-    min-width: 12px !important; /* Smaller diameter */
+    font-size: 8px !important; 
+    min-width: 12px !important;
     height: 12px !important;
     padding: 0 !important;
     
@@ -1374,8 +1346,8 @@ li {
     justify-content: center !important;
     
     border-radius: 50% !important;
-    background-color: #ff0000 !important; /* Keep it bright */
+    background-color: #ff0000 !important; 
     color: #ffffff !important;
-    box-shadow: 0 0 0 1px #fff; /* White border helps it pop on small icons */
+    box-shadow: 0 0 0 1px #fff; 
   }
 }
