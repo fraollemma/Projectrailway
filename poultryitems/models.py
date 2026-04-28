@@ -43,8 +43,7 @@ class Item(models.Model):
         on_delete=models.SET_NULL, 
         null=True, 
         blank=True, 
-        related_name='items',
-        type="upload"
+        related_name='items'
     )
     is_featured = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)

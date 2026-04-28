@@ -2170,23 +2170,4 @@ set CLOUDINARY_API_SECRET=uF3V8cdoExU5JyI1L_Nl3mYh2uw
 python manage.py makemigrations
 python manage.py migrate
 
-python manage.py shell 
-
-
-from poultryitems.models import Item, SubImage
-
-for item in Item.objects.all():
-    if item.main_image and item.main_image.public_id.startswith('media/'):
-        correct_public_id = item.main_image.public_id[6:] 
-        item.main_image.public_id = correct_public_id
-        item.main_image.url = None
-        item.save()
-        print(f"Fixed Item {item.id}: {item.main_image.public_id}")
-
-for sub_image in SubImage.objects.all():
-    if sub_image.image and sub_image.image.public_id.startswith('media/'):
-        correct_public_id = sub_image.image.public_id[6:]
-        sub_image.image.public_id = correct_public_id
-        sub_image.image.url = None
-        sub_image.save()
-        print(f"Fixed SubImage {sub_image.id}: {sub_image.image.public_id}")
+python manage.py shell
