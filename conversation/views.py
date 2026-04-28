@@ -10,10 +10,13 @@ from django.views.decorators.cache import never_cache
 from django.contrib import messages
 from cart.context_processors import cart_item_count
 
+from poultryitems.models import EggOrder
+
 @login_required
-@never_cache 
+@never_cache
 def unread_count_api(request):
     conversations = Conversation.objects.filter(members=request.user)
+
     unread_counts = {
         str(conv.id): ConversationMessage.objects.filter(
             conversation=conv,
@@ -21,8 +24,8 @@ def unread_count_api(request):
         ).exclude(created_by=request.user).count()
         for conv in conversations
     }
-    
-    # Get cart count
+
+    # ===== CART COUNT =====
     cart_count = 0
     try:
         from cart.models import Cart
@@ -31,14 +34,26 @@ def unread_count_api(request):
             cart_count = cart.items.count()
     except Exception:
         pass
-    
+
+    # ===== EGG ORDER COUNT (🔥 MISSING FIX) =====
+    try:
+        seller = getattr(request.user, 'egg_seller', None)
+        if seller:
+            egg_order_count = EggOrder.objects.filter(seller=seller).count()
+        else:
+            egg_order_count = 0
+    except Exception:
+        egg_order_count = 0
+
+    # ===== TOTAL =====
     total_unread = sum(unread_counts.values())
-    
+
     return JsonResponse({
         'total_unread': total_unread,
         'cart_count': cart_count,
-        'total_notifications': total_unread + cart_count,
-        'by_conversation': unread_counts 
+        'egg_order_count': egg_order_count,   # 🔥 THIS WAS MISSING
+        'total_notifications': total_unread + cart_count + egg_order_count,
+        'by_conversation': unread_counts
     })
 
 @login_required(login_url='login')

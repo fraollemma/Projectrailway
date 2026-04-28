@@ -95,7 +95,6 @@ class ItemDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         item = self.object
-        # Add app_label and model_name for conversation URL
         context['app_label'] = item._meta.app_label
         context['model_name'] = item._meta.model_name
         return context
@@ -186,8 +185,17 @@ def egg_sellers(request):
         if form.cleaned_data.get('max_price'):
             sellers = sellers.filter(price_per_dozen__lte=form.cleaned_data['max_price'])
 
+    # Add order count to each seller
+    sellers_with_count = []
+    for seller in sellers:
+        egg_order_count = seller.orders.count()
+        sellers_with_count.append({
+            'seller': seller,
+            'egg_order_count': egg_order_count
+        })
+
     return render(request, 'poultryitems/egg_sellers.html', {
-        'sellers': sellers,
+        'sellers': sellers_with_count,
         'filter_form': form
     })
 
@@ -204,7 +212,6 @@ def add_egg_seller(request):
         seller = form.save(commit=False)
         seller.user = request.user
 
-        # FIX: no need for get_full_name or profile mandatory fields
         seller.owner_name = request.user.username
 
         seller.save()
@@ -247,7 +254,6 @@ def egg_seller_orders(request):
 @require_POST
 def place_egg_order(request):
     try:
-        # ✅ Handle BOTH JSON and form-data
         if request.content_type == "application/json":
             data = json.loads(request.body)
         else:
