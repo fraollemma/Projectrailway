@@ -10,7 +10,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
-
 import json
 from decimal import Decimal
 
@@ -178,10 +177,9 @@ def egg_sellers(request):
     form = EggSellerFilterForm(request.GET or None)
 
     if form.is_valid():
-        if form.cleaned_data.get('city'):
-            sellers = sellers.filter(
-                user__profile__city__icontains=form.cleaned_data['city']
-            )
+        sellers = sellers.filter(
+            user__profile__city__icontains=form.cleaned_data['city']
+        )
         if form.cleaned_data.get('min_price'):
             sellers = sellers.filter(price_per_dozen__gte=form.cleaned_data['min_price'])
 
@@ -230,20 +228,52 @@ def edit_egg_seller(request, pk):
         'form': form,
         'seller': seller
     })
-
-def egg_seller_orders(request):
-    return render(request, 'poultryitems/egg_seller_orders.html')
-
 @login_required
-def place_egg_order(request):
-    if request.method == 'POST':
-        seller_id = request.POST.get('seller_id')
-        customer_address = request.POST.get('customer_address')
-        quantity = request.POST.get('quantity')
-        messages.success(request, "Order placed successfully!")
-        return redirect('poultryitems:egg_sellers')
-    return redirect('poultryitems:egg_sellers')
+def egg_seller_orders(request):
+    seller = getattr(request.user, 'egg_seller', None)
 
+    if not seller:
+        return render(request, 'poultryitems/egg_seller_orders.html', {
+            'orders': []
+        })
+
+    orders = seller.orders.all().order_by('-order_date')
+
+    return render(request, 'poultryitems/egg_seller_orders.html', {
+        'orders': orders
+    })
+@login_required
+@require_POST
+def place_egg_order(request):
+    try:
+        seller_id = request.POST.get('seller_id')
+        seller = get_object_or_404(EggSeller, id=seller_id)
+
+        quantity = int(request.POST.get('quantity'))
+        address = request.POST.get('customer_address')
+        preferred_date = request.POST.get('preferred_delivery_date')
+        instructions = request.POST.get('special_instructions', '')
+
+        # Create order
+        order = EggOrder.objects.create(
+            seller=seller,
+            user=request.user,
+            customer_address=address,
+            quantity=quantity,
+            preferred_delivery_date=preferred_date,
+            special_instructions=instructions,
+        )
+
+        return JsonResponse({
+            "success": True,
+            "message": "Order placed successfully!"
+        })
+
+    except Exception as e:
+        return JsonResponse({
+            "success": False,
+            "message": str(e)
+        }, status=400)
 @login_required
 @require_POST
 def delete_egg_seller_ajax(request, pk):

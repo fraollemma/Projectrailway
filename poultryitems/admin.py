@@ -62,7 +62,7 @@ class ConsultationBookingAdmin(admin.ModelAdmin):
 
 
 # -------------------------
-# EGG SELLER ADMIN (FIXED)
+# EGG SELLER ADMIN
 # -------------------------
 
 @admin.register(EggSeller)
@@ -87,16 +87,33 @@ class EggSellerAdmin(admin.ModelAdmin):
     list_editable = ['is_verified', 'is_active']
 
 
+# -------------------------
+# EGG ORDER ADMIN (FIXED)
+# -------------------------
+
 @admin.register(EggOrder)
 class EggOrderAdmin(admin.ModelAdmin):
-    list_display = ['id', 'seller', 'customer_name', 'quantity', 'total_price', 'status', 'order_date']
+    list_display = [
+        'id',
+        'seller',
+        'user',                  # ✅ replaced 'customer_name' with 'user'
+        'quantity',
+        'total_price',
+        'status',
+        'order_date',
+    ]
     list_filter = ['status', 'order_date']
-    search_fields = ['customer_name', 'customer_email', 'customer_phone']
+    search_fields = [
+        'user__username',        # ✅ search by customer username
+        'user__email',           # optionally by email
+        'seller__user__username', # search by seller name
+        'customer_address',      # still searchable if needed
+    ]
     readonly_fields = ['order_date']
 
 
 # -------------------------
-# CHICKEN SELLER ADMIN (FIXED)
+# CHICKEN SELLER ADMIN
 # -------------------------
 
 @admin.register(ChickenSeller)

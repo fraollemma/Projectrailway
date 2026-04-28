@@ -273,26 +273,54 @@ class EggOrder(models.Model):
         DELIVERED = 'delivered', _('Delivered')
         CANCELLED = 'cancelled', _('Cancelled')
 
-    seller = models.ForeignKey(EggSeller, on_delete=models.CASCADE, related_name='orders')
-    customer_name = models.CharField(max_length=200)
-    customer_email = models.EmailField()
-    customer_phone = models.CharField(max_length=20)
+    seller = models.ForeignKey(
+        EggSeller,
+        on_delete=models.CASCADE,
+        related_name='orders'
+    )
+
+    # ✅ ADD THIS (VERY IMPORTANT)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='egg_orders'
+    )
+
     customer_address = models.TextField()
-    
-    quantity = models.PositiveIntegerField(help_text=_("Number of dozens ordered"))
-    total_price = models.DecimalField(max_digits=18, decimal_places=3)
+
+    quantity = models.PositiveIntegerField(
+        help_text=_("Number of dozens ordered")
+    )
+
+    total_price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        blank=True,
+        null=True
+    )
+
     special_instructions = models.TextField(blank=True)
-    
-    status = models.CharField(max_length=20, choices=Status.choices, default=Status.PENDING)
+
+    status = models.CharField(
+        max_length=20,
+        choices=Status.choices,
+        default=Status.PENDING
+    )
+
     order_date = models.DateTimeField(auto_now_add=True)
     preferred_delivery_date = models.DateField(null=True, blank=True)
 
     def __str__(self):
-        return f"Order #{self.id} - {self.customer_name}"
+        return f"Order #{self.id} - {self.user.username}"
 
     def save(self, *args, **kwargs):
-        if not self.total_price:
-            self.total_price = self.quantity * self.seller.price_per_dozen
+        # ✅ Enforce minimum order
+        if self.quantity < self.seller.min_order_quantity:
+            raise ValueError("Order below minimum quantity")
+
+        # ✅ Always calculate price
+        self.total_price = self.quantity * self.seller.price_per_dozen
+
         super().save(*args, **kwargs)
 
 class ChickenSeller(models.Model):

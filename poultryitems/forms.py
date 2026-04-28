@@ -49,13 +49,11 @@ class ItemForm(forms.ModelForm):
             files = self.files.getlist('sub_images')
             for f in files:
                 sub = SubImage(item=item)
-                sub.image = f   # assign first
-                sub.save()      # then save
+                sub.image = f
+                sub.save() 
 
         return item
 
-
-# consultancy forms
 
 class ConsultationBookingForm(forms.ModelForm):
     consultant = forms.ModelChoiceField(
@@ -94,8 +92,6 @@ class ConsultationBookingForm(forms.ModelForm):
         for field in self.fields:
             self.fields[field].widget.attrs.update({'class': 'form-control'})
 
-# eggs for sell forms
-
 class EggSellerForm(forms.ModelForm):
     class Meta:
         model = EggSeller
@@ -114,21 +110,24 @@ class EggSellerForm(forms.ModelForm):
             'min_order_quantity': _('Minimum Order (Dozen)'),
             'description': _('Description'),
         }
-
 class EggOrderForm(forms.ModelForm):
     class Meta:
         model = EggOrder
-        fields = ['customer_name', 'customer_email', 'customer_phone', 'customer_address', 
-                 'quantity', 'preferred_delivery_date', 'special_instructions']
+        fields = [
+            'customer_address',
+            'quantity',
+            'preferred_delivery_date',
+            'special_instructions'
+        ]
         widgets = {
             'customer_address': forms.Textarea(attrs={'rows': 3}),
-            'special_instructions': forms.Textarea(attrs={'rows': 3, 'placeholder': _('Any special delivery instructions...')}),
+            'special_instructions': forms.Textarea(attrs={
+                'rows': 3,
+                'placeholder': _('Any special delivery instructions...')
+            }),
             'preferred_delivery_date': forms.DateInput(attrs={'type': 'date'}),
         }
         labels = {
-            'customer_name': _('Your Name'),
-            'customer_email': _('Email Address'),
-            'customer_phone': _('Phone Number'),
             'customer_address': _('Delivery Address'),
             'quantity': _('Quantity (dozens)'),
             'preferred_delivery_date': _('Preferred Delivery Date'),
@@ -140,7 +139,7 @@ class EggSellerFilterForm(forms.Form):
     city = forms.CharField(required=False, label=_('City'))
     min_price = forms.DecimalField(required=False, label=_('Min Price'), max_digits=6, decimal_places=2)
     max_price = forms.DecimalField(required=False, label=_('Max Price'), max_digits=6, decimal_places=2)
-# chicken for sell
+
 class ChickenSellerForm(forms.ModelForm):
     class Meta:
         model = ChickenSeller

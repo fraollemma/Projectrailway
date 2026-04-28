@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block title %}
-    {% trans " MY Egg Orders | Ethiopian Sheger Market place" %}
+    {% trans "My Egg Orders | Ethiopian Sheger Marketplace" %}
 {% endblock %}
 
 {% block css %}
@@ -13,38 +13,61 @@
 {% block content %}
 <div class="orders-page">
 
+    <!-- Back Button -->
     <a href="{% url 'poultryitems:egg_sellers' %}" class="back-to-home">
-            <i class="fas fa-arrow-left"></i> {% trans "Back" %}
-        </a>
+        <i class="fas fa-arrow-left"></i> {% trans "Back" %}
+    </a>
 
-        
-    <h2>My Egg Orders</h2>
-    <table class="orders-table">
-        <thead>
-            <tr>
-                <th>Customer</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Quantity</th>
-                <th>Total Price</th>
-                <th>Date</th>
-            </tr> 
-        </thead>
-        <tbody>
-            {% for order in orders %}
-            <tr>
-                <td>{{ order.customer_name }}</td>
-                <td>{{ order.customer_email }}</td>
-                <td>{{ order.customer_phone }}</td>
-                <td>{{ order.quantity }}</td>
-                <td>{{ order.total_price }}</td>
-                <td>{{ order.order_date|date:"M d, Y H:i" }}</td>
-            </tr>
-            {% empty %}
-            <tr><td colspan="6">No orders yet.</td></tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <h2>{% trans "My Egg Orders" %}</h2>
+
+    <!-- Orders Table -->
+    <div class="table-wrapper">
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>{% trans "Customer" %}</th>
+                    <th>{% trans "Email" %}</th>
+                    <th>{% trans "Phone" %}</th>
+                    <th>{% trans "Address" %}</th>
+                    <th>{% trans "Quantity (dozens)" %}</th>
+                    <th>{% trans "Total Price" %}</th>
+                    <th>{% trans "Status" %}</th>
+                    <th>{% trans "Date" %}</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <!-- USER DATA (FIXED) -->
+                    <td>{{ order.user.username }}</td>
+                    <td>{{ order.user.email|default:"-" }}</td>
+                    <td>{{ order.user.phone_number|default:"-" }}</td>
+
+                    <!-- ORDER DATA -->
+                    <td>{{ order.customer_address|truncatechars:30 }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>{{ order.total_price }}</td>
+
+                    <!-- STATUS BADGE -->
+                    <td>
+                        <span class="status status-{{ order.status }}">
+                            {{ order.get_status_display }}
+                        </span>
+                    </td>
+
+                    <td>{{ order.order_date|date:"M d, Y H:i" }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="8" class="empty-state">
+                        {% trans "No orders yet." %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endblock %}
 

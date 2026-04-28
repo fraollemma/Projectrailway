@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const formData = new FormData(form);
         const jsonData = Object.fromEntries(formData.entries());
-
+ 
         fetch(form.action, {
             method: 'POST',
             headers: {
