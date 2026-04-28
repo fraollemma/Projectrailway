@@ -21,11 +21,11 @@
         {% if user.profile.profile_picture %}
             <img src="{{ user.profile.profile_picture.url }}"
                  alt="{% trans 'Profile Picture' %}"
-                 class="profile-picture">
+                 class="users-profile-picture">
         {% else %}
             <img src="{% static 'base/images/default.jpg' %}"
                  alt="{% trans 'Profile Picture' %}"
-                 class="profile-picture">
+                 class="users-profile-picture">
         {% endif %}
 
         <h3>{{ user.profile.farm_name|default:user.username }}</h3>
