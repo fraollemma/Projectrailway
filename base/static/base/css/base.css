@@ -1236,67 +1236,6 @@ li {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 375px) {
   header.header.header-admin {
     background-color: #ffffff !important;
@@ -1323,7 +1262,7 @@ li {
   }
 
   header.header.header-admin .header-actions {
-    gap: 12px; /* Reduced gap for mobile */
+    gap: 12px;
   }
 
   header.header.header-admin .logo img {
@@ -1331,38 +1270,112 @@ li {
     width: auto;
   }
 }
+
+/* Media query for small displays like mobile phones at 320px width */
 @media (max-width: 320px) {
-  .header-content {
-    /* 1. Use a slightly smaller padding to gain horizontal space */
-    padding: 8px 0;
-    
-    /* 2. Ensure items don't overlap if they grow */
-    flex-wrap: nowrap;
-    gap: 4px;
-    
-    /* 3. Vertically center everything perfectly */
+  /* 1. Compact Header Container */
+  header.header.header-admin {
+    height: 44px !important;
+    min-height: 44px !important;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
 
-  .logo {
-    /* 4. Ensure the logo doesn't shrink too much but also doesn't push actions off-screen */
-    flex-shrink: 1;
-    min-width: 0;
+  /* 2. Gain horizontal space by reducing padding */
+  header.header.header-admin .container {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    width: 100%;
   }
 
-  .logo-link img {
-    /* 5. Scale logo naturally if it's an image */
-    max-width: 100%;
-    height: auto;
+  /* 3. Extreme shrink for Logo Text and Image */
+  header.header.header-admin .logo {
+    font-size: 11px !important;
+    letter-spacing: -0.02em !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
   }
 
-  .header-actions {
-    /* 6. Tighten the gap between icons to save space */
-    gap: 8px; 
-    flex-shrink: 0; /* Keep actions from shrinking */
+  header.header.header-admin .logo img {
+    height: 28px !important;
+    width: auto !important;
   }
 
-  /* 7. Optional: Hide less critical items on extremely small screens */
-  /* .header-actions .some-optional-item { display: none; } */
+  /* 4. Micro Utility Icons (Cart, Account, Search) */
+  header.header.header-admin .header-content {
+    gap: 8px !important;
+  }
+
+  header.header.header-admin .header-actions {
+    display: flex;
+    gap: 6px !important;
+    align-items: center;
+  }
+
+  header.header.header-admin .header-actions i,
+  header.header.header-admin .header-actions svg {
+    font-size: 10px !important;
+  }
+
+  /* 5. Compact Navigation Toggle */
+  header.header.header-admin .nav-toggle {
+    padding: 4px !important;
+    margin: 0 !important;
+  }
+
+  header.header.header-admin .nav-toggle i,
+  header.header.header-admin .nav-toggle svg {
+    font-size: 12px !important;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 320px) {
+  /* 1. Ensure the parent button is the positioning anchor */
+  button#notificationBtn {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 2. Scale down and reposition the badge */
+  span#notificationBadge {
+    position: absolute !important;
+    top: -2px !important;      /* Adjusted for smaller icon */
+    right: -4px !important;    /* Tighter fit */
+    
+    font-size: 8px !important;  /* Micro text */
+    min-width: 12px !important; /* Smaller diameter */
+    height: 12px !important;
+    padding: 0 !important;
+    
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    border-radius: 50% !important;
+    background-color: #ff0000 !important; /* Keep it bright */
+    color: #ffffff !important;
+    box-shadow: 0 0 0 1px #fff; /* White border helps it pop on small icons */
+  }
 }
