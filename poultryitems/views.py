@@ -242,19 +242,32 @@ def egg_seller_orders(request):
     return render(request, 'poultryitems/egg_seller_orders.html', {
         'orders': orders
     })
+
 @login_required
 @require_POST
 def place_egg_order(request):
     try:
-        seller_id = request.POST.get('seller_id')
+        # ✅ Handle BOTH JSON and form-data
+        if request.content_type == "application/json":
+            data = json.loads(request.body)
+        else:
+            data = request.POST
+
+        seller_id = data.get('seller_id')
+        if not seller_id:
+            return JsonResponse({
+                "success": False,
+                "message": "Seller ID is missing"
+            }, status=400)
+
         seller = get_object_or_404(EggSeller, id=seller_id)
 
-        quantity = int(request.POST.get('quantity'))
-        address = request.POST.get('customer_address')
-        preferred_date = request.POST.get('preferred_delivery_date')
-        instructions = request.POST.get('special_instructions', '')
+        quantity = int(data.get('quantity'))
+        address = data.get('customer_address')
 
-        # Create order
+        preferred_date = data.get('preferred_delivery_date') or None
+        instructions = data.get('special_instructions', '')
+
         order = EggOrder.objects.create(
             seller=seller,
             user=request.user,
@@ -274,6 +287,7 @@ def place_egg_order(request):
             "success": False,
             "message": str(e)
         }, status=400)
+
 @login_required
 @require_POST
 def delete_egg_seller_ajax(request, pk):
