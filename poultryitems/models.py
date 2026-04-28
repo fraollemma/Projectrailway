@@ -52,7 +52,7 @@ class Item(models.Model):
         on_delete=models.CASCADE
     )
     main_image = models.ImageField(
-        upload_to='products/main_images/',
+        upload_to='upload_main_image/',
         default='products/default.jpg',
         blank=True
     )
@@ -112,7 +112,7 @@ class SubImage(models.Model):
         on_delete=models.CASCADE
     )
     image = models.ImageField(
-        upload_to='products/sub_images/',
+        upload_to='upload_sub_images/',
         default='products/default.jpg',
         blank=True
     )
