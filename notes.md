@@ -2171,3 +2171,10 @@ python manage.py makemigrations
 python manage.py migrate
 
 python manage.py shell
+
+from django.contrib.auth import get_user_model
+from poultryitems.models import EggOrder
+
+User = get_user_model()
+user = User.objects.get(username='zero')
+print(f"Orders for {user.username}: {EggOrder.objects.filter(user=user).count()}")
