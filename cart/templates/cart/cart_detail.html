@@ -8,81 +8,187 @@
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'cart/css/cart_detail.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock %}
 
 {% block content %}
-<div class="cart-container">
-    <div class="cart-header">
-        <h2>{% trans "Your Shopping Cart List" %}</h2>
-    </div>
-     
-    <div class="cart-content">
-        {% if cart.items.all %}
-            <ul class="cart-items">
-                {% for item in cart.items.all %}
-                <li class="cart-item">
-                    <img src="{{ item.product.main_image.url|default:'/static/base/images/default-poultry.jpg' }}" 
-                         alt="{{ item.product.name }}" 
-                         class="item-image"
-                         onerror="this.src='{% static 'base/images/default-poultry.jpg' %}'">
-                    
-                    <div class="item-details">
-                        <h3 class="item-name">{{ item.product.name }}</h3>
-                        <p class="item-price">${{ item.product.price }}</p>
-                        <p class="item-quantity">{% trans "Quantity:" %} {{ item.quantity }}</p>
+<div class="cart-page">
+    <div class="container">
+        <div class="cart-header">
+            <h1><i class="fas fa-shopping-cart"></i> {% trans "Your Shopping Cart" %}</h1>
+            <p class="cart-count">{{ cart.items.count }} {% trans "items in your cart" %}</p>
+        </div>
+        
+        <div class="cart-content">
+            {% if cart.items.all %}
+            <div class="cart-grid">
+                <!-- Cart Items List -->
+                <div class="cart-items-section">
+                    <div class="section-header">
+                        <h2>{% trans "Cart Items" %}</h2>
                     </div>
                     
-                    <div class="item-actions">
-                        <div class="quantity-controls">
-                            <button class="quantity-btn">-</button>
-                            <input type="number" class="quantity-input" value="{{ item.quantity }}" 
-                                   min="1" data-item-id="{{ item.id }}" data-old-value="{{ item.quantity }}">
-                            <button class="quantity-btn">+</button>
+                    <ul class="cart-items">
+                        {% for item in cart.items.all %}
+                        <li class="cart-item" data-item-id="{{ item.id }}">
+                            {% if item.product %}
+                                <div class="item-image-container">
+                                    {% if item.product.main_image %}
+                                        <img src="{{ item.product.main_image.url }}" 
+                                             alt="{{ item.product.name }}" 
+                                             class="item-image">
+                                    {% else %}
+                                        <div class="item-image-placeholder">
+                                            <i class="fas fa-image"></i>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="item-info">
+                                    <h3 class="item-name">{{ item.product.name }}</h3>
+                                    <p class="item-price">
+                                        <span class="currency">ETB</span> {{ item.product.price }}
+                                    </p>
+                                    <p class="item-subtotal">
+                                        Subtotal: <span>ETB {% widthratio item.product.price 1 item.quantity %}</span>
+                                    </p>
+                                </div>
+                                
+                                <div class="item-controls">
+                                    <div class="quantity-wrapper">
+                                        <button class="qty-btn qty-minus" data-action="decrease">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input type="number" class="qty-input" 
+                                               value="{{ item.quantity }}" 
+                                               min="1" max="99"
+                                               data-item-id="{{ item.id }}">
+                                        <button class="qty-btn qty-plus" data-action="increase">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <a href="{% url 'cart:remove_from_cart' item.id %}" 
+                                       class="remove-item-btn"
+                                       data-item-id="{{ item.id }}">
+                                        <i class="fas fa-trash-alt"></i>
+                                        <span>{% trans "Remove" %}</span>
+                                    </a>
+                                </div>
+                            {% else %}
+                                <div class="item-removed-notice">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <p>{% trans "This item is no longer available" %}</p>
+                                    <a href="{% url 'cart:remove_from_cart' item.id %}" class="btn-remove">
+                                        {% trans "Remove" %}
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <!-- Cart Summary -->
+                <div class="cart-summary-section">
+                    <div class="summary-card">
+                        <h3>{% trans "Order Summary" %}</h3>
+                        
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span class="summary-label">
+                                    <i class="fas fa-box"></i> {% trans "Subtotal" %}
+                                </span>
+                                <span class="summary-value">ETB {{ cart.total_price }}</span>
+                            </div>
+                            
+                            <div class="summary-row">
+                                <span class="summary-label">
+                                    <i class="fas fa-truck"></i> {% trans "Shipping" %}
+                                </span>
+                                <span class="summary-value free">{% trans "Free" %}</span>
+                            </div>
+                            
+                            <div class="summary-row discount-row">
+                                <span class="summary-label">
+                                    <i class="fas fa-tag"></i> {% trans "Discount" %}
+                                </span>
+                                <span class="summary-value">-ETB 0</span>
+                            </div>
                         </div>
                         
-                        <a href="{% url 'cart:remove_from_cart' item.id %}" class="remove-btn">
-                            <i class="fas fa-trash"></i> {% trans "Remove" %}
-                        </a>
+                        <div class="summary-total">
+                            <span class="total-label">{% trans "Total" %}</span>
+                            <span class="total-value">ETB {{ cart.total_price }}</span>
+                        </div>
+                        
+                        <div class="summary-actions">
+                            <a href="/" class="checkout-button">
+                                <i class="fas fa-lock"></i>
+                                {% trans "Proceed to Checkout" %}
+                            </a>
+                            
+                            <a href="{% url 'base:index' %}" class="continue-shopping-btn">
+                                <i class="fas fa-arrow-left"></i>
+                                {% trans "Continue Shopping" %}
+                            </a>
+                        </div>
+                        
+                        <div class="secure-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>{% trans "Secure Checkout" %}</span>
+                        </div>
                     </div>
-                </li>
-                {% endfor %}
-            </ul>
-            
-            <div class="cart-summary">
-                <div class="summary-row">
-                    <span class="summary-label">{% trans "Subtotal:" %}</span>
-                    <span class="summary-value">${{ cart.total_price }}</span>
                 </div>
-                
-                <div class="summary-row">
-                    <span class="summary-label">{% trans "Shipping:" %}</span>
-                    <span class="summary-value">$0.00</span>
-                </div>
-                
-                <div class="summary-row total-row">
-                    <span class="summary-label">{% trans "Total:" %}</span>
-                    <span class="summary-value total">${{ cart.total_price }}</span>
-                </div>
-                
-                <a href="/" class="checkout-btn">
-                    <i class="fas fa-lock"></i> {% trans "Proceed to Checkout" %}
-                </a>
-                
-                <a href="{% url 'base:index' %}" class="continue-shopping">
-                    <i class="fas fa-arrow-left"></i> {% trans "Continue Shopping" %}
-                </a>
             </div>
-        {% else %}
-            <div class="empty-cart">
+            {% else %}
+            <!-- Empty Cart -->
+            <div class="empty-cart-container">
                 <div class="empty-cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-shopping-basket"></i>
                 </div>
-                <p>{% trans "Your cart is empty." %}</p>
-                <a href="{% url 'base:index' %}" class="checkout-btn">
-                    <i class="fas fa-shopping-bag"></i> {% trans "Start Shopping" %}
+                <h2>{% trans "Your cart is empty" %}</h2>
+                <p>{% trans "Looks like you haven't added any items to your cart yet." %}</p>
+                
+                <a href="{% url 'base:index' %}" class="start-shopping-btn">
+                    <i class="fas fa-store"></i>
+                    {% trans "Start Shopping" %}
                 </a>
+                
+                <div class="empty-cart-features">
+                    <div class="feature">
+                        <i class="fas fa-shipping-fast"></i>
+                        <span>{% trans "Free Delivery" %}</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-undo"></i>
+                        <span>{% trans "Easy Returns" %}</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-headset"></i>
+                        <span>{% trans "24/7 Support" %}</span>
+                    </div>
+                </div>
             </div>
-        {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Remove Confirmation Modal -->
+<div id="removeModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <i class="fas fa-exclamation-circle"></i>
+            <h3>{% trans "Remove Item" %}</h3>
+        </div>
+        <div class="modal-body">
+            <p>{% trans "Are you sure you want to remove this item from your cart?" %}</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" id="cancelRemove">{% trans "Cancel" %}</button>
+            <a href="#" class="btn-confirm" id="confirmRemove">{% trans "Remove" %}</a>
+        </div>
     </div>
 </div>
 {% endblock %}
