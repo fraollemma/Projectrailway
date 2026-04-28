@@ -1144,6 +1144,346 @@ li {
     }
 }
 
+/* ========================================
+   MAX WIDTH 385px - Small Mobile Screens
+   ======================================== */
+@media (max-width: 385px) {
+    /* Base container adjustments */
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 8px;
+        margin: 0 auto;
+    }
+
+    /* Header optimizations */
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6px 4px;
+        gap: 4px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .logo-icon {
+        font-size: 1.4rem;
+        margin-right: 2px;
+    }
+
+    .logo-text {
+        font-size: 0.9rem;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+    .logo-text span {
+        font-size: 0.45rem;
+    }
+
+    .logo-text strong {
+        font-size: 0.85rem;
+    }
+
+    .logo-text .hub {
+        font-size: 0.6rem;
+    }
+
+    /* Header actions - compact */
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .action-item {
+        position: relative;
+    }
+
+    .action-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        padding: 4px;
+    }
+
+    .base_current-avatar,
+    .profile-picture {
+        width: 28px;
+        height: 28px;
+    }
+
+    .notification-badge {
+        top: -2px;
+        right: -2px;
+        font-size: 9px;
+        min-width: 14px;
+        height: 14px;
+        padding: 0 3px;
+    }
+
+    /* Navigation */
+    .nav-toggle {
+        display: block;
+        font-size: 1.2rem;
+        padding: 4px 6px;
+    }
+
+    .main-nav {
+        padding: 0;
+    }
+
+    .nav-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 4px 0;
+    }
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        padding: 3px 4px;
+        font-size: 0.7rem;
+        font-weight: 400;
+        gap: 2px;
+    }
+
+    .nav-link i {
+        font-size: 0.75rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .login-btn,
+    .user-btn {
+        padding: 4px 6px;
+        font-size: 0.75rem;
+        gap: 2px;
+    }
+
+    /* Dropdown menus */
+    .dropdown-menu {
+        min-width: 140px;
+        top: 32px;
+    }
+
+    .dropdown-menu a {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* Category navigation */
+    .category-nav {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .category-nav-header {
+        padding: 12px;
+    }
+
+    .category-nav-title {
+        font-size: 1rem;
+    }
+
+    .category-nav-link {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+        gap: 8px;
+    }
+
+    .category-nav-link i:first-child {
+        font-size: 0.9rem;
+        width: 18px;
+    }
+
+    .category-nav-dropdown .category-nav-link {
+        padding-left: 2.2rem;
+        font-size: 0.8rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 16px 0 0;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 8px;
+    }
+
+    .footer-title {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+
+    .footer-links a {
+        font-size: 0.8rem;
+    }
+
+    .footer-contact li {
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+    }
+
+    .footer-bottom {
+        padding: 12px 0;
+    }
+
+    .copyright {
+        font-size: 0.7rem;
+    }
+
+    /* Social links */
+    .social-links a {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Alerts */
+    .alert {
+        padding: 10px 12px;
+        margin: 12px auto;
+        width: calc(100% - 16px);
+        font-size: 0.85rem;
+    }
+
+    .alert:first-of-type {
+        margin-top: calc(50px + 12px);
+    }
+
+    /* Toast notifications */
+    .toast {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        width: auto;
+    }
+
+    /* Forms */
+    input,
+    textarea,
+    select {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+
+    /* Cards and seller grids */
+    .seller-cards,
+    .item-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 8px;
+    }
+
+    /* Modal adjustments */
+    .modal-content {
+        padding: 16px;
+        margin: 8px;
+        width: calc(100% - 16px);
+    }
+
+    /* Form groups */
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+    }
+
+    /* Buttons in forms */
+    .submit-btn,
+    .filter-btn,
+    .order-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Search and filter */
+    .search-filter,
+    .filter-form {
+        padding: 8px;
+    }
+
+    .filter-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Top bar */
+    .top-bar {
+        font-size: 11px;
+    }
+
+    .top-bar-content {
+        padding: 4px 0;
+        gap: 8px;
+    }
+
+    /* Language popup */
+    .language-popup {
+        padding: 16px;
+        margin: 8px;
+    }
+
+    .popup-content {
+        gap: 0.75rem;
+    }
+
+    /* Text utilities */
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+    }
+
+    /* Image sizing */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Card actions */
+    .card-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .card-actions a,
+    .card-actions button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 @media (max-width: 576px) {
     .login-btn span, .user-btn .username {
         display: none;
