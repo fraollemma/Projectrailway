@@ -28,7 +28,7 @@
 
                 <div class="card-image">
             <img src="{{ product.images.first.image.url }}" alt="{{ product.images.first.alt_text|default:product.name }}" loading="lazy">
-            <span class="carted-badge {% if product.is_carted %}carted{% endif %}">
+            <span class="carted-badge {% if product.is_carted %}show{% endif %}">
                 <i class="fas fa-shopping-cart"></i>
             </span>
     
