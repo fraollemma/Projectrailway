@@ -19,12 +19,21 @@
 
     <!-- Left: Main Image + Thumbnails -->
     <div class="image-section">
-      <img id="mainImage" src="{{ item.main_image.url }}" alt="{{ item.name }}" class="main-image" itemprop="image">
+      {% if item.main_image %}
+        <img id="mainImage" src="{{ item.main_image.url }}" alt="{{ item.name }}" class="main-image" itemprop="image">
+      {% else %}
+        <img id="mainImage" src="{% static 'poultryitems/images/product-chicken.jpg' %}" alt="{{ item.name }}" class="main-image" itemprop="image">
+      {% endif %}
+      {% if item.sub_images.exists %}
       <div class="thumbnail-row">
         {% for image in item.sub_images.all %}
-          <img src="{{ image.image.url }}" alt="Thumbnail {{ forloop.counter }}" class="thumbnail">
+          {% if image.image %}
+            <img src="{{ image.image.url }}" alt="Thumbnail {{ forloop.counter }}" class="thumbnail">
+          {% endif %}
         {% endfor %}
-        <!-- Add this for debugging only -->
+      </div>
+      {% endif %}
+      <!-- Add this for debugging only -->
 <div style="display:none;">
   Public ID: {{ item.main_image.public_id }}
   Generated URL: {{ item.main_image.url }}

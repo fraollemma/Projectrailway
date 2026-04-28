@@ -31,7 +31,11 @@
             <div class="poultry-card" data-category="{{ item.category.slug }}" data-price="{{ item.price }}">
 
                 <div class="card-image">
-            <img src="{{ item.main_image.url }}" alt="{{ item.name }}" loading="lazy">
+            {% if item.main_image %}
+                <img src="{{ item.main_image.url }}" alt="{{ item.name }}" loading="lazy">
+            {% else %}
+                <img src="{% static 'poultryitems/images/product-chicken.jpg' %}" alt="{{ item.name }}" loading="lazy">
+            {% endif %}
             <span class="carted-badge {% if item.is_carted %}carted{% endif %}">
                 <i class="fas fa-shopping-cart"></i>
             </span>
