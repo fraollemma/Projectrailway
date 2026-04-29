@@ -1,0 +1,57 @@
+.index-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.index-title {
+  font-size: 2.2rem;
+  margin-bottom: 32px;
+  color: #2d3748;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.index-container h2 {
+  margin: 18px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.index-container a {
+  text-decoration: none;
+  padding: 10px 28px;
+  border-radius: 6px;
+  color: #fff;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: inline-block;
+}
+
+.nvi {
+  background: #3182ce;
+}
+
+.nvi:hover {
+  background: #225ea8;
+}
+
+.alema {
+  background: #38a169;
+}
+
+.alema:hover {
+  background: #276749;
+}
+
+.ethiochicken {
+  background: #e53e3e;
+}
+
+.ethiochicken:hover {
+  background: #9b2c2c;
+}

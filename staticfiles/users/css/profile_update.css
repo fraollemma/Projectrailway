@@ -1,0 +1,143 @@
+/* Simplified Profile Update Styles */
+.simple-profile_update {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    background: linear-gradient(120deg, rgb(247, 247, 247) , rgb(190, 190, 190) , rgb(146, 145, 145));
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.521);
+}
+
+.simple-profile_update h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    background: #ffeeee;
+    color: #d32f2f; 
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.simple-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-row label {
+    font-weight: 500;
+    color: #555;
+}
+
+.readonly-field {
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    color: #666;
+}
+
+.form-row input,
+.form-row textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    background: white;
+}
+
+.form-row textarea {
+    background: #f0f0f0;
+    min-height: 70px;
+    resize: vertical;
+}
+.form-row textarea:active {
+    background: #ffffff;
+    min-height: 70px;
+    resize: vertical;
+}
+
+.avatar-preview {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 5px 0;
+}
+
+.avatar-preview img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.change-photo-btn,
+.upload-photo-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #f0f0f0;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #ddd;
+    transition: background 0.2s;
+}
+
+.change-photo-btn:hover,
+.upload-photo-btn:hover {
+    background: #a8a7a7;
+}
+
+.change-photo-btn input,
+.upload-photo-btn input {
+    display: none;
+}
+
+.save-btn {
+    align-self: center;
+    padding: 12px;
+    background: linear-gradient(to right, #2e4499, #3a5bef , #213272);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+    width: fit-content;
+}
+
+.save-btn:hover {
+    background: #3e60f8;
+}
+
+.errorlist {
+    color: #d32f2f;
+    font-size: 13px;
+    margin-top: 5px;
+    list-style: none;
+    padding-left: 0;
+}
+
+@media (max-width: 600px) {
+    .simple-profile_update {
+        margin: 15px;
+        padding: 20px;
+    }
+    
+    .avatar-preview {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

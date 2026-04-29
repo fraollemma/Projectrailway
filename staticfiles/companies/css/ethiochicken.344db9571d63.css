@@ -1,0 +1,539 @@
+:root {
+  --primary-color: #e84c3d; /* EthioChicken red */
+  --secondary-color: #2dcc70; /* Complementary green */
+  --dark-color: #2c3e50;
+  --light-color: #ecf0f1;
+  --text-color: #333;
+  --text-light: #7f8c8d;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+.ethiochicken-container {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.feed {
+  background-image: 
+  url('https://images.squarespace-cdn.com/content/v1/6532265431cb2861a8deb911/b0a7e409-b298-4a63-a4ad-5492ccd60891/Feed1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.breed {
+  background-image: 
+  url('https://images.squarespace-cdn.com/content/v1/6532265431cb2861a8deb911/affc2e17-923c-478c-bc8f-9ca38badef39/Chick_1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.support {
+  background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTazzu_3ptfH4qig_dulgbCh-h2MZ2TtVTA2A&s');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.training {
+  background-image: 
+  url('https://media.licdn.com/dms/image/v2/D4D22AQFUDDtjpzOeIw/feedshare-shrink_800/feedshare-shrink_800/0/1718968956482?e=2147483647&v=beta&t=NDeOI0ZnvOE2Z_92PBevlUOGAY6d0ZDW4drL-IcNrB8');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero-section {
+  padding: 4rem 1rem;
+  background-image: linear-gradient(rgba(20, 187, 28, 0.26), rgba(216, 185, 8, 0.26)), 
+  url('https://images.squarespace-cdn.com/content/v1/6532265431cb2861a8deb911/23704c53-6ad9-4d49-a83f-ffe927c5fc31/NewAboutUs.jpg?format=2500w');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1px 2px 4px rgba(6, 20, 22, 0.84);
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 20px;
+  z-index: 2;
+}
+
+.ethiochicken-logo {
+  max-height: 120px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.ethiochicken-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.cta-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-3px);
+}
+
+/* Section Styles */
+.section-header {
+  text-align: center;
+  margin: 50px 0 30px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-header i {
+  color: var(--secondary-color);
+}
+
+/* About Section */
+.about-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 40px;
+}
+
+.mission-vision {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.mission-card, .vision-card {
+  background-color: var(--light-color);
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.mission-card:hover, .vision-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mission-card i, .vision-card i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.mission-card h3, .vision-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+}
+
+/* Value Section */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.value-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-shadow: 1px 1px 1px rgb(255, 255, 255);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.value-card i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.value-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+}
+
+/* Contact Section */
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.contact-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.contact-card i {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.contact-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--dark-color);
+}
+
+.contact-card p {
+  margin-bottom: 10px;
+}
+
+.copy-btn, .call-btn, .map-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.copy-btn:hover, .call-btn:hover, .map-btn:hover {
+  background-color: var(--dark-color);
+}
+
+/* Testimonial Section */
+.testimonial-card {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.farmer-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.testimonial-text {
+  padding: 25px;
+}
+
+.testimonial-text p {
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.farmer-name {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-style: normal;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 400px;
+  }
+  
+  .ethiochicken-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .testimonial-card {
+    flex-direction: column;
+  }
+  
+  .farmer-img {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: 350px;
+  }
+  
+  .ethiochicken-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --primary-color: #e84c3d;
+  --secondary-color: #2dcc70; 
+  --dark-color: #2c3e50;
+  --light-color: #ecf0f1;
+  --text-color: #333;
+  --text-light: #7f8c8d;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: var(--light-color);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.ethiochicken-logo {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.ethiochicken-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--light-color);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--light-color);
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.cta-button:hover {
+  background-color: #c44133;
+  transform: translateY(-2px);
+}
+
+/* Price Update Section */
+.price-update-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: var(--dark-color);
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.price-update-content {
+  margin-bottom: 50px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.price-update-content:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.price-update-content h1 {
+  color: var(--primary-color);
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.price-update-content p {
+  color: var(--text-light);
+}
+
+/* Tables */
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+}
+
+.price-table th {
+  background-color: var(--dark-color);
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.price-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--light-color);
+}
+
+.price-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.price-table tr:hover {
+  background-color: rgba(233, 76, 61, 0.1);
+}
+
+.price-table td:nth-child(3) {
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: right;
+}
+
+.chickens {
+  color: var(--dark-color);
+  font-weight: 600;
+}
+
+.feed {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ethiochicken-title {
+    font-size: 2rem;
+  }
+  
+  .price-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .price-table th,
+  .price-table td {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: auto;
+    padding: 60px 20px;
+  }
+  
+  .price-update-content {
+    padding: 20px;
+  }
+  
+  .price-table {
+    font-size: 0.9rem;
+  }
+}

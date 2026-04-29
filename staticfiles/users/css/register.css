@@ -1,0 +1,118 @@
+/* General Styles */
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Registration Container */
+.registration-container {
+    align-self: center;
+    max-width: 500px;
+    margin: 50px auto;
+    
+    background: linear-gradient(130deg, #a0a0a0,#cdffec, #abf8e5, #8ef5ca, #62ffbe, #40fcad, #a0a0a0);
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.registration-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+/* Form Styles */
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-group small {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.form-group .errorlist {
+    color: #d9534f;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Button Styles */
+.registerbtn {
+    align-self: center;
+    background: linear-gradient(130deg, #007bff,#007bff, #0056b3 , #004494, #003366, #002244, #007bff);
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.459);
+}
+
+.registerbtn:hover {
+    background-color: #0056b3;
+    padding: 10px 20px;
+    box-shadow: 0 9px 10px rgba(0, 0, 0, 0.664);
+}
+
+/* Login Link */
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .registration-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .btn-primary {
+        font-size: 14px;
+    }
+}
