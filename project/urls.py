@@ -14,7 +14,7 @@ urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('', include('base.urls')),
     path('users/', include('users.urls')),
-    path('items/', include('poultryitems.urls')),
+    path('items/', include('poultryfarm.urls')),
     path('conversation/', include('conversation.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),

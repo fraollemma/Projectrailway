@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'poultryitems/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'poultryfarm/css/index.css' %}">
 {% endblock %}
   
 {% block content %}
@@ -15,7 +15,7 @@
 <section class="hero">
 
     <video autoplay muted loop playsinline class="hero__video">
-        <source src="{% static 'poultryitems/videos/chicken-farm.mp4' %}" type="video/mp4">
+        <source src="{% static 'poultryfarm/videos/chicken-farm.mp4' %}" type="video/mp4">
     </video>
 
     <div class="hero__overlay"></div>
@@ -36,7 +36,7 @@
                 {% trans "Explore more" %}
             </a>
 
-            <a href="{% url 'poultryitems:item_list' %}" class="button button--secondary">
+            <a href="{% url 'poultryfarm:item_list' %}" class="button button--secondary">
                 {% trans "Browse items" %}
             </a>
 
@@ -58,34 +58,34 @@
         
         <article class="service-card" id="item-back">
             <div class="service-card__image">
-                <img src="{% static 'poultryitems/images/chicken-meat.jpg' %}" alt="Poultry Meat">
+                <img src="{% static 'poultryfarm/images/chicken-meat.jpg' %}" alt="Poultry Meat">
             </div>
             <div class="service-card__content">
                 <h3 class="service-card__title">Poultry Items</h3>
                 <p class="service-card__description">Healthy, antibiotic-free chicken meat processed under the highest hygiene standards.</p>
-                <a href="{% url 'poultryitems:item_list' %}" class="button button--secondary">View More</a>
+                <a href="{% url 'poultryfarm:item_list' %}" class="button button--secondary">View More</a>
             </div> 
         </article>
 
         <article class="service-card" id="eggs-back">
             <div class="service-card__image">
-                <img src="{% static 'poultryitems/images/eggs.jpg' %}" alt="Fresh Eggs">
+                <img src="{% static 'poultryfarm/images/eggs.jpg' %}" alt="Fresh Eggs">
             </div>
             <div class="service-card__content">
                 <h3 class="service-card__title">Fresh Eggs Supply</h3>
                 <p class="service-card__description">We provide farm-fresh eggs daily from our free-range chickens, ensuring quality and nutrition.</p>
-                <a href="{% url 'poultryitems:egg_sellers' %}" class="button button--secondary">View More</a>
+                <a href="{% url 'poultryfarm:egg_sellers' %}" class="button button--secondary">View More</a>
             </div>
         </article>
         
         <article class="service-card" id="chicks-back">
             <div class="service-card__image">
-                <img src="{% static 'poultryitems/images/hatchery.jpg' %}" alt="Day-old Chicks">
+                <img src="{% static 'poultryfarm/images/hatchery.jpg' %}" alt="Day-old Chicks">
             </div>
             <div class="service-card__content">
                 <h3 class="service-card__title">Poultry Chickens</h3>
                 <p class="service-card__description">High-quality, vaccinated day-old chicks from top breeds for your poultry farming needs.</p>
-                <a href="{% url 'poultryitems:chicken_sellers_list' %}" class="button button--secondary">View More</a>
+                <a href="{% url 'poultryfarm:chicken_sellers_list' %}" class="button button--secondary">View More</a>
             </div>
         </article>
 
@@ -101,7 +101,7 @@
     <div class="training-cards">
         <div class="training-card">
             <div class="training-card__image-container">
-                <img src="{% static 'poultryitems/images/training.jpg' %}" alt="Poultry Training" class="training-card__image">
+                <img src="{% static 'poultryfarm/images/training.jpg' %}" alt="Poultry Training" class="training-card__image">
                 <div class="training-card__overlay"></div>
             </div> 
             <div class="training-card__content">
@@ -114,13 +114,13 @@
                     <li class="training-card__feature">Marketing & business development</li>
                 </ul>
                 <p class="training-card__description">Comprehensive program for beginners and experienced farmers to maximize poultry farming success.</p>
-                <a href="{% url 'poultryitems:poultry_trainings' %}" class="button button--primary training-card__button">Enroll Now</a>
+                <a href="{% url 'poultryfarm:poultry_trainings' %}" class="button button--primary training-card__button">Enroll Now</a>
             </div>
         </div>
         
         <div class="training-card">
             <div class="training-card__image-container">
-                <img src="{% static 'poultryitems/images/training.jpg' %}" alt="Poultry Consultancy" class="training-card__image">
+                <img src="{% static 'poultryfarm/images/training.jpg' %}" alt="Poultry Consultancy" class="training-card__image">
                 <div class="training-card__overlay"></div>
             </div>
             <div class="training-card__content">
@@ -133,7 +133,7 @@
                     <li class="training-card__feature">Bird health & welfare</li>
                 </ul>
                 <p class="training-card__description">Professional consultancy services for all aspects of poultry farming management and operations.</p>
-                <a href="{% url 'poultryitems:veterinary_consultancy' %}" class="button button--primary training-card__button">Get Started</a>
+                <a href="{% url 'poultryfarm:veterinary_consultancy' %}" class="button button--primary training-card__button">Get Started</a>
             </div>
         </div>
     </div>
@@ -161,7 +161,7 @@
 {% endblock %}
 
 {% block js %}
-<script src="{% static 'poultryitems/js/index.js' %}"></script>
+<script src="{% static 'poultryfarm/js/index.js' %}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const observer = new IntersectionObserver((entries) => {

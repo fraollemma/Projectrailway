@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'poultryitems/css/forms.css' %}">
+<link rel="stylesheet" href="{% static 'poultryfarm/css/forms.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -32,8 +32,8 @@
         
         <div class="form-actions">
             <button type="submit" class="submit-btn">{% trans "Update Profile" %}</button>
-            <a href="{% url 'poultryitems:chicken_sellers_list' %}" class="cancel-btn">{% trans "Cancel" %}</a>
-            <a href="{% url 'poultryitems:delete_seller' seller.id %}" class="btn-danger">{% trans "Delete Profile" %}</a>
+            <a href="{% url 'poultryfarm:chicken_sellers_list' %}" class="cancel-btn">{% trans "Cancel" %}</a>
+            <a href="{% url 'poultryfarm:delete_seller' seller.id %}" class="btn-danger">{% trans "Delete Profile" %}</a>
         </div>
     </form>
 </div>

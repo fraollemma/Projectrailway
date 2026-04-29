@@ -19,7 +19,7 @@
                 <div class="slide-content">
                     <h1>{% trans "Poultry Farm" %}</h1>
                     <p>{% trans "Eggs, Chickens, poultry Equipment and tools for sell" %}</p>
-                    <a href="{% url 'poultryitems:index' %}" class="btn-primary">{% trans "poultry" %}</a>
+                    <a href="{% url 'poultryfarm:index' %}" class="btn-primary">{% trans "poultry" %}</a>
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
                 <p>{{ clothing_count }}+ {% trans "posted" %}</p>
             </a>
 
-            <a href="{% url 'poultryitems:item_list' %}" class="category-card">
+            <a href="{% url 'poultryfarm:item_list' %}" class="category-card">
                 <div class="category-icon">
                     <i class="fas fa-feather-alt"></i>
                 </div>
@@ -194,7 +194,7 @@
                                 {% elif product.product_type == 'clothing' %}
                                     {% url 'clothings:clothing_detail' product.slug %}
                                 {% elif product.product_type == 'poultry' %}
-                                    {% url 'poultryitems:item_detail' product.id %}
+                                    {% url 'poultryfarm:item_detail' product.id %}
                                 {% endif %}" 
                                 class="view-details">
                                 <div class="fraol">
@@ -362,7 +362,7 @@
                                     {% elif product.product_type == 'clothing' %}
                                         {% url 'clothings:clothing_detail' product.slug %}
                                     {% elif product.product_type == 'poultry' %}
-                                        {% url 'poultryitems:item_detail' product.id %}
+                                        {% url 'poultryfarm:item_detail' product.id %}
                                     {% endif %}" 
                                     class="view-details">
                                     <div class="fraol">

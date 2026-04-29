@@ -7,14 +7,14 @@
 {% endblock %} 
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'poultryitems/css/egg_sellers.css' %}">
+<link rel="stylesheet" href="{% static 'poultryfarm/css/egg_sellers.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock %} 
 
 {% block content %}
 <div class="egg-sellers-container">
 
-    <a href="{% url 'poultryitems:index' %}#eggs-back" class="back-to-home">
+    <a href="{% url 'poultryfarm:index' %}#eggs-back" class="back-to-home">
             <i class="fas fa-arrow-left"></i> {% trans "Back" %}
         </a>
         
@@ -28,15 +28,15 @@
                 </div>
                 <div class="filter-buttons">
                     <button type="submit" class="filter-btn">{% trans "Find" %}</button>
-                    <a href="{% url 'poultryitems:egg_sellers' %}" class="clear-btn">{% trans "Cancel" %}</a>
+                    <a href="{% url 'poultryfarm:egg_sellers' %}" class="clear-btn">{% trans "Cancel" %}</a>
                 </div>
             </form>
     </div>
 
     <div class="user-links">
-    <a href="{% url 'poultryitems:egg_seller_orders' %}" class="btn-order">My Orders</a>
+    <a href="{% url 'poultryfarm:egg_seller_orders' %}" class="btn-order">My Orders</a>
     
-        <a href="{% url 'poultryitems:add_egg_seller' %}" class="btn-success">
+        <a href="{% url 'poultryfarm:add_egg_seller' %}" class="btn-success">
             <i class="fas fa-plus"></i> {% trans "Add Egg Seller" %}
         </a>
     </div>
@@ -86,12 +86,12 @@
                     </button>
 
                     {% if user.is_staff %}
-                    <a href="{% url 'poultryitems:edit_egg_seller' seller.pk %}" class="btn-edit">{% trans "Edit" %}</a>
+                    <a href="{% url 'poultryfarm:edit_egg_seller' seller.pk %}" class="btn-edit">{% trans "Edit" %}</a>
                     <button 
     class="btn-delete" 
     data-seller-id="{{ seller.pk }}" 
     data-seller-name="{{ seller.farm_name }}"
-    data-delete-url="{% url 'poultryitems:delete_egg_seller_ajax' seller.pk %}">
+    data-delete-url="{% url 'poultryfarm:delete_egg_seller_ajax' seller.pk %}">
     {% trans "Delete" %}
 </button>
 
@@ -125,7 +125,7 @@
     <div class="modal-content">
         <span class="close-modal">&times;</span>
         <h3>{% trans "Place Your Order" %}</h3>
-        <form id="orderForm" action="{% url 'poultryitems:place_egg_order' %}" method="post">
+        <form id="orderForm" action="{% url 'poultryfarm:place_egg_order' %}" method="post">
             {% csrf_token %}
             <input type="hidden" id="modalSellerId" name="seller_id">
             <div class="form-group">
@@ -143,5 +143,5 @@
 {% endblock %}
 
 {% block js %}
-<script src="{% static 'poultryitems/js/egg_sellers.js' %}"></script>
+<script src="{% static 'poultryfarm/js/egg_sellers.js' %}"></script>
 {% endblock %}

@@ -1,4 +1,4 @@
-// poultryitems/static/poultryitems/js/veterinary_consultancy.js
+// poultryfarm/static/poultryfarm/js/veterinary_consultancy.js
 document.addEventListener('DOMContentLoaded', function() {
     // Modal functionality
     const modal = document.getElementById('bookingModal');

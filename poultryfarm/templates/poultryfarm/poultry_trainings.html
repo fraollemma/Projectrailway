@@ -7,13 +7,13 @@
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'poultryitems/css/poultry_trainings.css' %}">
+<link rel="stylesheet" href="{% static 'poultryfarm/css/poultry_trainings.css' %}">
 {% endblock %}
  
 {% block content %}
 <section class="training-container fade-in">
 
-    <a href="{% url 'poultryitems:index' %}" class="back-to-home">
+    <a href="{% url 'poultryfarm:index' %}" class="back-to-home">
             <i class="fas fa-arrow-left"></i> {% trans "Back" %}
         </a>
         
@@ -25,15 +25,15 @@
         <h2 class="section-title">Our Training Programs</h2>
         <div class="image-grid">
             <div class="image-card">
-                <img src="{% static 'poultryitems/images/image.jpg' %}" alt="Meat Chickens">
+                <img src="{% static 'poultryfarm/images/image.jpg' %}" alt="Meat Chickens">
                 <div class="image-overlay">Meat Chickens Training</div>
             </div>
             <div class="image-card">
-                <img src="{% static 'poultryitems/images/image.jpg' %}" alt="Layer Chickens">
+                <img src="{% static 'poultryfarm/images/image.jpg' %}" alt="Layer Chickens">
                 <div class="image-overlay">Layer Chickens Training</div>
             </div>
             <div class="image-card">
-                <img src="{% static 'poultryitems/images/image.jpg' %}" alt="Dual Purpose Chickens">
+                <img src="{% static 'poultryfarm/images/image.jpg' %}" alt="Dual Purpose Chickens">
                 <div class="image-overlay">Dual Purpose Chickens Training</div>
             </div>
         </div>
@@ -83,11 +83,11 @@
     </div>
     <div class="image-grid">
         <div class="image-card">
-            <img src="{% static 'poultryitems/images/image.jpg' %}" alt="CBE Bank">
+            <img src="{% static 'poultryfarm/images/image.jpg' %}" alt="CBE Bank">
             <div class="image-overlay">CBE Bank</div>
         </div>
         <div class="image-card">
-            <img src="{% static 'poultryitems/images/image.jpg' %}" alt="Telebirr">
+            <img src="{% static 'poultryfarm/images/image.jpg' %}" alt="Telebirr">
             <div class="image-overlay">Telebirr Payment</div>
         </div>
     </div>
@@ -95,5 +95,5 @@
 {% endblock %}
 
 {% block js %}
-<script src="{% static 'poultryitems/js/poultry_trainings.js' %}"></script>
+<script src="{% static 'poultryfarm/js/poultry_trainings.js' %}"></script>
 {% endblock %}

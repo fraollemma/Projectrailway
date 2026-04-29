@@ -131,7 +131,7 @@
                                 {{ request.user.get_unread_message_count|default:0 }}
                             </span>
                         </a>
-                        <a href="{% url 'poultryitems:egg_seller_orders' %}" class="notification-item">
+                        <a href="{% url 'poultryfarm:egg_seller_orders' %}" class="notification-item">
                             <i class="fas fa-list"></i>
                             <span class="notification-label">{% trans "Egg Orders" %}</span>
                             <span class="notification-count" id="eggOrderCount">
@@ -221,39 +221,39 @@
             <ul id="poultryMenu" class="category-nav-dropdown">
                 
                 <li class="category-nav-item">
-                    <a href="{% url 'poultryitems:index' %}" class="category-nav-link">
+                    <a href="{% url 'poultryfarm:index' %}" class="category-nav-link">
                         <i class="fas fa-list"></i>
                         <span class="link-text">{% trans "Poultry Section" %}</span>
                     </a>
                 </li>
                 
                 <li class="category-nav-item">
-                    <a href="{% url 'poultryitems:item_list' %}" class="category-nav-link">
+                    <a href="{% url 'poultryfarm:item_list' %}" class="category-nav-link">
                         <i class="fas fa-list"></i>
                         <span class="link-text">{% trans "Poultry Items" %}</span>
                     </a>
                 </li>
                 
                 <li class="category-nav-item">
-                    <a href="{% url 'poultryitems:egg_sellers' %}" class="category-nav-link">
+                    <a href="{% url 'poultryfarm:egg_sellers' %}" class="category-nav-link">
                         <i class="fas fa-list"></i>
                         <span class="link-text">{% trans "Poultry Eggs" %}</span>
                     </a>
                 </li>
                 <li class="category-nav-item">
-                    <a href="{% url 'poultryitems:chicken_sellers_list' %}" class="category-nav-link">
+                    <a href="{% url 'poultryfarm:chicken_sellers_list' %}" class="category-nav-link">
                         <i class="fas fa-list"></i>
                         <span class="link-text">{% trans "Poultry Chickens" %}</span>
                     </a>
                 </li>
                 <li class="category-nav-item">
-                    <a href="{% url 'poultryitems:poultry_trainings' %}" class="category-nav-link">
+                    <a href="{% url 'poultryfarm:poultry_trainings' %}" class="category-nav-link">
                         <i class="fas fa-list"></i>
                         <span class="link-text">{% trans "Poultry Farm Training" %}</span>
                     </a>
                 </li>
                 <li class="category-nav-item">
-                    <a href="{% url 'poultryitems:veterinary_consultancy' %}" class="category-nav-link">
+                    <a href="{% url 'poultryfarm:veterinary_consultancy' %}" class="category-nav-link">
                         <i class="fas fa-list"></i>
                         <span class="link-text">{% trans "Poultry Farm Consultancy" %}</span>
                     </a>
@@ -311,7 +311,7 @@
             <ul id="userMenu" class="category-nav-dropdown">
                 
                 <li class="category-nav-item">
-                    <a href="{% url 'poultryitems:egg_seller_orders' %}"
+                    <a href="{% url 'poultryfarm:egg_seller_orders' %}"
                         class="category-nav-link">
                         <i class="fas fa-list"></i>
                         <span class="link-text">{% trans "My Orders" %}</span>
@@ -444,8 +444,8 @@
                 <i class="fas fa-cow"></i>{% trans " Dairy" %}
             </a>
         </li>
-        <li class="nav-item mega-menu {% if request.resolver_match.app_name == 'poultryitems' %}active{% endif %}">
-            <a href="{% url 'poultryitems:index' %}" class="nav-link">
+        <li class="nav-item mega-menu {% if request.resolver_match.app_name == 'poultryfarm' %}active{% endif %}">
+            <a href="{% url 'poultryfarm:index' %}" class="nav-link">
                 <i class="fas fa-feather-alt"></i>{% trans " Poultry" %}
             </a>
         </li>
@@ -488,7 +488,7 @@
                     <h4 class="footer-title">{% trans "Categories" %}</h4>
                     <ul class="footer-links">
                         <li><a href="{% url 'clothings:clothing_list' %}">{% trans "Dairy products" %}</a></li>
-                        <li><a href="{% url 'poultryitems:item_list' %}">{% trans "Poultry Item" %}</a></li>
+                        <li><a href="{% url 'poultryfarm:item_list' %}">{% trans "Poultry Item" %}</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

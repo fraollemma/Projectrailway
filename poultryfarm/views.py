@@ -70,7 +70,7 @@ def share_item(request, pk):
 
 def index(request):
     featured_products = Item.objects.all().order_by('-created_at')[:3]
-    return render(request, 'poultryitems/index.html', {
+    return render(request, 'poultryfarm/index.html', {
         'featured_products': featured_products
     })
 
@@ -81,7 +81,7 @@ def index(request):
 
 class ItemListView(ListView):
     model = Item
-    template_name = 'poultryitems/item_list.html'
+    template_name = 'poultryfarm/item_list.html'
     context_object_name = 'item'
     paginate_by = 12
     ordering = ['-created_at']
@@ -89,7 +89,7 @@ class ItemListView(ListView):
 
 class ItemDetailView(DetailView):
     model = Item
-    template_name = 'poultryitems/item_detail.html'
+    template_name = 'poultryfarm/item_detail.html'
     context_object_name = 'item'
 
     def get_context_data(self, **kwargs):
@@ -103,13 +103,13 @@ class ItemDetailView(DetailView):
 class ItemCreateView(LoginRequiredMixin, CreateView):
     model = Item
     form_class = ItemForm
-    template_name = 'poultryitems/item_create.html'
+    template_name = 'poultryfarm/item_create.html'
 
     def form_valid(self, form):
         form.instance.created_by = self.request.user
         item = form.save()
         messages.success(self.request, "Item created successfully!")
-        return redirect('poultryitems:item_detail', pk=item.pk)
+        return redirect('poultryfarm:item_detail', pk=item.pk)
 
 
 def item_edit(request, pk):
@@ -118,16 +118,16 @@ def item_edit(request, pk):
 
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('poultryitems:item_detail', pk=item.pk)
+        return redirect('poultryfarm:item_detail', pk=item.pk)
 
-    return render(request, 'poultryitems/item_create.html', {'form': form})
+    return render(request, 'poultryfarm/item_create.html', {'form': form})
 
 
 def item_delete(request, pk):
     item = get_object_or_404(Item, pk=pk)
     if request.method == "POST":
         item.delete()
-    return redirect('poultryitems:item_list')
+    return redirect('poultryfarm:item_list')
 
 
 # ----------------------------
@@ -136,7 +136,7 @@ def item_delete(request, pk):
 
 def veterinary_consultancy(request):
     consultants = Consultant.objects.filter(is_available=True).prefetch_related('services')
-    return render(request, 'poultryitems/veterinary_consultancy.html', {
+    return render(request, 'poultryfarm/veterinary_consultancy.html', {
         'consultants': consultants,
         'form': ConsultationBookingForm()
     })
@@ -188,7 +188,7 @@ def egg_sellers(request):
     # Add order count annotation to each seller
     sellers = sellers.annotate(egg_order_count=Count('orders'))
 
-    return render(request, 'poultryitems/egg_sellers.html', {
+    return render(request, 'poultryfarm/egg_sellers.html', {
         'sellers': sellers,
         'filter_form': form
     })
@@ -198,7 +198,7 @@ def egg_sellers(request):
 def add_egg_seller(request):
     if hasattr(request.user, 'egg_seller'):
         messages.error(request, "You already have a seller profile.")
-        return redirect('poultryitems:egg_sellers')
+        return redirect('poultryfarm:egg_sellers')
 
     form = EggSellerForm(request.POST or None)
 
@@ -211,9 +211,9 @@ def add_egg_seller(request):
         seller.save()
 
         messages.success(request, "Egg seller created!")
-        return redirect('poultryitems:egg_sellers')
+        return redirect('poultryfarm:egg_sellers')
 
-    return render(request, 'poultryitems/add_egg_seller.html', {'form': form})
+    return render(request, 'poultryfarm/add_egg_seller.html', {'form': form})
 
 
 @login_required
@@ -223,9 +223,9 @@ def edit_egg_seller(request, pk):
 
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('poultryitems:egg_sellers')
+        return redirect('poultryfarm:egg_sellers')
 
-    return render(request, 'poultryitems/edit_egg_seller.html', {
+    return render(request, 'poultryfarm/edit_egg_seller.html', {
         'form': form,
         'seller': seller
     })
@@ -234,13 +234,13 @@ def egg_seller_orders(request):
     seller = getattr(request.user, 'egg_seller', None)
 
     if not seller:
-        return render(request, 'poultryitems/egg_seller_orders.html', {
+        return render(request, 'poultryfarm/egg_seller_orders.html', {
             'orders': []
         })
 
     orders = seller.orders.all().order_by('-order_date')
 
-    return render(request, 'poultryitems/egg_seller_orders.html', {
+    return render(request, 'poultryfarm/egg_seller_orders.html', {
         'orders': orders
     })
 
@@ -310,7 +310,7 @@ def chicken_sellers_list(request):
             Q(description__icontains=search)
         )
 
-    return render(request, 'poultryitems/chicken_sellers.html', {
+    return render(request, 'poultryfarm/chicken_sellers.html', {
         'sellers': sellers
     })
 
@@ -323,9 +323,9 @@ def register_seller(request):
         seller = form.save(commit=False)
         seller.user = request.user
         seller.save()
-        return redirect('poultryitems:chicken_sellers_list')
+        return redirect('poultryfarm:chicken_sellers_list')
 
-    return render(request, 'poultryitems/register_seller.html', {'form': form})
+    return render(request, 'poultryfarm/register_seller.html', {'form': form})
 
 
 # ----------------------------
@@ -338,21 +338,21 @@ def poultry_trainings(request):
     if request.method == "POST" and form.is_valid():
         form.save()
         messages.success(request, "Enrollment successful!")
-        return redirect('poultryitems:poultry_trainings')
+        return redirect('poultryfarm:poultry_trainings')
 
-    return render(request, 'poultryitems/poultry_trainings.html', {'form': form})
+    return render(request, 'poultryfarm/poultry_trainings.html', {'form': form})
 
 
 @login_required
 def poultry_trainees(request):
     trainees = TrainingEnrollment.objects.all().order_by('-created_at')
-    return render(request, 'poultryitems/poultry_trainees.html', {
+    return render(request, 'poultryfarm/poultry_trainees.html', {
         'trainees': trainees
     })
 
 def chicken_seller_detail(request, seller_id):
     seller = get_object_or_404(ChickenSeller, id=seller_id)
-    return render(request, 'poultryitems/chicken_seller_detail.html', {'seller': seller})
-edit_seller = login_required(lambda request, seller_id: render(request, 'poultryitems/edit_seller.html', {}))
-delete_seller = login_required(lambda request, seller_id: redirect('poultryitems:chicken_sellers_list'))
+    return render(request, 'poultryfarm/chicken_seller_detail.html', {'seller': seller})
+edit_seller = login_required(lambda request, seller_id: render(request, 'poultryfarm/edit_seller.html', {}))
+delete_seller = login_required(lambda request, seller_id: redirect('poultryfarm:chicken_sellers_list'))
 delete_seller_ajax = login_required(lambda request, seller_id: JsonResponse({'success': True}))

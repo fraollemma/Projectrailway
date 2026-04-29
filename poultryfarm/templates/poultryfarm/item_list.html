@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'poultryitems/css/item_list.css' %}">
+<link rel="stylesheet" href="{% static 'poultryfarm/css/item_list.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock %}
 
@@ -29,7 +29,7 @@
                 </button>
             </div>
             <div class="add-item">
-            <a href="{% url 'poultryitems:item_create' %}" class="add-item-btn">
+            <a href="{% url 'poultryfarm:item_create' %}" class="add-item-btn">
                 <i class="fas fa-plus-circle"></i>
                 {% trans "Sell Item" %}
             </a>
@@ -44,11 +44,11 @@
                 <article class="poultry-card" data-category="{{ item.category.slug|default:'all' }}" data-price="{{ item.price }}">
                     <!-- Image Section -->
                     <div class="card-image">
-                        <a href="{% url 'poultryitems:item_detail' item.pk %}">
+                        <a href="{% url 'poultryfarm:item_detail' item.pk %}">
                             {% if item.main_image %}
                                 <img src="{{ item.main_image.url }}" alt="{{ item.name }}" loading="lazy">
                             {% else %}
-                                <img src="{% static 'poultryitems/images/product-chicken.jpg' %}" alt="{{ item.name }}" loading="lazy">
+                                <img src="{% static 'poultryfarm/images/product-chicken.jpg' %}" alt="{{ item.name }}" loading="lazy">
                             {% endif %}
                         </a>
                         
@@ -92,7 +92,7 @@
                         </div>
                         
                         <h3 class="item-title">
-                            <a href="{% url 'poultryitems:item_detail' item.pk %}">{{ item.name }}</a>
+                            <a href="{% url 'poultryfarm:item_detail' item.pk %}">{{ item.name }}</a>
                         </h3>
                         
                         <div class="item-price">
@@ -101,7 +101,7 @@
                         </div>
                         
                         <div class="card-footer">
-                            <a href="{% url 'poultryitems:item_detail' item.pk %}" class="view-btn">
+                            <a href="{% url 'poultryfarm:item_detail' item.pk %}" class="view-btn">
                                 {% trans "Detail" %}
                                 <i class="fas fa-arrow-right"></i>
                             </a>
@@ -109,10 +109,10 @@
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser or request.user == item.created_by %}
                                 <div class="admin-actions">
-                                    <a href="{% url 'poultryitems:item_edit' item.pk %}" class="edit-btn" title="Edit">
+                                    <a href="{% url 'poultryfarm:item_edit' item.pk %}" class="edit-btn" title="Edit">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="{% url 'poultryitems:item_delete' item.pk %}" method="POST" class="delete-form">
+                                    <form action="{% url 'poultryfarm:item_delete' item.pk %}" method="POST" class="delete-form">
                                         {% csrf_token %}
                                         <button type="submit" class="delete-btn" title="Delete" onclick="return confirm('Delete this item?')">
                                             <i class="fas fa-trash-alt"></i>
@@ -134,7 +134,7 @@
                 </div>
                 <h2>{% trans "No poultry items available yet" %}</h2>
                 <p>{% trans "Be the first to list your poultry products!" %}</p>
-                <a href="{% url 'poultryitems:item_create' %}" class="cta-button">
+                <a href="{% url 'poultryfarm:item_create' %}" class="cta-button">
                     <i class="fas fa-plus"></i>
                     {% trans "Add Your First Item" %}
                 </a>
@@ -181,5 +181,5 @@
 {% endblock %}
 
 {% block js %}
-<script src="{% static 'poultryitems/js/item_list.js' %}"></script>
+<script src="{% static 'poultryfarm/js/item_list.js' %}"></script>
 {% endblock %} 

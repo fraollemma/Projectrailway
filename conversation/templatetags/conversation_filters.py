@@ -44,7 +44,7 @@ def get_item_image_url(item):
     print(f"DEBUG: Getting image for {item.__class__.__name__}")
     
     try:
-        # PoultryItems: Item model has main_image field
+        # poultryfarm: Item model has main_image field
         if hasattr(item, 'main_image') and item.main_image:
             print("DEBUG: Using main_image field")
             return item.main_image.url

@@ -102,7 +102,7 @@ def new_conversation(request, app_label, model_name, object_id):
             'clothings': 'clothings:clothing_detail',
             'electronics': 'electronics:electronic_detail',
             'houses': 'houses:house_detail',
-            'poultryitems': 'poultryitems:item_detail',
+            'poultryfarm': 'poultryfarm:item_detail',
         }
         if app_label in redirect_map:
             if hasattr(item, 'slug'):

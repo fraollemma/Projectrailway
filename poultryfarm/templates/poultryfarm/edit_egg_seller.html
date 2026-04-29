@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'poultryitems/css/forms.css' %}">
+<link rel="stylesheet" href="{% static 'poultryfarm/css/forms.css' %}">
 <style>
 .form-container {
     max-width: 800px;
@@ -226,7 +226,7 @@
 <div class="form-container">
     <div class="form-header">
         <h1>{% trans "Edit Egg Seller" %}</h1>
-        <a href="{% url 'poultryitems:egg_sellers' %}" class="back-link">
+        <a href="{% url 'poultryfarm:egg_sellers' %}" class="back-link">
             <i class="fas fa-arrow-left"></i> {% trans "Back to Sellers List" %}
         </a>
     </div>
@@ -547,10 +547,10 @@
 
         <!-- Form Actions -->
         <div class="form-actions">
-            <a href="{% url 'poultryitems:delete_egg_seller_ajax' seller.pk %}" class="delete-btn">
+            <a href="{% url 'poultryfarm:delete_egg_seller_ajax' seller.pk %}" class="delete-btn">
                 <i class="fas fa-trash"></i> {% trans "Delete Seller" %}
             </a>
-            <a href="{% url 'poultryitems:egg_sellers' %}" class="cancel-btn">
+            <a href="{% url 'poultryfarm:egg_sellers' %}" class="cancel-btn">
                 <i class="fas fa-times"></i> {% trans "Cancel" %}
             </a>
             <button type="submit" class="submit-btn">

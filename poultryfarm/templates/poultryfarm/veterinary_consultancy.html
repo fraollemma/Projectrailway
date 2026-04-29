@@ -1,4 +1,4 @@
-<!-- poultryitems/veterinary_consultancy.html -->
+<!-- poultryfarm/veterinary_consultancy.html -->
 {% extends 'base/base.html' %}
 {% load static %}
 {% load i18n %}
@@ -8,14 +8,14 @@
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'poultryitems/css/veterinary_consultancy.css' %}">
+<link rel="stylesheet" href="{% static 'poultryfarm/css/veterinary_consultancy.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock %}
 
 {% block content %}
 <div class="veterinary-consultancy">
     
-    <a href="{% url 'poultryitems:index' %}" class="back-to-home">
+    <a href="{% url 'poultryfarm:index' %}" class="back-to-home">
             <i class="fas fa-arrow-left"></i> {% trans "Back" %}
         </a>
 
@@ -175,7 +175,7 @@
 {% endblock %}
 
 {% block js %}
-<script src="{% static 'poultryitems/js/veterinary_consultancy.js' %}"></script>
+<script src="{% static 'poultryfarm/js/veterinary_consultancy.js' %}"></script>
 <script>
 // CSRF token setup for AJAX
 function getCookie(name) {

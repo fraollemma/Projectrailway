@@ -1,4 +1,4 @@
-# poultryitems/forms.py
+# poultryfarm/forms.py
 from django import forms
 from .models import Item, SubImage
 from django.utils.translation import gettext_lazy as _

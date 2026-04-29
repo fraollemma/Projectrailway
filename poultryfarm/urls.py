@@ -1,4 +1,4 @@
-# poultryitems/urls.py
+# poultryfarm/urls.py
 from django.urls import path, include
 from . import views
 from .views import (
@@ -11,7 +11,7 @@ from .views import (
 from rest_framework.routers import DefaultRouter
 from poultryfarm.api.views import ItemListAPIView, ItemDetailAPIView
 
-app_name = 'poultryitems'
+app_name = 'poultryfarm'
 
 urlpatterns = [
     path('', ItemListView.as_view(), name='item_list'),

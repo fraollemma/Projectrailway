@@ -1,4 +1,4 @@
-// poultryitems/static/poultryitems/js/poultry_trainings.js
+// poultryfarm/static/poultryfarm/js/poultry_trainings.js
 document.addEventListener('DOMContentLoaded', function() {
     
     // Scroll animations

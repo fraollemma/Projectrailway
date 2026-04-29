@@ -7,13 +7,13 @@
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'poultryitems/css/egg_seller_orders.css' %}">
+<link rel="stylesheet" href="{% static 'poultryfarm/css/egg_seller_orders.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="orders-page">
 
-    <a href="{% url 'poultryitems:egg_sellers' %}" class="back-to-home">
+    <a href="{% url 'poultryfarm:egg_sellers' %}" class="back-to-home">
         <i class="fas fa-arrow-left"></i> {% trans "Back" %}
     </a>
 
@@ -77,5 +77,5 @@
 {% endblock %}
 
 {% block js %}
-<script src="{% static 'poultryitems/js/egg_seller_orders.js' %}"></script>
+<script src="{% static 'poultryfarm/js/egg_seller_orders.js' %}"></script>
 {% endblock %}

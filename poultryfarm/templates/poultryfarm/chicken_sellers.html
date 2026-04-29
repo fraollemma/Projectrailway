@@ -7,14 +7,14 @@
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'poultryitems/css/chicken_sellers.css' %}">
+<link rel="stylesheet" href="{% static 'poultryfarm/css/chicken_sellers.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock %}
 
 {% block content %}
 <div class="chicken-sellers-page">
 
-    <a href="{% url 'poultryitems:index' %}" class="back-to-home">
+    <a href="{% url 'poultryfarm:index' %}" class="back-to-home">
             <i class="fas fa-arrow-left"></i> {% trans "Back" %}
         </a>
 
@@ -22,7 +22,7 @@
 
     <!-- 🔍 Search & Filter -->
     <div class="search-filter">
-        <form method="GET" action="{% url 'poultryitems:chicken_sellers_list' %}" class="filter-form">
+        <form method="GET" action="{% url 'poultryfarm:chicken_sellers_list' %}" class="filter-form">
             <div class="filter-grid">
                 <p>
                     <input type="text" name="search" id="searchInput" placeholder="{% trans 'Search chicken sellers...' %}" value="{{ search_query }}">
@@ -38,14 +38,14 @@
             </div>
             <div class="filter-buttons">
                 <button type="submit" class="filter-btn">{% trans "Find" %}</button>
-                <a href="{% url 'poultryitems:chicken_sellers_list' %}" class="clear-btn">{% trans "Cancel" %}</a>
+                <a href="{% url 'poultryfarm:chicken_sellers_list' %}" class="clear-btn">{% trans "Cancel" %}</a>
             </div>
         </form>
     </div>
 
     <!-- ➕ Register Seller -->
     <div class="register-seller">
-        <a href="{% url 'poultryitems:register_seller' %}" class="register-button">
+        <a href="{% url 'poultryfarm:register_seller' %}" class="register-button">
             <i class="fas fa-user-plus"></i> {% trans "Register as a Chicken Seller" %}
         </a>
     </div>
@@ -108,7 +108,7 @@
             <div class="user-actions">
                 <a href="tel:{{ seller.contact_number }}" class="btn btn-order">{% trans "Order Now" %}</a>
                 {% if user.is_authenticated and user == seller.user or user.is_staff %}
-                    <a href="{% url 'poultryitems:edit_seller' seller.id %}" class="btn btn-edit"><i class="fas fa-edit"></i></a>
+                    <a href="{% url 'poultryfarm:edit_seller' seller.id %}" class="btn btn-edit"><i class="fas fa-edit"></i></a>
                     <button class="btn btn-delete" data-seller-id="{{ seller.id }}" data-seller-name="{{ seller.farm_name }}"><i class="fas fa-trash"></i></button>
                 {% endif %}
             </div>
@@ -138,5 +138,5 @@
 {% endblock %}
 
 {% block js %}
-<script src="{% static 'poultryitems/js/chicken_sellers.js' %}"></script>
+<script src="{% static 'poultryfarm/js/chicken_sellers.js' %}"></script>
 {% endblock %}
