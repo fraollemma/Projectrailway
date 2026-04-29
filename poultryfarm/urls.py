@@ -16,10 +16,10 @@ app_name = 'poultryfarm'
 
 urlpatterns = [
     # ✅ poultry homepage
-    path('', views.index, name='index', permanent=True),
+    path('', views.index, name='index'),
 
     # ✅ items list
-    path('items/', ItemListView.as_view(), name='item_list', permanent=True),
+    path('items/', ItemListView.as_view(), name='item_list'),
 
     # item detail
     path('items/<int:pk>/', ItemDetailView.as_view(), name='item_detail'),
