@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'corsheaders',
     
     'base',
-    'poultryitems',
+    'poultryfarm',
     'conversation',
     'users',
     'contact',
