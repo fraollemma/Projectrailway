@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'users',
     'contact',
     'companies',
-    'vehicles',
+    'dairyfarm',
     'clothings',
     'admin_app',
     'electronics.apps.ElectronicsConfig',

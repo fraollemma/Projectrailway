@@ -62,7 +62,7 @@ def share_item(request, pk):
     item.share_count += 1
     item.save()
     return JsonResponse({'shares': item.share_count})
-
+ 
 
 # ----------------------------
 # INDEX
@@ -82,11 +82,11 @@ def index(request):
 class ItemListView(ListView):
     model = Item
     template_name = 'poultryfarm/item_list.html'
-    context_object_name = 'item'
+    context_object_name = 'poultry'
     paginate_by = 12
     ordering = ['-created_at']
 
-
+ 
 class ItemDetailView(DetailView):
     model = Item
     template_name = 'poultryfarm/item_detail.html'
@@ -140,7 +140,7 @@ def veterinary_consultancy(request):
         'consultants': consultants,
         'form': ConsultationBookingForm()
     })
-
+ 
 
 @require_POST
 @csrf_exempt

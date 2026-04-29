@@ -1,0 +1,50 @@
+<!-- dairyfarm/vehicle_form -->
+{% extends "base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+    {% trans " Vehicle Form | Ethiopian Sheger Market place" %}
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'dairyfarm/css/vehicle_form.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="vehicle-form-container">
+    <h2 class="form-title">Add or Edit Vehicle</h2>
+
+    <form method="POST" enctype="multipart/form-data" id="vehicleForm">
+        {% csrf_token %}
+        
+        <div class="form-grid">
+            {% for field in form.visible_fields %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.help_text %}
+                        <small class="help">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% for error in field.errors %}
+                        <div class="error">{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Image preview -->
+        <div class="image-preview-section">
+            <label>Main Image Preview:</label>
+            <img id="imagePreview" src="#" alt="Preview" style="display:none;" />
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Vehicle</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'dairyfarm/js/vehicle_form.js' %}"></script>
+{% endblock %}

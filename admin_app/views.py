@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from houses.models import House
-from vehicles.models import Vehicle
+from dairyfarm.models import Vehicle
 from electronics.models import Product
 from clothings.models import ClothingItem
 from poultryfarm.models import Item, EggSeller, ChickenSeller, Consultant, TrainingEnrollment
@@ -38,8 +38,8 @@ def manage_houses(request):
 
 
 @admin_required
-def manage_vehicles(request):
-    return render(request, "admin_app/manage_vehicles.html", {"vehicles": Vehicle.objects.all()})
+def manage_dairy(request):
+    return render(request, "admin_app/manage_dairy.html", {"dairyfarm": Vehicle.objects.all()})
 
 
 @admin_required

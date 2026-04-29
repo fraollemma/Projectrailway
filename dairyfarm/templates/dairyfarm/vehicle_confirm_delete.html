@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'vehicles/css/vehicle_confirm_delete.css' %}">
+<link rel="stylesheet" href="{% static 'dairyfarm/css/vehicle_confirm_delete.css' %}">
 {% endblock %}
  
 {% block content %}
@@ -21,10 +21,10 @@
 <form method="post">
     {% csrf_token %}
     <button type="submit" class="btn btn-danger">{% trans "Delete" %}</button>
-    <a href="{% url 'vehicles:vehicle_detail' vehicle.slug %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
+    <a href="{% url 'dairyfarm:vehicle_detail' vehicle.slug %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
 </form>
 {% endblock %}
 
 {% block js %}
-<script src="{% static 'vehicles/js/vehicle_confirm_delete.js' %}"></script>
+<script src="{% static 'dairyfarm/js/vehicle_confirm_delete.js' %}"></script>
 {% endblock %}

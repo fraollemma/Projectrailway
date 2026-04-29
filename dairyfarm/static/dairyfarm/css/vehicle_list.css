@@ -1,5 +1,4 @@
-/* Container */
-.product-list-container {
+.product-container {
     max-width: 1200px;
     margin: 1rem auto;
     padding: 0 0.5rem;
@@ -8,7 +7,6 @@
     background-color: rgb(235, 235, 235);
 }
 
-/* Header */
 .list-header {
     display: flex;
     justify-content: flex-end;
@@ -22,7 +20,7 @@
     font-weight: 600;
     border-radius: 6px;
     text-decoration: none;
-    box-shadow: 2px 8px 100px rgb(0, 123, 255);
+    box-shadow: 2 8px 100px rgb(0, 123, 255);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     display: inline-flex;
     align-items: center;
@@ -37,40 +35,17 @@
     color: white;
 }
 
-/* Grid Layout (same as dairyfarm) */
+.product-listings {
+    display: flex;
+    flex-direction: column;
+}
+
 .product-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
     gap: 1.5rem;
-    grid-template-columns: repeat(1, 1fr);
 }
 
-@media (max-width: 320px) {
-    .product-grid { grid-template-columns: repeat(1, 1fr);}
-}
-@media (min-width: 321px) and (max-width: 350px) {
-    .product-grid { grid-template-columns: repeat(1, 1fr);}
-}
-@media (min-width: 351px) and (max-width: 650px) {
-    .product-grid { grid-template-columns: repeat(2, 1fr); 
-    gap: 1.25rem;
-}
-}
-@media (min-width: 651px) and (max-width: 870px) {
-    .product-grid { grid-template-columns: repeat(3, 1fr);
-    gap: 0.85rem;
-}
-}
-@media (min-width: 871px) and (max-width: 1200px) {
-    .product-grid { grid-template-columns: repeat(4, 1fr);}
-}
-@media (min-width: 1201px) and (max-width: 1399px) {
-    .product-grid { grid-template-columns: repeat(5, 1fr);}
-}
-@media (min-width: 1400px) {
-    .product-grid { grid-template-columns: repeat(6, 1fr);}
-}
-
-/* Card */
 .product-card {
     background: white;
     border-radius: 12px;
@@ -84,11 +59,10 @@
 
 .product-card:hover,
 .product-card:focus-within {
-    transform: translateY(-6px);
+    transform: translateY(5px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
-/* Image */
 .card-image {
     position: relative;
     width: 100%;
@@ -108,19 +82,6 @@
     transform: scale(1.05);
 }
 
-/* No image fallback */
-.no-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f0f0f0;
-    color: #888;
-    font-size: 3rem;
-    width: 100%;
-    height: 100%;
-}
-
-/* Cart badge */
 .carted-badge {
     position: absolute;
     top: 10px;
@@ -137,9 +98,9 @@
     cursor: default;
     box-shadow: 0 0 8px rgb(255, 255, 255);
     transition: color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
     z-index: 5;
 }
-
 .carted-badge.carted {
     color: #ffda36;
     animation: pulseCart 1.5s infinite ease-in-out;
@@ -157,7 +118,6 @@
     }
 }
 
-/* Like/Share buttons */
 .interaction-buttons {
     position: absolute;
     bottom: 0.25rem;
@@ -193,82 +153,131 @@
     font-weight: 600;
 }
 
-.interaction-button.liked {
-    border-color: var(--primary);
-    background: #02fce7ff;
-    color: red;
-}
-
-/* Card body */
-.card-body {
-    padding: 1.1rem;
+.card-content {
+    padding: 0.4rem 1.1rem 0.2rem 1.1rem;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.card-price {
+.product-meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.product-meta i {
+    color: #888;
+}
+
+h3 {
+    margin: 0 0 0 0;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #222;
+}
+
+.product-specs {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 0;
+}
+
+.product-specs i {
+    color: #666;
+}
+
+.product-price {
     font-size: 1.3rem;
     font-weight: 700;
     color: #007bff;
     margin-bottom: 0.5rem;
 }
 
-.card-title {
-    font-weight: 700;
-    font-size: 1.15rem;
-    color: #222;
-    margin: 0 0 0.5rem;
-}
-
-.card-location {
-    display: flex;
+.view-details {
+    color: #007bff;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 0.5rem;
+    gap: 0.4rem;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.card-details {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9rem;
-    color: #444;
-    margin-bottom: 1rem;
-}
-
-/* Footer */
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 0.5rem;
-    border-top: 1px solid #ddd;
-}
-
-.view-btn {
+    .fraol {
     background: #007bff;
-    color: white;
-    padding: 0.3rem 0.7rem;
+    color: rgba(236, 236, 236, 0.952);
+    padding: 0.2rem 0.7rem;
     font-weight: 600;
     border-radius: 6px;
     text-decoration: none;
     box-shadow: 2px 5px 10px rgba(9, 84, 163, 0.87);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.view-btn:hover,
-.view-btn:focus {
+.fraol:hover,
+.fraol:focus {
     background: #0056b3;
     box-shadow: 3px 8px 12px rgba(0, 123, 255, 0.986);
+    outline: none;
+    color: white;
 }
 
-/* Edit/Delete buttons */
+.view-details::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.view-details:hover,
+.view-details:focus {
+    color: #0056b3;
+    outline: none;
+}
+
+.view-details:hover::after,
+.view-details:focus::after {
+    width: 100%;
+}
+
+.view-details i {
+    transition: transform 0.3s ease;
+}
+
+.view-details:hover i,
+.view-details:focus i {
+    transform: translateX(5px);
+}
+
+
 .card-actions {
+    margin-top: auto;
     display: flex;
-    gap: 0.5rem;
+    justify-content: flex-end;
+    gap: 12px;
 }
 
 .edit-btn, .delete-btn {
@@ -279,20 +288,37 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.edit-btn:hover {
+.edit-btn:hover,
+.edit-btn:focus {
     background-color: #ffc107;
     color: #212529;
+    outline: none;
 }
 
-.delete-btn:hover {
+.delete-btn:hover,
+.delete-btn:focus {
     background-color: #dc3545;
     color: white;
+    outline: none;
 }
 
-/* Pagination */
+.no-results {
+    text-align: center;
+    color: #888;
+    margin-top: 4rem;
+    font-size: 1.3rem;
+}
+
+.no-results i {
+    font-size: 3rem;
+    margin-bottom: 0.6rem;
+    color: #ccc;
+}
+
 .pagination {
     margin-top: 2rem;
     text-align: center;
+    user-select: none;
 }
 
 .page-link, .current-page {
@@ -302,6 +328,7 @@
     font-weight: 600;
     font-size: 1rem;
     text-decoration: none;
+    user-select: none;
     display: inline-block;
     min-width: 36px;
     transition: background-color 0.25s ease;
@@ -309,14 +336,75 @@
 
 .page-link {
     color: #007bff;
+    border: 1px solid transparent;
 }
 
-.page-link:hover {
+.page-link:hover,
+.page-link:focus {
     background-color: #007bff;
     color: white;
+    outline: none;
 }
 
 .current-page {
     background-color: #007bff;
     color: white;
+    border: 1px solid #0056b3;
+    cursor: default;
+}
+
+.product-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (max-width: 320px) {
+  .product-grid {grid-template-columns: repeat(1, 1fr);}
+}
+@media (min-width: 321px) and (max-width: 350px) {
+  .product-grid {grid-template-columns: repeat(1, 1fr);}
+}
+@media (min-width: 351px) and (max-width: 570px) {
+  .product-grid {grid-template-columns: repeat(2, 1fr);}
+}
+@media (min-width: 571px) and (max-width: 870px) {
+  .product-grid {grid-template-columns: repeat(3, 1fr);}
+}
+@media (min-width: 871px) and (max-width: 1200px) {
+  .product-grid {grid-template-columns: repeat(4, 1fr);}
+}
+@media (min-width: 1201px) and (max-width: 1399px) {
+  .product-grid {grid-template-columns: repeat(5, 1fr);}
+}
+@media (min-width: 1400px) {
+  .product-grid {grid-template-columns: repeat(6, 1fr);}
+}
+
+.product-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.15);
+}
+.pagination {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.interaction-button.liked {
+    border-color: var(--primary);
+    background: #02fce7ff;
+    color: red;
 }

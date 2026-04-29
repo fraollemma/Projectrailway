@@ -49,7 +49,7 @@ def get_item_image_url(item):
             print("DEBUG: Using main_image field")
             return item.main_image.url
         
-        # VEHICLES: Specific handling for Vehicle model
+        # dairyfarm: Specific handling for Vehicle model
         elif item.__class__.__name__ == 'Vehicle':
             print("DEBUG: Processing Vehicle item")
             if hasattr(item, 'images'):

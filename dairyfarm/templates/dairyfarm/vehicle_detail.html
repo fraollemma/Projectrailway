@@ -1,0 +1,141 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{% trans " Vehicle Vehicle Detail | Ethiopian Sheger Market place" %}
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'dairyfarm/css/vehicle_detail.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery-bundle.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="product-detail-container">
+    <!-- Main Content -->
+    <div class="product-content">
+        <div class="image-gallery">
+            <div class="main-image-container">
+                <img id="mainVehicleImage" src="{{ vehicle.images.first.image.url }}" alt="Main Image" class="main-image" />
+                <span class="carted-badge {% if vehicle.is_carted %}carted{% endif %}">
+                    <i class="fas fa-shopping-cart"></i>
+                </span>
+            </div>
+            <div class="thumbnail-gallery">
+                {% for image in vehicle.images.all %}
+                    <img src="{{ image.image.url }}" alt="Thumbnail" class="thumbnail" onclick="updateMainImage(this)">
+                {% endfor %}
+            </div>
+
+            <!-- conversation Buttons -->
+<a href="{% url 'conversation:new' app_label='dairyfarm' model_name='vehicle' object_id=vehicle.id %}" class="start-conversation-btn">{% trans "Start Conversation" %}</a>
+
+            <div class="interaction-buttons">
+                    <button type="button"
+    class="interaction-button like-button {% if has_liked %}liked{% endif %}"
+        aria-label="Like this item"
+        data-item-id="{{ vehicle.id }}"
+        data-action="like">
+    <i class="fas fa-thumbs-up"></i>
+    <span class="interaction-count">{{ vehicle.like_count }}</span>
+</button>
+                    
+                    <button type="button" class="interaction-button share-btn" onclick="shareVehicle('{{ vehicle.id }}')">
+                        <i class="fas fa-share-alt"></i>
+                        {{ vehicle.share_count }}
+                        <span class="btn-text">{% trans "Shares" %}</span>
+                    </button>
+                </div>
+        </div>
+
+        <!-- Vehicle Information -->
+        <div class="product-info">
+            <h1>{{ vehicle.make }} {{ vehicle.model }} ({{ vehicle.year }})</h1>
+            
+            <div class="price-section">
+                <span class="price">${{ vehicle.price }}</span>
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span class="spec-label">{% trans "Mileage" %}</span>
+                    <span class="spec-value">{{ vehicle.mileage }} km</span>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-cog"></i>
+                    <span class="spec-label">{% trans "Engine" %}</span>
+                    <span class="spec-value">{{ vehicle.engine }}</span>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-gas-pump"></i>
+                    <span class="spec-label">{% trans "Fuel Type" %}</span>
+                    <span class="spec-value">{{ vehicle.fuel_type }}</span>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-palette"></i>
+                    <span class="spec-label">{% trans "Color" %}</span>
+                    <span class="spec-value">{{ vehicle.color }}</span>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-cogs"></i>
+                    <span class="spec-label">{% trans "Transmission" %}</span>
+                    <span class="spec-value">{{ vehicle.transmission }}</span>
+                </div>
+                <div class="spec-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="spec-label">{% trans "Location" %}</span>
+                    <span class="spec-value">{{ vehicle.location }}</span>
+                </div>
+            </div>
+
+            <div class="description-section">
+                <h3>{% trans "Description" %}</h3>
+                <p>{{ vehicle.description|linebreaks }}</p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                
+                <!-- Seller Info Section -->
+    {% if vehicle.created_by %}
+    <div class="seller-section">
+        <a href="{% url 'users:seller_profile' vehicle.created_by.id %}" class="seller-link">
+            {% if vehicle.created_by.profile.profile_picture %}
+                <img src="{{ vehicle.created_by.profile.profile_picture.url }}" 
+                     alt="Seller profile picture" 
+                     class="seller-avatar" width="60" height="60" loading="lazy">
+            {% else %}
+                <div class="seller-avatar default-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            {% endif %}
+        </a>
+        <div class="seller-info">
+            <h2 id="seller-heading" class="seller-name">
+                {{ vehicle.created_by.profile.user_name|default:vehicle.created_by.phone_number }}
+            </h2>
+            <span class="seller-label">{% trans "Seller" %}</span>
+        </div>
+    </div>
+    {% endif %}
+                <a href="{% url 'cart:add_to_cart' app_label model_name vehicle.id %}" class="add-to-cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    {% trans "Add to Cart" %}
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-zoom/2.7.1/lg-zoom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lg-fullscreen/2.7.1/lg-fullscreen.min.js"></script>
+<script src="{% static 'dairyfarm/js/vehicle_detail.js' %}"></script>
+{% endblock %}

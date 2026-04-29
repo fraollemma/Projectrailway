@@ -1,4 +1,4 @@
-// vehicles/static/vehicles/js/vehicle_list.js
+// dairyfarm/static/dairyfarm/js/vehicle_list.js
 document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.like-button').forEach(button => {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 async function toggleLike(vehicleId, button) {
     try {
-        const response = await fetch(`/en/vehicles/vehicle/${vehicleId}/like/`, {
+        const response = await fetch(`/en/dairyfarm/vehicle/${vehicleId}/like/`, {
             method: 'POST',
             headers: {
                 'X-CSRFToken': getCookie('csrftoken'),
@@ -72,7 +72,7 @@ async function shareVehicle(vehicleId, button) {
 
 async function sendShareRequest(vehicleId, button) {
     try {
-        const response = await fetch(`/en/vehicles/vehicle/${vehicleId}/share/`, {
+        const response = await fetch(`/en/dairyfarm/vehicle/${vehicleId}/share/`, {
             method: 'POST',
             headers: {
                 'X-CSRFToken': getCookie('csrftoken'),

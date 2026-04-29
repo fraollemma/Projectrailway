@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 async function toggleLikeDetail(vehicleId, button) {
     try {
-        const response = await fetch(`/en/vehicles/vehicle/${vehicleId}/like/`, {
+        const response = await fetch(`/en/dairyfarm/vehicle/${vehicleId}/like/`, {
             method: 'POST',
             headers: {
                 'X-CSRFToken': getCookie('csrftoken'),
@@ -82,7 +82,7 @@ async function shareVehicleDetail(vehicleId, button) {
 
 async function sendShareRequestDetail(vehicleId, button) {
     try {
-        const response = await fetch(`/en/vehicles/vehicle/${vehicleId}/share/`, {
+        const response = await fetch(`/en/dairyfarm/vehicle/${vehicleId}/share/`, {
             method: 'POST',
             headers: {
                 'X-CSRFToken': getCookie('csrftoken'),

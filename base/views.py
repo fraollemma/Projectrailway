@@ -7,7 +7,7 @@ from conversation.models import Conversation
 from .forms import MessageForm
 from .models import Message
 from houses.models import House
-from vehicles.models import Vehicle
+from dairyfarm.models import Vehicle
 from electronics.models import Product as ElectronicsProduct
 from clothings.models import ClothingItem as Clothing
 from poultryfarm.models import Item
@@ -20,7 +20,7 @@ from datetime import datetime
 from django.db.models import Q
 from django.shortcuts import render
 from houses.models import House
-from vehicles.models import Vehicle
+from dairyfarm.models import Vehicle
 from electronics.models import Product as ElectronicsProduct
 from clothings.models import ClothingItem as Clothing
 from poultryfarm.models import Item as PoultryItem
@@ -232,7 +232,7 @@ def search_results(request):
         'results': results,
         'results_count': len(results),
         'houses_count': len([r for r in results if r['type'] == 'house']),
-        'vehicles_count': len([r for r in results if r['type'] == 'vehicle']),
+        'dairyfarm_count': len([r for r in results if r['type'] == 'vehicle']),
         'electronics_count': len([r for r in results if r['type'] == 'electronics']),
         'clothing_count': len([r for r in results if r['type'] == 'clothing']),
         'poultry_count': len([r for r in results if r['type'] == 'poultry']),
