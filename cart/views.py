@@ -15,7 +15,10 @@ def _get_cart(request):
 
 def add_to_cart(request, app_label, model_name, product_id):
     content_type = get_object_or_404(ContentType, app_label=app_label, model=model_name)
-    product = content_type.get_object_for_this_type(pk=product_id)
+    try:
+        product = content_type.get_object_for_this_type(pk=product_id)
+    except:
+        return redirect("cart:cart_detail")
     cart = _get_cart(request)
 
     item, created = CartItem.objects.get_or_create(
@@ -33,7 +36,19 @@ def add_to_cart(request, app_label, model_name, product_id):
 
 def cart_detail(request):
     cart = _get_cart(request)
-    return render(request, "cart/cart_detail.html", {"cart": cart})
+
+    valid_items = []
+    for item in cart.items.all():
+        try:
+            if item.product:
+                valid_items.append(item)
+        except:
+            continue
+
+    return render(request, "cart/cart_detail.html", {
+        "cart": cart,
+        "cart_items": valid_items
+    })
 
 def remove_from_cart(request, item_id):
     item = get_object_or_404(CartItem, id=item_id)
