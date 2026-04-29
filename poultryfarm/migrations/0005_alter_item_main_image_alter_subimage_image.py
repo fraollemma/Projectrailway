@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('poultryitems', '0004_remove_chickenseller_breeds_and_more'),
+        ('poultryfarm', '0004_remove_chickenseller_breeds_and_more'),
     ]
 
     operations = [

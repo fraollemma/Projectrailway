@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('poultryitems', '0007_alter_item_main_image_alter_subimage_image'),
+        ('poultryfarm', '0007_alter_item_main_image_alter_subimage_image'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 

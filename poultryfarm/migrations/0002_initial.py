@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('poultryitems', '0001_initial'),
+        ('poultryfarm', '0001_initial'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
@@ -23,17 +23,17 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='consultationbooking',
             name='consultant',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='poultryitems.consultant'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='poultryfarm.consultant'),
         ),
         migrations.AddField(
             model_name='consultationservice',
             name='consultant',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='services', to='poultryitems.consultant'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='services', to='poultryfarm.consultant'),
         ),
         migrations.AddField(
             model_name='consultationbooking',
             name='service',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='poultryitems.consultationservice'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='poultryfarm.consultationservice'),
         ),
         migrations.AddField(
             model_name='eggseller',
@@ -43,12 +43,12 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='eggorder',
             name='seller',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='orders', to='poultryitems.eggseller'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='orders', to='poultryfarm.eggseller'),
         ),
         migrations.AddField(
             model_name='item',
             name='category',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='items', to='poultryitems.category'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='items', to='poultryfarm.category'),
         ),
         migrations.AddField(
             model_name='item',
@@ -63,6 +63,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='subimage',
             name='item',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='sub_images', to='poultryitems.item'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='sub_images', to='poultryfarm.item'),
         ),
     ]

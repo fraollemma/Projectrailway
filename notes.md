@@ -2159,8 +2159,7 @@ WHITENOISE_AUTOREFRESH = DEBUG
 
 
 
-
-
+cd Desktop\cod\1st 4-12-2026 Copy\projectrailway
 
 set DATABASE_URL=postgresql://postgres:zjZosoHJkNujXTmksFvjqKwHnTAnhoBt@monorail.proxy.rlwy.net:42376/railway
 set CLOUDINARY_CLOUD_NAME=doixo5oiw
@@ -2171,10 +2170,3 @@ python manage.py makemigrations
 python manage.py migrate
 
 python manage.py shell
-
-from django.contrib.auth import get_user_model
-from poultryitems.models import EggOrder
-
-User = get_user_model()
-user = User.objects.get(username='zero')
-print(f"Orders for {user.username}: {EggOrder.objects.filter(user=user).count()}")
