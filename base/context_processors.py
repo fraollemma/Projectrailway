@@ -1,7 +1,7 @@
 from django.core.cache import cache
 from conversation.models import Conversation
 from cart.models import Cart
-from poultryitems.models import EggOrder, EggSeller
+from poultryfarm.models import EggOrder, EggSeller
 
 
 def notification_counts(request):

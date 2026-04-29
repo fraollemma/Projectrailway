@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model
 from django.contrib import messages as django_messages
-from poultryitems.models import Item 
+from poultryfarm.models import Item 
 from conversation.models import Conversation 
 from .forms import MessageForm
 from .models import Message
@@ -10,7 +10,7 @@ from houses.models import House
 from vehicles.models import Vehicle
 from electronics.models import Product as ElectronicsProduct
 from clothings.models import ClothingItem as Clothing
-from poultryitems.models import Item
+from poultryfarm.models import Item
 from electronics.models import Product
 from django.contrib.contenttypes.models import ContentType
 from cart.models import CartItem
@@ -23,7 +23,7 @@ from houses.models import House
 from vehicles.models import Vehicle
 from electronics.models import Product as ElectronicsProduct
 from clothings.models import ClothingItem as Clothing
-from poultryitems.models import Item as PoultryItem
+from poultryfarm.models import Item as PoultryItem
 
 def base(request):
     User = get_user_model()

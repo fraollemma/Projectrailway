@@ -10,7 +10,7 @@ from django.views.decorators.cache import never_cache
 from django.contrib import messages
 from cart.context_processors import cart_item_count
 
-from poultryitems.models import EggOrder
+from poultryfarm.models import EggOrder
 
 @login_required
 @never_cache

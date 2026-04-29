@@ -3,7 +3,7 @@ from houses.models import House
 from vehicles.models import Vehicle
 from electronics.models import Product
 from clothings.models import ClothingItem
-from poultryitems.models import Item, EggSeller, ChickenSeller, Consultant, TrainingEnrollment
+from poultryfarm.models import Item, EggSeller, ChickenSeller, Consultant, TrainingEnrollment
 from users.models import Profile
 from conversation.models import Conversation
 from django.contrib.auth.decorators import user_passes_test
