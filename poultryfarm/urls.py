@@ -14,19 +14,26 @@ from poultryfarm.api.views import ItemListAPIView, ItemDetailAPIView
 app_name = 'poultryfarm'
 
 urlpatterns = [
-    path('poultry/', ItemListView.as_view(), name='item_list'),
-
-    path('<int:pk>/', ItemDetailView.as_view(), name='item_detail'),
-    path('create/', ItemCreateView.as_view(), name='item_create'),
-
+    # ✅ poultry homepage
     path('', views.index, name='index'),
 
+    # ✅ items list
+    path('items/', ItemListView.as_view(), name='item_list'),
+
+    # item detail
+    path('items/<int:pk>/', ItemDetailView.as_view(), name='item_detail'),
+
+    path('items/create/', ItemCreateView.as_view(), name='item_create'),
+    path('items/<int:pk>/edit/', item_edit, name='item_edit'),
+    path('items/<int:pk>/delete/', item_delete, name='item_delete'),
+
+    path('items/<int:pk>/like/', views.like_item, name='item_like'),
+    path('items/<int:pk>/share/', views.share_item, name='item_share'),
+
+    # API
     path('api/items/', ItemListAPIView.as_view(), name='api_item_list'),
     path('api/items/<int:pk>/', ItemDetailAPIView.as_view(), name='api_item_detail'),
-    path('<int:pk>/edit/', item_edit, name='item_edit'),
-    path('<int:pk>/delete/', item_delete, name='item_delete'),
-    path('<int:pk>/like/', views.like_item, name='item_like'),
-    path('<int:pk>/share/', views.share_item, name='item_share'),
+
     # egg sellers 
     path('egg-sellers/delete-ajax/<int:pk>/', views.delete_egg_seller_ajax, name='delete_egg_seller_ajax'),
     path('egg-sellers/add/', views.add_egg_seller, name='add_egg_seller'),
@@ -42,6 +49,7 @@ urlpatterns = [
     path('edit-seller/<int:seller_id>/', views.edit_seller, name='edit_seller'),
     path('delete-seller/<int:seller_id>/', views.delete_seller, name='delete_seller'),
     path('delete-seller-ajax/<int:seller_id>/', views.delete_seller_ajax, name='delete_seller_ajax'),
+
     path('veterinary-consultancy/', views.veterinary_consultancy, name='veterinary_consultancy'),
     path('book-consultation/', views.book_consultation, name='book_consultation'),
     path('trainings/', views.poultry_trainings, name='poultry_trainings'),
