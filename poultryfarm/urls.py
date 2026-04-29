@@ -14,10 +14,13 @@ from poultryfarm.api.views import ItemListAPIView, ItemDetailAPIView
 app_name = 'poultryfarm'
 
 urlpatterns = [
-    path('', ItemListView.as_view(), name='item_list'),
+    path('poultry/', ItemListView.as_view(), name='item_list'),
+
     path('<int:pk>/', ItemDetailView.as_view(), name='item_detail'),
     path('create/', ItemCreateView.as_view(), name='item_create'),
-    path('poultry/', views.index, name='index'),
+
+    path('', views.index, name='index'),
+
     path('api/items/', ItemListAPIView.as_view(), name='api_item_list'),
     path('api/items/<int:pk>/', ItemDetailAPIView.as_view(), name='api_item_detail'),
     path('<int:pk>/edit/', item_edit, name='item_edit'),
