@@ -23,7 +23,6 @@ def notification_counts(request):
         if cart:
             cart_count = cart.items.count()
 
-        # ✅ FIXED HERE
         egg_order_count = EggOrder.objects.filter(
             seller__user=request.user
         ).count()
