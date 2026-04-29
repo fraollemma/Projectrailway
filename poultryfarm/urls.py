@@ -10,15 +10,16 @@ from .views import (
 )
 from rest_framework.routers import DefaultRouter
 from poultryfarm.api.views import ItemListAPIView, ItemDetailAPIView
+from django.views.generic import RedirectView
 
 app_name = 'poultryfarm'
 
 urlpatterns = [
     # ✅ poultry homepage
-    path('', views.index, name='index'),
+    path('', views.index, name='index', permanent=True),
 
     # ✅ items list
-    path('items/', ItemListView.as_view(), name='item_list'),
+    path('items/', ItemListView.as_view(), name='item_list', permanent=True),
 
     # item detail
     path('items/<int:pk>/', ItemDetailView.as_view(), name='item_detail'),
