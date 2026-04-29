@@ -20,6 +20,7 @@ class Cart(models.Model):
     def total_price(self):
         return sum(item.total_price() for item in self.items.all() if item.product is not None)
 
+
 class CartItem(models.Model):
     cart = models.ForeignKey(Cart, related_name="items", on_delete=models.CASCADE)
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
@@ -28,10 +29,19 @@ class CartItem(models.Model):
     quantity = models.PositiveIntegerField(default=1)
 
     def total_price(self):
-        if self.product is None:
-            return 0
-        return self.product.price * self.quantity
+        try:
+            if self.product and hasattr(self.product, "price"):
+                return self.product.price * self.quantity
+        except Exception:
+            pass
+        return 0
 
     def __str__(self):
-        product_name = self.product.name if self.product else "Unknown Product"
-        return f"{product_name} (x{self.quantity}) in Cart {self.cart.id}"
+        try:
+            product = self.product
+            if product and hasattr(product, "name"):
+                return f"{product.name} x {self.quantity}"
+        except Exception:
+            pass
+
+        return f"Unknown Product x {self.quantity}"
