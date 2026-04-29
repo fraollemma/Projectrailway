@@ -31,7 +31,7 @@
                     <ul class="cart-items">
                         {% for item in cart_items %}
                         <li class="cart-item" data-item-id="{{ item.id }}">
-                            {% if item.product %}
+                            {% if item.content_type and item.object_id %}
                                 <div class="item-image-container">
                                     {% if item.product.main_image %}
                                         <img src="{{ item.product.main_image.url }}" 
