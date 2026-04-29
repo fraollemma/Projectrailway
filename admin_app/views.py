@@ -18,7 +18,7 @@ def admin_required(view_func):
 def dashboard(request):
     context = {
         "houses_count": House.objects.count(),
-        "vehicles_count": Vehicle.objects.count(),
+        "dairyfarm_count": Vehicle.objects.count(),
         "electronics_count": Product.objects.count(),
         "clothings_count": ClothingItem.objects.count(),
         "poultry_items_count": Item.objects.count(),

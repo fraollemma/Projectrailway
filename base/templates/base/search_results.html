@@ -23,10 +23,10 @@
             <div class="search-stats">
                 {% if results_count > 0 %}
                     <p>{% trans "Found" %} {{ results_count }} {% trans "results" %}</p>
-                    {% if houses_count or vehicles_count or electronics_count or clothing_count or poultry_count %}
+                    {% if houses_count or dairyfarm_count or electronics_count or clothing_count or poultry_count %}
                     <div class="category-breakdown">
                         {% if houses_count %}<span>🏠 {{ houses_count }} {% trans "Houses" %}</span>{% endif %}
-                        {% if vehicles_count %}<span>🚗 {{ vehicles_count }} {% trans "Cars" %}</span>{% endif %}
+                        {% if dairyfarm_count %}<span>🚗 {{ dairyfarm_count }} {% trans "dairyfarm" %}</span>{% endif %}
                         {% if electronics_count %}<span>💻 {{ electronics_count }} {% trans "Electronics" %}</span>{% endif %}
                         {% if clothing_count %}<span>👕 {{ clothing_count }} {% trans "Clothing" %}</span>{% endif %}
                         {% if poultry_count %}<span>🐔 {{ poultry_count }} {% trans "Poultry" %}</span>{% endif %}
@@ -52,9 +52,9 @@
             <h2>{% trans "No results found" %}</h2>
             <p>{% trans "Try different keywords or browse our categories" %}</p>
             <div class="suggested-categories">
-                <a href="{% url 'vehicles:vehicle_list' %}" class="category-suggestion">
+                <a href="{% url 'dairyfarm:dairyfarm_list' %}" class="category-suggestion">
                     <i class="fas fa-car"></i>
-                    <span>{% trans "Cars" %}</span>
+                    <span>{% trans "dairyfarm" %}</span>
                 </a>
                 <a href="{% url 'houses:house_list' %}" class="category-suggestion">
                     <i class="fas fa-home"></i>

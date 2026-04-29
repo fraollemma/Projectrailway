@@ -1,11 +1,11 @@
 {% extends "base/base.html" %}
 {% load static %}
 
-{% block title %}Manage Vehicles{% endblock %}
+{% block title %}Manage dairyfarm{% endblock %}
 
 {% block content %}
 <div class="dashboard-container">
-  <h1>Manage Vehicles</h1>
+  <h1>Manage dairyfarm</h1>
   <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse:collapse;">
     <thead>
       <tr>
@@ -24,7 +24,7 @@
       </tr>
     </thead>
     <tbody>
-      {% for vehicle in vehicles %}
+      {% for vehicle in dairyfarm %}
       <tr>
         <td>{{ vehicle.id }}</td>
         <td>{{ vehicle.get_category_display }}</td>
@@ -41,7 +41,7 @@
       </tr>
       {% empty %}
       <tr>
-        <td colspan="12">No vehicles available.</td>
+        <td colspan="12">No dairyfarm available.</td>
       </tr>
       {% endfor %}
     </tbody>

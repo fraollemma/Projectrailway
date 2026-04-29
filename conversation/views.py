@@ -98,7 +98,7 @@ def new_conversation(request, app_label, model_name, object_id):
     if item_owner == request.user:
         messages.error(request, "You cannot start a conversation with yourself.")
         redirect_map = {
-            'vehicles': 'vehicles:vehicle_detail',
+            'dairyfarm': 'dairyfarm:dairyfarm_detail',
             'clothings': 'clothings:clothing_detail',
             'electronics': 'electronics:electronic_detail',
             'houses': 'houses:house_detail',

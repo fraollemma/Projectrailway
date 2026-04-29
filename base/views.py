@@ -34,7 +34,7 @@ def base(request):
     featured_houses = House.objects.filter(is_featured=True)\
         .prefetch_related('images')\
         .order_by('-created_at')[:200]
-    featured_vehicles = Vehicle.objects.filter(is_featured=True)\
+    featured_dairyfarm = Vehicle.objects.filter(is_featured=True)\
         .prefetch_related('images')\
         .order_by('-created_at')[:200]
     featured_electronics = ElectronicsProduct.objects.filter(is_featured=True)\
@@ -48,7 +48,7 @@ def base(request):
         .prefetch_related('sub_images')\
         .order_by('-created_at')[:200]
     
-    for vehicle in featured_vehicles:
+    for vehicle in featured_dairyfarm:
         vehicle.product_type = 'vehicle'
 
     for house in featured_houses:
@@ -63,7 +63,7 @@ def base(request):
     for poultry in featured_poultry:
         poultry.product_type = 'poultry'
     
-    all_featured = list(featured_vehicles) + list(featured_houses) + list(featured_electronics) + list(featured_clothing) + list(featured_poultry)
+    all_featured = list(featured_dairyfarm) + list(featured_houses) + list(featured_electronics) + list(featured_clothing) + list(featured_poultry)
     
     def safe_sort_key(obj):
         """
@@ -162,14 +162,14 @@ def search_results(request):
             'url': house.get_absolute_url()  # Make sure you have this method
         })
     
-    # Search Vehicles
-    vehicles = Vehicle.objects.filter(
+    # Search dairyfarm
+    dairyfarm = Vehicle.objects.filter(
         Q(make__icontains=query) |
         Q(model__icontains=query) |
         Q(description__icontains=query)
     ).select_related('created_by').prefetch_related('images')[:10]
     
-    for vehicle in vehicles:
+    for vehicle in dairyfarm:
         results.append({
             'type': 'vehicle',
             'object': vehicle,
