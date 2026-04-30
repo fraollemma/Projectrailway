@@ -3,11 +3,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import DairyProduct, DairyCategory, DairyOrder
-
-
-# =========================
-# PRODUCT LIST
-# =========================
+ 
 class DairyProductListView(ListView):
     model = DairyProduct
     template_name = "dairyfarm/dairyfarm_list.html"
@@ -18,11 +14,7 @@ class DairyProductListView(ListView):
         return DairyProduct.objects.filter(
             is_featured=True
         ).order_by("-created_at")
-
-
-# =========================
-# PRODUCT DETAIL
-# =========================
+ 
 class DairyProductDetailView(DetailView):
     model = DairyProduct
     template_name = "dairyfarm/dairyfarm_detail.html"
@@ -30,10 +22,6 @@ class DairyProductDetailView(DetailView):
     slug_field = "slug"
     slug_url_kwarg = "slug"
 
-
-# =========================
-# CREATE PRODUCT
-# =========================
 class DairyProductCreateView(LoginRequiredMixin, CreateView):
     model = DairyProduct
     fields = [
@@ -46,11 +34,7 @@ class DairyProductCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.created_by = self.request.user
         return super().form_valid(form)
-
-
-# =========================
-# FILTER BY CATEGORY
-# =========================
+ 
 class DairyCategoryView(ListView):
     model = DairyProduct
     template_name = "dairyfarm/dairyfarm_list.html"
@@ -61,10 +45,6 @@ class DairyCategoryView(ListView):
             category__slug=self.kwargs.get("slug")
         ).order_by("-created_at")
 
-
-# =========================
-# CREATE ORDER
-# =========================
 class CreateOrderView(LoginRequiredMixin, CreateView):
     model = DairyOrder
     fields = ["quantity", "address"]
