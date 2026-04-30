@@ -52,9 +52,8 @@ class Item(models.Model):
         related_name='items', 
         on_delete=models.CASCADE
     )
-    main_image = CloudinaryField(
-        'image',
-        folder='products/main_images/',
+    main_image = models.ImageField(
+        upload_to='products/main_images/',
         blank=True
     )
     like_count = models.PositiveIntegerField(default=0)
@@ -112,9 +111,8 @@ class SubImage(models.Model):
         related_name='sub_images', 
         on_delete=models.CASCADE
     )
-    image = CloudinaryField(
-        'image',
-        folder='products/sub_images/',
+    image = models.ImageField(
+        upload_to='products/sub_images/',
         blank=True
     )
     alt_text = models.CharField(max_length=100, blank=True)
