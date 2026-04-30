@@ -44,23 +44,22 @@
                 <article class="poultry-card" data-category="{{ item.category.slug|default:'all' }}" data-price="{{ item.price }}">
                     <!-- Image Section -->
                     <div class="card-image">
-                        {% if item.image %}
-                        <img src="{{ item.image.url }}" alt="{{ item.name }}">
-                        {% else %}
-                        <div class="placeholder-image">
-                            <i class="fas fa-image"></i>
-                        </div>
-                        {% endif %}
-
-                        <!-- Badges -->
-                        <div class="card-badges">
-                            {% if item.is_carted %}
-                            <span class="cart-badge" title="In Cart">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                            {% endif %}
-                            
-                        </div>
+                            <a href="{% url 'poultryfarm:item_detail' item.pk %}">
+                                {% if item.main_image %}
+                                    <img 
+                                        src="https://res.cloudinary.com/doixo5oiw/image/upload/{{ item.main_image }}.jpg"
+                                        alt="{{ item.name }}"
+                                        loading="lazy"
+                                        onerror="this.src='{% static 'poultryfarm/images/product-chicken.jpg' %}'"
+                                    >
+                                {% else %}
+                                    <img 
+                                        src="{% static 'poultryfarm/images/product-chicken.jpg' %}" 
+                                        alt="default image" 
+                                        loading="lazy"
+                                    >
+                                {% endif %}
+                            </a>
                         
                         <!-- Quick Actions -->
                         <div class="quick-actions">
