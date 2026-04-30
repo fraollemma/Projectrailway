@@ -39,17 +39,23 @@ def manage_houses(request):
 
 @admin_required
 def manage_dairy(request):
-    return render(request, "admin_app/manage_dairy.html", {"dairyfarm": DairyFarmer.objects.all()})
+    return render(request, "admin_app/manage_dairy.html", {
+        "dairyfarm": DairyFarmer.objects.all()
+    })
 
 
 @admin_required
 def manage_electronics(request):
-    return render(request, "admin_app/manage_electronics.html", {"electronics": Product.objects.all()})
+    return render(request, "admin_app/manage_electronics.html", {
+        "electronics": Product.objects.all()
+    })
 
 
 @admin_required
 def manage_clothings(request):
-    return render(request, "admin_app/manage_clothings.html", {"clothings": ClothingItem.objects.all()})
+    return render(request, "admin_app/manage_clothings.html", {
+        "clothings": ClothingItem.objects.all()
+    })
 
 
 @admin_required
@@ -66,12 +72,16 @@ def manage_poultry(request):
 
 @admin_required
 def manage_users(request):
-    return render(request, "admin_app/manage_users.html", {"users": Profile.objects.all()})
+    return render(request, "admin_app/manage_users.html", {
+        "users": Profile.objects.all()
+    })
 
 
 @admin_required
 def manage_conversations(request):
-    return render(request, "admin_app/manage_conversations.html", {"conversations": Conversation.objects.all()})
+    return render(request, "admin_app/manage_conversations.html", {
+        "conversations": Conversation.objects.all()
+    })
 
 
 @admin_required
