@@ -45,15 +45,30 @@
                     <!-- Image Section -->
                     <div class="card-image">
                         <a href="{% url 'poultryfarm:item_detail' item.pk %}">
-                            {% if item.main_image and item.main_image.url %}
+                            1 {% if item.main_image and item.main_image.url %}
                                 <img src="{{ item.main_image.url }}" alt="{{ item.name }}" loading="lazy">
                             {% else %}
                                 <img src="{% static 'poultryfarm/images/product-chicken.jpg' %}" alt="default image" loading="lazy">
                             {% endif %}
 
-                            {% if item.main_image %}
+                            2 {% if item.main_image %}
                                 <img src="{{ item.main_image.url }}">
                             {% endif %}
+
+                            3 <a href="{% url 'poultryfarm:item_detail' item.pk %}">
+                                    {% with main_img=item.main_image %}
+                                        {% if main_img and main_img.url %}
+                                            <img src="{{ main_img.url }}" 
+                                                alt="{{ item.name }}" 
+                                                loading="lazy"
+                                                onerror="this.src='{% static 'poultryfarm/images/product-chicken.jpg' %}'">
+                                        {% else %}
+                                            <img src="{% static 'poultryfarm/images/product-chicken.jpg' %}" 
+                                                alt="default image" 
+                                                loading="lazy">
+                                        {% endif %}
+                                    {% endwith %}
+                                </a>
                         </a>
                         
                         <!-- Badges -->
