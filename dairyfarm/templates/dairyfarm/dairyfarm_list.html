@@ -9,6 +9,9 @@
 
     <h1 class="page-title">🥛 Dairy Products</h1>
 
+    <!-- add button -->
+    <a href="{% url 'dairyfarm:dairyfarm_create' %}" class="btn add">Add Product</a>
+
     <div class="grid">
 
         {% for product in products %}
