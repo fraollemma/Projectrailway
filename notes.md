@@ -2199,3 +2199,14 @@ for i in range(10):
         img.pk = None
         img.vehicle = new_item
         img.save()
+
+for original in DairyFarm.objects.all()[:5]:
+    new_item = DairyFarm.objects.get(id=original.id)
+    new_item.pk = None
+    new_item.slug = str(uuid.uuid4())[:10]
+    new_item.save()
+
+    for img in VehicleImage.objects.filter(vehicle=original):
+        img.pk = None
+        img.vehicle = new_item
+        img.save()

@@ -21,7 +21,11 @@
 <form method="post">
     {% csrf_token %}
     <button type="submit" class="btn btn-danger">{% trans "Delete" %}</button>
+    {% if vehicle.slug %}
     <a href="{% url 'dairyfarm:dairyfarm_detail' vehicle.slug %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
+    {% else %}
+        <a href="{% url 'dairyfarm:vehicle_list' %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
+    {% endif %}
 </form>
 {% endblock %}
 
