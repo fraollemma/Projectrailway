@@ -119,7 +119,7 @@ class CategoryView(ListView):
 class VehicleCreateView(LoginRequiredMixin, CreateView):
     model = DairyFarm
     form_class = VehicleForm
-    template_name = 'dairyfarm/vehicle_form.html'
+    template_name = 'dairyfarm/dairyfarm_form.html'
     success_url = reverse_lazy('dairyfarm:dairyfarm_list')
 
     def form_valid(self, form):
@@ -135,7 +135,7 @@ class VehicleCreateView(LoginRequiredMixin, CreateView):
 class VehicleEditView(LoginRequiredMixin, UpdateView):
     model = DairyFarm
     form_class = VehicleForm
-    template_name = 'dairyfarm/vehicle_form.html'
+    template_name = 'dairyfarm/dairyfarm_form.html'
 
     def get_object(self, queryset=None):
         return DairyFarm.objects.get(slug=self.kwargs['slug'])
