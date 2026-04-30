@@ -47,13 +47,13 @@ class ItemForm(forms.ModelForm):
 
         if commit:
             files = self.files.getlist('sub_images')
-            for f in files:
-                sub = SubImage(item=item)
-                sub.image = f
-                sub.save() 
+
+            for img in self.request.FILES.getlist('sub_images'):
+                if not img or img.size == 0:
+                    continue
+                SubImage.objects.create(item=item, image=img)
 
         return item
-
 
 class ConsultationBookingForm(forms.ModelForm):
     consultant = forms.ModelChoiceField(
