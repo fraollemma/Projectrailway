@@ -86,16 +86,16 @@ class VehicleDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        vehicle = self.object
-        context['app_label'] = vehicle._meta.app_label
-        context['model_name'] = vehicle._meta.model_name
+        dairyfarm = self.object
+        context['app_label'] = dairyfarm._meta.app_label
+        context['model_name'] = dairyfarm._meta.model_name
 
         cart = _get_cart(self.request)
-        vehicle_ct = ContentType.objects.get_for_model(vehicle)
+        vehicle_ct = ContentType.objects.get_for_model(dairyfarm)
         context['vehicle'].is_carted = CartItem.objects.filter(
             cart=cart,
             content_type=vehicle_ct,
-            object_id=vehicle.id
+            object_id=dairyfarm.id
         ).exists()
         user = self.request.user
         context['has_liked'] = (
