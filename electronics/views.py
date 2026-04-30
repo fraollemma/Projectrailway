@@ -39,7 +39,7 @@ def share_product(request, product_id):
         'product_id': product_id,
     })
 
-def product_list(request):
+def dairyfarm_list(request):
     products = Product.objects.select_related('category', 'seller').all().order_by('-created_at')
 
     cart = _get_cart(request)
@@ -55,7 +55,7 @@ def product_list(request):
         product.is_carted = product.id in cart_product_ids
         product.has_liked = product.has_liked(user) if hasattr(product, 'has_liked') else False
 
-    return render(request, 'electronics/product_list.html', {'products': products})
+    return render(request, 'electronics/dairyfarm_list.html', {'products': products})
 
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
@@ -70,7 +70,7 @@ def product_detail(request, pk):
     user = request.user
     product.has_liked = product.has_liked(user) if hasattr(product, 'has_liked') else False
 
-    return render(request, 'electronics/product_detail.html', {
+    return render(request, 'electronics/dairyfarm_detail.html', {
         'product': product,
         'app_label': product._meta.app_label,
         'model_name': product._meta.model_name
@@ -95,7 +95,7 @@ def product_create(request):
             return redirect('electronics:product_detail', pk=product.pk)
     else:
         form = ProductForm()
-    return render(request, 'electronics/product_form.html', {'form': form})
+    return render(request, 'electronics/dairyfarm_form.html', {'form': form})
 
 @login_required
 def product_update(request, pk):
@@ -108,7 +108,7 @@ def product_update(request, pk):
             return redirect('electronics:product_detail', pk=pk)
     else:
         form = ProductForm(instance=product)
-    return render(request, 'electronics/product_form.html', {'form': form})
+    return render(request, 'electronics/dairyfarm_form.html', {'form': form})
 
 @login_required
 def product_delete(request, pk):
@@ -116,6 +116,6 @@ def product_delete(request, pk):
     if request.method == 'POST':
         product.delete()
         messages.success(request, 'Product deleted.')
-        return redirect('electronics:product_list')
-    return render(request, 'electronics/product_confirm_delete.html', {'product': product})
+        return redirect('electronics:dairyfarm_list')
+    return render(request, 'electronics/dairyfarm_confirm_delete.html', {'product': product})
 

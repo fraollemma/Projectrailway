@@ -41,14 +41,14 @@ msgstr "ወደ ጋሪ አክል"
 msgid "Save"
 msgstr "አስቀምጥ"
 
-#: .\electronics\templates\electronics\product_list.html:14
+#: .\electronics\templates\electronics\dairyfarm_list.html:14
 msgid "Add New Electronics"
 msgstr "አዲስ ኤሌክትሮኒክስ አክል"
 
-#: .\electronics\templates\electronics\product_list.html:72
+#: .\electronics\templates\electronics\dairyfarm_list.html:72
 msgid "No House found"
 msgstr "ምንም ቤት አልተገኘም"
 
-#: .\electronics\templates\electronics\product_list.html:73
+#: .\electronics\templates\electronics\dairyfarm_list.html:73
 msgid "Try another time"
 msgstr "ሌላ ጊዜ ይሞክሩ"

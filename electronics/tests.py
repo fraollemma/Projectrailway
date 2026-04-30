@@ -22,7 +22,7 @@ class ElectronicsTestCase(TestCase):
         )
     
     def test_product_list_view(self):
-        response = self.client.get(reverse('electronics:product_list'))
+        response = self.client.get(reverse('electronics:dairyfarm_list'))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'MacBook Pro')
     

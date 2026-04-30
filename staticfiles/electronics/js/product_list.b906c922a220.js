@@ -1,4 +1,4 @@
-// electronics/static/electronics/js/product_list.js
+// electronics/static/electronics/js/dairyfarm_list.js
 document.addEventListener('DOMContentLoaded', function() {
     // Like button functionality
     document.querySelectorAll('.like-button').forEach(button => {

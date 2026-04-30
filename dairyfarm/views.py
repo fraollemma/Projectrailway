@@ -11,7 +11,7 @@ from .models import DairyProduct, DairyCategory, DairyOrder
 # =========================
 class DairyProductListView(ListView):
     model = DairyProduct
-    template_name = "dairyfarm/product_list.html"
+    template_name = "dairyfarm/dairyfarm_list.html"
     context_object_name = "products"
     paginate_by = 12
 
@@ -24,7 +24,7 @@ class DairyProductListView(ListView):
 # =========================
 class DairyProductDetailView(DetailView):
     model = DairyProduct
-    template_name = "dairyfarm/product_detail.html"
+    template_name = "dairyfarm/dairyfarm_detail.html"
     context_object_name = "product"
     slug_field = "slug"
 
@@ -51,7 +51,7 @@ class DairyProductCreateView(LoginRequiredMixin, CreateView):
 # =========================
 class DairyCategoryView(ListView):
     model = DairyProduct
-    template_name = "dairyfarm/product_list.html"
+    template_name = "dairyfarm/dairyfarm_list.html"
     context_object_name = "products"
 
     def get_queryset(self):
@@ -77,4 +77,4 @@ class CreateOrderView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy("dairyfarm:product_list")
+        return reverse_lazy("dairyfarm:dairyfarm_list")

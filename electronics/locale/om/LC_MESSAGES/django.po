@@ -41,14 +41,14 @@ msgstr "Gabatee irratti ida'i"
 msgid "Save"
 msgstr "Olkaa'i"
 
-#: .\electronics\templates\electronics\product_list.html:14
+#: .\electronics\templates\electronics\dairyfarm_list.html:14
 msgid "Add New Electronics"
 msgstr "Elekktirooniksii haaraa ida'i"
 
-#: .\electronics\templates\electronics\product_list.html:72
+#: .\electronics\templates\electronics\dairyfarm_list.html:72
 msgid "No House found"
 msgstr "Mana hin argamne"
 
-#: .\electronics\templates\electronics\product_list.html:73
+#: .\electronics\templates\electronics\dairyfarm_list.html:73
 msgid "Try another time"
 msgstr "Yeroo biraa yaali"
