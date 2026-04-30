@@ -1,7 +1,3 @@
-/* ============================================
-   Poultry Items List - Modern JavaScript
-   ============================================ */
-
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
     initLikeButtons();
