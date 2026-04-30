@@ -146,7 +146,7 @@ class VehicleEditView(LoginRequiredMixin, UpdateView):
 
 class VehicleDeleteView(LoginRequiredMixin, DeleteView):
     model = DairyFarm
-    template_name = 'dairyfarm/vehicle_confirm_delete.html'
+    template_name = 'dairyfarm/dairyfarm_confirm_delete.html'
 
     def get_object(self, queryset=None):
         return DairyFarm.objects.get(slug=self.kwargs['slug'])

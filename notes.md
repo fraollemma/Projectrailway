@@ -2170,3 +2170,32 @@ python manage.py makemigrations
 python manage.py migrate
 
 python manage.py shell
+
+
+
+
+
+
+
+
+
+
+from dairyfarm.models import DairyFarm, VehicleImage
+import uuid
+
+original = DairyFarm.objects.first()
+
+for i in range(10):
+    new_item = DairyFarm.objects.get(id=original.id)
+    new_item.pk = None
+    new_item.slug = str(uuid.uuid4())[:10]
+    new_item.like_count = 0
+    new_item.share_count = 0
+    new_item.save()
+
+    images = VehicleImage.objects.filter(vehicle=original)
+
+    for img in images:
+        img.pk = None
+        img.vehicle = new_item
+        img.save()
