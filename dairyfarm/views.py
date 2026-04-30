@@ -39,7 +39,7 @@ class DairyProductCreateView(LoginRequiredMixin, CreateView):
         "category", "quantity_available", "unit"
     ]
     template_name = "dairyfarm/product_form.html"
-    success_url = reverse_lazy("dairyfarm:product_list")
+    success_url = reverse_lazy("dairyfarm:dairyfarm_list")
 
     def form_valid(self, form):
         form.instance.created_by = self.request.user
@@ -57,7 +57,7 @@ class DairyCategoryView(ListView):
     def get_queryset(self):
         return DairyProduct.objects.filter(
             category__slug=self.kwargs["slug"]
-        )
+        ).order_by("-created_at")
 
 
 # =========================
