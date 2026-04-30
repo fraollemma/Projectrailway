@@ -100,7 +100,7 @@ class DairyFarm(models.Model):
             base_slug = slugify(f"{self.year}-{self.make}-{self.model}")
             unique_slug = base_slug
             num = 1
-            while Vehicle.objects.filter(slug=unique_slug).exists():
+            while DairyFarm.objects.filter(slug=unique_slug).exists():
                 unique_slug = f"{base_slug}-{num}"
                 num += 1
             self.slug = unique_slug
@@ -112,7 +112,7 @@ class DairyFarm(models.Model):
         return reverse("dairyfarm:vehicle_detail", args=[self.slug])
 
 class VehicleImage(models.Model):
-    vehicle = models.ForeignKey(Vehicle, related_name='images', on_delete=models.CASCADE)
+    vehicle = models.ForeignKey(DairyFarm, related_name='images', on_delete=models.CASCADE)
     image = models.ImageField(upload_to='vehicle_images/')
     is_featured = models.BooleanField(default=False)
     alt_text = models.CharField(max_length=100, blank=True)

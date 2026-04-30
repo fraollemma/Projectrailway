@@ -2158,7 +2158,7 @@ WHITENOISE_AUTOREFRESH = DEBUG
 
 
 
-
+ 
 cd Desktop\cod\1st 4-12-2026 Copy\projectrailway
 
 set DATABASE_URL=postgresql://postgres:zjZosoHJkNujXTmksFvjqKwHnTAnhoBt@monorail.proxy.rlwy.net:42376/railway

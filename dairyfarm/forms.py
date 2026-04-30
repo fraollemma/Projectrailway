@@ -1,6 +1,6 @@
 # project/dairyfarm/forms.py
 from django import forms
-from .models import Vehicle, VehicleImage
+from .models import DairyFarm, VehicleImage
 from django.core.validators import MinValueValidator
 
 
@@ -24,7 +24,7 @@ class VehicleForm(forms.ModelForm):
     images = MultipleFileField(required=False, label='Additional Images')
     
     class Meta:
-        model = Vehicle
+        model = DairyFarm
         fields = [
             'category', 'vehicle_type', 'make', 'model', 'year', 
             'price', 'mileage', 'fuel_type', 'engine_size',

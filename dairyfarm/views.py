@@ -7,7 +7,7 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.contenttypes.models import ContentType
-from .models import Vehicle, VehicleCategory
+from .models import DairyFarm, VehicleCategory
 from .forms import VehicleForm
 from cart.models import CartItem
 from cart.views import _get_cart 
@@ -16,14 +16,14 @@ from cart.views import _get_cart
 @csrf_exempt
 def like_vehicle(request, vehicle_id):
     try:
-        vehicle = Vehicle.objects.get(id=vehicle_id)
+        vehicle = DairyFarm.objects.get(id=vehicle_id)
         new_count = vehicle.toggle_like(request.user)
         return JsonResponse({
             'status': 'success',
             'like_count': new_count,
             'vehicle_id': vehicle_id
         })
-    except Vehicle.DoesNotExist:
+    except DairyFarm.DoesNotExist:
         return JsonResponse({'status': 'error'}, status=404)
 
 
@@ -31,7 +31,7 @@ def like_vehicle(request, vehicle_id):
 @csrf_exempt
 def share_vehicle(request, vehicle_id):
     try:
-        vehicle = Vehicle.objects.get(id=vehicle_id)
+        vehicle = DairyFarm.objects.get(id=vehicle_id)
         new_count = vehicle.increment_shares()
         return JsonResponse({
             'status': 'success',
@@ -43,20 +43,20 @@ def share_vehicle(request, vehicle_id):
 
 
 class VehicleListView(ListView):
-    model = Vehicle
+    model = DairyFarm
     template_name = 'dairyfarm/vehicle_list.html'
     context_object_name = 'dairyfarm'
     paginate_by = 12
  
     def get_queryset(self):
-        return Vehicle.objects.filter(is_featured=True).order_by('-created_at')
+        return DairyFarm.objects.filter(is_featured=True).order_by('-created_at')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         dairyfarm = context['dairyfarm']
 
         cart = _get_cart(self.request)
-        vehicle_ct = ContentType.objects.get_for_model(Vehicle)
+        vehicle_ct = ContentType.objects.get_for_model(DairyFarm)
         cart_vehicle_ids = CartItem.objects.filter(
             cart=cart,
             content_type=vehicle_ct,
@@ -75,7 +75,7 @@ class VehicleListView(ListView):
 
 
 class VehicleDetailView(DetailView):
-    model = Vehicle
+    model = DairyFarm
     template_name = 'dairyfarm/vehicle_detail.html'
     context_object_name = 'vehicle'
     slug_field = 'slug'
@@ -103,17 +103,17 @@ class VehicleDetailView(DetailView):
 
 
 class CategoryView(ListView):
-    model = Vehicle
+    model = DairyFarm
     template_name = 'dairyfarm/vehicle_list.html'
     context_object_name = 'dairyfarm'
     paginate_by = 12
 
     def get_queryset(self):
-        return Vehicle.objects.filter(category__slug=self.kwargs['slug']).order_by('-created_at')
+        return DairyFarm.objects.filter(category__slug=self.kwargs['slug']).order_by('-created_at')
 
 
 class VehicleCreateView(LoginRequiredMixin, CreateView):
-    model = Vehicle
+    model = DairyFarm
     form_class = VehicleForm
     template_name = 'dairyfarm/vehicle_form.html'
     success_url = reverse_lazy('dairyfarm:vehicle_list')
@@ -129,23 +129,23 @@ class VehicleCreateView(LoginRequiredMixin, CreateView):
 
 
 class VehicleEditView(LoginRequiredMixin, UpdateView):
-    model = Vehicle
+    model = DairyFarm
     form_class = VehicleForm
     template_name = 'dairyfarm/vehicle_form.html'
 
     def get_object(self, queryset=None):
-        return Vehicle.objects.get(slug=self.kwargs['slug'])
+        return DairyFarm.objects.get(slug=self.kwargs['slug'])
 
     def get_success_url(self):
         return reverse_lazy('dairyfarm:vehicle_detail', kwargs={'slug': self.object.slug})
 
 
 class VehicleDeleteView(LoginRequiredMixin, DeleteView):
-    model = Vehicle
+    model = DairyFarm
     template_name = 'dairyfarm/vehicle_confirm_delete.html'
 
     def get_object(self, queryset=None):
-        return Vehicle.objects.get(slug=self.kwargs['slug'])
+        return DairyFarm.objects.get(slug=self.kwargs['slug'])
 
     def get_success_url(self):
         return reverse_lazy('dairyfarm:vehicle_list')
@@ -153,7 +153,7 @@ class VehicleDeleteView(LoginRequiredMixin, DeleteView):
 
 def add_vehicle_to_cart(request, vehicle_id):
     app_label = 'dairyfarm'
-    model_name = 'vehicle'
+    model_name = 'dairyfarm'
     return redirect(reverse('cart:add_to_cart', kwargs={
         'app_label': app_label,
         'model_name': model_name,

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from houses.models import House
-from dairyfarm.models import Vehicle
+from dairyfarm.models import DairyFarm
 from electronics.models import Product
 from clothings.models import ClothingItem
 from poultryfarm.models import Item, EggSeller, ChickenSeller, Consultant, TrainingEnrollment
@@ -18,7 +18,7 @@ def admin_required(view_func):
 def dashboard(request):
     context = {
         "houses_count": House.objects.count(),
-        "dairyfarm_count": Vehicle.objects.count(),
+        "dairyfarm_count": DairyFarm.objects.count(),
         "electronics_count": Product.objects.count(),
         "clothings_count": ClothingItem.objects.count(),
         "poultry_items_count": Item.objects.count(),

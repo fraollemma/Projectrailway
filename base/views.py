@@ -7,7 +7,7 @@ from conversation.models import Conversation
 from .forms import MessageForm
 from .models import Message
 from houses.models import House
-from dairyfarm.models import Vehicle
+from dairyfarm.models import DairyFarm
 from electronics.models import Product as ElectronicsProduct
 from clothings.models import ClothingItem as Clothing
 from poultryfarm.models import Item
@@ -34,7 +34,7 @@ def base(request):
     featured_houses = House.objects.filter(is_featured=True)\
         .prefetch_related('images')\
         .order_by('-created_at')[:200]
-    featured_dairyfarm = Vehicle.objects.filter(is_featured=True)\
+    featured_dairyfarm = DairyFarm.objects.filter(is_featured=True)\
         .prefetch_related('images')\
         .order_by('-created_at')[:200]
     featured_electronics = ElectronicsProduct.objects.filter(is_featured=True)\
@@ -49,7 +49,7 @@ def base(request):
         .order_by('-created_at')[:200]
     
     for dairyfarm in featured_dairyfarm:
-        vehicle.product_type = 'vehicle'
+        dairyfarm.product_type = 'dairyfarm'
 
     for house in featured_houses:
         house.product_type = 'house'
@@ -109,7 +109,7 @@ def base(request):
         'conversations_count': conversations_count,
         'form': form,
         'all_featured': all_featured,
-        'vehicle_count': Vehicle.objects.count(),
+        'dairyfarm_count': DairyFarm.objects.count(),
         'house_count': House.objects.count(),
         'electronics_count': ElectronicsProduct.objects.count(),
         'clothing_count': Clothing.objects.count(),
@@ -163,20 +163,20 @@ def search_results(request):
         })
     
     # Search dairyfarm
-    dairyfarm = Vehicle.objects.filter(
+    dairyfarm = DairyFarm.objects.filter(
         Q(make__icontains=query) |
         Q(model__icontains=query) |
         Q(description__icontains=query)
     ).select_related('created_by').prefetch_related('images')[:10]
     
-    for vehicle in dairyfarm:
+    for DairyFarm in dairyfarm:
         results.append({
-            'type': 'vehicle',
-            'object': vehicle,
-            'title': f"{vehicle.year} {vehicle.make} {vehicle.model}",
-            'description': vehicle.description,
-            'price': vehicle.price,
-            'url': vehicle.get_absolute_url()
+            'type': 'dairyfarm',
+            'object': dairyfarm,
+            'title': f"{dairyfarm.year} {dairyfarm.make} {dairyfarm.model}",
+            'description': dairyfarm.description,
+            'price': dairyfarm.price,
+            'url': dairyfarm.get_absolute_url()
         })
     
     # Search Electronics
@@ -232,7 +232,7 @@ def search_results(request):
         'results': results,
         'results_count': len(results),
         'houses_count': len([r for r in results if r['type'] == 'house']),
-        'dairyfarm_count': len([r for r in results if r['type'] == 'vehicle']),
+        'dairyfarm_count': len([r for r in results if r['type'] == 'dairyfarm']),
         'electronics_count': len([r for r in results if r['type'] == 'electronics']),
         'clothing_count': len([r for r in results if r['type'] == 'clothing']),
         'poultry_count': len([r for r in results if r['type'] == 'poultry']),
