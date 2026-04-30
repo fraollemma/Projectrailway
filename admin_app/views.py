@@ -1,24 +1,24 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import user_passes_test
+
 from houses.models import House
-from dairyfarm.models import DairyFarm
+from dairyfarm.models import DairyFarmer
 from electronics.models import Product
 from clothings.models import ClothingItem
 from poultryfarm.models import Item, EggSeller, ChickenSeller, Consultant, TrainingEnrollment
 from users.models import Profile
 from conversation.models import Conversation
-from django.contrib.auth.decorators import user_passes_test
 
 
 def admin_required(view_func):
-    decorated = user_passes_test(lambda u: u.is_superuser)(view_func)
-    return decorated
+    return user_passes_test(lambda u: u.is_superuser)(view_func)
 
 
 @admin_required
 def dashboard(request):
     context = {
         "houses_count": House.objects.count(),
-        "dairyfarm_count": DairyFarm.objects.count(),
+        "dairyfarm_count": DairyFarmer.objects.count(),
         "electronics_count": Product.objects.count(),
         "clothings_count": ClothingItem.objects.count(),
         "poultry_items_count": Item.objects.count(),
@@ -39,7 +39,7 @@ def manage_houses(request):
 
 @admin_required
 def manage_dairy(request):
-    return render(request, "admin_app/manage_dairy.html", {"dairyfarm": Vehicle.objects.all()})
+    return render(request, "admin_app/manage_dairy.html", {"dairyfarm": DairyFarmer.objects.all()})
 
 
 @admin_required
@@ -72,6 +72,7 @@ def manage_users(request):
 @admin_required
 def manage_conversations(request):
     return render(request, "admin_app/manage_conversations.html", {"conversations": Conversation.objects.all()})
+
 
 @admin_required
 def admin_links(request):
