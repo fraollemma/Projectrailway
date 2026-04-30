@@ -17,7 +17,7 @@ class VehicleCategory(models.Model):
     def __str__(self):
         return self.name
     
-class Vehicle(models.Model):
+class DairyFarm(models.Model):
     VEHICLE_TYPES = (
         ('car', 'Car'),
         ('truck', 'Truck'),
@@ -119,3 +119,4 @@ class VehicleImage(models.Model):
 
     def __str__(self):
         return f"Image for {self.vehicle}"
+ 
