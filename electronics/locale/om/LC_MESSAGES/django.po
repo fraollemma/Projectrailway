@@ -37,7 +37,7 @@ msgstr "Haqi"
 msgid "Add to Cart"
 msgstr "Gabatee irratti ida'i"
 
-#: .\electronics\templates\electronics\product_form.html:32
+#: .\electronics\templates\electronics\poultryfarm_form.html:32
 msgid "Save"
 msgstr "Olkaa'i"
 

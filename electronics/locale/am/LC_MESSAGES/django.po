@@ -37,7 +37,7 @@ msgstr "መሰረዝ"
 msgid "Add to Cart"
 msgstr "ወደ ጋሪ አክል"
 
-#: .\electronics\templates\electronics\product_form.html:32
+#: .\electronics\templates\electronics\poultryfarm_form.html:32
 msgid "Save"
 msgstr "አስቀምጥ"
 
