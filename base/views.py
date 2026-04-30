@@ -20,7 +20,7 @@ from datetime import datetime
 from django.db.models import Q
 from django.shortcuts import render
 from houses.models import House
-from dairyfarm.models import dairyfarm
+from dairyfarm.models import DairyFarm
 from electronics.models import Product as ElectronicsProduct
 from clothings.models import ClothingItem as Clothing
 from poultryfarm.models import Item as PoultryItem
