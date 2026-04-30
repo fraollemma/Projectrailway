@@ -168,7 +168,7 @@ def search_results(request):
         Q(description__icontains=query)
     ).select_related('created_by').prefetch_related('images')[:10]
     
-    for DairyFarm in dairyfarm:
+    for DairyProduct in dairyfarm:
         results.append({
             'type': 'dairyfarm',
             'object': dairyfarm,

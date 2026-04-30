@@ -97,7 +97,7 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='orders', to='dairyfarm.dairyproduct'),
         ),
         migrations.DeleteModel(
-            name='DairyFarm',
+            name='DairyProduct',
         ),
         migrations.DeleteModel(
             name='VehicleImage',
