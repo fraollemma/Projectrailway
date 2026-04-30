@@ -2157,8 +2157,9 @@ WHITENOISE_AUTOREFRESH = DEBUG
 
 
 
+👉 This deletes EVERYTHING in database (all apps)
+ python manage.py flush
 
- 
 cd Desktop\cod\1st 4-12-2026 Copy\projectrailway
 
 set DATABASE_URL=postgresql://postgres:zjZosoHJkNujXTmksFvjqKwHnTAnhoBt@monorail.proxy.rlwy.net:42376/railway
@@ -2179,34 +2180,25 @@ python manage.py shell
 
 
 
+python manage.py shell
 
 from dairyfarm.models import DairyFarm, VehicleImage
 import uuid
 
 original = DairyFarm.objects.first()
 
-for i in range(10):
-    new_item = DairyFarm.objects.get(id=original.id)
-    new_item.pk = None
-    new_item.slug = str(uuid.uuid4())[:10]
-    new_item.like_count = 0
-    new_item.share_count = 0
-    new_item.save()
+new_item = DairyFarm.objects.get(id=original.id)
+new_item.pk = None
+new_item.slug = str(uuid.uuid4())[:10]  # new unique slug
+new_item.like_count = 0
+new_item.share_count = 0
+new_item.save()
 
-    images = VehicleImage.objects.filter(vehicle=original)
+images = VehicleImage.objects.filter(vehicle=original)
 
-    for img in images:
-        img.pk = None
-        img.vehicle = new_item
-        img.save()
+for img in images:
+    img.pk = None
+    img.vehicle = new_item
+    img.save()
 
-for original in DairyFarm.objects.all()[:5]:
-    new_item = DairyFarm.objects.get(id=original.id)
-    new_item.pk = None
-    new_item.slug = str(uuid.uuid4())[:10]
-    new_item.save()
-
-    for img in VehicleImage.objects.filter(vehicle=original):
-        img.pk = None
-        img.vehicle = new_item
-        img.save()
+print("Item duplicated successfully!")
