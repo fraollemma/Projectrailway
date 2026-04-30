@@ -2,65 +2,30 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'dairyfarm/css/dairyfarm_form.css' %}">
 
-<div class="form-container">
+<link rel="stylesheet" href="{% static 'dairyfarm/css/order_form.css' %}">
 
-    <h2 class="title">Add Dairy Product</h2>
+<div class="order-container">
 
-    <form method="POST" enctype="multipart/form-data" class="dairy-form">
+    <h2>🧾 Order {{ view.kwargs.slug }}</h2>
+
+    <form method="POST" class="order-form">
         {% csrf_token %}
 
-        <div class="grid">
-
-            <div class="field">
-                <label>Name</label>
-                {{ form.name }}
-            </div>
-
-            <div class="field">
-                <label>Category</label>
-                {{ form.category }}
-            </div>
-
-            <div class="field">
-                <label>Price</label>
-                {{ form.price }}
-            </div>
-
-            <div class="field">
-                <label>Quantity Available</label>
-                {{ form.quantity_available }}
-            </div>
-
-            <div class="field">
-                <label>Unit</label>
-                {{ form.unit }}
-            </div>
-
-        </div>
-
-        <div class="field full">
-            <label>Description</label>
-            {{ form.description }}
+        <div class="field">
+            <label>Quantity</label>
+            {{ form.quantity }}
         </div>
 
         <div class="field">
-            <label>Featured</label>
-            {{ form.is_featured }}
+            <label>Delivery Address</label>
+            {{ form.address }}
         </div>
 
-        <div class="field">
-            <label>Images</label>
-            <input type="file" name="images" id="images" multiple>
-        </div>
-
-        <div id="preview"></div>
-
-        <button type="submit" class="btn">Save Product</button>
+        <button type="submit" class="btn">Place Order</button>
 
     </form>
+
 </div>
 
-<script src="{% static 'dairyfarm/js/dairyfarm_form.js' %}"></script>
 {% endblock %}
