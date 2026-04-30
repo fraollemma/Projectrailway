@@ -38,28 +38,27 @@
 
         <!-- Items Grid -->
         <main class="poultry-listings">
-            {% if object_list %}
             <div class="poultry-grid"> 
                 {% for item in object_list %}
                 <article class="poultry-card" data-category="{{ item.category.slug|default:'all' }}" data-price="{{ item.price }}">
                     <!-- Image Section -->
                     <div class="card-image">
                             <a href="{% url 'poultryfarm:item_detail' item.pk %}">
-                                {% if item.main_image %}
-                                    <img 
-                                        src="https://res.cloudinary.com/doixo5oiw/image/upload/{{ item.main_image }}.jpg"
-                                        alt="{{ item.name }}"
-                                        loading="lazy"
-                                        onerror="this.src='{% static 'poultryfarm/images/product-chicken.jpg' %}'"
-                                    >
-                                {% else %}
-                                    <img 
-                                        src="{% static 'poultryfarm/images/product-chicken.jpg' %}" 
-                                        alt="default image" 
-                                        loading="lazy"
-                                    >
-                                {% endif %}
-                            </a>
+                            {% if item.main_image %}
+                                <img 
+                                    src="https://res.cloudinary.com/doixo5oiw/image/upload/{{ item.main_image }}.jpg"
+                                    alt="{{ item.name }}"
+                                    loading="lazy"
+                                    onerror="this.src='{% static 'poultryfarm/images/product-chicken.jpg' %}'"
+                                >
+                            {% else %}
+                                <img 
+                                    src="{% static 'poultryfarm/images/product-chicken.jpg' %}" 
+                                    alt="default image" 
+                                    loading="lazy"
+                                >
+                            {% endif %}
+                        </a>
                         
                         <!-- Quick Actions -->
                         <div class="quick-actions">
@@ -125,20 +124,6 @@
                 </article>
                 {% endfor %}
             </div>
-            {% else %}
-            <!-- Empty State -->
-            <div class="empty-state">
-                <div class="empty-icon">
-                    <i class="fas fa-egg"></i>
-                </div>
-                <h2>{% trans "No poultry items available yet" %}</h2>
-                <p>{% trans "Be the first to list your poultry products!" %}</p>
-                <a href="{% url 'poultryfarm:item_create' %}" class="cta-button">
-                    <i class="fas fa-plus"></i>
-                    {% trans "Add Your First Item" %}
-                </a>
-            </div>
-            {% endif %}
         </main>
 
         <!-- Pagination -->
