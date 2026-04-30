@@ -7,6 +7,8 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.contenttypes.models import ContentType
+
+import dairyfarm
 from .models import DairyFarm, VehicleCategory
 from .forms import VehicleForm
 from cart.models import CartItem
@@ -96,7 +98,7 @@ class VehicleDetailView(DetailView):
         user = self.request.user
         context['has_liked'] = (
             user.is_authenticated
-            and vehicle.liked_by.filter(pk=user.pk).exists()
+            and dairyfarm.liked_by.filter(pk=user.pk).exists()
         )
 
         return context
