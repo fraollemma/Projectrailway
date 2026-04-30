@@ -20,7 +20,7 @@ from datetime import datetime
 from django.db.models import Q
 from django.shortcuts import render
 from houses.models import House
-from dairyfarm.models import Vehicle
+from dairyfarm.models import dairyfarm
 from electronics.models import Product as ElectronicsProduct
 from clothings.models import ClothingItem as Clothing
 from poultryfarm.models import Item as PoultryItem
@@ -48,7 +48,7 @@ def base(request):
         .prefetch_related('sub_images')\
         .order_by('-created_at')[:200]
     
-    for vehicle in featured_dairyfarm:
+    for dairyfarm in featured_dairyfarm:
         vehicle.product_type = 'vehicle'
 
     for house in featured_houses:
