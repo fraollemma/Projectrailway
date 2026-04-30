@@ -39,7 +39,7 @@
         <!-- Items Grid -->
         <main class="poultry-listings">
             {% if object_list %}
-            <div class="poultry-grid">
+            <div class="poultry-grid"> 
                 {% for item in object_list %}
                 <article class="poultry-card" data-category="{{ item.category.slug|default:'all' }}" data-price="{{ item.price }}">
                     <!-- Image Section -->
@@ -49,6 +49,10 @@
                                 <img src="{{ item.main_image.url }}" alt="{{ item.name }}" loading="lazy">
                             {% else %}
                                 <img src="{% static 'poultryfarm/images/product-chicken.jpg' %}" alt="default image" loading="lazy">
+                            {% endif %}
+
+                            {% if item.main_image %}
+                                <img src="{{ item.main_image.url }}">
                             {% endif %}
                         </a>
                         
