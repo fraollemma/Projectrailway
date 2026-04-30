@@ -118,7 +118,7 @@
   aspect-ratio: 1 / 1; /* perfect square */
   overflow: hidden;
   position: relative;
-  background: #f3f4f6;
+  background: #f3f4f662;
 }
 
 .card-image img {
