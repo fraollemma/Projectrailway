@@ -48,10 +48,9 @@ class ItemForm(forms.ModelForm):
         if commit:
             files = self.files.getlist('sub_images')
 
-            for img in self.request.FILES.getlist('sub_images'):
-                if not img or img.size == 0:
-                    continue
-                SubImage.objects.create(item=item, image=img)
+            for img in files:
+                if img and img.size > 0:
+                    SubImage.objects.create(item=item, image=img)
 
         return item
 
