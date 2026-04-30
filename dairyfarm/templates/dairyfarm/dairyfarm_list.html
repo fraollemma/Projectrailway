@@ -71,7 +71,7 @@
                     {% if vehicle.slug %}
                         <a href="{% url 'dairyfarm:dairyfarm_detail' vehicle.slug %}" class="view-details">
                     {% else %}
-                        <a href="{% url 'dairyfarm:vehicle_list' %}" class="view-details">
+                        <a href="{% url 'dairyfarm:dairyfarm_list' %}" class="view-details">
                     {% endif %}
                         <div class="fraol">
                         {% trans "View Details" %} <i class="fas fa-chevron-right"></i>

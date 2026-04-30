@@ -24,7 +24,7 @@
     {% if vehicle.slug %}
     <a href="{% url 'dairyfarm:dairyfarm_detail' vehicle.slug %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
     {% else %}
-        <a href="{% url 'dairyfarm:vehicle_list' %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
+        <a href="{% url 'dairyfarm:dairyfarm_list' %}" class="btn btn-secondary">{% trans "Cancel" %}</a>
     {% endif %}
 </form>
 {% endblock %}
