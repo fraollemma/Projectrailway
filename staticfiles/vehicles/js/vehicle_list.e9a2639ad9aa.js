@@ -1,4 +1,4 @@
-// dairyfarm/static/dairyfarm/js/vehicle_list.js
+// dairyfarm/static/dairyfarm/js/dairyfarm_list.js
 document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.like-button').forEach(button => {

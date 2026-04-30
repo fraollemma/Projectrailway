@@ -14,7 +14,7 @@ from cart.views import _get_cart
 
 @require_POST
 @csrf_exempt
-def like_vehicle(request, vehicle_id):
+def like_dairyfarm(request, vehicle_id):
     try:
         vehicle = DairyFarm.objects.get(id=vehicle_id)
         new_count = vehicle.toggle_like(request.user)
@@ -29,7 +29,7 @@ def like_vehicle(request, vehicle_id):
 
 @require_POST
 @csrf_exempt
-def share_vehicle(request, vehicle_id):
+def share_dairyfarm(request, vehicle_id):
     try:
         vehicle = DairyFarm.objects.get(id=vehicle_id)
         new_count = vehicle.increment_shares()
@@ -38,13 +38,13 @@ def share_vehicle(request, vehicle_id):
             'share_count': new_count,
             'vehicle_id': vehicle_id
         })
-    except Vehicle.DoesNotExist:
+    except DairyFarm.DoesNotExist:
         return JsonResponse({'status': 'error'}, status=404)
 
 
 class VehicleListView(ListView):
     model = DairyFarm
-    template_name = 'dairyfarm/vehicle_list.html'
+    template_name = 'dairyfarm/dairyfarm_list.html'
     context_object_name = 'dairyfarm'
     paginate_by = 12
  
@@ -57,26 +57,26 @@ class VehicleListView(ListView):
 
         cart = _get_cart(self.request)
         vehicle_ct = ContentType.objects.get_for_model(DairyFarm)
-        cart_vehicle_ids = CartItem.objects.filter(
+        cart_dairyfarm_ids = CartItem.objects.filter(
             cart=cart,
             content_type=vehicle_ct,
             object_id__in=dairyfarm.values_list('id', flat=True)
         ).values_list('object_id', flat=True)
 
-        liked_vehicle_ids = []
+        liked_dairyfarm_ids = []
         if self.request.user.is_authenticated:
-            liked_vehicle_ids = self.request.user.dairyfarm.values_list('id', flat=True)
+            liked_dairyfarm_ids = self.request.user.dairyfarm.values_list('id', flat=True)
 
-        for vehicle in dairyfarm:
-            vehicle.is_carted = vehicle.id in cart_vehicle_ids
-            vehicle.has_liked = vehicle.id in liked_vehicle_ids
+        for dairyfarm in dairyfarm:
+            dairyfarm.is_carted = dairyfarm.id in cart_dairyfarm_ids
+            dairyfarm.has_liked = dairyfarm.id in liked_dairyfarm_ids
 
         return context
 
 
 class VehicleDetailView(DetailView):
     model = DairyFarm
-    template_name = 'dairyfarm/vehicle_detail.html'
+    template_name = 'dairyfarm/dairyfarm_detail.html'
     context_object_name = 'vehicle'
     slug_field = 'slug'
 
@@ -104,7 +104,7 @@ class VehicleDetailView(DetailView):
 
 class CategoryView(ListView):
     model = DairyFarm
-    template_name = 'dairyfarm/vehicle_list.html'
+    template_name = 'dairyfarm/dairyfarm_list.html'
     context_object_name = 'dairyfarm'
     paginate_by = 12
 
@@ -116,7 +116,7 @@ class VehicleCreateView(LoginRequiredMixin, CreateView):
     model = DairyFarm
     form_class = VehicleForm
     template_name = 'dairyfarm/vehicle_form.html'
-    success_url = reverse_lazy('dairyfarm:vehicle_list')
+    success_url = reverse_lazy('dairyfarm:dairyfarm_list')
 
     def form_valid(self, form):
         form.instance.created_by = self.request.user
@@ -137,7 +137,7 @@ class VehicleEditView(LoginRequiredMixin, UpdateView):
         return DairyFarm.objects.get(slug=self.kwargs['slug'])
 
     def get_success_url(self):
-        return reverse_lazy('dairyfarm:vehicle_detail', kwargs={'slug': self.object.slug})
+        return reverse_lazy('dairyfarm:dairyfarm_detail', kwargs={'slug': self.object.slug})
 
 
 class VehicleDeleteView(LoginRequiredMixin, DeleteView):
@@ -148,10 +148,10 @@ class VehicleDeleteView(LoginRequiredMixin, DeleteView):
         return DairyFarm.objects.get(slug=self.kwargs['slug'])
 
     def get_success_url(self):
-        return reverse_lazy('dairyfarm:vehicle_list')
+        return reverse_lazy('dairyfarm:dairyfarm_list')
 
 
-def add_vehicle_to_cart(request, vehicle_id):
+def add_dairyfarm_to_cart(request, vehicle_id):
     app_label = 'dairyfarm'
     model_name = 'dairyfarm'
     return redirect(reverse('cart:add_to_cart', kwargs={

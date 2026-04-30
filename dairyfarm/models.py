@@ -109,7 +109,7 @@ class DairyFarm(models.Model):
     def __str__(self):
         return f"{self.year} {self.make} {self.model}"
     def get_absolute_url(self):
-        return reverse("dairyfarm:vehicle_detail", args=[self.slug])
+        return reverse("dairyfarm:dairyfarm_detail", args=[self.slug])
 
 class VehicleImage(models.Model):
     vehicle = models.ForeignKey(DairyFarm, related_name='images', on_delete=models.CASCADE)
