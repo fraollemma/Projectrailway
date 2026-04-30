@@ -7,7 +7,6 @@ from conversation.models import Conversation
 from .forms import MessageForm
 from .models import Message
 from houses.models import House
-from dairyfarm.models import DairyFarm
 from electronics.models import Product as ElectronicsProduct
 from clothings.models import ClothingItem as Clothing
 from poultryfarm.models import Item
@@ -20,7 +19,7 @@ from datetime import datetime
 from django.db.models import Q
 from django.shortcuts import render
 from houses.models import House
-from dairyfarm.models import DairyFarm
+from dairyfarm.models import DairyProduct
 from electronics.models import Product as ElectronicsProduct
 from clothings.models import ClothingItem as Clothing
 from poultryfarm.models import Item as PoultryItem
@@ -34,7 +33,7 @@ def base(request):
     featured_houses = House.objects.filter(is_featured=True)\
         .prefetch_related('images')\
         .order_by('-created_at')[:200]
-    featured_dairyfarm = DairyFarm.objects.filter(is_featured=True)\
+    featured_dairyfarm = DairyProduct.objects.filter(is_featured=True)\
         .prefetch_related('images')\
         .order_by('-created_at')[:200]
     featured_electronics = ElectronicsProduct.objects.filter(is_featured=True)\
@@ -109,7 +108,7 @@ def base(request):
         'conversations_count': conversations_count,
         'form': form,
         'all_featured': all_featured,
-        'dairyfarm_count': DairyFarm.objects.count(),
+        'dairyfarm_count': DairyProduct.objects.count(),
         'house_count': House.objects.count(),
         'electronics_count': ElectronicsProduct.objects.count(),
         'clothing_count': Clothing.objects.count(),
@@ -163,7 +162,7 @@ def search_results(request):
         })
     
     # Search dairyfarm
-    dairyfarm = DairyFarm.objects.filter(
+    dairyfarm = DairyProduct.objects.filter(
         Q(make__icontains=query) |
         Q(model__icontains=query) |
         Q(description__icontains=query)

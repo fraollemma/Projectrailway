@@ -1,6 +1,6 @@
 # project/dairyfarm/forms.py
 from django import forms
-from .models import DairyFarm, VehicleImage
+from .models import DairyProduct, DairyProductImage
 from django.core.validators import MinValueValidator
 
 
@@ -20,11 +20,11 @@ class MultipleFileField(forms.FileField):
             result = single_file_clean(data, initial)
         return result
 
-class VehicleForm(forms.ModelForm):
+class DairyProductForm(forms.ModelForm):
     images = MultipleFileField(required=False, label='Additional Images')
     
     class Meta:
-        model = DairyFarm
+        model = DairyProduct
         fields = [
             'category', 'vehicle_type', 'make', 'model', 'year', 
             'price', 'mileage', 'fuel_type', 'engine_size',
@@ -42,12 +42,12 @@ class VehicleForm(forms.ModelForm):
         self.fields['mileage'].validators.append(MinValueValidator(0))
 
     def save(self, commit=True):
-        vehicle = super().save(commit=False)
+        dairy_product = super().save(commit=False)
         if self.user:
-            vehicle.created_by = self.user
+            dairy_product.created_by = self.user
         if commit:
-            vehicle.save()
+            dairy_product.save()
             if self.cleaned_data.get('images'):
                 for img in self.cleaned_data['images']:
-                    VehicleImage.objects.create(vehicle=vehicle, image=img)
-        return vehicle
+                    DairyProductImage.objects.create(dairy_product=dairy_product, image=img)
+        return dairy_product

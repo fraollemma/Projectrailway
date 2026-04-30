@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from dairyfarm.models import DairyFarm, VehicleImage
+from dairyfarm.models import DairyProduct, DairyProductImage
 from django.contrib.auth import get_user_model
 import random
 import uuid
@@ -34,7 +34,7 @@ class Command(BaseCommand):
             make = fake.company()
             model = fake.word()
 
-            item = DairyFarm.objects.create(
+            item = DairyProduct.objects.create(
                 category=random.choice(['car','truck','motorcycle','bicycle']),
                 vehicle_type=random.choice(['car','truck','motorcycle','bicycle']),
                 make=make,
@@ -53,9 +53,9 @@ class Command(BaseCommand):
 
             # images
             for j in range(random.randint(1, 2)):
-                VehicleImage.objects.create(
-                    vehicle=item,
-                    image="vehicle_images/default.jpg",
+                DairyProductImage.objects.create(
+                    dairy_product=item,
+                    image="dairy_product_images/default.jpg",
                     is_featured=(j == 0),
                     alt_text=f"{make} {model}"
                 )
