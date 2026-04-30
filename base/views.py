@@ -7,7 +7,6 @@ from conversation.models import Conversation
 from .forms import MessageForm
 from .models import Message
 from houses.models import House
-from dairyfarm.models import DairyFarm
 from electronics.models import Product as ElectronicsProduct
 from clothings.models import ClothingItem as Clothing
 from poultryfarm.models import Item

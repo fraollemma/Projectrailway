@@ -1,132 +1,146 @@
-# project/dairyfarm/models.py
 from django.db import models
 from django.conf import settings
 from django.utils.text import slugify
-from django.urls import reverse
-import uuid
 
-class VehicleCategory(models.Model):
-    name = models.CharField(max_length=50)
+
+class DairyCategory(models.Model):
+    name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, blank=True)
-    icon = models.CharField(max_length=30, help_text="Font Awesome icon class")
+    description = models.TextField(blank=True)
 
-def save(self, *args, **kwargs):
-    if not self.slug:
-        base_slug = slugify(f"{self.year}-{self.make}-{self.model}")
-
-        unique_slug = base_slug or str(uuid.uuid4())[:8]
-
-        num = 1
-        while DairyFarm.objects.filter(slug=unique_slug).exists():
-            unique_slug = f"{base_slug}-{num}"
-            num += 1
-
-        self.slug = unique_slug
-
-    super().save(*args, **kwargs)
-    def __str__(self):
-        return self.name
-    
-class DairyFarm(models.Model):
-    VEHICLE_TYPES = (
-        ('car', 'Car'),
-        ('truck', 'Truck'),
-        ('motorcycle', 'Motorcycle'),
-        ('bicycle', 'Bicycle'),
-    )
-    
-    FUEL_TYPES = (
-        ('petrol', 'Petrol'),
-        ('diesel', 'Diesel'),
-        ('electric', 'Electric'),
-        ('hybrid', 'Hybrid'),
-        ('none', 'None'),
-    )
-    CATEGORY_CHOICES = [
-        ('car', 'Car'),
-        ('truck', 'Truck'),
-        ('motorcycle', 'Motorcycle'),
-        ('bicycle', 'Bicycle'),
-        ('suv', 'SUV'),
-        ('van', 'Van'),
-        ('bus', 'Bus'),
-        ('commercial', 'Commercial dairyfarm'),
-    ]
-    category = models.CharField(
-        max_length=20,
-        choices=CATEGORY_CHOICES,
-        default='car'
-    )
-    vehicle_type = models.CharField(max_length=20, choices=VEHICLE_TYPES)
-    make = models.CharField(max_length=50)
-    model = models.CharField(max_length=50)
-    year = models.PositiveIntegerField()
-    price = models.DecimalField(max_digits=12, decimal_places=2)
-    mileage = models.PositiveIntegerField(help_text="In kilometers")
-    fuel_type = models.CharField(max_length=10, choices=FUEL_TYPES)
-    engine_size = models.CharField(max_length=20, blank=True)
-    color = models.CharField(max_length=30)
-    description = models.TextField()
-    is_featured = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField(unique=True)
-    created_by = models.ForeignKey(settings.
-    AUTH_USER_MODEL, on_delete=models.CASCADE)
-    like_count = models.PositiveIntegerField(default=0)
-    share_count = models.PositiveIntegerField(default=0)
-    liked_by = models.ManyToManyField(
-        settings.AUTH_USER_MODEL,
-        related_name='liked_dairyfarm',
-        blank=True
-    )
-    
-    def increment_likes(self):
-        self.like_count += 1
-        self.save()
-        return self.like_count
-    
-    def toggle_like(self, user):
-        if user in self.liked_by.all():
-            self.liked_by.remove(user)
-        else:
-            self.liked_by.add(user)
-        self.like_count = self.liked_by.count()
-        self.save()
-        return self.like_count
-    
-    def has_liked(self, user):
-        """Return True if the user has liked this vehicle."""
-        if user.is_authenticated:
-            return self.liked_by.filter(pk=user.pk).exists()
-        return False
-    
-    def increment_shares(self):
-        self.share_count += 1
-        self.save()
-        return self.share_count
-    
     def save(self, *args, **kwargs):
         if not self.slug:
-            base_slug = slugify(f"{self.year}-{self.make}-{self.model}")
+            base_slug = slugify(self.name)
             unique_slug = base_slug
             num = 1
-            while DairyFarm.objects.filter(slug=unique_slug).exists():
+
+            while DairyCategory.objects.filter(slug=unique_slug).exists():
                 unique_slug = f"{base_slug}-{num}"
                 num += 1
+
             self.slug = unique_slug
         super().save(*args, **kwargs)
-    
-    def __str__(self):
-        return f"{self.year} {self.make} {self.model}"
-    def get_absolute_url(self):
-        return reverse("dairyfarm:dairyfarm_detail", args=[self.slug])
 
-class VehicleImage(models.Model):
-    vehicle = models.ForeignKey(DairyFarm, related_name='images', on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='vehicle_images/')
+    def __str__(self):
+        return self.name
+
+class DairyProduct(models.Model):
+    name = models.CharField(max_length=150)
+    slug = models.SlugField(unique=True, blank=True)
+
+    description = models.TextField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    category = models.ForeignKey(
+        DairyCategory,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="products"
+    )
+
+    quantity_available = models.PositiveIntegerField()
+    unit = models.CharField(max_length=50, default="liters")  # liters, kg, etc.
+
+    is_featured = models.BooleanField(default=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="dairy_products"
+    )
+
+    like_count = models.PositiveIntegerField(default=0)
+    share_count = models.PositiveIntegerField(default=0)
+
+    liked_by = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name="liked_dairy_products",
+        blank=True
+    )
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            base_slug = slugify(self.name)
+            unique_slug = base_slug
+            num = 1
+
+            while DairyProduct.objects.filter(slug=unique_slug).exists():
+                unique_slug = f"{base_slug}-{num}"
+                num += 1
+
+            self.slug = unique_slug
+
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+
+class DairyProductImage(models.Model):
+    product = models.ForeignKey(
+        DairyProduct,
+        related_name="images",
+        on_delete=models.CASCADE
+    )
+    image = models.ImageField(upload_to="dairy/products/")
     is_featured = models.BooleanField(default=False)
     alt_text = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
-        return f"Image for {self.vehicle}"
- 
+        return f"Image for {self.product.name}"
+
+class DairyFarmer(models.Model):
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="dairy_farmer"
+    )
+
+    farm_name = models.CharField(max_length=200)
+    location = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+
+    total_cows = models.PositiveIntegerField(default=0)
+    daily_milk_production = models.FloatField(help_text="Liters per day")
+
+    is_verified = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.farm_name
+
+class DairyOrder(models.Model):
+    STATUS_CHOICES = [
+        ("pending", "Pending"),
+        ("confirmed", "Confirmed"),
+        ("processing", "Processing"),
+        ("delivered", "Delivered"),
+        ("cancelled", "Cancelled"),
+    ]
+
+    product = models.ForeignKey(
+        DairyProduct,
+        on_delete=models.CASCADE,
+        related_name="orders"
+    )
+
+    buyer = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="dairy_orders"
+    )
+
+    quantity = models.PositiveIntegerField()
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+
+    address = models.TextField()
+
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="pending")
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        self.total_price = self.quantity * self.product.price
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"Order #{self.id} - {self.product.name}"

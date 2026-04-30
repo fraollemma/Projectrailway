@@ -1,41 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const fileInput = document.querySelector('input[type="file"]');
-    const preview = document.getElementById("imagePreview");
 
-    if (fileInput && preview) {
-        fileInput.addEventListener("change", function (e) {
-            const file = e.target.files[0];
-            if (file && file.type.startsWith("image/")) {
+    const input = document.getElementById("images");
+    const preview = document.getElementById("preview");
+
+    if (input) {
+        input.addEventListener("change", function () {
+            preview.innerHTML = "";
+
+            Array.from(this.files).forEach(file => {
                 const reader = new FileReader();
+
                 reader.onload = function (e) {
-                    preview.src = e.target.result;
-                    preview.style.display = "block";
+                    const img = document.createElement("img");
+                    img.src = e.target.result;
+                    preview.appendChild(img);
                 };
+
                 reader.readAsDataURL(file);
-            } else {
-                preview.src = "";
-                preview.style.display = "none";
-            }
+            });
         });
     }
 
-    const form = document.getElementById("vehicleForm");
-    form.addEventListener("submit", function (e) {
-        const requiredFields = form.querySelectorAll("[required]");
-        let valid = true;
-
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                field.classList.add("field-error");
-                valid = false;
-            } else {
-                field.classList.remove("field-error");
-            }
-        });
-
-        if (!valid) {
-            e.preventDefault();
-            alert("Please fill all required fields.");
-        }
-    });
 });

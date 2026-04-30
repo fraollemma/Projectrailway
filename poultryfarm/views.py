@@ -104,11 +104,15 @@ class ItemCreateView(LoginRequiredMixin, CreateView):
     model = Item
     form_class = ItemForm
     template_name = 'poultryfarm/item_create.html'
+    success_message = "Item was created successfully!"
+    login_url = 'login'
 
     def form_valid(self, form):
-        form.instance.created_by = self.request.user
+        if self.request.user.is_authenticated:
+            form.instance.created_by = self.request.user
+        
         item = form.save()
-        messages.success(self.request, "Item created successfully!")
+        
         return redirect('poultryfarm:item_detail', pk=item.pk)
 
 
