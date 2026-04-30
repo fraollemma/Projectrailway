@@ -1,11 +1,13 @@
 from django.views.generic import ListView, DetailView, CreateView
-from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import DairyProduct, DairyCategory, DairyOrder
 
- 
+
+# =========================
+# PRODUCT LIST
+# =========================
 class DairyProductListView(ListView):
     model = DairyProduct
     template_name = "dairyfarm/dairyfarm_list.html"
@@ -13,16 +15,25 @@ class DairyProductListView(ListView):
     paginate_by = 12
 
     def get_queryset(self):
-        return DairyProduct.objects.filter(is_featured=True).order_by("-created_at")
+        return DairyProduct.objects.filter(
+            is_featured=True
+        ).order_by("-created_at")
 
- 
+
+# =========================
+# PRODUCT DETAIL
+# =========================
 class DairyProductDetailView(DetailView):
     model = DairyProduct
     template_name = "dairyfarm/dairyfarm_detail.html"
     context_object_name = "product"
     slug_field = "slug"
+    slug_url_kwarg = "slug"
 
- 
+
+# =========================
+# CREATE PRODUCT
+# =========================
 class DairyProductCreateView(LoginRequiredMixin, CreateView):
     model = DairyProduct
     fields = [
@@ -35,7 +46,11 @@ class DairyProductCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.created_by = self.request.user
         return super().form_valid(form)
- 
+
+
+# =========================
+# FILTER BY CATEGORY
+# =========================
 class DairyCategoryView(ListView):
     model = DairyProduct
     template_name = "dairyfarm/dairyfarm_list.html"
@@ -43,17 +58,20 @@ class DairyCategoryView(ListView):
 
     def get_queryset(self):
         return DairyProduct.objects.filter(
-            category__slug=self.kwargs["slug"]
+            category__slug=self.kwargs.get("slug")
         ).order_by("-created_at")
 
- 
+
+# =========================
+# CREATE ORDER
+# =========================
 class CreateOrderView(LoginRequiredMixin, CreateView):
     model = DairyOrder
     fields = ["quantity", "address"]
     template_name = "dairyfarm/order_form.html"
 
     def form_valid(self, form):
-        product = DairyProduct.objects.get(slug=self.kwargs["slug"])
+        product = DairyProduct.objects.get(slug=self.kwargs.get("slug"))
 
         form.instance.product = product
         form.instance.buyer = self.request.user
