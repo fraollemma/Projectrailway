@@ -44,11 +44,12 @@
                     <!-- Image Section -->
                     <div class="card-image">
                             <a href="{% url 'poultryfarm:item_detail' item.pk %}">
-                            <img src="{{ item.main_image.url }}" alt="{{ item.name }}" loading="lazy">
-                                <span class="carted-badge {% if item.is_carted %}carted{% endif %}">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </span>
-                            </a>
+    {% if item.main_image and item.main_image.url %}
+        <img src="{{ item.main_image.url }}" alt="{{ item.name }}" loading="lazy">
+    {% else %}
+        <img src="{% static 'poultryfarm/images/product-chicken.jpg' %}" alt="default image" loading="lazy">
+    {% endif %}
+</a>
                         
                         <!-- Quick Actions -->
                         <div class="quick-actions">
