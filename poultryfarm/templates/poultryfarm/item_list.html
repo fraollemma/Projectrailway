@@ -45,10 +45,10 @@
                     <!-- Image Section -->
                     <div class="card-image">
                         <a href="{% url 'poultryfarm:item_detail' item.pk %}">
-                            {% if item.main_image %}
+                            {% if item.main_image and item.main_image.url %}
                                 <img src="{{ item.main_image.url }}" alt="{{ item.name }}" loading="lazy">
                             {% else %}
-                                <img src="{% static 'poultryfarm/images/product-chicken.jpg' %}" alt="{{ item.name }}" loading="lazy">
+                                <img src="{% static 'poultryfarm/images/product-chicken.jpg' %}" alt="default image" loading="lazy">
                             {% endif %}
                         </a>
                         
