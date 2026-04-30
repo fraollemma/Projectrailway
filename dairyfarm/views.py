@@ -67,7 +67,9 @@ class VehicleListView(ListView):
 
         liked_dairyfarm_ids = []
         if self.request.user.is_authenticated:
-            liked_dairyfarm_ids = self.request.user.dairyfarm.values_list('id', flat=True)
+            liked_dairyfarm_ids = DairyFarm.objects.filter(
+                liked_by=self.request.user
+            ).values_list('id', flat=True)
 
         for dairyfarm in dairyfarm:
             dairyfarm.is_carted = dairyfarm.id in cart_dairyfarm_ids
