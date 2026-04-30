@@ -36,7 +36,6 @@ class DairyCategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
     search_fields = ('name',)
 
-
 # =========================
 # Farmer Admin
 # =========================

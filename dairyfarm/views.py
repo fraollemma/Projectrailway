@@ -38,7 +38,7 @@ class DairyProductCreateView(LoginRequiredMixin, CreateView):
         "name", "description", "price",
         "category", "quantity_available", "unit"
     ]
-    template_name = "dairyfarm/poultryfarm_form.html"
+    template_name = "dairyfarm/dairyfarm_form.html"
     success_url = reverse_lazy("dairyfarm:dairyfarm_list")
 
     def form_valid(self, form):
