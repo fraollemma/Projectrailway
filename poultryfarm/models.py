@@ -1,3 +1,4 @@
+# poultryfarm/models.py
 from django.db import models
 from django.conf import settings
 from django.utils.text import slugify
@@ -201,6 +202,7 @@ class EggSeller(models.Model):
         on_delete=models.CASCADE,
         related_name='egg_seller'
     )
+    slug = models.SlugField(unique=True, max_length=255, blank=True)
     description = models.TextField()
 
     quantity_available = models.PositiveIntegerField(help_text=_("Number of eggs currently available"))

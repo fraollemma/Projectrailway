@@ -38,10 +38,6 @@ from cart.models import CartItem
 from cart.views import _get_cart
 from django.contrib.contenttypes.models import ContentType
 
-
-# ----------------------------
-# ITEMS
-# ----------------------------
 @login_required
 @require_POST
 @csrf_exempt
@@ -65,10 +61,7 @@ def share_item(request, slug):
     'status': 'success',
     'share_count': item.share_count
 })
-
-# ----------------------------
-# INDEX
-# ----------------------------
+ 
 
 def index(request):
     featured_products = Item.objects.all().order_by('-created_at')[:3]
@@ -76,11 +69,7 @@ def index(request):
         'featured_products': featured_products
     })
 
-
-# ----------------------------
-# ITEMS CRUD
-# ----------------------------
-
+ 
 class ItemListView(ListView):
     model = Item
     template_name = 'poultryfarm/item_list.html'
@@ -135,12 +124,7 @@ def item_delete(request, slug):
     if request.method == "POST":
         item.delete()
     return redirect('poultryfarm:item_list')
-
-
-# ----------------------------
-# CONSULTANCY
-# ----------------------------
-
+ 
 def veterinary_consultancy(request):
     consultants = Consultant.objects.filter(is_available=True).prefetch_related('services')
     return render(request, 'poultryfarm/veterinary_consultancy.html', {
@@ -172,12 +156,7 @@ def book_consultation(request):
         form.save()
         return JsonResponse({'success': True})
     return JsonResponse({'success': False, 'errors': form.errors}, status=400)
-
-
-# ----------------------------
-# EGG SELLERS
-# ----------------------------
-
+ 
 def egg_sellers(request):
     sellers = EggSeller.objects.filter(is_active=True).select_related('user__profile')
     form = EggSellerFilterForm(request.GET or None)
@@ -301,12 +280,7 @@ def delete_egg_seller_ajax(request, pk):
     seller = get_object_or_404(EggSeller, pk=pk)
     seller.delete()
     return JsonResponse({'success': True})
-
-
-# ----------------------------
-# CHICKEN SELLERS
-# ----------------------------
-
+ 
 def chicken_sellers_list(request):
     sellers = ChickenSeller.objects.filter(is_active=True)
 
@@ -334,11 +308,7 @@ def register_seller(request):
 
     return render(request, 'poultryfarm/register_seller.html', {'form': form})
 
-
-# ----------------------------
-# TRAINING
-# ----------------------------
-
+ 
 def poultry_trainings(request):
     form = TrainingEnrollmentForm(request.POST or None)
 
