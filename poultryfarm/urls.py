@@ -14,15 +14,11 @@ from django.views.generic import RedirectView
 
 app_name = 'poultryfarm'
 
-urlpatterns = [
-    # ✅ poultry homepage
+urlpatterns = [ 
     path('', views.index, name='index'),
-
-    # ✅ items list
+ 
     path('items/', ItemListView.as_view(), name='item_list'),
-
-    # item detail
-    
+ 
     path('items/create/', ItemCreateView.as_view(), name='item_create'),
     path('items/<slug:slug>/', ItemDetailView.as_view(), name='item_detail'),
 
@@ -31,20 +27,17 @@ urlpatterns = [
 
     path('items/<slug:slug>/like/', views.like_item, name='item_like'),
     path('items/<slug:slug>/share/', views.share_item, name='item_share'),
-
-    # API
+ 
     path('api/items/', ItemListAPIView.as_view(), name='api_item_list'),
     path('api/items/<slug:slug>/', ItemDetailAPIView.as_view(), name='api_item_detail'),
-
-    # egg sellers 
+ 
     path('egg-sellers/delete-ajax/<int:pk>/', views.delete_egg_seller_ajax, name='delete_egg_seller_ajax'),
     path('egg-sellers/add/', views.add_egg_seller, name='add_egg_seller'),
     path('egg-sellers/edit/<int:pk>>/', views.edit_egg_seller, name='edit_egg_seller'),
     path('egg-sellers/place-order/', views.place_egg_order, name='place_egg_order'),
     path('egg-sellers/', views.egg_sellers, name='egg_sellers'),
     path('my-orders/', views.egg_seller_orders, name='egg_seller_orders'),
-
-    # chicken sellers
+ 
     path('chicken-sellers/', views.chicken_sellers_list, name='chicken_sellers_list'),
     path('chicken-seller/<int:seller_id>/', views.chicken_seller_detail, name='chicken_seller_detail'),
     path('register-seller/', views.register_seller, name='register_seller'),

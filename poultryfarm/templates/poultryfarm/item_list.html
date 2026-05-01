@@ -15,11 +15,26 @@
 {% block content %}
 <div class="poultry-page">
     <div class="container">
-        <!-- Filters & Stats -->
+
+        <!-- HEADER -->
+        <div class="page-header">
+            <div>
+                <h1>{% trans "Poultry Marketplace" %}</h1>
+                <p class="subtitle">{% trans "Buy and sell poultry products easily" %}</p>
+            </div>
+
+            <a href="{% url 'poultryfarm:item_create' %}" class="add-item-btn">
+                <i class="fas fa-plus"></i>
+                {% trans "Sell Item" %}
+            </a>
+        </div>
+
+        <!-- FILTER BAR -->
         <div class="filters-bar">
             <div class="results-count">
-                <span>{{ object_list.count }}</span> {% trans "items available" %}
+                <strong>{{ object_list.count }}</strong> {% trans "items" %}
             </div>
+
             <div class="view-toggle">
                 <button class="view-btn active" data-view="grid">
                     <i class="fas fa-th"></i>
@@ -28,134 +43,81 @@
                     <i class="fas fa-list"></i>
                 </button>
             </div>
-            <div class="add-item">
+        </div>
+
+        <!-- EMPTY STATE -->
+        {% if not object_list %}
+        <div class="empty-state">
+            <div class="empty-icon">🐔</div>
+            <h3>{% trans "No items yet" %}</h3>
+            <p>{% trans "Be the first to sell something!" %}</p>
             <a href="{% url 'poultryfarm:item_create' %}" class="add-item-btn">
-                <i class="fas fa-plus-circle"></i>
-                {% trans "Sell Item" %}
+                {% trans "Create Item" %}
             </a>
-            </div>
-        </div> 
-
-        <!-- Items Grid -->
-        <main class="poultry-listings">
-            <div class="poultry-grid"> 
-                {% for item in object_list %}
-                <article class="poultry-card" data-category="{{ item.category.slug|default:'all' }}" data-price="{{ item.price }}">
-                    <!-- Image Section -->
-                    <div class="card-image">
-                        <a href="{% url 'poultryfarm:item_detail' item.slug %}">
-
-                            {% if item.sub_images.exists %}
-                                <img src="{{ item.sub_images.first.image.url }}" alt="{{ item.name }}" loading="lazy">
-                            {% elif item.main_image %}
-                                <img src="{{ item.main_image.url }}" alt="{{ item.name }}" loading="lazy">
-                            {% else %}
-                                <img src="{% static 'poultryfarm/images/product-chicken.jpg' %}" alt="default image" loading="lazy">
-                            {% endif %}
-
-                        </a>
-                    </div>
-                        
-                        <!-- Quick Actions -->
-                        <div class="quick-actions">
-                            <button class="action-btns like-btn {% if item.has_liked %}liked{% endif %}"
-                                    data-item-id="{{ item.slug }}"
-                                    data-action="like"
-                                    title="{% trans 'Like' %}">
-                                <i class="fas fa-heart"></i>
-                                <span class="count">{{ item.like_count }}</span>
-                            </button>
-                            
-                            <button class="action-btns share-btn"
-                                    data-item-id="{{ item.slug }}"
-                                    data-action="share"
-                                    title="{% trans 'Share' %}">
-                                <i class="fas fa-share-alt"></i>
-                                <span class="count">{{ item.share_count }}</span>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Content Section -->
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="time-posted">
-                                <i class="fas fa-clock"></i>
-                                {{ item.created_at|short_timesince }}
-                            </span>
-                        </div>
-                        
-                        <h3 class="item-title">
-                            <a href="{% url 'poultryfarm:item_detail' item.slug %}">{{ item.name }}</a>
-                        </h3>
-                        
-                        <div class="item-price">
-                            <span class="price-amount">ETB {{ item.price|floatformat:"0" }}</span>
-                            <span class="price-unit">/ item</span>
-                        </div>
-                        
-                        <div class="card-footer">
-                            <a href="{% url 'poultryfarm:item_detail' item.slug %}" class="view-btn">
-                                {% trans "Detail" %}
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                            
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser or request.user == item.created_by %}
-                                <div class="admin-actions">
-                                    <a href="{% url 'poultryfarm:item_edit' item.slug %}" class="edit-btn" title="Edit">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                    <form action="{% url 'poultryfarm:item_delete' item.slug %}" method="POST" class="delete-form">
-                                        {% csrf_token %}
-                                        <button type="submit" class="delete-btn" title="Delete" onclick="return confirm('Delete this item?')">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                                {% endif %}
-                            {% endif %}
-                        </div>
-                    </div>
-                </article>
-                {% endfor %}
-            </div>
-        </main>
-
-        <!-- Pagination -->
-        {% if is_paginated %}
-        <nav class="pagination-wrapper">
-            <ul class="pagination">
-                {% if page_obj.has_previous %}
-                <li class="page-item">
-                    <a href="?page={{ page_obj.previous_page_number }}" class="page-link">
-                        <i class="fas fa-chevron-left"></i>
-                    </a>
-                </li>
-                {% endif %}
-                
-                {% for num in page_obj.paginator.page_range %}
-                    {% if page_obj.number == num %}
-                    <li class="page-item active">
-                        <span class="page-link">{{ num }}</span>
-                    </li>
-                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                    <li class="page-item">
-                        <a href="?page={{ num }}" class="page-link">{{ num }}</a>
-                    </li>
-                    {% endif %}
-                {% endfor %}
-                
-                {% if page_obj.has_next %}
-                <li class="page-item">
-                    <a href="?page={{ page_obj.next_page_number }}" class="page-link">
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                </li>
-                {% endif %}
-            </ul>
-        </nav>
+        </div>
         {% endif %}
+
+        <!-- GRID -->
+        <div class="poultry-grid">
+            {% for item in object_list %}
+            <article class="poultry-card">
+
+                <!-- IMAGE -->
+                <div class="card-image">
+                    <a href="{% url 'poultryfarm:item_detail' item.slug %}">
+                        {% if item.sub_images.exists %}
+                            <img src="{{ item.sub_images.first.image.url }}">
+                        {% elif item.main_image %}
+                            <img src="{{ item.main_image.url }}">
+                        {% else %}
+                            <img src="{% static 'poultryfarm/images/product-chicken.jpg' %}">
+                        {% endif %}
+                    </a>
+
+                    <!-- BADGE -->
+                    <span class="badge">New</span>
+
+                    <!-- ACTIONS -->
+                    <div class="quick-actions">
+                        <button class="action-btns like-btn"
+                                data-item-id="{{ item.slug }}">
+                            <i class="fas fa-heart"></i>
+                        </button>
+
+                        <button class="action-btns share-btn"
+                                data-item-id="{{ item.slug }}">
+                            <i class="fas fa-share"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CONTENT -->
+                <div class="card-content">
+
+                    <h3 class="item-title">
+                        <a href="{% url 'poultryfarm:item_detail' item.slug %}">
+                            {{ item.name }}
+                        </a>
+                    </h3>
+
+                    <div class="item-price">
+                        ETB {{ item.price|floatformat:"0" }}
+                    </div>
+
+                    <div class="card-meta">
+                        <i class="fas fa-clock"></i>
+                        {{ item.created_at|short_timesince }}
+                    </div>
+
+                    <a href="{% url 'poultryfarm:item_detail' item.slug %}" class="view-btn">
+                        {% trans "View Details" %}
+                    </a>
+
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
     </div>
 </div>
 {% endblock %}

@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functionality
+    
     initLikeButtons();
     initShareButtons();
     initViewToggle();
     initCardAnimations();
 });
 
-/* ---------- Like Buttons ---------- */
 function initLikeButtons() {
     const likeButtons = document.querySelectorAll('.like-btn');
     
@@ -21,7 +20,7 @@ function initLikeButtons() {
 
 async function toggleLike(itemId, button) {
     try {
-        const response = await fetch(`/en/items/${itemId}/like/`, {
+        const response = await fetch(`/en/poultry/items/${itemId}/like/`, {
             method: 'POST',
             headers: {
                 'X-CSRFToken': getCookie('csrftoken'),
@@ -40,16 +39,13 @@ async function toggleLike(itemId, button) {
                 countElement.textContent = data.like_count;
             }
 
-            // Toggle liked class
             button.classList.toggle('liked');
             
-            // Add animation
             button.style.transform = 'scale(1.2)';
             setTimeout(() => {
                 button.style.transform = 'scale(1)';
             }, 200);
             
-            // Show notification
             showNotification(data.has_liked ? 'Item liked!' : 'Like removed!');
         }
     } catch (error) {
@@ -73,7 +69,6 @@ function initShareButtons() {
 
 async function handleShare(itemId, button) {
     try {
-        // Try native share API first
         if (navigator.share) {
             await navigator.share({
                 title: 'Check out this poultry item!',
@@ -81,13 +76,11 @@ async function handleShare(itemId, button) {
                 url: window.location.href,
             });
         } else {
-            // Fallback to clipboard
             await navigator.clipboard.writeText(window.location.href);
             showNotification('Link copied to clipboard!');
         }
         
-        // Send share count to server
-        const response = await fetch(`/en/items/${itemId}/share/`, {
+        const response = await fetch(`/en/poultry/items/${itemId}/share/`, {
             method: 'POST',
             headers: {
                 'X-CSRFToken': getCookie('csrftoken'),
@@ -102,7 +95,6 @@ async function handleShare(itemId, button) {
                 const countElement = button.querySelector('.count');
                 countElement.textContent = data.share_count;
                 
-                // Add animation
                 button.style.transform = 'scale(1.2)';
                 setTimeout(() => {
                     button.style.transform = 'scale(1)';
@@ -117,18 +109,16 @@ async function handleShare(itemId, button) {
     }
 }
 
-/* ---------- View Toggle ---------- */
 function initViewToggle() {
     const viewButtons = document.querySelectorAll('.view-toggle .view-btn');
     const grid = document.querySelector('.poultry-grid');
     
     viewButtons.forEach(btn => {
         btn.addEventListener('click', function() {
-            // Update active state
+            
             viewButtons.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             
-            // Toggle view
             const view = this.dataset.view;
             if (view === 'list') {
                 grid.classList.add('list-view');
@@ -139,16 +129,13 @@ function initViewToggle() {
     });
 }
 
-/* ---------- Card Animations ---------- */
 function initCardAnimations() {
     const cards = document.querySelectorAll('.poultry-card');
     
     cards.forEach((card, index) => {
-        // Set initial state
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
         
-        // Animate in
         setTimeout(() => {
             card.style.transition = 'all 0.5s ease';
             card.style.opacity = '1';
@@ -157,15 +144,13 @@ function initCardAnimations() {
     });
 }
 
-/* ---------- Notifications ---------- */
 function showNotification(message, type = 'success') {
-    // Remove existing notifications
+   
     const existing = document.querySelector('.poultry-notification');
     if (existing) {
         existing.remove();
     }
     
-    // Create notification element
     const notification = document.createElement('div');
     notification.className = 'poultry-notification';
     notification.innerHTML = `
@@ -173,7 +158,6 @@ function showNotification(message, type = 'success') {
         <span>${message}</span>
     `;
     
-    // Add styles
     notification.style.cssText = `
         position: fixed;
         top: 20px;
@@ -193,7 +177,6 @@ function showNotification(message, type = 'success') {
     
     document.body.appendChild(notification);
     
-    // Auto remove
     setTimeout(() => {
         notification.style.animation = 'slideOutRight 0.3s ease';
         setTimeout(() => {
@@ -202,7 +185,6 @@ function showNotification(message, type = 'success') {
     }, 3000);
 }
 
-/* ---------- Utility Functions ---------- */
 function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
