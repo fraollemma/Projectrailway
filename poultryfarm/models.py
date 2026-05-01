@@ -217,7 +217,6 @@ class EggSeller(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # 🔥 PROPERTIES → Access Profile Data Easily
     @property
     def farm_name(self):
         return getattr(self.user.profile, 'farm_name', '')
@@ -277,7 +276,6 @@ class EggOrder(models.Model):
         related_name='orders'
     )
 
-    # ✅ ADD THIS (VERY IMPORTANT)
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -312,11 +310,9 @@ class EggOrder(models.Model):
         return f"Order #{self.id} - {self.user.username}"
 
     def save(self, *args, **kwargs):
-        # ✅ Enforce minimum order
         if self.quantity < self.seller.min_order_quantity:
             raise ValueError("Order below minimum quantity")
 
-        # ✅ Always calculate price
         self.total_price = self.quantity * self.seller.price_per_dozen
 
         super().save(*args, **kwargs)

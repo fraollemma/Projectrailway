@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     initLikeButtons();
     initShareButtons();
+    initCartButtons();
     initViewToggle();
     initCardAnimations();
 });
@@ -18,7 +19,7 @@ function initLikeButtons() {
 
 async function toggleLike(slug, button) {
     try {
-        const response = await fetch(`/en/poultry/items/${slug}/like/`, {
+        const response = await fetch(`/poultry/items/${slug}/like/`, {
             method: 'POST',
             headers: {
                 'X-CSRFToken': getCookie('csrftoken'),
@@ -62,7 +63,7 @@ async function handleShare(slug, button) {
     try {
         await navigator.clipboard.writeText(window.location.href);
 
-        const response = await fetch(`/en/poultry/items/${slug}/share/`, {
+        const response = await fetch(`/poultry/items/${slug}/share/`, {
             method: 'POST',
             headers: {
                 'X-CSRFToken': getCookie('csrftoken'),

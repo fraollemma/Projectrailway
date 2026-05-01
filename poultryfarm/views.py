@@ -58,9 +58,9 @@ def share_item(request, slug):
     item.share_count += 1
     item.save()
     return JsonResponse({
-    'status': 'success',
-    'share_count': item.share_count
-})
+        'status': 'success',
+        'share_count': item.share_count
+    })
  
 
 def index(request):
@@ -76,6 +76,17 @@ class ItemListView(ListView):
     context_object_name = 'poultry'
     paginate_by = 12
     ordering = ['-created_at']
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        user = self.request.user
+        items = context['object_list']
+
+        for item in items:
+            item.has_liked = item.liked_by.filter(pk=user.pk).exists() if user.is_authenticated else False
+
+        return context
 
  
 class ItemDetailView(DetailView):

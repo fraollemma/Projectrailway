@@ -17,7 +17,6 @@
   --transition: all 0.3s ease;
 }
 
-/* ================= PAGE ================= */
 .poultry-page {
   min-height: 100vh;
   background: linear-gradient(180deg,#c7fafe,#8ad3fd);
@@ -29,8 +28,6 @@
   margin: auto;
   padding: 0 1rem;
 }
-
-/* ================= HEADER ================= */
 .page-header {
   display: flex;
   justify-content: space-between;
@@ -47,8 +44,6 @@
   font-size: 0.9rem;
   color: var(--text-light);
 }
-
-/* ================= FILTER BAR ================= */
 .filters-bar {
   background: var(--white);
   padding: 1rem;
@@ -107,16 +102,12 @@
 .add-item-btn:hover {
   background: var(--primary-hover);
 }
-
-/* ================= GRID ================= */
 .poultry-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
-
-/* ================= CARD ================= */
 .poultry-card {
   background: var(--white);
   border-radius: var(--radius);
@@ -275,8 +266,6 @@
 .delete-btn {
   background: #fee2e2;
 }
-
-/* ================= PAGINATION ================= */
 .pagination {
   display: flex;
   justify-content: center;
@@ -301,8 +290,6 @@
   background: var(--primary);
   color: white;
 }
-
-/* ================= EMPTY ================= */
 .empty-state {
   text-align: center;
   padding: 3rem 1rem;
@@ -311,8 +298,6 @@
 .empty-icon {
   font-size: 3rem;
 }
-
-/* ================= LIST VIEW ================= */
 .poultry-grid.list-view {
   grid-template-columns: 1fr;
 }
@@ -325,8 +310,6 @@
   width: 200px;
   height: auto;
 }
-
-/* ================= MOBILE ================= */
 @media (max-width: 600px) {
 
   .filters-bar {
@@ -369,7 +352,6 @@
     font-size: 0.75rem;
   }
 }
-/* ================= CART ICON ================= */
 .cart-icon {
     position: absolute;
     top: 10px;
@@ -389,7 +371,7 @@
     background: #f59e0b;
     color: white;
 }
-/* ================= COUNTER STYLE ================= */
+
 .action-btns {
   position: relative;
   font-size: 0.85rem;
@@ -405,5 +387,8 @@
 }
 
 .action-btns.liked i {
-  color: rgb(23, 95, 14) !important;
+  color: rgb(33, 250, 5) !important;
+}
+.like-btn.liked {
+    color: rgb(251, 255, 0);
 }
