@@ -81,25 +81,25 @@
                       
                         <div class="card-image">
                             {% if product.product_type == 'house' %}
-                                {% if product.images.all %}
+                                {% if product.images.exists %}
                                     <img src="{{ product.images.first.image.url }}" alt="{{ product.title }}" loading="lazy">
                                 {% else %}
                                     <img src="{% static 'base/images/default-house.jpg' %}" alt="{{ product.title }}" loading="lazy">
                                 {% endif %}
                             {% elif product.product_type == 'vehicle' %}
-                                {% if product.images.all %}
+                                {% if product.images.exists %}
                                     <img src="{{ product.images.first.image.url }}" alt="{{ product.make }} {{ product.model }}" loading="lazy">
                                 {% else %}
                                     <img src="{% static 'base/images/default-vehicle.jpg' %}" alt="{{ product.make }} {{ product.model }}" loading="lazy">
                                 {% endif %}
                             {% elif product.product_type == 'electronics' %}
-                                {% if product.images.all %}
+                                {% if product.images.exists %}
                                     <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}" loading="lazy">
                                 {% else %}
                                     <img src="{% static 'base/images/default-electronics.jpg' %}" alt="{{ product.name }}" loading="lazy">
                                 {% endif %}
                             {% elif product.product_type == 'clothing' %}
-                                {% if product.images.all %}
+                                {% if product.images.exists %}
                                     <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}" loading="lazy">
                                 {% else %}
                                     <img src="{% static 'base/images/default-clothing.jpg' %}" alt="{{ product.name }}" loading="lazy">
@@ -249,25 +249,25 @@
                             
                             <div class="card-image">
                                 {% if product.product_type == 'house' %}
-                                    {% if product.images.all %}
+                                    {% if product.images.exists %}
                                         <img src="{{ product.images.first.image.url }}" alt="{{ product.title }}" loading="lazy">
                                     {% else %}
                                         <img src="{% static 'base/images/default-house.jpg' %}" alt="{{ product.title }}" loading="lazy">
                                     {% endif %}
                                 {% elif product.product_type == 'vehicle' %}
-                                    {% if product.images.all %}
+                                    {% if product.images.exists %}
                                         <img src="{{ product.images.first.image.url }}" alt="{{ product.make }} {{ product.model }}" loading="lazy">
                                     {% else %}
                                         <img src="{% static 'base/images/default-vehicle.jpg' %}" alt="{{ product.make }} {{ product.model }}" loading="lazy">
                                     {% endif %}
                                 {% elif product.product_type == 'electronics' %}
-                                    {% if product.images.all %}
+                                    {% if product.images.exists %}
                                         <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}" loading="lazy">
                                     {% else %}
                                         <img src="{% static 'base/images/default-electronics.jpg' %}" alt="{{ product.name }}" loading="lazy">
                                     {% endif %}
                                 {% elif product.product_type == 'clothing' %}
-                                    {% if product.images.all %}
+                                    {% if product.images.exists %}
                                         <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}" loading="lazy">
                                     {% else %}
                                         <img src="{% static 'base/images/default-clothing.jpg' %}" alt="{{ product.name }}" loading="lazy">

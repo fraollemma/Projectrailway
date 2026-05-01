@@ -13,7 +13,11 @@
 {% block content %}
 <div class="product-detail-container">
     <div class="product-gallery">
+        {% if clothing.images.exists %}
         <img id="mainClothingImage" src="{{ clothing.images.first.image.url }}" alt="{{ clothing.name }}" class="main-image">
+        {% else %}
+        <img id="mainClothingImage" src="{% static 'base/images/default-clothing.jpg' %}" alt="{{ clothing.name }}" class="main-image">
+        {% endif %}
         <span class="carted-badge {% if clothing.is_carted %}carted{% endif %}">
             <i class="fas fa-shopping-cart"></i>
         </span>

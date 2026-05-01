@@ -16,7 +16,11 @@
     <div class="product-content">
         <div class="image-gallery">
             <div class="main-image">
+                {% if house.images.exists %}
                 <img id="mainHouseImage" src="{{ house.images.all.0.image.url }}" alt="Main House Image" />
+                {% else %}
+                <img id="mainHouseImage" src="{% static 'base/images/default-house.jpg' %}" alt="Main House Image" />
+                {% endif %}
                 <span class="carted-badge {% if house.is_carted %}carted{% endif %}">
                     <i class="fas fa-shopping-cart"></i>
                 </span>

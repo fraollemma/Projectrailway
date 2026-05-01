@@ -17,8 +17,12 @@
     <div class="product-content">
         <!-- Image Gallery -->
         <div class="image-gallery">
-            <div class="main-image-container">
+            <div class="main_image-container">
+                {% if product.images.exists %}
                 <img id="mainProductImage" src="{{ product.images.first.image.url }}" alt="Main Product Image" />
+                {% else %}
+                <img id="mainProductImage" src="{% static 'base/images/default-electronics.jpg' %}" alt="Main Product Image" />
+                {% endif %}
                 <span class="carted-badge {% if product.is_carted %}carted{% endif %}">
                     <i class="fas fa-shopping-cart"></i>
                 </span>

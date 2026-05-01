@@ -8,7 +8,7 @@
 <div class="detail-container">
 
     <div class="image-section">
-        {% if product.images.all %}
+        {% if product.images.exists %}
             <img src="{{ product.images.first.image.url }}" class="main-img">
         {% else %}
             <img src="{% static 'base/images/default.jpg' %}" class="main-img">

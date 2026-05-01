@@ -80,13 +80,13 @@
             <div class="search-result-card {{ result.type }}-card">
                 <a href="{{ result.url }}" class="result-link">
                     <div class="result-image">
-                        {% if result.type == 'house' and result.object.images.all %}
+                        {% if result.type == 'house' and result.object.images.exists %}
                             <img src="{{ result.object.images.first.image.url }}" alt="{{ result.title }}">
-                        {% elif result.type == 'vehicle' and result.object.images.all %}
+                        {% elif result.type == 'vehicle' and result.object.images.exists %}
                             <img src="{{ result.object.images.first.image.url }}" alt="{{ result.title }}">
-                        {% elif result.type == 'electronics' and result.object.images.all %}
+                        {% elif result.type == 'electronics' and result.object.images.exists %}
                             <img src="{{ result.object.images.first.image.url }}" alt="{{ result.title }}">
-                        {% elif result.type == 'clothing' and result.object.images.all %}
+                        {% elif result.type == 'clothing' and result.object.images.exists %}
                             <img src="{{ result.object.images.first.image.url }}" alt="{{ result.title }}">
                         {% elif result.type == 'poultry' and result.object.main_image %}
                             <img src="{{ result.object.main_image.url }}" alt="{{ result.title }}">
