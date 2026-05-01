@@ -52,6 +52,7 @@ def like_item(request, slug):
 
 @login_required
 @require_POST
+
 def share_item(request, slug):
     item = get_object_or_404(Item, slug=slug)
     item.share_count += 1
@@ -81,9 +82,8 @@ class ItemListView(ListView):
         user = self.request.user
         items = context['object_list']
 
-        for item in items:
-            item.has_liked = item.liked_by.filter(pk=user.pk).exists() if user.is_authenticated else False
-
+        for item in context['object_list']:
+            item.user_has_liked = item.has_liked(user)
         return context
 
  
