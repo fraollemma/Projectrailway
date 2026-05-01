@@ -2,10 +2,8 @@ from django.db import models
 from django.conf import settings
 from django.utils.text import slugify
 import uuid
-from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.translation import gettext_lazy as _
-from cloudinary.models import CloudinaryField
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -220,7 +218,7 @@ class EggSeller(models.Model):
     # 🔥 PROPERTIES → Access Profile Data Easily
     @property
     def farm_name(self):
-        return self.user.profile.farm_name
+        return getattr(self.user.profile, 'farm_name', '')
 
     @property
     def phone(self):

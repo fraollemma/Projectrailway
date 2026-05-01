@@ -42,7 +42,7 @@ from django.contrib.contenttypes.models import ContentType
 # ----------------------------
 # ITEMS
 # ----------------------------
-
+@login_required
 @require_POST
 @csrf_exempt
 def like_item(request, pk):
@@ -113,8 +113,7 @@ class ItemCreateView(LoginRequiredMixin, CreateView):
         
         item = form.save()
         
-        return redirect('poultryfarm:item_detail', pk=item.pk)
-
+        return redirect('poultryfarm:item_detail', slug=item.slug)
 
 def item_edit(request, pk):
     item = get_object_or_404(Item, pk=pk)
@@ -122,7 +121,7 @@ def item_edit(request, pk):
 
     if request.method == "POST" and form.is_valid():
         form.save()
-        return redirect('poultryfarm:item_detail', pk=item.pk)
+        return redirect('poultryfarm:item_detail', slug=item.slug)
 
     return render(request, 'poultryfarm/item_create.html', {'form': form})
 

@@ -43,14 +43,12 @@ class ItemForm(forms.ModelForm):
         })
 
     def save(self, commit=True):
-        item = super().save(commit=commit)
+        item = super().save(commit=False)
 
         if commit:
-            files = self.files.getlist('sub_images')
-
-            for img in files:
-                if img and img.size > 0:
-                    SubImage.objects.create(item=item, image=img)
+            item.save()
+            for img in self.files.getlist('sub_images'):
+                SubImage.objects.create(item=item, image=img)
 
         return item
 
