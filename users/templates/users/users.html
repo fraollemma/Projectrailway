@@ -1,5 +1,4 @@
 {% extends 'base/base.html' %}
-{% load cloudinary %}
 {% load static %}
 {% load i18n %}
 
@@ -19,11 +18,7 @@
         {% for user in users %}
         <div class="user-card {% if user.is_staff %}staff{% endif %}">
             <div class="user-avatar">
-                {% if user.profile.profile_picture %}
-                    {% cloudinary user.profile.profile_picture width=100 height=100 crop="fill" class="profile-img" %}
-                {% else %}
-                    <img src="{% static 'base/images/default.jpg' %}" alt="{% trans 'Profile Picture' %}" class="profile-img">
-                {% endif %}
+                <img src="{{ user.profile.profile_picture.url }}" alt="{% trans 'Profile Picture' %}" class="profile-img">
             </div>
             <div class="user-info">
                 <h3>{{ user.username }}</h3>

@@ -145,7 +145,7 @@
 
           <div class="seller-info">
             {% if item.created_by.profile.profile_picture %}
-              {% cloudinary item.created_by.profile.profile_picture width=80 height=80 crop="fill" class="seller-avatar" %}
+              <img src="{{ item.created_by.profile.profile_picture.url }}" class="seller-avatar">
             {% else %}
               <div class="seller-avatar-placeholder">
                 <i class="fas fa-user"></i>

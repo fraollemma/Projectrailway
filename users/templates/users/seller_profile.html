@@ -1,7 +1,6 @@
 {% extends 'base/base.html' %}
 {% load i18n %}
 {% load static %}
-{% load cloudinary %}
 
 {% block title %}
   {{ seller.username }} | {% trans "Seller Profile" %}
@@ -17,7 +16,9 @@
 
     <div class="profile-header">
         {% if seller.profile.profile_picture %}
-            {% cloudinary seller.profile.profile_picture width=200 height=200 crop="fill" class="profile-picture" %}
+            <img src="{{ seller.profile.profile_picture.url }}" 
+                 alt="{{ seller.username }} {% trans 'profile picture' %}" 
+                 class="profile-picture">
         {% else %}
             <div class="profile-picture default-avatar">
                 <i class="fas fa-user-circle"></i>
