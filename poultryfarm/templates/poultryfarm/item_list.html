@@ -44,12 +44,17 @@
                     <!-- Image Section -->
                     <div class="card-image">
                         <a href="{% url 'poultryfarm:item_detail' item.pk %}">
-                            {% if item.image %}
-                                <img src="{{ item.image.url }}" alt="{{ item.name }}">
+
+                            {% if item.images.all %}
+                                <img src="{{ item.images.first.image.url }}" alt="{{ item.name }}" loading="lazy">
+                            {% elif item.main_image %}
+                                <img src="{{ item.main_image.url }}" alt="{{ item.name }}" loading="lazy">
                             {% else %}
-                                <img src="{% static 'poultryfarm/images/placeholder.png' %}" alt="No image">
+                                <img src="{% static 'poultryfarm/images/product-chicken.jpg' %}" alt="default image" loading="lazy">
                             {% endif %}
+
                         </a>
+                    </div>
                         
                         <!-- Quick Actions -->
                         <div class="quick-actions">
