@@ -61,8 +61,10 @@ def share_item(request, slug):
     item = get_object_or_404(Item, slug=slug)
     item.share_count += 1
     item.save()
-    return JsonResponse({'shares': item.share_count})
- 
+    return JsonResponse({
+    'status': 'success',
+    'share_count': item.share_count
+})
 
 # ----------------------------
 # INDEX
