@@ -17,21 +17,13 @@
 <div class="poultry-page">
     <div class="container"> 
 
-        <!-- HEADER -->
-        <div class="page-header">
-            <div>
-                <h1>{% trans "Poultry Marketplace" %}</h1>
-                <p class="subtitle">{% trans "Buy and sell poultry products easily" %}</p>
-            </div>
-
+        <!-- FILTER BAR -->
+        <div class="filters-bar">
             <a href="{% url 'poultryfarm:item_create' %}" class="add-item-btn">
                 <i class="fas fa-plus"></i>
                 {% trans "Sell Item" %}
             </a>
-        </div>
-
-        <!-- FILTER BAR -->
-        <div class="filters-bar">
+            
             <div class="results-count">
                 <strong>{{ object_list.count }}</strong> {% trans "items" %}
             </div>
@@ -57,7 +49,7 @@
             </a>
         </div>
         {% endif %}
-
+ 
         <!-- GRID -->
         <div class="poultry-grid">
             {% for item in poultry %}

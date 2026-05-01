@@ -1,7 +1,7 @@
 // poultryfarm/static/poultryfarm/js/item_list.js
 document.addEventListener('DOMContentLoaded', function() {
     initLikeButtons();
-    initShareButtons();
+    initShareButtons(); 
     initCartButtons();
     initViewToggle();
     initCardAnimations();
