@@ -1,5 +1,5 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
-from cloudinary.models import CloudinaryField
+from django.db import models
 from django.core.validators import RegexValidator
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -82,12 +82,10 @@ class Profile(models.Model):
         on_delete=models.CASCADE,
         related_name='profile'
     )
-    profile_picture = CloudinaryField(
-        'image',
-        folder='profile_pics',
+    profile_picture = models.ImageField(
+        upload_to='profile_pics/',
         default='profile_pics/default.jpg',
-        blank=True,
-        transformation={'width': 300, 'height': 300, 'crop': 'fill'}
+        blank=True
     )
     
     bio = models.TextField(max_length=500, blank=True)
