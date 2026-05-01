@@ -382,13 +382,10 @@
   font-size: 0.75rem;
 }
 .action-btns.liked {
-  background: #ff00ea !important;
+  background: #f00101 !important;
   color: white !important;
 }
 
 .action-btns.liked i {
-  color: rgb(33, 250, 5) !important;
-}
-.like-btn.liked {
-    color: rgb(251, 255, 0);
+  color: rgb(255, 255, 255) !important;
 }
