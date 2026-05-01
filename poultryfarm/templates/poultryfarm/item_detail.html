@@ -14,7 +14,7 @@
 {% block content %}
 <main class="item-detail-page">
   <div class="container">
-
+ 
     <!-- Back Button -->
     <a href="javascript:history.back()" class="back-btn">
       <i class="fas fa-arrow-left"></i> {% trans "Back to Listings" %}
@@ -93,38 +93,31 @@
           <p>{{ item.description|linebreaks }}</p>
         </div>
 
-        <!-- STATS -->
-        <div class="product-stats">
-          <div class="stat-item">
-            <i class="fas fa-heart"></i>
-            <span>{{ item.like_count }} Likes</span>
-          </div>
-
-          <div class="stat-item">
-            <i class="fas fa-share"></i>
-            <span>{{ item.share_count }} Shares</span>
-          </div>
-        </div>
-
         <!-- ACTION BUTTONS -->
         <div class="action-buttons">
 
-          <button class="action-btns like-btn {% if item.has_liked %}liked{% endif %}"
-                  data-item-id="{{ item.slug }}">
-              <i class="fas fa-heart"></i>
-              <span class="count">{{ item.like_count }}</span>
-          </button>
+          <div class="action-buttons">
+    <button class="action-btns like-btn {% if user_has_liked %}liked{% endif %}"
+            data-item-id="{{ item.slug }}"
+            data-like-url="{% url 'poultryfarm:like_item' item.slug %}">
+        <i class="fas fa-heart"></i>
+        <span class="count">{{ item.like_count }}</span>
+    </button>
 
-          <button class="action-btns share-btn {% if item.has_shared %}shared{% endif %}"
-                  data-item-id="{{ item.slug }}">
-            <i class="fas fa-share-alt"></i>
-            <span class="count">{{ item.share_count }}</span>
-          </button>
+    <button class="action-btns share-btn"
+            data-item-id="{{ item.slug }}"
+            data-share-url="{% url 'poultryfarm:share_item' item.slug %}">
+        <i class="fas fa-share-alt"></i>
+        <span class="count">{{ item.share_count }}</span>
+    </button>
 
-          <button class="action-btns cart-btn {% if item.in_cart %}in-cart{% endif %}"
-                  data-item-id="{{ item.slug }}">
-            <i class="fas fa-shopping-cart"></i> Add to Cart
-          </button>
+    <button class="action-btns cart-btn {% if in_cart %}in-cart{% endif %}"
+            data-item-id="{{ item.slug }}"
+            data-cart-url="{% url 'cart:toggle_cart_item' item.slug %}">
+        <i class="fas fa-shopping-cart"></i> Add to Cart
+    </button>
+    ...
+</div>
 
           {% if request.user.is_authenticated %}
             {% if request.user != item.created_by %}
