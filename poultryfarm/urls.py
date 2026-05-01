@@ -25,8 +25,8 @@ urlpatterns = [
     path('items/<slug:slug>/edit/', item_edit, name='item_edit'),
     path('items/<slug:slug>/delete/', item_delete, name='item_delete'),
 
-    path('items/<slug:slug>/like/', views.like_item, name='item_like'),
-    path('items/<slug:slug>/share/', views.share_item, name='item_share'),
+    path('items/<slug:slug>/like/', views.like_item, name='like_item'),
+    path('items/<slug:slug>/share/', views.share_item, name='share_item'),
  
     path('api/items/', ItemListAPIView.as_view(), name='api_item_list'),
     path('api/items/<slug:slug>/', ItemDetailAPIView.as_view(), name='api_item_detail'),
