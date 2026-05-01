@@ -22,7 +22,7 @@ from .models import (
     ChickenSeller,
     TrainingEnrollment
 )
-
+ 
 from .forms import (
     ItemForm,
     ConsultationBookingForm,
@@ -78,12 +78,29 @@ class ItemListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
         user = self.request.user
         items = context['object_list']
+        cart = None
+        if user.is_authenticated:
+            from cart.models import Cart
+            cart = Cart.objects.filter(user=user).first()
+        else:
+            from cart.views import _get_cart
+            cart = _get_cart(self.request)
+        cart_item_ids = set()
+        if cart:
+            from cart.models import CartItem
+            from django.contrib.contenttypes.models import ContentType
+            item_ct = ContentType.objects.get_for_model(Item)
+            cart_item_ids = set(
+                CartItem.objects.filter(cart=cart, content_type=item_ct)
+                .values_list('object_id', flat=True)
+            )
 
-        for item in context['object_list']:
-            item.user_has_liked = item.has_liked(user)
+        for item in items:
+            item.user_has_liked = item.has_liked(user) if user.is_authenticated else False
+            item.in_cart = str(item.pk) in cart_item_ids
+
         return context
 
  
@@ -97,8 +114,36 @@ class ItemDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         item = self.object
+        user = self.request.user
+
+        # Like button state
+        context['user_has_liked'] = item.has_liked(user) if user.is_authenticated else False
+
+        # For "Contact Seller" URL
         context['app_label'] = item._meta.app_label
         context['model_name'] = item._meta.model_name
+
+        # Cart button state – check if this item is already in the user's cart
+        from cart.models import Cart, CartItem
+        from django.contrib.contenttypes.models import ContentType
+
+        cart = None
+        if user.is_authenticated:
+            cart = Cart.objects.filter(user=user).first()
+        else:
+            from cart.views import _get_cart
+            cart = _get_cart(self.request)
+
+        in_cart = False
+        if cart:
+            ct = ContentType.objects.get_for_model(Item)
+            in_cart = CartItem.objects.filter(
+                cart=cart,
+                content_type=ct,
+                object_id=item.pk
+            ).exists()
+        context['in_cart'] = in_cart
+
         return context
 
 
