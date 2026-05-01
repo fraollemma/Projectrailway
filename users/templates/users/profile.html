@@ -13,15 +13,15 @@
 {% block content %}
 <div class="profile-container">
 
+{% load cloudinary %}
+
     <h2>{% trans "My Profile" %}</h2>
 
     <!-- PROFILE HEADER -->
     <div class="profile-header">
 
         {% if user.profile.profile_picture %}
-            <img src="{{ user.profile.profile_picture.url }}"
-                 alt="{% trans 'Profile Picture' %}"
-                 class="users-profile-picture">
+            {% cloudinary user.profile.profile_picture width=300 height=300 crop="fill" class="users-profile-picture" %}
         {% else %}
             <img src="{% static 'base/images/default.jpg' %}"
                  alt="{% trans 'Profile Picture' %}"

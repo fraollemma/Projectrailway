@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load cloudinary %}
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -159,7 +160,7 @@
             {% if user.is_authenticated %}
             <div class="action-item dropdown">
                 <button class="action-btn user-btn dropdown-toggle">
-                    <img src="{{ user.profile.profile_picture.url }}" class="profile-picture">
+                    {% cloudinary user.profile.profile_picture width=40 height=40 crop="fill" class="profile-picture" %}
                 </button>
                 <div class="dropdown-menu">
                     <a href="{% url 'users:profile' %}">Profile</a>

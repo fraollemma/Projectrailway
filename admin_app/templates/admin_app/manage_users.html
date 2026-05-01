@@ -1,4 +1,5 @@
 {% extends "base/base.html" %}
+{% load cloudinary %}
 
 {% block title %}Manage Users{% endblock %}
 
@@ -20,7 +21,11 @@
             <td>{{ profile.user.username }}</td>
             <td>{{ profile.user.phone_number }}</td>
             <td>
-                <img src="{{ profile.profile_picture.url }}" width="50">
+                {% if profile.profile_picture %}
+                    {% cloudinary profile.profile_picture width=50 height=50 crop="fill" %}
+                {% else %}
+                    <img src="{% static 'base/images/default.jpg' %}" width="50">
+                {% endif %}
             </td>
             <td>{{ profile.location }}</td>
         </tr>
