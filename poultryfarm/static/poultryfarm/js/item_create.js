@@ -22,7 +22,7 @@ if (mainInput && mainPreview) {
         } else {
             mainPreview.style.display = 'none';
         }
-    });
+    }); 
 }
     if (fileInput && previewContainer) {
         fileInput.addEventListener('change', function() {
@@ -73,7 +73,7 @@ if (mainInput && mainPreview) {
         
         uploadLabel.addEventListener('dragover', (e) => {
             e.preventDefault();
-            uploadLabel.querySelector('.upload-content').style.borderColor = 'var(--primary-color)';
+            uploadLabel.querySelector('.upload-content').style.borderColor = 'var(--primary)';
             uploadLabel.querySelector('.upload-content').style.backgroundColor = 'var(--primary-light)';
         });
         

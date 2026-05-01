@@ -45,20 +45,20 @@ from django.contrib.contenttypes.models import ContentType
 @login_required
 @require_POST
 @csrf_exempt
-def like_item(request, pk):
-    item = get_object_or_404(Item, pk=pk)
+def like_item(request, slug):
+    item = get_object_or_404(Item, slug=slug)
     new_count = item.toggle_like(request.user)
 
     return JsonResponse({
         'status': 'success',
         'like_count': new_count,
         'has_liked': item.has_liked(request.user),
-        'item_id': pk
+        'item_id': slug
     })
 
 
-def share_item(request, pk):
-    item = get_object_or_404(Item, pk=pk)
+def share_item(request, slug):
+    item = get_object_or_404(Item, slug=slug)
     item.share_count += 1
     item.save()
     return JsonResponse({'shares': item.share_count})
@@ -91,6 +91,8 @@ class ItemDetailView(DetailView):
     model = Item
     template_name = 'poultryfarm/item_detail.html'
     context_object_name = 'item'
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -115,8 +117,8 @@ class ItemCreateView(LoginRequiredMixin, CreateView):
         
         return redirect('poultryfarm:item_detail', slug=item.slug)
 
-def item_edit(request, pk):
-    item = get_object_or_404(Item, pk=pk)
+def item_edit(request, slug):
+    item = get_object_or_404(Item, slug=slug)
     form = ItemForm(request.POST or None, request.FILES or None, instance=item)
 
     if request.method == "POST" and form.is_valid():
@@ -126,8 +128,8 @@ def item_edit(request, pk):
     return render(request, 'poultryfarm/item_create.html', {'form': form})
 
 
-def item_delete(request, pk):
-    item = get_object_or_404(Item, pk=pk)
+def item_delete(request, slug):
+    item = get_object_or_404(Item, slug=slug)
     if request.method == "POST":
         item.delete()
     return redirect('poultryfarm:item_list')

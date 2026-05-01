@@ -43,7 +43,7 @@
                 <article class="poultry-card" data-category="{{ item.category.slug|default:'all' }}" data-price="{{ item.price }}">
                     <!-- Image Section -->
                     <div class="card-image">
-                        <a href="{% url 'poultryfarm:item_detail' item.pk %}">
+                        <a href="{% url 'poultryfarm:item_detail' item.slug %}">
 
                             {% if item.sub_images.exists %}
                                 <img src="{{ item.sub_images.first.image.url }}" alt="{{ item.name }}" loading="lazy">
@@ -59,7 +59,7 @@
                         <!-- Quick Actions -->
                         <div class="quick-actions">
                             <button class="action-btns like-btn {% if item.has_liked %}liked{% endif %}"
-                                    data-item-id="{{ item.id }}"
+                                    data-item-id="{{ item.slug }}"
                                     data-action="like"
                                     title="{% trans 'Like' %}">
                                 <i class="fas fa-heart"></i>
@@ -67,7 +67,7 @@
                             </button>
                             
                             <button class="action-btns share-btn"
-                                    data-item-id="{{ item.id }}"
+                                    data-item-id="{{ item.slug }}"
                                     data-action="share"
                                     title="{% trans 'Share' %}">
                                 <i class="fas fa-share-alt"></i>
@@ -86,7 +86,7 @@
                         </div>
                         
                         <h3 class="item-title">
-                            <a href="{% url 'poultryfarm:item_detail' item.pk %}">{{ item.name }}</a>
+                            <a href="{% url 'poultryfarm:item_detail' item.slug %}">{{ item.name }}</a>
                         </h3>
                         
                         <div class="item-price">
@@ -95,7 +95,7 @@
                         </div>
                         
                         <div class="card-footer">
-                            <a href="{% url 'poultryfarm:item_detail' item.pk %}" class="view-btn">
+                            <a href="{% url 'poultryfarm:item_detail' item.slug %}" class="view-btn">
                                 {% trans "Detail" %}
                                 <i class="fas fa-arrow-right"></i>
                             </a>
@@ -103,10 +103,10 @@
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser or request.user == item.created_by %}
                                 <div class="admin-actions">
-                                    <a href="{% url 'poultryfarm:item_edit' item.pk %}" class="edit-btn" title="Edit">
+                                    <a href="{% url 'poultryfarm:item_edit' item.slug %}" class="edit-btn" title="Edit">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <form action="{% url 'poultryfarm:item_delete' item.pk %}" method="POST" class="delete-form">
+                                    <form action="{% url 'poultryfarm:item_delete' item.slug %}" method="POST" class="delete-form">
                                         {% csrf_token %}
                                         <button type="submit" class="delete-btn" title="Delete" onclick="return confirm('Delete this item?')">
                                             <i class="fas fa-trash-alt"></i>
