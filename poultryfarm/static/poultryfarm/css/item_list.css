@@ -7,9 +7,9 @@
   --text-dark: #1f2937;
   --text-light: #6b7280;
   --text-muted: #9ca3af;
-
+ 
   --bg: #f9fafb;
-  --white: #ffffff;
+  --white: #ffffff; 
   --border: #e5e7eb;
 
   --radius: 12px;
@@ -368,7 +368,7 @@
 }
 
 .cart-btn.in-cart {
-    background: #f59e0b;
+    background: #ff0000;
     color: white;
 }
 

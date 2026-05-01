@@ -1,3 +1,4 @@
+<!-- base/item_list.html -->
 {% extends "base/base.html" %}
 {% load static %}
 {% load i18n %}
@@ -7,14 +8,14 @@
     {% trans "Poultry Items List | Ethiopian Sheger Market place" %}
 {% endblock %}
 
-{% block css %}
+{% block css %} 
 <link rel="stylesheet" href="{% static 'poultryfarm/css/item_list.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock %}
  
 {% block content %}
 <div class="poultry-page">
-    <div class="container">
+    <div class="container"> 
 
         <!-- HEADER -->
         <div class="page-header">
@@ -59,7 +60,7 @@
 
         <!-- GRID -->
         <div class="poultry-grid">
-            {% for item in object_list %}
+            {% for item in poultry %}
             <article class="poultry-card">
 
                 <!-- IMAGE -->
@@ -80,23 +81,25 @@
                     <!-- CART ICON -->
                     <div class="cart-icon">
                         <button class="action-btns cart-btn {% if item.in_cart %}in-cart{% endif %}"
-                                data-item-id="{{ item.slug }}">
+                                data-item-id="{{ item.slug }}" data-cart-url="{% url 'cart:toggle_cart_item' item.slug %}">
                             <i class="fas fa-shopping-cart"></i>
                         </button>
                     </div>
                     
                     <!-- ACTIONS -->
+      
                     <div class="quick-actions">
                         <button class="action-btns like-btn {% if item.user_has_liked %}liked{% endif %}"
-                                data-item-id="{{ item.slug }}">
+                                data-item-id="{{ item.slug }}" 
+                                data-like-url="{% url 'poultryfarm:like_item' item.slug %}">
                             <i class="fas fa-heart"></i>
-                            <span class="count">{{ item.like_count|default:0 }}</span>
+                            <span class="count">{{ item.like_count }}</span>
                         </button>
 
                         <button class="action-btns share-btn"
-                                data-item-id="{{ item.slug }}">
+                                data-item-id="{{ item.slug }}" data-share-url="{% url 'poultryfarm:share_item' item.slug %}">
                             <i class="fas fa-share-alt"></i>
-                            <span class="count">{{ item.share_count|default:0 }}</span>
+                            <span class="count">{{ item.share_count }}</span>
                         </button>
                     </div>
                 </div>

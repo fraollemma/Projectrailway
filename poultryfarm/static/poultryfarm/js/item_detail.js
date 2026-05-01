@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalImg = document.getElementById("modalImage");
     const closeModal = document.querySelector(".close-modal");
 
-    // Helper to get CSRF token from cookie
+    // Helper to get CSRF token from cookie 
     function getCSRFToken() {
         const cookieValue = document.cookie.match('(^|; )csrftoken=([^;]*)');
         return cookieValue ? cookieValue[2] : '';

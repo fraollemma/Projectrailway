@@ -52,7 +52,6 @@ def like_item(request, slug):
 
 @login_required
 @require_POST
-
 def share_item(request, slug):
     item = get_object_or_404(Item, slug=slug)
     item.share_count += 1
@@ -99,8 +98,7 @@ class ItemListView(ListView):
 
         for item in items:
             item.user_has_liked = item.has_liked(user) if user.is_authenticated else False
-            item.in_cart = str(item.pk) in cart_item_ids
-
+            item.in_cart = item.pk in cart_item_ids
         return context
 
  
@@ -109,21 +107,18 @@ class ItemDetailView(DetailView):
     template_name = 'poultryfarm/item_detail.html'
     context_object_name = 'item'
     slug_field = 'slug'
-    slug_url_kwarg = 'slug'
+    slug_url_kwarg = 'slug' 
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         item = self.object
         user = self.request.user
 
-        # Like button state
         context['user_has_liked'] = item.has_liked(user) if user.is_authenticated else False
 
-        # For "Contact Seller" URL
         context['app_label'] = item._meta.app_label
         context['model_name'] = item._meta.model_name
 
-        # Cart button state – check if this item is already in the user's cart
         from cart.models import Cart, CartItem
         from django.contrib.contenttypes.models import ContentType
 
