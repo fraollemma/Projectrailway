@@ -7,20 +7,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initLikeButtons() {
-    const likeButtons = document.querySelectorAll('.like-btn');
-    
-    likeButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
+    document.querySelectorAll('.like-btn').forEach(button => {
+        button.addEventListener('click', function (e) {
             e.preventDefault();
-            const itemId = this.dataset.itemId;
-            toggleLike(itemId, this);
+            const slug = this.dataset.itemId;
+            toggleLike(slug, this);
         });
     });
 }
 
-async function toggleLike(itemId, button) {
+async function toggleLike(slug, button) {
     try {
-        const response = await fetch(`/en/poultry/items/${itemId}/like/`, {
+        const response = await fetch(`/en/poultry/items/${slug}/like/`, {
             method: 'POST',
             headers: {
                 'X-CSRFToken': getCookie('csrftoken'),
@@ -29,58 +27,42 @@ async function toggleLike(itemId, button) {
             credentials: 'same-origin'
         });
 
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
         const data = await response.json();
 
         if (data.status === 'success') {
-            const countElement = button.querySelector('.count');
-            if (countElement) {
-                countElement.textContent = data.like_count;
+            button.querySelector('.count').textContent = data.like_count;
+
+            // keep red if liked
+            if (data.has_liked) {
+                button.classList.add('liked');
+            } else {
+                button.classList.remove('liked');
             }
 
-            button.classList.toggle('liked');
-            
-            button.style.transform = 'scale(1.2)';
-            setTimeout(() => {
-                button.style.transform = 'scale(1)';
-            }, 200);
-            
-            showNotification(data.has_liked ? 'Item liked!' : 'Like removed!');
+            animate(button);
         }
-    } catch (error) {
-        console.error('Like toggle error:', error);
-        showNotification('Failed to like item. Please try again.', 'error');
+    } catch (err) {
+        console.error(err);
+        showNotification('Like failed', 'error');
     }
 }
 
 /* ---------- Share Buttons ---------- */
 function initShareButtons() {
-    const shareButtons = document.querySelectorAll('.share-btn');
-    
-    shareButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
+    document.querySelectorAll('.share-btn').forEach(button => {
+        button.addEventListener('click', function (e) {
             e.preventDefault();
-            const itemId = this.dataset.itemId;
-            handleShare(itemId, this);
+            const slug = this.dataset.itemId;
+            handleShare(slug, this);
         });
     });
 }
 
-async function handleShare(itemId, button) {
+async function handleShare(slug, button) {
     try {
-        if (navigator.share) {
-            await navigator.share({
-                title: 'Check out this poultry item!',
-                text: 'I found this amazing poultry item on Ethiopian Sheger Market',
-                url: window.location.href,
-            });
-        } else {
-            await navigator.clipboard.writeText(window.location.href);
-            showNotification('Link copied to clipboard!');
-        }
-        
-        const response = await fetch(`/en/poultry/items/${itemId}/share/`, {
+        await navigator.clipboard.writeText(window.location.href);
+
+        const response = await fetch(`/en/poultry/items/${slug}/share/`, {
             method: 'POST',
             headers: {
                 'X-CSRFToken': getCookie('csrftoken'),
@@ -89,23 +71,15 @@ async function handleShare(itemId, button) {
             credentials: 'same-origin'
         });
 
-        if (response.ok) {
-            const data = await response.json();
-            if (data.status === 'success') {
-                const countElement = button.querySelector('.count');
-                countElement.textContent = data.share_count;
-                
-                button.style.transform = 'scale(1.2)';
-                setTimeout(() => {
-                    button.style.transform = 'scale(1)';
-                }, 200);
-            }
+        const data = await response.json();
+
+        if (data.status === 'success') {
+            button.querySelector('.count').textContent = data.share_count;
+            animate(button);
         }
-    } catch (error) {
-        console.error('Share error:', error);
-        if (error.name !== 'AbortError') {
-            showNotification('Failed to share. Please try again.', 'error');
-        }
+    } catch (err) {
+        console.error(err);
+        showNotification('Share failed', 'error');
     }
 }
 
@@ -125,6 +99,20 @@ function initViewToggle() {
             } else {
                 grid.classList.remove('list-view');
             }
+        });
+    });
+}
+function initCartButtons() {
+    document.querySelectorAll('.cart-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            this.classList.toggle('in-cart');
+            animate(this);
+
+            showNotification(
+                this.classList.contains('in-cart')
+                    ? 'Added to cart'
+                    : 'Removed from cart'
+            );
         });
     });
 }

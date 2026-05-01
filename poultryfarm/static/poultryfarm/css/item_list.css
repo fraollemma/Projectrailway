@@ -371,38 +371,24 @@
 }
 /* ================= CART ICON ================= */
 .cart-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
 }
 
 .cart-btn {
-  background: rgba(255,255,255,0.95);
-  border: none;
-  padding: 8px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background: white;
+    border-radius: 50%;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
 }
 
-.cart-btn i {
-  font-size: 14px;
-  color: var(--text-dark);
+.cart-btn.in-cart {
+    background: #f59e0b;
+    color: white;
 }
-
-.cart-btn:hover {
-  background: var(--secondary);
-  color: white;
-}
-
-.cart-btn:hover i {
-  color: white;
-}
-
 /* ================= COUNTER STYLE ================= */
 .action-btns {
   position: relative;
@@ -412,4 +398,12 @@
 .action-btns .count {
   font-weight: 600;
   font-size: 0.75rem;
+}
+.action-btns.liked {
+  background: #ff00ea !important;
+  color: white !important;
+}
+
+.action-btns.liked i {
+  color: rgb(23, 95, 14) !important;
 }

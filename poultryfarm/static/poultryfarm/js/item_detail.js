@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const count = btn.querySelector('.count');
 
     try {
-      const response = await fetch(`/en/poultry/items/${itemId}/like/`, {
+      const response = await fetch(`/en/poultry/items/${slug}/like/`, {
         method: 'POST',
         headers: { 'X-CSRFToken': getCookie('csrftoken') }
       });
