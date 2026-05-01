@@ -21,25 +21,12 @@ class MultipleFileField(forms.FileField):
         return result
 
 class DairyProductForm(forms.ModelForm):
-    images = MultipleFileField(required=False, label='Additional Images')
-    
     class Meta:
         model = DairyProduct
         fields = [
-            'category', 'vehicle_type', 'make', 'model', 'year', 
-            'price', 'mileage', 'fuel_type', 'engine_size',
-            'color', 'description', 'is_featured'
+            'name', 'description', 'price',
+            'category', 'quantity_available', 'unit'
         ]
-        widgets = {
-            'description': forms.Textarea(attrs={'rows': 5}),
-            'year': forms.NumberInput(attrs={'min': 1900, 'max': 2026}),
-        }
-
-    def __init__(self, *args, **kwargs):
-        self.user = kwargs.pop('user', None)
-        super().__init__(*args, **kwargs)
-        self.fields['price'].validators.append(MinValueValidator(0))
-        self.fields['mileage'].validators.append(MinValueValidator(0))
 
     def save(self, commit=True):
         dairy_product = super().save(commit=False)
@@ -49,5 +36,5 @@ class DairyProductForm(forms.ModelForm):
             dairy_product.save()
             if self.cleaned_data.get('images'):
                 for img in self.cleaned_data['images']:
-                    DairyProductImage.objects.create(dairy_product=dairy_product, image=img)
+                    DairyProductImage.objects.create(product=dairy_product, image=img)
         return dairy_product

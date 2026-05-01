@@ -7,11 +7,13 @@
 
 <div class="container">
 
-    <h1 class="page-title">🥛 Dairy Products</h1>
+    <h1 class="page-title">🥛 Dairy Products</h1> 
 
     <!-- add button -->
     <a href="{% url 'dairyfarm:dairyfarm_add' %}" class="btn add">Add Product</a>
-
+    <a href="{% url 'dairyfarm:dairyfarm_detail' product.slug %}">
+            {{ product.name }}
+        </a>
     <div class="grid">
 
         {% for product in products %}
