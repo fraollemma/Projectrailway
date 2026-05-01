@@ -369,3 +369,47 @@
     font-size: 0.75rem;
   }
 }
+/* ================= CART ICON ================= */
+.cart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.cart-btn {
+  background: rgba(255,255,255,0.95);
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-btn i {
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.cart-btn:hover {
+  background: var(--secondary);
+  color: white;
+}
+
+.cart-btn:hover i {
+  color: white;
+}
+
+/* ================= COUNTER STYLE ================= */
+.action-btns {
+  position: relative;
+  font-size: 0.85rem;
+}
+
+.action-btns .count {
+  font-weight: 600;
+  font-size: 0.75rem;
+}

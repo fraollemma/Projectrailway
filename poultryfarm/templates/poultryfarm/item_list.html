@@ -77,16 +77,25 @@
                     <!-- BADGE -->
                     <span class="badge">New</span>
 
+                    <!-- CART ICON -->
+                    <div class="cart-icon">
+                        <button class="cart-btn" data-item-id="{{ item.slug }}">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    
                     <!-- ACTIONS -->
                     <div class="quick-actions">
-                        <button class="action-btns like-btn"
+                        <button class="action-btns like-btn {% if item.has_liked %}liked{% endif %}"
                                 data-item-id="{{ item.slug }}">
                             <i class="fas fa-heart"></i>
+                            <span class="count">{{ item.like_count|default:0 }}</span>
                         </button>
 
                         <button class="action-btns share-btn"
                                 data-item-id="{{ item.slug }}">
-                            <i class="fas fa-share"></i>
+                            <i class="fas fa-share-alt"></i>
+                            <span class="count">{{ item.share_count|default:0 }}</span>
                         </button>
                     </div>
                 </div>

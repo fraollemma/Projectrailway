@@ -20,7 +20,7 @@ function initLikeButtons() {
 
 async function toggleLike(itemId, button) {
     try {
-        const response = await fetch(`/en/poultry/items/${itemId}/like/`, {
+        const response = await fetch(`/en/poultry/items/${slug}/like/`, {
             method: 'POST',
             headers: {
                 'X-CSRFToken': getCookie('csrftoken'),
@@ -80,7 +80,7 @@ async function handleShare(itemId, button) {
             showNotification('Link copied to clipboard!');
         }
         
-        const response = await fetch(`/en/poultry/items/${itemId}/share/`, {
+        const response = await fetch(`/en/poultry/items/${slug}/share/`, {
             method: 'POST',
             headers: {
                 'X-CSRFToken': getCookie('csrftoken'),
