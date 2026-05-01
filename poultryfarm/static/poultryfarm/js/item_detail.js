@@ -54,13 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const count = btn.querySelector('.count');
 
     try {
-      const res = await fetch(`/en/items/${itemId}/like/`, {
+      const response = await fetch(`/en/poultry/items/${itemId}/like/`, {
         method: 'POST',
         headers: { 'X-CSRFToken': getCookie('csrftoken') }
       });
-
-      if (res.ok) {
-        const data = await res.json();
+      
+      if (response.ok) {
+        const data = await response.json();
         count.textContent = data.like_count;
         btn.classList.toggle('liked');
 
@@ -91,13 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
         showNotification('Link copied to clipboard!');
       }
 
-      const res = await fetch(`/en/items/${itemId}/share/`, {
+      const response = await fetch(`/en/poultry/items/${itemId}/share/`, {
         method: 'POST',
         headers: { 'X-CSRFToken': getCookie('csrftoken') }
       });
 
-      if (res.ok) {
-        const data = await res.json();
+      if (response.ok) {
+        const data = await response.json();
         count.textContent = data.share_count;
 
         // Add animation
