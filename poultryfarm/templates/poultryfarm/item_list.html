@@ -87,13 +87,11 @@
                     
                     <!-- ACTIONS -->
                     <div class="quick-actions">
-                        {% if item.user_has_liked %}
                         <button class="action-btns like-btn {% if item.has_liked %}liked{% endif %}"
                                 data-item-id="{{ item.slug }}">
                             <i class="fas fa-heart"></i>
                             <span class="count">{{ item.like_count|default:0 }}</span>
                         </button>
-                        {% endif %}
 
                         <button class="action-btns share-btn {% if item.has_shared %}shared{% endif %}"
                                 data-item-id="{{ item.slug }}">

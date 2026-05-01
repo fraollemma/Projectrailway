@@ -212,8 +212,8 @@ def add_egg_seller(request):
 
 
 @login_required
-def edit_egg_seller(request, pk):
-    seller = get_object_or_404(EggSeller, pk=pk)
+def edit_egg_seller(request, slug):
+    seller = get_object_or_404(EggSeller, slug=slug, user=request.user)
     form = EggSellerForm(request.POST or None, instance=seller)
 
     if request.method == "POST" and form.is_valid():
@@ -285,8 +285,8 @@ def place_egg_order(request):
 
 @login_required
 @require_POST
-def delete_egg_seller_ajax(request, pk):
-    seller = get_object_or_404(EggSeller, pk=pk)
+def delete_egg_seller_ajax(request, slug):
+    seller = get_object_or_404(EggSeller, slug=slug, user=request.user)
     seller.delete()
     return JsonResponse({'success': True})
  
