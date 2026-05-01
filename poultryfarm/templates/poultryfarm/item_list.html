@@ -79,7 +79,8 @@
 
                     <!-- CART ICON -->
                     <div class="cart-icon">
-                        <button class="cart-btn" data-item-id="{{ item.slug }}">
+                        <button class="action-btns cart-btn {% if item.in_cart %}in-cart{% endif %}"
+                                data-item-id="{{ item.slug }}">
                             <i class="fas fa-shopping-cart"></i>
                         </button>
                     </div>
@@ -92,7 +93,7 @@
                             <span class="count">{{ item.like_count|default:0 }}</span>
                         </button>
 
-                        <button class="action-btns share-btn"
+                        <button class="action-btns share-btn {% if item.has_shared %}shared{% endif %}"
                                 data-item-id="{{ item.slug }}">
                             <i class="fas fa-share-alt"></i>
                             <span class="count">{{ item.share_count|default:0 }}</span>

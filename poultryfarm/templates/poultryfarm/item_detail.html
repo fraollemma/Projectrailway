@@ -109,19 +109,22 @@
         <!-- ACTION BUTTONS -->
         <div class="action-buttons">
 
-          <button class="btn btn-like" data-item-id="{{ item.id }}" data-action="like">
-            <i class="fas fa-thumbs-up"></i>
-            <span class="count">{{ item.like_count }}</span>
+          <button class="action-btns like-btn {% if item.has_liked %}liked{% endif %}"
+                  data-item-id="{{ item.slug }}">
+              <i class="fas fa-heart"></i>
+              <span class="count">{{ item.like_count }}</span>
           </button>
 
-          <button class="btn btn-share" data-item-id="{{ item.id }}" data-action="share">
+          <button class="action-btns share-btn {% if item.has_shared %}shared{% endif %}"
+                  data-item-id="{{ item.slug }}">
             <i class="fas fa-share-alt"></i>
             <span class="count">{{ item.share_count }}</span>
           </button>
 
-          <a href="{% url 'cart:add_to_cart' 'poultryfarm' 'item' item.id %}" class="btn btn-primary">
+          <button class="action-btns cart-btn {% if item.in_cart %}in-cart{% endif %}"
+                  data-item-id="{{ item.slug }}">
             <i class="fas fa-shopping-cart"></i> Add to Cart
-          </a>
+          </button>
 
           {% if request.user.is_authenticated %}
             {% if request.user != item.created_by %}
