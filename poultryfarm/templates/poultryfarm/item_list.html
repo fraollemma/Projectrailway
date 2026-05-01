@@ -45,8 +45,8 @@
                     <div class="card-image">
                         <a href="{% url 'poultryfarm:item_detail' item.pk %}">
 
-                            {% if item.images.all %}
-                                <img src="{{ item.images.first.image.url }}" alt="{{ item.name }}" loading="lazy">
+                            {% if item.sub_images.exists %}
+                                <img src="{{ item.sub_images.first.image.url }}" alt="{{ item.name }}" loading="lazy">
                             {% elif item.main_image %}
                                 <img src="{{ item.main_image.url }}" alt="{{ item.name }}" loading="lazy">
                             {% else %}
