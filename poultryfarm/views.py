@@ -1,3 +1,4 @@
+# poultryfarm/views.py
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib import messages
@@ -13,7 +14,7 @@ from django.core.exceptions import ValidationError
 import json
 from decimal import Decimal
 from django.db.models import Count
-# models
+
 from .models import (
     Item, SubImage,
     Consultant, ConsultationService, ConsultationBooking,
@@ -22,7 +23,6 @@ from .models import (
     TrainingEnrollment
 )
 
-# forms
 from .forms import (
     ItemForm,
     ConsultationBookingForm,
@@ -33,14 +33,12 @@ from .forms import (
     TrainingEnrollmentForm
 )
 
-# cart
 from cart.models import CartItem
 from cart.views import _get_cart
 from django.contrib.contenttypes.models import ContentType
 
 @login_required
 @require_POST
-@csrf_exempt
 def like_item(request, slug):
     item = get_object_or_404(Item, slug=slug)
     new_count = item.toggle_like(request.user)
@@ -52,7 +50,8 @@ def like_item(request, slug):
         'item_id': slug
     })
 
-
+@login_required
+@require_POST
 def share_item(request, slug):
     item = get_object_or_404(Item, slug=slug)
     item.share_count += 1
@@ -62,7 +61,6 @@ def share_item(request, slug):
         'share_count': item.share_count
     })
  
-
 def index(request):
     featured_products = Item.objects.all().order_by('-created_at')[:3]
     return render(request, 'poultryfarm/index.html', {

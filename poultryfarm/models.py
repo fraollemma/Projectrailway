@@ -74,7 +74,7 @@ class Item(models.Model):
         else:
             self.liked_by.add(user)
         self.like_count = self.liked_by.count()
-        self.save()
+        self.save(update_fields=['like_count'])
         return self.like_count
     
     def has_liked(self, user):
