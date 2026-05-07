@@ -1,3 +1,14 @@
+/* --- poultryfarm/static/poultryfarm/css/item_detail.css--- */
+:root {
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  --radius: 12px;
+  --border: 1px solid #e5e7eb;
+}
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +22,6 @@ body {
   color: #333; 
 }
 
-/* ========== Page Layout ========== */
 .item-detail-page {
   padding: 2rem 0;
 }
@@ -42,30 +52,28 @@ body {
   transform: translateY(-2px);
 }
 
-/* ========== Item Container ========== */
 .item-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-  overflow: hidden;
-  padding: 2rem;
+  gap: var(--space-xl);
+
+  background: white;
+  padding: var(--space-xl);
+
+  border-radius: var(--radius);
+  border: var(--border);
 }
 
-/* ========== Image Gallery ========== */
 .image-gallery {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-
 .main-image-container {
   position: relative;
-  border-radius: 15px;
+  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  border: var(--border);
 }
 
 .main-image {
@@ -78,41 +86,23 @@ body {
 .main-image:hover {
   transform: scale(1.02);
 }
-
 .image-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.3);
+  inset: 0;
+
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(3px);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .main-image-container:hover .image-overlay {
   opacity: 1;
-}
-
-.zoom-btn {
-  background: rgba(255,255,255,0.9);
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.zoom-btn:hover {
-  background: #fff;
-  transform: scale(1.1);
 }
 
 .thumbnail-grid {
@@ -136,12 +126,10 @@ body {
   border-color: #4f46e5;
   transform: scale(1.05);
 }
-
-/* ========== Product Details ========== */
 .product-details {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-lg);
 }
 
 .product-header {
@@ -151,13 +139,13 @@ body {
 }
 
 .product-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin: 0;
-  line-height: 1.2;
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
 }
-
+.product-description {
+  padding-top: var(--space-md);
+  border-top: var(--border);
+}
 .admin-actions {
   display: flex;
   gap: 0.5rem;
@@ -229,7 +217,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* ========== Action Buttons ========== */
 .action-buttons {
   display: flex;
   gap: 1rem;
@@ -250,18 +237,21 @@ body {
   text-decoration: none;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+.btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+.btn-primary {
+  background: #5783da;
+  color: #ffffff;
+  border: 1px solid #d1d5db;
 }
 
 .btn-success {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: #10b981;
   color: white;
 }
 
@@ -294,15 +284,15 @@ body {
   color: white;
   border-color: #ef4444;
 }
-
-/* ========== Seller Card ========== */
 .seller-card {
-  background: #dfdfdf;
-  border-radius: 15px;
-  padding: 1.5rem;
-  border: 1px solid #ced9e7;
-}
+  margin-top: var(--space-lg);
+  padding: var(--space-lg);
 
+  border-radius: var(--radius);
+  border: var(--border);
+
+  background: #fafafa;
+}
 .seller-card h3 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -371,7 +361,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* ========== Modal ========== */
 .modal {
   display: none;
   position: fixed;
@@ -405,7 +394,6 @@ body {
   color: #bbb;
 }
 
-/* ========== Responsive Design ========== */
 @media (max-width: 768px) {
   .item-container {
     grid-template-columns: 1fr;
@@ -433,13 +421,29 @@ body {
     flex-direction: column;
     gap: 0.5rem;
   }
+  .image-overlay {
+    opacity: 1; /* always visible on mobile */
+    background: rgba(0,0,0,0.15);
+  }
+
+  .zoom-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
+@keyframes pulseZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
 
+.main-image-container:hover .zoom-btn {
+  animation: pulseZoom 1.5s infinite;
+}
 .btn.small.danger:hover {
   background: #dc2626;
 }
 
-/* ========== Responsive ========== */
 @media (max-width: 900px) {
   .item-container {
     flex-direction: column;
@@ -481,4 +485,114 @@ body {
 
 .back-to-home:hover {
     color: #007bff;
+}
+.actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: var(--border);
+}
+
+.social-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: var(--border);
+
+  background: #4e8ece;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.action-btn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.action-btn.liked {
+  background: #ec2929;
+  color: white;
+}
+
+/* IMAGE OVERLAY */
+.image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.137);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* SHOW ON HOVER */
+.main-image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+.zoom-btn {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.5);
+
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(8px);
+
+  cursor: pointer;
+
+  font-size: 1.2rem;
+  color: #111;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+
+  transition: all 0.25s ease;
+}
+.zoom-btn i {
+  transition: transform 0.25s ease;
+}
+
+.zoom-btn:hover i {
+  transform: scale(1.2);
+}
+/* HOVER EFFECT */
+.zoom-btn:hover {
+  transform: scale(1.2) rotate(5deg);
+  background: white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* CLICK FEEDBACK */
+.zoom-btn:active {
+  transform: scale(0.95);
+}
+
+/* FOCUS (ACCESSIBILITY) */
+.zoom-btn:focus {
+  outline: 2px solid #ef4444;
+  outline-offset: 2px;
+}
+.in-cart {
+  background: #ef4444;
+  color: white;
 }

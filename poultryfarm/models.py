@@ -5,7 +5,7 @@ from django.utils.text import slugify
 import uuid
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.translation import gettext_lazy as _
-
+ 
 class Category(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, max_length=110)
@@ -65,8 +65,13 @@ class Item(models.Model):
 
     def increment_likes(self):
         self.like_count += 1
-        self.save()
+        self.save(update_fields=['like_count'])
         return self.like_count
+
+    def increment_shares(self):
+        self.share_count += 1
+        self.save(update_fields=['share_count'])
+        return self.share_count
     
     def toggle_like(self, user):
         if user in self.liked_by.all():

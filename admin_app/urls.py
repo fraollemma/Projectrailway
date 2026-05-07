@@ -14,3 +14,4 @@ urlpatterns = [
     path('conversations/', views.manage_conversations, name='manage_conversations'),
     path('admin_links/', views.admin_links, name='admin_links'),
 ]
+ 

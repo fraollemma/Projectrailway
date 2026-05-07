@@ -42,11 +42,13 @@ from django.contrib.contenttypes.models import ContentType
 def like_item(request, slug):
     item = get_object_or_404(Item, slug=slug)
     new_count = item.toggle_like(request.user)
+    has_liked = item.has_liked(request.user)
 
     return JsonResponse({
         'status': 'success',
+        'message': _('Liked successfully') if has_liked else _('Like removed'),
         'like_count': new_count,
-        'has_liked': item.has_liked(request.user),
+        'has_liked': has_liked,
         'item_id': slug
     })
 
@@ -54,17 +56,28 @@ def like_item(request, slug):
 @require_POST
 def share_item(request, slug):
     item = get_object_or_404(Item, slug=slug)
-    item.share_count += 1
-    item.save()
+    new_count = item.increment_shares()
     return JsonResponse({
         'status': 'success',
-        'share_count': item.share_count
+        'message': _('Share count updated successfully'),
+        'share_count': new_count
     })
  
 def index(request):
     featured_products = Item.objects.all().order_by('-created_at')[:3]
+    total_products = Item.objects.count()  
+    total_egg_sellers = EggSeller.objects.count()
+    total_chicken_sellers = ChickenSeller.objects.count()
+    total_consultations = ConsultationService.objects.count()
+    total_trainings = TrainingEnrollment.objects.count()
+
     return render(request, 'poultryfarm/index.html', {
-        'featured_products': featured_products
+        'featured_products': featured_products,
+        'total_products': total_products,
+        'total_egg_sellers': total_egg_sellers,
+        'total_chicken_sellers': total_chicken_sellers,
+        'total_consultations': total_consultations,
+        'total_trainings': total_trainings,
     })
 
  
@@ -87,7 +100,7 @@ class ItemListView(ListView):
             from cart.views import _get_cart
             cart = _get_cart(self.request)
         cart_item_ids = set()
-        if cart:
+        if cart: 
             from cart.models import CartItem
             from django.contrib.contenttypes.models import ContentType
             item_ct = ContentType.objects.get_for_model(Item)

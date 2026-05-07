@@ -1,6 +1,5 @@
+// poultryfarm/static/poultryfarm/js/index.js
 document.addEventListener("DOMContentLoaded", () => {
-
-    // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function(e) {
             e.preventDefault();
@@ -15,8 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-
-    // Scroll reveal animation
     const revealElements = document.querySelectorAll(
         ".service-card, .training-card, .product-card"
     );
@@ -38,3 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach(el => revealObserver.observe(el));
 
 });
+
+
+
+
+
+

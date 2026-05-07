@@ -1,6 +1,5 @@
 // poultryfarm/static/poultryfarm/js/item_detail.js
 document.addEventListener('DOMContentLoaded', function() {
-    // Elements
     const likeBtn = document.querySelector('.like-btn');
     const shareBtn = document.querySelector('.share-btn');
     const cartBtn = document.querySelector('.cart-btn');
@@ -10,14 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
     const closeModal = document.querySelector(".close-modal");
-
-    // Helper to get CSRF token from cookie 
     function getCSRFToken() {
         const cookieValue = document.cookie.match('(^|; )csrftoken=([^;]*)');
         return cookieValue ? cookieValue[2] : '';
     }
-
-    // Helper to show notification
     function showNotification(message, type = 'success') {
         const notification = document.createElement('div');
         notification.className = 'notification';
@@ -37,28 +32,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
 
-    // ---------- LIKE BUTTON ----------
     if (likeBtn) {
         likeBtn.addEventListener('click', async function(e) {
             e.preventDefault();
-            const slug = this.dataset.itemId;
-            const countSpan = this.querySelector('.count');
+            const countSpan = this.querySelector('.count') || this.querySelector('span');
             try {
-                const response = await fetch(likeBtn.dataset.likeUrl, {
+                const response = await fetch(this.dataset.likeUrl, {
                     method: 'POST',
-                    headers: { 'X-CSRFToken': getCSRFToken() }
+                    headers: {
+                        'X-CSRFToken': getCSRFToken(),
+                        'Accept': 'application/json'
+                    }
                 });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(errorText || 'Like request failed');
+                }
+
                 const data = await response.json();
                 if (data.status === 'success') {
-                    countSpan.textContent = data.like_count;
+                    if (countSpan) {
+                        countSpan.textContent = data.like_count;
+                    }
                     if (data.has_liked) {
                         this.classList.add('liked');
                     } else {
                         this.classList.remove('liked');
                     }
-                    // Animation
+                    showNotification(data.message || 'Like updated successfully');
                     this.style.transform = 'scale(1.2)';
                     setTimeout(() => { this.style.transform = 'scale(1)'; }, 200);
+                } else {
+                    showNotification(data.message || 'Like failed', 'error');
                 }
             } catch (err) {
                 console.error('Like error:', err);
@@ -67,30 +73,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ---------- SHARE BUTTON ----------
     if (shareBtn) {
         shareBtn.addEventListener('click', async function(e) {
             e.preventDefault();
-            const slug = this.dataset.itemId;
-            const countSpan = this.querySelector('.count');
-            const url = window.location.href;
+            const countSpan = this.querySelector('.count') || this.querySelector('span');
+            const pageUrl = window.location.href;
             try {
-                // Copy to clipboard or use native share
                 if (navigator.share) {
-                    await navigator.share({ title: document.title, url });
+                    await navigator.share({ title: document.title, url: pageUrl });
                 } else {
-                    await navigator.clipboard.writeText(url);
+                    await navigator.clipboard.writeText(pageUrl);
                     showNotification('Link copied to clipboard!');
                 }
-                const response = await fetch(shareBtn.dataset.shareUrl, {
+
+                const response = await fetch(this.dataset.shareUrl, {
                     method: 'POST',
-                    headers: { 'X-CSRFToken': getCSRFToken() }
+                    headers: {
+                        'X-CSRFToken': getCSRFToken(),
+                        'Accept': 'application/json'
+                    }
                 });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(errorText || 'Share request failed');
+                }
+
                 const data = await response.json();
                 if (data.status === 'success') {
-                    countSpan.textContent = data.share_count;
+                    if (countSpan) {
+                        countSpan.textContent = data.share_count;
+                    }
+                    showNotification(data.message || 'Share recorded successfully');
                     this.style.transform = 'scale(1.2)';
                     setTimeout(() => { this.style.transform = 'scale(1)'; }, 200);
+                } else {
+                    showNotification(data.message || 'Share failed', 'error');
                 }
             } catch (err) {
                 console.error('Share error:', err);
@@ -99,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ---------- CART BUTTON ----------
     if (cartBtn) {
         cartBtn.addEventListener('click', async function(e) {
             e.preventDefault();
@@ -117,28 +134,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (data.success) {
                     if (data.in_cart) {
                         this.classList.add('in-cart');
-                        this.innerHTML = '<i class="fas fa-shopping-cart"></i> Remove from Cart';
+                        this.innerHTML = '<i class="fas fa-shopping-cart"></i> Remove';
                         showNotification('Added to cart');
                     } else {
                         this.classList.remove('in-cart');
-                        this.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                        this.innerHTML = '<i class="fas fa-shopping-cart"></i> Add';
                         showNotification('Removed from cart');
                     }
-                    // Animation
                     this.style.transform = 'scale(1.05)';
                     setTimeout(() => { this.style.transform = 'scale(1)'; }, 200);
                 } else {
                     showNotification(data.error || 'Cart update failed', 'error');
                 }
-            } catch (error) {
-                console.error('Cart error:', error);
+            } catch (err) {
+                console.error('Cart error:', err);
                 showNotification('Cart update failed', 'error');
-                this.innerHTML = originalText; // revert text on error
+                this.innerHTML = originalText;
             }
         });
     }
 
-    // ---------- THUMBNAIL GALLERY ----------
     if (thumbnails.length > 0 && mainImage) {
         thumbnails.forEach(thumb => {
             thumb.addEventListener('click', function() {
@@ -149,7 +164,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ---------- ZOOM MODAL ----------
     if (zoomBtn && modal && modalImg) {
         zoomBtn.addEventListener('click', () => {
             modal.style.display = 'block';

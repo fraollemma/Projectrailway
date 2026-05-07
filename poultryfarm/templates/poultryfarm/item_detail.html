@@ -1,7 +1,8 @@
+<!-- poultryfarm/templates/poultryfarm/item_detail.html -->
 {% extends 'base/base.html' %}
 {% load static %}
 {% load i18n %}
-
+ 
 {% block title %}
     {% trans "Poultry Item Details | Ethiopian Sheger Market place" %}
 {% endblock %}
@@ -14,27 +15,26 @@
 {% block content %}
 <main class="item-detail-page">
   <div class="container">
- 
-    <!-- Back Button -->
+
+    <!-- BACK -->
     <a href="javascript:history.back()" class="back-btn">
       <i class="fas fa-arrow-left"></i> {% trans "Back to Listings" %}
     </a>
 
     <div class="item-container">
 
-      <!-- IMAGE GALLERY -->
-      <div class="image-gallery">
+      <!-- LEFT: IMAGES -->
+      <section class="image-gallery">
 
         <div class="main-image-container">
-          {% if item.main_image %}
-            <img id="mainImage" src="{{ item.main_image.url }}" alt="{{ item.name }}" class="main-image">
-          {% else %}
-            <img id="mainImage" src="{% static 'poultryfarm/images/product-chicken.jpg' %}" alt="{{ item.name }}" class="main-image">
-          {% endif %}
+          <img id="mainImage"
+               src="{% if item.main_image %}{{ item.main_image.url }}{% else %}{% static 'poultryfarm/images/product-chicken.jpg' %}{% endif %}"
+               alt="{{ item.name }}"
+               class="main-image">
 
           <div class="image-overlay">
-            <button class="zoom-btn" id="zoomBtn">
-              <i class="fas fa-search-plus"></i>
+            <button class="zoom-btn" id="zoomBtn" aria-label="Zoom image" title="Zoom image">
+                <i class="fas fa-search-plus"></i>
             </button>
           </div>
         </div>
@@ -44,7 +44,6 @@
           {% for image in item.sub_images.all %}
             {% if image.image %}
               <img src="{{ image.image.url }}"
-                   alt="Thumbnail {{ forloop.counter }}"
                    class="thumbnail"
                    data-src="{{ image.image.url }}">
             {% endif %}
@@ -52,139 +51,111 @@
         </div>
         {% endif %}
 
-      </div>
+      </section>
 
-      <!-- PRODUCT DETAILS -->
-      <div class="product-details">
+      <!-- RIGHT: DETAILS -->
+      <section class="product-details">
 
-        <div class="product-header">
+        <!-- TITLE -->
+        <header class="product-header">
           <h1 class="product-title">{{ item.name }}</h1>
 
-          {% if request.user.is_authenticated and request.user.is_superuser %}
+          {% if request.user.is_superuser %}
           <div class="admin-actions">
             <a href="{% url 'poultryfarm:item_edit' item.id %}" class="btn btn-secondary btn-sm">
-              <i class="fas fa-edit"></i> Edit
+              <i class="fas fa-edit"></i>
             </a>
-
-            <form action="{% url 'poultryfarm:item_delete' item.id %}" method="post" class="d-inline">
+            <form action="{% url 'poultryfarm:item_delete' item.id %}" method="post">
               {% csrf_token %}
-              <button type="submit" class="btn btn-danger btn-sm">
-                <i class="fas fa-trash"></i> Delete
+              <button class="btn btn-danger btn-sm">
+                <i class="fas fa-trash"></i>
               </button>
             </form>
           </div>
           {% endif %}
-        </div>
+        </header>
 
+        <!-- META -->
         <div class="product-meta">
           <span class="category-badge">{{ item.category.name|default:"Poultry" }}</span>
           <span class="date-info">
-            <i class="fas fa-calendar"></i> {{ item.created_at|date:"M d, Y" }}
+            <i class="fas fa-calendar"></i>
+            {{ item.created_at|date:"M d, Y" }}
           </span>
         </div>
 
+        <!-- PRICE -->
         <div class="product-price">
-          <span class="price">${{ item.price }}</span>
-          <span class="price-label">ETB</span>
+          <span class="price">ETB {{ item.price }}</span>
         </div>
 
+        <!-- DESCRIPTION -->
         <div class="product-description">
           <h3>Description</h3>
           <p>{{ item.description|linebreaks }}</p>
         </div>
 
-        <!-- ACTION BUTTONS -->
-        <div class="action-buttons">
+        <!-- ACTIONS -->
+        <div class="actions-row">
 
-          <div class="action-buttons">
-    <button class="action-btns like-btn {% if user_has_liked %}liked{% endif %}"
-            data-item-id="{{ item.slug }}"
-            data-like-url="{% url 'poultryfarm:like_item' item.slug %}">
-        <i class="fas fa-heart"></i>
-        <span class="count">{{ item.like_count }}</span>
-    </button>
+          <div class="social-actions">
+            <button class="action-btn like-btn {% if user_has_liked %}liked{% endif %}"
+                    data-like-url="{% url 'poultryfarm:like_item' item.slug %}">
+              <i class="fas fa-heart"></i>
+              <span class="count">{{ item.like_count }}</span>
+            </button>
 
-    <button class="action-btns share-btn"
-            data-item-id="{{ item.slug }}"
-            data-share-url="{% url 'poultryfarm:share_item' item.slug %}">
-        <i class="fas fa-share-alt"></i>
-        <span class="count">{{ item.share_count }}</span>
-    </button>
+            <button class="action-btn share-btn"
+                    data-share-url="{% url 'poultryfarm:share_item' item.slug %}">
+              <i class="fas fa-share"></i>
+              <span class="count">{{ item.share_count }}</span>
+            </button>
+          </div>
 
-    <button class="action-btns cart-btn {% if in_cart %}in-cart{% endif %}"
-            data-item-id="{{ item.slug }}"
-            data-cart-url="{% url 'cart:toggle_cart_item' item.slug %}">
-        <i class="fas fa-shopping-cart"></i> Add to Cart
-    </button>
-    ...
-</div>
-
-          {% if request.user.is_authenticated %}
-            {% if request.user != item.created_by %}
-              <a href="{% url 'conversation:new' app_label model_name item.id %}" class="btn btn-success">
-                <i class="fas fa-comments"></i> Contact Seller
-              </a>
-            {% endif %}
-          {% else %}
-            <a href="{% url 'login' %}?next={% url 'conversation:new' app_label model_name item.id %}" class="btn btn-success">
-              <i class="fas fa-comments"></i> Login to Contact
-            </a>
-          {% endif %}
+          <button class="btn btn-primary cart-btn {% if in_cart %}in-cart{% endif %}"
+                  data-cart-url="{% url 'cart:toggle_cart_item' item.slug %}">
+            <i class="fas fa-shopping-cart"></i> Add to Cart
+          </button>
 
         </div>
 
-        <!-- SELLER INFO (ONLY ONCE - FIXED) -->
+        <!-- CONTACT -->
+        <div class="contact-row">
+          {% if request.user.is_authenticated and request.user != item.created_by %}
+            <a href="{% url 'conversation:new' app_label model_name item.id %}" class="btn btn-success">
+              Contact Seller
+            </a>
+          {% else %}
+            <a href="{% url 'login' %}" class="btn btn-success">
+              Login to Contact
+            </a>
+          {% endif %}
+        </div>
+
+        <!-- SELLER -->
         {% if item.created_by %}
         <div class="seller-card">
-
-          <h3>Seller Information</h3>
+          <h3>Seller</h3>
 
           <div class="seller-info">
             {% if item.created_by.profile.profile_picture %}
               <img src="{{ item.created_by.profile.profile_picture.url }}" class="seller-avatar">
             {% else %}
-              <div class="seller-avatar-placeholder">
-                <i class="fas fa-user"></i>
-              </div>
+              <div class="seller-avatar-placeholder"><i class="fas fa-user"></i></div>
             {% endif %}
 
-            <div class="seller-details">
+            <div>
               <h4>{{ item.created_by.get_full_name|default:item.created_by.username }}</h4>
               <p>{{ item.created_by.email }}</p>
             </div>
           </div>
-
-          <div class="seller-social">
-            {% if item.created_by.profile.telegram %}
-              <a href="https://t.me/{{ item.created_by.profile.telegram }}"><i class="fab fa-telegram"></i></a>
-            {% endif %}
-
-            {% if item.created_by.profile.facebook %}
-              <a href="https://facebook.com/{{ item.created_by.profile.facebook }}"><i class="fab fa-facebook"></i></a>
-            {% endif %}
-
-            {% if item.created_by.profile.instagram %}
-              <a href="https://instagram.com/{{ item.created_by.profile.instagram }}"><i class="fab fa-instagram"></i></a>
-            {% endif %}
-
-            {% if item.created_by.profile.linkedin %}
-              <a href="https://linkedin.com/in/{{ item.created_by.profile.linkedin }}"><i class="fab fa-linkedin"></i></a>
-            {% endif %}
-          </div>
-
         </div>
         {% endif %}
 
-      </div>
+      </section>
+
     </div>
   </div>
-
-  <!-- IMAGE MODAL -->
-  <div id="imageModal" class="modal">
-    <span class="close-modal">&times;</span>
-    <img class="modal-content" id="modalImage">
-  </div>
-
 </main>
 {% endblock %}
 

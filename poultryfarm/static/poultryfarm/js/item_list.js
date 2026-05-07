@@ -43,22 +43,17 @@ function initShareButtons() {
     document.querySelectorAll('.share-btn').forEach(button => {
         button.addEventListener('click', async function(e) {
             e.preventDefault();
-            const url = this.dataset.shareUrl;   // must be set in template
-            if (!url) return;
-            const countSpan = this.querySelector('.count');
+            const url = this.dataset.shareUrl || window.location.href;
+            const title = this.dataset.shareTitle || document.title;
             try {
-                await navigator.clipboard.writeText(window.location.href);
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: { 'X-CSRFToken': getCookie('csrftoken') }
-                });
-                const data = await response.json();
-                if (data.status === 'success') {
-                    countSpan.textContent = data.share_count;
-                    animate(this);
+                if (navigator.share) {
+                    await navigator.share({ title, url });
+                    showNotification('Link shared successfully');
+                } else {
+                    showNotification('Sharing is not supported on this device.', 'error');
                 }
             } catch (err) {
-                console.error(err);
+                console.error('Share error:', err);
                 showNotification('Share failed', 'error');
             }
         });
