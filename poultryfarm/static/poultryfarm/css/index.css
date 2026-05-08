@@ -473,7 +473,7 @@ body {
 }
 
 
-@media screen and (max-width: 384px) {
+@media (max-width: 384px) {
     /* 1. Reset Global Spacing & Layout */
     .index-container {
         padding-left: 15px !important;
