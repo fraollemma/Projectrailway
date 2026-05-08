@@ -329,48 +329,6 @@ body {
   transform: translateY(-5px);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-  .index-hero {
-    padding: 20px;
-    text-align: center;
-    justify-content: center;
-  }
-
-  .index-hero__title {
-    font-size: 2.2rem;
-  }
-
-  .index-hero__buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .index-training-card {
-    flex-direction: column;
-  }
-
-  .index-training-card img {
-    width: 100%;
-    height: 200px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Section Header Styling */
 .index-stats {
     padding: 80px 0;
     text-align: center;
@@ -463,7 +421,47 @@ body {
     margin-top: 2px;
 }
 
-/* Responsive adjustments */
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .index-hero {
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .index-hero__title {
+    font-size: 2.2rem;
+  }
+
+  .index-hero__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .index-training-card {
+    flex-direction: column;
+  }
+
+  .index-training-card img {
+    width: 100%;
+    height: 200px;
+  }
+}
+
 @media (max-width: 1024px) {
     .index-stats-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -473,5 +471,131 @@ body {
 @media (max-width: 768px) {
     .index-stats-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+
+@media screen and (max-width: 384px) {
+    /* 1. Reset Global Spacing & Layout */
+    .index-container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* 2. Header & Navigation */
+    .top-bar {
+        display: none; /* Hide top bar for more space */
+    }
+
+    .header {
+        padding: 10px 0;
+    }
+
+    .header .container {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* Hide standard nav, assume a burger menu is present or should be used */
+    #navMenu, #categoryNav {
+        display: none; 
+    }
+
+    /* 3. Hero Section */
+    .index-hero {
+        padding: 60px 0 !important;
+        min-height: auto !important;
+    }
+
+    .index-hero h1 {
+        font-size: 28px !important; /* Smaller header */
+        line-height: 1.2;
+    }
+
+    .index-hero p {
+        font-size: 14px !important;
+        margin-bottom: 20px;
+    }
+
+    .index-hero .hero-btns {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .index-hero .btn {
+        width: 100%; /* Full width buttons on mobile */
+        text-align: center;
+    }
+
+    /* 4. Services & Training Sections */
+    .index-services__grid, 
+    .training-grid, 
+    .index-stats-grid {
+        grid-template-columns: 1fr !important; /* Force single column */
+        gap: 15px !important;
+    }
+
+    .index-section-header h2 {
+        font-size: 22px !important;
+    }
+
+    /* 5. Our Poultry Status (Stats) */
+    .index-stat {
+        flex-direction: row !important; /* Keep horizontal as per image, but scale down */
+        padding: 15px !important;
+    }
+
+    .stat-icon {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 18px !important;
+    }
+
+    .stat-count {
+        font-size: 20px !important;
+    }
+
+    /* 6. Training Cards */
+    .training-card {
+        flex-direction: column !important; /* Stack image and text */
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .training-card__image {
+        width: 100% !important;
+        height: 200px;
+    }
+
+    .training-card__content {
+        padding: 20px !important;
+    }
+
+    /* 7. Footer */
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    /* 8. UI Elements */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .btn {
+        padding: 12px 20px !important;
+        font-size: 14px !important;
     }
 }
