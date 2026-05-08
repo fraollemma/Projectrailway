@@ -9,9 +9,8 @@
 
     <h1 class="page-title">🥛 Dairy Products</h1> 
 
-    <!-- add button -->
-    <a href="{% url 'dairyfarm:dairyfarm_add' %}" class="btn add">Add Product</a>
-    <a href="{% url 'dairyfarm:dairyfarm_detail' product.slug %}">
+    <!-- add button --> 
+    <a href="/">
             {{ product.name }}
         </a>
     <div class="grid">
@@ -42,7 +41,7 @@
 
         </div>
         {% empty %}
-        <p>No dairy products available.</p>
+        This web page is not available because there are no dairy products listed yet. Please check back later.
         {% endfor %}
 
     </div>
