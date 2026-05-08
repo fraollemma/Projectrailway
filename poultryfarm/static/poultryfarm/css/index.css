@@ -10,7 +10,7 @@
   --gray: #666;
 
   --bg: #f5f7fa;
-  --white: #ffffff;
+  --white: #fff;
   --light: #f8f9fa;
 
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -29,6 +29,25 @@ body {
   max-width: 1200px;
   margin: auto;
   padding: 60px 20px;
+}
+
+.index-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.index-section-header span {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.index-section-header h2 {
+  font-size: 2.2rem;
+}
+
+.index-section-header p {
+  color: var(--gray);
 }
 
 /* =========================
@@ -50,28 +69,6 @@ body {
 .index-button--secondary {
   background: var(--secondary);
   color: var(--white);
-}
-
-/* =========================
-   SECTION HEADER
-========================= */
-.index-section-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.index-section-header span {
-  color: var(--primary);
-  font-weight: 600;
-  font-size: 12px;
-}
-
-.index-section-header h2 {
-  font-size: 2.2rem;
-}
-
-.index-section-header p {
-  color: var(--gray);
 }
 
 /* =========================
@@ -109,7 +106,6 @@ body {
 .index-hero__title {
   font-size: 3.5rem;
   font-weight: 800;
-  line-height: 1.1;
   margin-bottom: 20px;
 }
 
@@ -122,7 +118,6 @@ body {
   gap: 15px;
 }
 
-/* Scroll indicator */
 .index-hero__scroll {
   position: absolute;
   bottom: 20px;
@@ -175,7 +170,7 @@ body {
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease;
+  transition: 0.3s;
 }
 
 .index-service-card:hover {
@@ -186,7 +181,7 @@ body {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  transition: transform 0.4s;
+  transition: 0.4s;
 }
 
 .index-service-card:hover img {
@@ -202,7 +197,6 @@ body {
   font-weight: 600;
 }
 
-/* Icon badge */
 .index-service-icon-badge {
   position: absolute;
   top: 170px;
@@ -216,7 +210,6 @@ body {
   align-items: center;
   justify-content: center;
   border: 4px solid var(--white);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .icon-fresh-eggs { background: var(--secondary); }
@@ -231,27 +224,26 @@ body {
 
 .index-training-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100%, 400px, 1fr));
   gap: 30px;
 }
 
 .index-training-card {
   display: flex;
-  background: var(--white);
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease;
-}
-
-.index-training-card:hover img {
-  transform: scale(1.05);
+  transition: 0.3s;
 }
 
 .index-training-card img {
   width: 40%;
   object-fit: cover;
-  transition: transform 0.4s;
+  transition: 0.4s;
+}
+
+.index-training-card:hover img {
+  transform: scale(1.05);
 }
 
 .index-training-card__content {
@@ -259,7 +251,6 @@ body {
   padding: 30px;
 }
 
-/* Badge */
 .expert-service-badge {
   position: absolute;
   left: 0;
@@ -272,168 +263,91 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid var(--white);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .badge-training { background: var(--primary); }
 .badge-consultancy { background: var(--secondary); }
 
-/* List styling */
 .index-training-card ul {
   list-style: none;
   margin: 20px 0;
-  padding: 0;
 }
 
 .index-training-card li {
-  position: relative;
-  padding-left: 30px;
+  padding-left: 25px;
   margin-bottom: 10px;
-  color: #555;
+  position: relative;
 }
 
 .index-training-card li::before {
-  content: "\f058";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
+  content: "✔";
   position: absolute;
   left: 0;
+  color: var(--primary);
 }
 
 /* =========================
    STATS
 ========================= */
 .index-stats {
-  text-align: center;
   background: var(--light);
   padding: 80px 0;
+  text-align: center;
+}
+
+.index-stats h2 {
+  margin-bottom: 40px;
 }
 
 .index-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
 }
 
 .index-stat {
+  display: flex;
+  align-items: center;
+  padding: 20px;
   background: var(--white);
-  padding: 25px;
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease;
+  transition: 0.3s;
 }
 
 .index-stat:hover {
   transform: translateY(-5px);
 }
 
-.index-stats {
-    padding: 80px 0;
-    text-align: center;
-    background-color: #f8f9fa;
-}
-
-.index-stats h2 {
-    position: relative;
-    display: inline-block;
-    padding-top: 15px;
-    margin-bottom: 40px;
-    font-size: 28px;
-    font-weight: 700;
-    color: #333;
-}
-
-.index-stats h2::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 2px;
-    background-color: #f26522; /* The orange line from the image */
-}
-
-/* Grid Layout */
-.index-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Individual Stat Card */
-.index-stat {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    text-align: left;
-    transition: transform 0.3s ease;
-}
-
-.index-stat:hover {
-    transform: translateY(-5px);
-}
-
-/* Icon Styling */
 .stat-icon {
-    width: 55px;
-    height: 55px;
-    border-radius: 50% !important; /* Forces circular shape */
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
-    margin-right: 15px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
 }
 
-/* Text Info Container */
 .stat-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.stat-label {
-    font-size: 13px;
-    color: #777;
-    margin-bottom: 2px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .stat-count {
-    font-size: 24px;
-    font-weight: 800;
-    margin: 0;
-    color: #222;
-    line-height: 1.2;
+  font-weight: 800;
 }
-
-.stat-sublabel {
-    font-size: 11px;
-    color: #999;
-    margin-top: 2px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* =========================
    RESPONSIVE
 ========================= */
+@media (max-width: 1024px) {
+  .index-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .index-hero {
     padding: 20px;
@@ -458,147 +372,13 @@ body {
     width: 100%;
     height: 200px;
   }
-}
 
-@media (max-width: 1024px) {
-    .index-stats-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .index-stats-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
-@media (max-width: 768px) {
-    .index-stats-grid {
+@media (max-width: 450px) {
+      .index-training-cards {
         grid-template-columns: 1fr;
+      }
     }
-}
-
-
-@media (max-width: 384px) {
-    /* 1. Reset Global Spacing & Layout */
-    .index-container {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-        width: 100% !important;
-        box-sizing: border-box;
-    }
-
-    /* 2. Header & Navigation */
-    .top-bar {
-        display: none; /* Hide top bar for more space */
-    }
-
-    .header {
-        padding: 10px 0;
-    }
-
-    .header .container {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    /* Hide standard nav, assume a burger menu is present or should be used */
-    #navMenu, #categoryNav {
-        display: none; 
-    }
-
-    /* 3. Hero Section */
-    .index-hero {
-        padding: 60px 0 !important;
-        min-height: auto !important;
-    }
-
-    .index-hero h1 {
-        font-size: 28px !important; /* Smaller header */
-        line-height: 1.2;
-    }
-
-    .index-hero p {
-        font-size: 14px !important;
-        margin-bottom: 20px;
-    }
-
-    .index-hero .hero-btns {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
-
-    .index-hero .btn {
-        width: 100%; /* Full width buttons on mobile */
-        text-align: center;
-    }
-
-    /* 4. Services & Training Sections */
-    .index-services__grid, 
-    .training-grid, 
-    .index-stats-grid {
-        grid-template-columns: 1fr !important; /* Force single column */
-        gap: 15px !important;
-    }
-
-    .index-section-header h2 {
-        font-size: 22px !important;
-    }
-
-    /* 5. Our Poultry Status (Stats) */
-    .index-stat {
-        flex-direction: row !important; /* Keep horizontal as per image, but scale down */
-        padding: 15px !important;
-    }
-
-    .stat-icon {
-        width: 45px !important;
-        height: 45px !important;
-        font-size: 18px !important;
-    }
-
-    .stat-count {
-        font-size: 20px !important;
-    }
-
-    /* 6. Training Cards */
-    .training-card {
-        flex-direction: column !important; /* Stack image and text */
-        border-radius: 12px;
-        overflow: hidden;
-    }
-
-    .training-card__image {
-        width: 100% !important;
-        height: 200px;
-    }
-
-    .training-card__content {
-        padding: 20px !important;
-    }
-
-    /* 7. Footer */
-    .footer-grid {
-        grid-template-columns: 1fr !important;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-    /* 8. UI Elements */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .btn {
-        padding: 12px 20px !important;
-        font-size: 14px !important;
-    }
-}
-@media (max-width: 992px) {
-    .index-stats-grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    }
-}
