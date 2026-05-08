@@ -597,3 +597,8 @@ body {
         font-size: 14px !important;
     }
 }
+@media (max-width: 992px) {
+    .index-stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
