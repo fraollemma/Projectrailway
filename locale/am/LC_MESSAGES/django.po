@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-09 19:13+0300\n"
+"PO-Revision-Date: 2026-05-09 00:00+0300\n"
+"Last-Translator: Fraol Lemma\n"
+"Language-Team: Amharic\n"
+"Language: am\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+############################
+# ADMIN
+############################
+
+msgid " Admin-Only | Ethiopian Sheger Market place"
+msgstr "የአስተዳዳሪ ብቻ | የኢትዮጵያ ሸገር ገበያ"
+
+msgid " | Ethiopian Sheger Market place"
+msgstr " | የኢትዮጵያ ሸገር ገበያ"
+
+############################
+# CART
+############################
+
+msgid "Cart Details | Ethiopian Sheger Market place"
+msgstr "የቅርጫት ዝርዝር | የኢትዮጵያ ሸገር ገበያ"
+
+msgid "Your Shopping Cart"
+msgstr "የግዢ ቅርጫትዎ"
+
+msgid "Quantity:"
+msgstr "ብዛት:"
+
+msgid "Remove"
+msgstr "አስወግድ"
+
+msgid "Subtotal:"
+msgstr "አጠቃላይ:"
+
+msgid "Shipping:"
+msgstr "መላኪያ:"
+
+msgid "Total:"
+msgstr "ጠቅላላ:"
+
+msgid "Proceed to Checkout"
+msgstr "ወደ ክፍያ ቀጥል"
+
+msgid "Continue Shopping"
+msgstr "ግዢ ቀጥል"
+
+msgid "Your cart is empty."
+msgstr "ቅርጫትዎ ባዶ ነው።"
+
+msgid "Start Shopping"
+msgstr "ግዢ ጀምር"
+
+############################
+# DAIRY FARM
+############################
+
+msgid "Dairy | Ethiopian Sheger Market place"
+msgstr "የወተት ምርቶች | የኢትዮጵያ ሸገር ገበያ"
+
+msgid "Premium Dairy Marketplace"
+msgstr "ከፍተኛ ጥራት ያለው የወተት ገበያ"
+
+msgid "Buy fresh milk, butter, cheese and dairy products from trusted Ethiopian farmers."
+msgstr "ከታመኑ ኢትዮጵያዊ አርሶ አደሮች ትኩስ ወተት፣ ቅቤ፣ ቺዝ እና የወተት ምርቶች ይግዙ።"
+
+msgid "Explore More →"
+msgstr "ተጨማሪ ይመልከቱ →"
+
+############################
+# HOUSES
+############################
+
+msgid " House Details | Ethiopian Sheger Market place"
+msgstr "የቤት ዝርዝር | የኢትዮጵያ ሸገር ገበያ"
+
+msgid "Start Conversation"
+msgstr "ውይይት ጀምር"
+
+msgid "Share this house"
+msgstr "ይህን ቤት አጋራ"
+
+msgid "Location:"
+msgstr "አካባቢ:"
+
+msgid "Category:"
+msgstr "ምድብ:"
+
+msgid "Bedrooms:"
+msgstr "መኝታ ክፍሎች:"
+
+msgid "Bathrooms:"
+msgstr "መታጠቢያ ክፍሎች:"
+
+msgid "Area:"
+msgstr "ስፋት:"
+
+msgid "sq.m"
+msgstr "ካሬ ሜትር"
+
+msgid "Seller"
+msgstr "ሻጭ"
+
+msgid "Add to Cart"
+msgstr "ወደ ቅርጫት ጨምር"
+
+############################
+# VEHICLES
+############################
+
+msgid " Confirm Vehicle Delete | Ethiopian Sheger Market place"
+msgstr "የመኪና ማጥፋት አረጋግጥ | የኢትዮጵያ ሸገር ገበያ"
+
+msgid "Confirm Deletion"
+msgstr "ማጥፋት አረጋግጥ"
+
+msgid "Are you sure you want to delete this vehicle?"
+msgstr "ይህን መኪና ማጥፋት ትፈልጋለህ?"
+
+msgid "Price:"
+msgstr "ዋጋ:"
+
+msgid "Mileage:"
+msgstr "ርቀት:"
+
+msgid "Delete"
+msgstr "ሰርዝ"
+
+msgid "Cancel"
+msgstr "ተወው"
+
+msgid " Vehicle Vehicle Detail | Ethiopian Sheger Market place"
+msgstr "የመኪና ዝርዝር | የኢትዮጵያ ሸገር ገበያ"
+
+msgid "Shares"
+msgstr "መጋራት"
+
+msgid "Engine"
+msgstr "ሞተር"
+
+msgid "Fuel Type"
+msgstr "የነዳጅ አይነት"
+
+msgid "Color"
+msgstr "ቀለም"
+
+msgid "Transmission"
+msgstr "ትራንስሚሽን"
+
+msgid "Description"
+msgstr "መግለጫ"
+
+msgid "Vehicle Form | Ethiopian Sheger Market place"
+msgstr "የመኪና ፎርም | የኢትዮጵያ ሸገር ገበያ"
+
+msgid "Vehicle List | Ethiopian Sheger Market place"
+msgstr "የመኪና ዝርዝር | የኢትዮጵያ ሸገር ገበያ"
+
+msgid "View Details"
+msgstr "ዝርዝር ይመልከቱ"
+
+############################
+# SETTINGS
+############################
+
+msgid "English"
+msgstr "እንግሊዝኛ"
+
+msgid "Amharic"
+msgstr "አማርኛ"
+
+msgid "Oromiffa"
+msgstr "ኦሮምኛ"
