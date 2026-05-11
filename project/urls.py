@@ -26,6 +26,7 @@ urlpatterns += i18n_patterns(
     path('houses/', include('houses.urls', namespace='houses')),
     path('cart/', include('cart.urls', namespace='cart')),
     path("admin-app/", include("admin_app.urls", namespace="admin_app")),
+    path("portfolio/", include("portfolio.urls", namespace="portfolio")),
 )
 
 if settings.DEBUG:

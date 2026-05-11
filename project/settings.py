@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'electronics.apps.ElectronicsConfig',
     'houses.apps.HousesConfig',
     'cart',
+    'portfolio',
 
     'crispy_forms',
     'crispy_bootstrap5',
