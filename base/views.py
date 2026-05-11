@@ -8,10 +8,7 @@ from datetime import datetime
 from .forms import MessageForm
 from .models import Message
 
-from houses.models import House
 from dairyfarm.models import DairyFarmer
-from electronics.models import Product as ElectronicsProduct
-from clothings.models import ClothingItem as Clothing
 from poultryfarm.models import Item as PoultryItem
 
 from conversation.models import Conversation
@@ -29,9 +26,6 @@ def base(request):
         'conversations_count': Conversation.objects.count(),
 
         'dairyfarm_count': DairyFarmer.objects.count(),
-        'house_count': House.objects.count(),
-        'electronics_count': ElectronicsProduct.objects.count(),
-        'clothing_count': Clothing.objects.count(),
         'poultry_count': PoultryItem.objects.count(),
     }
 
@@ -65,21 +59,6 @@ def search_results(request):
         })
 
     results = []
-
-    # Houses
-    houses = House.objects.filter(
-        Q(title__icontains=query) |
-        Q(description__icontains=query)
-    )[:10]
-
-    for house in houses:
-        results.append({
-            'type': 'house',
-            'object': house,
-            'title': house.title,
-            'description': house.description,
-        })
-
     # DairyFarm (FIXED MODEL)
     dairy = DairyFarmer.objects.filter(
         Q(farm_name__icontains=query) |
@@ -93,34 +72,6 @@ def search_results(request):
             'object': farm,
             'title': farm.farm_name,
             'description': farm.description,
-        })
-
-    # Electronics
-    electronics = ElectronicsProduct.objects.filter(
-        Q(name__icontains=query) |
-        Q(description__icontains=query)
-    )[:10]
-
-    for item in electronics:
-        results.append({
-            'type': 'electronics',
-            'object': item,
-            'title': item.name,
-            'description': item.description,
-        })
-
-    # Clothing
-    clothing = Clothing.objects.filter(
-        Q(name__icontains=query) |
-        Q(description__icontains=query)
-    )[:10]
-
-    for item in clothing:
-        results.append({
-            'type': 'clothing',
-            'object': item,
-            'title': item.name,
-            'description': item.description,
         })
 
     # Poultry

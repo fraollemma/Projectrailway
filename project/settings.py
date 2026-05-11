@@ -56,10 +56,7 @@ INSTALLED_APPS = [
     'contact',
     'companies',
     'dairyfarm',
-    'clothings',
     'admin_app',
-    'electronics.apps.ElectronicsConfig',
-    'houses.apps.HousesConfig',
     'cart',
     'portfolio',
 
