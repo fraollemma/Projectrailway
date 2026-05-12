@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-12 12:19+0300\n"
+"POT-Creation-Date: 2026-05-11 23:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,1881 +17,2515 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\admin_app\templates\admin_app\admin_links.html:6
-#, fuzzy
-#| msgid "Admin Links | Ethiopian Poultry And Dairy Farm Market place"
-msgid "Admin Links | Ethiopian Sheger Market place"
-msgstr "Liinkii Admin | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#: .\admin_app\templates\admin_app\admin_links.html:16
-msgid "Admin Links"
-msgstr "Liinkii Admin"
-
-#: .\admin_app\templates\admin_app\admin_links.html:19
-msgid "View Messages"
-msgstr "Ergaalee ilaali"
-
-#: .\admin_app\templates\admin_app\admin_links.html:20
-msgid "View Contact Us Messages"
-msgstr "Ergaalee 'Nu Qunnami' ilaali"
-
-#: .\admin_app\templates\admin_app\admin_links.html:32
-msgid "You are not logged in."
-msgstr "Galmaa’i hin jirtu."
-
-#: .\admin_app\templates\admin_app\admin_links.html:34
-msgid "Login"
-msgstr "Galmaa’i"
-
 #: .\admin_app\templates\admin_app\dashboard.html:6
-#, fuzzy
-#| msgid " Admin-Only | Ethiopian Poultry And Dairy Farm Market place"
-msgid " Admin-Only | Ethiopian Sheger Market place"
+msgid " Admin-Only | Ethiopian Poultry And Dairy Farm Market place"
 msgstr " Admin-Qofaa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
 
 #: .\admin_app\templates\admin_app\manage_houses.html:6
-#, fuzzy
-#| msgid " | Ethiopian Poultry And Dairy Farm Market place"
-msgid " | Ethiopian Sheger Market place"
+msgid " | Ethiopian Poultry And Dairy Farm Market place"
 msgstr " | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
 
-#: .\cart\templates\cart\cart_detail.html:6
-#, fuzzy
-#| msgid "Cart Details | Ethiopian Poultry And Dairy Farm Market place"
-msgid "Cart Details | Ethiopian Sheger Market place"
-msgstr "Ibsa Gaanxoo | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+#: .\base\templates\base\about_us.html:6
+msgid "About Us | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Waa'ee Keenya | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
 
-#: .\cart\templates\cart\cart_detail.html:18
-msgid "Your Shopping Cart"
-msgstr "Gaanxoo Bituu Keessan"
+#: .\base\templates\base\about_us.html:16 .\base\templates\base\base.html:431
+#: .\base\templates\base\base.html:498
+#: .\companies\templates\companies\nvi.html:27
+msgid "About Us"
+msgstr "Waa'ee Keenya"
 
-#: .\cart\templates\cart\cart_detail.html:19
-msgid "items in your cart"
+#: .\base\templates\base\about_us.html:17 .\base\templates\base\terms.html:17
+msgid ""
+"We are a company dedicated to providing the best services to our customers."
 msgstr ""
+"Dhaabbata tajaajila gaarii ta’e maamiltoota keenyaaf kennuuf ofqabuudha."
 
-#: .\cart\templates\cart\cart_detail.html:28
-#, fuzzy
-#| msgid "Create Item"
-msgid "Cart Items"
-msgstr "Meeshaa Uumi"
-
-#: .\cart\templates\cart\cart_detail.html:75
-#: .\cart\templates\cart\cart_detail.html:83
-#: .\cart\templates\cart\cart_detail.html:169
-msgid "Remove"
-msgstr "Balleessi"
-
-#: .\cart\templates\cart\cart_detail.html:81
-msgid "This item is no longer available"
+#: .\base\templates\base\about_us.html:19
+msgid ""
+"Our mission is to connect buyers and sellers in a seamless online "
+"marketplace."
 msgstr ""
+"Gochaann keenya addaan hin cindhiniin gabaa interneetii irratti bittootaa fi "
+"gurgurtoota walitti fiduudha."
 
-#: .\cart\templates\cart\cart_detail.html:95
-msgid "Order Summary"
+#: .\base\templates\base\about_us.html:20
+msgid ""
+"We strive to offer a wide range of products at competitive prices, backed by "
+"excellent customer service."
 msgstr ""
+"Qabeenya garaagaraa gatii dorgomsiisaan, tajaajila maamiltoota caalmaa "
+"ta’een deeggarame dhiheessuu yaalanna."
 
-#: .\cart\templates\cart\cart_detail.html:100
-#, fuzzy
-#| msgid "Subtotal:"
-msgid "Subtotal"
-msgstr "Iddoo Gadii:"
+#: .\base\templates\base\admin_links.html:6
+msgid "Admin Links | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Liinkii Admin | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
 
-#: .\cart\templates\cart\cart_detail.html:108
+#: .\base\templates\base\admin_links.html:16
+#: .\base\templates\base\base.html:361
+msgid "Admin Links"
+msgstr "Liinkii Admin"
+
+#: .\base\templates\base\admin_links.html:19
+msgid "View Messages"
+msgstr "Ergaalee ilaali"
+
+#: .\base\templates\base\admin_links.html:20
+msgid "View Contact Us Messages"
+msgstr "Ergaalee 'Nu Qunnami' ilaali"
+
+#: .\base\templates\base\admin_links.html:32
+msgid "You are not logged in."
+msgstr "Galmaa’i hin jirtu."
+
+#: .\base\templates\base\admin_links.html:34
+#: .\base\templates\base\base.html:273 .\users\templates\users\login.html:15
+#: .\users\templates\users\login.html:32
+msgid "Login"
+msgstr "Galmaa’i"
+
+#: .\base\templates\base\base.html:8
+msgid ""
+"Ethiopian marketplace - Buy and sell poultry and dairy products in Ethiopia"
+msgstr ""
+"Gabaa Itoophiyaa - Itoophiyaatti qe’aa fi oomisha aannan biti fi gurguri"
+
+#: .\base\templates\base\base.html:9
+msgid ""
+"Ethiopia, marketplace, buy and sell, agriculture, ethiopia agriculture , "
+"poultry, dairy"
+msgstr ""
+"Itoophiyaa, gabaa, biti fi gurguri, qonna, qonna Itoophiyaa, qe’aa, aannan"
+
+#: .\base\templates\base\base.html:26
+msgid "Please select your language"
+msgstr "Maaloo afaan kee filadhu"
+
+#: .\base\templates\base\base.html:40
+msgid "Skip"
+msgstr "Darbi"
+
+#: .\base\templates\base\base.html:123
+msgid "Notifications"
+msgstr "Beeksisa"
+
+#: .\base\templates\base\base.html:129 .\base\templates\base\base.html:326
+#: .\base\templates\base\base.html:367
+msgid "Messages"
+msgstr "Ergaalee"
+
+#: .\base\templates\base\base.html:136
+msgid "Egg Orders"
+msgstr "Ajaja Hanshuu"
+
+#: .\base\templates\base\base.html:143
+msgid "Carted"
+msgstr "Gaanxoo keessa"
+
+#: .\base\templates\base\base.html:151
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:36
 msgid "Total"
 msgstr "Iddoo"
 
-#: .\cart\templates\cart\cart_detail.html:116
+#: .\base\templates\base\base.html:186
+msgid "Browse Categories"
+msgstr "Ramaddii dubbadhu"
+
+#: .\base\templates\base\base.html:197
+msgid "Dairy Section"
+msgstr "Cuta Aannan"
+
+#: .\base\templates\base\base.html:204
+msgid "All Dairy products"
+msgstr "Oomisha aannan hunda"
+
+#: .\base\templates\base\base.html:210
+msgid "Add Dairy Products"
+msgstr "Oomisha aannan dabali"
+
+#: .\base\templates\base\base.html:218 .\base\templates\base\base.html:226
+msgid "Poultry Section"
+msgstr "Cuta Qe’aa"
+
+#: .\base\templates\base\base.html:233
+msgid "Poultry Items"
+msgstr "Meeshaalee Qe’aa"
+
+#: .\base\templates\base\base.html:240
+msgid "Poultry Eggs"
+msgstr "Hanshuu Qe’aa"
+
+#: .\base\templates\base\base.html:246
+msgid "Poultry Chickens"
+msgstr "Lukkuuwwan Qe’aa"
+
+#: .\base\templates\base\base.html:252
+msgid "Poultry Farm Training"
+msgstr "Leenjii Oomisha Qe’aa"
+
+#: .\base\templates\base\base.html:258
+msgid "Poultry Farm Consultancy"
+msgstr "Tajaajila Gorsa Oomisha Qe’aa"
+
+#: .\base\templates\base\base.html:266
+msgid "User"
+msgstr "Fayyadamaa"
+
+#: .\base\templates\base\base.html:279 .\users\templates\users\register.html:33
+msgid "Register"
+msgstr "Galmeessi"
+
+#: .\base\templates\base\base.html:286 .\users\templates\users\profile.html:15
+msgid "My Profile"
+msgstr "Buufata Kiyya"
+
+#: .\base\templates\base\base.html:293
+msgid "Edit Profile"
+msgstr "Buufata gulaali"
+
+#: .\base\templates\base\base.html:299
+msgid "logout"
+msgstr "bahi"
+
+#: .\base\templates\base\base.html:308
+msgid "User store"
+msgstr "Daldala fayyadamaa"
+
+#: .\base\templates\base\base.html:317
+msgid "My Orders"
+msgstr "Ajaja Kiyya"
+
+#: .\base\templates\base\base.html:340
+msgid "Cart"
+msgstr "Gaanxoo"
+
+#: .\base\templates\base\base.html:354
+msgid "For Admin"
+msgstr "Adminif"
+
+#: .\base\templates\base\base.html:373
+msgid "User List"
+msgstr "Tarree Fayyadamtootaa"
+
+#: .\base\templates\base\base.html:383
+msgid "Language"
+msgstr "Afaan"
+
+#: .\base\templates\base\base.html:425 .\base\templates\base\base.html:499
+#: .\companies\templates\companies\ethiochicken.html:187
+msgid "Contact Us"
+msgstr "Nu Qunnami"
+
+#: .\base\templates\base\base.html:444
+msgid " Dairy"
+msgstr " Aannan"
+
+#: .\base\templates\base\base.html:449
+msgid " Poultry"
+msgstr " Qe’aa"
+
+#: .\base\templates\base\base.html:475
+msgid "Ethio"
+msgstr "Itiyoo"
+
+#: .\base\templates\base\base.html:475
+msgid "Agriculture"
+msgstr "Qonna"
+
+#: .\base\templates\base\base.html:478
+msgid ""
+"Ethio-Agriculture is your one-stop online marketplace for Dairy products and "
+"Poultry Item. We connect buyers and sellers across the globe."
+msgstr ""
+"Ethio-Agriculture gabaa interneetii oomisha aannanii fi meeshaa qe’aa "
+"keessaniti. Bittoofi gurguroota addunyaa mara walitti fidna."
+
+#: .\base\templates\base\base.html:488
+msgid "Categories"
+msgstr "Ramaddii"
+
+#: .\base\templates\base\base.html:490
+msgid "Dairy products"
+msgstr "Oomisha aannan"
+
+#: .\base\templates\base\base.html:491
+msgid "Poultry Item"
+msgstr "Meeshaa Qe’aa"
+
+#: .\base\templates\base\base.html:495
+#: .\companies\templates\companies\nvi.html:43
+msgid "Quick Links"
+msgstr "Liinkii Dafaa"
+
+#: .\base\templates\base\base.html:497
+msgid "Home"
+msgstr "Mana"
+
+#: .\base\templates\base\base.html:503
+msgid "Contact Info"
+msgstr "Odeeffannoo Qunnamaa"
+
+#: .\base\templates\base\base.html:505
+msgid "Ethiopia / Sheger City , Gelan"
+msgstr "Itoophiyaa / Magaalaa Shaagger, Gelan"
+
+#: .\base\templates\base\base.html:514
+msgid "Ethio-Agriculture All Rights Reserved."
+msgstr "Ethio-Agriculture Mirgi Hunda Kan Qabadhamuudha."
+
+#: .\base\templates\base\index.html:6
+msgid "Sheger Market | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Gabaa Shaagger | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\base\templates\base\index.html:20
+msgid "Poultry Farm"
+msgstr "Oomisha Qe’aa"
+
+#: .\base\templates\base\index.html:21
+msgid "Eggs, Chickens, poultry Equipment and tools for sell"
+msgstr "Hanshuu, Lukkuu, Meeshaalee Qe’aa fi meeshaalee gurguramuuf"
+
+#: .\base\templates\base\index.html:22
+msgid "poultry"
+msgstr "qe’aa"
+
+#: .\base\templates\base\index.html:30
+msgid "Dairy Farm"
+msgstr "Oomisha Aannan"
+
+#: .\base\templates\base\index.html:31
+msgid "Fresh milk, cheese, butter and other dairy products"
+msgstr "Aannan haaraa, baagiyoo, dhadhaa fi oomisha aannan biroo"
+
+#: .\base\templates\base\index.html:32
+#: .\base\templates\base\search_results.html:30
+msgid "Electronics"
+msgstr "Eletrooniksii"
+
+#: .\base\templates\base\index.html:51
+msgid "Shop by Category"
+msgstr "Ramaddiidhaan Kadhatu"
+
+#: .\base\templates\base\index.html:58
+msgid "Dairy"
+msgstr "Aannan"
+
+#: .\base\templates\base\index.html:59 .\base\templates\base\index.html:67
+msgid "posted"
+msgstr "maxxanfame"
+
+#: .\base\templates\base\index.html:66
+#: .\base\templates\base\search_results.html:32
+#: .\base\templates\base\search_results.html:62
+msgid "Poultry"
+msgstr "Qe’aa"
+
+#: .\base\templates\base\index.html:75
+msgid "Featured Products"
+msgstr "Oomisha Filatamoo"
+
+#: .\base\templates\base\index.html:143 .\base\templates\base\index.html:311
+msgid "Bed"
+msgstr "Siree"
+
+#: .\base\templates\base\index.html:201 .\base\templates\base\index.html:369
+#: .\companies\templates\companies\nvi.html:65
+#: .\companies\templates\companies\nvi.html:78
+#: .\companies\templates\companies\nvi.html:91
+#: .\companies\templates\companies\nvi.html:104
+#: .\companies\templates\companies\nvi.html:117
+#: .\companies\templates\companies\nvi.html:130
+#: .\poultryfarm\templates\poultryfarm\item_list.html:118
+msgid "View Details"
+msgstr "Ibsa Ilaali"
+
+#: .\base\templates\base\index.html:207
+msgid "No featured products available."
+msgstr "Oomisha filatamoon hin jiru."
+
+#: .\base\templates\base\index.html:212
+msgid "Our Sponsors"
+msgstr "Hiree Keenya"
+
+#: .\base\templates\base\index.html:243
+msgid "Load More Products"
+msgstr "Oomisha Dabaluu Fe’i"
+
+#: .\base\templates\base\index.html:244
+msgid "more"
+msgstr "dabalata"
+
+#: .\base\templates\base\messages.html:7
+msgid "Messages Received | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Ergaalee Argaman | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\base\templates\base\messages.html:16
+msgid "Messages Received"
+msgstr "Ergaalee Argaman"
+
+#: .\base\templates\base\messages.html:33
+msgid "No messages yet."
+msgstr "Ergaan hin jiru amma."
+
+#: .\base\templates\base\search_results.html:7
+msgid "Search Results for"
+msgstr "Bu’aan Barbaachisaa"
+
+#: .\base\templates\base\search_results.html:7
+#: .\base\templates\base\search_results.html:9
+msgid "Sheger.city"
+msgstr "Shaagger.city"
+
+#: .\base\templates\base\search_results.html:9
+msgid "Search Products"
+msgstr "Oomisha Barbaadi"
+
+#: .\base\templates\base\search_results.html:17
+msgid "Search Results"
+msgstr "Bu’aan Barbaachisaa"
+
+#: .\base\templates\base\search_results.html:20
+msgid "Showing results for"
+msgstr "Bu’aawwan isaaniif agarsisu"
+
+#: .\base\templates\base\search_results.html:25
+msgid "Found"
+msgstr "Argame"
+
+#: .\base\templates\base\search_results.html:25
+msgid "results"
+msgstr "bu’aawwan"
+
+#: .\base\templates\base\search_results.html:28
+msgid "Houses"
+msgstr "Maneewwan"
+
+#: .\base\templates\base\search_results.html:29
+#: .\base\templates\base\search_results.html:57
+msgid "dairyfarm"
+msgstr "oomisha aannan"
+
+#: .\base\templates\base\search_results.html:31
+msgid "Clothing"
+msgstr "Uffata"
+
+#: .\base\templates\base\search_results.html:44
+msgid "What are you looking for?"
+msgstr "Maal barbaaddaa jirta?"
+
+#: .\base\templates\base\search_results.html:45
+msgid "Enter a search term to find products across all categories"
+msgstr "Ramaddii hunda keessatti oomisha argachuuf jecha barbaachisaa galchi"
+
+#: .\base\templates\base\search_results.html:52
+msgid "No results found"
+msgstr "Bu’aan hin argamne"
+
+#: .\base\templates\base\search_results.html:53
+msgid "Try different keywords or browse our categories"
+msgstr "Jecha dhuunfaa biraa yaali ykn ramaddii keenya dubbadhu"
+
+#: .\base\templates\base\terms.html:6
+msgid "Terms | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Shartii | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\base\templates\base\terms.html:16
+msgid "Terms"
+msgstr "Shartii"
+
+#: .\base\templates\base\terms.html:18
+msgid "User Agreement"
+msgstr "Waliigaltee Fayyadamaa"
+
+#: .\base\templates\base\terms.html:19
+msgid "By using our website, you agree to the following terms and conditions."
+msgstr ""
+"Websaayitii keenya fayyadamtuun shartii fi haaloota armaan gadiitti "
+"waligaltee."
+
+#: .\cart\templates\cart\cart_detail.html:6
+msgid "Cart Details | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Ibsa Gaanxoo | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\cart\templates\cart\cart_detail.html:16
+msgid "Your Shopping Cart"
+msgstr "Gaanxoo Bituu Keessan"
+
+#: .\cart\templates\cart\cart_detail.html:32
+msgid "Quantity:"
+msgstr "Baay’ina:"
+
+#: .\cart\templates\cart\cart_detail.html:44
+msgid "Remove"
+msgstr "Balleessi"
+
+#: .\cart\templates\cart\cart_detail.html:53
+msgid "Subtotal:"
+msgstr "Iddoo Gadii:"
+
+#: .\cart\templates\cart\cart_detail.html:58
+msgid "Shipping:"
+msgstr "Ergaa:"
+
+#: .\cart\templates\cart\cart_detail.html:63
+msgid "Total:"
+msgstr "Iddoo:"
+
+#: .\cart\templates\cart\cart_detail.html:68
+msgid "Proceed to Checkout"
+msgstr "Kaffaltiif Darbi"
+
+#: .\cart\templates\cart\cart_detail.html:72
 msgid "Continue Shopping"
 msgstr "Bituu Itti Fufi"
 
-#: .\cart\templates\cart\cart_detail.html:129
-#, fuzzy
-#| msgid "Your cart is empty."
-msgid "Your cart is empty"
+#: .\cart\templates\cart\cart_detail.html:80
+msgid "Your cart is empty."
 msgstr "Gaanxoon kee duwwaadha."
 
-#: .\cart\templates\cart\cart_detail.html:130
-msgid "Looks like you haven't added any items to your cart yet."
-msgstr ""
-
-#: .\cart\templates\cart\cart_detail.html:134
+#: .\cart\templates\cart\cart_detail.html:82
 msgid "Start Shopping"
 msgstr "Bituu Eegali"
 
-#: .\cart\templates\cart\cart_detail.html:140
-#, fuzzy
-#| msgid "Delivery"
-msgid "Free Delivery"
+#: .\companies\templates\companies\alema.html:7
+msgid "Alemma | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Alemma | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\companies\templates\companies\alema.html:18
+#: .\companies\templates\companies\alema.html:21
+msgid "Alemma Animal Feed"
+msgstr "Alemma Bu’aa Bineensaa"
+
+#: .\companies\templates\companies\alema.html:19
+msgid "Alemma Animal Feed Ethiopia"
+msgstr "Alemma Bu’aa Bineensaa Itoophiyaa"
+
+#: .\companies\templates\companies\alema.html:20
+msgid ""
+"Alemma Animal Feed is a leading animal feed manufacturer in Ethiopia, "
+"dedicated to providing high-quality feed products for livestock and poultry."
+msgstr ""
+"Alemma Bu’aa Bineensaa oomishaa bu’aa bineensaa Itoophiyaa keessatti "
+"lamaanii fi bineensaa qe’aaf oomisha bu’aa qulqulluu dhiheessuuf ofqabudha."
+
+#: .\companies\templates\companies\alema.html:21
+msgid "For more information, you can visit their official website: "
+msgstr "Odeeffannoo dabalataaf, websaayitii isaaniitii dhaquu dandeessu: "
+
+#: .\companies\templates\companies\alema.html:22
+msgid ""
+"Alemma Animal Feed is committed to improving the productivity and health of "
+"livestock in Ethiopia through the provision of nutritious and scientifically "
+"formulated animal feed."
+msgstr ""
+"Alemma Bu’aa Bineensaa oomisha bu’aa bineensaa nyaata qulqulluu fi saayinsii "
+"ta’een fayyadamuun oomisha fi fayyaa bineensalee Itoophiyaa fooyyessiif "
+"ofqabudha."
+
+#: .\companies\templates\companies\ethiochicken.html:7
+msgid "EthioChicken | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "EthioChicken | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\companies\templates\companies\ethiochicken.html:21
+msgid "EthioChicken Feed Manufacturers"
+msgstr "Oomishoonni Bu’aa EthioChicken"
+
+#: .\companies\templates\companies\ethiochicken.html:22
+msgid "Empowering Ethiopian farmers through poultry excellence"
+msgstr "Qonnaattota Itoophiyaa qe’aa caalmaadhaan humneessuu"
+
+#: .\companies\templates\companies\ethiochicken.html:24
+msgid "Visit Our Website"
+msgstr "Websaayitii Keenya Dhaquu"
+
+#: .\companies\templates\companies\ethiochicken.html:32
+msgid "Price Update"
+msgstr "Gatii Fooyyessi"
+
+#: .\companies\templates\companies\ethiochicken.html:37
+msgid "Chickens Type and Price Updates"
+msgstr "Gosa Lukkuu fi Fooyyii Gatii"
+
+#: .\companies\templates\companies\ethiochicken.html:38
+msgid ""
+"This section provides an overview of the different types of chickens "
+"available and their respective prices."
+msgstr "Cutaan kun gosa lukkuuwwan argamanii fi gatii isaanii ibsa."
+
+#: .\companies\templates\companies\ethiochicken.html:43
+msgid "Chicken Type"
+msgstr "Gosa Lukkuu"
+
+#: .\companies\templates\companies\ethiochicken.html:44
+#: .\companies\templates\companies\ethiochicken.html:97
+#: .\poultryfarm\admin.py:145 .\poultryfarm\forms.py:108
+#: .\poultryfarm\forms.py:156 .\poultryfarm\models.py:330
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:46
+#: .\poultryfarm\templates\poultryfarm\item_create.html:67
+msgid "Description"
+msgstr "Ibsa"
+
+#: .\companies\templates\companies\ethiochicken.html:45
+#: .\companies\templates\companies\ethiochicken.html:98
+msgid "Price"
+msgstr "Gatii"
+
+#: .\companies\templates\companies\ethiochicken.html:50
+msgid "Day Old Chickens"
+msgstr "Lukkuu Guyyaa Tokkoo"
+
+#: .\companies\templates\companies\ethiochicken.html:51
+msgid "Newly born chicks"
+msgstr "Lukkuuwwan haaraa dhalatan"
+
+#: .\companies\templates\companies\ethiochicken.html:52
+#: .\companies\templates\companies\ethiochicken.html:110
+msgid "ETB 20.00"
+msgstr "QAR 20.00"
+
+#: .\companies\templates\companies\ethiochicken.html:55
+msgid "Bovance Brown"
+msgstr "Bovance Brown"
+
+#: .\companies\templates\companies\ethiochicken.html:56
+msgid "Egg laying chickens"
+msgstr "Lukkuuwwan hanhuu hanhuuf"
+
+#: .\companies\templates\companies\ethiochicken.html:57
+#: .\companies\templates\companies\ethiochicken.html:115
+msgid "ETB 25.00"
+msgstr "QAR 25.00"
+
+#: .\companies\templates\companies\ethiochicken.html:60
+msgid "Sasso"
+msgstr "Sasso"
+
+#: .\companies\templates\companies\ethiochicken.html:61
+msgid "Dual purpose chickens"
+msgstr "Lukkuuwwan oomisha lamaaf"
+
+#: .\companies\templates\companies\ethiochicken.html:62
+#: .\companies\templates\companies\ethiochicken.html:120
+msgid "ETB 30.00"
+msgstr "QAR 30.00"
+
+#: .\companies\templates\companies\ethiochicken.html:65
+msgid "Broilers"
+msgstr "Lukkuuwwan Foonii"
+
+#: .\companies\templates\companies\ethiochicken.html:66
+msgid "Meat production chickens"
+msgstr "Lukkuuwwan oomisha foonii"
+
+#: .\companies\templates\companies\ethiochicken.html:67
+#: .\companies\templates\companies\ethiochicken.html:125
+msgid "ETB 35.00"
+msgstr "QAR 35.00"
+
+#: .\companies\templates\companies\ethiochicken.html:70
+msgid "Layer"
+msgstr "Hanshuuf"
+
+#: .\companies\templates\companies\ethiochicken.html:71
+msgid "Chickens for egg production"
+msgstr "Lukkuuwwan oomisha hanhuuf"
+
+#: .\companies\templates\companies\ethiochicken.html:72
+msgid "ETB 40.00"
+msgstr "QAR 40.00"
+
+#: .\companies\templates\companies\ethiochicken.html:75
+msgid "Broiler/Cobb"
+msgstr "Lukkuu Foonii/Cobb"
+
+#: .\companies\templates\companies\ethiochicken.html:76
+msgid "Chickens for meat production"
+msgstr "Lukkuuwwan oomisha foonii"
+
+#: .\companies\templates\companies\ethiochicken.html:77
+msgid "ETB 45.00"
+msgstr "QAR 45.00"
+
+#: .\companies\templates\companies\ethiochicken.html:80
+msgid "Red Ranger"
+msgstr "Red Ranger"
+
+#: .\companies\templates\companies\ethiochicken.html:81
+msgid "Free-range chickens"
+msgstr "Lukkuuwwan bana saratti oolan"
+
+#: .\companies\templates\companies\ethiochicken.html:82
+msgid "ETB 50.00"
+msgstr "QAR 50.00"
+
+#: .\companies\templates\companies\ethiochicken.html:90
+msgid "Feeds Type and Price Updates"
+msgstr "Gosa Bu’aa fi Fooyyii Gatii"
+
+#: .\companies\templates\companies\ethiochicken.html:91
+msgid ""
+"This section provides an overview of the different types of feeds available "
+"and their respective prices."
+msgstr "Cutaan kun gosa bu’aa argamanii fi gatii isaanii ibsa."
+
+#: .\companies\templates\companies\ethiochicken.html:96
+msgid "Feed Type"
+msgstr "Gosa Bu’aa"
+
+#: .\companies\templates\companies\ethiochicken.html:103
+msgid "Starter Feed"
+msgstr "Bu’aa Jalqabaa"
+
+#: .\companies\templates\companies\ethiochicken.html:104
+msgid "For day-old chicks"
+msgstr "Lukkuuwwan guyyaa tokkoof"
+
+#: .\companies\templates\companies\ethiochicken.html:105
+msgid "ETB 15.00"
+msgstr "QAR 15.00"
+
+#: .\companies\templates\companies\ethiochicken.html:108
+msgid "Grower Feed"
+msgstr "Bu’aa Guddinaa"
+
+#: .\companies\templates\companies\ethiochicken.html:109
+msgid "For growing chickens"
+msgstr "Lukkuuwwan guddachaa jiraniif"
+
+#: .\companies\templates\companies\ethiochicken.html:113
+msgid "Layer Feed"
+msgstr "Bu’aa Hanshuuf"
+
+#: .\companies\templates\companies\ethiochicken.html:114
+msgid "For egg-laying hens"
+msgstr "Lukkuuwwan hanhuu hanhuuf"
+
+#: .\companies\templates\companies\ethiochicken.html:118
+msgid "Broiler Feed"
+msgstr "Bu’aa Lukkuu Foonii"
+
+#: .\companies\templates\companies\ethiochicken.html:119
+msgid "For meat production"
+msgstr "Oomisha foonii"
+
+#: .\companies\templates\companies\ethiochicken.html:123
+msgid "Finisher Feed"
+msgstr "Bu’aa Xumuraa"
+
+#: .\companies\templates\companies\ethiochicken.html:124
+msgid "For finishing broilers"
+msgstr "Lukkuuwwan foonii xumuruuf"
+
+#: .\companies\templates\companies\ethiochicken.html:135
+msgid "About EthioChicken"
+msgstr "Waa’ee EthioChicken"
+
+#: .\companies\templates\companies\ethiochicken.html:138
+msgid ""
+"Ethiochicken is a leading poultry company in Ethiopia, dedicated to "
+"improving the livelihoods of smallholder farmers through the provision of "
+"high-quality poultry products and services."
+msgstr ""
+"EthioChicken dhaabbata qe’aa Itoophiyaa keessatti lamaanii, oomisha fi "
+"tajaajila qe’aa qulqulluu dhiheessuun jireenya qonnaattota xixiqqoo "
+"fooyyessiif ofqabudha."
+
+#: .\companies\templates\companies\ethiochicken.html:143
+msgid "Our Mission"
+msgstr "Gochaann Keenya"
+
+#: .\companies\templates\companies\ethiochicken.html:144
+msgid ""
+"To enhance food security and create sustainable livelihoods in rural "
+"communities through poultry farming."
+msgstr ""
+"Oomisha qe’aa fayyadamuun waakkessa nyaataa fooyyessiifi jireenya itti "
+"fufiinsa qabu hawaasa baadiyaa keessatti uumuu."
+
+#: .\companies\templates\companies\ethiochicken.html:148
+msgid "Our Vision"
+msgstr "Ijoolleen Keenya"
+
+#: .\companies\templates\companies\ethiochicken.html:149
+msgid ""
+"To be the catalyst for poultry-led transformation in Ethiopian agriculture."
+msgstr ""
+"Jijjiirama qe’aadhaan geggeeffamu qonna Itoophiyaa keessatti saroonduu ta’uu."
+
+#: .\companies\templates\companies\ethiochicken.html:158
+msgid "Our Value to Farmers"
+msgstr "Gatii Keenya Qonnaattotaaf"
+
+#: .\companies\templates\companies\ethiochicken.html:163
+msgid "Quality Breeds"
+msgstr "Sanyii Qulqulluu"
+
+#: .\companies\templates\companies\ethiochicken.html:164
+msgid "Providing high-quality poultry breeds adapted to local conditions."
+msgstr "Sanyii qe’aa qulqulluu haala naannoo waliin madaalan dhiheessuu."
+
+#: .\companies\templates\companies\ethiochicken.html:168
+msgid "Premium Feed"
+msgstr "Bu’aa Caalmaa"
+
+#: .\companies\templates\companies\ethiochicken.html:169
+msgid "Nutritionally balanced feed formulations for optimal growth."
+msgstr "Guddina gaariif bu’aa madaalawaa nyaataa."
+
+#: .\companies\templates\companies\ethiochicken.html:173
+msgid "Farmer Training"
+msgstr "Leenjii Qonnaattaa"
+
+#: .\companies\templates\companies\ethiochicken.html:174
+msgid "Comprehensive training programs for successful poultry farming."
+msgstr "Oomisha qe’aa milkaa’aa ta’eef tajaajila leenjii guutuu."
+
+#: .\companies\templates\companies\ethiochicken.html:178
+msgid "Veterinary Support"
+msgstr "Deeggarsa Herrega Bineensaa"
+
+#: .\companies\templates\companies\ethiochicken.html:179
+msgid "Access to veterinary services and disease prevention."
+msgstr "Tajaajila herrega bineensaa fi dhorkansa dhukkubaa argachuu."
+
+#: .\companies\templates\companies\ethiochicken.html:193
+#: .\companies\templates\companies\nvi.html:154 .\contact\models.py:6
+#: .\contact\templates\contact\received_messages.html:23
+#: .\poultryfarm\forms.py:80
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:103
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:32
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:27
+msgid "Email"
+msgstr "Iimeelii"
+
+#: .\companies\templates\companies\ethiochicken.html:196
+msgid "Copy"
+msgstr "Goyyeessi"
+
+#: .\companies\templates\companies\ethiochicken.html:201
+#: .\poultryfarm\forms.py:81
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:100
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:33
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:28
+msgid "Phone"
+msgstr "Bilbila"
+
+#: .\companies\templates\companies\ethiochicken.html:206
+msgid "Call"
+msgstr "Bilbilaa"
+
+#: .\companies\templates\companies\ethiochicken.html:211
+#: .\companies\templates\companies\nvi.html:149
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:59
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:34
+msgid "Address"
+msgstr "Teessoo"
+
+#: .\companies\templates\companies\ethiochicken.html:212
+msgid "Ethio China Street, Kadco Group"
+msgstr "Daandii Ethio China, Kadco Group"
+
+#: .\companies\templates\companies\ethiochicken.html:213
+msgid "Building #2, 6th floor,"
+msgstr "Jaarmaa #2, alanga 6ffaa,"
+
+#: .\companies\templates\companies\ethiochicken.html:214
+msgid "Addis Ababa, Ethiopia"
+msgstr "Finfinnee, Itoophiyaa"
+
+#: .\companies\templates\companies\ethiochicken.html:216
+msgid "View Map"
+msgstr "Kaartaa Ilaali"
+
+#: .\companies\templates\companies\ethiochicken.html:226
+msgid "Farmer Success Stories"
+msgstr "Seenaa Milkaa’ina Qonnaattotaa"
+
+#: .\companies\templates\companies\ethiochicken.html:232
+msgid ""
+"'EthioChicken changed my life. With their training and quality chicks, my "
+"poultry business has grown threefold in just one year.'"
+msgstr ""
+"'EthioChicken jireenya kiyya jijjiire. Leenjii isaaniitii fi lukkuuwwan "
+"qulqulluu isaaniitiin daldalli qe’aa kiyya waggaa tokko keessatti si’a saddu "
+"guddise.'"
+
+#: .\companies\templates\companies\ethiochicken.html:233
+msgid "- Ato Kebede, Smallholder Farmer"
+msgstr "- Ato Kebede, Qonnaattaa Xiqqoo"
+
+#: .\companies\templates\companies\index.html:7
+msgid "Companies | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Dhaabbileen | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\companies\templates\companies\index.html:16
+msgid "companies list"
+msgstr "tarree dhaabbatootaa"
+
+#: .\companies\templates\companies\nvi.html:7
+msgid ""
+"National Veterinary Institute | Ethiopian Poultry And Dairy Farm Market place"
+msgstr ""
+"Inistiiyuutii Herrega Bineensaa Biyyaalaa | Gabaa Fooda Lamee fi Aannan "
+"Itoophiyaa"
+
+#: .\companies\templates\companies\nvi.html:21
+msgid "National Veterinary Institute"
+msgstr "Inistiiyuutii Herrega Bineensaa Biyyaalaa"
+
+#: .\companies\templates\companies\nvi.html:22
+msgid "Advancing Animal Health in Ethiopia "
+msgstr "Itoophiyaa keessatti fayyaa bineensaa fooyyessuu"
+
+#: .\companies\templates\companies\nvi.html:30
+msgid "Vision"
+msgstr "Ijoollee"
+
+#: .\companies\templates\companies\nvi.html:31
+msgid ""
+"By 2029 G.C the institute will fulfill the national demand for veterinary "
+"vaccines and drugs and become a competitive institute in Africa."
+msgstr ""
+"Bara 2029 G.C inistiiyuutiin fedhii biyyaalaa talaallii fi qorichoota "
+"herrega bineensaa guutuun Afriikaa keessatti inistiiyuutii dorgomsiisaa ta’a."
+
+#: .\companies\templates\companies\nvi.html:35
+msgid "Mission"
+msgstr "Gochaa"
+
+#: .\companies\templates\companies\nvi.html:36
+msgid ""
+"Producing and supplying quality veterinary vaccines, drugs, and biologicals "
+"at affordable prices for the domestic market to support the livestock "
+"sector, generating foreign currency through exports, and sustaining "
+"profitability."
+msgstr ""
+"Talaallii, qoricha, fi biyoloojiksii herrega bineensaa qulqulluu gatii "
+"qaqqabamuu ta’een gabaa gidduu galaaf oomishee fi dhiheessuu, sektorii "
+"bineensaa deeggaruu, maallaqa alaa arbaa baasuun, fi bu’aa ittisan uumuudha."
+
+#: .\companies\templates\companies\nvi.html:45
+msgid "Feedback"
+msgstr "Yaada Deebisaa"
+
+#: .\companies\templates\companies\nvi.html:46
+msgid " All News"
+msgstr " Oduu Hundaa"
+
+#: .\companies\templates\companies\nvi.html:47
+msgid "Downloads"
+msgstr "Buufata"
+
+#: .\companies\templates\companies\nvi.html:48
+msgid " Vacancy"
+msgstr " Bakka Duwwaa"
+
+#: .\companies\templates\companies\nvi.html:49
+msgid "Partners"
+msgstr "Hiree"
+
+#: .\companies\templates\companies\nvi.html:54
+msgid " Our Vaccines"
+msgstr " Talaallii Keenya"
+
+#: .\companies\templates\companies\nvi.html:64
+msgid "LIVE NEWCASTLE DISEASE VACCINE"
+msgstr "TALAALLII DHUKKUBA NEWCASTLE BAKKA"
+
+#: .\companies\templates\companies\nvi.html:77
+msgid "INACTIVATED NEWCASTLE OIL EMULSION VACCINE"
+msgstr "TALAALLII DHUKKUBA NEWCASTLE ZAYITII INAAKTIVATED"
+
+#: .\companies\templates\companies\nvi.html:90
+msgid "NEWCASTLE DISEASE THERMOSTABLE VACCINE"
+msgstr "TALAALLII DHUKKUBA NEWCASTLE HAAWWA BAREEDA"
+
+#: .\companies\templates\companies\nvi.html:103
+msgid "FOWL POX VACCINE"
+msgstr "TALAALLII RITTAA LUKKUU"
+
+#: .\companies\templates\companies\nvi.html:116
+msgid "INFECTIOUS BURSAL DISEASE /GUMBORO/ VACCINE"
+msgstr "TALAALLII DHUKKUBA BURSAL INFEEKSHINAA /GUMBORO/"
+
+#: .\companies\templates\companies\nvi.html:129
+msgid "Marek’s Disease Vaccine (HVT)"
+msgstr "Talaallii Dhukkuba Marek (HVT)"
+
+#: .\companies\templates\companies\nvi.html:139
+msgid " Contact Us"
+msgstr " Nu Qunnami"
+
+#: .\companies\templates\companies\nvi.html:142
+msgid " Phone"
+msgstr " Bilbila"
+
+#: .\companies\templates\companies\nvi.html:143
+msgid "Tel: 251-114-33-84-11/16"
+msgstr "Tel: 251-114-33-84-11/16"
+
+#: .\companies\templates\companies\nvi.html:144
+msgid "Mobile: 251-903-04-88-88"
+msgstr "Mobiilii: 251-903-04-88-88"
+
+#: .\companies\templates\companies\nvi.html:145
+msgid "Fax: 251-114-33-93-00"
+msgstr "Fax: 251-114-33-93-00"
+
+#: .\companies\templates\companies\nvi.html:150
+msgid "P.O. Box 19, Bishoftu, Ethiopia"
+msgstr "P.O. Box 19, Bishoftu, Itoophiyaa"
+
+#: .\companies\templates\companies\nvi.html:161
+msgid "Visit Official Website"
+msgstr "Websaayitii Kululaa Dhaquu"
+
+#: .\companies\templates\companies\nvi.html:168
+msgid ""
+"NVI is committed to improving animal health and productivity in Ethiopia "
+"through the development and distribution of high-quality veterinary products."
+msgstr ""
+"NVI oomisha herrega bineensaa qulqulluu oomishuun fi raabsuun Itoophiyaa "
+"keessatti fayyaa fi oomisha bineensaa fooyyessiif ofqabudha."
+
+#: .\contact\forms.py:12 .\contact\forms.py:29
+#: .\contact\templates\contact\contact_us.html:22 .\poultryfarm\forms.py:79
+msgid "Your Name"
+msgstr "Maqaa Keessan"
+
+#: .\contact\forms.py:16 .\contact\forms.py:30
+#: .\contact\templates\contact\contact_us.html:26
+msgid "Your Email"
+msgstr "Iimeelii Keessan"
+
+#: .\contact\forms.py:20 .\contact\forms.py:31 .\contact\models.py:7
+#: .\contact\templates\contact\contact_us.html:30
+#: .\contact\templates\contact\received_messages.html:24
+msgid "Subject"
+msgstr "Mata Duree"
+
+#: .\contact\forms.py:24 .\contact\forms.py:32
+#: .\contact\templates\contact\contact_us.html:34
+#: .\conversation\templates\conversation\new.html:43
+msgid "Your Message"
+msgstr "Ergaa Keessan"
+
+#: .\contact\models.py:5 .\contact\templates\contact\received_messages.html:22
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:26
+msgid "Name"
+msgstr "Maqaa"
+
+#: .\contact\models.py:8 .\poultryfarm\forms.py:84
+msgid "Message"
 msgstr "Ergaa"
 
-#: .\cart\templates\cart\cart_detail.html:144
-msgid "Easy Returns"
-msgstr ""
+#: .\contact\models.py:9
+msgid "Created at"
+msgstr "Uumame yeroo"
 
-#: .\cart\templates\cart\cart_detail.html:148
-msgid "24/7 Support"
-msgstr ""
+#: .\contact\models.py:10
+msgid "Is read"
+msgstr "Itteeffame"
 
-#: .\cart\templates\cart\cart_detail.html:162
-#, fuzzy
-#| msgid "Remove"
-msgid "Remove Item"
-msgstr "Balleessi"
+#: .\contact\models.py:13
+msgid "Contact Message"
+msgstr "Ergaa Qunnamaa"
 
-#: .\cart\templates\cart\cart_detail.html:165
-#, fuzzy
-#| msgid "Are you sure you want to delete this message?"
-msgid "Are you sure you want to remove this item from your cart?"
+#: .\contact\models.py:14
+msgid "Contact Messages"
+msgstr "Ergaalee Qunnamaa"
+
+#: .\contact\templates\contact\confirm_delete.html:5
+msgid "Confirm Deletion | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Balleessuu Mirkaneessi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\contact\templates\contact\confirm_delete.html:10
+msgid "Confirm Deletion"
+msgstr "Balleessuu Mirkaneessi"
+
+#: .\contact\templates\contact\confirm_delete.html:11
+msgid "Are you sure you want to delete this message?"
 msgstr "Ergaa kana balleessuu barbaaduu mirkaneeffatte?"
 
-#: .\cart\templates\cart\cart_detail.html:168
+#: .\contact\templates\contact\confirm_delete.html:14
+#: .\contact\templates\contact\view_message.html:21
+msgid "From:"
+msgstr "Ergaa:"
+
+#: .\contact\templates\contact\confirm_delete.html:15
+msgid "Subject:"
+msgstr "Mata Duree:"
+
+#: .\contact\templates\contact\confirm_delete.html:16
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:167
+msgid "Message:"
+msgstr "Ergaa:"
+
+#: .\contact\templates\contact\confirm_delete.html:21
+msgid "Yes, delete"
+msgstr "Eeyyee, balleessi"
+
+#: .\contact\templates\contact\confirm_delete.html:22
+#: .\conversation\templates\conversation\new.html:56
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:41
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:132
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:21
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:554
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:35
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:31
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:118
 msgid "Cancel"
 msgstr "Dhiisi"
 
-#: .\portfolio\templates\portfolio\fraollemma.html:6
-#, fuzzy
-#| msgid "Alemma | Ethiopian Poultry And Dairy Farm Market place"
-msgid " Fraol Lemma | Ethiopian Sheger Market place"
-msgstr "Alemma | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+#: .\contact\templates\contact\contact_us.html:7
+msgid "Contact Us | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Nu Qunnami | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
 
-#: .\project\settings.py:19
+#: .\contact\templates\contact\contact_us.html:16
+msgid "Get in Touch"
+msgstr "Qunnami"
+
+#: .\contact\templates\contact\contact_us.html:17
+msgid ""
+"We would love to hear from you. Please fill out the form below and we will "
+"get back to you as soon as possible."
+msgstr ""
+"Si dhaga’uuf jaallanna. Maaloo foormaa armaan gadii guuti, akka danda’ametti "
+"deebisaan si quunnanna."
+
+#: .\contact\templates\contact\contact_us.html:37
+#: .\conversation\templates\conversation\new.html:51
+msgid "Send Message"
+msgstr "Ergaa Ergi"
+
+#: .\contact\templates\contact\received_messages.html:6
+msgid "Received Messages | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Ergaalee Argaman | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\contact\templates\contact\received_messages.html:15
+msgid "Received Messages"
+msgstr "Ergaalee Argaman"
+
+#: .\contact\templates\contact\received_messages.html:25
+msgid "Received"
+msgstr "Argaman"
+
+#: .\contact\templates\contact\received_messages.html:26
+msgid "Actions"
+msgstr "Gochaawwan"
+
+#: .\contact\templates\contact\received_messages.html:38
+msgid "View"
+msgstr "Ilaali"
+
+#: .\contact\templates\contact\received_messages.html:41
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:131
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:95
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:117
+msgid "Delete"
+msgstr "Balleessi"
+
+#: .\contact\templates\contact\received_messages.html:54
+msgid "previous"
+msgstr "duraa"
+
+#: .\contact\templates\contact\received_messages.html:57
+#, python-format
+msgid ""
+"\n"
+"              Page %(num)s of %(total)s\n"
+"            "
+msgstr ""
+"\n"
+"              Fuula %(num)s fuula %(total)s\n"
+"            "
+
+#: .\contact\templates\contact\received_messages.html:62
+msgid "next"
+msgstr "boodaa"
+
+#: .\contact\templates\contact\received_messages.html:68
+msgid "No messages received yet."
+msgstr "Ergaan hin argamne amma."
+
+#: .\contact\templates\contact\view_message.html:6
+msgid "View Message | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Ergaa Ilaali | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\contact\templates\contact\view_message.html:15
+msgid "Message Details"
+msgstr "Ibsa Ergaa"
+
+#: .\contact\templates\contact\view_message.html:22
+msgid "Received:"
+msgstr "Argame:"
+
+#: .\contact\templates\contact\view_message.html:32
+msgid "Back to Messages"
+msgstr "Ergaaleetti Deebi’i"
+
+#: .\contact\templates\contact\view_message.html:35
+msgid "Delete Message"
+msgstr "Ergaa Balleessi"
+
+#: .\contact\templates\contact\view_message.html:38
+msgid "Reply"
+msgstr "Deebisi"
+
+#: .\contact\views.py:18
+msgid "Thank you for your message! We will get back to you soon."
+msgstr "Ergaa keessatti galatoomi! Akka danda’ametti deebi’uuf si quunnanna."
+
+#: .\contact\views.py:51
+msgid "Message has been deleted successfully."
+msgstr "Ergaan milkaa’iidhaan balleeffame."
+
+#: .\conversation\templates\conversation\detail.html:6
+msgid " My Conversation Detail | Ethiopian Poultry And Dairy Farm Market place"
+msgstr " Ibsa Walhalli Kiyya | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\conversation\templates\conversation\detail.html:19
+msgid "Conversation about"
+msgstr "Waa’ee waliin haasa’aa jirtan"
+
+#: .\conversation\templates\conversation\detail.html:60
+msgid "Send"
+msgstr "Ergi"
+
+#: .\conversation\templates\conversation\inbox.html:7
+msgid " My Inbox | Ethiopian Poultry And Dairy Farm Market place"
+msgstr " Saanduuqa Kiyya | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\conversation\templates\conversation\inbox.html:18
+msgid "Your Conversations"
+msgstr "Walhalli Keessan"
+
+#: .\conversation\templates\conversation\inbox.html:44
+#: .\conversation\templates\conversation\inbox.html:46
+msgid "No Image"
+msgstr "Fakki hin jiru"
+
+#: .\conversation\templates\conversation\inbox.html:75
+msgid "typing"
+msgstr "barreessaa"
+
+#: .\conversation\templates\conversation\inbox.html:85
+msgid "No messages yet"
+msgstr "Ergaan hin jiru amma"
+
+#: .\conversation\templates\conversation\inbox.html:95
+msgid "No conversations yet"
+msgstr "Walhalli hin jiru amma"
+
+#: .\conversation\templates\conversation\inbox.html:96
+msgid "Browse Items"
+msgstr "Meeshaalee Dubbadhu"
+
+#: .\conversation\templates\conversation\new.html:6
+msgid "Start New Message | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Ergaa Haaraa Eegali | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\conversation\templates\conversation\new.html:16
+msgid "New Message"
+msgstr "Ergaa Haaraa"
+
+#: .\conversation\templates\conversation\new.html:17
+msgid "Contact the seller about:"
+msgstr "Waa’ee kana gurgurtaa quunnami:"
+
+#: .\conversation\templates\conversation\new.html:21
+msgid "View Item"
+msgstr "Meeshaa Ilaali"
+
+#: .\conversation\templates\conversation\new.html:54
+msgid "Back to Item"
+msgstr "Meeshaatti Deebi’i"
+
+#: .\conversation\templates\conversation\new.html:69
+msgid "Please enter a message"
+msgstr "Maaloo ergaa galchi"
+
+#: .\conversation\templates\conversation\new.html:74
+msgid "Sending..."
+msgstr "Ergaa..."
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:6
+msgid "Dairy | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Aannan | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:26
+msgid "Premium Dairy Marketplace"
+msgstr "Gabaa Aannan Caalmaa"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:30
+msgid ""
+"Buy fresh milk, butter, cheese and dairy products from trusted Ethiopian "
+"farmers."
+msgstr ""
+"Aannan haaraa, dhadhaa, baagiyoo fi oomisha aannan qonnaattota Itoophiyaa "
+"amanamaa jiraniitii biti."
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:35
+#: .\poultryfarm\templates\poultryfarm\index.html:37
+msgid "Explore More →"
+msgstr "Dabalata Qoradhu →"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:42
+#: .\poultryfarm\templates\poultryfarm\index.html:44
+msgid "Scroll Down"
+msgstr "Gad Buufadhu"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:50
+#: .\poultryfarm\templates\poultryfarm\index.html:52
+msgid "OUR SERVICES"
+msgstr "TAJAJILA KENYA"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:51
+msgid "Dairy Products"
+msgstr "Oomisha Aannan"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:52
+msgid "Connecting you with fresh and organic dairy products across Ethiopia."
+msgstr ""
+"Itoophiyaa keessatti oomisha aannan haaraa fi orgaanikii siif fiduudha."
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:64
+msgid "Fresh Milk"
+msgstr "Aannan Haaraa"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:65
+msgid "Pure and hygienic cow milk directly from farms."
+msgstr "Aannan sa’aa qulqulluu fi fayyaa oomisha keessaa qajeelaa."
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:66
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:79
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:92
+msgid "View More →"
+msgstr "Dabalata Ilaali →"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:77
+msgid "Butter & Cheese"
+msgstr "Dhadhaa fi Baagiyoo"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:78
+msgid "Traditional and modern dairy products rich in taste."
+msgstr "Oomisha aannan adaa fi ammayyaa dhandhama oomaa."
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:90
+msgid "Dairy Cows"
+msgstr "Saawwan Aannan"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:91
+msgid "Healthy and high-yield dairy cows for sale."
+msgstr "Saawwan aannan fayyaa fi oomisha ol’aanaa gurguramuuf."
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:105
+#: .\poultryfarm\templates\poultryfarm\index.html:98
+msgid "EXPERT SERVICES"
+msgstr "TAJAJILA BEEKSAA"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:106
+#: .\poultryfarm\templates\poultryfarm\index.html:99
+msgid "Training & Consultancy"
+msgstr "Leenjii fi Tajaajila Gorsaa"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:107
+msgid "Grow your dairy business with expert knowledge"
+msgstr "Beekumsa beeksaatiin daldala aannan keessaa guddisi"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:121
+msgid "Dairy Farming Training"
+msgstr "Leenjii Oomisha Aannan"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:124
+msgid "Milk production techniques"
+msgstr "Tireeksni oomisha aannan"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:125
+msgid "Animal health"
+msgstr "Fayyaa bineensaa"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:126
+msgid "Feeding systems"
+msgstr "Sirna nyeechuu"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:127
+msgid "Farm management"
+msgstr "Bulchiinsa oomishaa"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:128
+#: .\poultryfarm\templates\poultryfarm\index.html:117
+msgid "Marketing"
+msgstr "Gabaasa"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:132
+#: .\poultryfarm\templates\poultryfarm\index.html:119
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:53
+msgid "Enroll Now"
+msgstr "Amma Galmeessi"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:146
+msgid "Dairy Consultancy"
+msgstr "Tajaajila Gorsa Aannan"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:149
+#: .\poultryfarm\templates\poultryfarm\index.html:131
+msgid "Farm setup"
+msgstr "Tolcha oomishaa"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:150
+msgid "Productivity improvement"
+msgstr "Oomisha fooyyessuu"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:151
+msgid "Veterinary support"
+msgstr "Deeggarsa Herrega Bineensaa"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:152
+msgid "Feed optimization"
+msgstr "Bu’aa fooyyessuu"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:153
+msgid "Business scaling"
+msgstr "Daldala babal’isuu"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:157
+#: .\poultryfarm\templates\poultryfarm\index.html:136
+msgid "Get Started"
+msgstr "Eegali"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:169
+msgid "Dairy Platform Stats"
+msgstr "Ibsa Bu’aa Daldaala Aannan"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:176
+msgid "Milk Listings"
+msgstr "Tarree Aannan"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:177
+msgid "120"
+msgstr "120"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:184
+msgid "Butter Sellers"
+msgstr "Gurgurtoota Dhadhaa"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:192
+msgid "Cow Sellers"
+msgstr "Gurgurtoota Sa’aa"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:200
+#: .\poultryfarm\templates\poultryfarm\index.html:183
+msgid "Trainings"
+msgstr "Leenjiilee"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:208
+#: .\poultryfarm\templates\poultryfarm\index.html:193
+msgid "Consultants"
+msgstr "Gorsitoota"
+
+#: .\poultryfarm\admin.py:142
+msgid "Inventory & Pricing"
+msgstr "Kuusaa fi Gatii"
+
+#: .\poultryfarm\admin.py:148
+msgid "Metadata"
+msgstr "Daa’taa Metaa"
+
+#: .\poultryfarm\forms.py:76
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:168
+msgid "Briefly describe your issue or questions..."
+msgstr "Rakkina ykn gaafi keessaa gabaabatti ibsi..."
+
+#: .\poultryfarm\forms.py:82
+msgid "Preferred Date"
+msgstr "Guyyaa Filatamaa"
+
+#: .\poultryfarm\forms.py:83
+msgid "Preferred Time"
+msgstr "Yeroo Filatamaa"
+
+#: .\poultryfarm\forms.py:105
+msgid "Available Eggs"
+msgstr "Hanshuu Argamu"
+
+#: .\poultryfarm\forms.py:106
+msgid "Price per Dozen"
+msgstr "Gatii Dozen"
+
+#: .\poultryfarm\forms.py:107
+msgid "Minimum Order (Dozen)"
+msgstr "Ajaja Xiqqaa (Dozen)"
+
+#: .\poultryfarm\forms.py:123
+msgid "Any special delivery instructions..."
+msgstr "Qajeelfama ergaa addaa yoo jiraate..."
+
+#: .\poultryfarm\forms.py:128
+msgid "Delivery Address"
+msgstr "Teessoo Ergaa"
+
+#: .\poultryfarm\forms.py:129
+msgid "Quantity (dozens)"
+msgstr "Baay’ina (dozen)"
+
+#: .\poultryfarm\forms.py:130
+msgid "Preferred Delivery Date"
+msgstr "Guyyaa Ergaa Filatamaa"
+
+#: .\poultryfarm\forms.py:131
+msgid "Special Instructions"
+msgstr "Qajeelfama Addattaa"
+
+#: .\poultryfarm\forms.py:136
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:56
+msgid "City"
+msgstr "Magaalaa"
+
+#: .\poultryfarm\forms.py:137
+msgid "Min Price"
+msgstr "Gatii Xiqqaa"
+
+#: .\poultryfarm\forms.py:138
+msgid "Max Price"
+msgstr "Gatii Ol’aanaa"
+
+#: .\poultryfarm\forms.py:153 .\poultryfarm\models.py:327
+msgid "Available Chickens"
+msgstr "Lukkuuwwan Argaman"
+
+#: .\poultryfarm\forms.py:154 .\poultryfarm\models.py:328
+msgid "Minimum Price"
+msgstr "Gatii Xiqqaa"
+
+#: .\poultryfarm\forms.py:155 .\poultryfarm\models.py:329
+msgid "Maximum Price"
+msgstr "Gatii Ol’aanaa"
+
+#: .\poultryfarm\forms.py:165
+msgid "Minimum price cannot be greater than maximum price."
+msgstr "Gatiin xiqqaa gatiya ol’aanaa caaluu hin danda’u."
+
+#: .\poultryfarm\models.py:129
+msgid "Disease Management"
+msgstr "Bulchiinsa Dhukkubaa"
+
+#: .\poultryfarm\models.py:130
+msgid "Nutrition & Feed"
+msgstr "Nyaata fi Bu’aa"
+
+#: .\poultryfarm\models.py:131
+msgid "Biosecurity & Prevention"
+msgstr "Nageenya Jireenyaa fi Dhorkansa"
+
+#: .\poultryfarm\models.py:132
+msgid "Breeding & Genetics"
+msgstr "Horii fi Jeeneetiksii"
+
+#: .\poultryfarm\models.py:133
+msgid "General Practice"
+msgstr "Hojjetaa Gamaa"
+
+#: .\poultryfarm\models.py:136
+msgid "Weekdays"
+msgstr "Guyyaa Hojjii"
+
+#: .\poultryfarm\models.py:137
+msgid "Weekends"
+msgstr "Dhuma Torbaatii"
+
+#: .\poultryfarm\models.py:138
+msgid "All Week"
+msgstr "Torbaatti Hundaa"
+
+#: .\poultryfarm\models.py:139
+msgid "24/7 Emergency"
+msgstr "Yeroo Maraa 24/7"
+
+#: .\poultryfarm\models.py:142
+msgid "Years of experience"
+msgstr "Waggaa muuxannoo"
+
+#: .\poultryfarm\models.py:144
+msgid "Comma-separated list of languages"
+msgstr "Tarree afaanota kommaadhaan addaan baafame"
+
+#: .\poultryfarm\models.py:169
+msgid "Video Call"
+msgstr "Bilbila Vidiyoo"
+
+#: .\poultryfarm\models.py:170
+msgid "Phone Consultation"
+msgstr "Gorsa Bilbilaa"
+
+#: .\poultryfarm\models.py:171
+msgid "Farm Visit"
+msgstr "Daawwannaa Oomisha"
+
+#: .\poultryfarm\models.py:172
+msgid "Feed Analysis"
+msgstr "Xinxalii Bu’aa"
+
+#: .\poultryfarm\models.py:173
+msgid "Farm Assessment"
+msgstr "Madaallii Oomisha"
+
+#: .\poultryfarm\models.py:178
+msgid "e.g., 1 hour, per visit"
+msgstr "F.e., sa’a 1, daawwannaa tokkoon"
+
+#: .\poultryfarm\models.py:185 .\poultryfarm\models.py:271
+msgid "Pending"
+msgstr "Eegamaa"
+
+#: .\poultryfarm\models.py:186 .\poultryfarm\models.py:272
+msgid "Confirmed"
+msgstr "Mirkanaa’e"
+
+#: .\poultryfarm\models.py:187
+msgid "Completed"
+msgstr "Xumurame"
+
+#: .\poultryfarm\models.py:188 .\poultryfarm\models.py:276
+msgid "Cancelled"
+msgstr "Hagdurame"
+
+#: .\poultryfarm\models.py:213
+msgid "Number of eggs currently available"
+msgstr "Baay’ina hanshuu amma argaman"
+
+#: .\poultryfarm\models.py:215
+msgid "Minimum dozen required for order"
+msgstr "Dozen xiqqaa ajajaaf barbaachisu"
+
+#: .\poultryfarm\models.py:266
+msgid "Egg Seller"
+msgstr "Gurgurtaa Hanshuu"
+
+#: .\poultryfarm\models.py:267
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:21
+#: .\poultryfarm\templates\poultryfarm\index.html:163
+msgid "Egg Sellers"
+msgstr "Gurgurtoota Hanshuu"
+
+#: .\poultryfarm\models.py:273
+msgid "Processing"
+msgstr "Bulaa"
+
+#: .\poultryfarm\models.py:274
+msgid "Shipped"
+msgstr "Eergame"
+
+#: .\poultryfarm\models.py:275
+msgid "Delivered"
+msgstr "Dhiyaate"
+
+#: .\poultryfarm\models.py:293
+msgid "Number of dozens ordered"
+msgstr "Baay’ina dozen ajajaman"
+
+#: .\poultryfarm\models.py:331
+msgid "Active"
+msgstr "Hojjetaa"
+
+#: .\poultryfarm\models.py:339
+msgid "each"
+msgstr "tokkoon tokkoon"
+
+#: .\poultryfarm\models.py:342
+msgid "Chicken Seller"
+msgstr "Gurgurtaa Lukkuu"
+
+#: .\poultryfarm\models.py:343
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:21
+#: .\poultryfarm\templates\poultryfarm\index.html:173
+msgid "Chicken Sellers"
+msgstr "Gurgurtoota Lukkuu"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:6
+msgid "Add New Egg Seller | Ethiopian Poultry And Dairy Farm Market place"
+msgstr ""
+"Gurgurtaa Hanshuu Haaraa Dabali | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:18
+msgid "Add New Egg Seller"
+msgstr "Gurgurtaa Hanshuu Haaraa Dabali"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:38
+msgid "Farm Information"
+msgstr "Odeeffannoo Oomisha"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:40
+msgid "Farm Name"
+msgstr "Maqaa Oomishaa"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:43
+msgid "Owner Name"
+msgstr "Maqaa Abbaa"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:54
+msgid "Location"
+msgstr "Iddoo"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:66
+msgid "Egg Details"
+msgstr "Ibsa Hanshuu"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:68
+msgid "Egg Type"
+msgstr "Gosa Hanshuu"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:72
+msgid "Certification"
+msgstr "Raggaasa"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:80
+msgid "Pricing & Availability"
+msgstr "Gatii fi Argama"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:82
+msgid "Quantity Available"
+msgstr "Baay’ina Argamu"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:86
+msgid "Price per Dozen ($)"
+msgstr "Gatii Dozen ($)"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:90
+msgid "Minimum Order Quantity"
+msgstr "Baay’ina Ajaja Xiqqaa"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:98
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:420
+msgid "Contact Information"
+msgstr "Odeeffannoo Qunnamaa"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:106
+msgid "Website"
+msgstr "Websaayitii"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:113
+#: .\users\templates\users\profile.html:30
+msgid "Social Media"
+msgstr "Miidiyaa Hawaasaa"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:115
+msgid "Facebook"
+msgstr "Facebook"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:118
+msgid "Telegram"
+msgstr "Telegram"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:121
+msgid "Instagram"
+msgstr "Instagram"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:129
+msgid "Back to Sellers"
+msgstr "Gurgurtootti Deebi’i"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:133
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:40
+msgid "Add Egg Seller"
+msgstr "Gurgurtaa Hanshuu Dabali"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:6
+msgid "Chicken Sellers | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Gurgurtoota Lukkuu | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:18
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:17
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:18
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:17
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:19
+msgid "Back"
+msgstr "Deebi’i"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:28
+msgid "Search chicken sellers..."
+msgstr "Gurgurtoota lukkuu barbaadi..."
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:32
+msgid "All Locations"
+msgstr "Iddoowwan Hunda"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:40
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:30
+msgid "Find"
+msgstr "Barbaadi"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:49
+#: .\poultryfarm\templates\poultryfarm\register_seller.html:15
+msgid "Register as a Chicken Seller"
+msgstr "Gurgurtaa Lukkuun Galmeessi"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:72
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:62
+msgid "Available:"
+msgstr "Argaama:"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:77
+msgid "Delivery"
+msgstr "Ergaa"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:80
+msgid "Vaccinated"
+msgstr "Talaallii Argame"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:109
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:85
+msgid "Order Now"
+msgstr "Amma Ajaji"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:119
+msgid "No sellers found"
+msgstr "Gurgurtaan hin argamne"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:120
+msgid "Try adjusting your search criteria"
+msgstr "Miilkaa barbaachisaa keessaa jijjiiru yaali"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:129
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:14
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:115
+msgid "Are you sure you want to delete"
+msgstr "Balleessuu barbaaduu mirkaneeffatte?"
+
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:6
+msgid " Delete Chicken Seller | Ethiopian Poultry And Dairy Farm Market place"
+msgstr " Gurgurtaa Lukkuu Balleessi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:13
+msgid "Delete Seller Profile"
+msgstr "Buufata Gurgurtaa Balleessi"
+
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:15
+msgid "This action cannot be undone."
+msgstr "Gochi kun debi’ee hin danda’u."
+
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:20
+msgid "Yes, Delete"
+msgstr "Eeyyee, Balleessi"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:6
+msgid " Edit Egg Seller | Ethiopian Poultry And Dairy Farm Market place"
+msgstr " Gurgurtaa Hanshuu Gulaali | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:228
+msgid "Edit Egg Seller"
+msgstr "Gurgurtaa Hanshuu Gulaali"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:230
+msgid "Back to Sellers List"
+msgstr "Tarree Gurgurtootti Deebi’i"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:239
+#: .\poultryfarm\templates\poultryfarm\item_create.html:50
+msgid "Basic Information"
+msgstr "Odeeffannoo Bu’uuraa"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:300
+msgid "Location Information"
+msgstr "Odeeffannoo Iddoo"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:374
+msgid "Map coordinates available"
+msgstr "Iddoo madaala kaartaa argama"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:381
+msgid "Egg Details & Pricing"
+msgstr "Ibsa Hanshuu fi Gatii"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:459
+msgid "Social Media Links"
+msgstr "Liinkii Miidiyaa Hawaasaa"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:498
+msgid "Business Details"
+msgstr "Ibsa Daldalaa"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:551
+msgid "Delete Seller"
+msgstr "Gurgurtaa Balleessi"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:557
+msgid "Update Seller"
+msgstr "Gurgurtaa Fooyyessi"
+
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:6
+msgid " Edit Chicken Seller | Ethiopian Poultry And Dairy Farm Market place"
+msgstr " Gurgurtaa Lukkuu Gulaali | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:15
+msgid "Edit Chicken Seller Profile"
+msgstr "Buufata Gurgurtaa Lukkuu Gulaali"
+
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:34
+#: .\users\templates\users\profile_update.html:15
+msgid "Update Profile"
+msgstr "Buufata Fooyyessi"
+
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:36
+msgid "Delete Profile"
+msgstr "Buufata Balleessi"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:6
+msgid "My Egg Orders | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Ajaja Hanshuu Kiyya | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:21
+msgid "My Egg Orders"
+msgstr "Ajaja Hanshuu Kiyya"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:22
+msgid "Track all customer orders in one place"
+msgstr "Ajaja maamiltootaa hunda iddoo tokkotti buusi"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:31
+msgid "Customer"
+msgstr "Maamila"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:35
+msgid "Qty"
+msgstr "Baay'ina"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:37
+msgid "Status"
+msgstr "Haala"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:38
+msgid "Date"
+msgstr "Guyyaa"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:71
+msgid "No orders yet."
+msgstr "Ajajan hin jiru amma."
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:6
+msgid "Egg Seller Page | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Fuula Gurgurtaa Hanshuu | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:61
+#: .\users\templates\users\profile.html:25
+#: .\users\templates\users\seller_profile.html:33
+msgid "Location:"
+msgstr "Iddoo:"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:62
+msgid "eggs"
+msgstr "hanhuuwwan"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:63
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:143
+msgid "Price:"
+msgstr "Gatii:"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:63
+msgid "birr"
+msgstr "qarshii"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:89
+msgid "Edit"
+msgstr "Gulaali"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:104
+msgid "No egg sellers found matching your criteria."
+msgstr "Gurgurtaan hanshuu miilkaa keessan wajjin walsimu hin argamne."
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:114
+msgid "Confirm Delete"
+msgstr "Balleessuu Mirkaneessi"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:127
+msgid "Place Your Order"
+msgstr "Ajaja Keessan Kenni"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:132
+msgid "Delivery Address:"
+msgstr "Teessoo Ergaa:"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:136
+msgid "Quantity (dozens):"
+msgstr "Baay’ina (dozen):"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:139
+msgid "Confirm Order"
+msgstr "Ajaja Mirkaneessi"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:7
+msgid " Poultry | Ethiopian Poultry And Dairy Farm Market place"
+msgstr " Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:28
+msgid "Premium Poultry Marketplace"
+msgstr "Gabaa Qe’aa Caalmaa"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:32
+msgid ""
+"Buy chickens, eggs, and poultry products from trusted Ethiopian farmers."
+msgstr ""
+"Lukkuu, hanshuu, fi oomisha qe’aa qonnaattota Itoophiyaa amanamaa jiraniitii "
+"biti."
+
+#: .\poultryfarm\templates\poultryfarm\index.html:53
+msgid "What We Offer"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\index.html:54
+#, fuzzy
+#| msgid ""
+#| "Connecting you with fresh and organic dairy products across Ethiopia."
+msgid ""
+"We connect you with quality poultry products and services from trusted "
+"farmers across Ethiopia."
+msgstr ""
+"Itoophiyaa keessatti oomisha aannan haaraa fi orgaanikii siif fiduudha."
+
+#: .\poultryfarm\templates\poultryfarm\index.html:100
+msgid "Empowering your poultry farming success with knowledge and expertise"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\index.html:109
+#, fuzzy
+#| msgid "Poultry Farm Training"
+msgid "Poultry Farming Training"
+msgstr "Leenjii Oomisha Qe’aa"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:113
+#, fuzzy
+#| msgid "Milk production techniques"
+msgid "Modern farming techniques"
+msgstr "Tireeksni oomisha aannan"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:114
+#, fuzzy
+#| msgid "General Practice"
+msgid "Best practices"
+msgstr "Hojjetaa Gamaa"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:115
+#, fuzzy
+#| msgid "Years of experience"
+msgid "Hands-on experience"
+msgstr "Waggaa muuxannoo"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:116
+#, fuzzy
+#| msgid "Disease Management"
+msgid "Disease control"
+msgstr "Bulchiinsa Dhukkubaa"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:128
+#, fuzzy
+#| msgid "Poultry Farm Consultancy"
+msgid "Poultry Farming Consultancy"
+msgstr "Tajaajila Gorsa Oomisha Qe’aa"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:130
+#, fuzzy
+#| msgid "Experience:"
+msgid "Expert guidance"
+msgstr "Muuxannoo:"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:132
+#, fuzzy
+#| msgid "Feed optimization"
+msgid "Optimization"
+msgstr "Bu’aa fooyyessuu"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:133
+#, fuzzy
+#| msgid "Productivity improvement"
+msgid "Productivity"
+msgstr "Oomisha fooyyessuu"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:134
+msgid "Health"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\index.html:147
+#, fuzzy
+#| msgid "Poultry Items"
+msgid "Our Poultry Status"
+msgstr "Meeshaalee Qe’aa"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:153
+#, fuzzy
+#| msgid "items"
+msgid "Items"
+msgstr "meeshalee"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:155
+#, fuzzy
+#| msgid "Dairy Products"
+msgid "Quality Products"
+msgstr "Oomisha Aannan"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:165
+#: .\poultryfarm\templates\poultryfarm\index.html:175
+#, fuzzy
+#| msgid "Butter Sellers"
+msgid "Active Sellers"
+msgstr "Gurgurtoota Dhadhaa"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:185
+#, fuzzy
+#| msgid "Trainings"
+msgid "Training Programs"
+msgstr "Leenjiilee"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:195
+#, fuzzy
+#| msgid "Our Expert Consultants"
+msgid "Expert Consultants"
+msgstr "Gorsitoota Beektoota Keenya"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:6
+msgid "Create Poultry Item | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Meeshaa Qe’aa Uumi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:20
+msgid "Create New Item"
+msgstr "Meeshaa Haaraa Uumi"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:22
+msgid "Add your poultry product with images and details"
+msgstr "Oomisha qe’aa keessaa fakkii fi ibsa waliin dabali"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:31
+msgid "Main Image"
+msgstr "Fakkii Guddicha"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:36
+msgid "Click or drag image"
+msgstr "Fakkii cuqaasi ykn harkisi"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:77
+msgid "More Images"
+msgstr "Fakkiiwwan Dabaluu"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:82
+msgid "Upload additional images"
+msgstr "Fakkiiwwan dabaluu fe’i"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:83
+msgid "You can select multiple files"
+msgstr "Waraqaawwan hedduu filachuu dandeessa"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:93
+msgid "Publish Item"
+msgstr "Meeshaa Maxxansi"
+
+#: .\poultryfarm\templates\poultryfarm\item_detail.html:7
+msgid "Poultry Item Details | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Ibsa Meeshaa Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\item_detail.html:21
+msgid "Back to Listings"
+msgstr "Tarreewwanitti Deebi’i"
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:8
+msgid "Poultry Items List | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Tarree Meeshalee Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:24
+msgid "Sell Item"
+msgstr "Meeshaa Gurguri"
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:28
+msgid "items"
+msgstr "meeshalee"
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:45
+msgid "No items yet"
+msgstr "Meeshaan hin jiru amma"
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:46
+msgid "Be the first to sell something!"
+msgstr "Waan tokko gurguruuf kan jalqabaa ta’i!"
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:48
+msgid "Create Item"
+msgstr "Meeshaa Uumi"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:6
+msgid ""
+"Poultry Training Trainees | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Leenjiif Barnoota Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:16
+msgid "Enrolled Trainees"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:17
+msgid ""
+"Here is the list of people who have enrolled in poultry training programs."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:29
+msgid "Program"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:30
+msgid "Enrollment Date"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:47
+#, fuzzy
+#| msgid "No messages received yet."
+msgid "No trainees enrolled yet."
+msgstr "Ergaan hin argamne amma."
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:6
+msgid ""
+"Poultry Training Programs | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Tajaajilli Leenjii Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:21
+#, fuzzy
+#| msgid "Poultry Farm Training"
+msgid "Poultry Training Programs"
+msgstr "Leenjii Oomisha Qe’aa"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:22
+msgid ""
+"Enhance your poultry farming skills with our specialized training programs "
+"on Meat Chickens, Layer Chickens, and Dual Purpose Chickens. Whether you're "
+"a beginner or an experienced farmer, our courses are designed to provide you "
+"with the knowledge and techniques needed for successful poultry management."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:25
+#, fuzzy
+#| msgid "Trainings"
+msgid "Our Training Programs"
+msgstr "Leenjiilee"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:29
+msgid "Meat Chickens Training"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:33
+#, fuzzy
+#| msgid "Farmer Training"
+msgid "Layer Chickens Training"
+msgstr "Leenjii Qonnaattaa"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:37
+#, fuzzy
+#| msgid "Dual purpose chickens"
+msgid "Dual Purpose Chickens Training"
+msgstr "Lukkuuwwan oomisha lamaaf"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:45
+msgid "Enroll in Our Training Programs"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:46
+msgid ""
+"Fill out the form below to register for our upcoming poultry training "
+"programs."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:70
+#, fuzzy
+#| msgid "Farm Information"
+msgid "Payment Information"
+msgstr "Odeeffannoo Oomisha"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:71
+msgid "Please use the following information to complete your payment."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:75
+msgid "CBE Bank Account"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:76
+#, fuzzy
+#| msgid "Your Name:"
+msgid "Account Name:"
+msgstr "Maqaa Keessan:"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:77
+#, fuzzy
+#| msgid "Phone Number:"
+msgid "Account Number:"
+msgstr "Lakkoobsa Bilbilaa:"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:80
+#, fuzzy
+#| msgid "Farm Information"
+msgid "Telebirr Information"
+msgstr "Odeeffannoo Oomisha"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:81
+#: .\users\templates\users\login.html:28
+#: .\users\templates\users\profile.html:24
+#: .\users\templates\users\profile_update.html:28
+#: .\users\templates\users\register.html:27
+#: .\users\templates\users\seller_profile.html:32
+msgid "Phone Number:"
+msgstr "Lakkoobsa Bilbilaa:"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:87
+msgid "CBE Bank"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:91
+msgid "Telebirr Payment"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\register_seller.html:6
+msgid ""
+"Register as a Chicken Seller | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "Gurgurtaa Lukkuun Galmeessi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\register_seller.html:33
+msgid "Register as Seller"
+msgstr "Gurgurtaadhaan Galmeessi"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:7
+msgid "Veterinary Consultancy | Ethiopian Poultry And Dairy Farm Market place"
+msgstr ""
+"Tajaajila Gorsa Herrega Bineensaa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:23
+msgid "Our Expert Consultants"
+msgstr "Gorsitoota Beektoota Keenya"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:35
+msgid "Experience:"
+msgstr "Muuxannoo:"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:35
+msgid "years"
+msgstr "waggaa"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:36
+msgid "Specialty:"
+msgstr "Dandeettii Addattaa:"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:37
+msgid "Languages:"
+msgstr "Afaanota:"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:38
+msgid "Rating:"
+msgstr "Sadarkaa:"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:58
+msgid "Consultation Options"
+msgstr "Filannoo Gorsaa"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:71
+msgid "Request"
+msgstr "Gaafadhu"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:73
+msgid "Book Now"
+msgstr "Amma Bukeessi"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:83
+msgid "Availability"
+msgstr "Argaama"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:86
+msgid "Weekdays: Available"
+msgstr "Guyyaa Hojjii: Argaama"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:88
+msgid "Weekends: Available"
+msgstr "Dhuma Torbaatii: Argaama"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:90
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:93
+msgid "Mon-Fri: 9AM-6PM"
+msgstr "Wix- Gam: 9AK-6GK"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:91
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:94
+msgid "Sat: 10AM-4PM"
+msgstr "San: 10AK-4GK"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:95
+msgid "Emergency: 24/7"
+msgstr "Yeroo Maraa: 24/7"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:120
+msgid "No consultants available at the moment. Please check back later."
+msgstr "Gorsaan amma hin jiru. Maaloo booda deebi’ite ilaali."
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:128
+msgid "Book Consultation"
+msgstr "Gorsa Bukeessi"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:135
+msgid "Consultant:"
+msgstr "Gorsaa:"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:139
+msgid "Service Type:"
+msgstr "Gosa Tajaajilaa:"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:147
+msgid "Your Name:"
+msgstr "Maqaa Keessan:"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:151
+msgid "Email:"
+msgstr "Iimeeli:"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:155
+msgid "Phone:"
+msgstr "Bilbila:"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:159
+msgid "Preferred Date:"
+msgstr "Guyyaa Filatamaa:"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:163
+msgid "Preferred Time:"
+msgstr "Yeroo Filatamaa:"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:170
+msgid "Request Consultation"
+msgstr "Gorsa Gaafadhu"
+
+#: .\poultryfarm\views.py:49
+msgid "Liked successfully"
+msgstr "Milkaa’iidhaan jaallatame"
+
+#: .\poultryfarm\views.py:49
+msgid "Like removed"
+msgstr "Jaallannaan ni balleeffame"
+
+#: .\poultryfarm\views.py:62
+msgid "Share count updated successfully"
+msgstr "Baay’ina qooddamaa milkaa’iidhaan fooyya’e"
+
+#: .\project\settings.py:13
 msgid "English"
 msgstr "Ingiliffaa"
 
-#: .\project\settings.py:20
+#: .\project\settings.py:14
 msgid "Amharic"
 msgstr "Amaaraa"
 
-#: .\project\settings.py:21
+#: .\project\settings.py:15
 msgid "Oromiffa"
 msgstr "Oromiffa"
 
-#~ msgid "About Us | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Waa'ee Keenya | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+#: .\users\templates\users\dashboard.html:6
+msgid " Welcome User| Ethiopian Poultry And Dairy Farm Market place"
+msgstr " Fayyadamaa Simmatamaa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\users\templates\users\dashboard.html:15
+msgid "Welcome,"
+msgstr "Simmatamte,"
+
+#: .\users\templates\users\login.html:6
+msgid " Login| Ethiopian Poultry And Dairy Farm Market place"
+msgstr " Galmaa’i | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\users\templates\users\login.html:23
+#: .\users\templates\users\profile.html:23
+#: .\users\templates\users\register.html:21
+#: .\users\templates\users\seller_profile.html:31
+msgid "Username:"
+msgstr "Maqaa Fayyadamaa:"
+
+#: .\users\templates\users\login.html:36
+msgid "Don't have an account?"
+msgstr "Akkaawuntii hin qabduu?"
+
+#: .\users\templates\users\login.html:36
+msgid "Register here"
+msgstr "As galmeessi"
+
+#: .\users\templates\users\logout.html:6
+msgid " Logout| Ethiopian Poultry And Dairy Farm Market place"
+msgstr " Bahi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\users\templates\users\logout.html:14
+msgid "You have been logged out"
+msgstr "Baha’eera"
+
+#: .\users\templates\users\logout.html:15
+msgid "Return to base page"
+msgstr "Fuula bu’uuraatti deebi’i"
+
+#: .\users\templates\users\profile.html:6
+msgid " My Profile | Ethiopian Poultry And Dairy Farm Market place"
+msgstr " Buufata Kiyya | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\users\templates\users\profile.html:18
+msgid "Profile Picture"
+msgstr "Fakkii Buufataa"
+
+#: .\users\templates\users\profile.html:26
+#: .\users\templates\users\seller_profile.html:34
+msgid "Bio:"
+msgstr "Ibsa:"
+
+#: .\users\templates\users\profile_update.html:6
+msgid " Update Profile | Ethiopian Poultry And Dairy Farm Market place"
+msgstr " Buufata Fooyyessi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\users\templates\users\profile_update.html:19
+msgid "Please correct the errors below."
+msgstr "Maaloo dogoggora armaan gadii sirreessi."
+
+#: .\users\templates\users\profile_update.html:30
+msgid "Contact support to change phone number"
+msgstr "Lakkoobsa bilbilaa jijjiiruuf deeggarsa quunnami"
+
+#: .\users\templates\users\profile_update.html:39
+msgid "Change"
+msgstr "Jijjiiri"
+
+#: .\users\templates\users\profile_update.html:49
+msgid "Upload Photo"
+msgstr "Fakkii Fe’i"
+
+#: .\users\templates\users\profile_update.html:119
+msgid "Save Changes"
+msgstr "Jijjiirama Kunuusi"
+
+#: .\users\templates\users\register.html:6
+msgid " Register | Ethiopian Poultry And Dairy Farm Market place"
+msgstr " Galmeessi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+
+#: .\users\templates\users\register.html:15
+msgid "Create Your Account"
+msgstr "Akkaawuntii Keessan Uumaa"
+
+#: .\users\templates\users\register.html:37
+msgid "Already have an account?"
+msgstr "Akkaawuntii yoo qabaattan?"
+
+#: .\users\templates\users\register.html:37
+msgid "Login here"
+msgstr "As galmaa’i"
+
+#: .\users\templates\users\seller_profile.html:6
+#: .\users\templates\users\seller_profile.html:15
+msgid "Seller Profile"
+msgstr "Buufata Gurgurtaa"
+
+#: .\users\templates\users\seller_profile.html:20
+msgid "profile picture"
+msgstr "fakkii buufataa"
+
+#: .\users\templates\users\users.html:6
+msgid " User List | Ethiopian Poultry And Dairy Farm Market place"
+msgstr " Tarree Fayyadamtootaa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
 
-#~ msgid "About Us"
-#~ msgstr "Waa'ee Keenya"
+#: .\users\templates\users\users.html:15
+msgid "Users"
+msgstr "Fayyadamtoota"
 
-#~ msgid ""
-#~ "We are a company dedicated to providing the best services to our "
-#~ "customers."
-#~ msgstr ""
-#~ "Dhaabbata tajaajila gaarii ta’e maamiltoota keenyaaf kennuuf ofqabuudha."
-
-#~ msgid ""
-#~ "Our mission is to connect buyers and sellers in a seamless online "
-#~ "marketplace."
-#~ msgstr ""
-#~ "Gochaann keenya addaan hin cindhiniin gabaa interneetii irratti bittootaa "
-#~ "fi gurgurtoota walitti fiduudha."
-
-#~ msgid ""
-#~ "We strive to offer a wide range of products at competitive prices, backed "
-#~ "by excellent customer service."
-#~ msgstr ""
-#~ "Qabeenya garaagaraa gatii dorgomsiisaan, tajaajila maamiltoota caalmaa "
-#~ "ta’een deeggarame dhiheessuu yaalanna."
-
-#~ msgid ""
-#~ "Ethiopian marketplace - Buy and sell poultry and dairy products in "
-#~ "Ethiopia"
-#~ msgstr ""
-#~ "Gabaa Itoophiyaa - Itoophiyaatti qe’aa fi oomisha aannan biti fi gurguri"
-
-#~ msgid ""
-#~ "Ethiopia, marketplace, buy and sell, agriculture, ethiopia agriculture , "
-#~ "poultry, dairy"
-#~ msgstr ""
-#~ "Itoophiyaa, gabaa, biti fi gurguri, qonna, qonna Itoophiyaa, qe’aa, aannan"
-
-#~ msgid "Please select your language"
-#~ msgstr "Maaloo afaan kee filadhu"
-
-#~ msgid "Skip"
-#~ msgstr "Darbi"
-
-#~ msgid "Notifications"
-#~ msgstr "Beeksisa"
-
-#~ msgid "Messages"
-#~ msgstr "Ergaalee"
-
-#~ msgid "Egg Orders"
-#~ msgstr "Ajaja Hanshuu"
-
-#~ msgid "Carted"
-#~ msgstr "Gaanxoo keessa"
-
-#~ msgid "Browse Categories"
-#~ msgstr "Ramaddii dubbadhu"
-
-#~ msgid "Dairy Section"
-#~ msgstr "Cuta Aannan"
-
-#~ msgid "All Dairy products"
-#~ msgstr "Oomisha aannan hunda"
-
-#~ msgid "Add Dairy Products"
-#~ msgstr "Oomisha aannan dabali"
-
-#~ msgid "Poultry Section"
-#~ msgstr "Cuta Qe’aa"
-
-#~ msgid "Poultry Items"
-#~ msgstr "Meeshaalee Qe’aa"
-
-#~ msgid "Poultry Eggs"
-#~ msgstr "Hanshuu Qe’aa"
-
-#~ msgid "Poultry Chickens"
-#~ msgstr "Lukkuuwwan Qe’aa"
-
-#~ msgid "Poultry Farm Training"
-#~ msgstr "Leenjii Oomisha Qe’aa"
-
-#~ msgid "Poultry Farm Consultancy"
-#~ msgstr "Tajaajila Gorsa Oomisha Qe’aa"
-
-#~ msgid "User"
-#~ msgstr "Fayyadamaa"
-
-#~ msgid "Register"
-#~ msgstr "Galmeessi"
-
-#~ msgid "My Profile"
-#~ msgstr "Buufata Kiyya"
-
-#~ msgid "Edit Profile"
-#~ msgstr "Buufata gulaali"
-
-#~ msgid "logout"
-#~ msgstr "bahi"
-
-#~ msgid "User store"
-#~ msgstr "Daldala fayyadamaa"
-
-#~ msgid "My Orders"
-#~ msgstr "Ajaja Kiyya"
-
-#~ msgid "Cart"
-#~ msgstr "Gaanxoo"
-
-#~ msgid "For Admin"
-#~ msgstr "Adminif"
-
-#~ msgid "User List"
-#~ msgstr "Tarree Fayyadamtootaa"
-
-#~ msgid "Language"
-#~ msgstr "Afaan"
-
-#~ msgid "Contact Us"
-#~ msgstr "Nu Qunnami"
-
-#~ msgid " Dairy"
-#~ msgstr " Aannan"
-
-#~ msgid " Poultry"
-#~ msgstr " Qe’aa"
-
-#~ msgid "Ethio"
-#~ msgstr "Itiyoo"
-
-#~ msgid "Agriculture"
-#~ msgstr "Qonna"
-
-#~ msgid ""
-#~ "Ethio-Agriculture is your one-stop online marketplace for Dairy products "
-#~ "and Poultry Item. We connect buyers and sellers across the globe."
-#~ msgstr ""
-#~ "Ethio-Agriculture gabaa interneetii oomisha aannanii fi meeshaa qe’aa "
-#~ "keessaniti. Bittoofi gurguroota addunyaa mara walitti fidna."
-
-#~ msgid "Categories"
-#~ msgstr "Ramaddii"
-
-#~ msgid "Dairy products"
-#~ msgstr "Oomisha aannan"
-
-#~ msgid "Poultry Item"
-#~ msgstr "Meeshaa Qe’aa"
-
-#~ msgid "Quick Links"
-#~ msgstr "Liinkii Dafaa"
-
-#~ msgid "Home"
-#~ msgstr "Mana"
-
-#~ msgid "Contact Info"
-#~ msgstr "Odeeffannoo Qunnamaa"
-
-#~ msgid "Ethiopia / Sheger City , Gelan"
-#~ msgstr "Itoophiyaa / Magaalaa Shaagger, Gelan"
-
-#~ msgid "Ethio-Agriculture All Rights Reserved."
-#~ msgstr "Ethio-Agriculture Mirgi Hunda Kan Qabadhamuudha."
-
-#~ msgid "Sheger Market | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Gabaa Shaagger | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Poultry Farm"
-#~ msgstr "Oomisha Qe’aa"
-
-#~ msgid "Eggs, Chickens, poultry Equipment and tools for sell"
-#~ msgstr "Hanshuu, Lukkuu, Meeshaalee Qe’aa fi meeshaalee gurguramuuf"
-
-#~ msgid "poultry"
-#~ msgstr "qe’aa"
-
-#~ msgid "Dairy Farm"
-#~ msgstr "Oomisha Aannan"
-
-#~ msgid "Fresh milk, cheese, butter and other dairy products"
-#~ msgstr "Aannan haaraa, baagiyoo, dhadhaa fi oomisha aannan biroo"
-
-#~ msgid "Electronics"
-#~ msgstr "Eletrooniksii"
-
-#~ msgid "Shop by Category"
-#~ msgstr "Ramaddiidhaan Kadhatu"
-
-#~ msgid "Dairy"
-#~ msgstr "Aannan"
-
-#~ msgid "posted"
-#~ msgstr "maxxanfame"
-
-#~ msgid "Poultry"
-#~ msgstr "Qe’aa"
-
-#~ msgid "Featured Products"
-#~ msgstr "Oomisha Filatamoo"
-
-#~ msgid "Bed"
-#~ msgstr "Siree"
-
-#~ msgid "View Details"
-#~ msgstr "Ibsa Ilaali"
-
-#~ msgid "No featured products available."
-#~ msgstr "Oomisha filatamoon hin jiru."
-
-#~ msgid "Our Sponsors"
-#~ msgstr "Hiree Keenya"
-
-#~ msgid "Load More Products"
-#~ msgstr "Oomisha Dabaluu Fe’i"
-
-#~ msgid "more"
-#~ msgstr "dabalata"
-
-#~ msgid "Messages Received | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Ergaalee Argaman | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Messages Received"
-#~ msgstr "Ergaalee Argaman"
-
-#~ msgid "No messages yet."
-#~ msgstr "Ergaan hin jiru amma."
-
-#~ msgid "Search Results for"
-#~ msgstr "Bu’aan Barbaachisaa"
-
-#~ msgid "Sheger.city"
-#~ msgstr "Shaagger.city"
-
-#~ msgid "Search Products"
-#~ msgstr "Oomisha Barbaadi"
-
-#~ msgid "Search Results"
-#~ msgstr "Bu’aan Barbaachisaa"
-
-#~ msgid "Showing results for"
-#~ msgstr "Bu’aawwan isaaniif agarsisu"
-
-#~ msgid "Found"
-#~ msgstr "Argame"
-
-#~ msgid "results"
-#~ msgstr "bu’aawwan"
-
-#~ msgid "Houses"
-#~ msgstr "Maneewwan"
-
-#~ msgid "dairyfarm"
-#~ msgstr "oomisha aannan"
-
-#~ msgid "Clothing"
-#~ msgstr "Uffata"
-
-#~ msgid "What are you looking for?"
-#~ msgstr "Maal barbaaddaa jirta?"
-
-#~ msgid "Enter a search term to find products across all categories"
-#~ msgstr ""
-#~ "Ramaddii hunda keessatti oomisha argachuuf jecha barbaachisaa galchi"
-
-#~ msgid "No results found"
-#~ msgstr "Bu’aan hin argamne"
-
-#~ msgid "Try different keywords or browse our categories"
-#~ msgstr "Jecha dhuunfaa biraa yaali ykn ramaddii keenya dubbadhu"
-
-#~ msgid "Terms | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Shartii | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Terms"
-#~ msgstr "Shartii"
-
-#~ msgid "User Agreement"
-#~ msgstr "Waliigaltee Fayyadamaa"
-
-#~ msgid ""
-#~ "By using our website, you agree to the following terms and conditions."
-#~ msgstr ""
-#~ "Websaayitii keenya fayyadamtuun shartii fi haaloota armaan gadiitti "
-#~ "waligaltee."
-
-#~ msgid "Quantity:"
-#~ msgstr "Baay’ina:"
-
-#~ msgid "Shipping:"
-#~ msgstr "Ergaa:"
-
-#~ msgid "Total:"
-#~ msgstr "Iddoo:"
-
-#~ msgid "Proceed to Checkout"
-#~ msgstr "Kaffaltiif Darbi"
-
-#~ msgid "Alemma Animal Feed"
-#~ msgstr "Alemma Bu’aa Bineensaa"
-
-#~ msgid "Alemma Animal Feed Ethiopia"
-#~ msgstr "Alemma Bu’aa Bineensaa Itoophiyaa"
-
-#~ msgid ""
-#~ "Alemma Animal Feed is a leading animal feed manufacturer in Ethiopia, "
-#~ "dedicated to providing high-quality feed products for livestock and "
-#~ "poultry."
-#~ msgstr ""
-#~ "Alemma Bu’aa Bineensaa oomishaa bu’aa bineensaa Itoophiyaa keessatti "
-#~ "lamaanii fi bineensaa qe’aaf oomisha bu’aa qulqulluu dhiheessuuf "
-#~ "ofqabudha."
-
-#~ msgid "For more information, you can visit their official website: "
-#~ msgstr "Odeeffannoo dabalataaf, websaayitii isaaniitii dhaquu dandeessu: "
-
-#~ msgid ""
-#~ "Alemma Animal Feed is committed to improving the productivity and health "
-#~ "of livestock in Ethiopia through the provision of nutritious and "
-#~ "scientifically formulated animal feed."
-#~ msgstr ""
-#~ "Alemma Bu’aa Bineensaa oomisha bu’aa bineensaa nyaata qulqulluu fi "
-#~ "saayinsii ta’een fayyadamuun oomisha fi fayyaa bineensalee Itoophiyaa "
-#~ "fooyyessiif ofqabudha."
-
-#~ msgid "EthioChicken | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "EthioChicken | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "EthioChicken Feed Manufacturers"
-#~ msgstr "Oomishoonni Bu’aa EthioChicken"
-
-#~ msgid "Empowering Ethiopian farmers through poultry excellence"
-#~ msgstr "Qonnaattota Itoophiyaa qe’aa caalmaadhaan humneessuu"
-
-#~ msgid "Visit Our Website"
-#~ msgstr "Websaayitii Keenya Dhaquu"
-
-#~ msgid "Price Update"
-#~ msgstr "Gatii Fooyyessi"
-
-#~ msgid "Chickens Type and Price Updates"
-#~ msgstr "Gosa Lukkuu fi Fooyyii Gatii"
-
-#~ msgid ""
-#~ "This section provides an overview of the different types of chickens "
-#~ "available and their respective prices."
-#~ msgstr "Cutaan kun gosa lukkuuwwan argamanii fi gatii isaanii ibsa."
-
-#~ msgid "Chicken Type"
-#~ msgstr "Gosa Lukkuu"
-
-#~ msgid "Description"
-#~ msgstr "Ibsa"
-
-#~ msgid "Price"
-#~ msgstr "Gatii"
-
-#~ msgid "Day Old Chickens"
-#~ msgstr "Lukkuu Guyyaa Tokkoo"
-
-#~ msgid "Newly born chicks"
-#~ msgstr "Lukkuuwwan haaraa dhalatan"
-
-#~ msgid "ETB 20.00"
-#~ msgstr "QAR 20.00"
-
-#~ msgid "Bovance Brown"
-#~ msgstr "Bovance Brown"
-
-#~ msgid "Egg laying chickens"
-#~ msgstr "Lukkuuwwan hanhuu hanhuuf"
-
-#~ msgid "ETB 25.00"
-#~ msgstr "QAR 25.00"
-
-#~ msgid "Sasso"
-#~ msgstr "Sasso"
-
-#~ msgid "Dual purpose chickens"
-#~ msgstr "Lukkuuwwan oomisha lamaaf"
-
-#~ msgid "ETB 30.00"
-#~ msgstr "QAR 30.00"
-
-#~ msgid "Broilers"
-#~ msgstr "Lukkuuwwan Foonii"
-
-#~ msgid "Meat production chickens"
-#~ msgstr "Lukkuuwwan oomisha foonii"
-
-#~ msgid "ETB 35.00"
-#~ msgstr "QAR 35.00"
-
-#~ msgid "Layer"
-#~ msgstr "Hanshuuf"
-
-#~ msgid "Chickens for egg production"
-#~ msgstr "Lukkuuwwan oomisha hanhuuf"
-
-#~ msgid "ETB 40.00"
-#~ msgstr "QAR 40.00"
-
-#~ msgid "Broiler/Cobb"
-#~ msgstr "Lukkuu Foonii/Cobb"
-
-#~ msgid "Chickens for meat production"
-#~ msgstr "Lukkuuwwan oomisha foonii"
-
-#~ msgid "ETB 45.00"
-#~ msgstr "QAR 45.00"
-
-#~ msgid "Red Ranger"
-#~ msgstr "Red Ranger"
-
-#~ msgid "Free-range chickens"
-#~ msgstr "Lukkuuwwan bana saratti oolan"
-
-#~ msgid "ETB 50.00"
-#~ msgstr "QAR 50.00"
-
-#~ msgid "Feeds Type and Price Updates"
-#~ msgstr "Gosa Bu’aa fi Fooyyii Gatii"
-
-#~ msgid ""
-#~ "This section provides an overview of the different types of feeds "
-#~ "available and their respective prices."
-#~ msgstr "Cutaan kun gosa bu’aa argamanii fi gatii isaanii ibsa."
-
-#~ msgid "Feed Type"
-#~ msgstr "Gosa Bu’aa"
-
-#~ msgid "Starter Feed"
-#~ msgstr "Bu’aa Jalqabaa"
-
-#~ msgid "For day-old chicks"
-#~ msgstr "Lukkuuwwan guyyaa tokkoof"
-
-#~ msgid "ETB 15.00"
-#~ msgstr "QAR 15.00"
-
-#~ msgid "Grower Feed"
-#~ msgstr "Bu’aa Guddinaa"
-
-#~ msgid "For growing chickens"
-#~ msgstr "Lukkuuwwan guddachaa jiraniif"
-
-#~ msgid "Layer Feed"
-#~ msgstr "Bu’aa Hanshuuf"
-
-#~ msgid "For egg-laying hens"
-#~ msgstr "Lukkuuwwan hanhuu hanhuuf"
-
-#~ msgid "Broiler Feed"
-#~ msgstr "Bu’aa Lukkuu Foonii"
-
-#~ msgid "For meat production"
-#~ msgstr "Oomisha foonii"
-
-#~ msgid "Finisher Feed"
-#~ msgstr "Bu’aa Xumuraa"
-
-#~ msgid "For finishing broilers"
-#~ msgstr "Lukkuuwwan foonii xumuruuf"
-
-#~ msgid "About EthioChicken"
-#~ msgstr "Waa’ee EthioChicken"
-
-#~ msgid ""
-#~ "Ethiochicken is a leading poultry company in Ethiopia, dedicated to "
-#~ "improving the livelihoods of smallholder farmers through the provision of "
-#~ "high-quality poultry products and services."
-#~ msgstr ""
-#~ "EthioChicken dhaabbata qe’aa Itoophiyaa keessatti lamaanii, oomisha fi "
-#~ "tajaajila qe’aa qulqulluu dhiheessuun jireenya qonnaattota xixiqqoo "
-#~ "fooyyessiif ofqabudha."
-
-#~ msgid "Our Mission"
-#~ msgstr "Gochaann Keenya"
-
-#~ msgid ""
-#~ "To enhance food security and create sustainable livelihoods in rural "
-#~ "communities through poultry farming."
-#~ msgstr ""
-#~ "Oomisha qe’aa fayyadamuun waakkessa nyaataa fooyyessiifi jireenya itti "
-#~ "fufiinsa qabu hawaasa baadiyaa keessatti uumuu."
-
-#~ msgid "Our Vision"
-#~ msgstr "Ijoolleen Keenya"
-
-#~ msgid ""
-#~ "To be the catalyst for poultry-led transformation in Ethiopian "
-#~ "agriculture."
-#~ msgstr ""
-#~ "Jijjiirama qe’aadhaan geggeeffamu qonna Itoophiyaa keessatti saroonduu "
-#~ "ta’uu."
-
-#~ msgid "Our Value to Farmers"
-#~ msgstr "Gatii Keenya Qonnaattotaaf"
-
-#~ msgid "Quality Breeds"
-#~ msgstr "Sanyii Qulqulluu"
-
-#~ msgid "Providing high-quality poultry breeds adapted to local conditions."
-#~ msgstr "Sanyii qe’aa qulqulluu haala naannoo waliin madaalan dhiheessuu."
-
-#~ msgid "Premium Feed"
-#~ msgstr "Bu’aa Caalmaa"
-
-#~ msgid "Nutritionally balanced feed formulations for optimal growth."
-#~ msgstr "Guddina gaariif bu’aa madaalawaa nyaataa."
-
-#~ msgid "Farmer Training"
-#~ msgstr "Leenjii Qonnaattaa"
-
-#~ msgid "Comprehensive training programs for successful poultry farming."
-#~ msgstr "Oomisha qe’aa milkaa’aa ta’eef tajaajila leenjii guutuu."
-
-#~ msgid "Veterinary Support"
-#~ msgstr "Deeggarsa Herrega Bineensaa"
-
-#~ msgid "Access to veterinary services and disease prevention."
-#~ msgstr "Tajaajila herrega bineensaa fi dhorkansa dhukkubaa argachuu."
-
-#~ msgid "Email"
-#~ msgstr "Iimeelii"
-
-#~ msgid "Copy"
-#~ msgstr "Goyyeessi"
-
-#~ msgid "Phone"
-#~ msgstr "Bilbila"
-
-#~ msgid "Call"
-#~ msgstr "Bilbilaa"
-
-#~ msgid "Address"
-#~ msgstr "Teessoo"
-
-#~ msgid "Ethio China Street, Kadco Group"
-#~ msgstr "Daandii Ethio China, Kadco Group"
-
-#~ msgid "Building #2, 6th floor,"
-#~ msgstr "Jaarmaa #2, alanga 6ffaa,"
-
-#~ msgid "Addis Ababa, Ethiopia"
-#~ msgstr "Finfinnee, Itoophiyaa"
-
-#~ msgid "View Map"
-#~ msgstr "Kaartaa Ilaali"
-
-#~ msgid "Farmer Success Stories"
-#~ msgstr "Seenaa Milkaa’ina Qonnaattotaa"
-
-#~ msgid ""
-#~ "'EthioChicken changed my life. With their training and quality chicks, my "
-#~ "poultry business has grown threefold in just one year.'"
-#~ msgstr ""
-#~ "'EthioChicken jireenya kiyya jijjiire. Leenjii isaaniitii fi lukkuuwwan "
-#~ "qulqulluu isaaniitiin daldalli qe’aa kiyya waggaa tokko keessatti si’a "
-#~ "saddu guddise.'"
-
-#~ msgid "- Ato Kebede, Smallholder Farmer"
-#~ msgstr "- Ato Kebede, Qonnaattaa Xiqqoo"
-
-#~ msgid "Companies | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Dhaabbileen | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "companies list"
-#~ msgstr "tarree dhaabbatootaa"
-
-#~ msgid ""
-#~ "National Veterinary Institute | Ethiopian Poultry And Dairy Farm Market "
-#~ "place"
-#~ msgstr ""
-#~ "Inistiiyuutii Herrega Bineensaa Biyyaalaa | Gabaa Fooda Lamee fi Aannan "
-#~ "Itoophiyaa"
-
-#~ msgid "National Veterinary Institute"
-#~ msgstr "Inistiiyuutii Herrega Bineensaa Biyyaalaa"
-
-#~ msgid "Advancing Animal Health in Ethiopia "
-#~ msgstr "Itoophiyaa keessatti fayyaa bineensaa fooyyessuu"
-
-#~ msgid "Vision"
-#~ msgstr "Ijoollee"
-
-#~ msgid ""
-#~ "By 2029 G.C the institute will fulfill the national demand for veterinary "
-#~ "vaccines and drugs and become a competitive institute in Africa."
-#~ msgstr ""
-#~ "Bara 2029 G.C inistiiyuutiin fedhii biyyaalaa talaallii fi qorichoota "
-#~ "herrega bineensaa guutuun Afriikaa keessatti inistiiyuutii dorgomsiisaa "
-#~ "ta’a."
-
-#~ msgid "Mission"
-#~ msgstr "Gochaa"
-
-#~ msgid ""
-#~ "Producing and supplying quality veterinary vaccines, drugs, and "
-#~ "biologicals at affordable prices for the domestic market to support the "
-#~ "livestock sector, generating foreign currency through exports, and "
-#~ "sustaining profitability."
-#~ msgstr ""
-#~ "Talaallii, qoricha, fi biyoloojiksii herrega bineensaa qulqulluu gatii "
-#~ "qaqqabamuu ta’een gabaa gidduu galaaf oomishee fi dhiheessuu, sektorii "
-#~ "bineensaa deeggaruu, maallaqa alaa arbaa baasuun, fi bu’aa ittisan "
-#~ "uumuudha."
-
-#~ msgid "Feedback"
-#~ msgstr "Yaada Deebisaa"
-
-#~ msgid " All News"
-#~ msgstr " Oduu Hundaa"
-
-#~ msgid "Downloads"
-#~ msgstr "Buufata"
-
-#~ msgid " Vacancy"
-#~ msgstr " Bakka Duwwaa"
-
-#~ msgid "Partners"
-#~ msgstr "Hiree"
-
-#~ msgid " Our Vaccines"
-#~ msgstr " Talaallii Keenya"
-
-#~ msgid "LIVE NEWCASTLE DISEASE VACCINE"
-#~ msgstr "TALAALLII DHUKKUBA NEWCASTLE BAKKA"
-
-#~ msgid "INACTIVATED NEWCASTLE OIL EMULSION VACCINE"
-#~ msgstr "TALAALLII DHUKKUBA NEWCASTLE ZAYITII INAAKTIVATED"
-
-#~ msgid "NEWCASTLE DISEASE THERMOSTABLE VACCINE"
-#~ msgstr "TALAALLII DHUKKUBA NEWCASTLE HAAWWA BAREEDA"
-
-#~ msgid "FOWL POX VACCINE"
-#~ msgstr "TALAALLII RITTAA LUKKUU"
-
-#~ msgid "INFECTIOUS BURSAL DISEASE /GUMBORO/ VACCINE"
-#~ msgstr "TALAALLII DHUKKUBA BURSAL INFEEKSHINAA /GUMBORO/"
-
-#~ msgid "Marek’s Disease Vaccine (HVT)"
-#~ msgstr "Talaallii Dhukkuba Marek (HVT)"
-
-#~ msgid " Contact Us"
-#~ msgstr " Nu Qunnami"
-
-#~ msgid " Phone"
-#~ msgstr " Bilbila"
-
-#~ msgid "Tel: 251-114-33-84-11/16"
-#~ msgstr "Tel: 251-114-33-84-11/16"
-
-#~ msgid "Mobile: 251-903-04-88-88"
-#~ msgstr "Mobiilii: 251-903-04-88-88"
-
-#~ msgid "Fax: 251-114-33-93-00"
-#~ msgstr "Fax: 251-114-33-93-00"
-
-#~ msgid "P.O. Box 19, Bishoftu, Ethiopia"
-#~ msgstr "P.O. Box 19, Bishoftu, Itoophiyaa"
-
-#~ msgid "Visit Official Website"
-#~ msgstr "Websaayitii Kululaa Dhaquu"
-
-#~ msgid ""
-#~ "NVI is committed to improving animal health and productivity in Ethiopia "
-#~ "through the development and distribution of high-quality veterinary "
-#~ "products."
-#~ msgstr ""
-#~ "NVI oomisha herrega bineensaa qulqulluu oomishuun fi raabsuun Itoophiyaa "
-#~ "keessatti fayyaa fi oomisha bineensaa fooyyessiif ofqabudha."
-
-#~ msgid "Your Name"
-#~ msgstr "Maqaa Keessan"
-
-#~ msgid "Your Email"
-#~ msgstr "Iimeelii Keessan"
-
-#~ msgid "Subject"
-#~ msgstr "Mata Duree"
-
-#~ msgid "Your Message"
-#~ msgstr "Ergaa Keessan"
-
-#~ msgid "Name"
-#~ msgstr "Maqaa"
-
-#~ msgid "Message"
-#~ msgstr "Ergaa"
-
-#~ msgid "Created at"
-#~ msgstr "Uumame yeroo"
-
-#~ msgid "Is read"
-#~ msgstr "Itteeffame"
-
-#~ msgid "Contact Message"
-#~ msgstr "Ergaa Qunnamaa"
-
-#~ msgid "Contact Messages"
-#~ msgstr "Ergaalee Qunnamaa"
-
-#~ msgid "Confirm Deletion | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Balleessuu Mirkaneessi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Confirm Deletion"
-#~ msgstr "Balleessuu Mirkaneessi"
-
-#~ msgid "From:"
-#~ msgstr "Ergaa:"
-
-#~ msgid "Subject:"
-#~ msgstr "Mata Duree:"
-
-#~ msgid "Message:"
-#~ msgstr "Ergaa:"
-
-#~ msgid "Yes, delete"
-#~ msgstr "Eeyyee, balleessi"
-
-#~ msgid "Contact Us | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Nu Qunnami | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Get in Touch"
-#~ msgstr "Qunnami"
-
-#~ msgid ""
-#~ "We would love to hear from you. Please fill out the form below and we "
-#~ "will get back to you as soon as possible."
-#~ msgstr ""
-#~ "Si dhaga’uuf jaallanna. Maaloo foormaa armaan gadii guuti, akka "
-#~ "danda’ametti deebisaan si quunnanna."
-
-#~ msgid "Send Message"
-#~ msgstr "Ergaa Ergi"
-
-#~ msgid "Received Messages | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Ergaalee Argaman | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Received Messages"
-#~ msgstr "Ergaalee Argaman"
-
-#~ msgid "Received"
-#~ msgstr "Argaman"
-
-#~ msgid "Actions"
-#~ msgstr "Gochaawwan"
-
-#~ msgid "View"
-#~ msgstr "Ilaali"
-
-#~ msgid "Delete"
-#~ msgstr "Balleessi"
-
-#~ msgid "previous"
-#~ msgstr "duraa"
-
-#, python-format
-#~ msgid ""
-#~ "\n"
-#~ "              Page %(num)s of %(total)s\n"
-#~ "            "
-#~ msgstr ""
-#~ "\n"
-#~ "              Fuula %(num)s fuula %(total)s\n"
-#~ "            "
-
-#~ msgid "next"
-#~ msgstr "boodaa"
-
-#~ msgid "No messages received yet."
-#~ msgstr "Ergaan hin argamne amma."
-
-#~ msgid "View Message | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Ergaa Ilaali | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Message Details"
-#~ msgstr "Ibsa Ergaa"
-
-#~ msgid "Received:"
-#~ msgstr "Argame:"
-
-#~ msgid "Back to Messages"
-#~ msgstr "Ergaaleetti Deebi’i"
-
-#~ msgid "Delete Message"
-#~ msgstr "Ergaa Balleessi"
-
-#~ msgid "Reply"
-#~ msgstr "Deebisi"
-
-#~ msgid "Thank you for your message! We will get back to you soon."
-#~ msgstr ""
-#~ "Ergaa keessatti galatoomi! Akka danda’ametti deebi’uuf si quunnanna."
-
-#~ msgid "Message has been deleted successfully."
-#~ msgstr "Ergaan milkaa’iidhaan balleeffame."
-
-#~ msgid ""
-#~ " My Conversation Detail | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr " Ibsa Walhalli Kiyya | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Conversation about"
-#~ msgstr "Waa’ee waliin haasa’aa jirtan"
-
-#~ msgid "Send"
-#~ msgstr "Ergi"
-
-#~ msgid " My Inbox | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr " Saanduuqa Kiyya | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Your Conversations"
-#~ msgstr "Walhalli Keessan"
-
-#~ msgid "No Image"
-#~ msgstr "Fakki hin jiru"
-
-#~ msgid "typing"
-#~ msgstr "barreessaa"
-
-#~ msgid "No messages yet"
-#~ msgstr "Ergaan hin jiru amma"
-
-#~ msgid "No conversations yet"
-#~ msgstr "Walhalli hin jiru amma"
-
-#~ msgid "Browse Items"
-#~ msgstr "Meeshaalee Dubbadhu"
-
-#~ msgid "Start New Message | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Ergaa Haaraa Eegali | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "New Message"
-#~ msgstr "Ergaa Haaraa"
-
-#~ msgid "Contact the seller about:"
-#~ msgstr "Waa’ee kana gurgurtaa quunnami:"
-
-#~ msgid "View Item"
-#~ msgstr "Meeshaa Ilaali"
-
-#~ msgid "Back to Item"
-#~ msgstr "Meeshaatti Deebi’i"
-
-#~ msgid "Please enter a message"
-#~ msgstr "Maaloo ergaa galchi"
-
-#~ msgid "Sending..."
-#~ msgstr "Ergaa..."
-
-#~ msgid "Dairy | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Aannan | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Premium Dairy Marketplace"
-#~ msgstr "Gabaa Aannan Caalmaa"
-
-#~ msgid ""
-#~ "Buy fresh milk, butter, cheese and dairy products from trusted Ethiopian "
-#~ "farmers."
-#~ msgstr ""
-#~ "Aannan haaraa, dhadhaa, baagiyoo fi oomisha aannan qonnaattota Itoophiyaa "
-#~ "amanamaa jiraniitii biti."
-
-#~ msgid "Explore More →"
-#~ msgstr "Dabalata Qoradhu →"
-
-#~ msgid "Scroll Down"
-#~ msgstr "Gad Buufadhu"
-
-#~ msgid "OUR SERVICES"
-#~ msgstr "TAJAJILA KENYA"
-
-#~ msgid "Dairy Products"
-#~ msgstr "Oomisha Aannan"
-
-#~ msgid ""
-#~ "Connecting you with fresh and organic dairy products across Ethiopia."
-#~ msgstr ""
-#~ "Itoophiyaa keessatti oomisha aannan haaraa fi orgaanikii siif fiduudha."
-
-#~ msgid "Fresh Milk"
-#~ msgstr "Aannan Haaraa"
-
-#~ msgid "Pure and hygienic cow milk directly from farms."
-#~ msgstr "Aannan sa’aa qulqulluu fi fayyaa oomisha keessaa qajeelaa."
-
-#~ msgid "View More →"
-#~ msgstr "Dabalata Ilaali →"
-
-#~ msgid "Butter & Cheese"
-#~ msgstr "Dhadhaa fi Baagiyoo"
-
-#~ msgid "Traditional and modern dairy products rich in taste."
-#~ msgstr "Oomisha aannan adaa fi ammayyaa dhandhama oomaa."
-
-#~ msgid "Dairy Cows"
-#~ msgstr "Saawwan Aannan"
-
-#~ msgid "Healthy and high-yield dairy cows for sale."
-#~ msgstr "Saawwan aannan fayyaa fi oomisha ol’aanaa gurguramuuf."
-
-#~ msgid "EXPERT SERVICES"
-#~ msgstr "TAJAJILA BEEKSAA"
-
-#~ msgid "Training & Consultancy"
-#~ msgstr "Leenjii fi Tajaajila Gorsaa"
-
-#~ msgid "Grow your dairy business with expert knowledge"
-#~ msgstr "Beekumsa beeksaatiin daldala aannan keessaa guddisi"
-
-#~ msgid "Dairy Farming Training"
-#~ msgstr "Leenjii Oomisha Aannan"
-
-#~ msgid "Milk production techniques"
-#~ msgstr "Tireeksni oomisha aannan"
-
-#~ msgid "Animal health"
-#~ msgstr "Fayyaa bineensaa"
-
-#~ msgid "Feeding systems"
-#~ msgstr "Sirna nyeechuu"
-
-#~ msgid "Farm management"
-#~ msgstr "Bulchiinsa oomishaa"
-
-#~ msgid "Marketing"
-#~ msgstr "Gabaasa"
-
-#~ msgid "Enroll Now"
-#~ msgstr "Amma Galmeessi"
-
-#~ msgid "Dairy Consultancy"
-#~ msgstr "Tajaajila Gorsa Aannan"
-
-#~ msgid "Farm setup"
-#~ msgstr "Tolcha oomishaa"
-
-#~ msgid "Productivity improvement"
-#~ msgstr "Oomisha fooyyessuu"
-
-#~ msgid "Veterinary support"
-#~ msgstr "Deeggarsa Herrega Bineensaa"
-
-#~ msgid "Feed optimization"
-#~ msgstr "Bu’aa fooyyessuu"
-
-#~ msgid "Business scaling"
-#~ msgstr "Daldala babal’isuu"
-
-#~ msgid "Get Started"
-#~ msgstr "Eegali"
-
-#~ msgid "Dairy Platform Stats"
-#~ msgstr "Ibsa Bu’aa Daldaala Aannan"
-
-#~ msgid "Milk Listings"
-#~ msgstr "Tarree Aannan"
-
-#~ msgid "120"
-#~ msgstr "120"
-
-#~ msgid "Butter Sellers"
-#~ msgstr "Gurgurtoota Dhadhaa"
-
-#~ msgid "Cow Sellers"
-#~ msgstr "Gurgurtoota Sa’aa"
-
-#~ msgid "Trainings"
-#~ msgstr "Leenjiilee"
-
-#~ msgid "Consultants"
-#~ msgstr "Gorsitoota"
-
-#~ msgid "Inventory & Pricing"
-#~ msgstr "Kuusaa fi Gatii"
-
-#~ msgid "Metadata"
-#~ msgstr "Daa’taa Metaa"
-
-#~ msgid "Briefly describe your issue or questions..."
-#~ msgstr "Rakkina ykn gaafi keessaa gabaabatti ibsi..."
-
-#~ msgid "Preferred Date"
-#~ msgstr "Guyyaa Filatamaa"
-
-#~ msgid "Preferred Time"
-#~ msgstr "Yeroo Filatamaa"
-
-#~ msgid "Available Eggs"
-#~ msgstr "Hanshuu Argamu"
-
-#~ msgid "Price per Dozen"
-#~ msgstr "Gatii Dozen"
-
-#~ msgid "Minimum Order (Dozen)"
-#~ msgstr "Ajaja Xiqqaa (Dozen)"
-
-#~ msgid "Any special delivery instructions..."
-#~ msgstr "Qajeelfama ergaa addaa yoo jiraate..."
-
-#~ msgid "Delivery Address"
-#~ msgstr "Teessoo Ergaa"
-
-#~ msgid "Quantity (dozens)"
-#~ msgstr "Baay’ina (dozen)"
-
-#~ msgid "Preferred Delivery Date"
-#~ msgstr "Guyyaa Ergaa Filatamaa"
-
-#~ msgid "Special Instructions"
-#~ msgstr "Qajeelfama Addattaa"
-
-#~ msgid "City"
-#~ msgstr "Magaalaa"
-
-#~ msgid "Min Price"
-#~ msgstr "Gatii Xiqqaa"
-
-#~ msgid "Max Price"
-#~ msgstr "Gatii Ol’aanaa"
-
-#~ msgid "Available Chickens"
-#~ msgstr "Lukkuuwwan Argaman"
-
-#~ msgid "Minimum Price"
-#~ msgstr "Gatii Xiqqaa"
-
-#~ msgid "Maximum Price"
-#~ msgstr "Gatii Ol’aanaa"
-
-#~ msgid "Minimum price cannot be greater than maximum price."
-#~ msgstr "Gatiin xiqqaa gatiya ol’aanaa caaluu hin danda’u."
-
-#~ msgid "Disease Management"
-#~ msgstr "Bulchiinsa Dhukkubaa"
-
-#~ msgid "Nutrition & Feed"
-#~ msgstr "Nyaata fi Bu’aa"
-
-#~ msgid "Biosecurity & Prevention"
-#~ msgstr "Nageenya Jireenyaa fi Dhorkansa"
-
-#~ msgid "Breeding & Genetics"
-#~ msgstr "Horii fi Jeeneetiksii"
-
-#~ msgid "General Practice"
-#~ msgstr "Hojjetaa Gamaa"
-
-#~ msgid "Weekdays"
-#~ msgstr "Guyyaa Hojjii"
-
-#~ msgid "Weekends"
-#~ msgstr "Dhuma Torbaatii"
-
-#~ msgid "All Week"
-#~ msgstr "Torbaatti Hundaa"
-
-#~ msgid "24/7 Emergency"
-#~ msgstr "Yeroo Maraa 24/7"
-
-#~ msgid "Years of experience"
-#~ msgstr "Waggaa muuxannoo"
-
-#~ msgid "Comma-separated list of languages"
-#~ msgstr "Tarree afaanota kommaadhaan addaan baafame"
-
-#~ msgid "Video Call"
-#~ msgstr "Bilbila Vidiyoo"
-
-#~ msgid "Phone Consultation"
-#~ msgstr "Gorsa Bilbilaa"
-
-#~ msgid "Farm Visit"
-#~ msgstr "Daawwannaa Oomisha"
-
-#~ msgid "Feed Analysis"
-#~ msgstr "Xinxalii Bu’aa"
-
-#~ msgid "Farm Assessment"
-#~ msgstr "Madaallii Oomisha"
-
-#~ msgid "e.g., 1 hour, per visit"
-#~ msgstr "F.e., sa’a 1, daawwannaa tokkoon"
-
-#~ msgid "Pending"
-#~ msgstr "Eegamaa"
-
-#~ msgid "Confirmed"
-#~ msgstr "Mirkanaa’e"
-
-#~ msgid "Completed"
-#~ msgstr "Xumurame"
-
-#~ msgid "Cancelled"
-#~ msgstr "Hagdurame"
-
-#~ msgid "Number of eggs currently available"
-#~ msgstr "Baay’ina hanshuu amma argaman"
-
-#~ msgid "Minimum dozen required for order"
-#~ msgstr "Dozen xiqqaa ajajaaf barbaachisu"
-
-#~ msgid "Egg Seller"
-#~ msgstr "Gurgurtaa Hanshuu"
-
-#~ msgid "Egg Sellers"
-#~ msgstr "Gurgurtoota Hanshuu"
-
-#~ msgid "Processing"
-#~ msgstr "Bulaa"
-
-#~ msgid "Shipped"
-#~ msgstr "Eergame"
-
-#~ msgid "Delivered"
-#~ msgstr "Dhiyaate"
-
-#~ msgid "Number of dozens ordered"
-#~ msgstr "Baay’ina dozen ajajaman"
-
-#~ msgid "Active"
-#~ msgstr "Hojjetaa"
-
-#~ msgid "each"
-#~ msgstr "tokkoon tokkoon"
-
-#~ msgid "Chicken Seller"
-#~ msgstr "Gurgurtaa Lukkuu"
-
-#~ msgid "Chicken Sellers"
-#~ msgstr "Gurgurtoota Lukkuu"
-
-#~ msgid "Add New Egg Seller | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr ""
-#~ "Gurgurtaa Hanshuu Haaraa Dabali | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Add New Egg Seller"
-#~ msgstr "Gurgurtaa Hanshuu Haaraa Dabali"
-
-#~ msgid "Farm Information"
-#~ msgstr "Odeeffannoo Oomisha"
-
-#~ msgid "Farm Name"
-#~ msgstr "Maqaa Oomishaa"
-
-#~ msgid "Owner Name"
-#~ msgstr "Maqaa Abbaa"
-
-#~ msgid "Location"
-#~ msgstr "Iddoo"
-
-#~ msgid "Egg Details"
-#~ msgstr "Ibsa Hanshuu"
-
-#~ msgid "Egg Type"
-#~ msgstr "Gosa Hanshuu"
-
-#~ msgid "Certification"
-#~ msgstr "Raggaasa"
-
-#~ msgid "Pricing & Availability"
-#~ msgstr "Gatii fi Argama"
-
-#~ msgid "Quantity Available"
-#~ msgstr "Baay’ina Argamu"
-
-#~ msgid "Price per Dozen ($)"
-#~ msgstr "Gatii Dozen ($)"
-
-#~ msgid "Minimum Order Quantity"
-#~ msgstr "Baay’ina Ajaja Xiqqaa"
-
-#~ msgid "Contact Information"
-#~ msgstr "Odeeffannoo Qunnamaa"
-
-#~ msgid "Website"
-#~ msgstr "Websaayitii"
-
-#~ msgid "Social Media"
-#~ msgstr "Miidiyaa Hawaasaa"
-
-#~ msgid "Facebook"
-#~ msgstr "Facebook"
-
-#~ msgid "Telegram"
-#~ msgstr "Telegram"
-
-#~ msgid "Instagram"
-#~ msgstr "Instagram"
-
-#~ msgid "Back to Sellers"
-#~ msgstr "Gurgurtootti Deebi’i"
-
-#~ msgid "Add Egg Seller"
-#~ msgstr "Gurgurtaa Hanshuu Dabali"
-
-#~ msgid "Chicken Sellers | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Gurgurtoota Lukkuu | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Back"
-#~ msgstr "Deebi’i"
-
-#~ msgid "Search chicken sellers..."
-#~ msgstr "Gurgurtoota lukkuu barbaadi..."
-
-#~ msgid "All Locations"
-#~ msgstr "Iddoowwan Hunda"
-
-#~ msgid "Find"
-#~ msgstr "Barbaadi"
-
-#~ msgid "Register as a Chicken Seller"
-#~ msgstr "Gurgurtaa Lukkuun Galmeessi"
-
-#~ msgid "Available:"
-#~ msgstr "Argaama:"
-
-#~ msgid "Vaccinated"
-#~ msgstr "Talaallii Argame"
-
-#~ msgid "Order Now"
-#~ msgstr "Amma Ajaji"
-
-#~ msgid "No sellers found"
-#~ msgstr "Gurgurtaan hin argamne"
-
-#~ msgid "Try adjusting your search criteria"
-#~ msgstr "Miilkaa barbaachisaa keessaa jijjiiru yaali"
-
-#~ msgid "Are you sure you want to delete"
-#~ msgstr "Balleessuu barbaaduu mirkaneeffatte?"
-
-#~ msgid ""
-#~ " Delete Chicken Seller | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr ""
-#~ " Gurgurtaa Lukkuu Balleessi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Delete Seller Profile"
-#~ msgstr "Buufata Gurgurtaa Balleessi"
-
-#~ msgid "This action cannot be undone."
-#~ msgstr "Gochi kun debi’ee hin danda’u."
-
-#~ msgid "Yes, Delete"
-#~ msgstr "Eeyyee, Balleessi"
-
-#~ msgid " Edit Egg Seller | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr " Gurgurtaa Hanshuu Gulaali | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Edit Egg Seller"
-#~ msgstr "Gurgurtaa Hanshuu Gulaali"
-
-#~ msgid "Back to Sellers List"
-#~ msgstr "Tarree Gurgurtootti Deebi’i"
-
-#~ msgid "Basic Information"
-#~ msgstr "Odeeffannoo Bu’uuraa"
-
-#~ msgid "Location Information"
-#~ msgstr "Odeeffannoo Iddoo"
-
-#~ msgid "Map coordinates available"
-#~ msgstr "Iddoo madaala kaartaa argama"
-
-#~ msgid "Egg Details & Pricing"
-#~ msgstr "Ibsa Hanshuu fi Gatii"
-
-#~ msgid "Social Media Links"
-#~ msgstr "Liinkii Miidiyaa Hawaasaa"
-
-#~ msgid "Business Details"
-#~ msgstr "Ibsa Daldalaa"
-
-#~ msgid "Delete Seller"
-#~ msgstr "Gurgurtaa Balleessi"
-
-#~ msgid "Update Seller"
-#~ msgstr "Gurgurtaa Fooyyessi"
-
-#~ msgid " Edit Chicken Seller | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr " Gurgurtaa Lukkuu Gulaali | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Edit Chicken Seller Profile"
-#~ msgstr "Buufata Gurgurtaa Lukkuu Gulaali"
-
-#~ msgid "Update Profile"
-#~ msgstr "Buufata Fooyyessi"
-
-#~ msgid "Delete Profile"
-#~ msgstr "Buufata Balleessi"
-
-#~ msgid "My Egg Orders | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Ajaja Hanshuu Kiyya | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "My Egg Orders"
-#~ msgstr "Ajaja Hanshuu Kiyya"
-
-#~ msgid "Track all customer orders in one place"
-#~ msgstr "Ajaja maamiltootaa hunda iddoo tokkotti buusi"
-
-#~ msgid "Customer"
-#~ msgstr "Maamila"
-
-#~ msgid "Qty"
-#~ msgstr "Baay'ina"
-
-#~ msgid "Status"
-#~ msgstr "Haala"
-
-#~ msgid "Date"
-#~ msgstr "Guyyaa"
-
-#~ msgid "No orders yet."
-#~ msgstr "Ajajan hin jiru amma."
-
-#~ msgid "Egg Seller Page | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Fuula Gurgurtaa Hanshuu | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Location:"
-#~ msgstr "Iddoo:"
-
-#~ msgid "eggs"
-#~ msgstr "hanhuuwwan"
-
-#~ msgid "Price:"
-#~ msgstr "Gatii:"
-
-#~ msgid "birr"
-#~ msgstr "qarshii"
-
-#~ msgid "Edit"
-#~ msgstr "Gulaali"
-
-#~ msgid "No egg sellers found matching your criteria."
-#~ msgstr "Gurgurtaan hanshuu miilkaa keessan wajjin walsimu hin argamne."
-
-#~ msgid "Confirm Delete"
-#~ msgstr "Balleessuu Mirkaneessi"
-
-#~ msgid "Place Your Order"
-#~ msgstr "Ajaja Keessan Kenni"
-
-#~ msgid "Delivery Address:"
-#~ msgstr "Teessoo Ergaa:"
-
-#~ msgid "Quantity (dozens):"
-#~ msgstr "Baay’ina (dozen):"
-
-#~ msgid "Confirm Order"
-#~ msgstr "Ajaja Mirkaneessi"
-
-#~ msgid " Poultry | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr " Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Premium Poultry Marketplace"
-#~ msgstr "Gabaa Qe’aa Caalmaa"
-
-#~ msgid ""
-#~ "Buy chickens, eggs, and poultry products from trusted Ethiopian farmers."
-#~ msgstr ""
-#~ "Lukkuu, hanshuu, fi oomisha qe’aa qonnaattota Itoophiyaa amanamaa "
-#~ "jiraniitii biti."
-
-#, fuzzy
-#~| msgid ""
-#~| "Connecting you with fresh and organic dairy products across Ethiopia."
-#~ msgid ""
-#~ "We connect you with quality poultry products and services from trusted "
-#~ "farmers across Ethiopia."
-#~ msgstr ""
-#~ "Itoophiyaa keessatti oomisha aannan haaraa fi orgaanikii siif fiduudha."
-
-#, fuzzy
-#~| msgid "Poultry Farm Training"
-#~ msgid "Poultry Farming Training"
-#~ msgstr "Leenjii Oomisha Qe’aa"
-
-#, fuzzy
-#~| msgid "Milk production techniques"
-#~ msgid "Modern farming techniques"
-#~ msgstr "Tireeksni oomisha aannan"
-
-#, fuzzy
-#~| msgid "General Practice"
-#~ msgid "Best practices"
-#~ msgstr "Hojjetaa Gamaa"
-
-#, fuzzy
-#~| msgid "Years of experience"
-#~ msgid "Hands-on experience"
-#~ msgstr "Waggaa muuxannoo"
-
-#, fuzzy
-#~| msgid "Disease Management"
-#~ msgid "Disease control"
-#~ msgstr "Bulchiinsa Dhukkubaa"
-
-#, fuzzy
-#~| msgid "Poultry Farm Consultancy"
-#~ msgid "Poultry Farming Consultancy"
-#~ msgstr "Tajaajila Gorsa Oomisha Qe’aa"
-
-#, fuzzy
-#~| msgid "Experience:"
-#~ msgid "Expert guidance"
-#~ msgstr "Muuxannoo:"
-
-#, fuzzy
-#~| msgid "Feed optimization"
-#~ msgid "Optimization"
-#~ msgstr "Bu’aa fooyyessuu"
-
-#, fuzzy
-#~| msgid "Productivity improvement"
-#~ msgid "Productivity"
-#~ msgstr "Oomisha fooyyessuu"
-
-#, fuzzy
-#~| msgid "Poultry Items"
-#~ msgid "Our Poultry Status"
-#~ msgstr "Meeshaalee Qe’aa"
-
-#, fuzzy
-#~| msgid "items"
-#~ msgid "Items"
-#~ msgstr "meeshalee"
-
-#, fuzzy
-#~| msgid "Dairy Products"
-#~ msgid "Quality Products"
-#~ msgstr "Oomisha Aannan"
-
-#, fuzzy
-#~| msgid "Butter Sellers"
-#~ msgid "Active Sellers"
-#~ msgstr "Gurgurtoota Dhadhaa"
-
-#, fuzzy
-#~| msgid "Trainings"
-#~ msgid "Training Programs"
-#~ msgstr "Leenjiilee"
-
-#, fuzzy
-#~| msgid "Our Expert Consultants"
-#~ msgid "Expert Consultants"
-#~ msgstr "Gorsitoota Beektoota Keenya"
-
-#~ msgid "Create Poultry Item | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Meeshaa Qe’aa Uumi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Create New Item"
-#~ msgstr "Meeshaa Haaraa Uumi"
-
-#~ msgid "Add your poultry product with images and details"
-#~ msgstr "Oomisha qe’aa keessaa fakkii fi ibsa waliin dabali"
-
-#~ msgid "Main Image"
-#~ msgstr "Fakkii Guddicha"
-
-#~ msgid "Click or drag image"
-#~ msgstr "Fakkii cuqaasi ykn harkisi"
-
-#~ msgid "More Images"
-#~ msgstr "Fakkiiwwan Dabaluu"
-
-#~ msgid "Upload additional images"
-#~ msgstr "Fakkiiwwan dabaluu fe’i"
-
-#~ msgid "You can select multiple files"
-#~ msgstr "Waraqaawwan hedduu filachuu dandeessa"
-
-#~ msgid "Publish Item"
-#~ msgstr "Meeshaa Maxxansi"
-
-#~ msgid "Poultry Item Details | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Ibsa Meeshaa Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Back to Listings"
-#~ msgstr "Tarreewwanitti Deebi’i"
-
-#~ msgid "Poultry Items List | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Tarree Meeshalee Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Sell Item"
-#~ msgstr "Meeshaa Gurguri"
-
-#~ msgid "items"
-#~ msgstr "meeshalee"
-
-#~ msgid "No items yet"
-#~ msgstr "Meeshaan hin jiru amma"
-
-#~ msgid "Be the first to sell something!"
-#~ msgstr "Waan tokko gurguruuf kan jalqabaa ta’i!"
-
-#~ msgid ""
-#~ "Poultry Training Trainees | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Leenjiif Barnoota Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#, fuzzy
-#~| msgid "No messages received yet."
-#~ msgid "No trainees enrolled yet."
-#~ msgstr "Ergaan hin argamne amma."
-
-#~ msgid ""
-#~ "Poultry Training Programs | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr "Tajaajilli Leenjii Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#, fuzzy
-#~| msgid "Poultry Farm Training"
-#~ msgid "Poultry Training Programs"
-#~ msgstr "Leenjii Oomisha Qe’aa"
-
-#, fuzzy
-#~| msgid "Trainings"
-#~ msgid "Our Training Programs"
-#~ msgstr "Leenjiilee"
-
-#, fuzzy
-#~| msgid "Farmer Training"
-#~ msgid "Layer Chickens Training"
-#~ msgstr "Leenjii Qonnaattaa"
-
-#, fuzzy
-#~| msgid "Dual purpose chickens"
-#~ msgid "Dual Purpose Chickens Training"
-#~ msgstr "Lukkuuwwan oomisha lamaaf"
-
-#, fuzzy
-#~| msgid "Farm Information"
-#~ msgid "Payment Information"
-#~ msgstr "Odeeffannoo Oomisha"
-
-#, fuzzy
-#~| msgid "Your Name:"
-#~ msgid "Account Name:"
-#~ msgstr "Maqaa Keessan:"
-
-#, fuzzy
-#~| msgid "Phone Number:"
-#~ msgid "Account Number:"
-#~ msgstr "Lakkoobsa Bilbilaa:"
-
-#, fuzzy
-#~| msgid "Farm Information"
-#~ msgid "Telebirr Information"
-#~ msgstr "Odeeffannoo Oomisha"
-
-#~ msgid "Phone Number:"
-#~ msgstr "Lakkoobsa Bilbilaa:"
-
-#~ msgid ""
-#~ "Register as a Chicken Seller | Ethiopian Poultry And Dairy Farm Market "
-#~ "place"
-#~ msgstr ""
-#~ "Gurgurtaa Lukkuun Galmeessi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Register as Seller"
-#~ msgstr "Gurgurtaadhaan Galmeessi"
-
-#~ msgid ""
-#~ "Veterinary Consultancy | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr ""
-#~ "Tajaajila Gorsa Herrega Bineensaa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Our Expert Consultants"
-#~ msgstr "Gorsitoota Beektoota Keenya"
-
-#~ msgid "Experience:"
-#~ msgstr "Muuxannoo:"
-
-#~ msgid "years"
-#~ msgstr "waggaa"
-
-#~ msgid "Specialty:"
-#~ msgstr "Dandeettii Addattaa:"
-
-#~ msgid "Languages:"
-#~ msgstr "Afaanota:"
-
-#~ msgid "Rating:"
-#~ msgstr "Sadarkaa:"
-
-#~ msgid "Consultation Options"
-#~ msgstr "Filannoo Gorsaa"
-
-#~ msgid "Request"
-#~ msgstr "Gaafadhu"
-
-#~ msgid "Book Now"
-#~ msgstr "Amma Bukeessi"
-
-#~ msgid "Availability"
-#~ msgstr "Argaama"
-
-#~ msgid "Weekdays: Available"
-#~ msgstr "Guyyaa Hojjii: Argaama"
-
-#~ msgid "Weekends: Available"
-#~ msgstr "Dhuma Torbaatii: Argaama"
-
-#~ msgid "Mon-Fri: 9AM-6PM"
-#~ msgstr "Wix- Gam: 9AK-6GK"
-
-#~ msgid "Sat: 10AM-4PM"
-#~ msgstr "San: 10AK-4GK"
-
-#~ msgid "Emergency: 24/7"
-#~ msgstr "Yeroo Maraa: 24/7"
-
-#~ msgid "No consultants available at the moment. Please check back later."
-#~ msgstr "Gorsaan amma hin jiru. Maaloo booda deebi’ite ilaali."
-
-#~ msgid "Book Consultation"
-#~ msgstr "Gorsa Bukeessi"
-
-#~ msgid "Consultant:"
-#~ msgstr "Gorsaa:"
-
-#~ msgid "Service Type:"
-#~ msgstr "Gosa Tajaajilaa:"
-
-#~ msgid "Your Name:"
-#~ msgstr "Maqaa Keessan:"
-
-#~ msgid "Email:"
-#~ msgstr "Iimeeli:"
-
-#~ msgid "Phone:"
-#~ msgstr "Bilbila:"
-
-#~ msgid "Preferred Date:"
-#~ msgstr "Guyyaa Filatamaa:"
-
-#~ msgid "Preferred Time:"
-#~ msgstr "Yeroo Filatamaa:"
-
-#~ msgid "Request Consultation"
-#~ msgstr "Gorsa Gaafadhu"
-
-#~ msgid "Liked successfully"
-#~ msgstr "Milkaa’iidhaan jaallatame"
-
-#~ msgid "Like removed"
-#~ msgstr "Jaallannaan ni balleeffame"
-
-#~ msgid "Share count updated successfully"
-#~ msgstr "Baay’ina qooddamaa milkaa’iidhaan fooyya’e"
-
-#~ msgid " Welcome User| Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr " Fayyadamaa Simmatamaa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Welcome,"
-#~ msgstr "Simmatamte,"
-
-#~ msgid " Login| Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr " Galmaa’i | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Username:"
-#~ msgstr "Maqaa Fayyadamaa:"
-
-#~ msgid "Don't have an account?"
-#~ msgstr "Akkaawuntii hin qabduu?"
-
-#~ msgid "Register here"
-#~ msgstr "As galmeessi"
-
-#~ msgid " Logout| Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr " Bahi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "You have been logged out"
-#~ msgstr "Baha’eera"
-
-#~ msgid "Return to base page"
-#~ msgstr "Fuula bu’uuraatti deebi’i"
-
-#~ msgid " My Profile | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr " Buufata Kiyya | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Profile Picture"
-#~ msgstr "Fakkii Buufataa"
-
-#~ msgid "Bio:"
-#~ msgstr "Ibsa:"
-
-#~ msgid " Update Profile | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr " Buufata Fooyyessi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Please correct the errors below."
-#~ msgstr "Maaloo dogoggora armaan gadii sirreessi."
-
-#~ msgid "Contact support to change phone number"
-#~ msgstr "Lakkoobsa bilbilaa jijjiiruuf deeggarsa quunnami"
-
-#~ msgid "Change"
-#~ msgstr "Jijjiiri"
-
-#~ msgid "Upload Photo"
-#~ msgstr "Fakkii Fe’i"
-
-#~ msgid "Save Changes"
-#~ msgstr "Jijjiirama Kunuusi"
-
-#~ msgid " Register | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr " Galmeessi | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Create Your Account"
-#~ msgstr "Akkaawuntii Keessan Uumaa"
-
-#~ msgid "Already have an account?"
-#~ msgstr "Akkaawuntii yoo qabaattan?"
-
-#~ msgid "Login here"
-#~ msgstr "As galmaa’i"
-
-#~ msgid "Seller Profile"
-#~ msgstr "Buufata Gurgurtaa"
-
-#~ msgid "profile picture"
-#~ msgstr "fakkii buufataa"
-
-#~ msgid " User List | Ethiopian Poultry And Dairy Farm Market place"
-#~ msgstr " Tarree Fayyadamtootaa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
-
-#~ msgid "Users"
-#~ msgstr "Fayyadamtoota"
-
-#~ msgid "No users found."
-#~ msgstr "Fayyadamtoonni hin argaman."
+#: .\users\templates\users\users.html:35
+msgid "No users found."
+msgstr "Fayyadamtoonni hin argaman."
