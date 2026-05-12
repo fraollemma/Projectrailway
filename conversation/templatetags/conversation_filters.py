@@ -28,7 +28,7 @@ def unread_messages_count(user):
             conversation__members=user,
             is_read=False
         ).exclude(created_by=user).count()
-        cache.set(cache_key, count, timeout=300)  # Cache for 5 minutes
+        cache.set(cache_key, count, timeout=300) 
     
     return count
 
@@ -44,12 +44,12 @@ def get_item_image_url(item):
     print(f"DEBUG: Getting image for {item.__class__.__name__}")
     
     try:
-        # poultryfarm: Item model has main_image field
+        # PoultryItems: Item model has main_image field
         if hasattr(item, 'main_image') and item.main_image:
             print("DEBUG: Using main_image field")
             return item.main_image.url
         
-        # dairyfarm: Specific handling for Vehicle model
+        # VEHICLES: Specific handling for Vehicle model
         elif item.__class__.__name__ == 'Vehicle':
             print("DEBUG: Processing Vehicle item")
             if hasattr(item, 'images'):
