@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 01:30+0300\n"
+"POT-Creation-Date: 2026-05-12 12:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,122 +17,203 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\users\templates\users\dashboard.html:11
+#: .\users\templates\users\dashboard.html:6
+msgid " Welcome User| Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\users\templates\users\dashboard.html:15
 msgid "Welcome,"
 msgstr "እንኳን ደህና መጡ፣"
 
-#: .\users\templates\users\login.html:11 .\users\templates\users\login.html:28
+#: .\users\templates\users\login.html:6
+msgid " Login| Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\users\templates\users\login.html:15 .\users\templates\users\login.html:32
 msgid "Login"
 msgstr "ግባ"
 
-#: .\users\templates\users\login.html:19
-#: .\users\templates\users\profile.html:20
-#: .\users\templates\users\register.html:17
+#: .\users\templates\users\login.html:23
+#: .\users\templates\users\profile.html:38
+#: .\users\templates\users\register.html:21
+#: .\users\templates\users\seller_profile.html:31
 msgid "Username:"
 msgstr "የተጠቃሚ ስም፡"
 
-#: .\users\templates\users\login.html:24
-#: .\users\templates\users\profile.html:21
-#: .\users\templates\users\profile_update.html:24
-#: .\users\templates\users\register.html:23
+#: .\users\templates\users\login.html:28
+#: .\users\templates\users\profile.html:39
+#: .\users\templates\users\register.html:27
+#: .\users\templates\users\seller_profile.html:32
 msgid "Phone Number:"
 msgstr "ስልክ ቁጥር፡"
 
-#: .\users\templates\users\login.html:32
+#: .\users\templates\users\login.html:36
 #, fuzzy
 #| msgid "Already have an account?"
 msgid "Don't have an account?"
 msgstr "አስቀድሞ መለያ አለዎት?"
 
-#: .\users\templates\users\login.html:32
+#: .\users\templates\users\login.html:36
 #, fuzzy
 #| msgid "Register"
 msgid "Register here"
 msgstr "ይመዝገቡ"
 
-#: .\users\templates\users\logout.html:10
+#: .\users\templates\users\logout.html:6
+msgid " Logout| Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\users\templates\users\logout.html:14
 msgid "You have been logged out"
 msgstr "ከመለያዎ ወጥተዋል"
 
-#: .\users\templates\users\logout.html:11
+#: .\users\templates\users\logout.html:15
 msgid "Return to base page"
 msgstr "ወደ መነሻ ገፅ ተመለስ"
 
-#: .\users\templates\users\profile.html:12
+#: .\users\templates\users\profile.html:6
+msgid "My Profile | Ethiopian Sheger Marketplace"
+msgstr ""
+
+#: .\users\templates\users\profile.html:16
 msgid "My Profile"
 msgstr ""
 
-#: .\users\templates\users\profile.html:15
+#: .\users\templates\users\profile.html:23
+#: .\users\templates\users\profile.html:27
+#: .\users\templates\users\users.html:21
 msgid "Profile Picture"
 msgstr ""
 
-#: .\users\templates\users\profile.html:22
+#: .\users\templates\users\profile.html:41
+msgid "Farm Name:"
+msgstr ""
+
+#: .\users\templates\users\profile.html:42
+msgid "City:"
+msgstr ""
+
+#: .\users\templates\users\profile.html:44
+msgid "Website:"
+msgstr ""
+
+#: .\users\templates\users\profile.html:54
+#: .\users\templates\users\seller_profile.html:33
 msgid "Location:"
 msgstr ""
 
-#: .\users\templates\users\profile.html:23
+#: .\users\templates\users\profile.html:55
+#: .\users\templates\users\seller_profile.html:34
 msgid "Bio:"
 msgstr ""
 
-#: .\users\templates\users\profile.html:27
-#, fuzzy
-#| msgid "Update Your Profile"
-msgid "Edit Profile"
-msgstr "መገለጫዎን አዘምን"
+#: .\users\templates\users\profile.html:66
+msgid "Social Media"
+msgstr ""
 
-#: .\users\templates\users\profile_update.html:11
+#: .\users\templates\users\profile_update.html:6
+msgid "Update Profile | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\users\templates\users\profile_update.html:16
 #, fuzzy
 #| msgid "Update Your Profile"
 msgid "Update Profile"
 msgstr "መገለጫዎን አዘምን"
 
-#: .\users\templates\users\profile_update.html:15
+#: .\users\templates\users\profile_update.html:20
 msgid "Please correct the errors below."
 msgstr "ከታች ያሉትን ስህተቶች እባክዎን ያስተካክሉ።"
 
-#: .\users\templates\users\profile_update.html:26
+#: .\users\templates\users\profile_update.html:30
+#, fuzzy
+#| msgid "Phone Number:"
+msgid "Phone Number"
+msgstr "ስልክ ቁጥር፡"
+
+#: .\users\templates\users\profile_update.html:32
 #, fuzzy
 #| msgid "Contact support to change your phone number"
 msgid "Contact support to change phone number"
 msgstr "ስልክ ቁጥርዎን ለመቀየር ደጋፊ አግኙ"
 
-#: .\users\templates\users\profile_update.html:35
-#, fuzzy
-#| msgid "Save Changes"
-msgid "Change"
-msgstr "ለውጦቹን አስቀምጥ"
-
-#: .\users\templates\users\profile_update.html:45
-msgid "Upload Photo"
+#: .\users\templates\users\profile_update.html:43
+msgid "Profile Photo"
 msgstr ""
 
-#: .\users\templates\users\profile_update.html:72
+#: .\users\templates\users\profile_update.html:52
+#, fuzzy
+#| msgid "Save Changes"
+msgid "Change Photo"
+msgstr "ለውጦቹን አስቀምጥ"
+
+#: .\users\templates\users\profile_update.html:133
 msgid "Save Changes"
 msgstr "ለውጦቹን አስቀምጥ"
 
-#: .\users\templates\users\register.html:11
+#: .\users\templates\users\register.html:6
+msgid " Register | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\users\templates\users\register.html:15
 msgid "Create Your Account"
 msgstr "መለያዎን ይፍጠሩ"
 
-#: .\users\templates\users\register.html:29
+#: .\users\templates\users\register.html:33
 msgid "Register"
 msgstr "ይመዝገቡ"
 
-#: .\users\templates\users\register.html:33
+#: .\users\templates\users\register.html:37
 msgid "Already have an account?"
 msgstr "አስቀድሞ መለያ አለዎት?"
 
-#: .\users\templates\users\register.html:33
+#: .\users\templates\users\register.html:37
 msgid "Login here"
 msgstr "እዚህ ይግቡ"
 
-#: .\users\templates\users\users.html:11
+#: .\users\templates\users\seller_profile.html:6
+#: .\users\templates\users\seller_profile.html:15
+#, fuzzy
+#| msgid "Update Your Profile"
+msgid "Seller Profile"
+msgstr "መገለጫዎን አዘምን"
+
+#: .\users\templates\users\seller_profile.html:20
+msgid "profile picture"
+msgstr ""
+
+#: .\users\templates\users\users.html:6
+msgid " User List | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\users\templates\users\users.html:15
 msgid "Users"
 msgstr ""
 
-#: .\users\templates\users\users.html:31
+#: .\users\templates\users\users.html:37
+msgid "Ban User"
+msgstr ""
+
+#: .\users\templates\users\users.html:41
+msgid "Delete User"
+msgstr ""
+
+#: .\users\templates\users\users.html:45
+msgid "Remove Admin"
+msgstr ""
+
+#: .\users\templates\users\users.html:50
+msgid "Promote to Superuser"
+msgstr ""
+
+#: .\users\templates\users\users.html:62
 msgid "No users found."
 msgstr ""
+
+#, fuzzy
+#~| msgid "Update Your Profile"
+#~ msgid "Edit Profile"
+#~ msgstr "መገለጫዎን አዘምን"
 
 #~ msgid "Registered Phone Number:"
 #~ msgstr "የተመዘገበ ስልክ ቁጥር፡"

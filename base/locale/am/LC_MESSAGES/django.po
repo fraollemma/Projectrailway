@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sheger Marketplace 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 01:34+0300\n"
+"POT-Creation-Date: 2026-05-12 12:19+0300\n"
 "PO-Revision-Date: 2025-08-11 01:34+0300\n"
 "Last-Translator: Na <fraollemma0506@gmail.com>\n"
 "Language-Team: Amharic <am@sheger.xyz>\n"
@@ -17,54 +17,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\base\templates\base\about_us.html:12 .\base\templates\base\base.html:245
+#: .\base\templates\base\about_us.html:6
+#, fuzzy
+#| msgid "Sheger.xyz | Ethiopian Market place"
+msgid "About Us | Ethiopian Sheger Market place"
+msgstr "Sheger.xyz | የኢትዮጵያ ገበያ"
+
+#: .\base\templates\base\about_us.html:16 .\base\templates\base\base.html:431
+#: .\base\templates\base\base.html:497
 msgid "About Us"
 msgstr "ስለ እኛ"
 
-#: .\base\templates\base\about_us.html:13 .\base\templates\base\terms.html:13
+#: .\base\templates\base\about_us.html:17 .\base\templates\base\terms.html:17
 msgid ""
 "We are a company dedicated to providing the best services to our customers."
 msgstr "እኛ ለደንበኞቻችን ከፍተኛ አገልግሎት ለመስጠት የተሰማርን ኩባንያ ነን።"
 
-#: .\base\templates\base\about_us.html:16
+#: .\base\templates\base\about_us.html:19
 msgid ""
 "Our mission is to connect buyers and sellers in a seamless online "
 "marketplace."
 msgstr "ተገዢዎችን እና ሻጮችን በሚመች የመስመር ላይ ገበያ ውስጥ ማገናኘት የእኛ ተልዕኮ ነው።"
 
-#: .\base\templates\base\about_us.html:17
+#: .\base\templates\base\about_us.html:20
 msgid ""
 "We strive to offer a wide range of products at competitive prices, backed by "
 "excellent customer service."
 msgstr "በተወዳዳሪ ዋጋዎች እና በተሻለ የደንበኛ አገልግሎት የተደገፈ ሰፊ የምርት �ርቃቃ እናቀርባለን።"
 
-#: .\base\templates\base\admin_links.html:12
-msgid "Admin Links"
-msgstr "የአስተዳዳሪ አገናኞች"
-
-#: .\base\templates\base\admin_links.html:15
-msgid "View Messages"
-msgstr "መልዕክቶችን ይመልከቱ"
-
-#: .\base\templates\base\admin_links.html:16
-msgid "View Contact Us Messages"
-msgstr "ያግኙን መልዕክቶችን ይመልከቱ"
-
-#: .\base\templates\base\admin_links.html:29
-msgid "You are not logged in."
-msgstr "አልገቡም።"
-
-#: .\base\templates\base\admin_links.html:31
-msgid "Login"
-msgstr "ግባ"
-
-#: .\base\templates\base\base.html:9
+#: .\base\templates\base\base.html:8
 msgid "Ethiopian marketplace - Buy and sell products in Ethiopia"
 msgstr "የኢትዮጵያ ገበያ - በኢትዮጵያ ውስጥ ምርቶችን ይግዙ እና ይሽጡ"
 
-#: .\base\templates\base\base.html:10
-msgid "Sheger.xyz | Ethiopian Market place"
-msgstr "Sheger.xyz | የኢትዮጵያ ገበያ"
+#: .\base\templates\base\base.html:9
+#, fuzzy
+#| msgid "Ethiopian marketplace - Buy and sell products in Ethiopia"
+msgid "Ethiopia, marketplace, buy, sell, products, Sheger"
+msgstr "የኢትዮጵያ ገበያ - በኢትዮጵያ ውስጥ ምርቶችን ይግዙ እና ይሽጡ"
 
 #: .\base\templates\base\base.html:26
 msgid "Please select your language"
@@ -74,309 +63,531 @@ msgstr "እባክዎ ቋንቋዎን ይምረጡ"
 msgid "Skip"
 msgstr "ዝለል"
 
-#: .\base\templates\base\base.html:55
-msgid "All Items"
-msgstr "ሁሉም እቃዎች"
+#: .\base\templates\base\base.html:123
+msgid "Notifications"
+msgstr ""
 
-#: .\base\templates\base\base.html:57
-msgid "Contact Us"
-msgstr "ያግኙን"
+#: .\base\templates\base\base.html:129 .\base\templates\base\base.html:326
+#: .\base\templates\base\base.html:367
+#, fuzzy
+#| msgid " Message"
+msgid "Messages"
+msgstr "መልዕክት"
 
-#: .\base\templates\base\base.html:70
-msgid "Sheger"
-msgstr "ሸገር"
+#: .\base\templates\base\base.html:136
+msgid "Egg Orders"
+msgstr ""
 
-#: .\base\templates\base\base.html:70
-msgid "city"
-msgstr "ከተማ"
+#: .\base\templates\base\base.html:143
+#, fuzzy
+#| msgid " Cart"
+msgid "Carted"
+msgstr "ጋሪ"
 
-#: .\base\templates\base\base.html:76
-msgid "Search products"
+#: .\base\templates\base\base.html:151
+msgid "Total"
+msgstr ""
+
+#: .\base\templates\base\base.html:186
+#, fuzzy
+#| msgid "Categories"
+msgid "Browse Categories"
+msgstr "ምድቦች"
+
+#: .\base\templates\base\base.html:197
+msgid "Dairy Section"
+msgstr ""
+
+#: .\base\templates\base\base.html:204
+#, fuzzy
+#| msgid "Search products"
+msgid "All Dairy products"
 msgstr "ምርቶችን ፈልግ"
 
-#: .\base\templates\base\base.html:83
-msgid "All Categories"
-msgstr "ሁሉም ምድቦች"
+#: .\base\templates\base\base.html:210
+#, fuzzy
+#| msgid "Featured Products"
+msgid "Add Dairy Products"
+msgstr "የተለዩ ምርቶች"
 
-#: .\base\templates\base\base.html:84 .\base\templates\base\base.html:254
-#: .\base\templates\base\index.html:76 .\base\templates\base\index.html:125
-msgid "Cars"
-msgstr "መኪናዎች"
+#: .\base\templates\base\base.html:218 .\base\templates\base\base.html:226
+#, fuzzy
+#| msgid " Poultry Items"
+msgid "Poultry Section"
+msgstr "የዶሮ እርባታ ዕቃዎች"
 
-#: .\base\templates\base\base.html:85 .\base\templates\base\base.html:255
-#: .\base\templates\base\index.html:83 .\base\templates\base\index.html:126
-msgid "Houses"
-msgstr "ቤቶች"
+#: .\base\templates\base\base.html:233
+#, fuzzy
+#| msgid " Poultry Items"
+msgid "Poultry Items"
+msgstr "የዶሮ እርባታ ዕቃዎች"
 
-#: .\base\templates\base\base.html:86 .\base\templates\base\base.html:256
-#: .\base\templates\base\index.html:49 .\base\templates\base\index.html:90
-#: .\base\templates\base\index.html:127
-msgid "Electronics"
-msgstr "ኤሌክትሮኒክስ"
+#: .\base\templates\base\base.html:240
+#, fuzzy
+#| msgid " Poultry"
+msgid "Poultry Eggs"
+msgstr "ዶሮ እርባታ"
 
-#: .\base\templates\base\base.html:87 .\base\templates\base\base.html:257
-#: .\base\templates\base\index.html:97 .\base\templates\base\index.html:128
-msgid "Clothing"
-msgstr "ልብሶች"
+#: .\base\templates\base\base.html:246
+#, fuzzy
+#| msgid " Poultry Items"
+msgid "Poultry Chickens"
+msgstr "የዶሮ እርባታ ዕቃዎች"
 
-#: .\base\templates\base\base.html:88 .\base\templates\base\base.html:258
-#: .\base\templates\base\index.html:111
-msgid "Kids Toys"
-msgstr "የልጆች መጫወቻዎች"
+#: .\base\templates\base\base.html:252
+msgid "Poultry Farm Training"
+msgstr ""
 
-#: .\base\templates\base\base.html:114
+#: .\base\templates\base\base.html:258
+msgid "Poultry Farm Consultancy"
+msgstr ""
+
+#: .\base\templates\base\base.html:266
+msgid "User"
+msgstr ""
+
+#: .\base\templates\base\base.html:273
+msgid "Login"
+msgstr "ግባ"
+
+#: .\base\templates\base\base.html:279
 msgid "Register"
 msgstr "ይመዝገቡ"
 
-#: .\base\templates\base\base.html:130
-msgid " Cars for Sale"
-msgstr "ለመሸጥ የቀረቡ መኪናዎች"
+#: .\base\templates\base\base.html:286
+msgid "My Profile"
+msgstr ""
 
-#: .\base\templates\base\base.html:135
-msgid " Houses for Sale"
-msgstr "ለመሸጥ የቀረቡ ቤቶች"
+#: .\base\templates\base\base.html:293
+msgid "Edit Profile"
+msgstr ""
 
-#: .\base\templates\base\base.html:140 .\base\templates\base\base.html:200
-msgid " Electronics"
-msgstr "ኤሌክትሮኒክስ"
+#: .\base\templates\base\base.html:299
+msgid "logout"
+msgstr ""
 
-#: .\base\templates\base\base.html:145 .\base\templates\base\base.html:205
-msgid " Clothing"
-msgstr "ልብሶች"
-
-#: .\base\templates\base\base.html:150
-msgid " Poultry Items"
-msgstr "የዶሮ እርባታ ዕቃዎች"
-
-#: .\base\templates\base\base.html:155
-msgid " Message"
-msgstr "መልዕክት"
-
-#: .\base\templates\base\base.html:160
-msgid " About us"
-msgstr "ስለ እኛ"
-
-#: .\base\templates\base\base.html:165
-msgid " Admin Links"
-msgstr "የአስተዳዳሪ አገናኞች"
-
-#: .\base\templates\base\base.html:170
-msgid " User list"
+#: .\base\templates\base\base.html:308
+#, fuzzy
+#| msgid " User list"
+msgid "User store"
 msgstr "የተጠቃሚዎች ዝርዝር"
 
-#: .\base\templates\base\base.html:175
-msgid " Cart"
+#: .\base\templates\base\base.html:317
+msgid "My Orders"
+msgstr ""
+
+#: .\base\templates\base\base.html:340
+#, fuzzy
+#| msgid " Cart"
+msgid "Cart"
 msgstr "ጋሪ"
 
-#: .\base\templates\base\base.html:186
-msgid " Home"
-msgstr "መነሻ"
+#: .\base\templates\base\base.html:354
+msgid "For Admin"
+msgstr ""
 
-#: .\base\templates\base\base.html:190
-msgid " Cars"
-msgstr "መኪናዎች"
+#: .\base\templates\base\base.html:361
+msgid "Admin Links"
+msgstr "የአስተዳዳሪ አገናኞች"
 
-#: .\base\templates\base\base.html:195
-msgid " Houses"
-msgstr "ቤቶች"
+#: .\base\templates\base\base.html:373
+#, fuzzy
+#| msgid " User list"
+msgid "User List"
+msgstr "የተጠቃሚዎች ዝርዝር"
 
-#: .\base\templates\base\base.html:210
+#: .\base\templates\base\base.html:383
+msgid "Language"
+msgstr ""
+
+#: .\base\templates\base\base.html:425 .\base\templates\base\base.html:498
+msgid "Contact Us"
+msgstr "ያግኙን"
+
+#: .\base\templates\base\base.html:444
+msgid " Dairy"
+msgstr ""
+
+#: .\base\templates\base\base.html:449
 msgid " Poultry"
 msgstr "ዶሮ እርባታ"
 
-#: .\base\templates\base\base.html:229
-msgid "Market"
-msgstr "ገበያ"
+#: .\base\templates\base\base.html:475
+msgid "Ethio"
+msgstr ""
 
-#: .\base\templates\base\base.html:229
-msgid "Hub"
-msgstr "ማዕከል"
+#: .\base\templates\base\base.html:475
+msgid "Agriculture"
+msgstr ""
 
-#: .\base\templates\base\base.html:232
+#: .\base\templates\base\base.html:478
+#, fuzzy
+#| msgid ""
+#| "Sheger.xyz is your one-stop online marketplace for cars, houses, "
+#| "electronics, clothing and kids toys. We connect buyers and sellers across "
+#| "the globe."
 msgid ""
-"Sheger.xyz is your one-stop online marketplace for cars, houses, "
-"electronics, clothing and kids toys. We connect buyers and sellers across "
-"the globe."
-msgstr "Sheger.xyz ለመኪናዎች፣ ቤቶች፣ ኤሌክትሮኒክስ፣ ልብሶች እና የልጆች መጫወቻዎች የሚያገለግል የመስመር ላይ ገበያ ነው። እኛ ተገዢዎችን እና ሻጮችን በመላው አለም እናገናኘዋለን።"
+"Ethio-Agriculture is your one-stop online marketplace for Dairy products and "
+"Poultry Item. We connect buyers and sellers across the globe."
+msgstr ""
+"Sheger.xyz ለመኪናዎች፣ ቤቶች፣ ኤሌክትሮኒክስ፣ ልብሶች እና የልጆች መጫወቻዎች የሚያገለግል የመስመር ላይ ገበያ "
+"ነው። እኛ ተገዢዎችን እና ሻጮችን በመላው አለም እናገናኘዋለን።"
 
-#: .\base\templates\base\base.html:242
-msgid "Quick Links"
-msgstr "ፈጣን አገናኞች"
-
-#: .\base\templates\base\base.html:244
-msgid "Home"
-msgstr "መነሻ"
-
-#: .\base\templates\base\base.html:246
-msgid "Products"
-msgstr "ምርቶች"
-
-#: .\base\templates\base\base.html:247
-msgid "Blog"
-msgstr "ብሎግ"
-
-#: .\base\templates\base\base.html:252
+#: .\base\templates\base\base.html:488
 msgid "Categories"
 msgstr "ምድቦች"
 
-#: .\base\templates\base\base.html:262 .\base\templates\base\base.html:267
-msgid "Customer Service"
-msgstr "የደንበኛ አገልግሎት"
+#: .\base\templates\base\base.html:490
+#, fuzzy
+#| msgid " Poultry Items"
+msgid "Poultry Item"
+msgstr "የዶሮ እርባታ ዕቃዎች"
 
-#: .\base\templates\base\base.html:264
-msgid "My Account"
-msgstr "መለያዬ"
+#: .\base\templates\base\base.html:494
+msgid "Quick Links"
+msgstr "ፈጣን አገናኞች"
 
-#: .\base\templates\base\base.html:265
-msgid "Order Tracking"
-msgstr "የትእዛዝ መከታተያ"
+#: .\base\templates\base\base.html:496
+msgid "Home"
+msgstr "መነሻ"
 
-#: .\base\templates\base\base.html:266
-msgid "Wishlist"
-msgstr "የምኞት ዝርዝር"
-
-#: .\base\templates\base\base.html:268
-msgid "Returns & Exchanges"
-msgstr "መመለሻዎች እና ልውውጦች"
-
-#: .\base\templates\base\base.html:269
-msgid "FAQs"
-msgstr "ተደጋጋሚ ጥያቄዎች"
-
-#: .\base\templates\base\base.html:273
+#: .\base\templates\base\base.html:502
 msgid "Contact Info"
 msgstr "የእውቂያ መረጃ"
 
-#: .\base\templates\base\base.html:275
+#: .\base\templates\base\base.html:504
 msgid "Ethiopia / Sheger City , Gelan"
 msgstr "ኢትዮጵያ / ሸገር ከተማ, ገላን"
 
-#: .\base\templates\base\base.html:284
-msgid "Sheger.xyz All Rights Reserved."
+#: .\base\templates\base\base.html:513
+#, fuzzy
+#| msgid "Sheger.xyz All Rights Reserved."
+msgid "Ethio-Agriculture All Rights Reserved."
 msgstr "Sheger.xyz ሁሉም መብቶች የተጠበቁ ናቸው።"
 
-#: .\base\templates\base\index.html:18
-msgid "Find Your Dream Home Today"
-msgstr "የህልምዎን ቤት ዛሬ ያግኙ"
-
-#: .\base\templates\base\index.html:19
-msgid "Thousands of properties waiting for you"
-msgstr "ሺህ የሚቆጠሩ ንብረቶች እርስዎን ይጠብቃሉ"
+#: .\base\templates\base\index.html:6
+#, fuzzy
+#| msgid "Sheger.xyz | Ethiopian Market place"
+msgid "Ethio Agriculture | Ethiopian Sheger Market place"
+msgstr "Sheger.xyz | የኢትዮጵያ ገበያ"
 
 #: .\base\templates\base\index.html:20
-msgid "House"
-msgstr "ቤት"
-
-#: .\base\templates\base\index.html:28
-msgid "Ethiopian Poultry Farm"
+#, fuzzy
+#| msgid "Ethiopian Poultry Farm"
+msgid "Poultry Farm"
 msgstr "የኢትዮጵያ ዶሮ እርባታ እርባታ"
 
-#: .\base\templates\base\index.html:29
+#: .\base\templates\base\index.html:21
 msgid "Eggs, Chickens, poultry Equipment and tools for sell"
 msgstr "እንቁላል፣ ዶሮዎች፣ የዶሮ እርባታ መሣሪያዎች እና መሳሪያዎች ለመሸጥ"
 
-#: .\base\templates\base\index.html:30
+#: .\base\templates\base\index.html:22
 msgid "poultry"
 msgstr "ዶሮ እርባታ"
 
-#: .\base\templates\base\index.html:38
-msgid "Latest Car Models"
-msgstr "የቅርብ ጊዜ የመኪና ሞዴሎች"
+#: .\base\templates\base\index.html:30
+msgid "Dairy Farm"
+msgstr ""
 
-#: .\base\templates\base\index.html:39
-msgid "New arrivals with amazing deals"
-msgstr "አስደናቂ ቅናሾች ያሉት አዳዲስ የደረሱ ምርቶች"
+#: .\base\templates\base\index.html:31
+msgid "Fresh milk, cheese, butter and other dairy products"
+msgstr ""
 
-#: .\base\templates\base\index.html:40
-msgid "car"
-msgstr "መኪና"
+#: .\base\templates\base\index.html:32
+msgid "Dairy"
+msgstr ""
 
-#: .\base\templates\base\index.html:47
-msgid "Summer Tech Sale"
-msgstr "የበጋ ቴክ ሽያጭ"
-
-#: .\base\templates\base\index.html:48
-#, python-format
-msgid "Up to 40%% off on electronics"
-msgstr "በኤሌክትሮኒክስ ላይ እስከ 40%% ቅናሽ"
-
-#: .\base\templates\base\index.html:70
+#: .\base\templates\base\index.html:51
 msgid "Shop by Category"
 msgstr "በምድብ ይግዙ"
 
-#: .\base\templates\base\index.html:77
-msgid "5,000+ listings"
-msgstr "5,000+ ዝርዝሮች"
+#: .\base\templates\base\index.html:58
+#: .\base\templates\base\search_results.html:32
+#: .\base\templates\base\search_results.html:61
+#, fuzzy
+#| msgid " Poultry"
+msgid "Poultry"
+msgstr "ዶሮ እርባታ"
 
-#: .\base\templates\base\index.html:84
-msgid "2,500+ properties"
-msgstr "2,500+ ንብረቶች"
+#: .\base\templates\base\index.html:59
+msgid "posted"
+msgstr ""
 
-#: .\base\templates\base\index.html:91
-msgid "10,000+ products"
-msgstr "10,000+ ምርቶች"
-
-#: .\base\templates\base\index.html:98
-msgid "15,000+ items"
-msgstr "15,000+ እቃዎች"
-
-#: .\base\templates\base\index.html:104 .\base\templates\base\index.html:129
-msgid "Books"
-msgstr "መጻሕፍት"
-
-#: .\base\templates\base\index.html:105
-msgid "8,000+ titles"
-msgstr "8,000+ ርዕሶች"
-
-#: .\base\templates\base\index.html:112
-msgid "3,000+ products"
-msgstr "3,000+ ምርቶች"
-
-#: .\base\templates\base\index.html:122
+#: .\base\templates\base\index.html:67
 msgid "Featured Products"
 msgstr "የተለዩ ምርቶች"
 
-#: .\base\templates\base\index.html:124
-msgid "All"
-msgstr "ሁሉም"
+#: .\base\templates\base\index.html:135 .\base\templates\base\index.html:303
+msgid "Bed"
+msgstr ""
 
-#: .\base\templates\base\index.html:130
-msgid "Toys"
-msgstr "መጫወቻዎች"
+#: .\base\templates\base\index.html:193 .\base\templates\base\index.html:361
+#, fuzzy
+#| msgid "View Messages"
+msgid "View Details"
+msgstr "መልዕክቶችን ይመልከቱ"
 
-#: .\base\templates\base\index.html:136
-msgid "View All Products"
-msgstr "ሁሉንም ምርቶች ይመልከቱ"
+#: .\base\templates\base\index.html:199
+#, fuzzy
+#| msgid "Featured Products"
+msgid "No featured products available."
+msgstr "የተለዩ ምርቶች"
 
-#: .\base\templates\base\index.html:145
-msgid "Summer Mega Sale!"
-msgstr "የበጋ ሜጋ ሽያጭ!"
+#: .\base\templates\base\index.html:204
+msgid "Our Sponsors"
+msgstr ""
 
-#: .\base\templates\base\index.html:146
-#, python-format
-msgid "Up to 50%% off on selected items. Limited time offer."
-msgstr "በተመረጡ እቃዎች ላይ እስከ 50%% ቅናሽ። የተወሰነ ጊዜ ብቻ።"
+#: .\base\templates\base\index.html:235
+#, fuzzy
+#| msgid "Featured Products"
+msgid "Load More Products"
+msgstr "የተለዩ ምርቶች"
 
-#: .\base\templates\base\index.html:147
-msgid "Shop Now"
-msgstr "አሁን ይግዙ"
+#: .\base\templates\base\index.html:236
+msgid "more"
+msgstr ""
 
-#: .\base\templates\base\messages.html:12
+#: .\base\templates\base\messages.html:7
+#, fuzzy
+#| msgid "Sheger.xyz | Ethiopian Market place"
+msgid "Messages Received | Ethiopian Sheger Market place"
+msgstr "Sheger.xyz | የኢትዮጵያ ገበያ"
+
+#: .\base\templates\base\messages.html:16
 msgid "Messages Received"
 msgstr "የተቀበሉ መልዕክቶች"
 
-#: .\base\templates\base\messages.html:29
+#: .\base\templates\base\messages.html:33
 msgid "No messages yet."
 msgstr "እስካሁን ምንም መልዕክት የለም።"
 
-#: .\base\templates\base\terms.html:12
+#: .\base\templates\base\search_results.html:7
+#, fuzzy
+#| msgid "Search products"
+msgid "Search Results for"
+msgstr "ምርቶችን ፈልግ"
+
+#: .\base\templates\base\search_results.html:7
+#: .\base\templates\base\search_results.html:9
+#, fuzzy
+#| msgid "Sheger"
+msgid "Sheger.city"
+msgstr "ሸገር"
+
+#: .\base\templates\base\search_results.html:9
+#, fuzzy
+#| msgid "Search products"
+msgid "Search Products"
+msgstr "ምርቶችን ፈልግ"
+
+#: .\base\templates\base\search_results.html:17
+#, fuzzy
+#| msgid "Search products"
+msgid "Search Results"
+msgstr "ምርቶችን ፈልግ"
+
+#: .\base\templates\base\search_results.html:20
+msgid "Showing results for"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:25
+msgid "Found"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:25
+msgid "results"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:28
+msgid "Houses"
+msgstr "ቤቶች"
+
+#: .\base\templates\base\search_results.html:29
+#: .\base\templates\base\search_results.html:57
+msgid "dairyfarm"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:30
+msgid "Electronics"
+msgstr "ኤሌክትሮኒክስ"
+
+#: .\base\templates\base\search_results.html:31
+msgid "Clothing"
+msgstr "ልብሶች"
+
+#: .\base\templates\base\search_results.html:44
+msgid "What are you looking for?"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:45
+msgid "Enter a search term to find products across all categories"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:52
+msgid "No results found"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:53
+msgid "Try different keywords or browse our categories"
+msgstr ""
+
+#: .\base\templates\base\terms.html:6
+#, fuzzy
+#| msgid "Sheger.xyz | Ethiopian Market place"
+msgid "Terms | Ethiopian Sheger Market place"
+msgstr "Sheger.xyz | የኢትዮጵያ ገበያ"
+
+#: .\base\templates\base\terms.html:16
 msgid "Terms"
 msgstr "ውሎች"
 
-#: .\base\templates\base\terms.html:14
+#: .\base\templates\base\terms.html:18
 msgid "User Agreement"
 msgstr "የተጠቃሚ ስምምነት"
 
-#: .\base\templates\base\terms.html:15
+#: .\base\templates\base\terms.html:19
 msgid "By using our website, you agree to the following terms and conditions."
 msgstr "ድረ-ገጻችንን በመጠቀም የሚከተሉትን ውሎች እና ሁኔታዎች እንደምትቀበሉ እያረጋገጡ ነው።"
+
+#~ msgid "View Contact Us Messages"
+#~ msgstr "ያግኙን መልዕክቶችን ይመልከቱ"
+
+#~ msgid "You are not logged in."
+#~ msgstr "አልገቡም።"
+
+#~ msgid "All Items"
+#~ msgstr "ሁሉም እቃዎች"
+
+#~ msgid "city"
+#~ msgstr "ከተማ"
+
+#~ msgid "All Categories"
+#~ msgstr "ሁሉም ምድቦች"
+
+#~ msgid "Cars"
+#~ msgstr "መኪናዎች"
+
+#~ msgid "Kids Toys"
+#~ msgstr "የልጆች መጫወቻዎች"
+
+#~ msgid " Cars for Sale"
+#~ msgstr "ለመሸጥ የቀረቡ መኪናዎች"
+
+#~ msgid " Houses for Sale"
+#~ msgstr "ለመሸጥ የቀረቡ ቤቶች"
+
+#~ msgid " Electronics"
+#~ msgstr "ኤሌክትሮኒክስ"
+
+#~ msgid " Clothing"
+#~ msgstr "ልብሶች"
+
+#~ msgid " About us"
+#~ msgstr "ስለ እኛ"
+
+#~ msgid " Admin Links"
+#~ msgstr "የአስተዳዳሪ አገናኞች"
+
+#~ msgid " Home"
+#~ msgstr "መነሻ"
+
+#~ msgid " Cars"
+#~ msgstr "መኪናዎች"
+
+#~ msgid " Houses"
+#~ msgstr "ቤቶች"
+
+#~ msgid "Market"
+#~ msgstr "ገበያ"
+
+#~ msgid "Hub"
+#~ msgstr "ማዕከል"
+
+#~ msgid "Products"
+#~ msgstr "ምርቶች"
+
+#~ msgid "Blog"
+#~ msgstr "ብሎግ"
+
+#~ msgid "Customer Service"
+#~ msgstr "የደንበኛ አገልግሎት"
+
+#~ msgid "My Account"
+#~ msgstr "መለያዬ"
+
+#~ msgid "Order Tracking"
+#~ msgstr "የትእዛዝ መከታተያ"
+
+#~ msgid "Wishlist"
+#~ msgstr "የምኞት ዝርዝር"
+
+#~ msgid "Returns & Exchanges"
+#~ msgstr "መመለሻዎች እና ልውውጦች"
+
+#~ msgid "FAQs"
+#~ msgstr "ተደጋጋሚ ጥያቄዎች"
+
+#~ msgid "Find Your Dream Home Today"
+#~ msgstr "የህልምዎን ቤት ዛሬ ያግኙ"
+
+#~ msgid "Thousands of properties waiting for you"
+#~ msgstr "ሺህ የሚቆጠሩ ንብረቶች እርስዎን ይጠብቃሉ"
+
+#~ msgid "House"
+#~ msgstr "ቤት"
+
+#~ msgid "Latest Car Models"
+#~ msgstr "የቅርብ ጊዜ የመኪና ሞዴሎች"
+
+#~ msgid "New arrivals with amazing deals"
+#~ msgstr "አስደናቂ ቅናሾች ያሉት አዳዲስ የደረሱ ምርቶች"
+
+#~ msgid "car"
+#~ msgstr "መኪና"
+
+#~ msgid "Summer Tech Sale"
+#~ msgstr "የበጋ ቴክ ሽያጭ"
+
+#, python-format
+#~ msgid "Up to 40%% off on electronics"
+#~ msgstr "በኤሌክትሮኒክስ ላይ እስከ 40%% ቅናሽ"
+
+#~ msgid "5,000+ listings"
+#~ msgstr "5,000+ ዝርዝሮች"
+
+#~ msgid "2,500+ properties"
+#~ msgstr "2,500+ ንብረቶች"
+
+#~ msgid "10,000+ products"
+#~ msgstr "10,000+ ምርቶች"
+
+#~ msgid "15,000+ items"
+#~ msgstr "15,000+ እቃዎች"
+
+#~ msgid "Books"
+#~ msgstr "መጻሕፍት"
+
+#~ msgid "8,000+ titles"
+#~ msgstr "8,000+ ርዕሶች"
+
+#~ msgid "3,000+ products"
+#~ msgstr "3,000+ ምርቶች"
+
+#~ msgid "All"
+#~ msgstr "ሁሉም"
+
+#~ msgid "Toys"
+#~ msgstr "መጫወቻዎች"
+
+#~ msgid "View All Products"
+#~ msgstr "ሁሉንም ምርቶች ይመልከቱ"
+
+#~ msgid "Summer Mega Sale!"
+#~ msgstr "የበጋ ሜጋ ሽያጭ!"
+
+#, python-format
+#~ msgid "Up to 50%% off on selected items. Limited time offer."
+#~ msgstr "በተመረጡ እቃዎች ላይ እስከ 50%% ቅናሽ። የተወሰነ ጊዜ ብቻ።"
+
+#~ msgid "Shop Now"
+#~ msgstr "አሁን ይግዙ"

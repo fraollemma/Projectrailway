@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 01:30+0300\n"
+"POT-Creation-Date: 2026-05-12 12:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,119 +17,861 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\poultryfarm\templates\poultryfarm\item_create.html:15
-msgid "Create New Item"
-msgstr "አዲስ ንጥል ፍጠር"
-
-#: .\poultryfarm\templates\poultryfarm\item_create.html:16
-msgid "Fill in the details below to add a new item to your collection"
+#: .\poultryfarm\admin.py:142
+msgid "Inventory & Pricing"
 msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_create.html:27
-msgid "Basic Information"
-msgstr ""
-
-#: .\poultryfarm\templates\poultryfarm\item_create.html:54
-#: .\poultryfarm\templates\poultryfarm\item_detail.html:108
+#: .\poultryfarm\admin.py:145 .\poultryfarm\forms.py:108
+#: .\poultryfarm\forms.py:156 .\poultryfarm\models.py:330
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:46
+#: .\poultryfarm\templates\poultryfarm\item_create.html:67
 msgid "Description"
 msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_create.html:67
-msgid "Provide detailed information about your item"
+#: .\poultryfarm\admin.py:148
+msgid "Metadata"
 msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_create.html:74
-msgid "Images"
+#: .\poultryfarm\forms.py:76
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:168
+msgid "Briefly describe your issue or questions..."
 msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_create.html:84
-msgid "Click to upload images"
+#: .\poultryfarm\forms.py:79
+msgid "Your Name"
 msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_create.html:85
-msgid "PNG, JPG up to 5MB"
+#: .\poultryfarm\forms.py:80
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:103
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:32
+msgid "Email"
 msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_create.html:103
-msgid "Save Item"
-msgstr "ንጥል አስቀምጥ"
+#: .\poultryfarm\forms.py:81
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:100
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:33
+msgid "Phone"
+msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_detail.html:30
+#: .\poultryfarm\forms.py:82
+msgid "Preferred Date"
+msgstr ""
+
+#: .\poultryfarm\forms.py:83
+msgid "Preferred Time"
+msgstr ""
+
+#: .\poultryfarm\forms.py:84
+msgid "Message"
+msgstr ""
+
+#: .\poultryfarm\forms.py:105
+msgid "Available Eggs"
+msgstr ""
+
+#: .\poultryfarm\forms.py:106
+msgid "Price per Dozen"
+msgstr ""
+
+#: .\poultryfarm\forms.py:107
+msgid "Minimum Order (Dozen)"
+msgstr ""
+
+#: .\poultryfarm\forms.py:123
+msgid "Any special delivery instructions..."
+msgstr ""
+
+#: .\poultryfarm\forms.py:128
+msgid "Delivery Address"
+msgstr ""
+
+#: .\poultryfarm\forms.py:129
+msgid "Quantity (dozens)"
+msgstr ""
+
+#: .\poultryfarm\forms.py:130
+msgid "Preferred Delivery Date"
+msgstr ""
+
+#: .\poultryfarm\forms.py:131
+msgid "Special Instructions"
+msgstr ""
+
+#: .\poultryfarm\forms.py:136
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:56
+msgid "City"
+msgstr ""
+
+#: .\poultryfarm\forms.py:137
+msgid "Min Price"
+msgstr ""
+
+#: .\poultryfarm\forms.py:138
+msgid "Max Price"
+msgstr ""
+
+#: .\poultryfarm\forms.py:153 .\poultryfarm\models.py:327
+msgid "Available Chickens"
+msgstr ""
+
+#: .\poultryfarm\forms.py:154 .\poultryfarm\models.py:328
+msgid "Minimum Price"
+msgstr ""
+
+#: .\poultryfarm\forms.py:155 .\poultryfarm\models.py:329
+msgid "Maximum Price"
+msgstr ""
+
+#: .\poultryfarm\forms.py:165
+msgid "Minimum price cannot be greater than maximum price."
+msgstr ""
+
+#: .\poultryfarm\models.py:129
+msgid "Disease Management"
+msgstr ""
+
+#: .\poultryfarm\models.py:130
+msgid "Nutrition & Feed"
+msgstr ""
+
+#: .\poultryfarm\models.py:131
+msgid "Biosecurity & Prevention"
+msgstr ""
+
+#: .\poultryfarm\models.py:132
+msgid "Breeding & Genetics"
+msgstr ""
+
+#: .\poultryfarm\models.py:133
+msgid "General Practice"
+msgstr ""
+
+#: .\poultryfarm\models.py:136
+msgid "Weekdays"
+msgstr ""
+
+#: .\poultryfarm\models.py:137
+msgid "Weekends"
+msgstr ""
+
+#: .\poultryfarm\models.py:138
+msgid "All Week"
+msgstr ""
+
+#: .\poultryfarm\models.py:139
+msgid "24/7 Emergency"
+msgstr ""
+
+#: .\poultryfarm\models.py:142
+msgid "Years of experience"
+msgstr ""
+
+#: .\poultryfarm\models.py:144
+msgid "Comma-separated list of languages"
+msgstr ""
+
+#: .\poultryfarm\models.py:169
+msgid "Video Call"
+msgstr ""
+
+#: .\poultryfarm\models.py:170
+msgid "Phone Consultation"
+msgstr ""
+
+#: .\poultryfarm\models.py:171
+msgid "Farm Visit"
+msgstr ""
+
+#: .\poultryfarm\models.py:172
+msgid "Feed Analysis"
+msgstr ""
+
+#: .\poultryfarm\models.py:173
+msgid "Farm Assessment"
+msgstr ""
+
+#: .\poultryfarm\models.py:178
+msgid "e.g., 1 hour, per visit"
+msgstr ""
+
+#: .\poultryfarm\models.py:185 .\poultryfarm\models.py:271
+msgid "Pending"
+msgstr ""
+
+#: .\poultryfarm\models.py:186 .\poultryfarm\models.py:272
+msgid "Confirmed"
+msgstr ""
+
+#: .\poultryfarm\models.py:187
+msgid "Completed"
+msgstr ""
+
+#: .\poultryfarm\models.py:188 .\poultryfarm\models.py:276
+msgid "Cancelled"
+msgstr ""
+
+#: .\poultryfarm\models.py:213
+msgid "Number of eggs currently available"
+msgstr ""
+
+#: .\poultryfarm\models.py:215
+msgid "Minimum dozen required for order"
+msgstr ""
+
+#: .\poultryfarm\models.py:266
 #, fuzzy
 #| msgid "Sell Item"
-msgid "Seller"
+msgid "Egg Seller"
 msgstr "ንጥል ሽይ"
 
-#: .\poultryfarm\templates\poultryfarm\item_detail.html:39
+#: .\poultryfarm\models.py:267
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:21
 #, fuzzy
-#| msgid "Contact Seller"
-msgid "Contact"
-msgstr "ለሻጭ ያግኙ"
+#| msgid "Sell Item"
+msgid "Egg Sellers"
+msgstr "ንጥል ሽይ"
 
-#: .\poultryfarm\templates\poultryfarm\item_detail.html:86
-msgid "Add to Cart"
+#: .\poultryfarm\models.py:273
+msgid "Processing"
 msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_detail.html:116
-msgid "Gallery"
-msgstr "ጋለሪ"
-
-#: .\poultryfarm\templates\poultryfarm\item_detail.html:143
-msgid "Edit"
+#: .\poultryfarm\models.py:274
+msgid "Shipped"
 msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_detail.html:149
+#: .\poultryfarm\models.py:275
+msgid "Delivered"
+msgstr ""
+
+#: .\poultryfarm\models.py:293
+msgid "Number of dozens ordered"
+msgstr ""
+
+#: .\poultryfarm\models.py:331
+msgid "Active"
+msgstr ""
+
+#: .\poultryfarm\models.py:339
+msgid "each"
+msgstr ""
+
+#: .\poultryfarm\models.py:342
+#, fuzzy
+#| msgid "Sell Item"
+msgid "Chicken Seller"
+msgstr "ንጥል ሽይ"
+
+#: .\poultryfarm\models.py:343
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:21
+msgid "Chicken Sellers"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:6
+msgid "Add New Egg Seller | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:18
+msgid "Add New Egg Seller"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:38
+msgid "Farm Information"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:40
+msgid "Farm Name"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:43
+msgid "Owner Name"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:54
+msgid "Location"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:59
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:34
+msgid "Address"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:66
+msgid "Egg Details"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:68
+msgid "Egg Type"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:72
+msgid "Certification"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:80
+msgid "Pricing & Availability"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:82
+msgid "Quantity Available"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:86
+msgid "Price per Dozen ($)"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:90
+msgid "Minimum Order Quantity"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:98
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:420
+msgid "Contact Information"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:106
+msgid "Website"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:113
+msgid "Social Media"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:115
+msgid "Facebook"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:118
+msgid "Telegram"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:121
+msgid "Instagram"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:129
+msgid "Back to Sellers"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:133
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:40
+#, fuzzy
+#| msgid "Sell Item"
+msgid "Add Egg Seller"
+msgstr "ንጥል ሽይ"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:6
+msgid "Chicken Sellers | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:18
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:17
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:18
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:17
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:19
+msgid "Back"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:28
+msgid "Search chicken sellers..."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:32
+msgid "All Locations"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:40
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:30
+msgid "Find"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:41
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:132
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:21
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:554
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:35
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:31
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:118
+msgid "Cancel"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:49
+#: .\poultryfarm\templates\poultryfarm\register_seller.html:15
+msgid "Register as a Chicken Seller"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:72
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:62
+msgid "Available:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:77
+msgid "Delivery"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:80
+msgid "Vaccinated"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:109
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:85
+msgid "Order Now"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:119
+msgid "No sellers found"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:120
+msgid "Try adjusting your search criteria"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:129
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:14
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:115
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:131
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:95
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:117
 msgid "Delete"
 msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_list.html:12
-msgid "Poultry Marketplace"
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:6
+msgid " Delete Chicken Seller | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:13
+msgid "Delete Seller Profile"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:15
+msgid "This action cannot be undone."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:20
+msgid "Yes, Delete"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:6
+msgid " Edit Egg Seller | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:228
+msgid "Edit Egg Seller"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:230
+msgid "Back to Sellers List"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:239
+#: .\poultryfarm\templates\poultryfarm\item_create.html:50
+msgid "Basic Information"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:300
+msgid "Location Information"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:374
+#, fuzzy
+#| msgid "No poultry items available yet"
+msgid "Map coordinates available"
+msgstr "እስካሁን ድረስ የዶሮ ንጥሎች አልተገኙም"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:381
+msgid "Egg Details & Pricing"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:459
+msgid "Social Media Links"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:498
+msgid "Business Details"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:551
+#, fuzzy
+#| msgid "Sell Item"
+msgid "Delete Seller"
+msgstr "ንጥል ሽይ"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:557
+#, fuzzy
+#| msgid "Sell Item"
+msgid "Update Seller"
+msgstr "ንጥል ሽይ"
+
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:6
+msgid " Edit Chicken Seller | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:15
+msgid "Edit Chicken Seller Profile"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:34
+msgid "Update Profile"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:36
+msgid "Delete Profile"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:6
+msgid "My Egg Orders | Ethiopian Sheger Marketplace"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:21
+msgid "My Egg Orders"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:22
+msgid "Track all customer orders in one place"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:31
+msgid "Customer"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:35
+msgid "Qty"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:36
+msgid "Total"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:37
+msgid "Status"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:38
+msgid "Date"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:71
+msgid "No orders yet."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:6
+msgid "Egg Seller Page | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:61
+msgid "Location:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:62
+msgid "eggs"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:63
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:143
+#, fuzzy
+#| msgid "Price: ETB"
+msgid "Price:"
+msgstr "ዋጋ፡ ብር"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:63
+msgid "birr"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:89
+msgid "Edit"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:104
+msgid "No egg sellers found matching your criteria."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:114
+msgid "Confirm Delete"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:127
+msgid "Place Your Order"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:132
+msgid "Delivery Address:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:136
+msgid "Quantity (dozens):"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:139
+msgid "Confirm Order"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\index.html:7
+#, fuzzy
+#| msgid "Poultry Marketplace"
+msgid " Poultry | Ethiopian Sheger Market place"
 msgstr "የዶሮ ገበያ"
 
-#: .\poultryfarm\templates\poultryfarm\item_list.html:15
+#: .\poultryfarm\templates\poultryfarm\index.html:28
+#, fuzzy
+#| msgid "Poultry Marketplace"
+msgid "Premium Poultry Marketplace"
+msgstr "የዶሮ ገበያ"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:32
+msgid ""
+"Buy chickens, eggs, and poultry products from trusted Ethiopian farmers."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\index.html:37
+msgid "Explore More →"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:6
+msgid "Create Poultry Item | Ethiopian Sheger Market"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:20
+msgid "Create New Item"
+msgstr "አዲስ ንጥል ፍጠር"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:22
+msgid "Add your poultry product with images and details"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:31
+msgid "Main Image"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:36
+msgid "Click or drag image"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:77
+msgid "More Images"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:82
+#, fuzzy
+#| msgid "No poultry items available yet"
+msgid "Upload additional images"
+msgstr "እስካሁን ድረስ የዶሮ ንጥሎች አልተገኙም"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:83
+msgid "You can select multiple files"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:93
+msgid "Publish Item"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\item_detail.html:7
+msgid "Poultry Item Details | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\item_detail.html:21
+msgid "Back to Listings"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:8
+msgid "Poultry Items List | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:24
 msgid "Sell Item"
 msgstr "ንጥል ሽይ"
 
 #: .\poultryfarm\templates\poultryfarm\item_list.html:28
-msgid "ETB"
-msgstr "ብር"
+msgid "items"
+msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_list.html:48
-msgid "Posted"
-msgstr "ተለጠፈ"
+#: .\poultryfarm\templates\poultryfarm\item_list.html:45
+msgid "No items yet"
+msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_list.html:57
-msgid "No poultry items available yet"
-msgstr "እስካሁን ድረስ የዶሮ ንጥሎች አልተገኙም"
-
-#: .\poultryfarm\templates\poultryfarm\item_list.html:60
-msgid "Be the first to sell"
+#: .\poultryfarm\templates\poultryfarm\item_list.html:46
+#, fuzzy
+#| msgid "Be the first to sell"
+msgid "Be the first to sell something!"
 msgstr "የመጀመሪያው ሻጭ ይሁኑ"
 
-#: .\poultryfarm\templates\poultryfarm\item_list.html:63
-msgid "Please login to add items"
-msgstr "ንጥሎችን ለመጨመር እባክዎ ይግቡ"
+#: .\poultryfarm\templates\poultryfarm\item_list.html:48
+#, fuzzy
+#| msgid "Create New Item"
+msgid "Create Item"
+msgstr "አዲስ ንጥል ፍጠር"
 
-#: .\poultryfarm\templates\poultryfarm\item_list.html:74
-msgid "First"
-msgstr "መጀመሪያ"
+#: .\poultryfarm\templates\poultryfarm\item_list.html:118
+msgid "View Details"
+msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_list.html:77
-msgid "Previous"
-msgstr "ቀዳሚ"
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:6
+msgid "Poultry Training Trainees | Ethiopian Sheger Market place"
+msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_list.html:83
-msgid "Page"
-msgstr "ገፅ"
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:6
+msgid "Poultry Training Programs | Ethiopian Sheger Market place"
+msgstr ""
 
-#: .\poultryfarm\templates\poultryfarm\item_list.html:83
-msgid "of"
-msgstr "ከ"
+#: .\poultryfarm\templates\poultryfarm\register_seller.html:6
+msgid "Register as a Chicken Seller | Ethiopian Sheger Market place"
+msgstr ""
 
-#~ msgid "Price: ETB"
-#~ msgstr "ዋጋ፡ ብር"
+#: .\poultryfarm\templates\poultryfarm\register_seller.html:33
+msgid "Register as Seller"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:7
+msgid "Veterinary Consultancy | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:23
+msgid "Our Expert Consultants"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:35
+msgid "Experience:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:35
+msgid "years"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:36
+msgid "Specialty:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:37
+msgid "Languages:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:38
+msgid "Rating:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:58
+msgid "Consultation Options"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:71
+msgid "Request"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:73
+msgid "Book Now"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:83
+msgid "Availability"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:86
+msgid "Weekdays: Available"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:88
+msgid "Weekends: Available"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:90
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:93
+msgid "Mon-Fri: 9AM-6PM"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:91
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:94
+msgid "Sat: 10AM-4PM"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:95
+msgid "Emergency: 24/7"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:120
+msgid "No consultants available at the moment. Please check back later."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:128
+msgid "Book Consultation"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:135
+msgid "Consultant:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:139
+msgid "Service Type:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:147
+msgid "Your Name:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:151
+msgid "Email:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:155
+msgid "Phone:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:159
+msgid "Preferred Date:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:163
+msgid "Preferred Time:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:167
+msgid "Message:"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:170
+msgid "Request Consultation"
+msgstr ""
+
+#: .\poultryfarm\views.py:49
+msgid "Liked successfully"
+msgstr ""
+
+#: .\poultryfarm\views.py:49
+msgid "Like removed"
+msgstr ""
+
+#: .\poultryfarm\views.py:62
+msgid "Share count updated successfully"
+msgstr ""
+
+#~ msgid "Save Item"
+#~ msgstr "ንጥል አስቀምጥ"
 
 #, fuzzy
-#~| msgid "No poultry items available yet"
-#~ msgid "No additional images available."
-#~ msgstr "እስካሁን ድረስ የዶሮ ንጥሎች አልተገኙም"
+#~| msgid "Contact Seller"
+#~ msgid "Contact"
+#~ msgstr "ለሻጭ ያግኙ"
+
+#~ msgid "Gallery"
+#~ msgstr "ጋለሪ"
+
+#~ msgid "ETB"
+#~ msgstr "ብር"
+
+#~ msgid "Posted"
+#~ msgstr "ተለጠፈ"
+
+#~ msgid "Please login to add items"
+#~ msgstr "ንጥሎችን ለመጨመር እባክዎ ይግቡ"
+
+#~ msgid "First"
+#~ msgstr "መጀመሪያ"
+
+#~ msgid "Previous"
+#~ msgstr "ቀዳሚ"
+
+#~ msgid "Page"
+#~ msgstr "ገፅ"
+
+#~ msgid "of"
+#~ msgstr "ከ"

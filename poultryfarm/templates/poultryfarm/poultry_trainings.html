@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block title %}
-    {% trans "Poultry Training Programs | Ethiopian Sheger Market place" %}
+    {% trans "Poultry Training Programs | Ethiopian Poultry And Dairy Farm Market place" %}
 {% endblock %}
 
 {% block css %}
@@ -18,23 +18,23 @@
         </a>
         
     <div class="training-header">
-        <h1 class="training-title">Poultry Training Programs</h1>
-        <p class="training-subtitle">Enhance your poultry farming skills with our specialized training programs on Meat Chickens, Layer Chickens, and Dual Purpose Chickens. Whether you're a beginner or an experienced farmer, our courses are designed to provide you with the knowledge and techniques needed for successful poultry management.</p>
+        <h1 class="training-title">{% trans "Poultry Training Programs" %}</h1>
+        <p class="training-subtitle">{% trans "Enhance your poultry farming skills with our specialized training programs on Meat Chickens, Layer Chickens, and Dual Purpose Chickens. Whether you're a beginner or an experienced farmer, our courses are designed to provide you with the knowledge and techniques needed for successful poultry management." %}</p>
     </div>
     <div class="training-section fade-in">
-        <h2 class="section-title">Our Training Programs</h2>
+        <h2 class="section-title">{% trans "Our Training Programs" %}</h2>
         <div class="image-grid">
             <div class="image-card">
                 <img src="{% static 'poultryfarm/images/image.jpg' %}" alt="Meat Chickens">
-                <div class="image-overlay">Meat Chickens Training</div>
+                <div class="image-overlay">{% trans "Meat Chickens Training" %}</div>
             </div>
             <div class="image-card">
                 <img src="{% static 'poultryfarm/images/image.jpg' %}" alt="Layer Chickens">
-                <div class="image-overlay">Layer Chickens Training</div>
+                <div class="image-overlay">{% trans "Layer Chickens Training" %}</div>
             </div>
             <div class="image-card">
                 <img src="{% static 'poultryfarm/images/image.jpg' %}" alt="Dual Purpose Chickens">
-                <div class="image-overlay">Dual Purpose Chickens Training</div>
+                <div class="image-overlay">{% trans "Dual Purpose Chickens Training" %}</div>
             </div>
         </div>
     </div>
@@ -42,15 +42,15 @@
 
 <section class="training-section fade-in">
     <div class="training-header">
-        <h2 class="section-title">Enroll in Our Training Programs</h2>
-        <p class="training-subtitle">Fill out the form below to register for our upcoming poultry training programs.</p>
+        <h2 class="section-title">{% trans "Enroll in Our Training Programs" %}</h2>
+        <p class="training-subtitle">{% trans "Fill out the form below to register for our upcoming poultry training programs." %}</p>
     </div>
 
     <div class="enroll-form">
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-block">Enroll Now</button>
+        <button type="submit" class="btn btn-block">{% trans "Enroll Now" %}</button>
     </form>
 </div>
 
@@ -67,28 +67,28 @@
 
 <section class="training-section fade-in">
     <div class="training-header">
-        <h2 class="section-title">Payment Information</h2>
-        <p class="training-subtitle">Please use the following information to complete your payment.</p>
+        <h2 class="section-title">{% trans "Payment Information" %}</h2>
+        <p class="training-subtitle">{% trans "Please use the following information to complete your payment." %}</p>
     </div>
     <div class="payment-info">
         <div class="payment-method">
-            <h3>CBE Bank Account</h3>
-            <p>Account Name: Poultry Training</p>
-            <p>Account Number: 1234567890</p>
+            <h3>{% trans "CBE Bank Account" %}</h3>
+            <p>{% trans "Account Name:" %} Poultry Training</p>
+            <p>{% trans "Account Number:" %} 1234567890</p>
         </div>
         <div class="payment-method">
-            <h3>Telebirr Information</h3>
-            <p>Phone Number: 0987654321</p>
+            <h3>{% trans "Telebirr Information" %}</h3>
+            <p>{% trans "Phone Number:" %} 0987654321</p>
         </div>
     </div>
     <div class="image-grid">
         <div class="image-card">
             <img src="{% static 'poultryfarm/images/image.jpg' %}" alt="CBE Bank">
-            <div class="image-overlay">CBE Bank</div>
+            <div class="image-overlay">{% trans "CBE Bank" %}</div>
         </div>
         <div class="image-card">
             <img src="{% static 'poultryfarm/images/image.jpg' %}" alt="Telebirr">
-            <div class="image-overlay">Telebirr Payment</div>
+            <div class="image-overlay">{% trans "Telebirr Payment" %}</div>
         </div>
     </div>
 </section>

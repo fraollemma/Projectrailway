@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 01:29+0300\n"
+"POT-Creation-Date: 2026-05-12 12:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,31 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: .\contact\forms.py:12 .\contact\forms.py:29
-#: .\contact\templates\contact\contact_us.html:17
+#: .\contact\templates\contact\contact_us.html:22
 msgid "Your Name"
 msgstr ""
 
 #: .\contact\forms.py:16 .\contact\forms.py:30
-#: .\contact\templates\contact\contact_us.html:21
+#: .\contact\templates\contact\contact_us.html:26
 msgid "Your Email"
 msgstr ""
 
 #: .\contact\forms.py:20 .\contact\forms.py:31 .\contact\models.py:7
-#: .\contact\templates\contact\contact_us.html:25
-#: .\contact\templates\contact\received_messages.html:20
+#: .\contact\templates\contact\contact_us.html:30
+#: .\contact\templates\contact\received_messages.html:24
 msgid "Subject"
 msgstr ""
 
 #: .\contact\forms.py:24 .\contact\forms.py:32
-#: .\contact\templates\contact\contact_us.html:29
+#: .\contact\templates\contact\contact_us.html:34
 msgid "Your Message"
 msgstr ""
 
-#: .\contact\models.py:5 .\contact\templates\contact\received_messages.html:18
+#: .\contact\models.py:5 .\contact\templates\contact\received_messages.html:22
 msgid "Name"
 msgstr ""
 
-#: .\contact\models.py:6 .\contact\templates\contact\received_messages.html:19
+#: .\contact\models.py:6 .\contact\templates\contact\received_messages.html:23
 msgid "Email"
 msgstr ""
 
@@ -66,74 +66,86 @@ msgstr ""
 msgid "Contact Messages"
 msgstr ""
 
-#: .\contact\templates\contact\confirm_delete.html:6
-msgid "Confirm Deletion"
-msgstr ""
-
-#: .\contact\templates\contact\confirm_delete.html:7
-msgid "Are you sure you want to delete this message?"
+#: .\contact\templates\contact\confirm_delete.html:5
+msgid "Confirm Deletion | Ethiopian Sheger Market place"
 msgstr ""
 
 #: .\contact\templates\contact\confirm_delete.html:10
-#: .\contact\templates\contact\view_message.html:17
-msgid "From:"
+msgid "Confirm Deletion"
 msgstr ""
 
 #: .\contact\templates\contact\confirm_delete.html:11
+msgid "Are you sure you want to delete this message?"
+msgstr ""
+
+#: .\contact\templates\contact\confirm_delete.html:14
+#: .\contact\templates\contact\view_message.html:21
+msgid "From:"
+msgstr ""
+
+#: .\contact\templates\contact\confirm_delete.html:15
 msgid "Subject:"
 msgstr ""
 
-#: .\contact\templates\contact\confirm_delete.html:12
+#: .\contact\templates\contact\confirm_delete.html:16
 msgid "Message:"
 msgstr ""
 
-#: .\contact\templates\contact\confirm_delete.html:17
+#: .\contact\templates\contact\confirm_delete.html:21
 msgid "Yes, delete"
 msgstr ""
 
-#: .\contact\templates\contact\confirm_delete.html:18
+#: .\contact\templates\contact\confirm_delete.html:22
 msgid "Cancel"
 msgstr ""
 
-#: .\contact\templates\contact\contact_us.html:11
+#: .\contact\templates\contact\contact_us.html:7
+msgid "Contact Us | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\contact\templates\contact\contact_us.html:16
 msgid "Get in Touch"
 msgstr ""
 
-#: .\contact\templates\contact\contact_us.html:12
+#: .\contact\templates\contact\contact_us.html:17
 msgid ""
 "We would love to hear from you. Please fill out the form below and we will "
 "get back to you as soon as possible."
 msgstr ""
 
-#: .\contact\templates\contact\contact_us.html:32
+#: .\contact\templates\contact\contact_us.html:37
 msgid "Send Message"
 msgstr ""
 
-#: .\contact\templates\contact\received_messages.html:11
+#: .\contact\templates\contact\received_messages.html:6
+msgid "Received Messages | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\contact\templates\contact\received_messages.html:15
 msgid "Received Messages"
 msgstr ""
 
-#: .\contact\templates\contact\received_messages.html:21
+#: .\contact\templates\contact\received_messages.html:25
 msgid "Received"
 msgstr ""
 
-#: .\contact\templates\contact\received_messages.html:22
+#: .\contact\templates\contact\received_messages.html:26
 msgid "Actions"
 msgstr ""
 
-#: .\contact\templates\contact\received_messages.html:34
+#: .\contact\templates\contact\received_messages.html:38
 msgid "View"
 msgstr ""
 
-#: .\contact\templates\contact\received_messages.html:37
+#: .\contact\templates\contact\received_messages.html:41
 msgid "Delete"
 msgstr ""
 
-#: .\contact\templates\contact\received_messages.html:50
+#: .\contact\templates\contact\received_messages.html:54
 msgid "previous"
 msgstr ""
 
-#: .\contact\templates\contact\received_messages.html:53
+#: .\contact\templates\contact\received_messages.html:57
 #, python-format
 msgid ""
 "\n"
@@ -141,38 +153,42 @@ msgid ""
 "            "
 msgstr ""
 
-#: .\contact\templates\contact\received_messages.html:58
+#: .\contact\templates\contact\received_messages.html:62
 msgid "next"
 msgstr ""
 
-#: .\contact\templates\contact\received_messages.html:64
+#: .\contact\templates\contact\received_messages.html:68
 msgid "No messages received yet."
 msgstr ""
 
-#: .\contact\templates\contact\view_message.html:11
+#: .\contact\templates\contact\view_message.html:6
+msgid "View Message | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\contact\templates\contact\view_message.html:15
 msgid "Message Details"
 msgstr ""
 
-#: .\contact\templates\contact\view_message.html:18
+#: .\contact\templates\contact\view_message.html:22
 msgid "Received:"
 msgstr ""
 
-#: .\contact\templates\contact\view_message.html:28
+#: .\contact\templates\contact\view_message.html:32
 msgid "Back to Messages"
 msgstr ""
 
-#: .\contact\templates\contact\view_message.html:31
+#: .\contact\templates\contact\view_message.html:35
 msgid "Delete Message"
 msgstr ""
 
-#: .\contact\templates\contact\view_message.html:34
+#: .\contact\templates\contact\view_message.html:38
 msgid "Reply"
 msgstr ""
 
-#: .\contact\views.py:17
+#: .\contact\views.py:18
 msgid "Thank you for your message! We will get back to you soon."
 msgstr ""
 
-#: .\contact\views.py:50
+#: .\contact\views.py:51
 msgid "Message has been deleted successfully."
 msgstr ""

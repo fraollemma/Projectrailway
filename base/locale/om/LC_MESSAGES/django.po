@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 01:34+0300\n"
+"POT-Creation-Date: 2026-05-12 12:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,54 +17,50 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\base\templates\base\about_us.html:12 .\base\templates\base\base.html:245
+#: .\base\templates\base\about_us.html:6
+#, fuzzy
+#| msgid "Sheger.xyz | Ethiopian Market place"
+msgid "About Us | Ethiopian Sheger Market place"
+msgstr "Sheger.xyz | Gabaa Itoophiyaa"
+
+#: .\base\templates\base\about_us.html:16 .\base\templates\base\base.html:431
+#: .\base\templates\base\base.html:497
 msgid "About Us"
 msgstr "Waa'ee Keenya"
 
-#: .\base\templates\base\about_us.html:13 .\base\templates\base\terms.html:13
+#: .\base\templates\base\about_us.html:17 .\base\templates\base\terms.html:17
 msgid ""
 "We are a company dedicated to providing the best services to our customers."
-msgstr "Kompaniin tajaajila gaarii maamiltoota keenyaaf kennuuf kutannoo qabdu."
+msgstr ""
+"Kompaniin tajaajila gaarii maamiltoota keenyaaf kennuuf kutannoo qabdu."
 
-#: .\base\templates\base\about_us.html:16
+#: .\base\templates\base\about_us.html:19
 msgid ""
 "Our mission is to connect buyers and sellers in a seamless online "
 "marketplace."
-msgstr "Kaayyoon keenya gurgurtaa fi bittoota wal qunnamsiisuun gabaa interneetii irratti walitti fiduu dha."
+msgstr ""
+"Kaayyoon keenya gurgurtaa fi bittoota wal qunnamsiisuun gabaa interneetii "
+"irratti walitti fiduu dha."
 
-#: .\base\templates\base\about_us.html:17
+#: .\base\templates\base\about_us.html:20
 msgid ""
 "We strive to offer a wide range of products at competitive prices, backed by "
 "excellent customer service."
-msgstr "Meeshaalee bal'oo gatii dorgomaa fi tajaajila maamilaa gaarii waliin dhiheessuuf hojjenna."
+msgstr ""
+"Meeshaalee bal'oo gatii dorgomaa fi tajaajila maamilaa gaarii waliin "
+"dhiheessuuf hojjenna."
 
-#: .\base\templates\base\admin_links.html:12
-msgid "Admin Links"
-msgstr "Liinkii Admin"
-
-#: .\base\templates\base\admin_links.html:15
-msgid "View Messages"
-msgstr "Ergaa Ilaali"
-
-#: .\base\templates\base\admin_links.html:16
-msgid "View Contact Us Messages"
-msgstr "Ergaa Nu Quunnami Ilaali"
-
-#: .\base\templates\base\admin_links.html:29
-msgid "You are not logged in."
-msgstr "Hin seene."
-
-#: .\base\templates\base\admin_links.html:31
-msgid "Login"
-msgstr "Seeni"
+#: .\base\templates\base\base.html:8
+msgid "Ethiopian marketplace - Buy and sell products in Ethiopia"
+msgstr ""
+"Gabaa Itoophiyaa - Meeshaalee Itoophiyaa keessatti bitadhaa fi gurguradhaa"
 
 #: .\base\templates\base\base.html:9
-msgid "Ethiopian marketplace - Buy and sell products in Ethiopia"
-msgstr "Gabaa Itoophiyaa - Meeshaalee Itoophiyaa keessatti bitadhaa fi gurguradhaa"
-
-#: .\base\templates\base\base.html:10
-msgid "Sheger.xyz | Ethiopian Market place"
-msgstr "Sheger.xyz | Gabaa Itoophiyaa"
+#, fuzzy
+#| msgid "Ethiopian marketplace - Buy and sell products in Ethiopia"
+msgid "Ethiopia, marketplace, buy, sell, products, Sheger"
+msgstr ""
+"Gabaa Itoophiyaa - Meeshaalee Itoophiyaa keessatti bitadhaa fi gurguradhaa"
 
 #: .\base\templates\base\base.html:26
 msgid "Please select your language"
@@ -74,309 +70,534 @@ msgstr "Afaan kee filadhu"
 msgid "Skip"
 msgstr "Darbi"
 
-#: .\base\templates\base\base.html:55
-msgid "All Items"
-msgstr "Meeshaalee Hundaa"
+#: .\base\templates\base\base.html:123
+msgid "Notifications"
+msgstr ""
 
-#: .\base\templates\base\base.html:57
-msgid "Contact Us"
-msgstr "Nu Quunnami"
+#: .\base\templates\base\base.html:129 .\base\templates\base\base.html:326
+#: .\base\templates\base\base.html:367
+#, fuzzy
+#| msgid " Message"
+msgid "Messages"
+msgstr "Ergaa"
 
-#: .\base\templates\base\base.html:70
-msgid "Sheger"
-msgstr "Sheger"
+#: .\base\templates\base\base.html:136
+msgid "Egg Orders"
+msgstr ""
 
-#: .\base\templates\base\base.html:70
-msgid "city"
-msgstr "magaalaa"
+#: .\base\templates\base\base.html:143
+#, fuzzy
+#| msgid " Cart"
+msgid "Carted"
+msgstr "Kaartii"
 
-#: .\base\templates\base\base.html:76
-msgid "Search products"
+#: .\base\templates\base\base.html:151
+msgid "Total"
+msgstr ""
+
+#: .\base\templates\base\base.html:186
+#, fuzzy
+#| msgid "Categories"
+msgid "Browse Categories"
+msgstr "Kutaa"
+
+#: .\base\templates\base\base.html:197
+msgid "Dairy Section"
+msgstr ""
+
+#: .\base\templates\base\base.html:204
+#, fuzzy
+#| msgid "Search products"
+msgid "All Dairy products"
 msgstr "Meeshaalee barbaadi"
 
-#: .\base\templates\base\base.html:83
-msgid "All Categories"
-msgstr "Kutaa Hundaa"
+#: .\base\templates\base\base.html:210
+#, fuzzy
+#| msgid "Featured Products"
+msgid "Add Dairy Products"
+msgstr "Meeshaalee filataman"
 
-#: .\base\templates\base\base.html:84 .\base\templates\base\base.html:254
-#: .\base\templates\base\index.html:76 .\base\templates\base\index.html:125
-msgid "Cars"
-msgstr "Mootoraalee"
+#: .\base\templates\base\base.html:218 .\base\templates\base\base.html:226
+#, fuzzy
+#| msgid " Poultry Items"
+msgid "Poultry Section"
+msgstr "Meeshaalee Foollee"
 
-#: .\base\templates\base\base.html:85 .\base\templates\base\base.html:255
-#: .\base\templates\base\index.html:83 .\base\templates\base\index.html:126
-msgid "Houses"
-msgstr "Manaalee"
+#: .\base\templates\base\base.html:233
+#, fuzzy
+#| msgid " Poultry Items"
+msgid "Poultry Items"
+msgstr "Meeshaalee Foollee"
 
-#: .\base\templates\base\base.html:86 .\base\templates\base\base.html:256
-#: .\base\templates\base\index.html:49 .\base\templates\base\index.html:90
-#: .\base\templates\base\index.html:127
-msgid "Electronics"
-msgstr "Elekktirooniksii"
+#: .\base\templates\base\base.html:240
+#, fuzzy
+#| msgid " Poultry"
+msgid "Poultry Eggs"
+msgstr "Foollee"
 
-#: .\base\templates\base\base.html:87 .\base\templates\base\base.html:257
-#: .\base\templates\base\index.html:97 .\base\templates\base\index.html:128
-msgid "Clothing"
-msgstr "Uffata"
+#: .\base\templates\base\base.html:246
+#, fuzzy
+#| msgid " Poultry Items"
+msgid "Poultry Chickens"
+msgstr "Meeshaalee Foollee"
 
-#: .\base\templates\base\base.html:88 .\base\templates\base\base.html:258
-#: .\base\templates\base\index.html:111
-msgid "Kids Toys"
-msgstr "Taphataa ijoollee"
+#: .\base\templates\base\base.html:252
+msgid "Poultry Farm Training"
+msgstr ""
 
-#: .\base\templates\base\base.html:114
+#: .\base\templates\base\base.html:258
+msgid "Poultry Farm Consultancy"
+msgstr ""
+
+#: .\base\templates\base\base.html:266
+msgid "User"
+msgstr ""
+
+#: .\base\templates\base\base.html:273
+msgid "Login"
+msgstr "Seeni"
+
+#: .\base\templates\base\base.html:279
 msgid "Register"
 msgstr "Galmaa'i"
 
-#: .\base\templates\base\base.html:130
-msgid " Cars for Sale"
-msgstr "Mootoraalee Gurgurtaa"
+#: .\base\templates\base\base.html:286
+msgid "My Profile"
+msgstr ""
 
-#: .\base\templates\base\base.html:135
-msgid " Houses for Sale"
-msgstr "Manaalee Gurgurtaa"
+#: .\base\templates\base\base.html:293
+msgid "Edit Profile"
+msgstr ""
 
-#: .\base\templates\base\base.html:140 .\base\templates\base\base.html:200
-msgid " Electronics"
-msgstr "Elekktirooniksii"
+#: .\base\templates\base\base.html:299
+msgid "logout"
+msgstr ""
 
-#: .\base\templates\base\base.html:145 .\base\templates\base\base.html:205
-msgid " Clothing"
-msgstr "Uffata"
-
-#: .\base\templates\base\base.html:150
-msgid " Poultry Items"
-msgstr "Meeshaalee Foollee"
-
-#: .\base\templates\base\base.html:155
-msgid " Message"
-msgstr "Ergaa"
-
-#: .\base\templates\base\base.html:160
-msgid " About us"
-msgstr "Waa'ee keenya"
-
-#: .\base\templates\base\base.html:165
-msgid " Admin Links"
-msgstr "Liinkii Admin"
-
-#: .\base\templates\base\base.html:170
-msgid " User list"
+#: .\base\templates\base\base.html:308
+#, fuzzy
+#| msgid " User list"
+msgid "User store"
 msgstr "Tarree fayyadamtootaa"
 
-#: .\base\templates\base\base.html:175
-msgid " Cart"
+#: .\base\templates\base\base.html:317
+msgid "My Orders"
+msgstr ""
+
+#: .\base\templates\base\base.html:340
+#, fuzzy
+#| msgid " Cart"
+msgid "Cart"
 msgstr "Kaartii"
 
-#: .\base\templates\base\base.html:186
-msgid " Home"
-msgstr "Mana"
+#: .\base\templates\base\base.html:354
+msgid "For Admin"
+msgstr ""
 
-#: .\base\templates\base\base.html:190
-msgid " Cars"
-msgstr "Mootoraalee"
+#: .\base\templates\base\base.html:361
+msgid "Admin Links"
+msgstr "Liinkii Admin"
 
-#: .\base\templates\base\base.html:195
-msgid " Houses"
-msgstr "Manaalee"
+#: .\base\templates\base\base.html:373
+#, fuzzy
+#| msgid " User list"
+msgid "User List"
+msgstr "Tarree fayyadamtootaa"
 
-#: .\base\templates\base\base.html:210
+#: .\base\templates\base\base.html:383
+msgid "Language"
+msgstr ""
+
+#: .\base\templates\base\base.html:425 .\base\templates\base\base.html:498
+msgid "Contact Us"
+msgstr "Nu Quunnami"
+
+#: .\base\templates\base\base.html:444
+msgid " Dairy"
+msgstr ""
+
+#: .\base\templates\base\base.html:449
 msgid " Poultry"
 msgstr "Foollee"
 
-#: .\base\templates\base\base.html:229
-msgid "Market"
-msgstr "Gabaa"
+#: .\base\templates\base\base.html:475
+msgid "Ethio"
+msgstr ""
 
-#: .\base\templates\base\base.html:229
-msgid "Hub"
-msgstr "Bu'uura"
+#: .\base\templates\base\base.html:475
+msgid "Agriculture"
+msgstr ""
 
-#: .\base\templates\base\base.html:232
+#: .\base\templates\base\base.html:478
+#, fuzzy
+#| msgid ""
+#| "Sheger.xyz is your one-stop online marketplace for cars, houses, "
+#| "electronics, clothing and kids toys. We connect buyers and sellers across "
+#| "the globe."
 msgid ""
-"Sheger.xyz is your one-stop online marketplace for cars, houses, "
-"electronics, clothing and kids toys. We connect buyers and sellers across "
-"the globe."
-msgstr "Sheger.xyz gabaa interneetii tokko qofa mootoraalee, manaalee, elekktirooniksii, uffata fi taphataa ijoollee. Bittoota fi gurgurtoota addunyaa walitti fidna."
+"Ethio-Agriculture is your one-stop online marketplace for Dairy products and "
+"Poultry Item. We connect buyers and sellers across the globe."
+msgstr ""
+"Sheger.xyz gabaa interneetii tokko qofa mootoraalee, manaalee, "
+"elekktirooniksii, uffata fi taphataa ijoollee. Bittoota fi gurgurtoota "
+"addunyaa walitti fidna."
 
-#: .\base\templates\base\base.html:242
-msgid "Quick Links"
-msgstr "Liinkii Ariifachiisaa"
-
-#: .\base\templates\base\base.html:244
-msgid "Home"
-msgstr "Mana"
-
-#: .\base\templates\base\base.html:246
-msgid "Products"
-msgstr "Meeshaalee"
-
-#: .\base\templates\base\base.html:247
-msgid "Blog"
-msgstr "Bilogii"
-
-#: .\base\templates\base\base.html:252
+#: .\base\templates\base\base.html:488
 msgid "Categories"
 msgstr "Kutaa"
 
-#: .\base\templates\base\base.html:262 .\base\templates\base\base.html:267
-msgid "Customer Service"
-msgstr "Tajaajila Maamilaa"
+#: .\base\templates\base\base.html:490
+#, fuzzy
+#| msgid " Poultry Items"
+msgid "Poultry Item"
+msgstr "Meeshaalee Foollee"
 
-#: .\base\templates\base\base.html:264
-msgid "My Account"
-msgstr "Herrega Koo"
+#: .\base\templates\base\base.html:494
+msgid "Quick Links"
+msgstr "Liinkii Ariifachiisaa"
 
-#: .\base\templates\base\base.html:265
-msgid "Order Tracking"
-msgstr "Duukaa Bu'iinsa Ajajaa"
+#: .\base\templates\base\base.html:496
+msgid "Home"
+msgstr "Mana"
 
-#: .\base\templates\base\base.html:266
-msgid "Wishlist"
-msgstr "Wanta Fedhu"
-
-#: .\base\templates\base\base.html:268
-msgid "Returns & Exchanges"
-msgstr "Deebii fi Jijjiirraa"
-
-#: .\base\templates\base\base.html:269
-msgid "FAQs"
-msgstr "Gaaffilee Ijjannoo"
-
-#: .\base\templates\base\base.html:273
+#: .\base\templates\base\base.html:502
 msgid "Contact Info"
 msgstr "Odeeffannoo Quunnamtii"
 
-#: .\base\templates\base\base.html:275
+#: .\base\templates\base\base.html:504
 msgid "Ethiopia / Sheger City , Gelan"
 msgstr "Itoophiyaa / Magaalaa Sheger, Gelan"
 
-#: .\base\templates\base\base.html:284
-msgid "Sheger.xyz All Rights Reserved."
+#: .\base\templates\base\base.html:513
+#, fuzzy
+#| msgid "Sheger.xyz All Rights Reserved."
+msgid "Ethio-Agriculture All Rights Reserved."
 msgstr "Sheger.xyz Mirgi Hundaa Eegameera."
 
-#: .\base\templates\base\index.html:18
-msgid "Find Your Dream Home Today"
-msgstr "Mana abjuu kee har'a argadhu"
-
-#: .\base\templates\base\index.html:19
-msgid "Thousands of properties waiting for you"
-msgstr "Qabeenyi kumaatamaan si eeggachaa jira"
+#: .\base\templates\base\index.html:6
+#, fuzzy
+#| msgid "Sheger.xyz | Ethiopian Market place"
+msgid "Ethio Agriculture | Ethiopian Sheger Market place"
+msgstr "Sheger.xyz | Gabaa Itoophiyaa"
 
 #: .\base\templates\base\index.html:20
-msgid "House"
-msgstr "Mana"
-
-#: .\base\templates\base\index.html:28
-msgid "Ethiopian Poultry Farm"
+#, fuzzy
+#| msgid "Ethiopian Poultry Farm"
+msgid "Poultry Farm"
 msgstr "Qonna Foollee Itoophiyaa"
 
-#: .\base\templates\base\index.html:29
+#: .\base\templates\base\index.html:21
 msgid "Eggs, Chickens, poultry Equipment and tools for sell"
 msgstr "Qeelloo, hoolota, meeshaalee foollee fi meeshaalee gurgurtaa"
 
-#: .\base\templates\base\index.html:30
+#: .\base\templates\base\index.html:22
 msgid "poultry"
 msgstr "foollee"
 
-#: .\base\templates\base\index.html:38
-msgid "Latest Car Models"
-msgstr "Mootoraalee Haaraa"
+#: .\base\templates\base\index.html:30
+msgid "Dairy Farm"
+msgstr ""
 
-#: .\base\templates\base\index.html:39
-msgid "New arrivals with amazing deals"
-msgstr "Meeshaalee haaraa waliigaltee dinqisiisaa waliin dhufan"
+#: .\base\templates\base\index.html:31
+msgid "Fresh milk, cheese, butter and other dairy products"
+msgstr ""
 
-#: .\base\templates\base\index.html:40
-msgid "car"
-msgstr "mootoraa"
+#: .\base\templates\base\index.html:32
+msgid "Dairy"
+msgstr ""
 
-#: .\base\templates\base\index.html:47
-msgid "Summer Tech Sale"
-msgstr "Gurgurtaa Teknolojii Bonaa"
-
-#: .\base\templates\base\index.html:48
-#, python-format
-msgid "Up to 40%% off on electronics"
-msgstr "Elekktirooniksii irratti hanga 40%% hir'ata"
-
-#: .\base\templates\base\index.html:70
+#: .\base\templates\base\index.html:51
 msgid "Shop by Category"
 msgstr "Kutaa irratti bitadhu"
 
-#: .\base\templates\base\index.html:77
-msgid "5,000+ listings"
-msgstr "Tarree 5,000 olii"
+#: .\base\templates\base\index.html:58
+#: .\base\templates\base\search_results.html:32
+#: .\base\templates\base\search_results.html:61
+#, fuzzy
+#| msgid " Poultry"
+msgid "Poultry"
+msgstr "Foollee"
 
-#: .\base\templates\base\index.html:84
-msgid "2,500+ properties"
-msgstr "Qabeenya 2,500 olii"
+#: .\base\templates\base\index.html:59
+msgid "posted"
+msgstr ""
 
-#: .\base\templates\base\index.html:91
-msgid "10,000+ products"
-msgstr "Meeshaalee 10,000 olii"
-
-#: .\base\templates\base\index.html:98
-msgid "15,000+ items"
-msgstr "Meeshaalee 15,000 olii"
-
-#: .\base\templates\base\index.html:104 .\base\templates\base\index.html:129
-msgid "Books"
-msgstr "Kitaabota"
-
-#: .\base\templates\base\index.html:105
-msgid "8,000+ titles"
-msgstr "Mataduree 8,000 olii"
-
-#: .\base\templates\base\index.html:112
-msgid "3,000+ products"
-msgstr "Meeshaalee 3,000 olii"
-
-#: .\base\templates\base\index.html:122
+#: .\base\templates\base\index.html:67
 msgid "Featured Products"
 msgstr "Meeshaalee filataman"
 
-#: .\base\templates\base\index.html:124
-msgid "All"
-msgstr "Hundaa"
+#: .\base\templates\base\index.html:135 .\base\templates\base\index.html:303
+msgid "Bed"
+msgstr ""
 
-#: .\base\templates\base\index.html:130
-msgid "Toys"
-msgstr "Taphataa"
+#: .\base\templates\base\index.html:193 .\base\templates\base\index.html:361
+#, fuzzy
+#| msgid "View Messages"
+msgid "View Details"
+msgstr "Ergaa Ilaali"
 
-#: .\base\templates\base\index.html:136
-msgid "View All Products"
-msgstr "Meeshaalee Hundaa Ilaali"
+#: .\base\templates\base\index.html:199
+#, fuzzy
+#| msgid "Featured Products"
+msgid "No featured products available."
+msgstr "Meeshaalee filataman"
 
-#: .\base\templates\base\index.html:145
-msgid "Summer Mega Sale!"
-msgstr "Gurgurtaa Guddaa Bonaa!"
+#: .\base\templates\base\index.html:204
+msgid "Our Sponsors"
+msgstr ""
 
-#: .\base\templates\base\index.html:146
-#, python-format
-msgid "Up to 50%% off on selected items. Limited time offer."
-msgstr "Meeshaalee filataman irratti hanga 50%% hir'ata. Yeroo murtaa'eef qofa."
+#: .\base\templates\base\index.html:235
+#, fuzzy
+#| msgid "Featured Products"
+msgid "Load More Products"
+msgstr "Meeshaalee filataman"
 
-#: .\base\templates\base\index.html:147
-msgid "Shop Now"
-msgstr "Amma bitadhu"
+#: .\base\templates\base\index.html:236
+msgid "more"
+msgstr ""
 
-#: .\base\templates\base\messages.html:12
+#: .\base\templates\base\messages.html:7
+#, fuzzy
+#| msgid "Sheger.xyz | Ethiopian Market place"
+msgid "Messages Received | Ethiopian Sheger Market place"
+msgstr "Sheger.xyz | Gabaa Itoophiyaa"
+
+#: .\base\templates\base\messages.html:16
 msgid "Messages Received"
 msgstr "Ergaa argame"
 
-#: .\base\templates\base\messages.html:29
+#: .\base\templates\base\messages.html:33
 msgid "No messages yet."
 msgstr "Ergaan hin jiru"
 
-#: .\base\templates\base\terms.html:12
+#: .\base\templates\base\search_results.html:7
+#, fuzzy
+#| msgid "Search products"
+msgid "Search Results for"
+msgstr "Meeshaalee barbaadi"
+
+#: .\base\templates\base\search_results.html:7
+#: .\base\templates\base\search_results.html:9
+#, fuzzy
+#| msgid "Sheger"
+msgid "Sheger.city"
+msgstr "Sheger"
+
+#: .\base\templates\base\search_results.html:9
+#, fuzzy
+#| msgid "Search products"
+msgid "Search Products"
+msgstr "Meeshaalee barbaadi"
+
+#: .\base\templates\base\search_results.html:17
+#, fuzzy
+#| msgid "Search products"
+msgid "Search Results"
+msgstr "Meeshaalee barbaadi"
+
+#: .\base\templates\base\search_results.html:20
+msgid "Showing results for"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:25
+msgid "Found"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:25
+msgid "results"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:28
+msgid "Houses"
+msgstr "Manaalee"
+
+#: .\base\templates\base\search_results.html:29
+#: .\base\templates\base\search_results.html:57
+msgid "dairyfarm"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:30
+msgid "Electronics"
+msgstr "Elekktirooniksii"
+
+#: .\base\templates\base\search_results.html:31
+msgid "Clothing"
+msgstr "Uffata"
+
+#: .\base\templates\base\search_results.html:44
+msgid "What are you looking for?"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:45
+msgid "Enter a search term to find products across all categories"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:52
+msgid "No results found"
+msgstr ""
+
+#: .\base\templates\base\search_results.html:53
+msgid "Try different keywords or browse our categories"
+msgstr ""
+
+#: .\base\templates\base\terms.html:6
+#, fuzzy
+#| msgid "Sheger.xyz | Ethiopian Market place"
+msgid "Terms | Ethiopian Sheger Market place"
+msgstr "Sheger.xyz | Gabaa Itoophiyaa"
+
+#: .\base\templates\base\terms.html:16
 msgid "Terms"
 msgstr "Shira"
 
-#: .\base\templates\base\terms.html:14
+#: .\base\templates\base\terms.html:18
 msgid "User Agreement"
 msgstr "Waliigaltee Fayyadamaa"
 
-#: .\base\templates\base\terms.html:15
+#: .\base\templates\base\terms.html:19
 msgid "By using our website, you agree to the following terms and conditions."
-msgstr "Weebsaayitii keenya fayyadamuun shira fi haala armaan gadii ni waliigaltee."
+msgstr ""
+"Weebsaayitii keenya fayyadamuun shira fi haala armaan gadii ni waliigaltee."
+
+#~ msgid "View Contact Us Messages"
+#~ msgstr "Ergaa Nu Quunnami Ilaali"
+
+#~ msgid "You are not logged in."
+#~ msgstr "Hin seene."
+
+#~ msgid "All Items"
+#~ msgstr "Meeshaalee Hundaa"
+
+#~ msgid "city"
+#~ msgstr "magaalaa"
+
+#~ msgid "All Categories"
+#~ msgstr "Kutaa Hundaa"
+
+#~ msgid "Cars"
+#~ msgstr "Mootoraalee"
+
+#~ msgid "Kids Toys"
+#~ msgstr "Taphataa ijoollee"
+
+#~ msgid " Cars for Sale"
+#~ msgstr "Mootoraalee Gurgurtaa"
+
+#~ msgid " Houses for Sale"
+#~ msgstr "Manaalee Gurgurtaa"
+
+#~ msgid " Electronics"
+#~ msgstr "Elekktirooniksii"
+
+#~ msgid " Clothing"
+#~ msgstr "Uffata"
+
+#~ msgid " About us"
+#~ msgstr "Waa'ee keenya"
+
+#~ msgid " Admin Links"
+#~ msgstr "Liinkii Admin"
+
+#~ msgid " Home"
+#~ msgstr "Mana"
+
+#~ msgid " Cars"
+#~ msgstr "Mootoraalee"
+
+#~ msgid " Houses"
+#~ msgstr "Manaalee"
+
+#~ msgid "Market"
+#~ msgstr "Gabaa"
+
+#~ msgid "Hub"
+#~ msgstr "Bu'uura"
+
+#~ msgid "Products"
+#~ msgstr "Meeshaalee"
+
+#~ msgid "Blog"
+#~ msgstr "Bilogii"
+
+#~ msgid "Customer Service"
+#~ msgstr "Tajaajila Maamilaa"
+
+#~ msgid "My Account"
+#~ msgstr "Herrega Koo"
+
+#~ msgid "Order Tracking"
+#~ msgstr "Duukaa Bu'iinsa Ajajaa"
+
+#~ msgid "Wishlist"
+#~ msgstr "Wanta Fedhu"
+
+#~ msgid "Returns & Exchanges"
+#~ msgstr "Deebii fi Jijjiirraa"
+
+#~ msgid "FAQs"
+#~ msgstr "Gaaffilee Ijjannoo"
+
+#~ msgid "Find Your Dream Home Today"
+#~ msgstr "Mana abjuu kee har'a argadhu"
+
+#~ msgid "Thousands of properties waiting for you"
+#~ msgstr "Qabeenyi kumaatamaan si eeggachaa jira"
+
+#~ msgid "House"
+#~ msgstr "Mana"
+
+#~ msgid "Latest Car Models"
+#~ msgstr "Mootoraalee Haaraa"
+
+#~ msgid "New arrivals with amazing deals"
+#~ msgstr "Meeshaalee haaraa waliigaltee dinqisiisaa waliin dhufan"
+
+#~ msgid "car"
+#~ msgstr "mootoraa"
+
+#~ msgid "Summer Tech Sale"
+#~ msgstr "Gurgurtaa Teknolojii Bonaa"
+
+#, python-format
+#~ msgid "Up to 40%% off on electronics"
+#~ msgstr "Elekktirooniksii irratti hanga 40%% hir'ata"
+
+#~ msgid "5,000+ listings"
+#~ msgstr "Tarree 5,000 olii"
+
+#~ msgid "2,500+ properties"
+#~ msgstr "Qabeenya 2,500 olii"
+
+#~ msgid "10,000+ products"
+#~ msgstr "Meeshaalee 10,000 olii"
+
+#~ msgid "15,000+ items"
+#~ msgstr "Meeshaalee 15,000 olii"
+
+#~ msgid "Books"
+#~ msgstr "Kitaabota"
+
+#~ msgid "8,000+ titles"
+#~ msgstr "Mataduree 8,000 olii"
+
+#~ msgid "3,000+ products"
+#~ msgstr "Meeshaalee 3,000 olii"
+
+#~ msgid "All"
+#~ msgstr "Hundaa"
+
+#~ msgid "Toys"
+#~ msgstr "Taphataa"
+
+#~ msgid "View All Products"
+#~ msgstr "Meeshaalee Hundaa Ilaali"
+
+#~ msgid "Summer Mega Sale!"
+#~ msgstr "Gurgurtaa Guddaa Bonaa!"
+
+#, python-format
+#~ msgid "Up to 50%% off on selected items. Limited time offer."
+#~ msgstr ""
+#~ "Meeshaalee filataman irratti hanga 50%% hir'ata. Yeroo murtaa'eef qofa."
+
+#~ msgid "Shop Now"
+#~ msgstr "Amma bitadhu"

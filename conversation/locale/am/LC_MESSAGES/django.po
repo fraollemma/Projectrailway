@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 01:30+0300\n"
+"POT-Creation-Date: 2026-05-12 12:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,54 +17,83 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\conversation\templates\conversation\detail.html:15
+#: .\conversation\templates\conversation\detail.html:6
+msgid " My Conversation Detail | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\conversation\templates\conversation\detail.html:19
 msgid "Conversation about"
 msgstr "ውይይት ስለ"
 
-#: .\conversation\templates\conversation\detail.html:56
+#: .\conversation\templates\conversation\detail.html:60
 msgid "Send"
 msgstr "ላክ"
 
-#: .\conversation\templates\conversation\inbox.html:14
+#: .\conversation\templates\conversation\inbox.html:7
+msgid " My Inbox | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\conversation\templates\conversation\inbox.html:18
 msgid "Your Conversations"
 msgstr "የእርስዎ ውይይቶች"
 
-#: .\conversation\templates\conversation\inbox.html:29
+#: .\conversation\templates\conversation\inbox.html:44
+#: .\conversation\templates\conversation\inbox.html:46
 msgid "No Image"
 msgstr "ምስል የለም"
 
-#: .\conversation\templates\conversation\inbox.html:55
+#: .\conversation\templates\conversation\inbox.html:75
 msgid "typing"
 msgstr ""
 
-#: .\conversation\templates\conversation\inbox.html:65
+#: .\conversation\templates\conversation\inbox.html:85
 msgid "No messages yet"
 msgstr "መልእክቶች አልተላኩም"
 
-#: .\conversation\templates\conversation\inbox.html:75
+#: .\conversation\templates\conversation\inbox.html:95
 msgid "No conversations yet"
 msgstr "ምንም ውይይቶች አልተጀመሩም"
 
-#: .\conversation\templates\conversation\inbox.html:76
+#: .\conversation\templates\conversation\inbox.html:96
 msgid "Browse Items"
 msgstr "እቃዎችን ያስሱ"
 
-#: .\conversation\templates\conversation\new.html:12
+#: .\conversation\templates\conversation\new.html:6
+msgid "Start New Message | Ethiopian Sheger Market place"
+msgstr ""
+
+#: .\conversation\templates\conversation\new.html:16
 msgid "New Message"
 msgstr "አዲስ መልእክት"
 
-#: .\conversation\templates\conversation\new.html:13
+#: .\conversation\templates\conversation\new.html:17
 msgid "Contact the seller about:"
 msgstr "ለእቃው በተመለከተ ከሸያጩ ያግኙ:"
 
-#: .\conversation\templates\conversation\new.html:33
+#: .\conversation\templates\conversation\new.html:21
+msgid "View Item"
+msgstr ""
+
+#: .\conversation\templates\conversation\new.html:43
 msgid "Your Message"
 msgstr "መልእክትዎ"
 
-#: .\conversation\templates\conversation\new.html:41
+#: .\conversation\templates\conversation\new.html:51
 msgid "Send Message"
 msgstr "መልእክት ላክ"
 
-#: .\conversation\templates\conversation\new.html:43
+#: .\conversation\templates\conversation\new.html:54
+msgid "Back to Item"
+msgstr ""
+
+#: .\conversation\templates\conversation\new.html:56
 msgid "Cancel"
 msgstr "ሰርዝ"
+
+#: .\conversation\templates\conversation\new.html:69
+msgid "Please enter a message"
+msgstr ""
+
+#: .\conversation\templates\conversation\new.html:74
+msgid "Sending..."
+msgstr ""

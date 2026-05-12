@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block title %}
-    {% trans "Poultry Training Trainees | Ethiopian Sheger Market place" %}
+    {% trans "Poultry Training Trainees | Ethiopian Poultry And Dairy Farm Market place" %}
 {% endblock %}
 
 {% block css %}
@@ -13,8 +13,8 @@
 {% block content %}
 <section class="training-container">
     <div class="training-header">
-        <h1 class="training-title">Enrolled Trainees</h1>
-        <p class="training-subtitle">Here is the list of people who have enrolled in poultry training programs.</p>
+        <h1 class="training-title">{% trans "Enrolled Trainees" %}</h1>
+        <p class="training-subtitle">{% trans "Here is the list of people who have enrolled in poultry training programs." %}</p>
     </div>
 
     <div class="trainee-list">
@@ -23,11 +23,11 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Program</th>
-                        <th>Enrollment Date</th>
+                        <th>{% trans "Name" %}</th>
+                        <th>{% trans "Email" %}</th>
+                        <th>{% trans "Phone" %}</th>
+                        <th>{% trans "Program" %}</th>
+                        <th>{% trans "Enrollment Date" %}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,7 +44,7 @@
                 </tbody>
             </table>
         {% else %}
-            <p>No trainees enrolled yet.</p>
+            <p>{% trans "No trainees enrolled yet." %}</p>
         {% endif %}
     </div>
 </section>

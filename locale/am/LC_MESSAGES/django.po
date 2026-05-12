@@ -2,185 +2,2502 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-
+#
 #, fuzzy
-msgid ""
-msgstr ""
+msgid "We connect you with quality poultry products..."
+msgstr "በመላው ኢትዮጵያ ከትኩስ እና ኦርጋኒክ የወተት ምርቶች ጋር ያገናኝዎታል።"
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-09 19:13+0300\n"
-"PO-Revision-Date: 2026-05-09 00:00+0300\n"
-"Last-Translator: Fraol Lemma\n"
-"Language-Team: Amharic\n"
+"POT-Creation-Date: 2026-05-11 23:40+0300\n"
+"PO-Revision-Date: 2026-05-11 14:00+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Amharic <am@li.org>\n"
 "Language: am\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-############################
-# ADMIN
-############################
+#: .\admin_app\templates\admin_app\dashboard.html:6
+msgid " Admin-Only | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የአስተዳዳሪ ብቻ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
 
-msgid " Admin-Only | Ethiopian Sheger Market place"
-msgstr "የአስተዳዳሪ ብቻ | የኢትዮጵያ ሸገር ገበያ"
+#: .\admin_app\templates\admin_app\manage_houses.html:6
+msgid " | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "| የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
 
-msgid " | Ethiopian Sheger Market place"
-msgstr " | የኢትዮጵያ ሸገር ገበያ"
+#: .\base\templates\base\about_us.html:6
+msgid "About Us | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "ስለ እኛ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
 
-############################
-# CART
-############################
+#: .\base\templates\base\about_us.html:16 .\base\templates\base\base.html:431
+#: .\base\templates\base\base.html:498
+#: .\companies\templates\companies\nvi.html:27
+msgid "About Us"
+msgstr "ስለ እኛ"
 
-msgid "Cart Details | Ethiopian Sheger Market place"
-msgstr "የቅርጫት ዝርዝር | የኢትዮጵያ ሸገር ገበያ"
+#: .\base\templates\base\about_us.html:17 .\base\templates\base\terms.html:17
+msgid ""
+"We are a company dedicated to providing the best services to our customers."
+msgstr "እኛ ለደንበኞቻችን ምርጥ አገልግሎቶችን ለመስጠት ቁርጠኛ የሆነ ኩባንያ ነን።"
 
+#: .\base\templates\base\about_us.html:19
+msgid ""
+"Our mission is to connect buyers and sellers in a seamless online "
+"marketplace."
+msgstr "ተልእኳችን ገዢዎችን እና ሻጮችን በተቀላጠፈ የመስመር ላይ ገበያ ማገናኘት ነው።"
+
+#: .\base\templates\base\about_us.html:20
+msgid ""
+"We strive to offer a wide range of products at competitive prices, backed by "
+"excellent customer service."
+msgstr ""
+"በተወዳዳሪ ዋጋዎች ሰፋ ያሉ ምርቶችን በማቅረብ፣ በጥሩ የደንበኛ አገልግሎት የተደገፈ አቀራረብ ለመስጠት እንጥራለን።"
+
+#: .\base\templates\base\admin_links.html:6
+msgid "Admin Links | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የአስተዳዳሪ አገናኞች | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\base\templates\base\admin_links.html:16
+#: .\base\templates\base\base.html:361
+msgid "Admin Links"
+msgstr "የአስተዳዳሪ አገናኞች"
+
+#: .\base\templates\base\admin_links.html:19
+msgid "View Messages"
+msgstr "መልእክቶችን ይመልከቱ"
+
+#: .\base\templates\base\admin_links.html:20
+msgid "View Contact Us Messages"
+msgstr "የአግኙን መልእክቶችን ይመልከቱ"
+
+#: .\base\templates\base\admin_links.html:32
+msgid "You are not logged in."
+msgstr "ገብተው አይደሉም።"
+
+#: .\base\templates\base\admin_links.html:34
+#: .\base\templates\base\base.html:273 .\users\templates\users\login.html:15
+#: .\users\templates\users\login.html:32
+msgid "Login"
+msgstr "ግባ"
+
+#: .\base\templates\base\base.html:8
+msgid ""
+"Ethiopian marketplace - Buy and sell poultry and dairy products in Ethiopia"
+msgstr "የኢትዮጵያ ገበያ - በኢትዮጵያ ውስጥ የዶሮ እርባታ እና የወተት ምርቶችን ይግዙ እና ይሽጡ"
+
+#: .\base\templates\base\base.html:9
+msgid ""
+"Ethiopia, marketplace, buy and sell, agriculture, ethiopia agriculture , "
+"poultry, dairy"
+msgstr "ኢትዮጵያ፣ ገበያ፣ ግዛ ሽጥ፣ እርሻ፣ የኢትዮጵያ እርሻ፣ ዶሮ እርባታ፣ ወተት"
+
+#: .\base\templates\base\base.html:26
+msgid "Please select your language"
+msgstr "እባክዎ ቋንቋዎን ይምረጡ"
+
+#: .\base\templates\base\base.html:40
+msgid "Skip"
+msgstr "ዝለል"
+
+#: .\base\templates\base\base.html:123
+msgid "Notifications"
+msgstr "ማሳወቂያዎች"
+
+#: .\base\templates\base\base.html:129 .\base\templates\base\base.html:326
+#: .\base\templates\base\base.html:367
+msgid "Messages"
+msgstr "መልእክቶች"
+
+#: .\base\templates\base\base.html:136
+msgid "Egg Orders"
+msgstr "የእንቁላል ትዕዛዞች"
+
+#: .\base\templates\base\base.html:143
+msgid "Carted"
+msgstr "ወደ ካርታ ተጨምሯል"
+
+#: .\base\templates\base\base.html:151
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:36
+msgid "Total"
+msgstr "ጠቅላላ"
+
+#: .\base\templates\base\base.html:186
+msgid "Browse Categories"
+msgstr "ምድቦችን ያስሱ"
+
+#: .\base\templates\base\base.html:197
+msgid "Dairy Section"
+msgstr "የወተት ክፍል"
+
+#: .\base\templates\base\base.html:204
+msgid "All Dairy products"
+msgstr "ሁሉም የወተት ምርቶች"
+
+#: .\base\templates\base\base.html:210
+msgid "Add Dairy Products"
+msgstr "የወተት ምርቶችን ያክሉ"
+
+#: .\base\templates\base\base.html:218 .\base\templates\base\base.html:226
+msgid "Poultry Section"
+msgstr "የዶሮ እርባታ ክፍል"
+
+#: .\base\templates\base\base.html:233
+msgid "Poultry Items"
+msgstr "የዶሮ እርባታ ዕቃዎች"
+
+#: .\base\templates\base\base.html:240
+msgid "Poultry Eggs"
+msgstr "የዶሮ እንቁላሎች"
+
+#: .\base\templates\base\base.html:246
+msgid "Poultry Chickens"
+msgstr "የዶሮ እርባታ ዶሮዎች"
+
+#: .\base\templates\base\base.html:252
+msgid "Poultry Farm Training"
+msgstr "የዶሮ እርባታ እርሻ ሥልጠና"
+
+#: .\base\templates\base\base.html:258
+msgid "Poultry Farm Consultancy"
+msgstr "የዶሮ እርባታ እርሻ ማማከር"
+
+#: .\base\templates\base\base.html:266
+msgid "User"
+msgstr "ተጠቃሚ"
+
+#: .\base\templates\base\base.html:279 .\users\templates\users\register.html:33
+msgid "Register"
+msgstr "ተመዝገብ"
+
+#: .\base\templates\base\base.html:286 .\users\templates\users\profile.html:15
+msgid "My Profile"
+msgstr "መገለጫዬ"
+
+#: .\base\templates\base\base.html:293
+msgid "Edit Profile"
+msgstr "መገለጫ አርትዕ"
+
+#: .\base\templates\base\base.html:299
+msgid "logout"
+msgstr "ውጣ"
+
+#: .\base\templates\base\base.html:308
+msgid "User store"
+msgstr "የተጠቃሚ መደብር"
+
+#: .\base\templates\base\base.html:317
+msgid "My Orders"
+msgstr "ትዕዛዞቼ"
+
+#: .\base\templates\base\base.html:340
+msgid "Cart"
+msgstr "ካርታ"
+
+#: .\base\templates\base\base.html:354
+msgid "For Admin"
+msgstr "ለአስተዳዳሪ"
+
+#: .\base\templates\base\base.html:373
+msgid "User List"
+msgstr "የተጠቃሚ ዝርዝር"
+
+#: .\base\templates\base\base.html:383
+msgid "Language"
+msgstr "ቋንቋ"
+
+#: .\base\templates\base\base.html:425 .\base\templates\base\base.html:499
+#: .\companies\templates\companies\ethiochicken.html:187
+msgid "Contact Us"
+msgstr "አግኙን"
+
+#: .\base\templates\base\base.html:444
+msgid " Dairy"
+msgstr "ወተት"
+
+#: .\base\templates\base\base.html:449
+msgid " Poultry"
+msgstr "ዶሮ እርባታ"
+
+#: .\base\templates\base\base.html:475
+msgid "Ethio"
+msgstr "ኢትዮ"
+
+#: .\base\templates\base\base.html:475
+msgid "Agriculture"
+msgstr "ግብርና"
+
+#: .\base\templates\base\base.html:478
+msgid ""
+"Ethio-Agriculture is your one-stop online marketplace for Dairy products and "
+"Poultry Item. We connect buyers and sellers across the globe."
+msgstr ""
+"ኢትዮ-አግሪካልቸር ለወተት ምርቶች እና ለዶሮ እርባታ ዕቃዎች አንድ ማቆሚያ የመስመር ላይ ገበያ ነው። ገዢዎችን እና "
+"ሻጮችን በዓለም ዙሪያ እናገናኛለን።"
+
+#: .\base\templates\base\base.html:488
+msgid "Categories"
+msgstr "ምድቦች"
+
+#: .\base\templates\base\base.html:490
+msgid "Dairy products"
+msgstr "የወተት ምርቶች"
+
+#: .\base\templates\base\base.html:491
+msgid "Poultry Item"
+msgstr "የዶሮ እርባታ ዕቃ"
+
+#: .\base\templates\base\base.html:495
+#: .\companies\templates\companies\nvi.html:43
+msgid "Quick Links"
+msgstr "ፈጣን አገናኞች"
+
+#: .\base\templates\base\base.html:497
+msgid "Home"
+msgstr "ቤት"
+
+#: .\base\templates\base\base.html:503
+msgid "Contact Info"
+msgstr "የመገናኛ መረጃ"
+
+#: .\base\templates\base\base.html:505
+msgid "Ethiopia / Sheger City , Gelan"
+msgstr "ኢትዮጵያ / ሸገር ከተማ ፣ ገላን"
+
+#: .\base\templates\base\base.html:514
+msgid "Ethio-Agriculture All Rights Reserved."
+msgstr "ኢትዮ-አግሪካልቸር ሁሉም መብቶች ተጠብቀዋል።"
+
+#: .\base\templates\base\index.html:6
+msgid "Sheger Market | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "ሸገር ገበያ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\base\templates\base\index.html:20
+msgid "Poultry Farm"
+msgstr "የዶሮ እርባታ እርሻ"
+
+#: .\base\templates\base\index.html:21
+msgid "Eggs, Chickens, poultry Equipment and tools for sell"
+msgstr "እንቁላሎች፣ ዶሮዎች፣ የዶሮ እርባታ መሳሪያዎች እና መገልገያዎች ለሽያጭ"
+
+#: .\base\templates\base\index.html:22
+msgid "poultry"
+msgstr "ዶሮ እርባታ"
+
+#: .\base\templates\base\index.html:30
+msgid "Dairy Farm"
+msgstr "የወተት እርሻ"
+
+#: .\base\templates\base\index.html:31
+msgid "Fresh milk, cheese, butter and other dairy products"
+msgstr "ትኩስ ወተት፣ አይብ፣ ቅቤ እና ሌሎች የወተት ምርቶች"
+
+#: .\base\templates\base\index.html:32
+#: .\base\templates\base\search_results.html:30
+msgid "Electronics"
+msgstr "ኤሌክትሮኒክስ"
+
+#: .\base\templates\base\index.html:51
+msgid "Shop by Category"
+msgstr "በምድብ ግዙ"
+
+#: .\base\templates\base\index.html:58
+msgid "Dairy"
+msgstr "ወተት"
+
+#: .\base\templates\base\index.html:59 .\base\templates\base\index.html:67
+msgid "posted"
+msgstr "ተለጠፈ"
+
+#: .\base\templates\base\index.html:66
+#: .\base\templates\base\search_results.html:32
+#: .\base\templates\base\search_results.html:62
+msgid "Poultry"
+msgstr "ዶሮ እርባታ"
+
+#: .\base\templates\base\index.html:75
+msgid "Featured Products"
+msgstr "ታዋቂ ምርቶች"
+
+#: .\base\templates\base\index.html:143 .\base\templates\base\index.html:311
+msgid "Bed"
+msgstr "አልጋ"
+
+#: .\base\templates\base\index.html:201 .\base\templates\base\index.html:369
+#: .\companies\templates\companies\nvi.html:65
+#: .\companies\templates\companies\nvi.html:78
+#: .\companies\templates\companies\nvi.html:91
+#: .\companies\templates\companies\nvi.html:104
+#: .\companies\templates\companies\nvi.html:117
+#: .\companies\templates\companies\nvi.html:130
+#: .\poultryfarm\templates\poultryfarm\item_list.html:118
+msgid "View Details"
+msgstr "ዝርዝሮችን ይመልከቱ"
+
+#: .\base\templates\base\index.html:207
+msgid "No featured products available."
+msgstr "ምንም ታዋቂ ምርቶች የሉም።"
+
+#: .\base\templates\base\index.html:212
+msgid "Our Sponsors"
+msgstr "ስፖንሰሮቻችን"
+
+#: .\base\templates\base\index.html:243
+msgid "Load More Products"
+msgstr "ተጨማሪ ምርቶችን ጫን"
+
+#: .\base\templates\base\index.html:244
+msgid "more"
+msgstr "ተጨማሪ"
+
+#: .\base\templates\base\messages.html:7
+msgid "Messages Received | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የደረሱ መልእክቶች | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\base\templates\base\messages.html:16
+msgid "Messages Received"
+msgstr "የደረሱ መልእክቶች"
+
+#: .\base\templates\base\messages.html:33
+msgid "No messages yet."
+msgstr "እስካሁን ምንም መልእክቶች የሉም።"
+
+#: .\base\templates\base\search_results.html:7
+msgid "Search Results for"
+msgstr "የፍለጋ ውጤቶች ለ"
+
+#: .\base\templates\base\search_results.html:7
+#: .\base\templates\base\search_results.html:9
+msgid "Sheger.city"
+msgstr "ሸገር.ሲቲ"
+
+#: .\base\templates\base\search_results.html:9
+msgid "Search Products"
+msgstr "ምርቶችን ፈልግ"
+
+#: .\base\templates\base\search_results.html:17
+msgid "Search Results"
+msgstr "የፍለጋ ውጤቶች"
+
+#: .\base\templates\base\search_results.html:20
+msgid "Showing results for"
+msgstr "ውጤቶችን ለማሳየት"
+
+#: .\base\templates\base\search_results.html:25
+msgid "Found"
+msgstr "ተገኝቷል"
+
+#: .\base\templates\base\search_results.html:25
+msgid "results"
+msgstr "ውጤቶች"
+
+#: .\base\templates\base\search_results.html:28
+msgid "Houses"
+msgstr "ቤቶች"
+
+#: .\base\templates\base\search_results.html:29
+#: .\base\templates\base\search_results.html:57
+msgid "dairyfarm"
+msgstr "የወተት እርሻ"
+
+#: .\base\templates\base\search_results.html:31
+msgid "Clothing"
+msgstr "አልባሳት"
+
+#: .\base\templates\base\search_results.html:44
+msgid "What are you looking for?"
+msgstr "ምን እየፈለጉ ነው?"
+
+#: .\base\templates\base\search_results.html:45
+msgid "Enter a search term to find products across all categories"
+msgstr "በሁሉም ምድቦች ውስጥ ምርቶችን ለማግኘት የፍለጋ ቃል ያስገቡ"
+
+#: .\base\templates\base\search_results.html:52
+msgid "No results found"
+msgstr "ምንም ውጤቶች አልተገኙም"
+
+#: .\base\templates\base\search_results.html:53
+msgid "Try different keywords or browse our categories"
+msgstr "የተለያዩ ቁልፍ ቃላትን ይሞክሩ ወይም ምድቦቻችንን ያስሱ"
+
+#: .\base\templates\base\terms.html:6
+msgid "Terms | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "ውሎች | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\base\templates\base\terms.html:16
+msgid "Terms"
+msgstr "ውሎች"
+
+#: .\base\templates\base\terms.html:18
+msgid "User Agreement"
+msgstr "የተጠቃሚ ስምምነት"
+
+#: .\base\templates\base\terms.html:19
+msgid "By using our website, you agree to the following terms and conditions."
+msgstr "ድረ-ገጻችንን በመጠቀም ከሚከተሉት ውሎች እና ሁኔታዎች ጋር ተስማምተዋል ማለት ነው።"
+
+#: .\cart\templates\cart\cart_detail.html:6
+msgid "Cart Details | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የካርታ ዝርዝሮች | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\cart\templates\cart\cart_detail.html:16
 msgid "Your Shopping Cart"
-msgstr "የግዢ ቅርጫትዎ"
+msgstr "የግዢ ካርታዎ"
 
+#: .\cart\templates\cart\cart_detail.html:32
 msgid "Quantity:"
-msgstr "ብዛት:"
+msgstr "ብዛት፦"
 
+#: .\cart\templates\cart\cart_detail.html:44
 msgid "Remove"
 msgstr "አስወግድ"
 
+#: .\cart\templates\cart\cart_detail.html:53
 msgid "Subtotal:"
-msgstr "አጠቃላይ:"
+msgstr "ንኡስ ድምር፦"
 
+#: .\cart\templates\cart\cart_detail.html:58
 msgid "Shipping:"
-msgstr "መላኪያ:"
+msgstr "መላኪያ፦"
 
+#: .\cart\templates\cart\cart_detail.html:63
 msgid "Total:"
-msgstr "ጠቅላላ:"
+msgstr "ጠቅላላ፦"
 
+#: .\cart\templates\cart\cart_detail.html:68
 msgid "Proceed to Checkout"
 msgstr "ወደ ክፍያ ቀጥል"
 
+#: .\cart\templates\cart\cart_detail.html:72
 msgid "Continue Shopping"
-msgstr "ግዢ ቀጥል"
+msgstr "ግዢዎን ቀጥል"
 
+#: .\cart\templates\cart\cart_detail.html:80
 msgid "Your cart is empty."
-msgstr "ቅርጫትዎ ባዶ ነው።"
+msgstr "ካርታዎ ባዶ ነው።"
 
+#: .\cart\templates\cart\cart_detail.html:82
 msgid "Start Shopping"
-msgstr "ግዢ ጀምር"
+msgstr "ግዢ ይጀምሩ"
 
-############################
-# DAIRY FARM
-############################
+#: .\companies\templates\companies\alema.html:7
+msgid "Alemma | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "አለማ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
 
-msgid "Dairy | Ethiopian Sheger Market place"
-msgstr "የወተት ምርቶች | የኢትዮጵያ ሸገር ገበያ"
+#: .\companies\templates\companies\alema.html:18
+#: .\companies\templates\companies\alema.html:21
+msgid "Alemma Animal Feed"
+msgstr "አለማ የእንስሳት መኖ"
 
-msgid "Premium Dairy Marketplace"
-msgstr "ከፍተኛ ጥራት ያለው የወተት ገበያ"
+#: .\companies\templates\companies\alema.html:19
+msgid "Alemma Animal Feed Ethiopia"
+msgstr "አለማ የእንስሳት መኖ ኢትዮጵያ"
 
-msgid "Buy fresh milk, butter, cheese and dairy products from trusted Ethiopian farmers."
-msgstr "ከታመኑ ኢትዮጵያዊ አርሶ አደሮች ትኩስ ወተት፣ ቅቤ፣ ቺዝ እና የወተት ምርቶች ይግዙ።"
+#: .\companies\templates\companies\alema.html:20
+msgid ""
+"Alemma Animal Feed is a leading animal feed manufacturer in Ethiopia, "
+"dedicated to providing high-quality feed products for livestock and poultry."
+msgstr ""
+"አለማ የእንስሳት መኖ በኢትዮጵያ ውስጥ ግንባር ቀደም የእንስሳት መኖ አምራች ነው፣ ለከብቶች እና ለዶሮ እርባታ ከፍተኛ "
+"ጥራት ያላቸውን መኖ ምርቶች ለማቅረብ ቁርጠኛ ነው።"
 
-msgid "Explore More →"
-msgstr "ተጨማሪ ይመልከቱ →"
+#: .\companies\templates\companies\alema.html:21
+msgid "For more information, you can visit their official website: "
+msgstr "ለበለጠ መረጃ፣ ይፋዊ ድረ-ገጻቸውን መጎብኘት ይችላሉ፦ "
 
-############################
-# HOUSES
-############################
+#: .\companies\templates\companies\alema.html:22
+msgid ""
+"Alemma Animal Feed is committed to improving the productivity and health of "
+"livestock in Ethiopia through the provision of nutritious and scientifically "
+"formulated animal feed."
+msgstr ""
+"አለማ የእንስሳት መኖ በኢትዮጵያ ውስጥ የከብቶችን ምርታማነት እና ጤና ለማሻሻል በተመጣጠነ እና በሳይንሳዊ መንገድ "
+"የተቀመረ የእንስሳት መኖ በማቅረብ ቁርጠኛ ነው።"
 
-msgid " House Details | Ethiopian Sheger Market place"
-msgstr "የቤት ዝርዝር | የኢትዮጵያ ሸገር ገበያ"
+#: .\companies\templates\companies\ethiochicken.html:7
+msgid "EthioChicken | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "ኢትዮ ቺከን | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
 
-msgid "Start Conversation"
-msgstr "ውይይት ጀምር"
+#: .\companies\templates\companies\ethiochicken.html:21
+msgid "EthioChicken Feed Manufacturers"
+msgstr "ኢትዮ ቺከን መኖ አምራቾች"
 
-msgid "Share this house"
-msgstr "ይህን ቤት አጋራ"
+#: .\companies\templates\companies\ethiochicken.html:22
+msgid "Empowering Ethiopian farmers through poultry excellence"
+msgstr "በዶሮ እርባታ ልቀት የኢትዮጵያ ገበሬዎችን ማብቃት"
 
-msgid "Location:"
-msgstr "አካባቢ:"
+#: .\companies\templates\companies\ethiochicken.html:24
+msgid "Visit Our Website"
+msgstr "ድረ-ገጻችንን ይጎብኙ"
 
-msgid "Category:"
-msgstr "ምድብ:"
+#: .\companies\templates\companies\ethiochicken.html:32
+msgid "Price Update"
+msgstr "የዋጋ ማዘመኛ"
 
-msgid "Bedrooms:"
-msgstr "መኝታ ክፍሎች:"
+#: .\companies\templates\companies\ethiochicken.html:37
+msgid "Chickens Type and Price Updates"
+msgstr "የዶሮ ዓይነቶች እና የዋጋ ማዘመኛዎች"
 
-msgid "Bathrooms:"
-msgstr "መታጠቢያ ክፍሎች:"
+#: .\companies\templates\companies\ethiochicken.html:38
+msgid ""
+"This section provides an overview of the different types of chickens "
+"available and their respective prices."
+msgstr "ይህ ክፍል ስለሚገኙት የተለያዩ የዶሮ ዓይነቶች እና የየራሳቸውን ዋጋዎች አጠቃላይ እይታ ይሰጣል።"
 
-msgid "Area:"
-msgstr "ስፋት:"
+#: .\companies\templates\companies\ethiochicken.html:43
+msgid "Chicken Type"
+msgstr "የዶሮ ዓይነት"
 
-msgid "sq.m"
-msgstr "ካሬ ሜትር"
-
-msgid "Seller"
-msgstr "ሻጭ"
-
-msgid "Add to Cart"
-msgstr "ወደ ቅርጫት ጨምር"
-
-############################
-# VEHICLES
-############################
-
-msgid " Confirm Vehicle Delete | Ethiopian Sheger Market place"
-msgstr "የመኪና ማጥፋት አረጋግጥ | የኢትዮጵያ ሸገር ገበያ"
-
-msgid "Confirm Deletion"
-msgstr "ማጥፋት አረጋግጥ"
-
-msgid "Are you sure you want to delete this vehicle?"
-msgstr "ይህን መኪና ማጥፋት ትፈልጋለህ?"
-
-msgid "Price:"
-msgstr "ዋጋ:"
-
-msgid "Mileage:"
-msgstr "ርቀት:"
-
-msgid "Delete"
-msgstr "ሰርዝ"
-
-msgid "Cancel"
-msgstr "ተወው"
-
-msgid " Vehicle Vehicle Detail | Ethiopian Sheger Market place"
-msgstr "የመኪና ዝርዝር | የኢትዮጵያ ሸገር ገበያ"
-
-msgid "Shares"
-msgstr "መጋራት"
-
-msgid "Engine"
-msgstr "ሞተር"
-
-msgid "Fuel Type"
-msgstr "የነዳጅ አይነት"
-
-msgid "Color"
-msgstr "ቀለም"
-
-msgid "Transmission"
-msgstr "ትራንስሚሽን"
-
+#: .\companies\templates\companies\ethiochicken.html:44
+#: .\companies\templates\companies\ethiochicken.html:97
+#: .\poultryfarm\admin.py:145 .\poultryfarm\forms.py:108
+#: .\poultryfarm\forms.py:156 .\poultryfarm\models.py:330
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:46
+#: .\poultryfarm\templates\poultryfarm\item_create.html:67
 msgid "Description"
 msgstr "መግለጫ"
 
-msgid "Vehicle Form | Ethiopian Sheger Market place"
-msgstr "የመኪና ፎርም | የኢትዮጵያ ሸገር ገበያ"
+#: .\companies\templates\companies\ethiochicken.html:45
+#: .\companies\templates\companies\ethiochicken.html:98
+msgid "Price"
+msgstr "ዋጋ"
 
-msgid "Vehicle List | Ethiopian Sheger Market place"
-msgstr "የመኪና ዝርዝር | የኢትዮጵያ ሸገር ገበያ"
+#: .\companies\templates\companies\ethiochicken.html:50
+msgid "Day Old Chickens"
+msgstr "የአንድ ቀን ዶሮዎች"
 
-msgid "View Details"
-msgstr "ዝርዝር ይመልከቱ"
+#: .\companies\templates\companies\ethiochicken.html:51
+msgid "Newly born chicks"
+msgstr "አዲስ የተወለዱ ጫጩቶች"
 
-############################
-# SETTINGS
-############################
+#: .\companies\templates\companies\ethiochicken.html:52
+#: .\companies\templates\companies\ethiochicken.html:110
+msgid "ETB 20.00"
+msgstr "ብር 20.00"
 
+#: .\companies\templates\companies\ethiochicken.html:55
+msgid "Bovance Brown"
+msgstr "ቦቫንስ ብራውን"
+
+#: .\companies\templates\companies\ethiochicken.html:56
+msgid "Egg laying chickens"
+msgstr "እንቁላል አራጊ ዶሮዎች"
+
+#: .\companies\templates\companies\ethiochicken.html:57
+#: .\companies\templates\companies\ethiochicken.html:115
+msgid "ETB 25.00"
+msgstr "ብር 25.00"
+
+#: .\companies\templates\companies\ethiochicken.html:60
+msgid "Sasso"
+msgstr "ሳሶ"
+
+#: .\companies\templates\companies\ethiochicken.html:61
+msgid "Dual purpose chickens"
+msgstr "ሁለት ዓላማ ዶሮዎች"
+
+#: .\companies\templates\companies\ethiochicken.html:62
+#: .\companies\templates\companies\ethiochicken.html:120
+msgid "ETB 30.00"
+msgstr "ብር 30.00"
+
+#: .\companies\templates\companies\ethiochicken.html:65
+msgid "Broilers"
+msgstr "ብሮይለር"
+
+#: .\companies\templates\companies\ethiochicken.html:66
+msgid "Meat production chickens"
+msgstr "ሥጋ ምርት ዶሮዎች"
+
+#: .\companies\templates\companies\ethiochicken.html:67
+#: .\companies\templates\companies\ethiochicken.html:125
+msgid "ETB 35.00"
+msgstr "ብር 35.00"
+
+#: .\companies\templates\companies\ethiochicken.html:70
+msgid "Layer"
+msgstr "ለይር"
+
+#: .\companies\templates\companies\ethiochicken.html:71
+msgid "Chickens for egg production"
+msgstr "ለእንቁላል ምርት የሚሆኑ ዶሮዎች"
+
+#: .\companies\templates\companies\ethiochicken.html:72
+msgid "ETB 40.00"
+msgstr "ብር 40.00"
+
+#: .\companies\templates\companies\ethiochicken.html:75
+msgid "Broiler/Cobb"
+msgstr "ብሮይለር/ኮብ"
+
+#: .\companies\templates\companies\ethiochicken.html:76
+msgid "Chickens for meat production"
+msgstr "ለሥጋ ምርት የሚሆኑ ዶሮዎች"
+
+#: .\companies\templates\companies\ethiochicken.html:77
+msgid "ETB 45.00"
+msgstr "ብር 45.00"
+
+#: .\companies\templates\companies\ethiochicken.html:80
+msgid "Red Ranger"
+msgstr "ሬድ ሬንጀር"
+
+#: .\companies\templates\companies\ethiochicken.html:81
+msgid "Free-range chickens"
+msgstr "ነጻ ክልል ዶሮዎች"
+
+#: .\companies\templates\companies\ethiochicken.html:82
+msgid "ETB 50.00"
+msgstr "ብር 50.00"
+
+#: .\companies\templates\companies\ethiochicken.html:90
+msgid "Feeds Type and Price Updates"
+msgstr "የመኖ ዓይነቶች እና የዋጋ ማዘመኛዎች"
+
+#: .\companies\templates\companies\ethiochicken.html:91
+msgid ""
+"This section provides an overview of the different types of feeds available "
+"and their respective prices."
+msgstr "ይህ ክፍል ስለሚገኙት የተለያዩ የመኖ ዓይነቶች እና የየራሳቸውን ዋጋዎች አጠቃላይ እይታ ይሰጣል።"
+
+#: .\companies\templates\companies\ethiochicken.html:96
+msgid "Feed Type"
+msgstr "የመኖ ዓይነት"
+
+#: .\companies\templates\companies\ethiochicken.html:103
+msgid "Starter Feed"
+msgstr "ስታርተር መኖ"
+
+#: .\companies\templates\companies\ethiochicken.html:104
+msgid "For day-old chicks"
+msgstr "ለአንድ ቀን ጫጩቶች"
+
+#: .\companies\templates\companies\ethiochicken.html:105
+msgid "ETB 15.00"
+msgstr "ብር 15.00"
+
+#: .\companies\templates\companies\ethiochicken.html:108
+msgid "Grower Feed"
+msgstr "ግሮወር መኖ"
+
+#: .\companies\templates\companies\ethiochicken.html:109
+msgid "For growing chickens"
+msgstr "ለሚያድጉ ዶሮዎች"
+
+#: .\companies\templates\companies\ethiochicken.html:113
+msgid "Layer Feed"
+msgstr "ለይር መኖ"
+
+#: .\companies\templates\companies\ethiochicken.html:114
+msgid "For egg-laying hens"
+msgstr "እንቁላል ለሚጥሉ ዶሮዎች"
+
+#: .\companies\templates\companies\ethiochicken.html:118
+msgid "Broiler Feed"
+msgstr "ብሮይለር መኖ"
+
+#: .\companies\templates\companies\ethiochicken.html:119
+msgid "For meat production"
+msgstr "ለሥጋ ምርት"
+
+#: .\companies\templates\companies\ethiochicken.html:123
+msgid "Finisher Feed"
+msgstr "ፊኒሸር መኖ"
+
+#: .\companies\templates\companies\ethiochicken.html:124
+msgid "For finishing broilers"
+msgstr "ብሮይለርን ለማጠናቀቅ"
+
+#: .\companies\templates\companies\ethiochicken.html:135
+msgid "About EthioChicken"
+msgstr "ስለ ኢትዮ ቺከን"
+
+#: .\companies\templates\companies\ethiochicken.html:138
+msgid ""
+"Ethiochicken is a leading poultry company in Ethiopia, dedicated to "
+"improving the livelihoods of smallholder farmers through the provision of "
+"high-quality poultry products and services."
+msgstr ""
+"ኢትዮ ቺከን በኢትዮጵያ ውስጥ ግንባር ቀደም የዶሮ እርባታ ኩባንያ ነው፣ ከፍተኛ ጥራት ያላቸውን የዶሮ እርባታ ምርቶች "
+"እና አገልግሎቶች በማቅረብ የአነስተኛ አርሶ አደሮችን ኑሮ ለማሻሻል ቁርጠኛ ነው።"
+
+#: .\companies\templates\companies\ethiochicken.html:143
+msgid "Our Mission"
+msgstr "ተልእኳችን"
+
+#: .\companies\templates\companies\ethiochicken.html:144
+msgid ""
+"To enhance food security and create sustainable livelihoods in rural "
+"communities through poultry farming."
+msgstr "በዶሮ እርባታ አማካኝነት የምግብ ዋስትናን ማሳደግ እና በገጠር ማህበረሰቦች ውስጥ ዘላቂ ኑሮ መፍጠር።"
+
+#: .\companies\templates\companies\ethiochicken.html:148
+msgid "Our Vision"
+msgstr "ራዕያችን"
+
+#: .\companies\templates\companies\ethiochicken.html:149
+msgid ""
+"To be the catalyst for poultry-led transformation in Ethiopian agriculture."
+msgstr "በኢትዮጵያ ግብርና ውስጥ በዶሮ እርባታ የሚመራ ለውጥ ማነቃቂያ መሆን።"
+
+#: .\companies\templates\companies\ethiochicken.html:158
+msgid "Our Value to Farmers"
+msgstr "ለአርሶ አደሮች ያለን እሴት"
+
+#: .\companies\templates\companies\ethiochicken.html:163
+msgid "Quality Breeds"
+msgstr "ጥራት ያላቸው ዝርያዎች"
+
+#: .\companies\templates\companies\ethiochicken.html:164
+msgid "Providing high-quality poultry breeds adapted to local conditions."
+msgstr "ከአካባቢው ሁኔታ ጋር የተጣጣሙ ከፍተኛ ጥራት ያላቸውን የዶሮ እርባታ ዝርያዎች ማቅረብ።"
+
+#: .\companies\templates\companies\ethiochicken.html:168
+msgid "Premium Feed"
+msgstr "ፕሪሚየም መኖ"
+
+#: .\companies\templates\companies\ethiochicken.html:169
+msgid "Nutritionally balanced feed formulations for optimal growth."
+msgstr "ለተመቻቸ እድገት በአመጋገብ የተመጣጠነ የመኖ ቀመሮች።"
+
+#: .\companies\templates\companies\ethiochicken.html:173
+msgid "Farmer Training"
+msgstr "የአርሶ አደር ሥልጠና"
+
+#: .\companies\templates\companies\ethiochicken.html:174
+msgid "Comprehensive training programs for successful poultry farming."
+msgstr "ስኬታማ የዶሮ እርባታ እርሻ ሁሉን አቀፍ የሥልጠና ፕሮግራሞች።"
+
+#: .\companies\templates\companies\ethiochicken.html:178
+msgid "Veterinary Support"
+msgstr "የእንስሳት ሕክምና ድጋፍ"
+
+#: .\companies\templates\companies\ethiochicken.html:179
+msgid "Access to veterinary services and disease prevention."
+msgstr "የእንስሳት ሕክምና አገልግሎቶች እና በሽታ መከላከል መድረሻ።"
+
+#: .\companies\templates\companies\ethiochicken.html:193
+#: .\companies\templates\companies\nvi.html:154 .\contact\models.py:6
+#: .\contact\templates\contact\received_messages.html:23
+#: .\poultryfarm\forms.py:80
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:103
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:32
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:27
+msgid "Email"
+msgstr "ኢሜይል"
+
+#: .\companies\templates\companies\ethiochicken.html:196
+msgid "Copy"
+msgstr "ቅዳ"
+
+#: .\companies\templates\companies\ethiochicken.html:201
+#: .\poultryfarm\forms.py:81
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:100
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:33
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:28
+msgid "Phone"
+msgstr "ስልክ"
+
+#: .\companies\templates\companies\ethiochicken.html:206
+msgid "Call"
+msgstr "ደውል"
+
+#: .\companies\templates\companies\ethiochicken.html:211
+#: .\companies\templates\companies\nvi.html:149
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:59
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:34
+msgid "Address"
+msgstr "አድራሻ"
+
+#: .\companies\templates\companies\ethiochicken.html:212
+msgid "Ethio China Street, Kadco Group"
+msgstr "ኢትዮ ቻይና ጎዳና፣ ካድኮ ግሩፕ"
+
+#: .\companies\templates\companies\ethiochicken.html:213
+msgid "Building #2, 6th floor,"
+msgstr "ህንጻ ቁጥር 2፣ 6ኛ ፎቅ፣"
+
+#: .\companies\templates\companies\ethiochicken.html:214
+msgid "Addis Ababa, Ethiopia"
+msgstr "አዲስ አበባ፣ ኢትዮጵያ"
+
+#: .\companies\templates\companies\ethiochicken.html:216
+msgid "View Map"
+msgstr "ካርታ ይመልከቱ"
+
+#: .\companies\templates\companies\ethiochicken.html:226
+msgid "Farmer Success Stories"
+msgstr "የአርሶ አደር ስኬት ታሪኮች"
+
+#: .\companies\templates\companies\ethiochicken.html:232
+msgid ""
+"'EthioChicken changed my life. With their training and quality chicks, my "
+"poultry business has grown threefold in just one year.'"
+msgstr ""
+"'ኢትዮ ቺከን ሕይወቴን ለወጠው። በሥልጠናቸው እና ጥራት ባላቸው ጫጩቶች፣ የዶሮ ንግዴ በአንድ ዓመት ውስጥ በሦስት እጥፍ "
+"አድጓል።'"
+
+#: .\companies\templates\companies\ethiochicken.html:233
+msgid "- Ato Kebede, Smallholder Farmer"
+msgstr "- አቶ ከበደ፣ አነስተኛ አርሶ አደር"
+
+#: .\companies\templates\companies\index.html:7
+msgid "Companies | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "ኩባንያዎች | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\companies\templates\companies\index.html:16
+msgid "companies list"
+msgstr "የኩባንያዎች ዝርዝር"
+
+#: .\companies\templates\companies\nvi.html:7
+msgid ""
+"National Veterinary Institute | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "ብሔራዊ የእንስሳት ሕክምና ተቋም | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\companies\templates\companies\nvi.html:21
+msgid "National Veterinary Institute"
+msgstr "ብሔራዊ የእንስሳት ሕክምና ተቋም"
+
+#: .\companies\templates\companies\nvi.html:22
+msgid "Advancing Animal Health in Ethiopia "
+msgstr "በኢትዮጵያ የእንስሳት ጤናን ማሳደግ"
+
+#: .\companies\templates\companies\nvi.html:30
+msgid "Vision"
+msgstr "ራዕይ"
+
+#: .\companies\templates\companies\nvi.html:31
+msgid ""
+"By 2029 G.C the institute will fulfill the national demand for veterinary "
+"vaccines and drugs and become a competitive institute in Africa."
+msgstr ""
+"እስከ 2029 ዓ.ም ተቋሙ ለአገር አቀፍ የእንስሳት ሕክምና ክትባቶች እና መድኃኒቶች ፍላጎት ያሟላል እና በአፍሪካ ውስጥ "
+"ተወዳዳሪ ተቋም ይሆናል።"
+
+#: .\companies\templates\companies\nvi.html:35
+msgid "Mission"
+msgstr "ተልዕኮ"
+
+#: .\companies\templates\companies\nvi.html:36
+msgid ""
+"Producing and supplying quality veterinary vaccines, drugs, and biologicals "
+"at affordable prices for the domestic market to support the livestock "
+"sector, generating foreign currency through exports, and sustaining "
+"profitability."
+msgstr ""
+"የከብት ዘርፉን ለመደገፍ ጥራት ያላቸውን የእንስሳት ሕክምና ክትባቶች፣ መድኃኒቶች እና ባዮሎጂካል ምርቶች በተመጣጣኝ ዋጋ "
+"ለሀገር ውስጥ ገበያ ማምረት እና አቅርቦት፣ ወደ ውጭ በመላክ የውጭ ምንዛሪ ማመንጨት እና ትርፋማነትን ማስቀጠል።"
+
+#: .\companies\templates\companies\nvi.html:45
+msgid "Feedback"
+msgstr "አስተያየት"
+
+#: .\companies\templates\companies\nvi.html:46
+msgid " All News"
+msgstr "ሁሉም ዜናዎች"
+
+#: .\companies\templates\companies\nvi.html:47
+msgid "Downloads"
+msgstr "ማውረጃዎች"
+
+#: .\companies\templates\companies\nvi.html:48
+msgid " Vacancy"
+msgstr "ክፍት ቦታ"
+
+#: .\companies\templates\companies\nvi.html:49
+msgid "Partners"
+msgstr "አጋሮች"
+
+#: .\companies\templates\companies\nvi.html:54
+msgid " Our Vaccines"
+msgstr "ክትባቶቻችን"
+
+#: .\companies\templates\companies\nvi.html:64
+msgid "LIVE NEWCASTLE DISEASE VACCINE"
+msgstr "ሕይወት ኒውካስል በሽታ ክትባት"
+
+#: .\companies\templates\companies\nvi.html:77
+msgid "INACTIVATED NEWCASTLE OIL EMULSION VACCINE"
+msgstr "ንቁ ያልሆነ ኒውካስል ዘይት ኢሚልሽን ክትባት"
+
+#: .\companies\templates\companies\nvi.html:90
+msgid "NEWCASTLE DISEASE THERMOSTABLE VACCINE"
+msgstr "ኒውካስል በሽታ ቴርሞስቴብል ክትባት"
+
+#: .\companies\templates\companies\nvi.html:103
+msgid "FOWL POX VACCINE"
+msgstr "የዶሮ ፖክስ ክትባት"
+
+#: .\companies\templates\companies\nvi.html:116
+msgid "INFECTIOUS BURSAL DISEASE /GUMBORO/ VACCINE"
+msgstr "ተላላፊ ቡርሳል በሽታ /ጉምቦሮ/ ክትባት"
+
+#: .\companies\templates\companies\nvi.html:129
+msgid "Marek’s Disease Vaccine (HVT)"
+msgstr "ማሬክ በሽታ ክትባት (ኤች.ቪ.ቲ.)"
+
+#: .\companies\templates\companies\nvi.html:139
+msgid " Contact Us"
+msgstr "አግኙን"
+
+#: .\companies\templates\companies\nvi.html:142
+msgid " Phone"
+msgstr "ስልክ"
+
+#: .\companies\templates\companies\nvi.html:143
+msgid "Tel: 251-114-33-84-11/16"
+msgstr "ተልፎን፦ 251-114-33-84-11/16"
+
+#: .\companies\templates\companies\nvi.html:144
+msgid "Mobile: 251-903-04-88-88"
+msgstr "ሞባይል፦ 251-903-04-88-88"
+
+#: .\companies\templates\companies\nvi.html:145
+msgid "Fax: 251-114-33-93-00"
+msgstr "ፋክስ፦ 251-114-33-93-00"
+
+#: .\companies\templates\companies\nvi.html:150
+msgid "P.O. Box 19, Bishoftu, Ethiopia"
+msgstr "ፖ.ሳ.ቁጥር 19፣ ቢሾፍቱ፣ ኢትዮጵያ"
+
+#: .\companies\templates\companies\nvi.html:161
+msgid "Visit Official Website"
+msgstr "ይፋዊ ድረ-ገጽ ይጎብኙ"
+
+#: .\companies\templates\companies\nvi.html:168
+msgid ""
+"NVI is committed to improving animal health and productivity in Ethiopia "
+"through the development and distribution of high-quality veterinary products."
+msgstr ""
+"ኤን.ቪ.አይ. ከፍተኛ ጥራት ያላቸውን የእንስሳት ሕክምና ምርቶች በማልማት እና በማሰራጨት በኢትዮጵያ ውስጥ የእንስሳትን "
+"ጤና እና ምርታማነት ለማሻሻል ቁርጠኛ ነው።"
+
+#: .\contact\forms.py:12 .\contact\forms.py:29
+#: .\contact\templates\contact\contact_us.html:22 .\poultryfarm\forms.py:79
+msgid "Your Name"
+msgstr "ስምዎ"
+
+#: .\contact\forms.py:16 .\contact\forms.py:30
+#: .\contact\templates\contact\contact_us.html:26
+msgid "Your Email"
+msgstr "ኢሜይልዎ"
+
+#: .\contact\forms.py:20 .\contact\forms.py:31 .\contact\models.py:7
+#: .\contact\templates\contact\contact_us.html:30
+#: .\contact\templates\contact\received_messages.html:24
+msgid "Subject"
+msgstr "ርዕሰ ጉዳይ"
+
+#: .\contact\forms.py:24 .\contact\forms.py:32
+#: .\contact\templates\contact\contact_us.html:34
+#: .\conversation\templates\conversation\new.html:43
+msgid "Your Message"
+msgstr "መልእክትዎ"
+
+#: .\contact\models.py:5 .\contact\templates\contact\received_messages.html:22
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:26
+msgid "Name"
+msgstr "ስም"
+
+#: .\contact\models.py:8 .\poultryfarm\forms.py:84
+msgid "Message"
+msgstr "መልእክት"
+
+#: .\contact\models.py:9
+msgid "Created at"
+msgstr "የተፈጠረበት ጊዜ"
+
+#: .\contact\models.py:10
+msgid "Is read"
+msgstr "ተነቧል"
+
+#: .\contact\models.py:13
+msgid "Contact Message"
+msgstr "የአግኙን መልእክት"
+
+#: .\contact\models.py:14
+msgid "Contact Messages"
+msgstr "የአግኙን መልእክቶች"
+
+#: .\contact\templates\contact\confirm_delete.html:5
+msgid "Confirm Deletion | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "መሰረዝ አረጋግጥ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\contact\templates\contact\confirm_delete.html:10
+msgid "Confirm Deletion"
+msgstr "መሰረዝ አረጋግጥ"
+
+#: .\contact\templates\contact\confirm_delete.html:11
+msgid "Are you sure you want to delete this message?"
+msgstr "ይህን መልእክት መሰረዝ እንደሚፈልጉ እርግጠኛ ነዎት?"
+
+#: .\contact\templates\contact\confirm_delete.html:14
+#: .\contact\templates\contact\view_message.html:21
+msgid "From:"
+msgstr "ከ፦"
+
+#: .\contact\templates\contact\confirm_delete.html:15
+msgid "Subject:"
+msgstr "ርዕሰ ጉዳይ፦"
+
+#: .\contact\templates\contact\confirm_delete.html:16
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:167
+msgid "Message:"
+msgstr "መልእክት፦"
+
+#: .\contact\templates\contact\confirm_delete.html:21
+msgid "Yes, delete"
+msgstr "አዎ፣ ሰርዝ"
+
+#: .\contact\templates\contact\confirm_delete.html:22
+#: .\conversation\templates\conversation\new.html:56
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:41
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:132
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:21
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:554
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:35
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:31
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:118
+msgid "Cancel"
+msgstr "ሰርዝ"
+
+#: .\contact\templates\contact\contact_us.html:7
+msgid "Contact Us | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "አግኙን | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\contact\templates\contact\contact_us.html:16
+msgid "Get in Touch"
+msgstr "ግንኙነት ይፍጠሩ"
+
+#: .\contact\templates\contact\contact_us.html:17
+msgid ""
+"We would love to hear from you. Please fill out the form below and we will "
+"get back to you as soon as possible."
+msgstr "ከእርስዎ መስማት እንወዳለን። እባክዎ ከዚህ በታች ያለውን ቅጽ ይሙሉ እና በተቻለ ፍጥነት እንመልስልዎታለን።"
+
+#: .\contact\templates\contact\contact_us.html:37
+#: .\conversation\templates\conversation\new.html:51
+msgid "Send Message"
+msgstr "መልእክት ላክ"
+
+#: .\contact\templates\contact\received_messages.html:6
+msgid "Received Messages | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የደረሱ መልእክቶች | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\contact\templates\contact\received_messages.html:15
+msgid "Received Messages"
+msgstr "የደረሱ መልእክቶች"
+
+#: .\contact\templates\contact\received_messages.html:25
+msgid "Received"
+msgstr "ደርሷል"
+
+#: .\contact\templates\contact\received_messages.html:26
+msgid "Actions"
+msgstr "ድርጊቶች"
+
+#: .\contact\templates\contact\received_messages.html:38
+msgid "View"
+msgstr "ተመልከት"
+
+#: .\contact\templates\contact\received_messages.html:41
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:131
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:95
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:117
+msgid "Delete"
+msgstr "ሰርዝ"
+
+#: .\contact\templates\contact\received_messages.html:54
+msgid "previous"
+msgstr "ቀዳሚ"
+
+#: .\contact\templates\contact\received_messages.html:57
+#, python-format
+msgid ""
+"\n"
+"              Page %(num)s of %(total)s\n"
+"            "
+msgstr ""
+"\n"
+"ገጽ %(num)s ከ %(total)s\n"
+
+#: .\contact\templates\contact\received_messages.html:62
+msgid "next"
+msgstr "ቀጣይ"
+
+#: .\contact\templates\contact\received_messages.html:68
+msgid "No messages received yet."
+msgstr "እስካሁን ምንም መልእክቶች አልደረሱም።"
+
+#: .\contact\templates\contact\view_message.html:6
+msgid "View Message | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "መልእክት ይመልከቱ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\contact\templates\contact\view_message.html:15
+msgid "Message Details"
+msgstr "የመልእክት ዝርዝሮች"
+
+#: .\contact\templates\contact\view_message.html:22
+msgid "Received:"
+msgstr "የደረሰበት ጊዜ፦"
+
+#: .\contact\templates\contact\view_message.html:32
+msgid "Back to Messages"
+msgstr "ወደ መልእክቶች ተመለስ"
+
+#: .\contact\templates\contact\view_message.html:35
+msgid "Delete Message"
+msgstr "መልእክት ሰርዝ"
+
+#: .\contact\templates\contact\view_message.html:38
+msgid "Reply"
+msgstr "ምላሽ ስጥ"
+
+#: .\contact\views.py:18
+msgid "Thank you for your message! We will get back to you soon."
+msgstr "ለመልእክትዎ እናመሰግናለን! በቅርቡ እንመልስልዎታለን።"
+
+#: .\contact\views.py:51
+msgid "Message has been deleted successfully."
+msgstr "መልእክቱ በተሳካ ሁኔታ ተሰርዟል።"
+
+#: .\conversation\templates\conversation\detail.html:6
+msgid " My Conversation Detail | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የውይይቴ ዝርዝር | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\conversation\templates\conversation\detail.html:19
+msgid "Conversation about"
+msgstr "ውይይት ስለ"
+
+#: .\conversation\templates\conversation\detail.html:60
+msgid "Send"
+msgstr "ላክ"
+
+#: .\conversation\templates\conversation\inbox.html:7
+msgid " My Inbox | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "ገቢ መልዕክቶቼ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\conversation\templates\conversation\inbox.html:18
+msgid "Your Conversations"
+msgstr "ውይይቶችዎ"
+
+#: .\conversation\templates\conversation\inbox.html:44
+#: .\conversation\templates\conversation\inbox.html:46
+msgid "No Image"
+msgstr "ምስል የለም"
+
+#: .\conversation\templates\conversation\inbox.html:75
+msgid "typing"
+msgstr "እየተየበ ነው"
+
+#: .\conversation\templates\conversation\inbox.html:85
+msgid "No messages yet"
+msgstr "እስካሁን ምንም መልእክቶች የሉም"
+
+#: .\conversation\templates\conversation\inbox.html:95
+msgid "No conversations yet"
+msgstr "እስካሁን ምንም ውይይቶች የሉም"
+
+#: .\conversation\templates\conversation\inbox.html:96
+msgid "Browse Items"
+msgstr "ዕቃዎችን ያስሱ"
+
+#: .\conversation\templates\conversation\new.html:6
+msgid "Start New Message | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "አዲስ መልእክት ጀምር | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\conversation\templates\conversation\new.html:16
+msgid "New Message"
+msgstr "አዲስ መልእክት"
+
+#: .\conversation\templates\conversation\new.html:17
+msgid "Contact the seller about:"
+msgstr "ሻጩን ስለሚከተለው ያግኙ፦"
+
+#: .\conversation\templates\conversation\new.html:21
+msgid "View Item"
+msgstr "ዕቃ ይመልከቱ"
+
+#: .\conversation\templates\conversation\new.html:54
+msgid "Back to Item"
+msgstr "ወደ ዕቃ ተመለስ"
+
+#: .\conversation\templates\conversation\new.html:69
+msgid "Please enter a message"
+msgstr "እባክዎ መልእክት ያስገቡ"
+
+#: .\conversation\templates\conversation\new.html:74
+msgid "Sending..."
+msgstr "በመላክ ላይ..."
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:6
+msgid "Dairy | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "ወተት | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:26
+msgid "Premium Dairy Marketplace"
+msgstr "ፕሪሚየም የወተት ገበያ"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:30
+msgid ""
+"Buy fresh milk, butter, cheese and dairy products from trusted Ethiopian "
+"farmers."
+msgstr "ትኩስ ወተት፣ ቅቤ፣ አይብ እና ሌሎች የወተት ምርቶችን ከታመኑ የኢትዮጵያ አርሶ አደሮች ይግዙ።"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:35
+#: .\poultryfarm\templates\poultryfarm\index.html:37
+msgid "Explore More →"
+msgstr "ተጨማሪ ያስሱ →"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:42
+#: .\poultryfarm\templates\poultryfarm\index.html:44
+msgid "Scroll Down"
+msgstr "ወደ ታች ይሸብልሉ"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:50
+#: .\poultryfarm\templates\poultryfarm\index.html:52
+msgid "OUR SERVICES"
+msgstr "አገልግሎቶቻችን"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:51
+msgid "Dairy Products"
+msgstr "የወተት ምርቶች"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:52
+msgid "Connecting you with fresh and organic dairy products across Ethiopia."
+msgstr "በመላው ኢትዮጵያ ከትኩስ እና ኦርጋኒክ የወተት ምርቶች ጋር ያገናኝዎታል።"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:64
+msgid "Fresh Milk"
+msgstr "ትኩስ ወተት"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:65
+msgid "Pure and hygienic cow milk directly from farms."
+msgstr "ከእርሻዎች በቀጥታ ንጹህ እና ንጽህናን የጠበቀ የላም ወተት።"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:66
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:79
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:92
+msgid "View More →"
+msgstr "ተጨማሪ ይመልከቱ →"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:77
+msgid "Butter & Cheese"
+msgstr "ቅቤ እና አይብ"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:78
+msgid "Traditional and modern dairy products rich in taste."
+msgstr "በጣዕም የበለጸጉ ባህላዊ እና ዘመናዊ የወተት ምርቶች።"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:90
+msgid "Dairy Cows"
+msgstr "የወተት ላሞች"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:91
+msgid "Healthy and high-yield dairy cows for sale."
+msgstr "ጤናማ እና ከፍተኛ ምርት የሚሰጡ የወተት ላሞች ለሽያጭ።"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:105
+#: .\poultryfarm\templates\poultryfarm\index.html:98
+msgid "EXPERT SERVICES"
+msgstr "የባለሙያ አገልግሎቶች"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:106
+#: .\poultryfarm\templates\poultryfarm\index.html:99
+msgid "Training & Consultancy"
+msgstr "ሥልጠና እና ማማከር"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:107
+msgid "Grow your dairy business with expert knowledge"
+msgstr "የወተት ንግድዎን በባለሙያ እውቀት ያሳድጉ"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:121
+msgid "Dairy Farming Training"
+msgstr "የወተት እርሻ ሥልጠና"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:124
+msgid "Milk production techniques"
+msgstr "የወተት ምርት ቴክኒኮች"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:125
+msgid "Animal health"
+msgstr "የእንስሳት ጤና"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:126
+msgid "Feeding systems"
+msgstr "የመመገቢያ ሥርዓቶች"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:127
+msgid "Farm management"
+msgstr "የእርሻ አያያዝ"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:128
+#: .\poultryfarm\templates\poultryfarm\index.html:117
+msgid "Marketing"
+msgstr "ግብይት"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:132
+#: .\poultryfarm\templates\poultryfarm\index.html:119
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:53
+msgid "Enroll Now"
+msgstr "አሁን ይመዝገቡ"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:146
+msgid "Dairy Consultancy"
+msgstr "የወተት ማማከር"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:149
+#: .\poultryfarm\templates\poultryfarm\index.html:131
+msgid "Farm setup"
+msgstr "የእርሻ ማቋቋም"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:150
+msgid "Productivity improvement"
+msgstr "የምርታማነት ማሻሻያ"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:151
+msgid "Veterinary support"
+msgstr "የእንስሳት ሕክምና ድጋፍ"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:152
+msgid "Feed optimization"
+msgstr "የመኖ ማመቻቸት"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:153
+msgid "Business scaling"
+msgstr "የንግድ ማስፋፊያ"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:157
+#: .\poultryfarm\templates\poultryfarm\index.html:136
+msgid "Get Started"
+msgstr "ይጀምሩ"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:169
+msgid "Dairy Platform Stats"
+msgstr "የወተት መድረክ ስታቲስቲክስ"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:176
+msgid "Milk Listings"
+msgstr "የወተት ዝርዝሮች"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:177
+msgid "120"
+msgstr "120"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:184
+msgid "Butter Sellers"
+msgstr "የቅቤ ሻጮች"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:192
+msgid "Cow Sellers"
+msgstr "የላም ሻጮች"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:200
+#: .\poultryfarm\templates\poultryfarm\index.html:183
+msgid "Trainings"
+msgstr "ሥልጠናዎች"
+
+#: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:208
+#: .\poultryfarm\templates\poultryfarm\index.html:193
+msgid "Consultants"
+msgstr "አማካሪዎች"
+
+#: .\poultryfarm\admin.py:142
+msgid "Inventory & Pricing"
+msgstr "ክምችት እና ዋጋ አወጣጥ"
+
+#: .\poultryfarm\admin.py:148
+msgid "Metadata"
+msgstr "ሜታዳታ"
+
+#: .\poultryfarm\forms.py:76
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:168
+msgid "Briefly describe your issue or questions..."
+msgstr "ችግርዎን ወይም ጥያቄዎችዎን በአጭሩ ይግለጹ..."
+
+#: .\poultryfarm\forms.py:82
+msgid "Preferred Date"
+msgstr "ተመራጭ ቀን"
+
+#: .\poultryfarm\forms.py:83
+msgid "Preferred Time"
+msgstr "ተመራጭ ሰዓት"
+
+#: .\poultryfarm\forms.py:105
+msgid "Available Eggs"
+msgstr "የሚገኙ እንቁላሎች"
+
+#: .\poultryfarm\forms.py:106
+msgid "Price per Dozen"
+msgstr "ዋጋ በደርዘን"
+
+#: .\poultryfarm\forms.py:107
+msgid "Minimum Order (Dozen)"
+msgstr "ዝቅተኛ ትዕዛዝ (ደርዘን)"
+
+#: .\poultryfarm\forms.py:123
+msgid "Any special delivery instructions..."
+msgstr "ማንኛውም ልዩ የመላኪያ መመሪያ..."
+
+#: .\poultryfarm\forms.py:128
+msgid "Delivery Address"
+msgstr "የመላኪያ አድራሻ"
+
+#: .\poultryfarm\forms.py:129
+msgid "Quantity (dozens)"
+msgstr "ብዛት (ደርዘን)"
+
+#: .\poultryfarm\forms.py:130
+msgid "Preferred Delivery Date"
+msgstr "ተመራጭ የመላኪያ ቀን"
+
+#: .\poultryfarm\forms.py:131
+msgid "Special Instructions"
+msgstr "ልዩ መመሪያዎች"
+
+#: .\poultryfarm\forms.py:136
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:56
+msgid "City"
+msgstr "ከተማ"
+
+#: .\poultryfarm\forms.py:137
+msgid "Min Price"
+msgstr "ዝቅተኛ ዋጋ"
+
+#: .\poultryfarm\forms.py:138
+msgid "Max Price"
+msgstr "ከፍተኛ ዋጋ"
+
+#: .\poultryfarm\forms.py:153 .\poultryfarm\models.py:327
+msgid "Available Chickens"
+msgstr "የሚገኙ ዶሮዎች"
+
+#: .\poultryfarm\forms.py:154 .\poultryfarm\models.py:328
+msgid "Minimum Price"
+msgstr "ዝቅተኛ ዋጋ"
+
+#: .\poultryfarm\forms.py:155 .\poultryfarm\models.py:329
+msgid "Maximum Price"
+msgstr "ከፍተኛ ዋጋ"
+
+#: .\poultryfarm\forms.py:165
+msgid "Minimum price cannot be greater than maximum price."
+msgstr "ዝቅተኛ ዋጋ ከከፍተኛ ዋጋ መብለጥ አይችልም።"
+
+#: .\poultryfarm\models.py:129
+msgid "Disease Management"
+msgstr "የበሽታ አያያዝ"
+
+#: .\poultryfarm\models.py:130
+msgid "Nutrition & Feed"
+msgstr "አመጋገብ እና መኖ"
+
+#: .\poultryfarm\models.py:131
+msgid "Biosecurity & Prevention"
+msgstr "ባዮሴኩሪቲ እና መከላከል"
+
+#: .\poultryfarm\models.py:132
+msgid "Breeding & Genetics"
+msgstr "እርባታ እና ዘረመል"
+
+#: .\poultryfarm\models.py:133
+msgid "General Practice"
+msgstr "አጠቃላይ ልምምድ"
+
+#: .\poultryfarm\models.py:136
+msgid "Weekdays"
+msgstr "የስራ ቀናት"
+
+#: .\poultryfarm\models.py:137
+msgid "Weekends"
+msgstr "ቅዳሜ እሁድ"
+
+#: .\poultryfarm\models.py:138
+msgid "All Week"
+msgstr "ሳምንቱን ሙሉ"
+
+#: .\poultryfarm\models.py:139
+msgid "24/7 Emergency"
+msgstr "24/7 ድንገተኛ"
+
+#: .\poultryfarm\models.py:142
+msgid "Years of experience"
+msgstr "የልምድ ዓመታት"
+
+#: .\poultryfarm\models.py:144
+msgid "Comma-separated list of languages"
+msgstr "በኮማ የተለዩ የቋንቋዎች ዝርዝር"
+
+#: .\poultryfarm\models.py:169
+msgid "Video Call"
+msgstr "የቪዲዮ ጥሪ"
+
+#: .\poultryfarm\models.py:170
+msgid "Phone Consultation"
+msgstr "የስልክ ማማከር"
+
+#: .\poultryfarm\models.py:171
+msgid "Farm Visit"
+msgstr "የእርሻ ጉብኝት"
+
+#: .\poultryfarm\models.py:172
+msgid "Feed Analysis"
+msgstr "የመኖ ትንተና"
+
+#: .\poultryfarm\models.py:173
+msgid "Farm Assessment"
+msgstr "የእርሻ ግምገማ"
+
+#: .\poultryfarm\models.py:178
+msgid "e.g., 1 hour, per visit"
+msgstr "ለምሳሌ፣ 1 ሰዓት፣ በእያንዳንዱ ጉብኝት"
+
+#: .\poultryfarm\models.py:185 .\poultryfarm\models.py:271
+msgid "Pending"
+msgstr "በመጠባበቅ ላይ"
+
+#: .\poultryfarm\models.py:186 .\poultryfarm\models.py:272
+msgid "Confirmed"
+msgstr "የተረጋገጠ"
+
+#: .\poultryfarm\models.py:187
+msgid "Completed"
+msgstr "ተጠናቋል"
+
+#: .\poultryfarm\models.py:188 .\poultryfarm\models.py:276
+msgid "Cancelled"
+msgstr "ተሰርዟል"
+
+#: .\poultryfarm\models.py:213
+msgid "Number of eggs currently available"
+msgstr "በአሁኑ ጊዜ የሚገኙ የእንቁላል ብዛት"
+
+#: .\poultryfarm\models.py:215
+msgid "Minimum dozen required for order"
+msgstr "ለትዕዛዝ የሚያስፈልገው ዝቅተኛ ደርዘን"
+
+#: .\poultryfarm\models.py:266
+msgid "Egg Seller"
+msgstr "የእንቁላል ሻጭ"
+
+#: .\poultryfarm\models.py:267
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:21
+#: .\poultryfarm\templates\poultryfarm\index.html:163
+msgid "Egg Sellers"
+msgstr "የእንቁላል ሻጮች"
+
+#: .\poultryfarm\models.py:273
+msgid "Processing"
+msgstr "በማስኬድ ላይ"
+
+#: .\poultryfarm\models.py:274
+msgid "Shipped"
+msgstr "ተልኳል"
+
+#: .\poultryfarm\models.py:275
+msgid "Delivered"
+msgstr "ደርሷል"
+
+#: .\poultryfarm\models.py:293
+msgid "Number of dozens ordered"
+msgstr "የታዘዙ ደርዘኖች ብዛት"
+
+#: .\poultryfarm\models.py:331
+msgid "Active"
+msgstr "ንቁ"
+
+#: .\poultryfarm\models.py:339
+msgid "each"
+msgstr "እያንዳንዱ"
+
+#: .\poultryfarm\models.py:342
+msgid "Chicken Seller"
+msgstr "የዶሮ ሻጭ"
+
+#: .\poultryfarm\models.py:343
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:21
+#: .\poultryfarm\templates\poultryfarm\index.html:173
+msgid "Chicken Sellers"
+msgstr "የዶሮ ሻጮች"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:6
+msgid "Add New Egg Seller | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "አዲስ የእንቁላል ሻጭ ያክሉ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:18
+msgid "Add New Egg Seller"
+msgstr "አዲስ የእንቁላል ሻጭ ያክሉ"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:38
+msgid "Farm Information"
+msgstr "የእርሻ መረጃ"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:40
+msgid "Farm Name"
+msgstr "የእርሻ ስም"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:43
+msgid "Owner Name"
+msgstr "የባለቤት ስም"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:54
+msgid "Location"
+msgstr "ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:66
+msgid "Egg Details"
+msgstr "የእንቁላል ዝርዝሮች"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:68
+msgid "Egg Type"
+msgstr "የእንቁላል ዓይነት"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:72
+msgid "Certification"
+msgstr "ማረጋገጫ"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:80
+msgid "Pricing & Availability"
+msgstr "ዋጋ እና ተገኝነት"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:82
+msgid "Quantity Available"
+msgstr "የሚገኝ ብዛት"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:86
+msgid "Price per Dozen ($)"
+msgstr "ዋጋ በደርዘን (ብር)"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:90
+msgid "Minimum Order Quantity"
+msgstr "ዝቅተኛ ትዕዛዝ ብዛት"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:98
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:420
+msgid "Contact Information"
+msgstr "የመገናኛ መረጃ"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:106
+msgid "Website"
+msgstr "ድረ-ገጽ"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:113
+#: .\users\templates\users\profile.html:30
+msgid "Social Media"
+msgstr "ማህበራዊ ሚዲያ"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:115
+msgid "Facebook"
+msgstr "ፌስቡክ"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:118
+msgid "Telegram"
+msgstr "ቴሌግራም"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:121
+msgid "Instagram"
+msgstr "ኢንስታግራም"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:129
+msgid "Back to Sellers"
+msgstr "ወደ ሻጮች ተመለስ"
+
+#: .\poultryfarm\templates\poultryfarm\add_egg_seller.html:133
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:40
+msgid "Add Egg Seller"
+msgstr "የእንቁላል ሻጭ ያክሉ"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:6
+msgid "Chicken Sellers | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የዶሮ ሻጮች | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:18
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:17
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:18
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:17
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:19
+msgid "Back"
+msgstr "ተመለስ"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:28
+msgid "Search chicken sellers..."
+msgstr "የዶሮ ሻጮችን ፈልግ..."
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:32
+msgid "All Locations"
+msgstr "ሁሉም አካባቢዎች"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:40
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:30
+msgid "Find"
+msgstr "ፈልግ"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:49
+#: .\poultryfarm\templates\poultryfarm\register_seller.html:15
+msgid "Register as a Chicken Seller"
+msgstr "እንደ ዶሮ ሻጭ ይመዝገቡ"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:72
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:62
+msgid "Available:"
+msgstr "የሚገኝ፦"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:77
+msgid "Delivery"
+msgstr "መላኪያ"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:80
+msgid "Vaccinated"
+msgstr "ክትባት የተሰጠው"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:109
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:85
+msgid "Order Now"
+msgstr "አሁን ይዘዙ"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:119
+msgid "No sellers found"
+msgstr "ምንም ሻጮች አልተገኙም"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:120
+msgid "Try adjusting your search criteria"
+msgstr "የፍለጋ መስፈርቶችዎን ለማስተካከል ይሞክሩ"
+
+#: .\poultryfarm\templates\poultryfarm\chicken_sellers.html:129
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:14
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:115
+msgid "Are you sure you want to delete"
+msgstr "መሰረዝ እንደሚፈልጉ እርግጠኛ ነዎት"
+
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:6
+msgid " Delete Chicken Seller | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የዶሮ ሻጭ ሰርዝ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:13
+msgid "Delete Seller Profile"
+msgstr "የሻጭ መገለጫ ሰርዝ"
+
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:15
+msgid "This action cannot be undone."
+msgstr "ይህ ድርጊት ሊቀለበስ አይችልም።"
+
+#: .\poultryfarm\templates\poultryfarm\delete_seller.html:20
+msgid "Yes, Delete"
+msgstr "አዎ፣ ሰርዝ"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:6
+msgid " Edit Egg Seller | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የእንቁላል ሻጭ አርትዕ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:228
+msgid "Edit Egg Seller"
+msgstr "የእንቁላል ሻጭ አርትዕ"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:230
+msgid "Back to Sellers List"
+msgstr "ወደ ሻጮች ዝርዝር ተመለስ"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:239
+#: .\poultryfarm\templates\poultryfarm\item_create.html:50
+msgid "Basic Information"
+msgstr "መሠረታዊ መረጃ"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:300
+msgid "Location Information"
+msgstr "የአካባቢ መረጃ"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:374
+msgid "Map coordinates available"
+msgstr "የካርታ መጋጠሚያዎች ይገኛሉ"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:381
+msgid "Egg Details & Pricing"
+msgstr "የእንቁላል ዝርዝሮች እና ዋጋ"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:459
+msgid "Social Media Links"
+msgstr "ማህበራዊ ሚዲያ አገናኞች"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:498
+msgid "Business Details"
+msgstr "የንግድ ዝርዝሮች"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:551
+msgid "Delete Seller"
+msgstr "ሻጭ ሰርዝ"
+
+#: .\poultryfarm\templates\poultryfarm\edit_egg_seller.html:557
+msgid "Update Seller"
+msgstr "ሻጭ አዘምን"
+
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:6
+msgid " Edit Chicken Seller | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የዶሮ ሻጭ አርትዕ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:15
+msgid "Edit Chicken Seller Profile"
+msgstr "የዶሮ ሻጭ መገለጫ አርትዕ"
+
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:34
+#: .\users\templates\users\profile_update.html:15
+msgid "Update Profile"
+msgstr "መገለጫ አዘምን"
+
+#: .\poultryfarm\templates\poultryfarm\edit_seller.html:36
+msgid "Delete Profile"
+msgstr "መገለጫ ሰርዝ"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:6
+msgid "My Egg Orders | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የእንቁላል ትዕዛዞቼ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:21
+msgid "My Egg Orders"
+msgstr "የእንቁላል ትዕዛዞቼ"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:22
+msgid "Track all customer orders in one place"
+msgstr "ሁሉንም የደንበኛ ትዕዛዞች በአንድ ቦታ ይከታተሉ"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:31
+msgid "Customer"
+msgstr "ደንበኛ"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:35
+msgid "Qty"
+msgstr "ብዛት"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:37
+msgid "Status"
+msgstr "ሁኔታ"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:38
+msgid "Date"
+msgstr "ቀን"
+
+#: .\poultryfarm\templates\poultryfarm\egg_seller_orders.html:71
+msgid "No orders yet."
+msgstr "እስካሁን ምንም ትዕዛዞች የሉም።"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:6
+msgid "Egg Seller Page | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የእንቁላል ሻጭ ገጽ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:61
+#: .\users\templates\users\profile.html:25
+#: .\users\templates\users\seller_profile.html:33
+msgid "Location:"
+msgstr "አካባቢ፦"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:62
+msgid "eggs"
+msgstr "እንቁላሎች"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:63
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:143
+msgid "Price:"
+msgstr "ዋጋ፦"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:63
+msgid "birr"
+msgstr "ብር"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:89
+msgid "Edit"
+msgstr "አርትዕ"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:104
+msgid "No egg sellers found matching your criteria."
+msgstr "ከመስፈርቶችዎ ጋር የሚዛመዱ የእንቁላል ሻጮች አልተገኙም።"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:114
+msgid "Confirm Delete"
+msgstr "መሰረዝ አረጋግጥ"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:127
+msgid "Place Your Order"
+msgstr "ትዕዛዝዎን ያስገቡ"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:132
+msgid "Delivery Address:"
+msgstr "የመላኪያ አድራሻ፦"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:136
+msgid "Quantity (dozens):"
+msgstr "ብዛት (ደርዘን)፦"
+
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:139
+msgid "Confirm Order"
+msgstr "ትዕዛዝ አረጋግጥ"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:7
+msgid " Poultry | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "ዶሮ እርባታ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:28
+msgid "Premium Poultry Marketplace"
+msgstr "ፕሪሚየም የዶሮ እርባታ ገበያ"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:32
+msgid ""
+"Buy chickens, eggs, and poultry products from trusted Ethiopian farmers."
+msgstr "ዶሮዎችን፣ እንቁላሎችን እና የዶሮ እርባታ ምርቶችን ከታመኑ የኢትዮጵያ አርሶ አደሮች ይግዙ።"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:53
+msgid "What We Offer"
+msgstr "የምናቀርበው አገልግሎት"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:54
+#, fuzzy
+#| msgid ""
+#| "Connecting you with fresh and organic dairy products across Ethiopia."
+msgid ""
+"We connect you with quality poultry products and services from trusted "
+"farmers across Ethiopia."
+msgstr "በመላው ኢትዮጵያ ከትኩስ እና ኦርጋኒክ የወተት ምርቶች ጋር ያገናኝዎታል።"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:100
+msgid "Empowering your poultry farming success with knowledge and expertise"
+msgstr "በእውቀት እና በባለሙያ ልምድ የዶሮ እርባታ ስኬትዎን ማበረታት"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:109
+#, fuzzy
+#| msgid "Poultry Farm Training"
+msgid "Poultry Farming Training"
+msgstr "የዶሮ እርባታ ሥልጠና"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:113
+#, fuzzy
+#| msgid "Milk production techniques"
+msgid "Modern farming techniques"
+msgstr "የወተት ምርት ቴክኒኮች"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:114
+#, fuzzy
+#| msgid "General Practice"
+msgid "Best practices"
+msgstr "አጠቃላይ ልምምድ"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:115
+#, fuzzy
+#| msgid "Years of experience"
+msgid "Hands-on experience"
+msgstr "የልምድ ዓመታት"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:116
+#, fuzzy
+#| msgid "Disease Management"
+msgid "Disease control"
+msgstr "የበሽታ አያያዝ"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:128
+#, fuzzy
+#| msgid "Poultry Farm Consultancy"
+msgid "Poultry Farming Consultancy"
+msgstr "የዶሮ እርባታ ማማከር"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:130
+#, fuzzy
+#| msgid "Experience:"
+msgid "Expert guidance"
+msgstr "ልምድ፦"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:132
+#, fuzzy
+#| msgid "Feed optimization"
+msgid "Optimization"
+msgstr "የመኖ ማመቻቸት"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:133
+#, fuzzy
+#| msgid "Productivity improvement"
+msgid "Productivity"
+msgstr "የምርታማነት ማሻሻያ"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:134
+msgid "Health"
+msgstr "ጤና"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:147
+#, fuzzy
+#| msgid "Poultry Items"
+msgid "Our Poultry Status"
+msgstr "የዶሮ እርባታ ሁኔታችን"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:153
+#, fuzzy
+#| msgid "items"
+msgid "Items"
+msgstr "ዕቃዎች"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:155
+#, fuzzy
+#| msgid "Dairy Products"
+msgid "Quality Products"
+msgstr "የወተት ምርቶች"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:165
+#: .\poultryfarm\templates\poultryfarm\index.html:175
+#, fuzzy
+#| msgid "Butter Sellers"
+msgid "Active Sellers"
+msgstr "የቅቤ ሻጮች"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:185
+#, fuzzy
+#| msgid "Trainings"
+msgid "Training Programs"
+msgstr "ሥልጠናዎች"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:195
+#, fuzzy
+#| msgid "Our Expert Consultants"
+msgid "Expert Consultants"
+msgstr "የእኛ ባለሙያ አማካሪዎች"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:6
+msgid "Create Poultry Item | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የዶሮ እርባታ ዕቃ ፍጠር | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:20
+msgid "Create New Item"
+msgstr "አዲስ ዕቃ ፍጠር"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:22
+msgid "Add your poultry product with images and details"
+msgstr "የዶሮ እርባታ ምርትዎን በምስሎች እና ዝርዝሮች ያክሉ"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:31
+msgid "Main Image"
+msgstr "ዋና ምስል"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:36
+msgid "Click or drag image"
+msgstr "ምስል ጠቅ ያድርጉ ወይም ይጎትቱ"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:77
+msgid "More Images"
+msgstr "ተጨማሪ ምስሎች"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:82
+msgid "Upload additional images"
+msgstr "ተጨማሪ ምስሎችን ስቀል"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:83
+msgid "You can select multiple files"
+msgstr "በርካታ ፋይሎችን መምረጥ ይችላሉ"
+
+#: .\poultryfarm\templates\poultryfarm\item_create.html:93
+msgid "Publish Item"
+msgstr "ዕቃ አሳትም"
+
+#: .\poultryfarm\templates\poultryfarm\item_detail.html:7
+msgid "Poultry Item Details | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የዶሮ እርባታ ዕቃ ዝርዝሮች | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\item_detail.html:21
+msgid "Back to Listings"
+msgstr "ወደ ዝርዝሮች ተመለስ"
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:8
+msgid "Poultry Items List | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የዶሮ እርባታ ዕቃዎች ዝርዝር | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:24
+msgid "Sell Item"
+msgstr "ዕቃ ሽጥ"
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:28
+msgid "items"
+msgstr "ዕቃዎች"
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:45
+msgid "No items yet"
+msgstr "እስካሁን ምንም ዕቃዎች የሉም"
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:46
+msgid "Be the first to sell something!"
+msgstr "አንድ ነገር ለመሸጥ የመጀመሪያ ይሁኑ!"
+
+#: .\poultryfarm\templates\poultryfarm\item_list.html:48
+msgid "Create Item"
+msgstr "ዕቃ ፍጠር"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:6
+msgid ""
+"Poultry Training Trainees | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የዶሮ እርባታ ሥልጠና ተማሪዎች | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:16
+msgid "Enrolled Trainees"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:17
+msgid ""
+"Here is the list of people who have enrolled in poultry training programs."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:29
+msgid "Program"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:30
+msgid "Enrollment Date"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:47
+#, fuzzy
+#| msgid "No messages received yet."
+msgid "No trainees enrolled yet."
+msgstr "እስካሁን ምንም መልእክቶች አልደረሱም።"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:6
+msgid ""
+"Poultry Training Programs | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የዶሮ እርባታ ሥልጠና ፕሮግራሞች | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:21
+#, fuzzy
+#| msgid "Poultry Farm Training"
+msgid "Poultry Training Programs"
+msgstr "የዶሮ እርባታ እርሻ ሥልጠና"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:22
+msgid ""
+"Enhance your poultry farming skills with our specialized training programs "
+"on Meat Chickens, Layer Chickens, and Dual Purpose Chickens. Whether you're "
+"a beginner or an experienced farmer, our courses are designed to provide you "
+"with the knowledge and techniques needed for successful poultry management."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:25
+#, fuzzy
+#| msgid "Trainings"
+msgid "Our Training Programs"
+msgstr "ሥልጠናዎች"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:29
+msgid "Meat Chickens Training"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:33
+#, fuzzy
+#| msgid "Farmer Training"
+msgid "Layer Chickens Training"
+msgstr "የአርሶ አደር ሥልጠና"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:37
+#, fuzzy
+#| msgid "Dual purpose chickens"
+msgid "Dual Purpose Chickens Training"
+msgstr "ሁለት ዓላማ ዶሮዎች"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:45
+msgid "Enroll in Our Training Programs"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:46
+msgid ""
+"Fill out the form below to register for our upcoming poultry training "
+"programs."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:70
+#, fuzzy
+#| msgid "Farm Information"
+msgid "Payment Information"
+msgstr "የእርሻ መረጃ"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:71
+msgid "Please use the following information to complete your payment."
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:75
+msgid "CBE Bank Account"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:76
+#, fuzzy
+#| msgid "Your Name:"
+msgid "Account Name:"
+msgstr "ስምዎ፦"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:77
+#, fuzzy
+#| msgid "Phone Number:"
+msgid "Account Number:"
+msgstr "ስልክ ቁጥር፦"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:80
+#, fuzzy
+#| msgid "Farm Information"
+msgid "Telebirr Information"
+msgstr "የእርሻ መረጃ"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:81
+#: .\users\templates\users\login.html:28
+#: .\users\templates\users\profile.html:24
+#: .\users\templates\users\profile_update.html:28
+#: .\users\templates\users\register.html:27
+#: .\users\templates\users\seller_profile.html:32
+msgid "Phone Number:"
+msgstr "ስልክ ቁጥር፦"
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:87
+msgid "CBE Bank"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:91
+msgid "Telebirr Payment"
+msgstr ""
+
+#: .\poultryfarm\templates\poultryfarm\register_seller.html:6
+msgid ""
+"Register as a Chicken Seller | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "እንደ ዶሮ ሻጭ ይመዝገቡ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\register_seller.html:33
+msgid "Register as Seller"
+msgstr "እንደ ሻጭ ይመዝገቡ"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:7
+msgid "Veterinary Consultancy | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የእንስሳት ሕክምና ማማከር | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:23
+msgid "Our Expert Consultants"
+msgstr "የእኛ ባለሙያ አማካሪዎች"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:35
+msgid "Experience:"
+msgstr "ልምድ፦"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:35
+msgid "years"
+msgstr "ዓመታት"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:36
+msgid "Specialty:"
+msgstr "ስፔሻሊቲ፦"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:37
+msgid "Languages:"
+msgstr "ቋንቋዎች፦"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:38
+msgid "Rating:"
+msgstr "ደረጃ፦"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:58
+msgid "Consultation Options"
+msgstr "የማማከር አማራጮች"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:71
+msgid "Request"
+msgstr "ጥያቄ"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:73
+msgid "Book Now"
+msgstr "አሁን ይያዙ"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:83
+msgid "Availability"
+msgstr "ተገኝነት"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:86
+msgid "Weekdays: Available"
+msgstr "የስራ ቀናት፦ ይገኛል"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:88
+msgid "Weekends: Available"
+msgstr "ቅዳሜ እሁድ፦ ይገኛል"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:90
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:93
+msgid "Mon-Fri: 9AM-6PM"
+msgstr "ሰኞ-አርብ፦ ከጠዋቱ 9 እስከ ምሽቱ 6"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:91
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:94
+msgid "Sat: 10AM-4PM"
+msgstr "ቅዳሜ፦ ከጠዋቱ 10 እስከ ምሽቱ 4"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:95
+msgid "Emergency: 24/7"
+msgstr "ድንገተኛ፦ 24/7"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:120
+msgid "No consultants available at the moment. Please check back later."
+msgstr "በአሁኑ ጊዜ ምንም አማካሪዎች የሉም። እባክዎ ቆይተው ይመልከቱ።"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:128
+msgid "Book Consultation"
+msgstr "ማማከር ይያዙ"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:135
+msgid "Consultant:"
+msgstr "አማካሪ፦"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:139
+msgid "Service Type:"
+msgstr "የአገልግሎት ዓይነት፦"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:147
+msgid "Your Name:"
+msgstr "ስምዎ፦"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:151
+msgid "Email:"
+msgstr "ኢሜይል፦"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:155
+msgid "Phone:"
+msgstr "ስልክ፦"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:159
+msgid "Preferred Date:"
+msgstr "ተመራጭ ቀን፦"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:163
+msgid "Preferred Time:"
+msgstr "ተመራጭ ሰዓት፦"
+
+#: .\poultryfarm\templates\poultryfarm\veterinary_consultancy.html:170
+msgid "Request Consultation"
+msgstr "ማማከር ጠይቅ"
+
+#: .\poultryfarm\views.py:49
+msgid "Liked successfully"
+msgstr "በተሳካ ሁኔታ ተወድዷል"
+
+#: .\poultryfarm\views.py:49
+msgid "Like removed"
+msgstr "ማውደድ ተወግዷል"
+
+#: .\poultryfarm\views.py:62
+msgid "Share count updated successfully"
+msgstr "የማጋራት ቆጣሪ በተሳካ ሁኔታ ዘምኗል"
+
+#: .\project\settings.py:13
 msgid "English"
 msgstr "እንግሊዝኛ"
 
+#: .\project\settings.py:14
 msgid "Amharic"
 msgstr "አማርኛ"
 
+#: .\project\settings.py:15
 msgid "Oromiffa"
 msgstr "ኦሮምኛ"
+
+#: .\users\templates\users\dashboard.html:6
+msgid " Welcome User| Ethiopian Poultry And Dairy Farm Market place"
+msgstr "እንኳን ደህና መጡ ተጠቃሚ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\users\templates\users\dashboard.html:15
+msgid "Welcome,"
+msgstr "እንኳን ደህና መጡ፣"
+
+#: .\users\templates\users\login.html:6
+msgid " Login| Ethiopian Poultry And Dairy Farm Market place"
+msgstr "ግባ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\users\templates\users\login.html:23
+#: .\users\templates\users\profile.html:23
+#: .\users\templates\users\register.html:21
+#: .\users\templates\users\seller_profile.html:31
+msgid "Username:"
+msgstr "የተጠቃሚ ስም፦"
+
+#: .\users\templates\users\login.html:36
+msgid "Don't have an account?"
+msgstr "መለያ የለዎትም?"
+
+#: .\users\templates\users\login.html:36
+msgid "Register here"
+msgstr "እዚህ ይመዝገቡ"
+
+#: .\users\templates\users\logout.html:6
+msgid " Logout| Ethiopian Poultry And Dairy Farm Market place"
+msgstr "ውጣ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\users\templates\users\logout.html:14
+msgid "You have been logged out"
+msgstr "ዘግተው ወጥተዋል"
+
+#: .\users\templates\users\logout.html:15
+msgid "Return to base page"
+msgstr "ወደ መነሻ ገጽ ተመለስ"
+
+#: .\users\templates\users\profile.html:6
+msgid " My Profile | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "መገለጫዬ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\users\templates\users\profile.html:18
+msgid "Profile Picture"
+msgstr "የመገለጫ ምስል"
+
+#: .\users\templates\users\profile.html:26
+#: .\users\templates\users\seller_profile.html:34
+msgid "Bio:"
+msgstr "ባዮ፦"
+
+#: .\users\templates\users\profile_update.html:6
+msgid " Update Profile | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "መገለጫ አዘምን | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\users\templates\users\profile_update.html:19
+msgid "Please correct the errors below."
+msgstr "እባክዎ ከዚህ በታች ያሉትን ስህተቶች ያርሙ።"
+
+#: .\users\templates\users\profile_update.html:30
+msgid "Contact support to change phone number"
+msgstr "ስልክ ቁጥር ለመቀየር ድጋፍን ያግኙ"
+
+#: .\users\templates\users\profile_update.html:39
+msgid "Change"
+msgstr "ለውጥ"
+
+#: .\users\templates\users\profile_update.html:49
+msgid "Upload Photo"
+msgstr "ፎቶ ስቀል"
+
+#: .\users\templates\users\profile_update.html:119
+msgid "Save Changes"
+msgstr "ለውጦችን አስቀምጥ"
+
+#: .\users\templates\users\register.html:6
+msgid " Register | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "ተመዝገብ | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\users\templates\users\register.html:15
+msgid "Create Your Account"
+msgstr "መለያዎን ይፍጠሩ"
+
+#: .\users\templates\users\register.html:37
+msgid "Already have an account?"
+msgstr "ቀድሞ መለያ አለዎት?"
+
+#: .\users\templates\users\register.html:37
+msgid "Login here"
+msgstr "እዚህ ይግቡ"
+
+#: .\users\templates\users\seller_profile.html:6
+#: .\users\templates\users\seller_profile.html:15
+msgid "Seller Profile"
+msgstr "የሻጭ መገለጫ"
+
+#: .\users\templates\users\seller_profile.html:20
+msgid "profile picture"
+msgstr "የመገለጫ ምስል"
+
+#: .\users\templates\users\users.html:6
+msgid " User List | Ethiopian Poultry And Dairy Farm Market place"
+msgstr "የተጠቃሚ ዝርዝር | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
+
+#: .\users\templates\users\users.html:15
+msgid "Users"
+msgstr "ተጠቃሚዎች"
+
+#: .\users\templates\users\users.html:35
+msgid "No users found."
+msgstr "ምንም ተጠቃሚዎች አልተገኙም።"
