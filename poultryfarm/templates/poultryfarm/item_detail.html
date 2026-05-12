@@ -62,10 +62,10 @@
 
           {% if request.user.is_superuser %}
           <div class="admin-actions">
-            <a href="{% url 'poultryfarm:item_edit' item.id %}" class="btn btn-secondary btn-sm">
+            <a href="{% url 'poultryfarm:item_edit' item.slug %}" class="btn btn-secondary btn-sm">
               <i class="fas fa-edit"></i>
             </a>
-            <form action="{% url 'poultryfarm:item_delete' item.id %}" method="post">
+            <form action="{% url 'poultryfarm:item_delete' item.slug %}" method="post">
               {% csrf_token %}
               <button class="btn btn-danger btn-sm">
                 <i class="fas fa-trash"></i>
@@ -122,7 +122,7 @@
         <!-- CONTACT -->
         <div class="contact-row">
           {% if request.user.is_authenticated and request.user != item.created_by %}
-            <a href="{% url 'conversation:new' app_label model_name item.id %}" class="btn btn-success">
+            <a href="{% url 'conversation:new' app_label model_name item.slug %}" class="btn btn-success">
               Contact Seller
             </a>
           {% else %}
