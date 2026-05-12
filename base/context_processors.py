@@ -1,3 +1,4 @@
+# base/context_processors.py
 from django.core.cache import cache
 from conversation.models import Conversation
 from cart.models import Cart
@@ -35,3 +36,27 @@ def notification_counts(request):
         "cart_item_count": cart_count,
         "egg_order_count": egg_order_count
     }
+
+
+def category_counts(request):
+    """
+    Context processor that provides total counts for different product categories.
+    (No filtering by availability – counts all items in each model.)
+    """
+    counts = {
+        'poultry_count': 0,
+        'dairy_count': 0,
+    }
+
+    try:
+        from poultryfarm.models import Item as PoultryItem
+        counts['poultry_count'] = PoultryItem.objects.count()
+    except ImportError:
+        pass
+    
+    try:
+        from dairyfarm.models import DairyFarmer
+        counts['dairy_count'] = DairyFarmer.objects.count()
+    except ImportError:
+        pass
+    return counts

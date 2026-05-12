@@ -60,9 +60,9 @@
             <img src="{% static 'poultryfarm/images/chicken-meat.jpg' %}">
             <div class="index-service-icon-badge icon-poultry-items"><i class="fas fa-drumstick-bite"></i></div>
             <div class="index-service-card__content">
-                <h3>Poultry Items</h3>
-                <p>Healthy, antibiotic-free chicken meat processed under the highest hygiene standards.</p>
-                <a href="{% url 'poultryfarm:item_list' %}">View More →</a>
+                <h3>{% trans "Poultry Items" %}</h3>
+                <p>{% trans "Healthy, antibiotic-free chicken meat processed under the highest hygiene standards." %}</p>
+                <a href="{% url 'poultryfarm:item_list' %}">{% trans "View More →" %}</a>
             </div>
         </article>
 
@@ -70,9 +70,9 @@
             <img src="{% static 'poultryfarm/images/eggs.jpg' %}">
             <div class="index-service-icon-badge icon-fresh-eggs"><i class="fas fa-egg"></i></div>
             <div class="index-service-card__content">
-                <h3>Fresh Eggs Supply</h3>
-                <p>We provide farm-fresh eggs daily from our free-range chickens.</p>
-                <a href="{% url 'poultryfarm:egg_sellers' %}">View More →</a>
+                <h3>{% trans "Fresh Eggs Supply" %}</h3>
+                <p>{% trans "We provide farm-fresh eggs daily from our free-range chickens." %}</p>
+                <a href="{% url 'poultryfarm:egg_sellers' %}">{% trans "View More →" %}</a>
             </div>
         </article>
 
@@ -80,9 +80,9 @@
             <img src="{% static 'poultryfarm/images/hatchery.jpg' %}">
             <div class="index-service-icon-badge icon-poultry-chickens"><i class="fas fa-dove"></i></div>
             <div class="index-service-card__content">
-                <h3>Poultry Chickens</h3>
-                <p>High-quality vaccinated chicks from top breeds.</p>
-                <a href="{% url 'poultryfarm:chicken_sellers_list' %}">View More →</a>
+                <h3>{% trans "Poultry Chickens" %}</h3>
+                <p>{% trans "High-quality vaccinated chicks from top breeds." %}</p>
+                <a href="{% url 'poultryfarm:chicken_sellers_list' %}">{% trans "View More →" %}</a>
             </div>
         </article>
 

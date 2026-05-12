@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-11 23:40+0300\n"
+"POT-Creation-Date: 2026-05-12 13:30+0300\n"
 "PO-Revision-Date: 2026-05-12 10:00+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Oromo <om@li.org>\n"
@@ -126,6 +126,28 @@ msgstr "Gaanxoo keessa"
 msgid "Total"
 msgstr "Iddoo"
 
+#: .\base\templates\base\base.html:165
+#, fuzzy
+#| msgid "My Profile"
+msgid "Profile"
+msgstr "Buufata Kiyya"
+
+#: .\base\templates\base\base.html:166
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:89
+msgid "Edit"
+msgstr "Gulaali"
+
+#: .\base\templates\base\base.html:167
+#, fuzzy
+#| msgid "logout"
+msgid "Logout"
+msgstr "bahi"
+
+#: .\base\templates\base\base.html:171 .\base\templates\base\base.html:279
+#: .\users\templates\users\register.html:33
+msgid "Register"
+msgstr "Galmeessi"
+
 #: .\base\templates\base\base.html:186
 msgid "Browse Categories"
 msgstr "Ramaddii dubbadhu"
@@ -147,6 +169,7 @@ msgid "Poultry Section"
 msgstr "Cuta Qe’aa"
 
 #: .\base\templates\base\base.html:233
+#: .\poultryfarm\templates\poultryfarm\index.html:63
 msgid "Poultry Items"
 msgstr "Meeshaalee Qe’aa"
 
@@ -155,6 +178,7 @@ msgid "Poultry Eggs"
 msgstr "Hanshuu Qe’aa"
 
 #: .\base\templates\base\base.html:246
+#: .\poultryfarm\templates\poultryfarm\index.html:83
 msgid "Poultry Chickens"
 msgstr "Lukkuuwwan Qe’aa"
 
@@ -169,10 +193,6 @@ msgstr "Tajaajila Gorsa Oomisha Qe’aa"
 #: .\base\templates\base\base.html:266
 msgid "User"
 msgstr "Fayyadamaa"
-
-#: .\base\templates\base\base.html:279 .\users\templates\users\register.html:33
-msgid "Register"
-msgstr "Galmeessi"
 
 #: .\base\templates\base\base.html:286 .\users\templates\users\profile.html:15
 msgid "My Profile"
@@ -285,21 +305,18 @@ msgid "Eggs, Chickens, poultry Equipment and tools for sell"
 msgstr "Hanshuu, Lukkuu, Meeshaalee Qe’aa fi meeshaalee gurguramuuf"
 
 #: .\base\templates\base\index.html:22
-msgid "poultry"
-msgstr "qe’aa"
+#, fuzzy
+#| msgid "Poultry Farm"
+msgid "poultry Farm"
+msgstr "Oomisha Qe’aa"
 
-#: .\base\templates\base\index.html:30
+#: .\base\templates\base\index.html:30 .\base\templates\base\index.html:32
 msgid "Dairy Farm"
 msgstr "Oomisha Aannan"
 
 #: .\base\templates\base\index.html:31
 msgid "Fresh milk, cheese, butter and other dairy products"
 msgstr "Aannan haaraa, baagiyoo, dhadhaa fi oomisha aannan biroo"
-
-#: .\base\templates\base\index.html:32
-#: .\base\templates\base\search_results.html:30
-msgid "Electronics"
-msgstr "Eletrooniksii"
 
 #: .\base\templates\base\index.html:51
 msgid "Shop by Category"
@@ -403,6 +420,10 @@ msgstr "Maneewwan"
 #: .\base\templates\base\search_results.html:57
 msgid "dairyfarm"
 msgstr "oomisha aannan"
+
+#: .\base\templates\base\search_results.html:30
+msgid "Electronics"
+msgstr "Eletrooniksii"
 
 #: .\base\templates\base\search_results.html:31
 msgid "Clothing"
@@ -1299,6 +1320,9 @@ msgstr "Aannan sa’aa qulqulluu fi fayyaa oomisha keessaa qajeelaa."
 #: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:66
 #: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:79
 #: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:92
+#: .\poultryfarm\templates\poultryfarm\index.html:65
+#: .\poultryfarm\templates\poultryfarm\index.html:75
+#: .\poultryfarm\templates\poultryfarm\index.html:85
 msgid "View More →"
 msgstr "Dabalata Ilaali →"
 
@@ -1924,10 +1948,6 @@ msgstr "Gatii:"
 msgid "birr"
 msgstr "qarshii"
 
-#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:89
-msgid "Edit"
-msgstr "Gulaali"
-
 #: .\poultryfarm\templates\poultryfarm\egg_sellers.html:104
 msgid "No egg sellers found matching your criteria."
 msgstr "Gurgurtaan hanshuu miilkaa keessan wajjin walsimu hin argamne."
@@ -1978,6 +1998,23 @@ msgid ""
 msgstr ""
 "Qonnaattota Itoophiyaa amanamaa jiraniitii oomisha fi tajaajila qe’aa "
 "qulqulluu sitti fidna."
+#: .\poultryfarm\templates\poultryfarm\index.html:64
+msgid ""
+"Healthy, antibiotic-free chicken meat processed under the highest hygiene "
+"standards."
+msgstr "Foon lukkuu fayyaa qabu, antaayibaayootiiksii hin qabne, sadarkaa qulqullinaa ol’aanaa ta’een hojjetame."
+
+#: .\poultryfarm\templates\poultryfarm\index.html:73
+msgid "Fresh Eggs Supply"
+msgstr "Dhiheessii Hanshuu Haaraa"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:74
+msgid "We provide farm-fresh eggs daily from our free-range chickens."
+msgstr "Guyyuu guyyuun lukkuuwwan bana saratti oolan irraa hanhuu oomishaa haaraa dhiheessina."
+
+#: .\poultryfarm\templates\poultryfarm\index.html:84
+msgid "High-quality vaccinated chicks from top breeds."
+msgstr "Sanyiiwwan ol’aanaa irraa lukkuuwwan xixiqqoo talaallii argatan qulqulluu."
 
 #: .\poultryfarm\templates\poultryfarm\index.html:100
 msgid "Empowering your poultry farming success with knowledge and expertise"
@@ -2161,8 +2198,8 @@ msgstr ""
 "Tajajila leenjii addaa keenyaa Lukkuu Foonii, Lukkuu Hanshuu, fi Lukkuu "
 "Oomisha Lamaa irratti fayyadamuun ogummaa oomisha qe’aa keessan guddisaa. "
 "Jalqabaa ykn qonnaattaa muuxannoo qabduu ta’uu keessan, barnoonni keenya "
-"bulchiinsa qe’aa milkaa’aa ta’eef barbaachisu beekumsa fi tireeksnii "
-"isinif kennuuf qophaa’e."
+"bulchiinsa qe’aa milkaa’aa ta’eef barbaachisu beekumsa fi tireeksnii isinif "
+"kennuuf qophaa’e."
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:25
 msgid "Our Training Programs"
@@ -2188,7 +2225,8 @@ msgstr "Tajajila Leenjii Keenya Keessatti Galmeessi"
 msgid ""
 "Fill out the form below to register for our upcoming poultry training "
 "programs."
-msgstr "Tajajila leenjii qe’aa dhufuuf galmaan galmaan foormaa armaan gadii guuti."
+msgstr ""
+"Tajajila leenjii qe’aa dhufuuf galmaan galmaan foormaa armaan gadii guuti."
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:70
 msgid "Payment Information"
@@ -2196,7 +2234,8 @@ msgstr "Odeeffannoo Kaffaltii"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:71
 msgid "Please use the following information to complete your payment."
-msgstr "Kaffaltii keessan xumuruuf maaloo odeeffannoo armaan gadiitiin fayyadamaa."
+msgstr ""
+"Kaffaltii keessan xumuruuf maaloo odeeffannoo armaan gadiitiin fayyadamaa."
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:75
 msgid "CBE Bank Account"
@@ -2483,3 +2522,6 @@ msgstr "Fayyadamtoota"
 #: .\users\templates\users\users.html:35
 msgid "No users found."
 msgstr "Fayyadamtoonni hin argaman."
+
+#~ msgid "poultry"
+#~ msgstr "qe’aa"

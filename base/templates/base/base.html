@@ -2,11 +2,11 @@
 {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{% trans 'Ethiopian marketplace - Buy and sell products in Ethiopia' %}">
-    <meta name="keywords" content="{% trans 'Ethiopia, marketplace, buy, sell, products, Sheger' %}">
+    <meta name="description" content="{% trans 'Ethiopian marketplace - Buy and sell poultry and dairy products in Ethiopia' %}">
+    <meta name="keywords" content="{% trans 'Ethiopia, marketplace, buy and sell, agriculture, ethiopia agriculture , poultry, dairy' %}">
     <meta name="author" content="FraolLemma">
     <title>{% block title %}{% endblock %}</title>
     <link rel="icon" href="{% static 'base/images/logo.png' %}">
@@ -162,13 +162,13 @@
                     <img src="{{ user.profile.profile_picture.url }}" class="profile-picture">
                 </button>
                 <div class="dropdown-menu">
-                    <a href="{% url 'users:profile' %}">Profile</a>
-                    <a href="{% url 'users:profile_update' %}">Edit</a>
-                    <a href="{% url 'users:logout' %}">Logout</a>
+                    <a href="{% url 'users:profile' %}">{% trans "Profile" %}</a>
+                    <a href="{% url 'users:profile_update' %}">{% trans "Edit" %}</a>
+                    <a href="{% url 'users:logout' %}">{% trans "Logout" %}</a>
                 </div>
             </div>
             {% else %}
-                <a href="{% url 'users:register' %}" class="login-btn">Register</a>
+                <a href="{% url 'users:register' %}" class="login-btn">{% trans "Register" %}</a>
             {% endif %}
 
             <!-- MOBILE MENU -->
@@ -487,6 +487,7 @@
                 <div class="footer-column">
                     <h4 class="footer-title">{% trans "Categories" %}</h4>
                     <ul class="footer-links">
+                        <li><a href="/">{% trans "Dairy products" %}</a></li>
                         <li><a href="{% url 'poultryfarm:item_list' %}">{% trans "Poultry Item" %}</a></li>
                     </ul>
                 </div>

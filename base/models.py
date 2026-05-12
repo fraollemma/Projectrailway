@@ -1,4 +1,4 @@
-# C:base\models.py
+# base\models.py
 from django.db import models
 
 class Message(models.Model):

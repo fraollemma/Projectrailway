@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-    {% trans "Ethio Agriculture | Ethiopian Sheger Market place" %}
+    {% trans "Sheger Market | Ethiopian Poultry And Dairy Farm Market place" %}
 {% endblock %}
 
 {% block css %}
@@ -19,7 +19,7 @@
                 <div class="slide-content">
                     <h1>{% trans "Poultry Farm" %}</h1>
                     <p>{% trans "Eggs, Chickens, poultry Equipment and tools for sell" %}</p>
-                    <a href="{% url 'poultryfarm:index' %}" class="btn-primary">{% trans "poultry" %}</a>
+                    <a href="{% url 'poultryfarm:index' %}" class="btn-primary">{% trans "poultry Farm" %}</a>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 <div class="slide-content">
                     <h1>{% trans "Dairy Farm" %}</h1>
                     <p>{% trans "Fresh milk, cheese, butter and other dairy products" %}</p>
-                    <a href="{% url 'dairyfarm:dairyfarm_list' %}" class="btn-primary">{% trans "Dairy" %}</a>
+                    <a href="{% url 'dairyfarm:dairyfarm_list' %}" class="btn-primary">{% trans "Dairy Farm" %}</a>
                 </div>
             </div>
         </div>
@@ -50,6 +50,14 @@
     <div class="container">
         <h2 class="section-title">{% trans "Shop by Category" %}</h2>
         <div class="category-container">
+
+            <a href="/" class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <h3>{% trans "Dairy" %}</h3>
+                <p>{{ clothing_count }}+ {% trans "posted" %}</p>
+            </a>
 
             <a href="{% url 'poultryfarm:item_list' %}" class="category-card">
                 <div class="category-icon">

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-11 23:40+0300\n"
+"POT-Creation-Date: 2026-05-12 13:29+0300\n"
 "PO-Revision-Date: 2026-05-11 14:00+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Amharic <am@li.org>\n"
@@ -120,6 +120,28 @@ msgstr "ወደ ካርታ ተጨምሯል"
 msgid "Total"
 msgstr "ጠቅላላ"
 
+#: .\base\templates\base\base.html:165
+#, fuzzy
+#| msgid "My Profile"
+msgid "Profile"
+msgstr "መገለጫዬ"
+
+#: .\base\templates\base\base.html:166
+#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:89
+msgid "Edit"
+msgstr "አርትዕ"
+
+#: .\base\templates\base\base.html:167
+#, fuzzy
+#| msgid "logout"
+msgid "Logout"
+msgstr "ውጣ"
+
+#: .\base\templates\base\base.html:171 .\base\templates\base\base.html:279
+#: .\users\templates\users\register.html:33
+msgid "Register"
+msgstr "ተመዝገብ"
+
 #: .\base\templates\base\base.html:186
 msgid "Browse Categories"
 msgstr "ምድቦችን ያስሱ"
@@ -141,6 +163,7 @@ msgid "Poultry Section"
 msgstr "የዶሮ እርባታ ክፍል"
 
 #: .\base\templates\base\base.html:233
+#: .\poultryfarm\templates\poultryfarm\index.html:63
 msgid "Poultry Items"
 msgstr "የዶሮ እርባታ ዕቃዎች"
 
@@ -149,6 +172,7 @@ msgid "Poultry Eggs"
 msgstr "የዶሮ እንቁላሎች"
 
 #: .\base\templates\base\base.html:246
+#: .\poultryfarm\templates\poultryfarm\index.html:83
 msgid "Poultry Chickens"
 msgstr "የዶሮ እርባታ ዶሮዎች"
 
@@ -163,10 +187,6 @@ msgstr "የዶሮ እርባታ እርሻ ማማከር"
 #: .\base\templates\base\base.html:266
 msgid "User"
 msgstr "ተጠቃሚ"
-
-#: .\base\templates\base\base.html:279 .\users\templates\users\register.html:33
-msgid "Register"
-msgstr "ተመዝገብ"
 
 #: .\base\templates\base\base.html:286 .\users\templates\users\profile.html:15
 msgid "My Profile"
@@ -279,21 +299,18 @@ msgid "Eggs, Chickens, poultry Equipment and tools for sell"
 msgstr "እንቁላሎች፣ ዶሮዎች፣ የዶሮ እርባታ መሳሪያዎች እና መገልገያዎች ለሽያጭ"
 
 #: .\base\templates\base\index.html:22
-msgid "poultry"
-msgstr "ዶሮ እርባታ"
+#, fuzzy
+#| msgid "Poultry Farm"
+msgid "poultry Farm"
+msgstr "የዶሮ እርባታ እርሻ"
 
-#: .\base\templates\base\index.html:30
+#: .\base\templates\base\index.html:30 .\base\templates\base\index.html:32
 msgid "Dairy Farm"
 msgstr "የወተት እርሻ"
 
 #: .\base\templates\base\index.html:31
 msgid "Fresh milk, cheese, butter and other dairy products"
 msgstr "ትኩስ ወተት፣ አይብ፣ ቅቤ እና ሌሎች የወተት ምርቶች"
-
-#: .\base\templates\base\index.html:32
-#: .\base\templates\base\search_results.html:30
-msgid "Electronics"
-msgstr "ኤሌክትሮኒክስ"
 
 #: .\base\templates\base\index.html:51
 msgid "Shop by Category"
@@ -397,6 +414,10 @@ msgstr "ቤቶች"
 #: .\base\templates\base\search_results.html:57
 msgid "dairyfarm"
 msgstr "የወተት እርሻ"
+
+#: .\base\templates\base\search_results.html:30
+msgid "Electronics"
+msgstr "ኤሌክትሮኒክስ"
 
 #: .\base\templates\base\search_results.html:31
 msgid "Clothing"
@@ -1276,6 +1297,9 @@ msgstr "ከእርሻዎች በቀጥታ ንጹህ እና ንጽህናን የጠ�
 #: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:66
 #: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:79
 #: .\dairyfarm\templates\dairyfarm\dairyfarm_list.html:92
+#: .\poultryfarm\templates\poultryfarm\index.html:65
+#: .\poultryfarm\templates\poultryfarm\index.html:75
+#: .\poultryfarm\templates\poultryfarm\index.html:85
 msgid "View More →"
 msgstr "ተጨማሪ ይመልከቱ →"
 
@@ -1900,10 +1924,6 @@ msgstr "ዋጋ፦"
 msgid "birr"
 msgstr "ብር"
 
-#: .\poultryfarm\templates\poultryfarm\egg_sellers.html:89
-msgid "Edit"
-msgstr "አርትዕ"
-
 #: .\poultryfarm\templates\poultryfarm\egg_sellers.html:104
 msgid "No egg sellers found matching your criteria."
 msgstr "ከመስፈርቶችዎ ጋር የሚዛመዱ የእንቁላል ሻጮች አልተገኙም።"
@@ -1950,6 +1970,24 @@ msgid ""
 "We connect you with quality poultry products and services from trusted "
 "farmers across Ethiopia."
 msgstr "ከመላው ኢትዮጵያ ታማኝ አርሶ አደሮች ጥራት ባላቸው የዶሮ እርባታ ምርቶች እና አገልግሎቶች ጋር ያገናኝዎታል።"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:64
+msgid ""
+"Healthy, antibiotic-free chicken meat processed under the highest hygiene "
+"standards."
+msgstr "ጤናማ፣ አንቲባዮቲክ አልባ የዶሮ ሥጋ በከፍተኛ የንጽህና ደረጃዎች የተዘጋጀ።"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:73
+msgid "Fresh Eggs Supply"
+msgstr "ትኩስ የእንቁላል አቅርቦት"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:74
+msgid "We provide farm-fresh eggs daily from our free-range chickens."
+msgstr "ከእርሻ ትኩስ እንቁላሎችን በየቀኑ ከነጻ ክልል ዶሮዎቻችን እናቀርባለን።"
+
+#: .\poultryfarm\templates\poultryfarm\index.html:84
+msgid "High-quality vaccinated chicks from top breeds."
+msgstr "ከላይኛዎቹ ዝርያዎች ከፍተኛ ጥራት ያላቸው ክትባት የተሰጣቸው ጫጩቶች።"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:100
 msgid "Empowering your poultry farming success with knowledge and expertise"
@@ -2130,9 +2168,9 @@ msgid ""
 "a beginner or an experienced farmer, our courses are designed to provide you "
 "with the knowledge and techniques needed for successful poultry management."
 msgstr ""
-"የዶሮ እርባታ ክህሎትዎን በሥጋ ዶሮ፣ በእንቁላል ዶሮ እና በሁለት ዓላማ ዶሮ ላይ ባሉን ልዩ የሥልጠና "
-"ፕሮግራሞች ያሳድጉ። ጀማሪም ሆኑ ልምድ ያለው አርሶ አደር፣ ትምህርቶቻችን ስኬታማ የዶሮ እርባታ አያያዝ የሚያስፈልጉ "
-"እውቀቶችን እና ቴክኒኮችን ለእርስዎ ለማቅረብ ተዘጋጅተዋል።"
+"የዶሮ እርባታ ክህሎትዎን በሥጋ ዶሮ፣ በእንቁላል ዶሮ እና በሁለት ዓላማ ዶሮ ላይ ባሉን ልዩ የሥልጠና ፕሮግራሞች "
+"ያሳድጉ። ጀማሪም ሆኑ ልምድ ያለው አርሶ አደር፣ ትምህርቶቻችን ስኬታማ የዶሮ እርባታ አያያዝ የሚያስፈልጉ እውቀቶችን እና "
+"ቴክኒኮችን ለእርስዎ ለማቅረብ ተዘጋጅተዋል።"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:25
 msgid "Our Training Programs"
@@ -2452,3 +2490,6 @@ msgstr "ተጠቃሚዎች"
 #: .\users\templates\users\users.html:35
 msgid "No users found."
 msgstr "ምንም ተጠቃሚዎች አልተገኙም።"
+
+#~ msgid "poultry"
+#~ msgstr "ዶሮ እርባታ"

@@ -1,3 +1,4 @@
+# base/views.py
 from django.shortcuts import render, redirect
 from django.contrib import messages as django_messages
 from django.contrib.auth import get_user_model
@@ -59,6 +60,7 @@ def search_results(request):
         })
 
     results = []
+
     # DairyFarm (FIXED MODEL)
     dairy = DairyFarmer.objects.filter(
         Q(farm_name__icontains=query) |
