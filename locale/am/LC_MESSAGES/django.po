@@ -3,9 +3,8 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
-msgid "We connect you with quality poultry products..."
-msgstr "በመላው ኢትዮጵያ ከትኩስ እና ኦርጋኒክ የወተት ምርቶች ጋር ያገናኝዎታል።"
+msgid ""
+msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-11 23:40+0300\n"
@@ -1947,112 +1946,79 @@ msgid "What We Offer"
 msgstr "የምናቀርበው አገልግሎት"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:54
-#, fuzzy
-#| msgid ""
-#| "Connecting you with fresh and organic dairy products across Ethiopia."
 msgid ""
 "We connect you with quality poultry products and services from trusted "
 "farmers across Ethiopia."
-msgstr "በመላው ኢትዮጵያ ከትኩስ እና ኦርጋኒክ የወተት ምርቶች ጋር ያገናኝዎታል።"
+msgstr "ከመላው ኢትዮጵያ ታማኝ አርሶ አደሮች ጥራት ባላቸው የዶሮ እርባታ ምርቶች እና አገልግሎቶች ጋር ያገናኝዎታል።"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:100
 msgid "Empowering your poultry farming success with knowledge and expertise"
 msgstr "በእውቀት እና በባለሙያ ልምድ የዶሮ እርባታ ስኬትዎን ማበረታት"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:109
-#, fuzzy
-#| msgid "Poultry Farm Training"
 msgid "Poultry Farming Training"
 msgstr "የዶሮ እርባታ ሥልጠና"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:113
-#, fuzzy
-#| msgid "Milk production techniques"
 msgid "Modern farming techniques"
-msgstr "የወተት ምርት ቴክኒኮች"
+msgstr "ዘመናዊ የእርሻ ቴክኒኮች"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:114
-#, fuzzy
-#| msgid "General Practice"
 msgid "Best practices"
-msgstr "አጠቃላይ ልምምድ"
+msgstr "ምርጥ ተሞክሮዎች"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:115
-#, fuzzy
-#| msgid "Years of experience"
 msgid "Hands-on experience"
-msgstr "የልምድ ዓመታት"
+msgstr "ተግባራዊ ልምድ"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:116
-#, fuzzy
-#| msgid "Disease Management"
 msgid "Disease control"
-msgstr "የበሽታ አያያዝ"
+msgstr "የበሽታ ቁጥጥር"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:128
-#, fuzzy
-#| msgid "Poultry Farm Consultancy"
 msgid "Poultry Farming Consultancy"
 msgstr "የዶሮ እርባታ ማማከር"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:130
-#, fuzzy
-#| msgid "Experience:"
 msgid "Expert guidance"
-msgstr "ልምድ፦"
+msgstr "የባለሙያ መመሪያ"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:132
-#, fuzzy
-#| msgid "Feed optimization"
 msgid "Optimization"
-msgstr "የመኖ ማመቻቸት"
+msgstr "ማመቻቸት"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:133
-#, fuzzy
-#| msgid "Productivity improvement"
 msgid "Productivity"
-msgstr "የምርታማነት ማሻሻያ"
+msgstr "ምርታማነት"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:134
 msgid "Health"
 msgstr "ጤና"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:147
-#, fuzzy
-#| msgid "Poultry Items"
 msgid "Our Poultry Status"
 msgstr "የዶሮ እርባታ ሁኔታችን"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:153
-#, fuzzy
-#| msgid "items"
 msgid "Items"
 msgstr "ዕቃዎች"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:155
-#, fuzzy
-#| msgid "Dairy Products"
 msgid "Quality Products"
-msgstr "የወተት ምርቶች"
+msgstr "ጥራት ያላቸው ምርቶች"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:165
 #: .\poultryfarm\templates\poultryfarm\index.html:175
-#, fuzzy
-#| msgid "Butter Sellers"
 msgid "Active Sellers"
-msgstr "የቅቤ ሻጮች"
+msgstr "ንቁ ሻጮች"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:185
-#, fuzzy
-#| msgid "Trainings"
 msgid "Training Programs"
-msgstr "ሥልጠናዎች"
+msgstr "የሥልጠና ፕሮግራሞች"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:195
-#, fuzzy
-#| msgid "Our Expert Consultants"
 msgid "Expert Consultants"
-msgstr "የእኛ ባለሙያ አማካሪዎች"
+msgstr "የባለሙያ አማካሪዎች"
 
 #: .\poultryfarm\templates\poultryfarm\item_create.html:6
 msgid "Create Poultry Item | Ethiopian Poultry And Dairy Farm Market place"
@@ -2129,26 +2095,24 @@ msgstr "የዶሮ እርባታ ሥልጠና ተማሪዎች | የኢትዮጵያ
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:16
 msgid "Enrolled Trainees"
-msgstr ""
+msgstr "የተመዘገቡ ተማሪዎች"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:17
 msgid ""
 "Here is the list of people who have enrolled in poultry training programs."
-msgstr ""
+msgstr "የዶሮ እርባታ ሥልጠና ፕሮግራሞች የተመዘገቡ ሰዎች ዝርዝር እነሆ።"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:29
 msgid "Program"
-msgstr ""
+msgstr "ፕሮግራም"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:30
 msgid "Enrollment Date"
-msgstr ""
+msgstr "የምዝገባ ቀን"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:47
-#, fuzzy
-#| msgid "No messages received yet."
 msgid "No trainees enrolled yet."
-msgstr "እስካሁን ምንም መልእክቶች አልደረሱም።"
+msgstr "እስካሁን ምንም ተማሪዎች አልተመዘገቡም።"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:6
 msgid ""
@@ -2156,10 +2120,8 @@ msgid ""
 msgstr "የዶሮ እርባታ ሥልጠና ፕሮግራሞች | የኢትዮጵያ ዶሮ እርባታ እና ወተት እርሻ ገበያ ቦታ"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:21
-#, fuzzy
-#| msgid "Poultry Farm Training"
 msgid "Poultry Training Programs"
-msgstr "የዶሮ እርባታ እርሻ ሥልጠና"
+msgstr "የዶሮ እርባታ ሥልጠና ፕሮግራሞች"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:22
 msgid ""
@@ -2168,70 +2130,59 @@ msgid ""
 "a beginner or an experienced farmer, our courses are designed to provide you "
 "with the knowledge and techniques needed for successful poultry management."
 msgstr ""
+"የዶሮ እርባታ ክህሎትዎን በሥጋ ዶሮ፣ በእንቁላል ዶሮ እና በሁለት ዓላማ ዶሮ ላይ ባሉን ልዩ የሥልጠና "
+"ፕሮግራሞች ያሳድጉ። ጀማሪም ሆኑ ልምድ ያለው አርሶ አደር፣ ትምህርቶቻችን ስኬታማ የዶሮ እርባታ አያያዝ የሚያስፈልጉ "
+"እውቀቶችን እና ቴክኒኮችን ለእርስዎ ለማቅረብ ተዘጋጅተዋል።"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:25
-#, fuzzy
-#| msgid "Trainings"
 msgid "Our Training Programs"
-msgstr "ሥልጠናዎች"
+msgstr "የእኛ የሥልጠና ፕሮግራሞች"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:29
 msgid "Meat Chickens Training"
-msgstr ""
+msgstr "የሥጋ ዶሮ ሥልጠና"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:33
-#, fuzzy
-#| msgid "Farmer Training"
 msgid "Layer Chickens Training"
-msgstr "የአርሶ አደር ሥልጠና"
+msgstr "የእንቁላል ዶሮ ሥልጠና"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:37
-#, fuzzy
-#| msgid "Dual purpose chickens"
 msgid "Dual Purpose Chickens Training"
-msgstr "ሁለት ዓላማ ዶሮዎች"
+msgstr "የሁለት ዓላማ ዶሮ ሥልጠና"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:45
 msgid "Enroll in Our Training Programs"
-msgstr ""
+msgstr "በሥልጠና ፕሮግራሞቻችን ይመዝገቡ"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:46
 msgid ""
 "Fill out the form below to register for our upcoming poultry training "
 "programs."
-msgstr ""
+msgstr "በሚመጡት የዶሮ እርባታ ሥልጠና ፕሮግራሞች ለመመዝገብ ከዚህ በታች ያለውን ቅጽ ይሙሉ።"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:70
-#, fuzzy
-#| msgid "Farm Information"
 msgid "Payment Information"
-msgstr "የእርሻ መረጃ"
+msgstr "የክፍያ መረጃ"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:71
 msgid "Please use the following information to complete your payment."
-msgstr ""
+msgstr "ክፍያዎን ለማጠናቀቅ እባክዎ የሚከተለውን መረጃ ይጠቀሙ።"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:75
 msgid "CBE Bank Account"
-msgstr ""
+msgstr "ሲ.ቢ.ኢ. የባንክ ሂሳብ"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:76
-#, fuzzy
-#| msgid "Your Name:"
 msgid "Account Name:"
-msgstr "ስምዎ፦"
+msgstr "የሂሳብ ባለቤት ስም፦"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:77
-#, fuzzy
-#| msgid "Phone Number:"
 msgid "Account Number:"
-msgstr "ስልክ ቁጥር፦"
+msgstr "የሂሳብ ቁጥር፦"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:80
-#, fuzzy
-#| msgid "Farm Information"
 msgid "Telebirr Information"
-msgstr "የእርሻ መረጃ"
+msgstr "የቴሌብር መረጃ"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:81
 #: .\users\templates\users\login.html:28
@@ -2244,11 +2195,11 @@ msgstr "ስልክ ቁጥር፦"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:87
 msgid "CBE Bank"
-msgstr ""
+msgstr "ሲ.ቢ.ኢ. ባንክ"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:91
 msgid "Telebirr Payment"
-msgstr ""
+msgstr "የቴሌብር ክፍያ"
 
 #: .\poultryfarm\templates\poultryfarm\register_seller.html:6
 msgid ""

@@ -3,15 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-11 23:40+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-05-12 10:00+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Oromo <om@li.org>\n"
 "Language: om\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1970,116 +1969,84 @@ msgstr ""
 
 #: .\poultryfarm\templates\poultryfarm\index.html:53
 msgid "What We Offer"
-msgstr ""
+msgstr "Waan Dhiheessinu"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:54
-#, fuzzy
-#| msgid ""
-#| "Connecting you with fresh and organic dairy products across Ethiopia."
 msgid ""
 "We connect you with quality poultry products and services from trusted "
 "farmers across Ethiopia."
 msgstr ""
-"Itoophiyaa keessatti oomisha aannan haaraa fi orgaanikii siif fiduudha."
+"Qonnaattota Itoophiyaa amanamaa jiraniitii oomisha fi tajaajila qe’aa "
+"qulqulluu sitti fidna."
 
 #: .\poultryfarm\templates\poultryfarm\index.html:100
 msgid "Empowering your poultry farming success with knowledge and expertise"
-msgstr ""
+msgstr "Beekumsa fi ogummaadhaan milkaa’ina oomisha qe’aa keessan humneessuu"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:109
-#, fuzzy
-#| msgid "Poultry Farm Training"
 msgid "Poultry Farming Training"
 msgstr "Leenjii Oomisha Qe’aa"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:113
-#, fuzzy
-#| msgid "Milk production techniques"
 msgid "Modern farming techniques"
-msgstr "Tireeksni oomisha aannan"
+msgstr "Tireeksni oomisha ammayyaa"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:114
-#, fuzzy
-#| msgid "General Practice"
 msgid "Best practices"
-msgstr "Hojjetaa Gamaa"
+msgstr "Hojiitti ooluu caalaa"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:115
-#, fuzzy
-#| msgid "Years of experience"
 msgid "Hands-on experience"
-msgstr "Waggaa muuxannoo"
+msgstr "Muuxannoo harka-harkaa"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:116
-#, fuzzy
-#| msgid "Disease Management"
 msgid "Disease control"
-msgstr "Bulchiinsa Dhukkubaa"
+msgstr "To’annoo dhukkubaa"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:128
-#, fuzzy
-#| msgid "Poultry Farm Consultancy"
 msgid "Poultry Farming Consultancy"
 msgstr "Tajaajila Gorsa Oomisha Qe’aa"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:130
-#, fuzzy
-#| msgid "Experience:"
 msgid "Expert guidance"
-msgstr "Muuxannoo:"
+msgstr "Qajeelfama beeksaa"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:132
-#, fuzzy
-#| msgid "Feed optimization"
 msgid "Optimization"
-msgstr "Bu’aa fooyyessuu"
+msgstr "Fooyyessuu"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:133
-#, fuzzy
-#| msgid "Productivity improvement"
 msgid "Productivity"
-msgstr "Oomisha fooyyessuu"
+msgstr "Oomisha"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:134
 msgid "Health"
-msgstr ""
+msgstr "Fayyaa"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:147
-#, fuzzy
-#| msgid "Poultry Items"
 msgid "Our Poultry Status"
-msgstr "Meeshaalee Qe’aa"
+msgstr "Haalli Qe’aa Keenya"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:153
-#, fuzzy
-#| msgid "items"
 msgid "Items"
-msgstr "meeshalee"
+msgstr "Meeshaalee"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:155
-#, fuzzy
-#| msgid "Dairy Products"
 msgid "Quality Products"
-msgstr "Oomisha Aannan"
+msgstr "Oomisha Qulqulluu"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:165
 #: .\poultryfarm\templates\poultryfarm\index.html:175
-#, fuzzy
-#| msgid "Butter Sellers"
 msgid "Active Sellers"
-msgstr "Gurgurtoota Dhadhaa"
+msgstr "Gurgurtoota Hojjetaa"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:185
-#, fuzzy
-#| msgid "Trainings"
 msgid "Training Programs"
-msgstr "Leenjiilee"
+msgstr "Tajajila Leenjii"
 
 #: .\poultryfarm\templates\poultryfarm\index.html:195
-#, fuzzy
-#| msgid "Our Expert Consultants"
 msgid "Expert Consultants"
-msgstr "Gorsitoota Beektoota Keenya"
+msgstr "Gorsitoota Beektoota"
 
 #: .\poultryfarm\templates\poultryfarm\item_create.html:6
 msgid "Create Poultry Item | Ethiopian Poultry And Dairy Farm Market place"
@@ -2152,41 +2119,37 @@ msgstr "Meeshaa Uumi"
 #: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:6
 msgid ""
 "Poultry Training Trainees | Ethiopian Poultry And Dairy Farm Market place"
-msgstr "Leenjiif Barnoota Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+msgstr "Barnootota Leenjii Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:16
 msgid "Enrolled Trainees"
-msgstr ""
+msgstr "Barnootota Galmeessaman"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:17
 msgid ""
 "Here is the list of people who have enrolled in poultry training programs."
-msgstr ""
+msgstr "Tajajila leenjii qe’aa keessatti galmeessaman tarree isaanii kun."
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:29
 msgid "Program"
-msgstr ""
+msgstr "Tajajila"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:30
 msgid "Enrollment Date"
-msgstr ""
+msgstr "Guyyaa Galmeessaa"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainees.html:47
-#, fuzzy
-#| msgid "No messages received yet."
 msgid "No trainees enrolled yet."
-msgstr "Ergaan hin argamne amma."
+msgstr "Barnootaan amma hin galmeessamne."
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:6
 msgid ""
 "Poultry Training Programs | Ethiopian Poultry And Dairy Farm Market place"
-msgstr "Tajaajilli Leenjii Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
+msgstr "Tajajilli Leenjii Qe’aa | Gabaa Fooda Lamee fi Aannan Itoophiyaa"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:21
-#, fuzzy
-#| msgid "Poultry Farm Training"
 msgid "Poultry Training Programs"
-msgstr "Leenjii Oomisha Qe’aa"
+msgstr "Tajajila Leenjii Qe’aa"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:22
 msgid ""
@@ -2195,70 +2158,61 @@ msgid ""
 "a beginner or an experienced farmer, our courses are designed to provide you "
 "with the knowledge and techniques needed for successful poultry management."
 msgstr ""
+"Tajajila leenjii addaa keenyaa Lukkuu Foonii, Lukkuu Hanshuu, fi Lukkuu "
+"Oomisha Lamaa irratti fayyadamuun ogummaa oomisha qe’aa keessan guddisaa. "
+"Jalqabaa ykn qonnaattaa muuxannoo qabduu ta’uu keessan, barnoonni keenya "
+"bulchiinsa qe’aa milkaa’aa ta’eef barbaachisu beekumsa fi tireeksnii "
+"isinif kennuuf qophaa’e."
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:25
-#, fuzzy
-#| msgid "Trainings"
 msgid "Our Training Programs"
-msgstr "Leenjiilee"
+msgstr "Tajajilli Leenjii Keenya"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:29
 msgid "Meat Chickens Training"
-msgstr ""
+msgstr "Leenjii Lukkuu Foonii"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:33
-#, fuzzy
-#| msgid "Farmer Training"
 msgid "Layer Chickens Training"
-msgstr "Leenjii Qonnaattaa"
+msgstr "Leenjii Lukkuu Hanshuu"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:37
-#, fuzzy
-#| msgid "Dual purpose chickens"
 msgid "Dual Purpose Chickens Training"
-msgstr "Lukkuuwwan oomisha lamaaf"
+msgstr "Leenjii Lukkuu Oomisha Lamaa"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:45
 msgid "Enroll in Our Training Programs"
-msgstr ""
+msgstr "Tajajila Leenjii Keenya Keessatti Galmeessi"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:46
 msgid ""
 "Fill out the form below to register for our upcoming poultry training "
 "programs."
-msgstr ""
+msgstr "Tajajila leenjii qe’aa dhufuuf galmaan galmaan foormaa armaan gadii guuti."
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:70
-#, fuzzy
-#| msgid "Farm Information"
 msgid "Payment Information"
-msgstr "Odeeffannoo Oomisha"
+msgstr "Odeeffannoo Kaffaltii"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:71
 msgid "Please use the following information to complete your payment."
-msgstr ""
+msgstr "Kaffaltii keessan xumuruuf maaloo odeeffannoo armaan gadiitiin fayyadamaa."
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:75
 msgid "CBE Bank Account"
-msgstr ""
+msgstr "Akkaawuntii Baankii CBE"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:76
-#, fuzzy
-#| msgid "Your Name:"
 msgid "Account Name:"
-msgstr "Maqaa Keessan:"
+msgstr "Maqaa Akkaawuntii:"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:77
-#, fuzzy
-#| msgid "Phone Number:"
 msgid "Account Number:"
-msgstr "Lakkoobsa Bilbilaa:"
+msgstr "Lakkoobsa Akkaawuntii:"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:80
-#, fuzzy
-#| msgid "Farm Information"
 msgid "Telebirr Information"
-msgstr "Odeeffannoo Oomisha"
+msgstr "Odeeffannoo Telebirr"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:81
 #: .\users\templates\users\login.html:28
@@ -2271,11 +2225,11 @@ msgstr "Lakkoobsa Bilbilaa:"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:87
 msgid "CBE Bank"
-msgstr ""
+msgstr "Baankii CBE"
 
 #: .\poultryfarm\templates\poultryfarm\poultry_trainings.html:91
 msgid "Telebirr Payment"
-msgstr ""
+msgstr "Kaffaltii Telebirr"
 
 #: .\poultryfarm\templates\poultryfarm\register_seller.html:6
 msgid ""
