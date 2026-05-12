@@ -7,7 +7,7 @@ class DairyCategory(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, blank=True)
     description = models.TextField(blank=True)
-
+ 
     def save(self, *args, **kwargs):
         if not self.slug:
             base_slug = slugify(self.name)

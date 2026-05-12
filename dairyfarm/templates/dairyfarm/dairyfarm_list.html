@@ -1,50 +1,19 @@
-{% extends "base/base.html" %}
+{% extends 'base/base.html' %}
 {% load static %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Dairy | Ethiopian Poultry And Dairy Farm Market place" %}
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'dairyfarm/css/dairyfarm_list.css' %}">
+{% endblock %}
 
 {% block content %}
-
-<link rel="stylesheet" href="{% static 'dairyfarm/css/dairyfarm_list.css' %}">
-
-<div class="container">
-
-    <h1 class="page-title">🥛 Dairy Products</h1> 
-
-    <!-- add button --> 
-    <a href="/">
-            {{ product.name }}
-        </a>
-    <div class="grid">
-
-        {% for product in products %}
-        <div class="card">
-
-            {% if product.images.exists %}
-                <img src="{{ product.images.first.image.url }}" class="card-img">
-            {% else %}
-                <img src="{% static 'base/images/default.jpg' %}" class="card-img">
-            {% endif %}
-
-            <div class="card-body">
-                <h3>{{ product.name }}</h3>
-
-                <p class="price">ETB {{ product.price }}</p>
-
-                <p class="desc">
-                    {{ product.description|truncatewords:12 }}
-                </p>
-
-                <div class="actions">
-                    <a href="{% url 'dairyfarm:dairyfarm_detail' product.slug %}" class="btn">View</a>
-                    <a href="{% url 'dairyfarm:order' product.slug %}" class="btn buy">Order</a>
-                </div>
-            </div>
-
-        </div>
-        {% empty %}
-        This web page is not available because there are no dairy products listed yet. Please check back later.
-        {% endfor %}
-
-    </div>
+<!-- Html for This web page is now under construction. We are working hard to bring you the best experience possible. Please check back soon for updates!  -->
+<div class="under-construction">
+    <h1>Under Construction</h1>
+    <p>We are working hard to bring you the best experience possible. Please check back soon for updates!</p>
 </div>
-
 {% endblock %}
