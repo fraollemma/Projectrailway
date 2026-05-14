@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initDropdowns(); 
 });
 
-function initClock() {
+function initClock() { 
     updateClock();
     setInterval(updateClock, 1000);
 }

@@ -5,8 +5,8 @@
 <head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{% trans 'Ethiopian marketplace - Buy and sell poultry and dairy products in Ethiopia' %}">
-    <meta name="keywords" content="{% trans 'Ethiopia, marketplace, buy and sell, agriculture, ethiopia agriculture , poultry, dairy' %}">
+    <meta name="description" content="{% trans 'Ethio Agriculture - Buy and sell poultry and dairy products in Ethiopia' %}">
+    <meta name="keywords" content="{% trans 'Ethiopia, Ethio Agriculture, Marketplace, buy and sell, agriculture, ethiopia agriculture , poultry, dairy, Ethio Chicken, Alema, Farm, Ethio Farm' %}">
     <meta name="author" content="FraolLemma">
     <title>{% block title %}{% endblock %}</title>
     <link rel="icon" href="{% static 'base/images/logo.png' %}">
@@ -19,7 +19,7 @@
     {% block css %}{% endblock %}
 </head>
  
-<body>
+<body> 
 <div id="language-overlay" class="language-overlay hidden">
   <div id="language-popup" class="language-popup">
     <div class="popup-content">
@@ -54,9 +54,13 @@
 
             <!-- Scrolling Announcement -->
             <div class="top-announcement">
-                <marquee behavior="scroll" direction="left">
-                    📢 Welcome to Ethio-Agriculture  Buy and sell Dairy and Poultry products easily across Ethiopia.
-                </marquee>
+                <div class="announcement-slider">
+                    <div class="announcement-track">
+                        <span>
+                            📢 Welcome to Ethio-Agriculture — Buy and sell Dairy and Poultry products easily across Ethiopia.
+                        </span>
+                    </div>
+                </div>
             </div>
 
             <!-- Phone -->

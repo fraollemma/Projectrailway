@@ -3,382 +3,333 @@
 {% load static %}
 
 {% block title %}
-    {% trans "Sheger Market | Ethiopian Poultry And Dairy Farm Market place" %}
+    {% trans "Ethio Agriculture | Ethiopian Poultry And Dairy Farm Market place" %}
 {% endblock %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'base/css/index.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 {% endblock %}
 
 {% block content %}
-<section class="hero-slider">
-    <div class="slider-container">
-        
-        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('{% static "base/images/Poultryimgchickens.jpg" %}');">
-            <div class="container">
-                <div class="slide-content">
-                    <h1>{% trans "Poultry Farm" %}</h1>
-                    <p>{% trans "Eggs, Chickens, poultry Equipment and tools for sell" %}</p>
-                    <a href="{% url 'poultryfarm:index' %}" class="btn-primary">{% trans "poultry Farm" %}</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('{% static "base/images/Dairy-Cows-Herd-Field.jpg" %}');">
-            <div class="container">
-                <div class="slide-content">
-                    <h1>{% trans "Dairy Farm" %}</h1>
-                    <p>{% trans "Fresh milk, cheese, butter and other dairy products" %}</p>
-                    <a href="{% url 'dairyfarm:dairyfarm_list' %}" class="btn-primary">{% trans "Dairy Farm" %}</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="slider-controls">
-            <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
-            <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
-        </div>
-        
-        <div class="slider-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-</section>
 
-<section class="category-section">
-    <div class="container">
-        <h2 class="section-title">{% trans "Shop by Category" %}</h2>
-        <div class="category-container">
+<!-- HERO -->
+<section class="home-hero">
 
-            <a href="/" class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-tshirt"></i>
-                </div>
-                <h3>{% trans "Dairy" %}</h3>
-                <p>{{ clothing_count }}+ {% trans "posted" %}</p>
+    <div class="hero-overlay"></div>
+
+    <div class="home-hero__content">
+
+        <span class="hero-small-text">
+            {% trans "WELCOME TO ETHIO POULTRY MARKETPLACE" %}
+        </span>
+
+        <h1>
+            {% trans "Connecting Farmers," %}<br>
+            {% trans "And Helping Them Succeed" %}
+        </h1>
+
+        <p>
+            {% trans "Your trusted marketplace for quality poultry, dairy products, and farm services from verified Ethiopian farmers." %}
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{% url 'poultryfarm:index' %}" class="btn-primary">
+                {% trans "Explore Poultry" %}
+                <i class="fas fa-arrow-right"></i>
             </a>
 
-            <a href="{% url 'poultryfarm:item_list' %}" class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-feather-alt"></i>
-                </div>
-                <h3>{% trans "Poultry" %}</h3>
-                <p>{{ poultry_count }}+ {% trans "posted" %}</p>
+            <a href="{% url 'dairyfarm:dairyfarm_list' %}" class="btn-secondary">
+                {% trans "Explore Dairy" %}
+                <i class="fas fa-arrow-right"></i>
             </a>
+
         </div>
+
+        <div class="hero-features">
+
+            <div class="hero-feature">
+                <div class="feature-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div>
+                    <h4>{% trans "Trusted Farmers" %}</h4>
+                    <p>{% trans "Verified & Reliable" %}</p>
+                </div>
+            </div>
+
+            <div class="hero-feature">
+                <div class="feature-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div>
+                    <h4>{% trans "Quality Products" %}</h4>
+                    <p>{% trans "Fresh & Safe" %}</p>
+                </div>
+            </div>
+
+            <div class="hero-feature">
+                <div class="feature-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <div>
+                    <h4>{% trans "Fast Delivery" %}</h4>
+                    <p>{% trans "Across Ethiopia" %}</p>
+                </div>
+            </div>
+
+            <div class="hero-feature">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <div>
+                    <h4>{% trans "Expert Support" %}</h4>
+                    <p>{% trans "Always Here To Help" %}</p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
+
 </section>
 
-<section class="featured-products">
-    <div class="container">
-        <h2 class="section-title">{% trans "Featured Products" %}</h2>
-        <div class="product-container">
-            <main class="product-listings">
-                <div class="product-grid">
-                    {% for product in all_featured|slice:":8" %}
-                    <div class="product-card {% if product.product_type == 'house' %}house-card{% elif product.product_type == 'vehicle' %}vehicle-card{% elif product.product_type == 'electronics' %}electronics-card{% elif product.product_type == 'clothing' %}clothing-card{% elif product.product_type == 'poultry' %}poultry-card{% endif %}">
-                      
-                        <div class="card-image">
-                            {% if product.product_type == 'house' %}
-                                {% if product.images.exists %}
-                                    <img src="{{ product.images.first.image.url }}" alt="{{ product.title }}" loading="lazy">
-                                {% else %}
-                                    <img src="{% static 'base/images/default-house.jpg' %}" alt="{{ product.title }}" loading="lazy">
-                                {% endif %}
-                            {% elif product.product_type == 'vehicle' %}
-                                {% if product.images.exists %}
-                                    <img src="{{ product.images.first.image.url }}" alt="{{ product.make }} {{ product.model }}" loading="lazy">
-                                {% else %}
-                                    <img src="{% static 'base/images/default-vehicle.jpg' %}" alt="{{ product.make }} {{ product.model }}" loading="lazy">
-                                {% endif %}
-                            {% elif product.product_type == 'electronics' %}
-                                {% if product.images.exists %}
-                                    <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}" loading="lazy">
-                                {% else %}
-                                    <img src="{% static 'base/images/default-electronics.jpg' %}" alt="{{ product.name }}" loading="lazy">
-                                {% endif %}
-                            {% elif product.product_type == 'clothing' %}
-                                {% if product.images.exists %}
-                                    <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}" loading="lazy">
-                                {% else %}
-                                    <img src="{% static 'base/images/default-clothing.jpg' %}" alt="{{ product.name }}" loading="lazy">
-                                {% endif %}
-                            {% elif product.product_type == 'poultry' %}
-                                {% if product.main_image %}
-                                    <img src="{{ product.main_image.url }}" alt="{{ product.name }}" loading="lazy">
-                                {% else %}
-                                    <img src="{% static 'base/images/default-poultry.jpg' %}" alt="{{ product.name }}" loading="lazy">
-                                {% endif %}
-                            {% endif %}
-                            
-                            <span class="carted-badge {% if product.is_carted %}carted{% endif %}">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                            
-                            <div class="interaction-buttons">
-                                <button type="button" 
-                                        class="interaction-button like-button"
-                                        aria-label="Like this product"
-                                        data-item-id="{{ product.id }}"
-                                        data-action="like">
-                                    <i class="fas fa-thumbs-up" aria-hidden="true"></i> 
-                                    <span class="interaction-count">{{ product.like_count }}</span>
-                                </button>
+<!-- CATEGORY -->
+<section class="categories-section">
 
-                                <button type="button" 
-                                        class="interaction-button share-button"
-                                        aria-label="Share this product"
-                                        data-item-id="{{ product.id }}"
-                                        data-action="share"> 
-                                    <i class="fas fa-share-alt" aria-hidden="true"></i> 
-                                    <span class="interaction-count">{{ product.share_count }}</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="card-content">
-                            <div class="product-meta">
-                                {% if product.product_type == 'house' %}
-                                    <span class="product-year">{{ product.bedrooms }} {% trans "Bed" %}</span>
-                                    <span class="product-mileage"><i class="fas fa-ruler-combined"></i> {{ product.area }} m²</span>
-                                {% elif product.product_type == 'vehicle' %}
-                                    <span class="product-year">{{ product.year }}</span>
-                                    <span class="product-mileage"><i class="fas fa-tachometer-alt"></i> {{ product.mileage|floatformat:"0" }} km</span>
-                                {% elif product.product_type == 'electronics' %}
-                                    <span class="product-year">{{ product.brand|default:"N/A" }}</span>
-                                    <span class="product-mileage"><i class="fas fa-microchip"></i> {{ product.condition|default:"N/A" }}</span>
-                                {% elif product.product_type == 'clothing' %}
-                                    <span class="product-year">{{ product.brand|default:"N/A" }}</span>
-                                    <span class="product-mileage"><i class="fas fa-tshirt"></i> {{ product.size|default:"N/A" }}</span>
-                                {% elif product.product_type == 'poultry' %}
-                                    <span class="product-year">{{ product.category|default:"N/A" }}</span>
-                                    <span class="product-mileage"><i class="fas fa-weight"></i> {{ product.weight|default:"N/A" }}</span>
-                                {% endif %}
-                            </div>
-
-                            <h3>
-                                {% if product.product_type == 'house' %}
-                                    {{ product.title }}
-                                {% elif product.product_type == 'vehicle' %}
-                                    {{ product.year }} {{ product.make }} {{ product.model }}
-                                {% else %}
-                                    {{ product.name }}
-                                {% endif %}
-                            </h3>
-
-                            {% if product.product_type == 'vehicle' %}
-                            <div class="product-specs">
-                                <span><i class="fas fa-gas-pump"></i> {{ product.get_fuel_type_display }}</span>
-                                <span><i class="fas fa-cog"></i> {{ product.engine_size|default:"N/A" }}</span>
-                            </div>
-                            {% endif %}
-
-                            <div class="product-price">
-                                <span class="price">
-                                    {% if product.product_type == 'clothing' %}
-                                        ${{ product.current_price }}
-                                    {% else %}
-                                        ${{ product.price }}
-                                    {% endif %}
-                                </span>
-                            </div>
-
-                            <a href="
-                                {% if product.product_type == 'house' %}
-                                    {% url 'houses:house_detail' product.id %}
-                                {% elif product.product_type == 'vehicle' %}
-                                    {% url 'dairyfarm:dairyfarm_detail' product.slug %}
-                                {% elif product.product_type == 'electronics' %}
-                                    {% url 'electronics:product_detail' product.id %}
-                                {% elif product.product_type == 'clothing' %}
-                                    {% url 'clothings:clothing_detail' product.slug %}
-                                {% elif product.product_type == 'poultry' %}
-                                    {% url 'poultryfarm:item_detail' product.id %}
-                                {% endif %}" 
-                                class="view-details">
-                                <div class="fraol">
-                                    {% trans "View Details" %} <i class="fas fa-chevron-right"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    {% empty %}
-                    <p class="no-products">{% trans "No featured products available." %}</p>
-                    {% endfor %}
-                </div>
-                <section class="sponsor-carousel">
-                    <div class="container">
-                        <h2 class="section-title">{% trans "Our Sponsors" %}</h2>
-
-                        <div class="sponsor-slider">
-                            <div class="sponsor-track">
-
-                                <div class="sponsor-logo">
-                                    <a href="{% url 'companies:ethiochicken' %}">
-                                    <img src="{% static 'base/images/ethiochickenlogo.jpg' %}" alt="Sponsor 1">
-                                    </a>
-                                </div>
-
-                                <div class="sponsor-logo">
-                                    <a href="{% url 'companies:nvi' %}">
-                                    <img src="{% static 'base/images/nvilogo.jpeg' %}" alt="Sponsor 2">
-                                    </a>
-                                </div>
-
-                                <div class="sponsor-logo">
-                                    <a href="{% url 'companies:alema' %}">
-                                    <img src="{% static 'base/images/amenfarms.png' %}" alt="Sponsor 3">
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {% if all_featured|length > 8 %}
-                <div class="load-more-container">
-                    <button id="load-more-btn" class="btn-primary load-more-btn">
-                        {% trans "Load More Products" %} 
-                        <span class="product-count">({{ all_featured|length|add:"-8" }} {% trans "more" %})</span>
-                    </button>
-                    <div id="more-products" class="more-products-grid" style="display: none;">
-                        {% for product in all_featured|slice:"8:" %}
-                        <div class="product-card">
-                            
-                            <div class="card-image">
-                                {% if product.product_type == 'house' %}
-                                    {% if product.images.exists %}
-                                        <img src="{{ product.images.first.image.url }}" alt="{{ product.title }}" loading="lazy">
-                                    {% else %}
-                                        <img src="{% static 'base/images/default-house.jpg' %}" alt="{{ product.title }}" loading="lazy">
-                                    {% endif %}
-                                {% elif product.product_type == 'vehicle' %}
-                                    {% if product.images.exists %}
-                                        <img src="{{ product.images.first.image.url }}" alt="{{ product.make }} {{ product.model }}" loading="lazy">
-                                    {% else %}
-                                        <img src="{% static 'base/images/default-vehicle.jpg' %}" alt="{{ product.make }} {{ product.model }}" loading="lazy">
-                                    {% endif %}
-                                {% elif product.product_type == 'electronics' %}
-                                    {% if product.images.exists %}
-                                        <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}" loading="lazy">
-                                    {% else %}
-                                        <img src="{% static 'base/images/default-electronics.jpg' %}" alt="{{ product.name }}" loading="lazy">
-                                    {% endif %}
-                                {% elif product.product_type == 'clothing' %}
-                                    {% if product.images.exists %}
-                                        <img src="{{ product.images.first.image.url }}" alt="{{ product.name }}" loading="lazy">
-                                    {% else %}
-                                        <img src="{% static 'base/images/default-clothing.jpg' %}" alt="{{ product.name }}" loading="lazy">
-                                    {% endif %}
-                                {% elif product.product_type == 'poultry' %}
-                                    {% if product.main_image %}
-                                        <img src="{{ product.main_image.url }}" alt="{{ product.name }}" loading="lazy">
-                                    {% else %}
-                                        <img src="{% static 'base/images/default-poultry.jpg' %}" alt="{{ product.name }}" loading="lazy">
-                                    {% endif %}
-                                {% endif %}
-                                
-                                <span class="carted-badge {% if product.is_carted %}carted{% endif %}">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </span>
-                                
-                                <div class="interaction-buttons">
-                                    <button type="button" 
-                                            class="interaction-button like-button"
-                                            aria-label="Like this product"
-                                            data-item-id="{{ product.id }}"
-                                            data-action="like">
-                                        <i class="fas fa-thumbs-up" aria-hidden="true"></i> 
-                                        <span class="interaction-count">{{ product.like_count }}</span>
-                                    </button>
-
-                                    <button type="button" 
-                                            class="interaction-button share-button"
-                                            aria-label="Share this product"
-                                            data-item-id="{{ product.id }}"
-                                            data-action="share"> 
-                                        <i class="fas fa-share-alt" aria-hidden="true"></i> 
-                                        <span class="interaction-count">{{ product.share_count }}</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="card-content">
-                                <div class="product-meta">
-                                    {% if product.product_type == 'house' %}
-                                        <span class="product-year">{{ product.bedrooms }} {% trans "Bed" %}</span>
-                                        <span class="product-mileage"><i class="fas fa-ruler-combined"></i> {{ product.area }} m²</span>
-                                    {% elif product.product_type == 'vehicle' %}
-                                        <span class="product-year">{{ product.year }}</span>
-                                        <span class="product-mileage"><i class="fas fa-tachometer-alt"></i> {{ product.mileage|floatformat:"0" }} km</span>
-                                    {% elif product.product_type == 'electronics' %}
-                                        <span class="product-year">{{ product.brand|default:"N/A" }}</span>
-                                        <span class="product-mileage"><i class="fas fa-microchip"></i> {{ product.condition|default:"N/A" }}</span>
-                                    {% elif product.product_type == 'clothing' %}
-                                        <span class="product-year">{{ product.brand|default:"N/A" }}</span>
-                                        <span class="product-mileage"><i class="fas fa-tshirt"></i> {{ product.size|default:"N/A" }}</span>
-                                    {% elif product.product_type == 'poultry' %}
-                                        <span class="product-year">{{ product.category|default:"N/A" }}</span>
-                                        <span class="product-mileage"><i class="fas fa-weight"></i> {{ product.weight|default:"N/A" }}</span>
-                                    {% endif %}
-                                </div>
-
-                                <h3>
-                                    {% if product.product_type == 'house' %}
-                                        {{ product.title }}
-                                    {% elif product.product_type == 'vehicle' %}
-                                        {{ product.year }} {{ product.make }} {{ product.model }}
-                                    {% else %}
-                                        {{ product.name }}
-                                    {% endif %}
-                                </h3>
-
-                                {% if product.product_type == 'vehicle' %}
-                                <div class="product-specs">
-                                    <span><i class="fas fa-gas-pump"></i> {{ product.get_fuel_type_display }}</span>
-                                    <span><i class="fas fa-cog"></i> {{ product.engine_size|default:"N/A" }}</span>
-                                </div>
-                                {% endif %}
-
-                                <div class="product-price">
-                                    <span class="price">
-                                        {% if product.product_type == 'clothing' %}
-                                            ${{ product.current_price }}
-                                        {% else %}
-                                            ${{ product.price }}
-                                        {% endif %}
-                                    </span>
-                                </div>
-
-                                <a href="
-                                    {% if product.product_type == 'house' %}
-                                        {% url 'houses:house_detail' product.id %}
-                                    {% elif product.product_type == 'vehicle' %}
-                                        {% url 'dairyfarm:dairyfarm_detail' product.slug %}
-                                    {% elif product.product_type == 'electronics' %}
-                                        {% url 'electronics:product_detail' product.id %}
-                                    {% elif product.product_type == 'clothing' %}
-                                        {% url 'clothings:clothing_detail' product.slug %}
-                                    {% elif product.product_type == 'poultry' %}
-                                        {% url 'poultryfarm:item_detail' product.id %}
-                                    {% endif %}" 
-                                    class="view-details">
-                                    <div class="fraol">
-                                        {% trans "View Details" %} <i class="fas fa-chevron-right"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endif %}
-            </main>
-        </div>
+    <div class="section-header">
+        <span>{% trans "MARKETPLACE" %}</span>
+        <h2>{% trans "Choose Your Category" %}</h2>
+        <div class="section-line"></div>
     </div>
+
+    <div class="categories-grid">
+
+        <!-- POULTRY -->
+        <article class="category-card">
+
+            <div class="category-image">
+                <img src="{% static 'base/images/Poultryimgchickens.jpg' %}" alt="Poultry Farm">
+
+                <div class="floating-badge orange-badge">
+                    <i class="fas fa-drumstick-bite"></i>
+                </div>
+            </div>
+
+            <div class="category-content">
+
+                <h3 class="orange">{% trans "Poultry Farm" %}</h3>
+
+                <p>
+                    {% trans "Buy chickens, eggs, chicks, poultry meat and access training and consultancy services." %}
+                </p>
+
+                <ul>
+                    <li>{% trans "Poultry Items" %}</li>
+                    <li>{% trans "Fresh Eggs" %}</li>
+                    <li>{% trans "Poultry Chickens" %}</li>
+                    <li>{% trans "Training & Consultancy" %}</li>
+                </ul>
+
+                <a href="{% url 'poultryfarm:index' %}" class="orange-btn">
+                    {% trans "Visit Poultry Marketplace" %}
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+        <!-- DAIRY -->
+        <article class="category-card">
+
+            <div class="category-image">
+                <img src="{% static 'base/images/aidairy.jpg' %}" alt="Dairy Farm">
+
+                <div class="floating-badge blue-badge">
+                    <i class="fas fa-bottle-water"></i>
+                </div>
+            </div>
+
+            <div class="category-content">
+
+                <h3 class="blue">{% trans "Dairy Farm" %}</h3>
+
+                <p>
+                    {% trans "Buy fresh milk, cheese, butter, yogurt and access dairy farming training and consultancy services." %}
+                </p>
+
+                <ul>
+                    <li>{% trans "Milk & Milk Products" %}</li>
+                    <li>{% trans "Cheese & Butter" %}</li>
+                    <li>{% trans "Yogurt & Cream" %}</li>
+                    <li>{% trans "Training & Consultancy" %}</li>
+                </ul>
+
+                <a href="{% url 'dairyfarm:dairyfarm_list' %}" class="blue-btn">
+                        {% trans "Visit Dairy Marketplace" %}
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
 </section>
+
+<!-- WHY US -->
+<section class="why-us">
+
+    <div class="section-header">
+        <h2>{% trans "Why Choose Us?" %}</h2>
+        <div class="section-line"></div>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <div class="why-icon green-light">
+                <i class="fas fa-user-shield"></i>
+            </div>
+            <h3>{% trans "Trusted Platform" %}</h3>
+            <p>
+                {% trans "We verify all farmers and ensure quality and transparency in every transaction." %}
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon yellow-light">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <h3>{% trans "Quality Assurance" %}</h3>
+            <p>
+                {% trans "All products meet high quality standards for your health and safety." %}
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon blue-light">
+                <i class="fas fa-truck"></i>
+            </div>
+            <h3>{% trans "Fast & Reliable Delivery" %}</h3>
+            <p>
+                {% trans "We deliver fresh products quickly and safely to your doorstep." %}
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon purple-light">
+                <i class="fas fa-headset"></i>
+            </div>
+            <h3>{% trans "Expert Support" %}</h3>
+            <p>
+                {% trans "Get expert advice, training, and support from experienced professionals." %}
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Poultry STATS -->
+<section class="stats-section">
+
+    <div class="section-header">
+        <h2>{% trans "Our Poultry Impact in Numbers" %}</h2>
+    </div>
+    <div class="stats-grid">
+    <div class="stats-track">
+
+        <div class="stat-box">
+            <div class="stat-icon peach">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+            <h3>248+</h3>
+            <h4>{% trans "Products" %}</h4>
+            <p>{% trans "Poultry Products" %}</p>
+        </div>
+
+        <div class="stat-box">
+            <div class="stat-icon mint">
+                <i class="fas fa-egg"></i>
+            </div>
+            <h3>56+</h3>
+            <h4>{% trans "Egg Sellers" %}</h4>
+            <p>{% trans "Poultry Egg Sellers" %}</p>
+        </div>
+
+        <div class="stat-box">
+            <div class="stat-icon light-green">
+                <i class="fas fa-dove"></i>
+            </div>
+            <h3>34+</h3>
+            <h4>{% trans "Chicken Sellers" %}</h4>
+            <p>{% trans "Poultry Chicken Sellers" %}</p>
+        </div>
+
+        <div class="stat-box">
+            <div class="stat-icon gold">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>12+</h3>
+            <h4>{% trans "Trainings" %}</h4>
+            <p>{% trans "Poultry Training Programs" %}</p>
+        </div>
+
+        <div class="stat-box">
+            <div class="stat-icon lavender">
+                <i class="fas fa-users"></i>
+            </div>
+            <h3>18+</h3>
+            <h4>{% trans "Consultants" %}</h4>
+            <p>{% trans "Poultry Expert Consultants" %}</p>
+        </div>
+
+        <div class="stat-box">
+            <div class="stat-icon peach">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+            <h3>248+</h3>
+            <h4>{% trans "Products" %}</h4>
+            <p>{% trans "Dairy Products" %}</p>
+        </div>
+
+        <div class="stat-box">
+            <div class="stat-icon light-green">
+                <i class="fas fa-dove"></i>
+            </div>
+            <h3>34+</h3>
+            <h4>{% trans "Cow Sellers" %}</h4>
+            <p>{% trans "Dairy Cow Sellers" %}</p>
+        </div>
+
+        <div class="stat-box">
+            <div class="stat-icon gold">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>12+</h3>
+            <h4>{% trans "Trainings" %}</h4>
+            <p>{% trans "Dairy Training Programs" %}</p>
+        </div>
+
+        <div class="stat-box">
+            <div class="stat-icon lavender">
+                <i class="fas fa-users"></i>
+            </div>
+            <h3>18+</h3>
+            <h4>{% trans "Consultants" %}</h4>
+            <p>{% trans "Dairy Expert Consultants" %}</p>
+        </div>
+
+    </div>
+    </div>
+
+</section>
+
+
 {% endblock %}
 
 {% block js %}

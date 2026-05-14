@@ -13,38 +13,6 @@
 
 {% block content %}
 
-<!-- HERO -->
-<section class="index-hero">
-
-    <video autoplay muted loop playsinline class="index-hero__video">
-        <source src="{% static 'poultryfarm/videos/chicken-farm.mp4' %}" type="video/mp4">
-    </video>
-
-    <div class="index-hero__overlay"></div>
-    
-    <div class="index-hero__content index-container">
-
-        <h1 class="index-hero__title">
-            {% trans "Premium Poultry Marketplace" %}
-        </h1>
-
-        <p class="index-hero__description">
-            {% trans "Buy chickens, eggs, and poultry products from trusted Ethiopian farmers." %}
-        </p>
-
-        <div class="index-hero__buttons">
-            <a href="#services" class="index-button index-button--primary">
-                {% trans "Explore More →" %}
-            </a>
-        </div>
-    </div>
-
-    <div class="index-hero__scroll">
-        <span></span>
-        <p>{% trans "Scroll Down" %}</p>
-    </div>
-</section>
-
 <!-- SERVICES -->
 <section class="index-services index-container" id="services">
 
@@ -52,17 +20,17 @@
         <span>{% trans "OUR SERVICES" %}</span>
         <h2>{% trans "What We Offer" %}</h2>
         <p>{% trans "We connect you with quality poultry products and services from trusted farmers across Ethiopia." %}</p>
-    </div>
+    </div> 
 
     <div class="index-services__grid">
-
+ 
         <article class="index-service-card">
             <img src="{% static 'poultryfarm/images/chicken-meat.jpg' %}">
             <div class="index-service-icon-badge icon-poultry-items"><i class="fas fa-drumstick-bite"></i></div>
             <div class="index-service-card__content">
                 <h3>{% trans "Poultry Items" %}</h3>
                 <p>{% trans "Healthy, antibiotic-free chicken meat processed under the highest hygiene standards." %}</p>
-                <a href="{% url 'poultryfarm:item_list' %}">{% trans "View More →" %}</a>
+                <a href="{% url 'poultryfarm:item_list' %}" class="index-button index-button--primary">{% trans "View More →" %}</a>
             </div>
         </article>
 
@@ -72,7 +40,7 @@
             <div class="index-service-card__content">
                 <h3>{% trans "Fresh Eggs Supply" %}</h3>
                 <p>{% trans "We provide farm-fresh eggs daily from our free-range chickens." %}</p>
-                <a href="{% url 'poultryfarm:egg_sellers' %}">{% trans "View More →" %}</a>
+                <a href="{% url 'poultryfarm:egg_sellers' %}" class="index-button index-button--primary">{% trans "View More →" %}</a>
             </div>
         </article>
 
@@ -82,7 +50,7 @@
             <div class="index-service-card__content">
                 <h3>{% trans "Poultry Chickens" %}</h3>
                 <p>{% trans "High-quality vaccinated chicks from top breeds." %}</p>
-                <a href="{% url 'poultryfarm:chicken_sellers_list' %}">{% trans "View More →" %}</a>
+                <a href="{% url 'poultryfarm:chicken_sellers_list' %}" class="index-button index-button--primary">{% trans "View More →" %}</a>
             </div>
         </article>
 
