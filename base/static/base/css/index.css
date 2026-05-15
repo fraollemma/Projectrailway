@@ -927,6 +927,6 @@ ul{
     box-sizing: border-box;
   }
   .home-hero {
-    min-height: calc(100vh - 89px);
+    min-height: calc(100vh - 95px);
   }
 }
