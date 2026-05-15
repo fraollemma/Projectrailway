@@ -1726,7 +1726,7 @@ li {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 385px) {
   header.header.header-admin {
     background-color: #ffffff !important;
     min-height: 64px;
@@ -1759,6 +1759,14 @@ li {
     max-height: 40px;
     width: auto;
   }
+  .notification-menu {
+    width: 250px !important;
+    padding: 0 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid #252525 !important;
+    overflow: hidden;
+}
 }
 
 @media (max-width: 320px) {
