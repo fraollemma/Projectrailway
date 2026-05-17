@@ -46,13 +46,11 @@
     <div class="container">
         <div class="top-bar-content">
 
-            <!-- Live Time -->
             <div class="top-time">
                 <i class="fas fa-clock"></i>
                 <span id="liveClock"></span>
             </div>
 
-            <!-- Scrolling Announcement -->
             <div class="top-announcement">
                 <div class="announcement-slider">
                     <div class="announcement-track">
@@ -63,7 +61,6 @@
                 </div>
             </div>
 
-            <!-- Phone -->
             <div class="top-phone">
                 <i class="fas fa-phone"></i>
                 <span>+251 925 259 294</span>
@@ -83,7 +80,6 @@
 <div class="container">
     <div class="header-content">
 
-        <!-- LOGO -->
         <div class="logo">
             <a href="/" class="logo-link">
                 <img src="{% static 'base/images/logo.png' %}" class="site-logo">
@@ -96,7 +92,6 @@
         </div>
 
         <div class="header-actions">
-            <!-- LANGUAGE -->
             <div class="action-item dropdown">
                 <button class="action-btn dropdown-toggle">
                     <i class="fas fa-globe"></i>
@@ -113,7 +108,6 @@
                 </div>
             </div>
             
-            <!-- NOTIFICATION -->
             {% if user.is_authenticated %}
             <div class="action-item dropdown">
                 <button class="action-btn dropdown-toggle" id="notificationBtn">
@@ -160,11 +154,10 @@
             </div>
             {% endif %}
 
-            <!-- USER Action -->
             {% if user.is_authenticated %}
             <div class="action-item dropdown">
                 <button class="action-btn user-btn dropdown-toggle">
-                    <img src="{{ user.profile.profile_picture.url }}" class="profile-picture">
+                    <img src="{{ user.profile.profile_picture.url }}" class="user-profile-picture">
                 </button>
                 <div class="dropdown-menu">
                     <a href="{% url 'users:profile' %}">{% trans "Profile" %}</a>
@@ -176,16 +169,14 @@
                 <a href="{% url 'users:register' %}" class="login-btn">{% trans "Register" %}</a>
             {% endif %}
 
-            <!-- MOBILE MENU -->
             <button class="nav-toggle" id="navToggle">
-                <i class="fas fa-bars"></i>
+                <span class="nav-toggle-icon"><i class="fas fa-bars"></i></span>
             </button>
 
         </div>
     </div>
 </div>
 </header>
-             <!-- NavBar -->
 <nav class="category-nav" id="categoryNav">
     <div class="category-nav-header">
         <h3 class="category-nav-title">{% trans "Browse Categories" %}</h3>
